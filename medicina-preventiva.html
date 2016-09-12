@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+	<meta name="expires" content="-1"/>
+	<meta name="description" content="" />
+	<meta name="author" content="Florencia Acosta - Graphic Designer & Front End Developer | Fernando Prado - Back End Developer & Data Base Management" />
+	<meta name="keywords" content=""/>
+
+	<title>Clínica Los Cedros de Tapiales S.A.</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link href="css/style.css" media="screen, projection" rel="stylesheet" type="text/css" />
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="js/query.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(menu);
+			
+			var contador = 1;
+			var despliegue = 1;
+
+		function menu(){
+			$('.toggle').click(function(){
+				if(contador == 1){
+					$('#element').animate({
+						right: '0em'
+					});
+					contador = 0;
+				}else{
+					contador = 1;
+					$('#element').animate({
+						right: '-100%'
+					});
+				}
+			})
+		}
+	</script>
+
+</head>
+<body>
+
+	<header>
+		<div class="logo">
+			<a href="#"><img src="img/logo.png" title="Clínica Los Cedros de Tapiales S.A."/></a>
+		</div>
+		
+		<nav class="menu">
+			<div class="button-menu">
+				<button class="toggle">
+					<hr/>
+					<hr/>
+					<hr/>
+				</button>
+			</div>
+			<div class="menu-element">
+				<ul id="element">
+					<li><a class="active" href="#" title="Instalaciones">Instalaciones</a></li>
+					<li><a href="#" title="Especialidades">Especialidades</a></li>
+					<li><a href="#" title="Coberturas Médicas">Coberturas</a></li>
+					<li><a href="#" title="Medicina Preventiva">Medicina Preventiva</a></li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+
+	<nav class="tooltip-box">
+		<a href="online-turn" class="tooltip tooltip-active">
+			<span class="tooltip-text tooltip-text-primary">Turnos online</span>
+		</a>
+		<a href="address" class="tooltip">
+			<span class="tooltip-text">Ubicación</span>
+		</a>
+		<a href="contact" class="tooltip">
+			<span class="tooltip-text">Contacto</span>
+		</div>
+		<a href="schedule" class="tooltip">
+			<span class="tooltip-text">Horarios</span>
+		</a>
+	</nav>
+
+
+	<main>
+		<div class="box-container-breadcrum">
+			<span><a href="">Home</a></span>
+			<span><a href="">Segunda vista</a></span>
+			<span><a class="active" href="">Especialidades</a></span>
+		</div>
+
+		<h1>
+			Medicina
+			<br/>
+			Preventiva
+		</h1>
+		<div class="col-paragraph">
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam placerat leo id erat cursus, id congue leo maximus. Fusce sodales suscipit sem, ac imperdiet magna venenatis non. Aliquam erat volutpat. Suspendisse nec urna laoreet, hendrerit lorem quis, porta lorem. Nulla sed mi lorem.</p>
+		</div>
+		
+		<section>
+			<div class="prevention-item">
+				<h2>Asesoramiento y supervisión por médicos</h2>
+				<p>Permanentemente en los horarios de atención de CEPEM hay profesionales médicos capacitados para responder y solucionar en forma personal o telefónica todas las inquietudes o problemas que puedan surgir en relación o como consecuencia de la vacunación.</p>
+			</div>
+			<div class="prevention-item">
+				<h2>Asesoramiento y supervisión por médicos</h2>
+				<p>Permanentemente en los horarios de atención de CEPEM hay profesionales médicos capacitados para responder y solucionar en forma personal o telefónica todas las inquietudes o problemas que puedan surgir en relación o como consecuencia de la vacunación.</p>
+			</div>
+			<div class="prevention-item">
+				<h2>Asesoramiento y supervisión por médicos</h2>
+				<p>Permanentemente en los horarios de atención de CEPEM hay profesionales médicos capacitados para responder y solucionar en forma personal o telefónica todas las inquietudes o problemas que puedan surgir en relación o como consecuencia de la vacunación.</p>
+			</div>
+			<div class="prevention-item">
+				<h2>Asesoramiento y supervisión por médicos</h2>
+				<p>Permanentemente en los horarios de atención de CEPEM hay profesionales médicos capacitados para responder y solucionar en forma personal o telefónica todas las inquietudes o problemas que puedan surgir en relación o como consecuencia de la vacunación.</p>
+			</div>
+			<div class="prevention-item">
+				<h2>Asesoramiento y supervisión por médicos</h2>
+				<p>Permanentemente en los horarios de atención de CEPEM hay profesionales médicos capacitados para responder y solucionar en forma personal o telefónica todas las inquietudes o problemas que puedan surgir en relación o como consecuencia de la vacunación.</p>
+			</div>
+			<div class="prevention-item">
+				<h2>Asesoramiento y supervisión por médicos</h2>
+				<p>Permanentemente en los horarios de atención de CEPEM hay profesionales médicos capacitados para responder y solucionar en forma personal o telefónica todas las inquietudes o problemas que puedan surgir en relación o como consecuencia de la vacunación.</p>
+			</div>
+		</section>
+	</main>
+
+	<footer>
+		<div class="col-4 institutional">
+			<div class="logo">
+				<a href="#"><img src="img/logo.png" title="Clínica Los Cedros de Tapiales S.A."/></a>
+			</div>
+			<p>
+				Todos los derechos reservados.
+				<br/>
+				Politica de Privacidad del Sitio.
+				<br/>
+				Términos y Condiciones.
+			</p>
+		</div>
+
+		<div class="col-4 site-map">
+			<ul>
+				<h3>Institucional</h3>
+				<li><a href="">Home</a></li>
+				<li><a href="">Instalaciones</a></li>
+				<li><a href="">Especialidades</a></li>
+				<li><a href="">Coberturas</a></li>
+				<li><a href="">Medicina Preventiva</a></li>
+			</ul>
+		</div>
+
+		<div class="col-4 information">
+			<div class="turn-online">
+				<h3>Turnos On-line</h3>
+				<span>|  Click <a href="">aquí</a> para continuar</span>
+			</div>
+
+			<div class="line-phone">
+				<h3>Líneas rotativas</h3>
+				<span>
+					(011) 4622-8188 / (011) 4622-8199
+					<br/>
+					(011) 4622-8203 / (011) 4622-8209
+				</span>
+			</div>
+		</div>
+
+		<div class="col-4 search">
+			<label class="common-input">
+				<input type="text" placeholder="Buscar..." value="" name="search"/>
+				<button type="submit" value=""></button>
+			</label>
+		</div>
+	</footer>
+
+	<article class="extra-information">
+		<span>2016 | Design and Developer by <a href="#">Acosta Prado</a></span>
+		<span>Clinica Los Cedros de Tapiales S.A.</span>
+	</article>
+</body>
+</html>
