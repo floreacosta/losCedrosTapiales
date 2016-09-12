@@ -1,0 +1,150 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	list-style-type: none;
+	background: transparent;
+	text-decoration: none;
+}
+
+/**
+* Global
+**/
+
+body {
+	color: $color-primary;
+	font-size: 16px;
+	@include font-calibri-normal;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+a {
+	display: inline-block;
+	color: $color-primary;
+
+	&:visited {
+		color: $color-primary;
+	}
+}
+
+main {
+	margin: 5%;
+	
+	> section {
+		margin: 3em 0;
+	}
+}
+
+.col-paragraph {
+	@include text-paragraph(100%, 1, 0px);
+}
+
+/**
+* Heading
+**/
+
+h1 {
+	@include heading-level-1;
+}
+
+h2 {
+	@include heading-level-2;
+}
+
+h3 {
+	@include heading-level-3;
+}
+
+.menu-instalaciones {
+	width: 100%;
+
+	li {
+		display: inline-block;
+		margin-right: 2em;
+		height: 46px;
+
+		a {
+			@include text-primary;
+			@include font-calibri-bold;
+			margin-top: 5px;
+			margin-bottom: 15px;
+		}
+
+		&:last-of-type {
+			margin-right: 0;
+		}
+
+		&:hover {
+			border-bottom: solid 4px $color-primary;
+		}
+	}
+}
+
+.photograpy-primary,
+.photograpy-secondary {
+	position: relative;
+	margin: -5.55%;
+	margin-bottom: .5em;
+	margin-top: .5em;
+	height: auto;
+	display: inline-block;
+}
+
+.photograpy-information {
+
+}
+
+/**
+* Responsive
+**/
+
+@media (min-width: 500px){
+	.col-paragraph {
+		@include text-paragraph(80%, 2, 40px);
+	}
+}
+
+@media (min-width: 700px){
+	.photograpy-information {
+		padding-left: 15%;
+		display: inline-block;
+		width: 50%;
+
+		.col-paragraph-photograpy {
+			@include text-paragraph(50%, 2, 40px);
+			width: 80%;
+		}
+	}
+
+	.photograpy-secondary img {
+		width: 50%;
+		padding-right: 1%;
+
+		&.second-img {
+			float: right;			
+			padding-right: 0;
+			padding-left: 1%;
+		}
+	}
+}
+
+@media (min-width: 900px){
+	main {
+	    margin: 2% 5%;
+	}
+
+	.col-paragraph {
+		@include text-paragraph(75%, 3, 40px);
+	}
+}
+
+@media (min-width: 1024px){
+}
+
+@media (min-width: 1400px){
+
+}

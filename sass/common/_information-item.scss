@@ -1,0 +1,46 @@
+/**
+* Item information
+**/
+
+.prevention-item {
+	padding: 1em;
+	color: $color-dark;
+	background-color: $color-light;
+	display: block;
+	margin: 1em 0;
+
+	@include layout-item-information(100%, 100%);
+
+	h2 {
+		margin-top: 0;
+	}
+
+	p {
+		font-size: 1em;
+		line-height: 1.2em;
+	}
+}
+
+
+/**
+* Responsive
+**/
+
+@media (min-width: 500px){
+	.prevention-item {
+		@include layout-item-information(100%, 75%);
+	}
+}
+
+@media (min-width: 900px){
+	.prevention-item {
+		@include layout-item-information(75%, 50%);
+	}
+}
+
+@media (min-width: 1024px){
+}
+
+@media (min-width: 1400px){
+
+}

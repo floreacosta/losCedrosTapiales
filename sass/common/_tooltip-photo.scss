@@ -1,0 +1,121 @@
+/* Item explicación de fotografia */
+.box-description {
+    margin-bottom: 1em;
+    position: relative;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+
+/**
+* Responsive
+**/
+
+@media (min-width: 500px){
+}
+
+@media (min-width: 700px){    
+    .box-description {
+        width: 30%;
+        background-color: $white;
+        color: $color-tertiary;
+        line-height: 1.1em;
+        border-radius: .5em;
+        opacity: .8;
+        padding: 1em;
+        margin: 1em;
+        position: absolute;
+    }
+
+    .flecha-top:before,
+    .flecha-bottom:before,
+    .flecha-left:before,
+    .flecha-right:before {
+        content: '';
+        position: absolute;
+        border-style: solid;
+    }
+
+    .flecha-right:before {
+        top: 50%;
+        left: 100%;
+        margin-top: -8px;
+        border-width: 8px;
+        border-color: transparent transparent transparent $white;
+    }
+
+    .flecha-left:before {
+        top: 50%;
+        right: 100%;
+        margin-top: -8px;
+        border-width: 8px;
+        border-color: transparent $white transparent transparent;
+    }
+
+    .flecha-top:before {
+        bottom: 100%;
+        right: 50%;
+        margin-top: -8px;
+        border-width: 8px;
+        border-color: transparent transparent $white transparent;
+    }
+
+    .flecha-bottom:before {
+        top: calc(100% + .5em);
+        right: 50%;
+        margin-top: -8px;
+        border-width: 8px;
+        border-color: $white transparent transparent transparent;
+    }
+
+    #box-1 {
+        top: 50%;
+        left: 5%;
+    }
+
+    #box-2 {
+        top: 10%;
+        right: 5%;
+    }
+
+    #box-3 {
+        top: -18%;
+        left: 10%;
+    }
+
+    #box-4 {
+        bottom: -17%;
+        right: 10%;
+        z-index: 200;
+    }
+
+    #box-5,
+    #box-8 {
+        right: 38%;
+        top: 30%;
+    }
+
+    #box-6,
+    #box-9 {
+        left: 10%;
+        top: -18%;
+    }
+
+    #box-7,
+    #box-10 {
+        right: 10%;
+        bottom: -18%;
+        z-index: 200;
+    }
+
+}
+
+@media (min-width: 1024px){
+    .box-description {
+        width: 25%;
+    }
+}
+
+@media (min-width: 1400px){
+
+}

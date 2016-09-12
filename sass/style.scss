@@ -1,0 +1,25 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/css/style.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/css3/columns";
+@import "compass/reset";
+@import "common/_mixin";
+
+@import "common/_variable";
+@import "common/_global";
+@import "common/_fonts";
+
+@import "components/_header";
+@import "components/_main";
+@import "components/_footer";
+
+@import "common/_tooltip";
+@import "common/_item-box";
+@import "common/_modal";
+@import "common/_information-item";
+@import "common/_breadcrum";
+@import "common/_tooltip-photo";
+@import "common/_flaticon";
+@import "_index";

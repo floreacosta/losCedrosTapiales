@@ -1,0 +1,105 @@
+.tooltip-box {
+    display: none;
+    width: 2.5em;
+    float: right;
+    position: fixed;
+    right: 2.5em;
+    top: calc(45% - 106px);
+    z-index: 300;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    margin: .3em 0;
+    cursor: pointer;
+
+    &:before {
+        content:'';
+        display: inline-block;
+        width: 2.5em;
+        height: 2.5em;
+        position: relative;
+        top: -11px;
+        border-radius: 50%;
+        background-color: $color-primary;
+        box-shadow: $shadow;
+    }
+
+    .tooltip-text {
+        visibility: hidden;
+        width: 120px;
+        background-color: $white;
+        color: $color-tertiary;
+        text-align: center;
+        border-radius: 6px;
+        padding: .4em 0;
+        position: absolute;
+        z-index: 1;
+        top: -5px;
+        right: 135%;
+        box-shadow: $shadow;
+        @include font-calibri-bold;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 100%;
+            margin-top: -8px;
+            border-width: 8px;
+            border-style: solid;
+            border-color: transparent transparent transparent $white;
+        }
+    }
+
+    &:hover {
+        .tooltip-text {
+            visibility: visible;
+        }
+    }
+}
+
+.tooltip-text-primary {
+    visibility: visible !important;
+}
+
+.tooltip-active:before {
+    background-color: $color-tertiary;
+}
+
+#turn-tooltip{
+
+}
+
+#address-tooltip {
+    
+}
+
+#contact-tooltip {
+
+}
+
+#schedule-tooltip {
+
+}
+
+/**
+* Responsive
+**/
+
+@media (min-width: 500px){
+    .tooltip-box {
+        display: block;
+    }
+}
+
+@media (min-width: 600px){
+}
+
+@media (min-width: 1024px){
+}
+
+@media (min-width: 1400px){
+
+}

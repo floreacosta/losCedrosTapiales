@@ -1,0 +1,105 @@
+.element-list {
+	position: relative;
+
+	h3 {
+		width: 100%;
+		line-height: 2em;
+		font-size: 1.3em;
+	}
+}
+
+.information-item {
+	background-color: $color-light;
+	padding: 1em;
+	position: relative;
+	vertical-align: middle;
+	display: block;
+	width: 100%;
+	vertical-align: top;
+	margin-bottom: 1em;
+
+	&:after {
+		content: '';
+		width: .7em;
+		height: .7em;
+		display: inline-block;
+		background-color: $color-secondary;
+		border-radius: 50%;
+		position: absolute;
+
+		left: calc(0em - .35em);
+		top: calc(50% - .35em);
+	}
+
+	&:last-of-type {
+		margin-right: 0;
+	}
+
+	a {
+		position: relative;
+		vertical-align: middle;
+		color: $color-tertiary;			
+		min-height: 2em;
+	}
+
+	&:hover {
+		background-color: $color-rolover;
+
+		a {
+			color: $white;
+		}
+	}
+}
+
+/* Logos / Coberturas Médicas */
+.logotypes-medic {
+	margin-bottom: 1em;
+	
+	img {
+		display: block;
+		width: 95%;
+		margin: auto;
+	}
+}
+
+/**
+* Responsive
+**/
+
+@media (min-width: 500px){
+	.information-item,
+	.logotypes-medic {
+		position: relative;
+		display: inline-block;
+		vertical-align: top;
+		width: 46%;
+		margin-right: 3%;
+	}
+}
+
+@media (min-width: 700px){
+	.information-item,
+	.logotypes-medic {
+		width: 30%;
+		margin-right: 2%;
+	}
+}
+
+@media (min-width: 900px){
+	.information-item,
+	.logotypes-medic {
+		width: 23%;
+		margin-right: 1%;
+	}
+}
+
+@media (min-width: 1024px){
+	.information-item,
+	.logotypes-medic {
+		width: 18%;
+		margin-right: 1%;
+	}
+}
+
+@media (min-width: 1400px){
+}

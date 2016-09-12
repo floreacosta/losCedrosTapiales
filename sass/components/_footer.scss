@@ -1,0 +1,186 @@
+footer {
+	clear: both;
+	background-color: $color-light;
+	width: 100%;
+	height: auto;
+	position: relative;
+	display: block;
+	padding: 1em;
+	text-align: center;
+
+	p {
+		line-height: 22px;
+		@include font-calibri-normal;
+		margin: 0;
+		color: $color-secondary;
+	}
+
+	> div {
+		margin-top: 2em;
+
+		&:first-of-type {
+			margin-top: 0;
+		}
+	}
+
+	.institutional,
+	.line-phone {
+		.logo {
+			width: 12em;
+			margin: auto;
+		}
+
+		h3,
+		p {
+			margin-top: 2em;
+		}
+	}
+
+	.site-map li {
+		padding: .35em 0;
+		color: $color-secondary;
+
+		a:hover {
+			text-decoration: underline;
+		}
+	}
+
+	.turn-online span a {
+		@include font-calibri-bold;
+		color: $color-secondary;
+		text-decoration: underline;
+	}
+
+	.line-phone span {
+		line-height: 1.4em;
+		color: $color-secondary;
+	}
+	
+
+	.search {
+		label {
+			width: 100%;
+			position: relative;
+
+			input[type="text"] {
+				border: 0;
+				background-color: $color-primary;
+				color: $white;
+				border-radius: .5em;
+				line-height: 2.4em;
+				padding: 0 1em;
+				box-shadow: $shadow;
+				width: 70%;
+				min-width: 50%;
+				font-size: 1em;
+
+				&:focus {
+					outline: 0;
+				}
+			}
+
+			button {
+				border: 0;
+				background-color: transparent;
+				line-height: 2.4em;
+				cursor: pointer;
+			
+				&:before {
+					@include icon-search;
+				}
+
+				&:hover {
+					opacity: .7;
+				}
+			}
+		}
+	}
+}
+
+.extra-information {
+	background-color: $color-secondary;
+	padding: 1.5em 3em;
+	position: relative;
+	width: 100%;
+	display: block;
+	color: $white;
+	font-size: .8em;
+	text-align: center;
+
+	span a {
+		text-decoration: underline;
+		color: $white;
+
+		&:hover {
+			background-color: $white;
+			color: $color-secondary;
+		}
+	}
+}
+
+/**
+* Responsive
+**/
+
+@media (min-width: 500px){
+	footer {
+		padding: 2em;
+		text-align: left;
+
+		.logo {
+			margin-left: 0 !important;
+		}
+
+		> div {
+			margin-top: 0em;
+		}
+	}
+
+	.col-4 {
+		position: relative;
+		display: inline-block;
+		vertical-align: top;
+		width: 46%;
+		margin: 0 2%;
+
+		&:nth-child(odd) {
+			margin-left: 0;
+		}		
+	}
+
+	.information,
+	.search {
+		margin-top: 2em;
+	}
+
+	.extra-information {
+		padding: 1.5em 3em;
+		text-align: left;
+
+		span:last-of-type {
+			float: right;
+		}
+	}
+}
+
+@media (min-width: 900px){
+	.information,
+	.search {
+		margin-top: 0em;
+	}
+
+	.col-4{
+		width: 23%;
+		margin: 0 1%;		
+	}
+}
+
+@media (min-width: 1024px){
+	footer {
+		padding: 2em 4em;
+	}
+}
+
+@media (min-width: 1400px){
+
+}

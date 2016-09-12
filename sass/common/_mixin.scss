@@ -1,0 +1,139 @@
+@import "compass/css3/transform";
+
+@mixin font-calibri-light() {
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	font-weight: 300;
+	font-variant: normal;
+	font-style: normal;
+}
+
+@mixin font-calibri-normal() {
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	font-weight: normal;
+	font-variant: normal;
+	font-style: normal;
+}
+
+@mixin font-calibri-bold() {
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	font-weight: bold;
+	font-variant: normal;	
+	font-style: normal;
+}
+
+@mixin text-primary() {
+	font-size: 1em;
+	@include font-calibri-normal;
+	color: $color-primary;
+}
+
+@mixin heading-level-1() {
+	@include font-calibri-bold;
+	color: $color-secondary;
+	font-size: 2.5em;
+	line-height: 1em;
+	margin: .5em 0;
+}
+
+@mixin heading-level-2() {
+	@include font-calibri-bold;
+	color: $color-secondary;
+	font-size: 1.6em;
+	line-height: 1em;
+	margin: .25em 0;
+	margin-bottom: .4em;
+}
+
+@mixin heading-level-3() {
+	@include font-calibri-bold;
+	color: $color-secondary;
+	font-size: 1.1em;
+	line-height: 1.1em;
+	margin-bottom: .7em;
+}
+
+@mixin text-paragraph($width-item, $column, $gap) {
+	position: relative;
+	display: block;
+	vertical-align: top;
+	
+	&:first-of-type {
+		margin-left: 0;
+	}
+
+	&:last-of-type {
+		margin-right: 0;
+	}
+
+	width: $width-item;
+	line-height: 22px;
+	font-size: 17px;
+	margin: .5em 0;
+
+	-webkit-column-count: $column; /* Chrome, Safari, Opera */
+	-moz-column-count: $column; /* Firefox */
+	column-count: $column;
+
+	-webkit-column-gap: $gap; /* Chrome, Safari, Opera */
+	-moz-column-gap: $gap; /* Firefox */
+	column-gap: $gap;
+}
+
+@mixin text-primary() {
+	@include font-calibri-normal;
+	color: $color-primary;
+	font-size: 1.15em;
+	line-height: 1.20em;
+
+	margin: 1.5em 0;
+}
+
+/* Iconos */
+
+@mixin icon-search() {
+	content:'s';
+	font-family: 'modern_pictogramsnormal';
+	color: $color-primary;
+	font-size: 3.8em;
+	margin-left: 5px;
+	top: 10px;
+	position: relative;
+}
+
+@mixin button-close {
+	border: 0;
+	background: transparent;
+	cursor: pointer;
+    float: right;
+
+	&:before,
+	&:after {
+		content:'';
+		background-color: $color-primary;
+		margin: auto;
+		position: relative;
+		display: block;
+		transform: rotate(45deg);
+	}
+
+	&:before {
+		height: 3px;
+		width: 25px;
+		top: calc(12.5px + 1.5px);
+	}
+
+	&:after {
+		width: 3px;
+		height: 25px;
+	}
+}
+
+@mixin layout-item-information($large, $short) {
+	&:nth-child(even) {
+		width: $large;
+	}
+
+	&:nth-child(odd) {
+		width: $short;
+	}
+}
