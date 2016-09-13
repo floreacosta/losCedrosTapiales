@@ -36,7 +36,7 @@
 				<figcaption>
 					<h3>Instalaciones y Equipamiento</h3>
 					<p>Brindamos infraestructura e instalaciones para que profesionales atiendan sus pacientes en un ambiente confortable y adecuado.</p>
-					<a href="#" title="Ver más">+</a>
+					<a href="institucional.php" title="Ver más">+</a>
 				</figcaption>
 			</figure>
 
@@ -45,7 +45,7 @@
 				<figcaption>
 					<h3>Especialidades</h3>
 					<p>Contamos con un abanico de especialidades detalladas según sus días, horarios y profesionales médicos.</p>
-					<a href="#" title="Ver más">+</a>
+					<a href="especialidades.php" title="Ver más">+</a>
 				</figcaption>
 			</figure>
 
@@ -54,7 +54,7 @@
 				<figcaption>
 					<h3>Coberturas Médicas</h3>
 					<p>Nuestra administración establece el nexo con las Coberturas Médicas y Obras Sociales a fin de brindar para sus afiliados el acceso a una atención médica calificada según sus necesidades.</p>
-					<a href="#" title="Ver más">+</a>
+					<a href="coberturas-medicas.php" title="Ver más">+</a>
 				</figcaption>
 			</figure>
 
@@ -63,7 +63,7 @@
 				<figcaption>
 					<h3>Medicina Preventiva</h3>
 					<p>Contamos con el asesoramiento preventivo por parte de profesionales capacitados para dar la mejor atención a sus pacientes.</p>
-					<a href="#" title="Ver más">+</a>
+					<a href="medicina-preventiva.php" title="Ver más">+</a>
 				</figcaption>
 			</figure>
 		</article>
@@ -106,7 +106,7 @@
 					</p>
 				</span>
 			</div>
-			<span>Click <a href="">aquí</a> para ver en Google Maps.</span>
+			<span>Click <a href="https://goo.gl/maps/yPByzy2b1YR2">aquí</a> para ver en Google Maps.</span>
 			<div class="location"></div>
 		</article>
 
