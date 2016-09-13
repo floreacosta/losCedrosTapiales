@@ -1,7 +1,7 @@
 	<footer>
 		<div class="col-4 institutional">
 			<div class="logo">
-				<a href="#"><img src="img/logo.png" title="Clínica Los Cedros de Tapiales S.A."/></a>
+				<a href="index.php"><img src="img/logo.png" title="Clínica Los Cedros de Tapiales S.A."/></a>
 			</div>
 			<p>
 				Todos los derechos reservados.
@@ -15,11 +15,11 @@
 		<div class="col-4 site-map">
 			<ul>
 				<h3>Institucional</h3>
-				<li><a href="">Home</a></li>
-				<li><a href="">Instalaciones</a></li>
-				<li><a href="">Especialidades</a></li>
-				<li><a href="">Coberturas</a></li>
-				<li><a href="">Medicina Preventiva</a></li>
+				<li><a href="index.php">Home</a></li>
+				<li><a href="institucional.php">Instalaciones</a></li>
+				<li><a href="especialidades.php">Especialidades</a></li>
+				<li><a href="coberturas-medicas.php">Coberturas</a></li>
+				<li><a href="medicina-preventiva.php">Medicina Preventiva</a></li>
 			</ul>
 		</div>
 

@@ -13,7 +13,7 @@
 			</div>
 			<div class="menu-element">
 				<ul id="element">
-					<li><a href="instalaciones.php" id="instalaciones" title="Instalaciones">Instalaciones</a></li>
+					<li><a href="institucional.php" id="instalaciones" title="Instalaciones">Instalaciones</a></li>
 					<li><a href="especialidades.php" id="especialidades" title="Especialidades">Especialidades</a></li>
 					<li><a href="coberturas-medicas.php" id="coberturas" title="Coberturas Médicas">Coberturas</a></li>
 					<li><a href="medicina-preventiva.php" id="medicina-preventiva" title="Medicina Preventiva">Medicina Preventiva</a></li>
