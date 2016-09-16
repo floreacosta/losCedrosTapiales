@@ -91,6 +91,10 @@ h3 {
 
 .photograpy-primary,
 .photograpy-secondary {
+	a {
+		float: left;
+	}
+
 	position: relative;
 	margin: -5.55%;
 	margin-bottom: .5em;
@@ -107,7 +111,7 @@ h3 {
 * Responsive
 **/
 
-@media (min-width: 500px){
+@media (min-width: 500px) {
 	.col-paragraph {
 		@include text-paragraph(80%, 2, 40px);
 	}

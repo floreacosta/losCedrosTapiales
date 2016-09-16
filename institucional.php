@@ -24,13 +24,13 @@
 		
 		<section>
 			<ul class="menu-instalaciones">
-				<li><a href="">Edificio</a></li>
-				<li><a href="">Sala de espera</a></li>
-				<li><a href="">Habitaciones</a></li>
-				<li><a href="">Consultorios</a></li>
-				<li><a href="">Equipamiento técnico</a></li>
-				<li><a href="">Laboratorio</a></li>
-				<li><a href="">Pediatría</a></li>
+				<li><a href="#edificio" title="Edificio">Edificio</a></li>
+				<li><a href="#sala-de-espera" title="Sala de espera">Sala de espera</a></li>
+				<li><a href="#habitaciones" title="Habitaciones">Habitaciones</a></li>
+				<li><a href="#consultorios" title="Consultorios">Consultorios</a></li>
+				<li><a href="#equipamiento-tecnico" title="Equipamiento técnico">Equipamiento técnico</a></li>
+				<li><a href="#laboratorio" title="Laboratorio">Laboratorio</a></li>
+				<li><a href="#pediatria" title="Pediatría">Pediatría</a></li>
 			</ul>
 
 			<div class="photograpy-primary">
@@ -40,11 +40,12 @@
 				<div id="box-2" class="box-description flecha-left">
 					<p>Área de urgencias y emergencias con 9 shock-rooms equipados con complejidad de cuidados críticos.</p>
 				</div>			
+				<a name="edificio"></a>
 				<img src="img/presentacion.jpg" alt="Clinica Los Cedros de Tapiales"/>
 			</div>
 
 			<div class="photograpy-secondary">
-				<article class="photograpy-information">				
+				<article class="photograpy-information">
 					<h1>
 						Infraestructura
 						<br/>
@@ -54,6 +55,7 @@
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam placerat leo id erat cursus, id congue leo maximus.</p>
 					</div>		
 				</article>
+				<a name="sala-de-espera"></a>
 				<img class="second-img" src="img/sala-de-espera.jpg" alt="Sala de espera de guardia"/>
 			</div>
 
@@ -65,7 +67,8 @@
 
 				<div id="box-4" class="box-description flecha-top">
 					<p>Área de urgencias y emergencias con 9 shock-rooms equipados con complejidad de cuidados críticos.</p>
-				</div>			
+				</div>
+				<a name="habitaciones"></a>
 				<img class="second-img" src="img/habitacion.jpg" alt="Suite para pacientes"/>
 			</div>
 
@@ -78,7 +81,8 @@
 				</article>
 				<div id="box-5" class="box-description flecha-right">
 					<p>Área de urgencias y emergencias con 9 shock-rooms equipados con complejidad de cuidados críticos.</p>
-				</div>			
+				</div>
+				<a name="consultorios"></a>
 				<img class="second-img" src="img/ginecologia.jpg" alt="Consultorio de ginecología"/>
 			</div>
 
@@ -86,6 +90,7 @@
 				<div id="box-6" class="box-description flecha-bottom">
 					<p>Área de urgencias y emergencias con 9 shock-rooms equipados con complejidad de cuidados críticos.</p>
 				</div>
+				<a name="equipamiento-tecnico"></a>
 				<img src="img/tomografo.jpg" alt="Tomografías computadas"/>
 
 				<div id="box-7" class="box-description flecha-top">
@@ -104,6 +109,7 @@
 				<div id="box-8" class="box-description flecha-right">
 					<p>Área de urgencias y emergencias con 9 shock-rooms equipados con complejidad de cuidados críticos.</p>
 				</div>			
+				<a name="laboratorio"></a>
 				<img class="second-img" src="img/laboratorio.jpg" alt="Laboratorios"/>
 			</div>
 
@@ -115,7 +121,8 @@
 
 				<div id="box-10" class="box-description flecha-top">
 					<p>Área de urgencias y emergencias con 9 shock-rooms equipados con complejidad de cuidados críticos.</p>
-				</div>			
+				</div>
+				<a name="pediatria"></a>
 				<img class="second-img" src="img/habitacion-pediatria.jpg" alt="Habitación pediátrica"/>
 			</div>
 

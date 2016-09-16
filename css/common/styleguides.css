@@ -239,12 +239,17 @@ h3 {
   height: auto;
   display: inline-block;
 }
+/* line 94, ../../sass/common/_global.scss */
+.photograpy-primary a,
+.photograpy-secondary a {
+  float: left;
+}
 
 /**
 * Responsive
 **/
 @media (min-width: 500px) {
-  /* line 111, ../../sass/common/_global.scss */
+  /* line 115, ../../sass/common/_global.scss */
   .col-paragraph {
     position: relative;
     display: block;
@@ -274,13 +279,13 @@ h3 {
   }
 }
 @media (min-width: 700px) {
-  /* line 117, ../../sass/common/_global.scss */
+  /* line 121, ../../sass/common/_global.scss */
   .photograpy-information {
     padding-left: 15%;
     display: inline-block;
     width: 50%;
   }
-  /* line 122, ../../sass/common/_global.scss */
+  /* line 126, ../../sass/common/_global.scss */
   .photograpy-information .col-paragraph-photograpy {
     position: relative;
     display: block;
@@ -310,12 +315,12 @@ h3 {
     margin-right: 0;
   }
 
-  /* line 128, ../../sass/common/_global.scss */
+  /* line 132, ../../sass/common/_global.scss */
   .photograpy-secondary img {
     width: 50%;
     padding-right: 1%;
   }
-  /* line 132, ../../sass/common/_global.scss */
+  /* line 136, ../../sass/common/_global.scss */
   .photograpy-secondary img.second-img {
     float: right;
     padding-right: 0;
@@ -323,12 +328,12 @@ h3 {
   }
 }
 @media (min-width: 900px) {
-  /* line 141, ../../sass/common/_global.scss */
+  /* line 145, ../../sass/common/_global.scss */
   main {
     margin: 2% 5%;
   }
 
-  /* line 145, ../../sass/common/_global.scss */
+  /* line 149, ../../sass/common/_global.scss */
   .col-paragraph {
     position: relative;
     display: block;
