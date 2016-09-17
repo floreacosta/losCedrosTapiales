@@ -26,12 +26,62 @@
 			<ul class="element-list">
 				<div>
 					<h3>A</h3>
-					<li class="information-item"><a href="#">Alergia</a></li>
+					<li class="information-item">
+						<a href="#alergia">Alergia</a>
+						<article class="modal">
+							<div id="alergia" class="modal-container">					
+								<a class="button-close-information" href="#page" title="Cerrar"></a>
+								<h2>Cirugía Infantil</h2>
+								<ul>
+									<li class="col-3">
+										<h4>Dr. Alejandro Rizk</h4>
+										<p>Martes de 14.00 a 15.00 hs.</p>
+										<p>Viernes de 16.00 a 17.00 hs</p>
+									</li>
+									<li class="col-3">
+										<h4>Dr. Alejandro Rizk</h4>
+										<p>Martes de 14.00 a 15.00 hs.</p>
+										<p>Viernes de 16.00 a 17.00 hs</p>
+									</li>
+									<li class="col-3">
+										<h4>Dr. Alejandro Rizk</h4>
+										<p>Martes de 14.00 a 15.00 hs.</p>
+										<p>Viernes de 16.00 a 17.00 hs</p>
+									</li>
+								</ul>
+							</div>
+						</article>
+					</li>
 				</div>
 
 				<div>
 					<h3>C</h3>
-					<li class="information-item"><a href="#">Cirugía Infantil</a></li>
+					<li class="information-item">
+						<a href="#cirugia-infantil">Cirugía Infantil</a>
+						<article class="modal">
+							<div id="cirugia-infantil" class="modal-container">					
+								<a class="button-close-information" href="#page" title="Cerrar"></a>
+								<h2>Cirugía Infantil</h2>
+								<ul>
+									<li class="col-3">
+										<h4>Dr. Alejandro Rizk</h4>
+										<p>Martes de 14.00 a 15.00 hs.</p>
+										<p>Viernes de 16.00 a 17.00 hs</p>
+									</li>
+									<li class="col-3">
+										<h4>Dr. Alejandro Rizk</h4>
+										<p>Martes de 14.00 a 15.00 hs.</p>
+										<p>Viernes de 16.00 a 17.00 hs</p>
+									</li>
+									<li class="col-3">
+										<h4>Dr. Alejandro Rizk</h4>
+										<p>Martes de 14.00 a 15.00 hs.</p>
+										<p>Viernes de 16.00 a 17.00 hs</p>
+									</li>
+								</ul>
+							</div>
+						</article>
+					</li>
 					<li class="information-item"><a href="#">Cardiología Adultos</a></li>
 					<li class="information-item"><a href="#">Cardiología Infantil</a></li>
 					<li class="information-item"><a href="#">Cirugía Adultos</a></li>

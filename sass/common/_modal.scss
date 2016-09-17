@@ -1,6 +1,6 @@
 .modal {
-	//position: fixed;
-	position: relative;
+	position: fixed;
+	//position: relative;
 	background-color: rgba(13, 71, 72, .7);
 	left: 0;
 	right: 0;
@@ -9,6 +9,7 @@
 	width: 100%;
 	height: 100vh;
 	z-index: 100;
+	display: none;
 
 	.modal-container {
 		background-color: $white;
@@ -20,7 +21,7 @@
 		position: relative;
 		color: $color-secondary;
 
-		button {
+		.button-close-information {
     		margin-top: -25px;
     		@include button-close;
 		}

@@ -1004,7 +1004,7 @@ footer .search label button:hover {
 }
 /* line 1, ../sass/common/_modal.scss */
 .modal, .modal-video {
-  position: relative;
+  position: fixed;
   background-color: rgba(13, 71, 72, 0.7);
   left: 0;
   right: 0;
@@ -1013,8 +1013,9 @@ footer .search label button:hover {
   width: 100%;
   height: 100vh;
   z-index: 100;
+  display: none;
 }
-/* line 13, ../sass/common/_modal.scss */
+/* line 14, ../sass/common/_modal.scss */
 .modal .modal-container, .modal-video .modal-container, .modal-video .modal-container-video {
   background-color: #ffffff;
   padding: 3em;
@@ -1025,8 +1026,8 @@ footer .search label button:hover {
   position: relative;
   color: #34694e;
 }
-/* line 23, ../sass/common/_modal.scss */
-.modal .modal-container button, .modal-video .modal-container button, .modal-video .modal-container-video button {
+/* line 24, ../sass/common/_modal.scss */
+.modal .modal-container .button-close-information, .modal-video .modal-container .button-close-information, .modal-video .modal-container-video .button-close-information {
   margin-top: -25px;
   border: 0;
   background: transparent;
@@ -1034,7 +1035,7 @@ footer .search label button:hover {
   float: right;
 }
 /* line 109, ../sass/common/_mixin.scss */
-.modal .modal-container button:before, .modal-video .modal-container button:before, .modal-video .modal-container-video button:before, .modal .modal-container button:after, .modal-video .modal-container button:after, .modal-video .modal-container-video button:after {
+.modal .modal-container .button-close-information:before, .modal-video .modal-container .button-close-information:before, .modal-video .modal-container-video .button-close-information:before, .modal .modal-container .button-close-information:after, .modal-video .modal-container .button-close-information:after, .modal-video .modal-container-video .button-close-information:after {
   content: '';
   background-color: #0d4748;
   margin: auto;
@@ -1043,17 +1044,17 @@ footer .search label button:hover {
   transform: rotate(45deg);
 }
 /* line 119, ../sass/common/_mixin.scss */
-.modal .modal-container button:before, .modal-video .modal-container button:before, .modal-video .modal-container-video button:before {
+.modal .modal-container .button-close-information:before, .modal-video .modal-container .button-close-information:before, .modal-video .modal-container-video .button-close-information:before {
   height: 3px;
   width: 25px;
   top: calc(12.5px + 1.5px);
 }
 /* line 125, ../sass/common/_mixin.scss */
-.modal .modal-container button:after, .modal-video .modal-container button:after, .modal-video .modal-container-video button:after {
+.modal .modal-container .button-close-information:after, .modal-video .modal-container .button-close-information:after, .modal-video .modal-container-video .button-close-information:after {
   width: 3px;
   height: 25px;
 }
-/* line 28, ../sass/common/_modal.scss */
+/* line 29, ../sass/common/_modal.scss */
 .modal .modal-container h2, .modal-video .modal-container h2, .modal-video .modal-container-video h2 {
   font-size: 2em;
   width: 100%;
@@ -1065,7 +1066,7 @@ footer .search label button:hover {
   font-style: normal;
   text-transform: uppercase;
 }
-/* line 37, ../sass/common/_modal.scss */
+/* line 38, ../sass/common/_modal.scss */
 .modal .modal-container h4, .modal-video .modal-container h4, .modal-video .modal-container-video h4 {
   font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
   font-weight: bold;
@@ -1074,27 +1075,27 @@ footer .search label button:hover {
   margin-bottom: .5em;
   font-size: 1.3em;
 }
-/* line 43, ../sass/common/_modal.scss */
+/* line 44, ../sass/common/_modal.scss */
 .modal .modal-container p, .modal-video .modal-container p, .modal-video .modal-container-video p {
   font-size: 0.9em;
   line-height: 1.3em;
   color: black;
 }
-/* line 48, ../sass/common/_modal.scss */
+/* line 49, ../sass/common/_modal.scss */
 .modal .modal-container p:first-of-type, .modal-video .modal-container p:first-of-type, .modal-video .modal-container-video p:first-of-type {
   margin-top: 0;
 }
-/* line 52, ../sass/common/_modal.scss */
+/* line 53, ../sass/common/_modal.scss */
 .modal .modal-container p:last-of-type, .modal-video .modal-container p:last-of-type, .modal-video .modal-container-video p:last-of-type {
   margin-bottom: 0;
 }
 
-/* line 62, ../sass/common/_modal.scss */
+/* line 63, ../sass/common/_modal.scss */
 .modal-video .modal-container-video {
   width: 75%;
   top: 50px;
 }
-/* line 67, ../sass/common/_modal.scss */
+/* line 68, ../sass/common/_modal.scss */
 .modal-video .modal-container-video button {
   border: 0;
   background: transparent;
@@ -1123,11 +1124,11 @@ footer .search label button:hover {
   width: 3px;
   height: 25px;
 }
-/* line 72, ../sass/common/_modal.scss */
+/* line 73, ../sass/common/_modal.scss */
 .modal-video .modal-container-video button:before, .modal-video .modal-container-video button:after {
   background-color: #ffffff;
 }
-/* line 78, ../sass/common/_modal.scss */
+/* line 79, ../sass/common/_modal.scss */
 .modal-video .modal-container-video video {
   width: 100%;
 }
