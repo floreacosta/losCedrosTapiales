@@ -25,8 +25,16 @@
 				<p><i>Los Cedros</i> constituye una Institución sólida que se destaca por la excelencia que otorga en sus prestaciones y que sigue manteniendo la filosofía de brindar atención al mejor nivel.</p>
 				<p>La confianza lograda nos permitió ir creciendo junto con las familias de nuestros pacientes.</p>
 
-				<button onClick="" title="Video a pantalla completa">Video</button>
+				<button id="button-video-open" title="Video a pantalla completa">Video</button>
 			</article>
+			<div id="video-container" class="video-container">
+				<button id="button-video-close" onClick="closeVideo()" title="Cerrar video"></button>
+				<video controls>
+					<source src="video/losCedros.webm" type='video/webm; codecs="vp8, vorbis"' />
+					<source src="video/losCedros.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+					<source src="video/losCedros.ogv" type='video/ogg; codecs="theora, vorbis"' />
+				</video>
+			</div>
 		</section>
 
 		<article class="item-section">

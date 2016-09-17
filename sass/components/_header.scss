@@ -152,19 +152,19 @@ header {
 
 @media (min-width: 1024px){
 	header {
-		height: 7em;
+		height: 5.5em;
 	
 		.logo {
 			width: 20%;
 			height: 100%;
 			display: inline-block;
 			float: left;
-			padding: 1em;
+			padding: .5em 1em;
 			position: relative;
-			left: 2em;
+			left: 3em;
 
 			a {
-				width: 15em;
+				width: 13em;
 
 				img {
 					max-width: 100%;
@@ -196,7 +196,7 @@ header {
 			li {
 				padding: 0 1.8em;
 				float: left;
-				line-height: calc(7em - 6px);
+				line-height: calc(5.5em - 6px);
 				border: 0;
 
 				&:hover {

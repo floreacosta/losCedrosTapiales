@@ -18,10 +18,8 @@
 	<script type="text/javascript" src="js/query.js"></script>
 
 	<script type="text/javascript">
-		$(document).ready(menu);
-			
-			var contador = 1;
-
+		$(document).ready(menu);	
+		var contador = 1;
 		function menu(){
 			$('.toggle').click(function(){
 				if(contador == 1){
@@ -29,12 +27,34 @@
 						right: '0em'
 					});
 					contador = 0;
-				}else{
+				} else {
 					contador = 1;
 					$('#element').animate({
 						right: '-100%'
 					});
 				}
+			})
+		}
+
+		$(document).ready(openVideo);
+		function openVideo(){
+			$('#button-video-open').click(function(){
+				$( "#video-container" ).addClass("video-open");
+			})
+		}
+
+
+		$(document).ready(closeVideo);
+		function closeVideo(){
+			$('#button-video-close').click(function(){
+				$( "#video-container" ).removeClass("video-open");
+			})
+		}
+
+		$(document).ready(closeVideoContainer);
+		function closeVideoContainer(){
+			$('#video-container').click(function(){
+				$( "#video-container" ).removeClass("video-open");
 			})
 		}
 	</script>

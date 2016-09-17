@@ -129,9 +129,6 @@
 		
 		div {
 			display: inline-block;
-			//color: $color-primary;
-			//position: relative;
-			//margin: auto;
 			
 			h1 {
 				margin: 0;
@@ -196,6 +193,77 @@
 		}
 	}
 
+}
+
+/* Institucional */
+.photograpy-information {
+	margin: 0 5% 8%;
+}
+
+.photograpy-secondary {
+	margin-bottom: 0em;
+	margin-top: 0em;
+}
+
+.menu-instalaciones {
+	margin-top: -1em;
+}
+
+/* Video container */
+
+.home {
+	.video-container {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		display: none;
+		z-index: 400;
+		background-color: rgba(13, 71, 72, 0.8);
+		
+		button {
+			border: 0;
+			background-color: transparent;
+			position: absolute;
+		    right: 6%;
+			cursor: pointer;
+
+			&:before,
+			&:after {
+				content:'';
+				width: 2px;
+				height: 30px;
+				display: block;
+				margin: auto;
+				background: $white;
+				@include transform(rotate(45deg));
+			}
+
+			&:after {
+				width: 30px;
+				height: 2px;
+				position: relative;
+				top: -16px;
+			}
+		}
+	}
+
+	.video-open {
+		position: fixed;
+		display: block;
+		top: 0;
+		padding: 5%;
+		width: 100%;
+		height: 100%;
+	}
+
+	.video-open video {
+		top: 0;
+		width: 80%;
+		margin: auto;
+		height: auto;
+		display: block;
+		position: relative;
+	}	
 }
 
 /**
@@ -315,12 +383,25 @@
 			width: 100%;
 			position: absolute;
 		}
-			
+	}
+
+	.photograpy-information {
+		margin: 0;
 	}
 
 }
 
 @media (min-width: 700px) {
+
+	.photograpy-secondary {
+		margin-bottom: .5em;
+		margin-top: .5em;
+	}
+	
+	.menu-instalaciones {
+		margin-top: 0em;
+	}
+
 	.home .item-section {
 		figure {
 			width: 23%;
