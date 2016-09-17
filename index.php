@@ -75,7 +75,7 @@
 			</div>
 		</article>
 
-		<section class="information-leve-two">
+		<section class="information-level-two">
 			<div class="background-shadow"></div>
 			<img src="img/recepcion.jpg" alt="Recepción"/>
 		</section>
