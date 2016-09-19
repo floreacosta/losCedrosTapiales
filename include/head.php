@@ -57,6 +57,16 @@
 				$( "#video-container" ).removeClass("video-open");
 			})
 		}
-	</script>
 
+		$(document).ready(heightMap);
+		function heightMap() {
+			var h = document.getElementById('informationBox').offsetHeight + "px";
+			document.getElementById('map').style.height = h;
+
+			$(window).resize(function() {
+				h = document.getElementById('informationBox').offsetHeight + "px";
+				document.getElementById('map').style.height = h;
+			});
+		}
+	</script>
 </head>

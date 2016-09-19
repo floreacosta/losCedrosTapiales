@@ -1,6 +1,31 @@
 <?php
 	include_once('include/head.php');
 ?>
+
+<script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCl1eZ_cCxoh4jm8J6oLzEZOUyTsQSS-7Y&callback=initMap">
+</script>
+
+<script>
+      function initMap() {
+        // Create a map object and specify the DOM element for display.
+		var myLatLng = { lat: -34.6994319, lng: -58.5061351 };
+
+		var map = new google.maps.Map(document.getElementById('map'), {
+			center: myLatLng,
+			scrollwheel: true,
+			zoom: 17,
+			zoomControl: true
+		});
+
+		var marker = new google.maps.Marker({
+			position: myLatLng,
+			map: map,
+			title: 'Clínica Los Cedros de Tapiales S.A.'
+		});
+      }
+</script>
+
 <body>
 
 	<?php
@@ -22,7 +47,8 @@
 					<br/>
 					de Tapiales S.A.
 				</h1>
-				<p><i>Los Cedros</i> constituye una Institución sólida que se destaca por la excelencia que otorga en sus prestaciones y que sigue manteniendo la filosofía de brindar atención al mejor nivel.</p>
+				<p><i>Clínica Los Cedros</i> constituye una institución sólida desde el año 1983 en la que se destaca por la excelencia que otorga en sus prestaciones médicas y que sigue manteniendo la filosofía de brindar atención al mejor nivel.
+				</p>
 				<p>La confianza lograda nos permitió ir creciendo junto con las familias de nuestros pacientes.</p>
 
 				<button id="button-video-open" title="Video a pantalla completa">Video</button>
@@ -89,7 +115,7 @@
 		</section>
 
 		<article id="contact">
-			<div class="telephone-line">
+			<div id="informationBox" class="telephone-line">
 				<span>
 					<h3>Ubicación</h3>
 					<p>Domingo Millan 20, Villa Madero - Cp.: 1688</p>
@@ -115,7 +141,7 @@
 				</span>
 			</div>
 			<span>Click <a href="https://goo.gl/maps/yPByzy2b1YR2">aquí</a> para ver en Google Maps.</span>
-			<div class="location"></div>
+			<div class="location" id="map"></div>
 		</article>
 
 		<article class="visit" id="visit">

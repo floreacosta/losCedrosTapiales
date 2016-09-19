@@ -380,7 +380,7 @@ header {
   position: relative;
   background: #ffffff;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  z-index: 300;
+  z-index: 600;
   /* Lineas que arman el bot├│n hamburguesa del Men├║ Mobile */
   /* Caja contenedora del Logo */
 }
