@@ -19,7 +19,7 @@
 			Especialidades
 		</h1>
 		<div class="col-paragraph">
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam placerat leo id erat cursus, id congue leo maximus. Fusce sodales suscipit sem, ac imperdiet magna venenatis non. Aliquam erat volutpat. Suspendisse nec urna laoreet, hendrerit lorem quis, porta lorem. Nulla sed mi lorem.</p>
+			<p>Contamos con profesionales destacados para cada especialidad. Para poder atenderse se deberá sacar turno previo personalmente, por teléfono o vía web. Los horarios de atención son de 8hs. a 20hs. de Lunes a Viernes contando con guardias los 365 días del año tanto en el área clínica, quirúrgica y pediátrica.</p>
 		</div>
 		
 		<section>

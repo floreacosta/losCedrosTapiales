@@ -15,8 +15,8 @@
 				<ul id="element">
 					<li><a href="institucional.php" id="instalaciones" title="Instalaciones">Instalaciones</a></li>
 					<li><a href="especialidades.php" id="especialidades" title="Especialidades">Especialidades</a></li>
-					<li><a href="coberturas-medicas.php" id="coberturas" title="Coberturas Médicas">Coberturas</a></li>
-					<li><a href="medicina-preventiva.php" id="medicina-preventiva" title="Medicina Preventiva">Medicina Preventiva</a></li>
+					<li><a href="cobertura-medica.php" id="coberturas" title="Coberturas Médicas">Coberturas</a></li>
+					<li><a href="servicios.php" id="servicios" title="Servicios">Servicios</a></li>
 				</ul>
 			</div>
 		</nav>

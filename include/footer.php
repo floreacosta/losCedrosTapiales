@@ -19,7 +19,7 @@
 				<li><a href="institucional.php">Instalaciones</a></li>
 				<li><a href="especialidades.php">Especialidades</a></li>
 				<li><a href="coberturas-medicas.php">Coberturas</a></li>
-				<li><a href="medicina-preventiva.php">Medicina Preventiva</a></li>
+				<li><a href="servicios.php">Servicios</a></li>
 			</ul>
 		</div>
 

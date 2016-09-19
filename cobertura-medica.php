@@ -17,10 +17,10 @@
 		<h1>
 			Coberturas
 			<br/>
-			Medicas
+			Médicas
 		</h1>
 		<div class="col-paragraph">
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam placerat leo id erat cursus, id congue leo maximus. Fusce sodales suscipit sem, ac imperdiet magna venenatis non. Aliquam erat volutpat. Suspendisse nec urna laoreet, hendrerit lorem quis, porta lorem. Nulla sed mi lorem.</p>
+			<p>A continuación se dará detalle de las prestigiosas obras sociales que confiaron en nuestros servicios para darles atención médica a sus afiliados.</p>
 		</div>
 		
 		<section>

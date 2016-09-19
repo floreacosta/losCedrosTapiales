@@ -95,9 +95,9 @@
 			<figure>
 				<img src="img/thumbs-medicina-preventiva.jpg" alt="Medicina Preventiva"/>
 				<figcaption>
-					<h3>Medicina Preventiva</h3>
+					<h3>Servicios Prestados</h3>
 					<p>Contamos con el asesoramiento preventivo por parte de profesionales capacitados para dar la mejor atención a sus pacientes.</p>
-					<a href="medicina-preventiva.php" title="Ver más">+</a>
+					<a href="servicios.php" title="Ver más">+</a>
 				</figcaption>
 			</figure>
 		</article>

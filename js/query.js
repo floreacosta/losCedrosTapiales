@@ -4,30 +4,30 @@ $(document).ready(function() {
 	switch(URLactual) {
 		case '/losCedrosTapiales/institucional.php':
 			$( "#instalaciones" ).addClass("active");
-			$( "#medicina-preventiva" ).remove("active");
+			$( "#servicios" ).remove("active");
 			$( "#coberturas" ).remove("active");
 			$( "#especialidades" ).remove("active");
 		break;
-		case '/losCedrosTapiales/medicina-preventiva.php':
+		case '/losCedrosTapiales/servicios.php':
 			$( "#instalaciones" ).remove("active");
-			$( "#medicina-preventiva" ).addClass("active");
+			$( "#servicios" ).addClass("active");
 			$( "#coberturas" ).remove("active");
 			$( "#especialidades" ).remove("active");
 		break;
-		case '/losCedrosTapiales/coberturas-medicas.php':
+		case '/losCedrosTapiales/cobertura-medica.php':
 			$( "#instalaciones" ).remove("active");
-			$( "#medicina-preventiva" ).remove("active");
+			$( "#servicios" ).remove("active");
 			$( "#coberturas" ).addClass("active");
 			$( "#especialidades" ).remove("active");
 		break;
 		case '/losCedrosTapiales/especialidades.php':
 			$( "#instalaciones" ).remove("active");
-			$( "#medicina-preventiva" ).remove("active");
+			$( "#servicios" ).remove("active");
 			$( "#coberturas" ).remove("active");
 			$( "#especialidades" ).addClass("active");
 		default:
 			$( "#instalaciones" ).remove("active");
-			$( "#medicina-preventiva" ).remove("active");
+			$( "#servicios" ).remove("active");
 			$( "#coberturas" ).remove("active");
 			$( "#especialidades" ).remove("active");
 		break;
