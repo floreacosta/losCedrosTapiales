@@ -102,6 +102,7 @@
 			</figure>
 		</article>
 
+		<a name="online-turn"></a>
 		<article id="turn" class="online-turn">
 			<div>
 				<h1>Solicitud de turnos Online</h1>
@@ -116,6 +117,7 @@
 
 		<article id="contact">
 			<div id="informationBox" class="telephone-line">
+				<a name="address"></a>
 				<span>
 					<h3>Ubicación</h3>
 					<p>Domingo Millan 20, Villa Madero - Cp.: 1688</p>
@@ -132,6 +134,7 @@
 					</p>
 				</span>
 				<span>
+					<a name="contact"></a>
 					<h3>Líneas rotativas</h3>
 					<p>
 						(011) 4622-8188 / (011) 4622-8199
@@ -144,6 +147,7 @@
 			<div class="location" id="map"></div>
 		</article>
 
+		<a name="schedule"></a>
 		<article class="visit" id="visit">
 			<h1>Horarios de visita</h1>
 			<h2>Internación General y Obstetricia: <span>10 a 20 h.</span></h2>

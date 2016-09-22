@@ -836,6 +836,7 @@ footer .search label button:hover {
 .tooltip:before {
   content: '';
   display: inline-block;
+  color: #ffffff;
   width: 2.5em;
   height: 2.5em;
   position: relative;
@@ -844,7 +845,7 @@ footer .search label button:hover {
   background-color: #0d4748;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
-/* line 29, ../sass/common/_tooltip.scss */
+/* line 30, ../sass/common/_tooltip.scss */
 .tooltip .tooltip-text {
   visibility: hidden;
   width: 120px;
@@ -863,7 +864,7 @@ footer .search label button:hover {
   font-variant: normal;
   font-style: normal;
 }
-/* line 44, ../sass/common/_tooltip.scss */
+/* line 45, ../sass/common/_tooltip.scss */
 .tooltip .tooltip-text:after {
   content: '';
   position: absolute;
@@ -874,26 +875,67 @@ footer .search label button:hover {
   border-style: solid;
   border-color: transparent transparent transparent #ffffff;
 }
-/* line 57, ../sass/common/_tooltip.scss */
+/* line 58, ../sass/common/_tooltip.scss */
 .tooltip:hover .tooltip-text {
   visibility: visible;
 }
-
 /* line 63, ../sass/common/_tooltip.scss */
+.tooltip .tooltip-img-content {
+  top: -10px;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  position: absolute;
+  overflow: hidden;
+}
+
+/* line 73, ../sass/common/_tooltip.scss */
 .tooltip-text-primary {
   visibility: visible !important;
 }
 
-/* line 67, ../sass/common/_tooltip.scss */
+/* line 77, ../sass/common/_tooltip.scss */
 .tooltip-active:before {
   background-color: #3d8232;
+}
+
+/* line 81, ../sass/common/_tooltip.scss */
+.tooltip-online-turn {
+  width: 23px;
+  position: relative;
+  left: 9px;
+  top: 7px;
+}
+
+/* line 88, ../sass/common/_tooltip.scss */
+.tooltip-address {
+  width: 23px;
+  position: relative;
+  left: 9px;
+  top: -34px;
+}
+
+/* line 95, ../sass/common/_tooltip.scss */
+.tooltip-contact {
+  width: 23px;
+  position: relative;
+  left: 9px;
+  top: -75px;
+}
+
+/* line 102, ../sass/common/_tooltip.scss */
+.tooltip-schedule {
+  width: 23px;
+  position: relative;
+  left: 9px;
+  top: -114px;
 }
 
 /**
 * Responsive
 **/
 @media (min-width: 600px) {
-  /* line 95, ../sass/common/_tooltip.scss */
+  /* line 117, ../sass/common/_tooltip.scss */
   .tooltip-box {
     display: block;
   }
