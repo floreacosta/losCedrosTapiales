@@ -20,7 +20,7 @@
 
 		.title-information {
 			margin: 5%;
-			margin-bottom: 0em;
+			margin-bottom: 2em;
 			position: relative;
 			z-index: 200;
 
@@ -57,7 +57,7 @@
 					content: '-';
 					font-family: 'modern_pictogramsnormal';
 					@include transform(rotate(90deg));
-					color: $white;
+					color: $color-primary;
 					font-size: 2em;
 					position: absolute;
 					left: .45em;
@@ -281,6 +281,10 @@
 **/
 
 @media (min-width: 400px){
+	.home section .title-information {
+		margin-bottom: 4em;
+	}
+
 	.home .item-section {
 		margin-top: calc(92% - 100%);
 		z-index: 201;
@@ -322,6 +326,7 @@
 				position: absolute;
 				bottom: 4em;
 				font-size: 80%;
+				margin-bottom: 1em;
 
 				br {
 					display: none;
@@ -333,7 +338,8 @@
 
 				h1,
 				p,
-				button {
+				button,
+				button:before {
 					color: $white;
 				}
 			}
@@ -366,7 +372,6 @@
 @media (min-width: 600px) {
 	.home section .title-information {
 		width: 65%;
-		margin-bottom: 1em;
 
 	    br {
 	        display: block;
@@ -541,6 +546,7 @@
 	
 		section .title-information {
 			margin-left: 10%;
+			margin-bottom: 2.5em;
 		}
 	}
 }
