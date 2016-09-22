@@ -27,12 +27,14 @@
 					$('#element').animate({
 						right: '0em'
 					});
+					$('.menu-element').css(heigth, "328px");
 					contador = 0;
 				} else {
 					contador = 1;
 					$('#element').animate({
 						right: '-100%'
 					});
+					$('.menu-element').css(heigth, "auto");
 				}
 			})
 		}

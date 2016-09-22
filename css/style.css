@@ -451,7 +451,6 @@ header .logo a img {
 /* line 74, ../sass/components/_header.scss */
 .menu-element {
   width: 100%;
-  height: 328px;
   display: inline-block;
   overflow: hidden;
   position: relative;
