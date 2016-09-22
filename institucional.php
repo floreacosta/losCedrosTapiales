@@ -10,7 +10,7 @@
 	<main>
 		<div class="box-container-breadcrum">
 			<span><a href="">Home</a></span>
-			<span><a class="active" href="">Coberturas Médicas</a></span>
+			<span><a class="active" href="">Institucional</a></span>
 		</div>
 
 		<h1>

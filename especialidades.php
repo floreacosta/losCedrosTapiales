@@ -11,7 +11,6 @@
 	<main>
 		<div class="box-container-breadcrum">
 			<span><a href="">Home</a></span>
-			<span><a href="">Segunda vista</a></span>
 			<span><a class="active" href="">Especialidades</a></span>
 		</div>
 
