@@ -12,6 +12,7 @@
 	<title>Clínica Los Cedros de Tapiales S.A.</title>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link href="font/modernpictogram/modernpictogram.css" media="screen, projection" rel="stylesheet" type="text/css" />
 	<link href="css/style.css" media="screen, projection" rel="stylesheet" type="text/css" />
 
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
