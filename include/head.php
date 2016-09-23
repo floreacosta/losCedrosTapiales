@@ -24,20 +24,36 @@
 		function menu(){
 			$('.toggle').click(function(){
 				if(contador == 1){
+
 					$('#element').animate({
 						right: '0em'
 					});
-					$('.menu-element').css(heigth, "328px");
+
+					$('.menu-element').css("height", "328px");
+
 					contador = 0;
 				} else {
 					contador = 1;
+
 					$('#element').animate({
 						right: '-100%'
 					});
-					$('.menu-element').css(heigth, "auto");
+
+					$('.menu-element').css("height", "auto");
 				}
 			})
 		}
+		
+		/*
+		var ventana = $(window).width();
+		$( window ).resize(function(ventana){			
+			if((ventana > 1024) && (contador == 1)) {
+				$('#element').animate({ right: '2em' });
+			} else {
+				$('#element').animate({ right: '-100%' });
+			}
+		})
+		*/
 
 		$(document).ready(openVideo);
 		function openVideo(){

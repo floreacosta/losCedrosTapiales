@@ -420,11 +420,12 @@ header .logo a img {
   right: 0;
   position: absolute;
   line-height: 6em;
+  height: 6em;
   display: inline-block;
 }
 
 /* Contenedor del Bot├│n Hamburguesa */
-/* line 55, ../../sass/components/_header.scss */
+/* line 56, ../../sass/components/_header.scss */
 .button-menu {
   width: 2.2em;
   position: relative;
@@ -432,7 +433,7 @@ header .logo a img {
   right: 2em;
   /* Bot├│n Hamburguesa */
 }
-/* line 62, ../../sass/components/_header.scss */
+/* line 63, ../../sass/components/_header.scss */
 .button-menu button {
   border: 0;
   background: transparent;
@@ -444,14 +445,14 @@ header .logo a img {
 }
 
 /* Caja contenedora de elementos del men├║ */
-/* line 74, ../../sass/components/_header.scss */
+/* line 75, ../../sass/components/_header.scss */
 .menu-element {
   width: 100%;
   display: inline-block;
   overflow: hidden;
   position: relative;
 }
-/* line 81, ../../sass/components/_header.scss */
+/* line 82, ../../sass/components/_header.scss */
 .menu-element ul {
   display: inline-block;
   position: absolute;
@@ -464,14 +465,14 @@ header .logo a img {
   /* Elementos contenidos en el men├║ */
   /* items del menu */
 }
-/* line 92, ../../sass/components/_header.scss */
+/* line 93, ../../sass/components/_header.scss */
 .menu-element ul li {
   border-bottom: solid 2px #0d4748;
   line-height: 5em;
   text-align: left;
   padding: 0 2em;
 }
-/* line 98, ../../sass/components/_header.scss */
+/* line 99, ../../sass/components/_header.scss */
 .menu-element ul li a {
   display: inline-block;
   color: #0d4748;
@@ -482,7 +483,7 @@ header .logo a img {
   font-variant: normal;
   font-style: normal;
 }
-/* line 105, ../../sass/components/_header.scss */
+/* line 106, ../../sass/components/_header.scss */
 .menu-element ul li a:after {
   content: '';
   width: .5em;
@@ -494,46 +495,46 @@ header .logo a img {
   right: 0;
   top: calc((80px / 2) - .25em);
 }
-/* line 118, ../../sass/components/_header.scss */
+/* line 119, ../../sass/components/_header.scss */
 .menu-element ul li:hover {
   background-color: #9db5b6;
 }
-/* line 120, ../../sass/components/_header.scss */
+/* line 121, ../../sass/components/_header.scss */
 .menu-element ul li:hover a {
   color: #ffffff;
 }
-/* line 124, ../../sass/components/_header.scss */
+/* line 125, ../../sass/components/_header.scss */
 .menu-element ul li:hover a:after {
   background-color: #ffffff;
 }
 
 /* navegaci├│n en m├│viles */
 @media (min-width: 500px) {
-  /* line 134, ../../sass/components/_header.scss */
+  /* line 135, ../../sass/components/_header.scss */
   header .logo {
     width: 14em;
     left: 1em;
   }
 
   /* Caja contenedora de elementos del men├║ */
-  /* line 140, ../../sass/components/_header.scss */
+  /* line 141, ../../sass/components/_header.scss */
   .menu-element ul {
     width: 50%;
   }
 }
 @media (min-width: 900px) {
   /* Caja contenedora de elementos del men├║ */
-  /* line 148, ../../sass/components/_header.scss */
+  /* line 149, ../../sass/components/_header.scss */
   .menu-element ul {
     width: 30%;
   }
 }
 @media (min-width: 1024px) {
-  /* line 154, ../../sass/components/_header.scss */
+  /* line 155, ../../sass/components/_header.scss */
   header {
     height: 5.5em;
   }
-  /* line 157, ../../sass/components/_header.scss */
+  /* line 158, ../../sass/components/_header.scss */
   header .logo {
     width: 20%;
     height: 100%;
@@ -543,11 +544,11 @@ header .logo a img {
     position: relative;
     left: 3em;
   }
-  /* line 166, ../../sass/components/_header.scss */
+  /* line 167, ../../sass/components/_header.scss */
   header .logo a {
     width: 13em;
   }
-  /* line 169, ../../sass/components/_header.scss */
+  /* line 170, ../../sass/components/_header.scss */
   header .logo a img {
     max-width: 100%;
     position: relative;
@@ -555,17 +556,17 @@ header .logo a img {
   }
 
   /* Contenedor del Bot├│n Hamburguesa */
-  /* line 179, ../../sass/components/_header.scss */
+  /* line 180, ../../sass/components/_header.scss */
   .button-menu {
     display: none;
   }
 
   /* men├║ en desktop, 1024px en adelante */
-  /* line 184, ../../sass/components/_header.scss */
+  /* line 185, ../../sass/components/_header.scss */
   .menu-element {
     /* Fin men├║ en desktop, 1024px en adelante */
   }
-  /* line 186, ../../sass/components/_header.scss */
+  /* line 187, ../../sass/components/_header.scss */
   .menu-element ul {
     height: 100%;
     width: calc(14.4em + 392.2px);
@@ -576,22 +577,22 @@ header .logo a img {
     box-shadow: none;
     top: 0;
   }
-  /* line 196, ../../sass/components/_header.scss */
+  /* line 197, ../../sass/components/_header.scss */
   .menu-element ul li {
     padding: 0 1.8em;
     float: left;
     line-height: calc(5.5em - 6px);
     border: 0;
   }
-  /* line 202, ../../sass/components/_header.scss */
+  /* line 203, ../../sass/components/_header.scss */
   .menu-element ul li:hover {
     background-color: transparent;
   }
-  /* line 205, ../../sass/components/_header.scss */
+  /* line 206, ../../sass/components/_header.scss */
   .menu-element ul li:hover a {
     color: #0d4748;
   }
-  /* line 210, ../../sass/components/_header.scss */
+  /* line 211, ../../sass/components/_header.scss */
   .menu-element ul li a {
     color: #0d4748;
     width: 100%;
@@ -602,12 +603,12 @@ header .logo a img {
     display: inline-block;
     text-align: center;
   }
-  /* line 217, ../../sass/components/_header.scss */
+  /* line 218, ../../sass/components/_header.scss */
   .menu-element ul li a:after {
     content: '';
     display: none;
   }
-  /* line 222, ../../sass/components/_header.scss */
+  /* line 223, ../../sass/components/_header.scss */
   .menu-element ul li a:hover, .menu-element ul li a.active {
     border-bottom: solid 6px #0d4748;
   }
