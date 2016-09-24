@@ -44,16 +44,21 @@
 			})
 		}
 		
-		/*
-		var ventana = $(window).width();
-		$( window ).resize(function(ventana){			
-			if((ventana > 1024) && (contador == 1)) {
-				$('#element').animate({ right: '2em' });
-			} else {
-				$('#element').animate({ right: '-100%' });
-			}
-		})
-		*/
+		$(document).ready(prueba);
+		function prueba() {
+			$( window ).resize(function(){
+				var ventana = $(window).width();
+				var	right = $('#element').css('right');
+				var	pat = 'px';
+
+				right = right.replace(pat, '');
+				right = parseInt(right);
+
+				if((ventana > 1024) && (right < -1024)) {
+					$('#element').css('right', '2em');
+				}
+			})
+		}
 
 		$(document).ready(openVideo);
 		function openVideo(){

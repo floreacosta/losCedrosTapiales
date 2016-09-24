@@ -1914,7 +1914,7 @@ footer .search label button:hover {
 .home #contact {
   margin: 2em 0;
   clear: both;
-  display: inline-block;
+  display: block;
   width: 100%;
 }
 /* line 163, ../sass/_index.scss */
@@ -2192,10 +2192,11 @@ footer .search label button:hover {
   .home #contact {
     height: auto;
     position: relative;
+    display: inline-block;
     margin-top: -170px;
     z-index: 203;
   }
-  /* line 445, ../sass/_index.scss */
+  /* line 446, ../sass/_index.scss */
   .home #contact .telephone-line,
   .home #contact .location {
     width: 46%;
@@ -2206,23 +2207,23 @@ footer .search label button:hover {
     float: left;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   }
-  /* line 455, ../sass/_index.scss */
+  /* line 456, ../sass/_index.scss */
   .home #contact .telephone-line h3,
   .home #contact .location h3 {
     color: #ffffff;
   }
-  /* line 460, ../sass/_index.scss */
+  /* line 461, ../sass/_index.scss */
   .home #contact .telephone-line {
     margin-left: 0;
     border-left: 8px solid #3d8232;
     padding: 1em 2em;
     position: relative;
   }
-  /* line 466, ../sass/_index.scss */
+  /* line 467, ../sass/_index.scss */
   .home #contact .telephone-line span {
     margin-bottom: 1em;
   }
-  /* line 470, ../sass/_index.scss */
+  /* line 471, ../sass/_index.scss */
   .home #contact .telephone-line:after {
     content: '';
     position: absolute;
@@ -2232,77 +2233,77 @@ footer .search label button:hover {
     border-style: solid;
     border-color: transparent transparent transparent #34694e;
   }
-  /* line 481, ../sass/_index.scss */
+  /* line 482, ../sass/_index.scss */
   .home #contact .location {
     display: inline-block;
     margin-right: 0;
   }
-  /* line 486, ../sass/_index.scss */
+  /* line 487, ../sass/_index.scss */
   .home #contact > span {
     display: none;
   }
 }
 @media (min-width: 900px) {
-  /* line 494, ../sass/_index.scss */
+  /* line 495, ../sass/_index.scss */
   .home section {
     height: calc(100vh - 7em);
   }
 
-  /* line 499, ../sass/_index.scss */
+  /* line 500, ../sass/_index.scss */
   .home section .title-information {
     width: 40%;
   }
-  /* line 503, ../sass/_index.scss */
+  /* line 504, ../sass/_index.scss */
   .home section.information-level-two {
     height: 75vh;
   }
 
-  /* line 508, ../sass/_index.scss */
+  /* line 509, ../sass/_index.scss */
   .home .online-turn {
     top: 33px;
   }
-  /* line 511, ../sass/_index.scss */
+  /* line 512, ../sass/_index.scss */
   .home .online-turn div {
     padding-left: 2em;
     padding-right: 2em;
   }
-  /* line 515, ../sass/_index.scss */
+  /* line 516, ../sass/_index.scss */
   .home .online-turn div h1 {
     font-size: 2.5em;
     line-height: 1.25em;
     margin-right: .5em;
   }
 
-  /* line 524, ../sass/_index.scss */
+  /* line 525, ../sass/_index.scss */
   .home .visit {
     font-size: 100%;
     padding: 2em;
   }
 }
 @media (min-width: 1024px) {
-  /* line 533, ../sass/_index.scss */
+  /* line 534, ../sass/_index.scss */
   .home {
     margin: 2% 10%;
     margin-top: 0;
     width: calc(100% - 20%);
   }
-  /* line 538, ../sass/_index.scss */
+  /* line 539, ../sass/_index.scss */
   .home section {
     margin: 0 -12.5%;
     width: calc(100% + 25%);
   }
-  /* line 542, ../sass/_index.scss */
+  /* line 543, ../sass/_index.scss */
   .home section video {
     top: -5em;
   }
-  /* line 547, ../sass/_index.scss */
+  /* line 548, ../sass/_index.scss */
   .home section .title-information {
     margin-left: 10%;
     margin-bottom: 2.5em;
   }
 }
 @media (min-width: 1400px) {
-  /* line 556, ../sass/_index.scss */
+  /* line 557, ../sass/_index.scss */
   .home section .title-information {
     width: 20%;
   }

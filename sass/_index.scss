@@ -157,7 +157,7 @@
 	#contact {
 		margin: 2em 0;
 		clear: both;
-		display: inline-block;
+		display: block;
 		width: 100%;
 
 		.telephone-line span {
@@ -439,6 +439,7 @@
 	.home #contact {
 		height: auto;
 		position: relative;
+		display: inline-block;
 		margin-top: -170px;
 		z-index: 203;
 	
