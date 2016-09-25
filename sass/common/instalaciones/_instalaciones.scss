@@ -1,0 +1,35 @@
+/* Institucional */
+.photograpy-information {
+	margin: 0 5% 8%;
+}
+
+.photograpy-secondary {
+	margin-bottom: 0em;
+	margin-top: 0em;
+}
+
+.menu-instalaciones {
+	margin-top: -1em;
+}
+
+/**
+* Responsive width
+**/
+
+@media (min-width: 735px) {
+	.photograpy-information {
+		margin: 0;
+	}
+}
+
+@media (min-width: 700px) {
+
+	.photograpy-secondary {
+		margin-bottom: .5em;
+		margin-top: .5em;
+	}
+	
+	.menu-instalaciones {
+		margin-top: 0em;
+	}
+}

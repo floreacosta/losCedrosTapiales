@@ -34,7 +34,7 @@
 	?>
 
 	<main class="home">
-		<section>
+		<section class="section-primary">
 			<div class="background-shadow"></div>
 			<video loop muted autoplay>
 				<source src="video/losCedros.webm" type='video/webm; codecs="vp8, vorbis"' />
@@ -63,7 +63,7 @@
 			</div>
 		</section>
 
-		<article class="item-section">
+		<article class="article-sections-item">
 
 			<figure>
 				<img src="img/thumbs-instalaciones.jpg" alt="Instalaciones y Equipamiento"/>
@@ -103,20 +103,20 @@
 		</article>
 
 		<a name="online-turn"></a>
-		<article id="turn" class="online-turn">
+		<article id="turn" class="article-online-turn">
 			<div>
 				<h1>Solicitud de turnos Online</h1>
 				<span>| Click <a href="#">aquí</a> para continuar</span>
 			</div>
 		</article>
 
-		<section class="information-level-two">
+		<section class="section-secondary">
 			<div class="background-shadow"></div>
 			<img src="img/recepcion.jpg" alt="Recepción"/>
 		</section>
 
-		<article id="contact">
-			<div id="informationBox" class="telephone-line">
+		<article class="article-information-for-user" id="contact">
+			<div class="telephone-line" id="informationBox">
 				<a name="address"></a>
 				<span>
 					<h3>Ubicación</h3>
@@ -144,11 +144,11 @@
 				</span>
 			</div>
 			<span>Click <a href="https://goo.gl/maps/yPByzy2b1YR2">aquí</a> para ver en Google Maps.</span>
-			<div class="location" id="map"></div>
+			<div class="location-google-map location" id="map"></div>
 		</article>
 
 		<a name="schedule"></a>
-		<article class="visit" id="visit">
+		<article class="article-visit-schedule" id="visit">
 			<h1>Horarios de visita</h1>
 			<h2>Internación General y Obstetricia: <span>10 a 20 h.</span></h2>
 			<h2>Terapia Intensiva y Unidad Coronaria: <span>12 a 13 h. y de 19 a 20 h.</span></h2>
