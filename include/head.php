@@ -44,8 +44,8 @@
 			})
 		}
 		
-		$(document).ready(prueba);
-		function prueba() {
+		$(document).ready(fixedMenu);
+		function fixedMenu() {
 			$( window ).resize(function(){
 				var ventana = $(window).width();
 				var	right = $('#element').css('right');
@@ -72,6 +72,10 @@
 		function closeVideo(){
 			$('#button-video-close').click(function(){
 				$( "#video-container" ).removeClass("video-open");
+
+				var v = document.getElementsByTagName("video")[1];
+				v.pause();
+				v.load();
 			})
 		}
 
@@ -79,6 +83,10 @@
 		function closeVideoContainer(){
 			$('#video-container').click(function(){
 				$( "#video-container" ).removeClass("video-open");
+
+				var v = document.getElementsByTagName("video")[1];
+				v.pause();
+				v.load();
 			})
 		}
 
