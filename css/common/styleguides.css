@@ -1002,11 +1002,16 @@ footer .search label button:hover {
   margin: auto;
 }
 
+/* line 65, ../../sass/common/_item-box.scss */
+.show {
+  display: block !important;
+}
+
 /**
 * Responsive
 **/
 @media (min-width: 500px) {
-  /* line 70, ../../sass/common/_item-box.scss */
+  /* line 74, ../../sass/common/_item-box.scss */
   .information-item,
   .logotypes-medic {
     position: relative;
@@ -1017,7 +1022,7 @@ footer .search label button:hover {
   }
 }
 @media (min-width: 700px) {
-  /* line 81, ../../sass/common/_item-box.scss */
+  /* line 85, ../../sass/common/_item-box.scss */
   .information-item,
   .logotypes-medic {
     width: 30%;
@@ -1025,7 +1030,7 @@ footer .search label button:hover {
   }
 }
 @media (min-width: 900px) {
-  /* line 89, ../../sass/common/_item-box.scss */
+  /* line 93, ../../sass/common/_item-box.scss */
   .information-item,
   .logotypes-medic {
     width: 23%;
@@ -1033,7 +1038,7 @@ footer .search label button:hover {
   }
 }
 @media (min-width: 1024px) {
-  /* line 97, ../../sass/common/_item-box.scss */
+  /* line 101, ../../sass/common/_item-box.scss */
   .information-item,
   .logotypes-medic {
     width: 18%;
@@ -1053,7 +1058,7 @@ footer .search label button:hover {
   z-index: 100;
   display: none;
 }
-/* line 14, ../../sass/common/_modal.scss */
+/* line 13, ../../sass/common/_modal.scss */
 .modal .modal-container, .modal-video .modal-container, .modal-video .modal-container-video {
   background-color: #ffffff;
   padding: 3em;
@@ -1064,7 +1069,7 @@ footer .search label button:hover {
   position: relative;
   color: #34694e;
 }
-/* line 24, ../../sass/common/_modal.scss */
+/* line 23, ../../sass/common/_modal.scss */
 .modal .modal-container .button-close-information, .modal-video .modal-container .button-close-information, .modal-video .modal-container-video .button-close-information {
   margin-top: -25px;
   border: 0;
@@ -1092,7 +1097,7 @@ footer .search label button:hover {
   width: 3px;
   height: 25px;
 }
-/* line 29, ../../sass/common/_modal.scss */
+/* line 28, ../../sass/common/_modal.scss */
 .modal .modal-container h2, .modal-video .modal-container h2, .modal-video .modal-container-video h2 {
   font-size: 2em;
   width: 100%;
@@ -1104,7 +1109,7 @@ footer .search label button:hover {
   font-style: normal;
   text-transform: uppercase;
 }
-/* line 38, ../../sass/common/_modal.scss */
+/* line 37, ../../sass/common/_modal.scss */
 .modal .modal-container h4, .modal-video .modal-container h4, .modal-video .modal-container-video h4 {
   font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
   font-weight: bold;
@@ -1113,27 +1118,27 @@ footer .search label button:hover {
   margin-bottom: .5em;
   font-size: 1.3em;
 }
-/* line 44, ../../sass/common/_modal.scss */
+/* line 43, ../../sass/common/_modal.scss */
 .modal .modal-container p, .modal-video .modal-container p, .modal-video .modal-container-video p {
   font-size: 0.9em;
   line-height: 1.3em;
   color: black;
 }
-/* line 49, ../../sass/common/_modal.scss */
+/* line 48, ../../sass/common/_modal.scss */
 .modal .modal-container p:first-of-type, .modal-video .modal-container p:first-of-type, .modal-video .modal-container-video p:first-of-type {
   margin-top: 0;
 }
-/* line 53, ../../sass/common/_modal.scss */
+/* line 52, ../../sass/common/_modal.scss */
 .modal .modal-container p:last-of-type, .modal-video .modal-container p:last-of-type, .modal-video .modal-container-video p:last-of-type {
   margin-bottom: 0;
 }
 
-/* line 63, ../../sass/common/_modal.scss */
+/* line 62, ../../sass/common/_modal.scss */
 .modal-video .modal-container-video {
   width: 75%;
   top: 50px;
 }
-/* line 68, ../../sass/common/_modal.scss */
+/* line 67, ../../sass/common/_modal.scss */
 .modal-video .modal-container-video button {
   border: 0;
   background: transparent;
@@ -1162,11 +1167,11 @@ footer .search label button:hover {
   width: 3px;
   height: 25px;
 }
-/* line 73, ../../sass/common/_modal.scss */
+/* line 72, ../../sass/common/_modal.scss */
 .modal-video .modal-container-video button:before, .modal-video .modal-container-video button:after {
   background-color: #ffffff;
 }
-/* line 79, ../../sass/common/_modal.scss */
+/* line 78, ../../sass/common/_modal.scss */
 .modal-video .modal-container-video video {
   width: 100%;
 }

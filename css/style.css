@@ -1006,11 +1006,16 @@ footer .search label button:hover {
   margin: auto;
 }
 
+/* line 65, ../sass/common/_item-box.scss */
+.show {
+  display: block !important;
+}
+
 /**
 * Responsive
 **/
 @media (min-width: 500px) {
-  /* line 70, ../sass/common/_item-box.scss */
+  /* line 74, ../sass/common/_item-box.scss */
   .information-item,
   .logotypes-medic {
     position: relative;
@@ -1021,7 +1026,7 @@ footer .search label button:hover {
   }
 }
 @media (min-width: 700px) {
-  /* line 81, ../sass/common/_item-box.scss */
+  /* line 85, ../sass/common/_item-box.scss */
   .information-item,
   .logotypes-medic {
     width: 30%;
@@ -1029,7 +1034,7 @@ footer .search label button:hover {
   }
 }
 @media (min-width: 900px) {
-  /* line 89, ../sass/common/_item-box.scss */
+  /* line 93, ../sass/common/_item-box.scss */
   .information-item,
   .logotypes-medic {
     width: 23%;
@@ -1037,7 +1042,7 @@ footer .search label button:hover {
   }
 }
 @media (min-width: 1024px) {
-  /* line 97, ../sass/common/_item-box.scss */
+  /* line 101, ../sass/common/_item-box.scss */
   .information-item,
   .logotypes-medic {
     width: 18%;

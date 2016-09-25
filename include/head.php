@@ -92,13 +92,39 @@
 
 		$(document).ready(heightMap);
 		function heightMap() {
-			var h = document.getElementById('informationBox').offsetHeight + "px";
-			document.getElementById('map').style.height = h;
+			var h = document.getElementById('informationBox');
+			if (h != "NULL") {
+				h = h.offsetHeight + "px";
+				document.getElementById('map').style.height = h;
+			}
 
 			$(window).resize(function() {
-				h = document.getElementById('informationBox').offsetHeight + "px";
-				document.getElementById('map').style.height = h;
+				h = document.getElementById('informationBox');
+				if (h != "NULL") {
+					h = h.offsetHeight + "px";
+					document.getElementById('map').style.height = h;
+				}
 			});
 		}
+
+		$(document).ready(modalEspecialidades);
+		function modalEspecialidades(){
+			$("#element-list").click(function(e){
+				var href = e.target;
+				href = href.toString().split("#");
+				
+				elemento = "#" + href[1];
+				$(elemento).addClass("show");
+			});
+
+			$('#button-close-information').click(function(){
+				$(elemento).removeClass("show");
+			})
+
+			$(".modal").click(function(){
+				$(elemento).removeClass("show");
+			})
+		}
+
 	</script>
 </head>
