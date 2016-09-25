@@ -25,24 +25,31 @@
 		
 		<section>
 			<ul class="element-list">
-				<li class="logotypes-medic"><img title="" src="img/logo.png" />
-				<li class="logotypes-medic"><img title="" src="img/logo.png" />
-				<li class="logotypes-medic"><img title="" src="img/logo.png" />
-				<li class="logotypes-medic"><img title="" src="img/logo.png" />
-				<li class="logotypes-medic"><img title="" src="img/logo.png" />
-				<li class="logotypes-medic"><img title="" src="img/logo.png" />
-				<li class="logotypes-medic"><img title="" src="img/logo.png" />
-				<li class="logotypes-medic"><img title="" src="img/logo.png" />
-				<li class="logotypes-medic"><img title="" src="img/logo.png" />
-				<li class="logotypes-medic"><img title="" src="img/logo.png" />
-				<li class="logotypes-medic"><img title="" src="img/logo.png" />
-				<li class="logotypes-medic"><img title="" src="img/logo.png" />
-				<li class="logotypes-medic"><img title="" src="img/logo.png" />
-				<li class="logotypes-medic"><img title="" src="img/logo.png" />
-				<li class="logotypes-medic"><img title="" src="img/logo.png" />
-				<li class="logotypes-medic"><img title="" src="img/logo.png" />
-				<li class="logotypes-medic"><img title="" src="img/logo.png" />
-			</ul>
+				<li class="logotypes-medic"><img title="" src="img/obras-sociales/valmed.png" />
+				<li class="logotypes-medic"><img title="" src="img/obras-sociales/suterh-osperyh.png" />
+				<li class="logotypes-medic"><img title="" src="img/obras-sociales/osrja.png" />
+				<li class="logotypes-medic"><img title="" src="img/obras-sociales/ospiv.png" />
+				<li class="logotypes-medic"><img title="" src="img/obras-sociales/ioma.png" />
+
+				<li class="logotypes-medic"><img title="" src="img/obras-sociales/cover-salud.png" />
+				<li class="logotypes-medic"><img title="" src="img/obras-sociales/bristol-medicine.png" />
+				<li class="logotypes-medic"><img title="" src="img/obras-sociales/asmepriv.png" />
+				<li class="logotypes-medic"><img title="" src="img/obras-sociales/scientis-medical.jpg" />
+				<li class="logotypes-medic"><img title="" src="img/obras-sociales/ospjn.jpg" />
+
+				<li class="logotypes-medic"><img title="" src="img/obras-sociales/ospia.jpg" />
+				<li class="logotypes-medic"><img title="" src="img/obras-sociales/ospeca.jpg" />
+				<li class="logotypes-medic"><img title="" src="img/obras-sociales/ospaca.jpg" />
+				<li class="logotypes-medic"><img title="" src="img/obras-sociales/ospa.jpg" />
+				<li class="logotypes-medic"><img title="" src="img/obras-sociales/osecac.jpg" />
+				<li class="logotypes-medic"><img title="" src="img/obras-sociales/galeno.jpg" />
+
+				<li class="logotypes-medic"><img title="" src="img/obras-sociales/ensalud.jpg" />
+				<li class="logotypes-medic"><img title="" src="img/obras-sociales/comisarios-navales.jpg" />
+				<li class="logotypes-medic"><img title="" src="img/obras-sociales/circulo-medico-matanza.jpg" />
+				<li class="logotypes-medic"><img title="" src="img/obras-sociales/activa-salud.jpg" />
+				<li class="logotypes-medic"><img title="" src="img/obras-sociales/osmecon.gif" />
+				</ul>
 		</section>
 	</main>
 <?php
