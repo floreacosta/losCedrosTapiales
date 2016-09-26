@@ -32,17 +32,17 @@
 								<h2>Cirugía Infantil</h2>
 								<ul>
 									<li class="col-3">
-										<h4>Dr. Alejandro Rizk</h4>
+										<h4>Dr. Example</h4>
 										<p>Martes de 14.00 a 15.00 hs.</p>
 										<p>Viernes de 16.00 a 17.00 hs</p>
 									</li>
 									<li class="col-3">
-										<h4>Dr. Alejandro Rizk</h4>
+										<h4>Dr. Example</h4>
 										<p>Martes de 14.00 a 15.00 hs.</p>
 										<p>Viernes de 16.00 a 17.00 hs</p>
 									</li>
 									<li class="col-3">
-										<h4>Dr. Alejandro Rizk</h4>
+										<h4>Dr. Example</h4>
 										<p>Martes de 14.00 a 15.00 hs.</p>
 										<p>Viernes de 16.00 a 17.00 hs</p>
 									</li>
@@ -53,22 +53,22 @@
 					<li class="information-item">
 						<a href="#anestesiologia-cardiovascular">Anestesiología Cardiovascular</a>
 						<article id="anestesiologia-cardiovascular" class="modal">
-							<div class="modal-container">					
+							<div class="modal-container">
 								<button class="button-close-information" title="Cerrar"></button>
 								<h2>Cirugía Infantil</h2>
 								<ul>
 									<li class="col-3">
-										<h4>Dr. Alejandro Rizk</h4>
+										<h4>Dr. Example</h4>
 										<p>Martes de 14.00 a 15.00 hs.</p>
 										<p>Viernes de 16.00 a 17.00 hs</p>
 									</li>
 									<li class="col-3">
-										<h4>Dr. Alejandro Rizk</h4>
+										<h4>Dr. Example</h4>
 										<p>Martes de 14.00 a 15.00 hs.</p>
 										<p>Viernes de 16.00 a 17.00 hs</p>
 									</li>
 									<li class="col-3">
-										<h4>Dr. Alejandro Rizk</h4>
+										<h4>Dr. Example</h4>
 										<p>Martes de 14.00 a 15.00 hs.</p>
 										<p>Viernes de 16.00 a 17.00 hs</p>
 									</li>
@@ -82,8 +82,56 @@
 					<h3>C</h3>
 					<li class="information-item">
 						<a href="#cirugia-infantil">Cirugía Cabeza y Cuello</a>
+						<article id="cirugia-infantil" class="modal">
+							<div class="modal-container">
+								<button class="button-close-information" title="Cerrar"></button>
+								<h2>Cirugía Infantil</h2>
+								<ul>
+									<li class="col-3">
+										<h4>Dr. Example</h4>
+										<p>Martes de 14.00 a 15.00 hs.</p>
+										<p>Viernes de 16.00 a 17.00 hs</p>
+									</li>
+									<li class="col-3">
+										<h4>Dr. Example</h4>
+										<p>Martes de 14.00 a 15.00 hs.</p>
+										<p>Viernes de 16.00 a 17.00 hs</p>
+									</li>
+									<li class="col-3">
+										<h4>Dr. Example</h4>
+										<p>Martes de 14.00 a 15.00 hs.</p>
+										<p>Viernes de 16.00 a 17.00 hs</p>
+									</li>
+								</ul>
+							</div>
+						</article>
 					</li>
-					<li class="information-item"><a href="#">Cirugía General <b>(guardia permanente)</b></a></li>
+					<li class="information-item">
+						<a href="#cirugia-general">Cirugía General <b>(guardia permanente)</b></a>
+						<article id="cirugia-general" class="modal">
+							<div class="modal-container">
+								<button class="button-close-information" title="Cerrar"></button>
+								<h2>Cirugía Infantil</h2>
+								<ul>
+									<li class="col-3">
+										<h4>Dr. Example</h4>
+										<p>Martes de 14.00 a 15.00 hs.</p>
+										<p>Viernes de 16.00 a 17.00 hs</p>
+									</li>
+									<li class="col-3">
+										<h4>Dr. Example</h4>
+										<p>Martes de 14.00 a 15.00 hs.</p>
+										<p>Viernes de 16.00 a 17.00 hs</p>
+									</li>
+									<li class="col-3">
+										<h4>Dr. Example</h4>
+										<p>Martes de 14.00 a 15.00 hs.</p>
+										<p>Viernes de 16.00 a 17.00 hs</p>
+									</li>
+								</ul>
+							</div>
+						</article>
+					</li>
 					<li class="information-item"><a href="#">Cirugía Infantil</a></li>
 					<li class="information-item"><a href="#">Cirugía Plástica reparadora</a></li>
 					<li class="information-item"><a href="#">Cirugía Vascular</a></li>
