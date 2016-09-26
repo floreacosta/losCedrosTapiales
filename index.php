@@ -34,9 +34,9 @@
 	?>
 
 	<main class="home">
-		<section class="section-primary">
+		<section class="section-primary" id="section-primary">
 			<div class="background-shadow"></div>
-			<video loop muted autoplay>
+			<video loop muted autoplay id="video-background">
 				<source src="video/losCedros.webm" type='video/webm; codecs="vp8, vorbis"' />
 				<source src="video/losCedros.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
 				<source src="video/losCedros.ogv" type='video/ogg; codecs="theora, vorbis"' />
@@ -110,9 +110,9 @@
 			</div>
 		</article>
 
-		<section class="section-secondary">
+		<section class="section-secondary" id="section-secondary">
 			<div class="background-shadow"></div>
-			<img src="img/recepcion.jpg" alt="Recepción"/>
+			<img id="imagen-background" src="img/recepcion.jpg" alt="Recepción"/>
 		</section>
 
 		<article class="article-information-for-user" id="contact">

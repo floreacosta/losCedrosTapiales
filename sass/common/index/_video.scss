@@ -14,7 +14,7 @@
 		margin: 5%;
 		margin-bottom: 2em;
 		position: relative;
-		z-index: 200;
+		z-index: 400;
 
 		h1 {
 			font-weight: 300;
@@ -129,13 +129,6 @@
 * Responsive width
 **/
 
-@media (min-width: 400px){
-	.title-information {
-		margin-bottom: 4em;
-	}
-}
-
-
 @media (min-width: 500px){
 	.section-primary {
 		.background-shadow {
@@ -149,9 +142,8 @@
 		.title-information {
 			margin-top: 0;
 			position: absolute;
-			bottom: 4em;
+			bottom: 10%;
 			font-size: 80%;
-			margin-bottom: 1em;
 
 			br {
 				display: none;
@@ -187,25 +179,23 @@
 	.section-primary {
 		.title-information {
 			font-size: 100%;
-			margin-bottom: 2em;
 		}
 
 		video {
 			width: 100%;
 			position: absolute;
+
+			top: 50%;
+			@include transform(translateY(-50%));
 		}
 	}
 }
 
 @media (min-width: 1024px){
 	.section-primary {
-		video {
-			top: -5em;
-		}
-
 		.title-information {
 			margin-left: 10%;
-			margin-bottom: 2.5em;
+			bottom: 15%;
 		}
 	}
 }
@@ -213,7 +203,8 @@
 @media (min-width: 1400px){
 	.section-primary {
 		.title-information {
-			width: 20%;
+			bottom: 22%;
+			width: 35%;
 		}
 	}
 }

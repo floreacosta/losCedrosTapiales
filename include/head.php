@@ -107,6 +107,65 @@
 			});
 		}
 
+		$(document).ready(heightSection);
+		function heightSection() {
+			var ventana = $(window).width();
+			var h = document.getElementById('video-background');
+			if((ventana > 0) && (ventana < 500)) {
+				$('#section-primary').css('height', 'auto');				
+			} else if ((ventana >= 500) && (ventana <= 1024)){
+				if (h != "NULL") {
+					h = h.offsetHeight + "px";
+					document.getElementById('section-primary').style.height = h;
+				}
+			} else {
+				$('#section-primary').css('height', '500px');
+			}
+
+
+			$(window).resize(function() {
+				var ventana = $(window).width();
+				var h = document.getElementById('video-background');
+				if((ventana > 0) && (ventana < 500)) {
+					$('#section-primary').css('height', 'auto');				
+				} else if ((ventana >= 500) && (ventana <= 1024)){
+					if (h != "NULL") {
+						h = h.offsetHeight + "px";
+						document.getElementById('section-primary').style.height = h;
+					}
+				} else {
+					$('#section-primary').css('height', '500px');
+				}
+			});
+		}
+
+		$(document).ready(heightSectionSecondary);
+		function heightSectionSecondary() {
+			var ventana = $(window).width();
+			var h = document.getElementById('imagen-background');
+			if(ventana < 1024) {
+				if (h != "NULL") {
+					h = h.offsetHeight + "px";
+					document.getElementById('section-secondary').style.height = h;
+				}
+			} else {
+				$('#section-secondary').css('height', '500px');
+			}
+
+			$(window).resize(function() {
+				var ventana = $(window).width();
+				var h = document.getElementById('imagen-background');
+				if(ventana < 1024) {
+					if (h != "NULL") {
+						h = h.offsetHeight + "px";
+						document.getElementById('section-secondary').style.height = h;
+					}
+				} else {
+					$('#section-secondary').css('height', '500px');
+				}
+			});
+		}
+
 		$(document).ready(modalEspecialidades);
 		function modalEspecialidades(){
 			$("#element-list").click(function(e){
