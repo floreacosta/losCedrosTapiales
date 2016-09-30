@@ -17,6 +17,7 @@
     &:before {
         content:'';
         display: inline-block;
+        color: $white;
         width: 2.5em;
         height: 2.5em;
         position: relative;
@@ -58,6 +59,15 @@
             visibility: visible;
         }
     }
+
+    .tooltip-img-content {
+        top: -10px;
+        width: 40px;
+        height: 40px;
+        display: inline-block;
+        position: absolute;
+        overflow: hidden;
+    }
 }
 
 .tooltip-text-primary {
@@ -68,20 +78,32 @@
     background-color: $color-tertiary;
 }
 
-#turn-tooltip{
-
+.tooltip-online-turn {
+    width: 23px;
+    position: relative;
+    left: 9px;
+    top: 7px;
 }
 
-#address-tooltip {
-    
+.tooltip-address {
+    width: 23px;
+    position: relative;
+    left: 9px;
+    top: -34px;
 }
 
-#contact-tooltip {
-
+.tooltip-contact {
+    width: 23px;
+    position: relative;
+    left: 9px;
+    top: -75px;
 }
 
-#schedule-tooltip {
-
+.tooltip-schedule {
+    width: 23px;
+    position: relative;
+    left: 9px;
+    top: -114px;
 }
 
 /**

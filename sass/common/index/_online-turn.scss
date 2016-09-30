@@ -1,0 +1,55 @@
+/* Turnos Online */
+.article-online-turn {
+	background-color: $color-light;
+	width: 100%;
+	position: relative;
+	padding: 1em;
+	
+	div {
+		display: inline-block;
+		
+		h1 {
+			margin: 0;
+			margin-bottom: .5em;
+			display: inline-block;
+			font-size: 1.5em;
+		}
+
+		a {
+			text-decoration: underline;
+		}
+	}
+}
+
+/**
+* Responsive width
+**/
+
+@media (min-width: 500px){
+	.article-online-turn {
+		top: 33px;
+		z-index: 202;
+		text-align: center;
+
+		div h1 {
+			margin-bottom: 0;
+		}
+	}
+}
+
+@media (min-width: 900px){
+	.article-online-turn {
+		top: 33px;
+		
+		div {
+			padding-left: 2em;
+			padding-right: 2em;
+
+			h1 {
+				font-size: 2.5em;
+				line-height: 1.25em;
+				margin-right: .5em;
+			}
+		}
+	}
+}

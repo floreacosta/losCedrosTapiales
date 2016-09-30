@@ -2,7 +2,7 @@
 	<main>
 		<div class="box-container-breadcrum">
 			<span><a href="">Home</a></span>
-			<span><a class="active" href="">Coberturas Médicas</a></span>
+			<span><a class="active" href="">Institucional</a></span>
 		</div>
 
 		<h1>
@@ -11,7 +11,7 @@
 			y Equipamiento técnico
 		</h1>
 		<div class="col-paragraph">
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam placerat leo id erat cursus, id congue leo maximus. Fusce sodales suscipit sem, ac imperdiet magna venenatis non. Aliquam erat volutpat. Suspendisse nec urna laoreet, hendrerit lorem quis, porta lorem. Nulla sed mi lorem.</p>
+			<p>Para una mejor atención del paciente contamos con una importante y moderna infraestructura, edificio de 4 plantas totalmente renovados, más de 20 consultorios, 5 sectores de internación, nuevos y amplios quirófanos, nueva sala de parto y pre-parto, ampliación de la unidad de cuidados intensivos y sector de esterilización. Todos ellos cuentan con tecnología de última generación.</p>
 		</div>
 		
 		<section>
@@ -27,13 +27,13 @@
 
 			<div class="photograpy-primary">
 				<div id="box-1" class="box-description flecha-right">
-					<p>Área de urgencias y emergencias con 9 shock-rooms equipados con complejidad de cuidados críticos.</p>
+					<p>Clínica Los Cedros de tapiales ofrece una infraestructura de de 4 plantas totalmente renovados.</p>
 				</div>			
 				<div id="box-2" class="box-description flecha-left">
-					<p>Área de urgencias y emergencias con 9 shock-rooms equipados con complejidad de cuidados críticos.</p>
+					<p>Posee 5 sectores de internación clínica, quirúrgica y de obstetricia.</p>
 				</div>			
 				<a name="edificio"></a>
-				<img src="<?= base_url(); ?>img/presentacion.jpg" alt="Clinica Los Cedros de Tapiales"/>
+				<img src="img/presentacion.jpg" alt="Clinica Los Cedros de Tapiales"/>
 			</div>
 
 			<div class="photograpy-secondary">
@@ -44,8 +44,8 @@
 						modernizada
 					</h1>
 					<div class="col-paragraph-photograpy">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam placerat leo id erat cursus, id congue leo maximus.</p>
-					</div>		
+						<p>Área de consultorios externos con gran capacidad y comodidad. Se atienden todas las especialidades con turno previo. Sector de urgencias y emergencias con shock-rooms equipados con complejidad de cuidados críticos.</p>
+					</div>
 				</article>
 				<a name="sala-de-espera"></a>
 				<img class="second-img" src="<?= base_url(); ?>img/sala-de-espera.jpg" alt="Sala de espera de guardia"/>
@@ -53,12 +53,12 @@
 
 			<div class="photograpy-secondary">
 				<div id="box-3" class="box-description flecha-bottom">
-					<p>Área de urgencias y emergencias con 9 shock-rooms equipados con complejidad de cuidados críticos.</p>
+					<p>Áreas de internación con amplia iluminación y cómoda accesibilidad para todo tipo de pacientes.</p>
 				</div>
 				<img src="<?= base_url(); ?>img/ascensor.jpg" alt="Instalaciones internas"/>
 
 				<div id="box-4" class="box-description flecha-top">
-					<p>Área de urgencias y emergencias con 9 shock-rooms equipados con complejidad de cuidados críticos.</p>
+					<p>Las suites de internación disponen con aire acondicionado, televisión satelital, Wifi y comodidades para acompañantes.</p>
 				</div>
 				<a name="habitaciones"></a>
 				<img class="second-img" src="<?= base_url(); ?>img/habitacion.jpg" alt="Suite para pacientes"/>
@@ -72,7 +72,7 @@
 					</div>		
 				</article>
 				<div id="box-5" class="box-description flecha-right">
-					<p>Área de urgencias y emergencias con 9 shock-rooms equipados con complejidad de cuidados críticos.</p>
+					<p>Consultorios equipados con tecnología de última generación requerida por cada especialidad, contando con equipamiento ginecológico, cardiológico, kinesiológico, etc.</p>
 				</div>
 				<a name="consultorios"></a>
 				<img class="second-img" src="<?= base_url(); ?>img/ginecologia.jpg" alt="Consultorio de ginecología"/>
@@ -80,13 +80,13 @@
 
 			<div class="photograpy-secondary">
 				<div id="box-6" class="box-description flecha-bottom">
-					<p>Área de urgencias y emergencias con 9 shock-rooms equipados con complejidad de cuidados críticos.</p>
+					<p>Equipamiento de primera. Área con nuevo tomógrafo helicoideal funcionando las 24hs.</p>
 				</div>
 				<a name="equipamiento-tecnico"></a>
 				<img src="<?= base_url(); ?>img/tomografo.jpg" alt="Tomografías computadas"/>
 
 				<div id="box-7" class="box-description flecha-top">
-					<p>Área de urgencias y emergencias con 9 shock-rooms equipados con complejidad de cuidados críticos.</p>
+					<p>Radiología. Sector de imágenes simples y contrastadas con guardias permanentes. </p>
 				</div>			
 				<img class="second-img" src="<?= base_url(); ?>img/rayos.jpg" alt="Equipamiento de radiología"/>
 			</div>
@@ -99,7 +99,7 @@
 					</div>		
 				</article>
 				<div id="box-8" class="box-description flecha-right">
-					<p>Área de urgencias y emergencias con 9 shock-rooms equipados con complejidad de cuidados críticos.</p>
+					<p>Laboratorio equipado con tecnología moderna, realizando análisis clínicos y bacteriológicos.</p>
 				</div>			
 				<a name="laboratorio"></a>
 				<img class="second-img" src="<?= base_url(); ?>img/laboratorio.jpg" alt="Laboratorios"/>
@@ -107,12 +107,12 @@
 
 			<div class="photograpy-secondary">
 				<div id="box-9" class="box-description flecha-bottom">
-					<p>Área de urgencias y emergencias con 9 shock-rooms equipados con complejidad de cuidados críticos.</p>
+					<p>Guardias pediátricas equipadas con juegos y entretenimientos para los más chicos.</p>
 				</div>
 				<img src="<?= base_url(); ?>img/pediatria.jpg" alt="Clinica Los Cedros de Tapiales"/>
 
 				<div id="box-10" class="box-description flecha-top">
-					<p>Área de urgencias y emergencias con 9 shock-rooms equipados con complejidad de cuidados críticos.</p>
+					<p>Área de internación pediátrica de máximo confort para el cuidado de cada paciente.</p>
 				</div>
 				<a name="pediatria"></a>
 				<img class="second-img" src="<?= base_url(); ?>img/habitacion-pediatria.jpg" alt="Habitación pediátrica"/>

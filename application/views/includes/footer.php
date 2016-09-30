@@ -1,7 +1,7 @@
 	<footer>
 		<div class="col-4 institutional">
 			<div class="logo">
-				<a href="<?= base_url(); ?>"><img src="<?= base_url(); ?>img/logo.png" title="Clínica Los Cedros de Tapiales S.A."/></a>
+				<a href="<?= base_url(); ?>index"><img src="<?= base_url(); ?>img/logo.png" title="Clínica Los Cedros de Tapiales S.A."/></a>
 			</div>
 			<p>
 				Todos los derechos reservados.
@@ -18,15 +18,15 @@
 				<li><a href="<?= base_url(); ?>index">Home</a></li>
 				<li><a href="<?= base_url(); ?>institucional">Instalaciones</a></li>
 				<li><a href="<?= base_url(); ?>especialidades">Especialidades</a></li>
-				<li><a href="<?= base_url(); ?>coberturasmedicas">Coberturas</a></li>
-				<li><a href="<?= base_url(); ?>medicinapreventiva">Medicina Preventiva</a></li>
+				<li><a href="<?= base_url(); ?>coberturamedica">Coberturas</a></li>
+				<li><a href="<?= base_url(); ?>servicios">Servicios</a></li>
 			</ul>
 		</div>
 
 		<div class="col-4 information">
 			<div class="turn-online">
 				<h3>Turnos On-line</h3>
-				<span>|  Click <a href="">aquí</a> para continuar</span>
+				<span>|  Click <a href="<?= base_url(); ?>">aquí</a> para continuar</span>
 			</div>
 
 			<div class="line-phone">

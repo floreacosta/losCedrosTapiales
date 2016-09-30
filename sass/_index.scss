@@ -20,7 +20,7 @@
 
 		.title-information {
 			margin: 5%;
-			margin-bottom: 0em;
+			margin-bottom: 2em;
 			position: relative;
 			z-index: 200;
 
@@ -52,6 +52,16 @@
 				line-height: 35px;
 				cursor: pointer;
 				font-weight: 300;
+
+				&:before {
+					content: '-';
+					font-family: 'modern_pictogramsnormal';
+					@include transform(rotate(90deg));
+					color: $color-primary;
+					font-size: 2em;
+					position: absolute;
+					left: .45em;
+				}
 			}
 		}
 	}/* Section */
@@ -129,9 +139,6 @@
 		
 		div {
 			display: inline-block;
-			//color: $color-primary;
-			//position: relative;
-			//margin: auto;
 			
 			h1 {
 				margin: 0;
@@ -150,7 +157,7 @@
 	#contact {
 		margin: 2em 0;
 		clear: both;
-		display: inline-block;
+		display: block;
 		width: 100%;
 
 		.telephone-line span {
@@ -198,11 +205,86 @@
 
 }
 
+/* Institucional */
+.photograpy-information {
+	margin: 0 5% 8%;
+}
+
+.photograpy-secondary {
+	margin-bottom: 0em;
+	margin-top: 0em;
+}
+
+.menu-instalaciones {
+	margin-top: -1em;
+}
+
+/* Video container */
+
+.home {
+	.video-container {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		display: none;
+		z-index: 400;
+		background-color: rgba(13, 71, 72, 0.8);
+		
+		button {
+			border: 0;
+			background-color: transparent;
+			position: absolute;
+		    right: 6%;
+			cursor: pointer;
+
+			&:before,
+			&:after {
+				content:'';
+				width: 2px;
+				height: 30px;
+				display: block;
+				margin: auto;
+				background: $white;
+				@include transform(rotate(45deg));
+			}
+
+			&:after {
+				width: 30px;
+				height: 2px;
+				position: relative;
+				top: -16px;
+			}
+		}
+	}
+
+	.video-open {
+		position: fixed;
+		display: block;
+		top: 0;
+		padding: 5%;
+		width: 100%;
+		height: 100%;
+	}
+
+	.video-open video {
+		top: 0;
+		width: 80%;
+		margin: auto;
+		height: auto;
+		display: block;
+		position: relative;
+	}	
+}
+
 /**
 * Responsive width
 **/
 
 @media (min-width: 400px){
+	.home section .title-information {
+		margin-bottom: 4em;
+	}
+
 	.home .item-section {
 		margin-top: calc(92% - 100%);
 		z-index: 201;
@@ -244,6 +326,7 @@
 				position: absolute;
 				bottom: 4em;
 				font-size: 80%;
+				margin-bottom: 1em;
 
 				br {
 					display: none;
@@ -255,7 +338,8 @@
 
 				h1,
 				p,
-				button {
+				button,
+				button:before {
 					color: $white;
 				}
 			}
@@ -288,7 +372,6 @@
 @media (min-width: 600px) {
 	.home section .title-information {
 		width: 65%;
-		margin-bottom: 1em;
 
 	    br {
 	        display: block;
@@ -315,12 +398,25 @@
 			width: 100%;
 			position: absolute;
 		}
-			
+	}
+
+	.photograpy-information {
+		margin: 0;
 	}
 
 }
 
 @media (min-width: 700px) {
+
+	.photograpy-secondary {
+		margin-bottom: .5em;
+		margin-top: .5em;
+	}
+	
+	.menu-instalaciones {
+		margin-top: 0em;
+	}
+
 	.home .item-section {
 		figure {
 			width: 23%;
@@ -343,6 +439,7 @@
 	.home #contact {
 		height: auto;
 		position: relative;
+		display: inline-block;
 		margin-top: -170px;
 		z-index: 203;
 	
@@ -360,7 +457,7 @@
 				color: $white;
 			}
 		}
-		
+
 		.telephone-line {
 			margin-left: 0;
 			border-left: 8px solid $color-tertiary;
@@ -450,6 +547,7 @@
 	
 		section .title-information {
 			margin-left: 10%;
+			margin-bottom: 2.5em;
 		}
 	}
 }

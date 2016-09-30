@@ -12,31 +12,9 @@
 	<title>Clínica Los Cedros de Tapiales S.A.</title>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link href="<?= base_url(); ?>font/modernpictogram/modernpictogram.css" media="screen, projection" rel="stylesheet" type="text/css" />
 	<link href="<?= base_url(); ?>css/style.css" media="screen, projection" rel="stylesheet" type="text/css" />
 
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<script type="text/javascript" src="<?= base_url(); ?>js/query.js"></script>
-
-	<script type="text/javascript">
-		$(document).ready(menu);
-			
-			var contador = 1;
-
-		function menu(){
-			$('.toggle').click(function(){
-				if(contador == 1){
-					$('#element').animate({
-						right: '0em'
-					});
-					contador = 0;
-				}else{
-					contador = 1;
-					$('#element').animate({
-						right: '-100%'
-					});
-				}
-			})
-		}
-	</script>
-
 </head>
