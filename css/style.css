@@ -99,7 +99,7 @@ body {
 
 /* line 20, ../sass/common/_global.scss */
 img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
 }
 
