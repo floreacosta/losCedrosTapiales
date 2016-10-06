@@ -50,21 +50,36 @@
 				<a name="sala-de-espera"></a>
 				<img class="second-img" src="<?= base_url(); ?>img/sala-de-espera.jpg" alt="Sala de espera de guardia"/>
 			</div>
-
-			<div class="photograpy-secondary">
+                        <? 
+                            $contador = 0; 
+                            $totalInstalaciones = count($instalaciones->result());
+                        ?>
+                        <? foreach($instalaciones->result() as $instalacion): 
+                            
+                            if($contador === 0):
+                                $registro = 'primero';    
+                            endif;    
+                        ?>    
+                        <? if($registro === 'primero'): ?>
+                            <div class="photograpy-secondary">
 				<div id="box-3" class="box-description flecha-bottom">
-					<p>Áreas de internación con amplia iluminación y cómoda accesibilidad para todo tipo de pacientes.</p>
+					<p><?= $instalacion->descripcion; ?></p>
 				</div>
-				<img src="<?= base_url(); ?>img/ascensor.jpg" alt="Instalaciones internas"/>
-
-				<div id="box-4" class="box-description flecha-top">
-					<p>Las suites de internación disponen con aire acondicionado, televisión satelital, Wifi y comodidades para acompañantes.</p>
-				</div>
-				<a name="habitaciones"></a>
-				<img class="second-img" src="<?= base_url(); ?>img/habitacion.jpg" alt="Suite para pacientes"/>
-			</div>
-
-			<div class="photograpy-secondary">
+				<img src="<?= base_url(); ?>img/<?= $instalacion->imagen; ?>" alt="<?= $instalacion->nombre; ?>"/>                        
+                        <? endif; ?>
+                        
+                        <? if($registro === 'segundo'): ?>
+                                <div id="box-4" class="box-description flecha-top">
+                                            <p><?= $instalacion->descripcion; ?></p>
+                                    </div>
+                                    <a name="habitaciones"></a>
+                                    <img class="second-img" src="<?= base_url(); ?>img/<?= $instalacion->imagen; ?>" alt="<?= $instalacion->nombre; ?>"/>
+                            </div>
+                        
+                        <? endif; ?>
+                        
+                        <? if($registro === 'tercero'): ?>
+                            <div class="photograpy-secondary">
 				<article class="photograpy-information">				
 					<h1>
 					</h1>
@@ -72,51 +87,29 @@
 					</div>		
 				</article>
 				<div id="box-5" class="box-description flecha-right">
-					<p>Consultorios equipados con tecnología de última generación requerida por cada especialidad, contando con equipamiento ginecológico, cardiológico, kinesiológico, etc.</p>
+					<p><?= $instalacion->descripcion; ?></p>
 				</div>
 				<a name="consultorios"></a>
-				<img class="second-img" src="<?= base_url(); ?>img/ginecologia.jpg" alt="Consultorio de ginecología"/>
-			</div>
-
-			<div class="photograpy-secondary">
-				<div id="box-6" class="box-description flecha-bottom">
-					<p>Equipamiento de primera. Área con nuevo tomógrafo helicoideal funcionando las 24hs.</p>
-				</div>
-				<a name="equipamiento-tecnico"></a>
-				<img src="<?= base_url(); ?>img/tomografo.jpg" alt="Tomografías computadas"/>
-
-				<div id="box-7" class="box-description flecha-top">
-					<p>Radiología. Sector de imágenes simples y contrastadas con guardias permanentes. </p>
-				</div>			
-				<img class="second-img" src="<?= base_url(); ?>img/rayos.jpg" alt="Equipamiento de radiología"/>
-			</div>
-
-			<div class="photograpy-secondary">
-				<article class="photograpy-information">				
-					<h1>
-					</h1>
-					<div class="col-paragraph-photograpy">
-					</div>		
-				</article>
-				<div id="box-8" class="box-description flecha-right">
-					<p>Laboratorio equipado con tecnología moderna, realizando análisis clínicos y bacteriológicos.</p>
-				</div>			
-				<a name="laboratorio"></a>
-				<img class="second-img" src="<?= base_url(); ?>img/laboratorio.jpg" alt="Laboratorios"/>
-			</div>
-
-			<div class="photograpy-secondary">
-				<div id="box-9" class="box-description flecha-bottom">
-					<p>Guardias pediátricas equipadas con juegos y entretenimientos para los más chicos.</p>
-				</div>
-				<img src="<?= base_url(); ?>img/pediatria.jpg" alt="Clinica Los Cedros de Tapiales"/>
-
-				<div id="box-10" class="box-description flecha-top">
-					<p>Área de internación pediátrica de máximo confort para el cuidado de cada paciente.</p>
-				</div>
-				<a name="pediatria"></a>
-				<img class="second-img" src="<?= base_url(); ?>img/habitacion-pediatria.jpg" alt="Habitación pediátrica"/>
-			</div>
+				<img class="second-img" src="<?= base_url(); ?>img/<?= $instalacion->imagen; ?>" alt="<?= $instalacion->nombre; ?>"/>
+                            </div>
+                        <? endif; ?>
+                        
+                        <? 
+                        
+                            if($totalInstalaciones === $contador && $registro === 'primero'):
+                        ?>    
+                            </div>
+                        <?
+                            endif;
+                            $contador++;
+                            if($registro === 'primero'):
+                                $registro = 'segundo';
+                            elseif($registro === 'segundo'):
+                                $registro = 'tercero';
+                            else:
+                                $registro = 'primero';
+                            endif;
+                        endforeach; ?>
 
 		</section>
 	</main>

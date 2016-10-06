@@ -14,8 +14,7 @@ class Servicios extends CI_Controller {
     }
     
     public function index()
-    {   
-
+    {
         $data['servicios'] = $this->servicios_model->getServices();
         $this->load->view('includes/head');
         $this->load->view('includes/header');
