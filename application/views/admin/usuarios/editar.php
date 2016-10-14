@@ -1,12 +1,11 @@
     <body>
-        <?=  form_open() ?>
+        <?=  form_open('admin/usuarios/updateUsuario') ?>
         <?
             $resultado = $usuario->result()[0];
                         
             $hidden = array(
-                'name' => 'id',
-                'type' => 'hidden',
-                'value' => $resultado->id
+                'hiddenId' => $resultado->id,
+                'hiddenNombre' => $resultado->nombre
             );
             $nombre = array(
                 'name' => 'nombre',
@@ -28,6 +27,7 @@
                 'name' => 'confirmation_new_password'
             );
         ?>
+        <?= form_hidden($hidden) ?>
         <?= form_label('Nombre: ', 'nombre') ?>
         <?= form_input($nombre) ?>
         <br>

@@ -35,11 +35,13 @@ class Usuarios_model extends CI_Model {
             'nombre' => $nombre, 
             'usuario' => $usuario, 
             'pass' => $password
-        );
-        
+        );        
         $this->db->where('id', $id);
         $result = $this->db->update('usuarios', $data);
-        var_dump($result);
-        die;
+    }
+    
+    function eliminarUsuario($id){
+        $this->db->where('id', $id);
+        $this->db->delete('usuarios');
     }
 }

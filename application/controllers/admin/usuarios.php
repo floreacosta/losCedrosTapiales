@@ -8,7 +8,7 @@ class Usuarios extends CI_Controller {
         parent::__construct(); // Construct CI's core so that you can use it        
         $this->load->helper('url'); 
         $this->load->database();
-        $this->load->model('usuarios_model');
+        $this->load->model('admin/usuarios_model');
         $this->check_session();
     }
     
@@ -50,37 +50,50 @@ class Usuarios extends CI_Controller {
             
     }
     
-    public function editarUsuario() {
-        if(null !== ($this->input->get('id'))){
+    public function editarFormularioUsuario() {
+        
+        if($this->input->get('id') !== null){
             $id = $this->input->get('id');
             $data['usuario'] = $this->usuarios_model->getUsuario($id);
             $this->load->view('admin/usuarios/editar', $data);
         }else{
-            $id_post = $this->input->post('id');
-            $nombre_post = $this->input->post('nombre');
-            $usuario_post = $this->input->post('user');
-            $old_pass = $this->input->post('old_pass');
-            $new_pass = $this->input->post('new_pass');
-            $confirmation_new_password = $this->input->post('confirmation_new_password');
-            
-            if($this->_resolve_password_match($usuario_post, $old_pass)){
-                if($this->_resolve_new_password_match($new_pass, $confirmation_new_password)){
-                    $password_post = password_hash($new_pass, PASSWORD_BCRYPT);
-                    $data['result'] = $this->usuarios_model->editarUsuario($id_post, $nombre_post, $usuario_post, $password_post);        
-                    $data['usuarios'] = $this->usuarios_model->getUsuarios();
-                    $this->load->view('admin/usuarios/index', $data);
-                }else{
-                    echo('La contraseña nueva no coincide con la confirmación');
-                }
-            }else{
-                echo('La contraseña anterior es incorrecta');
-            }
+            echo "Ha ocurrido un error, intentelo de nuevo por favor";
+            echo anchor(base_url().'admin/usuarios', 'Volver');
+        }        
+    }
+
+    public function updateUsuario(){
+        $id_post = $this->input->post('hiddenId');
+        $old_nombre_user = $this->input->post('hiddenNombre');
+        $nombre_post = $this->input->post('nombre');
+        $usuario_post = $this->input->post('user');
+        $old_pass = $this->input->post('old_pass');
+        $new_pass = $this->input->post('new_pass');
+        $confirmation_new_password = $this->input->post('confirmation_new_password');
+        
+        if($this->_comprobaciones_password($old_nombre_user, $old_pass, $new_pass, $confirmation_new_password)){
+            $password_post = password_hash($new_pass, PASSWORD_BCRYPT);
+            $data['result'] = $this->usuarios_model->editarUsuario($id_post, $nombre_post, $usuario_post, $password_post);        
+            $data['usuarios'] = $this->usuarios_model->getUsuarios();
+            $this->load->view('admin/usuarios/index', $data);
+        }else{
+            echo "ha ocurrido un error";
         }
     }
     
-    public function EliminarUsuario() {
-        
-    }
+    private function _comprobaciones_password($old_nombre_user, $old_pass, $new_pass, $confirmation_new_password){
+        if($this->_resolve_password_match($old_nombre_user, $old_pass)){
+            if($this->_resolve_new_password_match($new_pass, $confirmation_new_password)){
+                return true;
+            }else{
+                echo('La contraseña nueva no coincide con la confirmación');
+                return false;
+            }
+        }else{
+            echo('La contraseña anterior es incorrecta');
+            return false;
+        }
+    }    
 
     private function _resolve_password_match($user, $pass){
         $this->db->where('usuario', $user);
@@ -98,5 +111,16 @@ class Usuarios extends CI_Controller {
         }else{
             return FALSE;
         }
+    }
+    
+    public function EliminarUsuario() {
+      if($this->input->get('id') !== null){
+            $id = $this->input->get('id');
+            $this->usuarios_model->eliminarUsuario($id);
+            redirect(base_url()."admin/usuarios");
+        }else{
+            echo "Ha ocurrido un error, intentelo de nuevo por favor";
+            echo anchor(base_url().'admin/usuarios', 'Volver');
+        }        
     }
 }
