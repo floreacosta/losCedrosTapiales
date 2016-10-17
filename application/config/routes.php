@@ -53,8 +53,7 @@ $route['default_controller'] = 'index';
 $route['404_override'] = '';
 
 //ruteo para backend
-
 $route['admin'] = 'admin/login';
-$route['admin/(:any)'] = 'admin/$1';
-$route['(:any)'] = '$1';
+//$route['admin/(:any)'] = 'admin/login';
+//$route['(:any)'] = '$1';
 //$route['admin/login'] = 'admin/login';

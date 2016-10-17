@@ -7,11 +7,13 @@ class Especialidades extends CI_Controller {
         $this->load->helper('url');
         $this->load->database();
         $this->load->model('especialidades_model');
+        $this->load->model('admin/doctorxespecialidad_model');
     }
 
     public function index()
 	{   
             $data['especialidades'] = $this->especialidades_model->getEspecialidades();
+            $data['doctoresConEspecialidad'] = $this->doctorxespecialidad_model->getdoctoresConEspecialidad();
             $this->load->view('includes/head');
             $this->load->view('includes/header');
             $this->load->view('includes/tooltip');

@@ -12,7 +12,7 @@ class Index extends CI_Controller {
     }
     
     public function index(){
-        $this->load->view('admin/includes/head');
+        $this->load->view('admin/includes/head');        
         echo anchor(base_url().'/admin/index/logout','Cerrar sesión');
         echo '</br>';
         echo anchor(base_url().'admin/usuarios','Administrar usuarios');

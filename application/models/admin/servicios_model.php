@@ -8,6 +8,7 @@ class Servicios_model extends CI_Model {
     
     function getServicios(){
         $query = $this->db->get('servicios');
+        $this->db->order_by("nombre", "asc");
         if($query->num_rows() > 0) return $query;
         else return false;
     }

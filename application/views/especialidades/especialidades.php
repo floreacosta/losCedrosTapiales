@@ -30,19 +30,55 @@
                                         endif;
                                     endif;
 
-                                    if($inicialActual !== $inicialAnterior ): //Si la inicial nueva es distinta a la anterior imprimo la inicial
+                                    if($inicialActual !== $inicialAnterior ){ //Si la inicial nueva es distinta a la anterior imprimo la inicial
                                 ?> 
                                     <div>
                                         <h3>
                                         <?= substr($especialidad->nombre, 0, 1); ?>
                                         </h3>
-                                        <li class="information-item"><a href="#"><?= $especialidad->nombre; ?></a></li>
+                                        <li class="information-item"><a href="#<?= $especialidad->id; ?>"><?= $especialidad->nombre; ?></a>
+                                                <article id="<?= $especialidad->id; ?>" class="modal">
+                                                        <div class="modal-container">					
+                                                                <button class="button-close-information" id="button-close-information" title="Cerrar"></button>
+                                                                <h2><?= $especialidad->nombre; ?></h2>
+                                                                <ul>
+                                                                    <? foreach($doctoresConEspecialidad->result() as $doctorConEspecialidad){
+                                                                        if($doctorConEspecialidad->idEspecialidad === $especialidad->id){ ?>
+                                                                        <li class="col-3">
+                                                                            <h4> <?= $doctorConEspecialidad->nombre; ?></h4>
+                                                                        </li>
+                                                                    <? 
+                                                                        }
+                                                                    }
+                                                                    ?>
+                                                                </ul>
+                                                        </div>
+                                                </article>
+                                        </li>
                                 <? 
-                                    else: //Si son iguales solo imprimo la especialidad
+                                    }else{ //Si son iguales solo imprimo la especialidad
                                 ?>
-                                    <li class="information-item"><a href="#"><?= $especialidad->nombre; ?></a></li>
+                                    <li class="information-item"><a href="#<?= $especialidad->id; ?>"><?= $especialidad->nombre; ?></a>
+                                    <article id="<?= $especialidad->id; ?>" class="modal">
+                                            <div class="modal-container">					
+                                                    <button class="button-close-information" id="button-close-information" title="Cerrar"></button>
+                                                    <h2><?= $especialidad->nombre; ?></h2>
+                                                    <ul>
+                                                            <? foreach($doctoresConEspecialidad->result() as $doctorConEspecialidad){
+                                                                        if($doctorConEspecialidad->idEspecialidad === $especialidad->id){ ?>
+                                                                        <li class="col-3">
+                                                                            <h4> <?= $doctorConEspecialidad->nombre; ?></h4>
+                                                                        </li>
+                                                            <? 
+                                                                }
+                                                            }
+                                                            ?>
+                                                    </ul>
+                                            </div>
+                                    </article>
+                                    </li>
                                 <?
-                                    endif;
+                                    }
                                     $contador++;
                                     $inicialAnterior = substr($especialidad->nombre, 0, 1); //Guardo el valor de la inicial para compararlo con la nueva
                                 endforeach;

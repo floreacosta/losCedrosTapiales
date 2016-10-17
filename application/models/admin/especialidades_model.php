@@ -7,6 +7,7 @@ class Especialidades_model extends CI_Model {
     }
     
     function getEspecialidades(){
+        $this->db->order_by("nombre", "asc");
         $query = $this->db->get('especialidades');
         if($query->num_rows() > 0) return $query;
         else return false;

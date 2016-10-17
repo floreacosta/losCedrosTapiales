@@ -26,6 +26,7 @@ class Doctores_model extends CI_Model {
         );
         
         $this->db->insert('doctores', $data);
+        return $this->db->insert_id();
     }
     
     function editarDoctor($id, $nombre){

@@ -7,6 +7,7 @@ class Coberturas_model extends CI_Model {
     }
     
     function getCoberturas(){
+        $this->db->order_by('nombre', 'asc');
         $query = $this->db->get('coberturas');
         if($query->num_rows() > 0) return $query;
         else return false;
