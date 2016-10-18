@@ -41,11 +41,12 @@
                                                         <div class="modal-container">					
                                                                 <button class="button-close-information" id="button-close-information" title="Cerrar"></button>
                                                                 <h2><?= $especialidad->nombre; ?></h2>
+                                                                <h5>Nuestros profesionales</h5>
                                                                 <ul>
                                                                     <? foreach($doctoresConEspecialidad->result() as $doctorConEspecialidad){
                                                                         if($doctorConEspecialidad->idEspecialidad === $especialidad->id){ ?>
                                                                         <li class="col-3">
-                                                                            <h4> <?= $doctorConEspecialidad->nombre; ?></h4>
+                                                                            <h4><?= strtolower($doctorConEspecialidad->nombre); ?></h4>
                                                                         </li>
                                                                     <? 
                                                                         }
@@ -63,11 +64,12 @@
                                             <div class="modal-container">					
                                                     <button class="button-close-information" id="button-close-information" title="Cerrar"></button>
                                                     <h2><?= $especialidad->nombre; ?></h2>
+                                                    <h5>Nuestros profesionales</h5>
                                                     <ul>
                                                             <? foreach($doctoresConEspecialidad->result() as $doctorConEspecialidad){
                                                                         if($doctorConEspecialidad->idEspecialidad === $especialidad->id){ ?>
                                                                         <li class="col-3">
-                                                                            <h4> <?= $doctorConEspecialidad->nombre; ?></h4>
+                                                                            <h4> <?= strtolower($doctorConEspecialidad->nombre); ?></h4>
                                                                         </li>
                                                             <? 
                                                                 }

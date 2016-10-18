@@ -24,21 +24,32 @@
     		margin-top: -25px;
     		@include button-close;
 		}
-
+		
+		li.col-3 {
+			width: 30%;
+			display: inline-block;
+		}
+		
 		h2 {
 			font-size: 2em;
 			width: 100%;
 			display: block;
 			margin-bottom: 25px;
-			@include font-calibri-bold;
 			text-transform: uppercase;
+			@include font-calibri-bold;
 		}
 
 		h4 {
 			@include font-calibri-bold;
-			margin-bottom: .5em;
+			margin-bottom: 20px;
 			font-size: 1.3em;
-		}
+			text-transform: capitalize;
+    	}
+
+    	h5 {
+			font-size: 21px;
+			margin-bottom: 7px;
+    	}
 
 		p {
 			font-size: 0.9em;
