@@ -2,25 +2,25 @@ $(document).ready(function() {
 	var URLactual = window.location.pathname;
 
 	switch(URLactual) {
-		case '/losCedrosTapiales/institucional.php':
+		case '/losCedrosTapiales/institucional':
 			$( "#instalaciones" ).addClass("active");
 			$( "#servicios" ).remove("active");
 			$( "#coberturas" ).remove("active");
 			$( "#especialidades" ).remove("active");
 		break;
-		case '/losCedrosTapiales/servicios.php':
+		case '/losCedrosTapiales/servicios':
 			$( "#instalaciones" ).remove("active");
 			$( "#servicios" ).addClass("active");
 			$( "#coberturas" ).remove("active");
 			$( "#especialidades" ).remove("active");
 		break;
-		case '/losCedrosTapiales/cobertura-medica.php':
+		case '/losCedrosTapiales/cobertura-medica':
 			$( "#instalaciones" ).remove("active");
 			$( "#servicios" ).remove("active");
 			$( "#coberturas" ).addClass("active");
 			$( "#especialidades" ).remove("active");
 		break;
-		case '/losCedrosTapiales/especialidades.php':
+		case '/losCedrosTapiales/especialidades':
 			$( "#instalaciones" ).remove("active");
 			$( "#servicios" ).remove("active");
 			$( "#coberturas" ).remove("active");
