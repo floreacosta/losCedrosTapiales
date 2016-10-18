@@ -27,7 +27,9 @@ class Servicios_model extends CI_Model {
             'descripcion' => $descripcion
         );
         
-        $this->db->insert('servicios', $data);
+        $result = $this->db->insert('servicios', $data);
+        return $result;
+        
     }
     
     function editarServicio($id, $nombre, $descripcion){
@@ -37,10 +39,12 @@ class Servicios_model extends CI_Model {
         );        
         $this->db->where('id', $id);
         $result = $this->db->update('servicios', $data);
+        return $result;
     }
     
     function eliminarServicio($id){
         $this->db->where('id', $id);
-        $this->db->delete('servicios');
+        $result = $this->db->delete('servicios');
+        return $result;
     }
 }

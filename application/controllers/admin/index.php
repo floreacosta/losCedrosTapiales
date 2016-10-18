@@ -12,20 +12,7 @@ class Index extends CI_Controller {
     }
     
     public function index(){
-        $this->load->view('admin/includes/head');        
-        echo anchor(base_url().'/admin/index/logout','Cerrar sesión');
-        echo '</br>';
-        echo anchor(base_url().'admin/usuarios','Administrar usuarios');
-        echo '</br>';
-        echo anchor(base_url().'admin/coberturas','Administrar coberturas');
-        echo '</br>';
-        echo anchor(base_url().'admin/servicios','Administrar servicios');
-        echo '</br>';
-        echo anchor(base_url().'admin/instalaciones','Administrar instalaciones');
-        echo '</br>';
-        echo anchor(base_url().'admin/especialidades','Administrar especialidades');
-        echo '</br>';
-        echo anchor(base_url().'admin/doctores','Administrar doctores');
+        $this->load->view('admin/includes/head');
         $this->load->view('admin/index');
     }
     

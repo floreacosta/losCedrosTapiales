@@ -33,7 +33,7 @@ class Login extends CI_Controller {
                 }
             
         }       
-        
+        $this->load->view('admin/includes/head');
         $this->load->view('admin/login');
     }
     
