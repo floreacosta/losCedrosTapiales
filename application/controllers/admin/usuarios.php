@@ -14,11 +14,7 @@ class Usuarios extends CI_Controller {
     
     public function index(){
         $data['usuarios'] = $this->usuarios_model->getUsuarios();
-        echo anchor(base_url().'/admin/index/logout','Cerrar sesión');
-        echo '</br>';
-        echo anchor(base_url().'admin/index','Volver al menú principal');
-        echo '</br>';
-        echo anchor(base_url().'admin/usuarios/crearUsuario','Crear nuevo usuarios');
+        $this->load->view('admin/includes/head');
         $this->load->view('admin/usuarios/index', $data);
     }
     
@@ -38,6 +34,7 @@ class Usuarios extends CI_Controller {
     
     public function crearUsuario(){
         if(null === ($this->input->post('nombre'))){
+            $this->load->view('admin/includes/head');
             $this->load->view('admin/usuarios/crear');
         }else{
             $nombre_post = $this->input->post('nombre');
@@ -45,6 +42,8 @@ class Usuarios extends CI_Controller {
             $password_post = password_hash($this->input->post('pass'), PASSWORD_BCRYPT);            
             $data['result'] = $this->usuarios_model->crearUsuario($nombre_post, $usuario_post, $password_post);        
             $data['usuarios'] = $this->usuarios_model->getUsuarios();
+            $data['tipo'] = 'crear';
+            $this->load->view('admin/includes/head');
             $this->load->view('admin/usuarios/index', $data);        
         }
             
@@ -55,6 +54,7 @@ class Usuarios extends CI_Controller {
         if($this->input->get('id') !== null){
             $id = $this->input->get('id');
             $data['usuario'] = $this->usuarios_model->getUsuario($id);
+            $this->load->view('admin/includes/head');
             $this->load->view('admin/usuarios/editar', $data);
         }else{
             echo "Ha ocurrido un error, intentelo de nuevo por favor";
@@ -75,6 +75,8 @@ class Usuarios extends CI_Controller {
             $password_post = password_hash($new_pass, PASSWORD_BCRYPT);
             $data['result'] = $this->usuarios_model->editarUsuario($id_post, $nombre_post, $usuario_post, $password_post);        
             $data['usuarios'] = $this->usuarios_model->getUsuarios();
+            $data['tipo'] = 'editar';
+            $this->load->view('admin/includes/head');
             $this->load->view('admin/usuarios/index', $data);
         }else{
             echo "ha ocurrido un error";
@@ -116,8 +118,11 @@ class Usuarios extends CI_Controller {
     public function EliminarUsuario() {
       if($this->input->get('id') !== null){
             $id = $this->input->get('id');
-            $this->usuarios_model->eliminarUsuario($id);
-            redirect(base_url()."admin/usuarios");
+            $data['tipo'] = 'eliminar';
+            $data['result'] = $this->usuarios_model->eliminarUsuario($id);        
+            $data['usuarios'] = $this->usuarios_model->getUsuarios();
+            $this->load->view('admin/includes/head');
+            $this->load->view('admin/usuarios/index', $data);
         }else{
             echo "Ha ocurrido un error, intentelo de nuevo por favor";
             echo anchor(base_url().'admin/usuarios', 'Volver');

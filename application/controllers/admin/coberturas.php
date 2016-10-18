@@ -15,11 +15,7 @@ class Coberturas extends CI_Controller {
     
     public function index(){
         $data['coberturas'] = $this->coberturas_model->getCoberturas();
-        echo anchor(base_url().'/admin/index/logout','Cerrar sesión');
-        echo '</br>';
-        echo anchor(base_url().'admin/index','Volver al menú principal');
-        echo '</br>';
-        echo anchor(base_url().'admin/coberturas/crearCobertura','Crear nueva cobertura');
+        $this->load->view('admin/includes/head');
         $this->load->view('admin/coberturas/index', $data);
     }
     
@@ -39,11 +35,14 @@ class Coberturas extends CI_Controller {
     
     public function crearCobertura($nombre = null, $imagen = null){
         if(null === $nombre){
+            $this->load->view('admin/includes/head');
             $this->load->view('admin/coberturas/crear');
         }else{
             $data['result'] = $this->coberturas_model->crearCobertura($nombre, $imagen);        
             $data['coberturas'] = $this->coberturas_model->getCoberturas();
             $data['error'] = array('error' => ' ' );
+            $data['tipo'] = 'crear';
+            $this->load->view('admin/includes/head');
             $this->load->view('admin/coberturas/index', $data);
         }
     }
@@ -63,6 +62,7 @@ class Coberturas extends CI_Controller {
         
         if ( ! $this->upload->do_upload('user_file')){
             $data['error'] = array('error' => $this->upload->display_errors());
+            $this->load->view('admin/includes/head');
             $this->load->view('admin/coberturas/crear', $data);
         }
         else{
@@ -86,10 +86,9 @@ class Coberturas extends CI_Controller {
         $this->load->library('upload', $config);
         $this->upload->initialize($config);        
         
-        if ( ! $this->upload->do_upload('user_file')){
+        if (!$this->upload->do_upload('user_file')){
             $data['error'] = array('error' => $this->upload->display_errors());
-            var_dump($data);
-            die;
+            $this->load->view('admin/includes/head');
             $this->load->view('admin/coberturas/crear', $data);
         }
         else{
@@ -104,6 +103,7 @@ class Coberturas extends CI_Controller {
         if($this->input->get('id') !== null){
             $id = $this->input->get('id');
             $data['cobertura'] = $this->coberturas_model->getCobertura($id);
+            $this->load->view('admin/includes/head');
             $this->load->view('admin/coberturas/editar', $data);
         }else{
             echo "Ha ocurrido un error, intentelo de nuevo por favor";
@@ -114,14 +114,19 @@ class Coberturas extends CI_Controller {
     public function updateCoberturas($id = null, $nombre = null, $imagen = null){       
         $data['result'] = $this->coberturas_model->editarCobertura($id, $nombre, $imagen);        
         $data['coberturas'] = $this->coberturas_model->getCoberturas();
+        $data['tipo'] = 'editar';
+        $this->load->view('admin/includes/head');
         $this->load->view('admin/coberturas/index', $data);
     }
     
     public function EliminarCobertura() {
       if($this->input->get('id') !== null){
             $id = $this->input->get('id');
-            $this->coberturas_model->eliminarCobertura($id);
-            redirect(base_url()."admin/coberturas");
+            $data['result'] = $this->coberturas_model->eliminarCobertura($id);      
+            $data['coberturas'] = $this->coberturas_model->getCoberturas();
+            $data['tipo'] = 'eliminar';
+            $this->load->view('admin/includes/head');
+            $this->load->view('admin/coberturas/index', $data);
         }else{
             echo "Ha ocurrido un error, intentelo de nuevo por favor";
             echo anchor(base_url().'admin/coberturas', 'Volver');

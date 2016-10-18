@@ -20,7 +20,8 @@ class Doctorxespecialidad_model extends CI_Model {
             'idDoctor' => $idDoctor    
         );
         
-        $this->db->insert('doctorxespecialidad', $data);
+        $result = $this->db->insert('doctorxespecialidad', $data);
+        return $result;
     }
     
     function editarDoctorxespecialidad($id, $idDoctor, $idEspecialidad){
@@ -30,11 +31,13 @@ class Doctorxespecialidad_model extends CI_Model {
         );        
         $this->db->where('id', $id);
         $result = $this->db->update('doctorxespecialidad', $data);
+        return $result;
     }
     
     function eliminarDoctorxespecialidad($idDoctor){
         $this->db->where('idDoctor', $idDoctor);
-        $this->db->delete('doctorxespecialidad');
+        $result = $this->db->delete('doctorxespecialidad');
+        return $result;
     }
     
     function getdoctoresConEspecialidad(){

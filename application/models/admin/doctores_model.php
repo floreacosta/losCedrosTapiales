@@ -35,10 +35,12 @@ class Doctores_model extends CI_Model {
         );        
         $this->db->where('id', $id);
         $result = $this->db->update('doctores', $data);
+        return $result; 
     }
     
     function eliminarDoctor($id){
         $this->db->where('id', $id);
-        $this->db->delete('doctores');
+        $result = $this->db->delete('doctores');
+        return $result;
     }
 }

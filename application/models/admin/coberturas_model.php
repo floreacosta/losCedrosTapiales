@@ -27,7 +27,8 @@ class Coberturas_model extends CI_Model {
             'imagen' => $imagen
         );
         
-        $this->db->insert('coberturas', $data);
+        $result = $this->db->insert('coberturas', $data);
+        return $result;
     }
     
     function editarCobertura($id, $nombre, $imagen){
@@ -37,10 +38,12 @@ class Coberturas_model extends CI_Model {
         );        
         $this->db->where('id', $id);
         $result = $this->db->update('coberturas', $data);
+        return $result;
     }
     
     function eliminarCobertura($id){
         $this->db->where('id', $id);
-        $this->db->delete('coberturas');
+        $result = $this->db->delete('coberturas');
+        return $result;
     }
 }

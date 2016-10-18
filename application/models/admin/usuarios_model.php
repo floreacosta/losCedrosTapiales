@@ -27,7 +27,8 @@ class Usuarios_model extends CI_Model {
             'pass' => $password
         );
         
-        $this->db->insert('usuarios', $data);
+        $result = $this->db->insert('usuarios', $data);
+        return $result;
     }
     
     function editarUsuario($id, $nombre, $usuario, $password){
@@ -38,10 +39,12 @@ class Usuarios_model extends CI_Model {
         );        
         $this->db->where('id', $id);
         $result = $this->db->update('usuarios', $data);
+        return $result;
     }
     
     function eliminarUsuario($id){
         $this->db->where('id', $id);
-        $this->db->delete('usuarios');
+        $result = $this->db->delete('usuarios');
+        return $result;
     }
 }

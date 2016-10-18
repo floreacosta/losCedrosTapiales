@@ -27,7 +27,8 @@ class Instalaciones_model extends CI_Model {
             'descripcion' => $descripcion
         );
         
-        $this->db->insert('instalaciones', $data);
+        $result = $this->db->insert('instalaciones', $data);
+        return $result;
     }
     
     function editarInstalacion($id, $nombre, $imagen, $descripcion){
@@ -38,10 +39,12 @@ class Instalaciones_model extends CI_Model {
         );        
         $this->db->where('id', $id);
         $result = $this->db->update('instalaciones', $data);
+        return $result;
     }
     
     function eliminarInstalacion($id){
         $this->db->where('id', $id);
-        $this->db->delete('instalaciones');
+        $result = $this->db->delete('instalaciones');
+        return $result;
     }
 }

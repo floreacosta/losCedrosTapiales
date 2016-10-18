@@ -26,7 +26,8 @@ class Especialidades_model extends CI_Model {
             'nombre' => $nombre
         );
         
-        $this->db->insert('especialidades', $data);
+        $result = $this->db->insert('especialidades', $data);
+        return $result;
     }
     
     function editarEspecialidad($id, $nombre){
@@ -35,10 +36,12 @@ class Especialidades_model extends CI_Model {
         );        
         $this->db->where('id', $id);
         $result = $this->db->update('especialidades', $data);
+        return $result;
     }
     
     function eliminarEspecialidad($id){
         $this->db->where('id', $id);
-        $this->db->delete('especialidades');
+        $result = $this->db->delete('especialidades');
+        return $result;
     }
 }

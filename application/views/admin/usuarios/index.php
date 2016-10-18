@@ -1,11 +1,61 @@
-<? foreach($usuarios->result() as $usuario): ?>    
-    <p><?= $usuario->nombre; ?> ------- <?= $usuario->usuario; ?>
-        <a href="<?= base_url(); ?>admin/usuarios/editarFormularioUsuario?id=<?= $usuario->id ?>">Editar</a>
-        <a href="<?= base_url(); ?>admin/usuarios/EliminarUsuario?id=<?= $usuario->id ?>">Eliminar</a>
-    </p>
-<? endforeach; ?>
-<?
-if(isset($result)){
-    echo $result;
-}
-?>
+<body>        
+    <? if(isset($result)){
+        if($result){
+            if($tipo === 'crear'){
+    ?>
+                <div class="alert alert-success text-center">
+                    Usuario creado con exito.
+                </div>
+    <?        }else if($tipo === 'editar'){ ?>
+                <div class="alert alert-success text-center">
+                    Usuario editado con exito.
+                </div>
+    <?        }else{ ?>
+                <div class="alert alert-success text-center">
+                    Usuario eliminado con exito.
+                </div>
+    <?        }
+    ?>
+    
+    
+    <?    }else{ ?>
+    <div class="alert alert-danger text-center">
+        Ocurrió un error, por favor vuelva a intentarlo más tarde.
+    </div>
+    <?    }
+
+    } ?>
+
+    <div class="container">
+      <h2>Gestión de usuarios.</h2>
+      <p>Desde aquí podrá dar de alta nuevos usuarios, editar los existentes o eliminarlos.</p>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Nombre</th>  
+            <th>Usuario</th>
+            <th>Editar usuario</th>
+            <th>Eliminar usuario</th>
+          </tr>
+        </thead>
+        <tbody>
+            <? foreach($usuarios->result() as $usuario): ?>    
+            <tr>
+                <td><?= $usuario->nombre; ?></td>
+                <td><?= $usuario->usuario; ?></td>
+                <td><a href="<?= base_url(); ?>admin/usuarios/editarFormularioUsuario?id=<?= $usuario->id ?>">Editar</a></td>
+                <td><a href="<?= base_url(); ?>admin/usuarios/EliminarUsuario?id=<?= $usuario->id ?>">Eliminar</a></td>
+            </tr>
+            <? endforeach; ?>
+        </tbody>
+      </table>
+            <a href="<?= base_url(); ?>admin/usuarios/crearUsuario" class="btn btn-success" role="button">Crear nuevo usuarios</a>
+            <br>
+            <br>
+            <a href="<?= base_url(); ?>admin/index" class="btn btn-primary" role="button">Volver al menú principal</a>
+            <br>
+            <br>
+            <a href="<?= base_url(); ?>admin/index/logout" class="btn btn-info" role="button">Cerrar sesión</a>
+        </div>
+    </body>
+</html>
