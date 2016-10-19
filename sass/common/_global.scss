@@ -113,7 +113,7 @@ h3 {
 
 @media (min-width: 500px) {
 	.col-paragraph {
-		@include text-paragraph(80%, 2, 40px);
+		@include text-paragraph(80%, 2, 20px);
 	}
 }
 
@@ -124,7 +124,7 @@ h3 {
 		width: 50%;
 
 		.col-paragraph-photograpy {
-			@include text-paragraph(50%, 2, 40px);
+			@include text-paragraph(50%, 2, 20px);
 			width: 80%;
 		}
 	}
@@ -147,7 +147,7 @@ h3 {
 	}
 
 	.col-paragraph {
-		@include text-paragraph(75%, 3, 40px);
+		@include text-paragraph(75%, 3, 20px);
 	}
 }
 

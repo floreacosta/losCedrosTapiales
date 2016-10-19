@@ -95,7 +95,7 @@ body {
 
 /* line 20, ../../sass/common/_global.scss */
 img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
 }
 
@@ -263,11 +263,11 @@ h3 {
     -moz-column-count: 2;
     /* Firefox */
     column-count: 2;
-    -webkit-column-gap: 40px;
+    -webkit-column-gap: 20px;
     /* Chrome, Safari, Opera */
-    -moz-column-gap: 40px;
+    -moz-column-gap: 20px;
     /* Firefox */
-    column-gap: 40px;
+    column-gap: 20px;
   }
   /* line 60, ../../sass/common/_mixin.scss */
   .col-paragraph:first-of-type {
@@ -299,11 +299,11 @@ h3 {
     -moz-column-count: 2;
     /* Firefox */
     column-count: 2;
-    -webkit-column-gap: 40px;
+    -webkit-column-gap: 20px;
     /* Chrome, Safari, Opera */
-    -moz-column-gap: 40px;
+    -moz-column-gap: 20px;
     /* Firefox */
-    column-gap: 40px;
+    column-gap: 20px;
     width: 80%;
   }
   /* line 60, ../../sass/common/_mixin.scss */
@@ -347,11 +347,11 @@ h3 {
     -moz-column-count: 3;
     /* Firefox */
     column-count: 3;
-    -webkit-column-gap: 40px;
+    -webkit-column-gap: 20px;
     /* Chrome, Safari, Opera */
-    -moz-column-gap: 40px;
+    -moz-column-gap: 20px;
     /* Firefox */
-    column-gap: 40px;
+    column-gap: 20px;
   }
   /* line 60, ../../sass/common/_mixin.scss */
   .col-paragraph:first-of-type {
@@ -1055,7 +1055,7 @@ footer .search label button:hover {
   bottom: 0;
   width: 100%;
   height: 100vh;
-  z-index: 100;
+  z-index: 600;
   display: none;
 }
 /* line 13, ../../sass/common/_modal.scss */
@@ -1098,47 +1098,58 @@ footer .search label button:hover {
   height: 25px;
 }
 /* line 28, ../../sass/common/_modal.scss */
+.modal .modal-container li.col-3, .modal-video .modal-container li.col-3, .modal-video .modal-container-video li.col-3 {
+  width: 30%;
+  display: inline-block;
+}
+/* line 33, ../../sass/common/_modal.scss */
 .modal .modal-container h2, .modal-video .modal-container h2, .modal-video .modal-container-video h2 {
   font-size: 2em;
   width: 100%;
   display: block;
   margin-bottom: 25px;
+  text-transform: uppercase;
   font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
   font-weight: bold;
   font-variant: normal;
   font-style: normal;
-  text-transform: uppercase;
 }
-/* line 37, ../../sass/common/_modal.scss */
+/* line 42, ../../sass/common/_modal.scss */
 .modal .modal-container h4, .modal-video .modal-container h4, .modal-video .modal-container-video h4 {
   font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
   font-weight: bold;
   font-variant: normal;
   font-style: normal;
-  margin-bottom: .5em;
+  margin-bottom: 20px;
   font-size: 1.3em;
+  text-transform: capitalize;
 }
-/* line 43, ../../sass/common/_modal.scss */
+/* line 49, ../../sass/common/_modal.scss */
+.modal .modal-container h5, .modal-video .modal-container h5, .modal-video .modal-container-video h5 {
+  font-size: 21px;
+  margin-bottom: 18px;
+}
+/* line 54, ../../sass/common/_modal.scss */
 .modal .modal-container p, .modal-video .modal-container p, .modal-video .modal-container-video p {
   font-size: 0.9em;
   line-height: 1.3em;
   color: black;
 }
-/* line 48, ../../sass/common/_modal.scss */
+/* line 59, ../../sass/common/_modal.scss */
 .modal .modal-container p:first-of-type, .modal-video .modal-container p:first-of-type, .modal-video .modal-container-video p:first-of-type {
   margin-top: 0;
 }
-/* line 52, ../../sass/common/_modal.scss */
+/* line 63, ../../sass/common/_modal.scss */
 .modal .modal-container p:last-of-type, .modal-video .modal-container p:last-of-type, .modal-video .modal-container-video p:last-of-type {
   margin-bottom: 0;
 }
 
-/* line 62, ../../sass/common/_modal.scss */
+/* line 73, ../../sass/common/_modal.scss */
 .modal-video .modal-container-video {
   width: 75%;
   top: 50px;
 }
-/* line 67, ../../sass/common/_modal.scss */
+/* line 78, ../../sass/common/_modal.scss */
 .modal-video .modal-container-video button {
   border: 0;
   background: transparent;
@@ -1167,11 +1178,11 @@ footer .search label button:hover {
   width: 3px;
   height: 25px;
 }
-/* line 72, ../../sass/common/_modal.scss */
+/* line 83, ../../sass/common/_modal.scss */
 .modal-video .modal-container-video button:before, .modal-video .modal-container-video button:after {
   background-color: #ffffff;
 }
-/* line 78, ../../sass/common/_modal.scss */
+/* line 89, ../../sass/common/_modal.scss */
 .modal-video .modal-container-video video {
   width: 100%;
 }
