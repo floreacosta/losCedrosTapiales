@@ -2157,41 +2157,39 @@ footer .search label button:hover {
   width: 100%;
   position: relative;
   padding: 1em;
+  /*
+  &:before {
+      content: 'Proximamente';
+  		@include font-calibri-bold;
+      font-size: 22px;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      background: rgba(110, 110, 110, .8);
+      z-index: 203;
+      color: white;
+      text-transform: uppercase;
+      line-height: 3.5;
+      letter-spacing: 2px;
+      left: 0;
+      text-align: center;
+      top: 50%;
+      transform: translateY(-50%);
+  }
+  */
 }
-/* line 8, ../sass/common/index/_online-turn.scss */
-.article-online-turn:before {
-  content: 'Proximamente';
-  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-  font-weight: bold;
-  font-variant: normal;
-  font-style: normal;
-  font-size: 22px;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  background: rgba(110, 110, 110, 0.8);
-  z-index: 203;
-  color: white;
-  text-transform: uppercase;
-  line-height: 3.5;
-  letter-spacing: 2px;
-  left: 0;
-  text-align: center;
-  top: 50%;
-  transform: translateY(-50%);
-}
-/* line 27, ../sass/common/index/_online-turn.scss */
+/* line 29, ../sass/common/index/_online-turn.scss */
 .article-online-turn div {
   display: inline-block;
 }
-/* line 30, ../sass/common/index/_online-turn.scss */
+/* line 32, ../sass/common/index/_online-turn.scss */
 .article-online-turn div h1 {
   margin: 0;
   margin-bottom: .5em;
   display: inline-block;
   font-size: 1.5em;
 }
-/* line 37, ../sass/common/index/_online-turn.scss */
+/* line 39, ../sass/common/index/_online-turn.scss */
 .article-online-turn div a {
   text-decoration: underline;
 }
@@ -2200,28 +2198,28 @@ footer .search label button:hover {
 * Responsive width
 **/
 @media (min-width: 500px) {
-  /* line 48, ../sass/common/index/_online-turn.scss */
+  /* line 50, ../sass/common/index/_online-turn.scss */
   .article-online-turn {
     top: 33px;
     z-index: 202;
     text-align: center;
   }
-  /* line 53, ../sass/common/index/_online-turn.scss */
+  /* line 55, ../sass/common/index/_online-turn.scss */
   .article-online-turn div h1 {
     margin-bottom: 0;
   }
 }
 @media (min-width: 900px) {
-  /* line 60, ../sass/common/index/_online-turn.scss */
+  /* line 62, ../sass/common/index/_online-turn.scss */
   .article-online-turn {
     top: 33px;
   }
-  /* line 63, ../sass/common/index/_online-turn.scss */
+  /* line 65, ../sass/common/index/_online-turn.scss */
   .article-online-turn div {
     padding-left: 2em;
     padding-right: 2em;
   }
-  /* line 67, ../sass/common/index/_online-turn.scss */
+  /* line 69, ../sass/common/index/_online-turn.scss */
   .article-online-turn div h1 {
     font-size: 2.5em;
     line-height: 1.25em;
