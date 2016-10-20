@@ -14,11 +14,7 @@ class Especialidades extends CI_Controller {
     
     public function index(){
         $data['especialidades'] = $this->especialidades_model->getEspecialidades();
-        echo anchor(base_url().'/admin/index/logout','Cerrar sesión');
-        echo '</br>';
-        echo anchor(base_url().'admin/index','Volver al menú principal');
-        echo '</br>';
-        echo anchor(base_url().'admin/especialidades/crearEspecialidad','Crear nueva especialidad');
+        $this->load->view('admin/includes/head');
         $this->load->view('admin/especialidades/index', $data);
     }
     
@@ -38,11 +34,14 @@ class Especialidades extends CI_Controller {
     
     public function crearEspecialidad(){
         if(null === ($this->input->post('nombre'))){
+            $this->load->view('admin/includes/head');
             $this->load->view('admin/especialidades/crear');
         }else{
             $nombre_post = $this->input->post('nombre');
             $data['result'] = $this->especialidades_model->crearEspecialidad($nombre_post);        
             $data['especialidades'] = $this->especialidades_model->getEspecialidades();
+            $data['tipo'] = 'crear';
+            $this->load->view('admin/includes/head');
             $this->load->view('admin/especialidades/index', $data);        
         }
     }
@@ -52,6 +51,7 @@ class Especialidades extends CI_Controller {
         if($this->input->get('id') !== null){
             $id = $this->input->get('id');
             $data['especialidad'] = $this->especialidades_model->getEspecialidad($id);
+            $this->load->view('admin/includes/head');
             $this->load->view('admin/especialidades/editar', $data);
         }else{
             echo "Ha ocurrido un error, intentelo de nuevo por favor";
@@ -64,6 +64,8 @@ class Especialidades extends CI_Controller {
         $nombre_post = $this->input->post('nombre');      
         $data['result'] = $this->especialidades_model->editarEspecialidad($id_post, $nombre_post);        
         $data['especialidades'] = $this->especialidades_model->getEspecialidades();
+        $data['tipo'] = 'editar';
+        $this->load->view('admin/includes/head');
         $this->load->view('admin/especialidades/index', $data);
         
     }
@@ -71,8 +73,11 @@ class Especialidades extends CI_Controller {
     public function EliminarEspecialidad() {
       if($this->input->get('id') !== null){
             $id = $this->input->get('id');
-            $this->especialidades_model->eliminarEspecialidad($id);
-            redirect(base_url()."admin/especialidades");
+            $data['result'] = $this->especialidades_model->eliminarEspecialidad($id);      
+            $data['especialidades'] = $this->especialidades_model->getEspecialidades();
+            $data['tipo'] = 'eliminar';
+            $this->load->view('admin/includes/head');
+            $this->load->view('admin/especialidades/index', $data);
         }else{
             echo "Ha ocurrido un error, intentelo de nuevo por favor";
             echo anchor(base_url().'admin/especialidades', 'Volver');

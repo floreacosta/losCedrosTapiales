@@ -7,6 +7,7 @@ class Doctores_model extends CI_Model {
     }
     
     function getDoctores(){
+        $this->db->order_by("nombre", "asc");
         $query = $this->db->get('doctores');
         if($query->num_rows() > 0) return $query;
         else return false;

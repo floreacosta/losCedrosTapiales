@@ -1,8 +1,8 @@
 <body>
 	<main>
 		<div class="box-container-breadcrum">
-			<span><a href="">Home</a></span>
-			<span><a class="active" href="">Institucional</a></span>
+			<span><a href="<?= base_url(); ?>index">Home</a></span>
+			<span><a class="active" href="">Instalaciones</a></span>
 		</div>
 
 		<h1>

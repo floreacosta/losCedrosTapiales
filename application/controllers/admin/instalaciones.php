@@ -15,11 +15,7 @@ class Instalaciones extends CI_Controller {
     
     public function index(){
         $data['instalaciones'] = $this->instalaciones_model->getInstalaciones();
-        echo anchor(base_url().'/admin/index/logout','Cerrar sesión');
-        echo '</br>';
-        echo anchor(base_url().'admin/index','Volver al menú principal');
-        echo '</br>';
-        echo anchor(base_url().'admin/instalaciones/crearInstalacion','Crear nueva instalacion');
+        $this->load->view('admin/includes/head');
         $this->load->view('admin/instalaciones/index', $data);
     }
     
@@ -39,11 +35,14 @@ class Instalaciones extends CI_Controller {
     
     public function crearInstalacion($nombre = null, $imagen = null, $descripcion = null){
         if(null === $nombre){
+            $this->load->view('admin/includes/head');
             $this->load->view('admin/instalaciones/crear');
         }else{
             $data['result'] = $this->instalaciones_model->crearInstalacion($nombre, $imagen, $descripcion);        
             $data['instalaciones'] = $this->instalaciones_model->getInstalaciones();
+            $data['tipo'] = 'crear';
             $data['error'] = array('error' => ' ' );
+            $this->load->view('admin/includes/head');
             $this->load->view('admin/instalaciones/index', $data);
         }
     }
@@ -64,6 +63,7 @@ class Instalaciones extends CI_Controller {
         
         if ( ! $this->upload->do_upload('user_file')){
             $data['error'] = array('error' => $this->upload->display_errors());
+            $this->load->view('admin/includes/head');
             $this->load->view('admin/instalaciones/crear', $data);
         }
         else{
@@ -90,8 +90,9 @@ class Instalaciones extends CI_Controller {
         
         if ( ! $this->upload->do_upload('user_file')){
             $data['error'] = array('error' => $this->upload->display_errors());
-            var_dump($data);
+            var_dump($data['error']);
             die;
+            $this->load->view('admin/includes/head');
             $this->load->view('admin/instalaciones/crear', $data);
         }
         else{
@@ -106,6 +107,7 @@ class Instalaciones extends CI_Controller {
         if($this->input->get('id') !== null){
             $id = $this->input->get('id');
             $data['instalacion'] = $this->instalaciones_model->getInstalacion($id);
+            $this->load->view('admin/includes/head');
             $this->load->view('admin/instalaciones/editar', $data);
         }else{
             echo "Ha ocurrido un error, intentelo de nuevo por favor";
@@ -116,14 +118,19 @@ class Instalaciones extends CI_Controller {
     public function updateInstalaciones($id = null, $nombre = null, $imagen = null, $descripcion = null){       
         $data['result'] = $this->instalaciones_model->editarInstalacion($id, $nombre, $imagen, $descripcion);        
         $data['instalaciones'] = $this->instalaciones_model->getInstalaciones();
+        $data['tipo'] = 'editar';
+        $this->load->view('admin/includes/head');
         $this->load->view('admin/instalaciones/index', $data);
     }
     
     public function EliminarInstalacion() {
       if($this->input->get('id') !== null){
             $id = $this->input->get('id');
-            $this->instalaciones_model->eliminarInstalacion($id);
-            redirect(base_url()."admin/instalaciones");
+            $data['result'] = $this->instalaciones_model->eliminarInstalacion($id);
+            $data['instalaciones'] = $this->instalaciones_model->getInstalaciones();
+            $data['tipo'] = 'eliminar';
+            $this->load->view('admin/includes/head');
+            $this->load->view('admin/instalaciones/index', $data);
         }else{
             echo "Ha ocurrido un error, intentelo de nuevo por favor";
             echo anchor(base_url().'admin/instalaciones', 'Volver');

@@ -1,15 +1,12 @@
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/css/bootstrap.min.css"
-        rel="stylesheet" type="text/css" />
-    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/js/bootstrap.min.js"></script>
-    <link href="http://cdn.rawgit.com/davidstutz/bootstrap-multiselect/master/dist/css/bootstrap-multiselect.css"
-        rel="stylesheet" type="text/css" />
-    <script src="http://cdn.rawgit.com/davidstutz/bootstrap-multiselect/master/dist/js/bootstrap-multiselect.js"
-        type="text/javascript"></script>
+    <link href="http://cdn.rawgit.com/davidstutz/bootstrap-multiselect/master/dist/css/bootstrap-multiselect.css" rel="stylesheet" type="text/css" />
+    <script src="http://cdn.rawgit.com/davidstutz/bootstrap-multiselect/master/dist/js/bootstrap-multiselect.js"  type="text/javascript"></script>
     <script type="text/javascript">
         $(function () {
             $('#especialidades').multiselect({
-                includeSelectAllOption: true
+                includeSelectAllOption: true,
+                enableFiltering: true,
+                disableIfEmpty: true,
+                disabledText: 'Especialidades'
             });
             $('#submit').click(function () {
                 var selected = $("#especialidades option:selected");
@@ -27,6 +24,9 @@
         });
     </script>
     <body>
+        <h3>Edición de doctor.</h3>
+        <p>Desde aquí podrá cambiar los datos del doctor seleccionado.</p>
+        <p>El doctor puede tener varias especialidades seleccionadas.</p>
         <?=  form_open('admin/doctores/updateDoctores') ?>
 
         <?
@@ -43,11 +43,12 @@
             $nombre = array(
                 'name' => 'nombre',
                 'type' => 'text',
-                'value' => $resultadoDoctor->nombre
+                'value' => $resultadoDoctor->nombre,
+                'class' => 'form-control'
             );
             $submit = array(
                 'id' => 'submit',
-                'class' => 'submit'
+                'class' => 'btn btn-primary'
             );
               
             $especialidadesConSeleccion = array();
@@ -72,15 +73,18 @@
             }
         ?>
         <?= form_hidden($hidden) ?>
+        <div class="form-group">
         <?= form_label('Nombre: ', 'nombre') ?>
         <?= form_input($nombre) ?>
+        </div>
         <br>
-        <?= form_label('Especialidades: ', 'especialidades') ?>
-            <select id="especialidades" multiple="multiple">
-            <? foreach($especialidadesConSeleccion as $especialidadConSeleccion): ?>    
-                <option <?= ($especialidadConSeleccion["esSeleccionada"] ? 'selected=selected' : '') ?> value="<?= $especialidadConSeleccion["idEspecialidad"]; ?>"><?= $especialidadConSeleccion["nombreEspecialidad"]; ?></option>    
-            <? endforeach; ?>
-            </select>
+        <div class="form-group">
+        <select id="especialidades" multiple="multiple">
+        <? foreach($especialidadesConSeleccion as $especialidadConSeleccion): ?>    
+            <option <?= ($especialidadConSeleccion["esSeleccionada"] ? 'selected=selected' : '') ?> value="<?= $especialidadConSeleccion["idEspecialidad"]; ?>"><?= $especialidadConSeleccion["nombreEspecialidad"]; ?></option>    
+        <? endforeach; ?>
+        </select>
+        </div>
         <?= form_submit('submit','Editar doctor', $submit) ?>
         <?= form_close() ?>
     </body>

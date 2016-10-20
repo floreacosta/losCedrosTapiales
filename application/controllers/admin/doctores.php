@@ -16,11 +16,8 @@ class Doctores extends CI_Controller {
     
     public function index(){
         $data['doctores'] = $this->doctores_model->getDoctores();
-        echo anchor(base_url().'/admin/index/logout','Cerrar sesión');
-        echo '</br>';
-        echo anchor(base_url().'admin/index','Volver al menú principal');
-        echo '</br>';
-        echo anchor(base_url().'admin/doctores/crearDoctor','Crear nueva doctor');
+        
+        $this->load->view('admin/includes/head');
         $this->load->view('admin/doctores/index', $data);
     }
     
@@ -41,6 +38,7 @@ class Doctores extends CI_Controller {
     public function crearDoctor(){
         if(null === ($this->input->post('nombre'))){
             $data['especialidades'] = $this->especialidades_model->getEspecialidades();
+            $this->load->view('admin/includes/head');
             $this->load->view('admin/doctores/crear', $data);
         }else{
             $especialidades_post = explode(".", $this->input->post('especialidades'));
@@ -50,9 +48,11 @@ class Doctores extends CI_Controller {
             $idDoctor = $this->doctores_model->crearDoctor($nombre_post);        
             
             foreach($especialidades_post as $especialidad){
-                $this->doctorxespecialidad_model->crearDoctorxespecialidad($idDoctor, $especialidad);
+                $data['result'] = $this->doctorxespecialidad_model->crearDoctorxespecialidad($idDoctor, $especialidad);
             }            
             $data['doctores'] = $this->doctores_model->getDoctores();
+            $data['tipo'] = 'crear';
+            $this->load->view('admin/includes/head');
             $this->load->view('admin/doctores/index', $data);
         }
     }
@@ -64,6 +64,7 @@ class Doctores extends CI_Controller {
             $data['doctor'] = $this->doctores_model->getDoctor($id);
             $data['especialidadesXDoctor'] = $this->doctorxespecialidad_model->getEspecialidadesXDoctor($id);
             $data['especialidades'] = $this->especialidades_model->getEspecialidades();
+            $this->load->view('admin/includes/head');
             $this->load->view('admin/doctores/editar', $data);
         }else{
             echo "Ha ocurrido un error, intentelo de nuevo por favor";
@@ -79,12 +80,13 @@ class Doctores extends CI_Controller {
         $idDoctor = $this->input->post('hiddenId');
         $this->doctorxespecialidad_model->eliminarDoctorxespecialidad($idDoctor);
 
-        $this->doctores_model->editarDoctor($idDoctor, $nombre_post);
+        $data['result'] = $this->doctores_model->editarDoctor($idDoctor, $nombre_post);
         foreach($especialidades_post as $especialidad){
             $this->doctorxespecialidad_model->crearDoctorxespecialidad($idDoctor, $especialidad);
         }
-        
+        $data['tipo'] = 'editar';
         $data['doctores'] = $this->doctores_model->getDoctores();
+        $this->load->view('admin/includes/head');
         $this->load->view('admin/doctores/index', $data);
     }
     
@@ -92,8 +94,11 @@ class Doctores extends CI_Controller {
         if($this->input->get('id') !== null){
             $idDoctor = $this->input->get('id');
             $this->doctores_model->eliminarDoctor($idDoctor);
-            $this->doctorxespecialidad_model->eliminarDoctorxespecialidad($idDoctor);
-            redirect(base_url()."admin/doctores");
+            $data['result'] = $this->doctorxespecialidad_model->eliminarDoctorxespecialidad($idDoctor);
+            $data['tipo'] = 'eliminar';
+            $data['doctores'] = $this->doctores_model->getDoctores();
+            $this->load->view('admin/includes/head');
+            $this->load->view('admin/doctores/index', $data);
         }else{
             echo "Ha ocurrido un error, intentelo de nuevo por favor";
             echo anchor(base_url().'admin/doctores', 'Volver');

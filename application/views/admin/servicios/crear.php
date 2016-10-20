@@ -1,23 +1,31 @@
     <body>
+        <h3>Creación de Servicio.</h3>
+        <p>Desde aquí podrá crear un nuevo servicio para mostrar desde la página.</p>
         <?=  form_open(base_url()."admin/servicios/crearServicio") ?>
-
         <?
             $nombre = array(
                 'name' => 'nombre',
-                'type' => 'text'
+                'type' => 'text',
+                'class' => 'form-control'
             );
             $descripcion = array(
                 'name' => 'descripcion',
-                'type' => 'textarea'
+                'type' => 'textarea',
+                'class' => 'form-control'
+            );                        
+            $buttonClass = array(
+                'class' => 'btn btn-primary'
             );
         ?>
+        <div class="form-group">
         <?= form_label('Nombre: ', 'nombre') ?>
         <?= form_input($nombre) ?>
-        <br>
+        </div>
+        <div class="form-group">
         <?= form_label('Descripcion: ', 'descripcion') ?>
         <?= form_textarea($descripcion) ?>
-        <br>
-        <?= form_submit('','Crear servicio') ?>
+        </div>
+        <?= form_submit('','Crear servicio', $buttonClass) ?>
         <?= form_close() ?>
     </body>
 </html>

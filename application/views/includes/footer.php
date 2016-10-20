@@ -16,7 +16,7 @@
 			<ul>
 				<h3>Institucional</h3>
 				<li><a href="<?= base_url(); ?>index">Home</a></li>
-				<li><a href="<?= base_url(); ?>institucional">Instalaciones</a></li>
+				<li><a href="<?= base_url(); ?>instalaciones">Instalaciones</a></li>
 				<li><a href="<?= base_url(); ?>especialidades">Especialidades</a></li>
 				<li><a href="<?= base_url(); ?>coberturamedica">Coberturas</a></li>
 				<li><a href="<?= base_url(); ?>servicios">Servicios</a></li>

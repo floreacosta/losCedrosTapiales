@@ -61,7 +61,7 @@
 				<figcaption>
 					<h3>Instalaciones y Equipamiento</h3>
 					<p>Brindamos infraestructura e instalaciones para que profesionales atiendan sus pacientes en un ambiente confortable y adecuado.</p>
-					<a href="<?= base_url(); ?>institucional" title="Ver más">+</a>
+					<a href="<?= base_url(); ?>instalaciones" title="Ver más">+</a>
 				</figcaption>
 			</figure>
 
@@ -70,7 +70,7 @@
 				<figcaption>
 					<h3>Especialidades</h3>
 					<p>Contamos con un abanico de especialidades detalladas según sus días, horarios y profesionales médicos.</p>
-					<a href="especialidades" title="Ver más">+</a>
+					<a href="<?= base_url(); ?>especialidades" title="Ver más">+</a>
 				</figcaption>
 			</figure>
 

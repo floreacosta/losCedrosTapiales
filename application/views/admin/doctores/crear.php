@@ -1,15 +1,12 @@
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/css/bootstrap.min.css"
-        rel="stylesheet" type="text/css" />
-    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/js/bootstrap.min.js"></script>
-    <link href="http://cdn.rawgit.com/davidstutz/bootstrap-multiselect/master/dist/css/bootstrap-multiselect.css"
-        rel="stylesheet" type="text/css" />
-    <script src="http://cdn.rawgit.com/davidstutz/bootstrap-multiselect/master/dist/js/bootstrap-multiselect.js"
-        type="text/javascript"></script>
+    <link href="http://cdn.rawgit.com/davidstutz/bootstrap-multiselect/master/dist/css/bootstrap-multiselect.css" rel="stylesheet" type="text/css" />
+    <script src="http://cdn.rawgit.com/davidstutz/bootstrap-multiselect/master/dist/js/bootstrap-multiselect.js"  type="text/javascript"></script>
     <script type="text/javascript">
         $(function () {
             $('#especialidades').multiselect({
-                includeSelectAllOption: true
+                includeSelectAllOption: true,
+                enableFiltering: true,
+                disableIfEmpty: true,
+                disabledText: 'Especialidades'
             });
             $('#submit').click(function () {
                 var selected = $("#especialidades option:selected");
@@ -26,29 +23,40 @@
             });
         });
     </script>
+    <style>
+        .open > .dropdown-menu {
+            max-height: 400px;
+            overflow: scroll;
+        }        
+    </style>
     <body>
+        <h3>Creación de doctor.</h3>
+        <p>Desde aquí podrá crear un nuevo doctor para mostrar desde la página.</p>
+        <p>El doctor puede tener varias especialidades seleccionadas.</p>
         <?=  form_open('') ?>
 
         <?
             $nombre = array(
                 'name' => 'nombre',
-                'type' => 'text'
+                'type' => 'text',
+                'class' => 'form-control'
             );
             $submit = array(
                 'id' => 'submit',
-                'class' => 'submit'
+                'class' => 'btn btn-primary'
             );
         ?>
-        
+        <div class="form-group">
         <?= form_label('Nombre: ', 'nombre') ?>
         <?= form_input($nombre) ?>
-        <br>
-        <?= form_label('Especialidades: ', 'especialidades') ?>
+        </div>
+        <div class="form-group">
             <select id="especialidades" multiple="multiple">
             <? foreach($especialidades->result() as $especialidad): ?>    
                 <option value="<?= $especialidad->id; ?>"><?= $especialidad->nombre; ?></option>    
             <? endforeach; ?>
             </select>
+        </div>
         <?= form_submit('submit','Crear doctor', $submit) ?>
         <?= form_close() ?>
     </body>

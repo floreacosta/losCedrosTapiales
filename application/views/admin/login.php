@@ -2,25 +2,18 @@
         <h3>Bienvenido al sistema de gestión de la Clínica Los Cedros Tapiales.</h3>    
         <p>Por favor, ingrese su nombre de usuario y contraseña.</p>
         <br>
-        <?
-            $formClass = array(
-                'class' => 'form-inline'
-            );
-        ?>
         <div class="bd-example">
-            <?=  form_open('', $formClass) ?>
+            <?=  form_open('') ?>
             <? 
                 $user = array(
                     'name' => 'user',
                     'type' => 'text',
-                    'class' => 'form-control',
-                    'style' => 'display: table-caption'
+                    'class' => 'form-control'
                 );
                 $pass = array(
                     'name' => 'pass',
                     'class' => 'form-control',
-                    'type' => 'password',
-                    'style' => 'display: table-caption'
+                    'type' => 'password'
                 );
                 $labelClass = array(
                     'class' => 'col-xs-2 col-form-label' 
