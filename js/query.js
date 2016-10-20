@@ -34,7 +34,7 @@ $(document).ready(function() {
 	}
 });
 
-$(document).ready(menu);	
+$(document).ready(menu);
 var contador = 1;
 function menu(){
         $('.toggle').click(function(){
@@ -58,7 +58,7 @@ function menu(){
                 }
         });
 }
-		
+
 $(document).ready(fixedMenu);
 function fixedMenu() {
         $( window ).resize(function(){
@@ -127,7 +127,7 @@ function heightSection() {
         var ventana = $(window).width();
         var h = document.getElementById('video-background');
         if((ventana > 0) && (ventana < 500)) {
-                $('#section-primary').css('height', 'auto');				
+                $('#section-primary').css('height', 'auto');
         } else if ((ventana >= 500) && (ventana <= 1024)){
                 if (h != "NULL") {
                         h = h.offsetHeight + "px";
@@ -142,7 +142,7 @@ function heightSection() {
                 var ventana = $(window).width();
                 var h = document.getElementById('video-background');
                 if((ventana > 0) && (ventana < 500)) {
-                        $('#section-primary').css('height', 'auto');				
+                        $('#section-primary').css('height', 'auto');
                 } else if ((ventana >= 500) && (ventana <= 1024)){
                         if (h != "NULL") {
                                 h = h.offsetHeight + "px";
@@ -180,9 +180,9 @@ function heightSectionSecondary() {
                 }
         });
 }
-
+/*
 $(document).ready(modalEspecialidades);
-function modalEspecialidades(){
+function modalEspecialidades() {
         $("#element-list").click(function(e){
                 var href = e.target;
                 href = href.toString().split("#");
@@ -197,5 +197,23 @@ function modalEspecialidades(){
 
         $(".modal").click(function(){
                 $(elemento).removeClass("show");
+        });
+}
+*/
+
+$(document).ready(modalEspecialidades);
+function modalEspecialidades() {
+        $("#element-list").click(function(e){
+                elemento = e.target.id;
+                elemento = "#modal" + elemento;
+                $(elemento).addClass("show");
+        });
+
+        $('#button-close-information').click(function(e){
+                $(elemento).removeClass("show");
+        });
+
+        $(".modal").click(function(e){
+								$(elemento).removeClass("show");
         });
 }

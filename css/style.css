@@ -979,34 +979,36 @@ footer .search label button:hover {
   margin-right: 0;
 }
 /* line 38, ../sass/common/_item-box.scss */
-.information-item a {
+.information-item span {
   position: relative;
+  display: inline-block;
   vertical-align: middle;
   color: #3d8232;
   min-height: 2em;
+  cursor: pointer;
 }
-/* line 45, ../sass/common/_item-box.scss */
+/* line 47, ../sass/common/_item-box.scss */
 .information-item:hover {
   background-color: #9db5b6;
 }
-/* line 48, ../sass/common/_item-box.scss */
-.information-item:hover a {
+/* line 50, ../sass/common/_item-box.scss */
+.information-item:hover span {
   color: #ffffff;
 }
 
 /* Logos / Coberturas M├®dicas */
-/* line 55, ../sass/common/_item-box.scss */
+/* line 57, ../sass/common/_item-box.scss */
 .logotypes-medic {
   margin-bottom: 1em;
 }
-/* line 58, ../sass/common/_item-box.scss */
+/* line 60, ../sass/common/_item-box.scss */
 .logotypes-medic img {
   display: block;
   width: 95%;
   margin: auto;
 }
 
-/* line 65, ../sass/common/_item-box.scss */
+/* line 67, ../sass/common/_item-box.scss */
 .show {
   display: block !important;
 }
@@ -1015,7 +1017,7 @@ footer .search label button:hover {
 * Responsive
 **/
 @media (min-width: 500px) {
-  /* line 74, ../sass/common/_item-box.scss */
+  /* line 76, ../sass/common/_item-box.scss */
   .information-item,
   .logotypes-medic {
     position: relative;
@@ -1026,7 +1028,7 @@ footer .search label button:hover {
   }
 }
 @media (min-width: 700px) {
-  /* line 85, ../sass/common/_item-box.scss */
+  /* line 87, ../sass/common/_item-box.scss */
   .information-item,
   .logotypes-medic {
     width: 30%;
@@ -1034,7 +1036,7 @@ footer .search label button:hover {
   }
 }
 @media (min-width: 900px) {
-  /* line 93, ../sass/common/_item-box.scss */
+  /* line 95, ../sass/common/_item-box.scss */
   .information-item,
   .logotypes-medic {
     width: 23%;
@@ -1042,7 +1044,7 @@ footer .search label button:hover {
   }
 }
 @media (min-width: 1024px) {
-  /* line 101, ../sass/common/_item-box.scss */
+  /* line 103, ../sass/common/_item-box.scss */
   .information-item,
   .logotypes-medic {
     width: 18%;
@@ -1127,33 +1129,48 @@ footer .search label button:hover {
   margin-bottom: 20px;
   font-size: 1.3em;
   text-transform: capitalize;
+  position: relative;
 }
 /* line 49, ../sass/common/_modal.scss */
+.modal .modal-container h4:before, .modal-video .modal-container h4:before, .modal-video .modal-container-video h4:before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  background: #34694e;
+  display: inline-block;
+  bottom: 4px;
+  position: relative;
+  margin-right: 10px;
+}
+/* line 62, ../sass/common/_modal.scss */
 .modal .modal-container h5, .modal-video .modal-container h5, .modal-video .modal-container-video h5 {
   font-size: 21px;
   margin-bottom: 18px;
 }
-/* line 54, ../sass/common/_modal.scss */
+/* line 67, ../sass/common/_modal.scss */
 .modal .modal-container p, .modal-video .modal-container p, .modal-video .modal-container-video p {
   font-size: 0.9em;
   line-height: 1.3em;
   color: black;
 }
-/* line 59, ../sass/common/_modal.scss */
+/* line 72, ../sass/common/_modal.scss */
 .modal .modal-container p:first-of-type, .modal-video .modal-container p:first-of-type, .modal-video .modal-container-video p:first-of-type {
   margin-top: 0;
 }
-/* line 63, ../sass/common/_modal.scss */
+/* line 76, ../sass/common/_modal.scss */
 .modal .modal-container p:last-of-type, .modal-video .modal-container p:last-of-type, .modal-video .modal-container-video p:last-of-type {
   margin-bottom: 0;
 }
 
-/* line 73, ../sass/common/_modal.scss */
+/* line 86, ../sass/common/_modal.scss */
 .modal-video .modal-container-video {
   width: 75%;
   top: 50px;
 }
-/* line 78, ../sass/common/_modal.scss */
+/* line 91, ../sass/common/_modal.scss */
 .modal-video .modal-container-video button {
   border: 0;
   background: transparent;
@@ -1182,11 +1199,11 @@ footer .search label button:hover {
   width: 3px;
   height: 25px;
 }
-/* line 83, ../sass/common/_modal.scss */
+/* line 96, ../sass/common/_modal.scss */
 .modal-video .modal-container-video button:before, .modal-video .modal-container-video button:after {
   background-color: #ffffff;
 }
-/* line 89, ../sass/common/_modal.scss */
+/* line 102, ../sass/common/_modal.scss */
 .modal-video .modal-container-video video {
   width: 100%;
 }

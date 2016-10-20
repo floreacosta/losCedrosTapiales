@@ -35,17 +35,19 @@
 		margin-right: 0;
 	}
 
-	a {
+	span {
 		position: relative;
+		display: inline-block;
 		vertical-align: middle;
-		color: $color-tertiary;			
+		color: $color-tertiary;
 		min-height: 2em;
+		cursor: pointer;
 	}
 
 	&:hover {
 		background-color: $color-rolover;
 
-		a {
+		span {
 			color: $white;
 		}
 	}
@@ -54,7 +56,7 @@
 /* Logos / Coberturas Médicas */
 .logotypes-medic {
 	margin-bottom: 1em;
-	
+
 	img {
 		display: block;
 		width: 95%;

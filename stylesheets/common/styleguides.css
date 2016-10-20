@@ -263,11 +263,11 @@ h3 {
     -moz-column-count: 2;
     /* Firefox */
     column-count: 2;
-    -webkit-column-gap: 40px;
+    -webkit-column-gap: 20px;
     /* Chrome, Safari, Opera */
-    -moz-column-gap: 40px;
+    -moz-column-gap: 20px;
     /* Firefox */
-    column-gap: 40px;
+    column-gap: 20px;
   }
   /* line 60, ../../sass/common/_mixin.scss */
   .col-paragraph:first-of-type {
@@ -299,11 +299,11 @@ h3 {
     -moz-column-count: 2;
     /* Firefox */
     column-count: 2;
-    -webkit-column-gap: 40px;
+    -webkit-column-gap: 20px;
     /* Chrome, Safari, Opera */
-    -moz-column-gap: 40px;
+    -moz-column-gap: 20px;
     /* Firefox */
-    column-gap: 40px;
+    column-gap: 20px;
     width: 80%;
   }
   /* line 60, ../../sass/common/_mixin.scss */
@@ -347,11 +347,11 @@ h3 {
     -moz-column-count: 3;
     /* Firefox */
     column-count: 3;
-    -webkit-column-gap: 40px;
+    -webkit-column-gap: 20px;
     /* Chrome, Safari, Opera */
-    -moz-column-gap: 40px;
+    -moz-column-gap: 20px;
     /* Firefox */
-    column-gap: 40px;
+    column-gap: 20px;
   }
   /* line 60, ../../sass/common/_mixin.scss */
   .col-paragraph:first-of-type {
@@ -975,34 +975,35 @@ footer .search label button:hover {
   margin-right: 0;
 }
 /* line 38, ../../sass/common/_item-box.scss */
-.information-item a {
+.information-item span {
   position: relative;
+  display: inline-block;
   vertical-align: middle;
   color: #3d8232;
   min-height: 2em;
 }
-/* line 45, ../../sass/common/_item-box.scss */
+/* line 46, ../../sass/common/_item-box.scss */
 .information-item:hover {
   background-color: #9db5b6;
 }
-/* line 48, ../../sass/common/_item-box.scss */
-.information-item:hover a {
+/* line 49, ../../sass/common/_item-box.scss */
+.information-item:hover span {
   color: #ffffff;
 }
 
 /* Logos / Coberturas M├®dicas */
-/* line 55, ../../sass/common/_item-box.scss */
+/* line 56, ../../sass/common/_item-box.scss */
 .logotypes-medic {
   margin-bottom: 1em;
 }
-/* line 58, ../../sass/common/_item-box.scss */
+/* line 59, ../../sass/common/_item-box.scss */
 .logotypes-medic img {
   display: block;
   width: 95%;
   margin: auto;
 }
 
-/* line 65, ../../sass/common/_item-box.scss */
+/* line 66, ../../sass/common/_item-box.scss */
 .show {
   display: block !important;
 }
@@ -1011,7 +1012,7 @@ footer .search label button:hover {
 * Responsive
 **/
 @media (min-width: 500px) {
-  /* line 74, ../../sass/common/_item-box.scss */
+  /* line 75, ../../sass/common/_item-box.scss */
   .information-item,
   .logotypes-medic {
     position: relative;
@@ -1022,7 +1023,7 @@ footer .search label button:hover {
   }
 }
 @media (min-width: 700px) {
-  /* line 85, ../../sass/common/_item-box.scss */
+  /* line 86, ../../sass/common/_item-box.scss */
   .information-item,
   .logotypes-medic {
     width: 30%;
@@ -1030,7 +1031,7 @@ footer .search label button:hover {
   }
 }
 @media (min-width: 900px) {
-  /* line 93, ../../sass/common/_item-box.scss */
+  /* line 94, ../../sass/common/_item-box.scss */
   .information-item,
   .logotypes-medic {
     width: 23%;
@@ -1038,7 +1039,7 @@ footer .search label button:hover {
   }
 }
 @media (min-width: 1024px) {
-  /* line 101, ../../sass/common/_item-box.scss */
+  /* line 102, ../../sass/common/_item-box.scss */
   .information-item,
   .logotypes-medic {
     width: 18%;
