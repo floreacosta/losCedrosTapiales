@@ -22,7 +22,7 @@
 		h3 {
 			margin-bottom: .3em;
 		}
-		
+
 		p {
 			margin-bottom: .5em;
 		}
@@ -72,10 +72,10 @@
 		display: inline-block;
 		margin-top: -170px;
 		z-index: 203;
-	
+
 		.telephone-line,
 		.location-google-map {
-			width: 46%;
+			width: 48%;
 			margin: 0 2%;
 			background-color: $color-secondary;
 			color: $white;
@@ -93,7 +93,7 @@
 			border-left: 8px solid $color-tertiary;
 		    padding: 1em 2em;
 		    position: relative;
-		
+
 			span {
 				margin-bottom: 1em;
 			}

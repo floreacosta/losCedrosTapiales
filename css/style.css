@@ -2159,17 +2159,39 @@ footer .search label button:hover {
   padding: 1em;
 }
 /* line 8, ../sass/common/index/_online-turn.scss */
+.article-online-turn:before {
+  content: 'Proximamente';
+  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+  font-weight: bold;
+  font-variant: normal;
+  font-style: normal;
+  font-size: 22px;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background: rgba(110, 110, 110, 0.8);
+  z-index: 203;
+  color: white;
+  text-transform: uppercase;
+  line-height: 3.5;
+  letter-spacing: 2px;
+  left: 0;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+}
+/* line 27, ../sass/common/index/_online-turn.scss */
 .article-online-turn div {
   display: inline-block;
 }
-/* line 11, ../sass/common/index/_online-turn.scss */
+/* line 30, ../sass/common/index/_online-turn.scss */
 .article-online-turn div h1 {
   margin: 0;
   margin-bottom: .5em;
   display: inline-block;
   font-size: 1.5em;
 }
-/* line 18, ../sass/common/index/_online-turn.scss */
+/* line 37, ../sass/common/index/_online-turn.scss */
 .article-online-turn div a {
   text-decoration: underline;
 }
@@ -2178,28 +2200,28 @@ footer .search label button:hover {
 * Responsive width
 **/
 @media (min-width: 500px) {
-  /* line 29, ../sass/common/index/_online-turn.scss */
+  /* line 48, ../sass/common/index/_online-turn.scss */
   .article-online-turn {
     top: 33px;
     z-index: 202;
     text-align: center;
   }
-  /* line 34, ../sass/common/index/_online-turn.scss */
+  /* line 53, ../sass/common/index/_online-turn.scss */
   .article-online-turn div h1 {
     margin-bottom: 0;
   }
 }
 @media (min-width: 900px) {
-  /* line 41, ../sass/common/index/_online-turn.scss */
+  /* line 60, ../sass/common/index/_online-turn.scss */
   .article-online-turn {
     top: 33px;
   }
-  /* line 44, ../sass/common/index/_online-turn.scss */
+  /* line 63, ../sass/common/index/_online-turn.scss */
   .article-online-turn div {
     padding-left: 2em;
     padding-right: 2em;
   }
-  /* line 48, ../sass/common/index/_online-turn.scss */
+  /* line 67, ../sass/common/index/_online-turn.scss */
   .article-online-turn div h1 {
     font-size: 2.5em;
     line-height: 1.25em;
@@ -2283,7 +2305,7 @@ footer .search label button:hover {
   /* line 76, ../sass/common/index/_information.scss */
   .article-information-for-user .telephone-line,
   .article-information-for-user .location-google-map {
-    width: 46%;
+    width: 48%;
     margin: 0 2%;
     background-color: #34694e;
     color: #ffffff;

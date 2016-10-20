@@ -4,10 +4,29 @@
 	width: 100%;
 	position: relative;
 	padding: 1em;
-	
+
+	&:before {
+	    content: 'Proximamente';
+			@include font-calibri-bold;
+	    font-size: 22px;
+	    height: 100%;
+	    width: 100%;
+	    position: absolute;
+	    background: rgba(110, 110, 110, .8);
+	    z-index: 203;
+	    color: white;
+	    text-transform: uppercase;
+	    line-height: 3.5;
+	    letter-spacing: 2px;
+	    left: 0;
+	    text-align: center;
+	    top: 50%;
+	    transform: translateY(-50%);
+	}
+
 	div {
 		display: inline-block;
-		
+
 		h1 {
 			margin: 0;
 			margin-bottom: .5em;
@@ -40,7 +59,7 @@
 @media (min-width: 900px){
 	.article-online-turn {
 		top: 33px;
-		
+
 		div {
 			padding-left: 2em;
 			padding-right: 2em;
