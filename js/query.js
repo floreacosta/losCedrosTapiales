@@ -14,7 +14,7 @@ $(document).ready(function() {
 			$( "#coberturas" ).remove("active");
 			$( "#especialidades" ).remove("active");
 		break;
-		case '/losCedrosTapiales/cobertura-medica':
+		case '/losCedrosTapiales/coberturamedica':
 			$( "#instalaciones" ).remove("active");
 			$( "#servicios" ).remove("active");
 			$( "#coberturas" ).addClass("active");
@@ -180,26 +180,6 @@ function heightSectionSecondary() {
                 }
         });
 }
-/*
-$(document).ready(modalEspecialidades);
-function modalEspecialidades() {
-        $("#element-list").click(function(e){
-                var href = e.target;
-                href = href.toString().split("#");
-
-                elemento = "#" + href[1];
-                $(elemento).addClass("show");
-        });
-
-        $('#button-close-information').click(function(){
-                $(elemento).removeClass("show");
-        });
-
-        $(".modal").click(function(){
-                $(elemento).removeClass("show");
-        });
-}
-*/
 
 $(document).ready(modalEspecialidades);
 function modalEspecialidades() {
