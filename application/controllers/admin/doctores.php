@@ -17,7 +17,7 @@ class Doctores extends CI_Controller {
     public function index(){
         $data['doctores'] = $this->doctores_model->getDoctores();
         
-        $this->load->view('admin/includes/head');
+        $this->load->view('admin/includes/headWoValidation');
         $this->load->view('admin/doctores/index', $data);
     }
     
@@ -38,7 +38,7 @@ class Doctores extends CI_Controller {
     public function crearDoctor(){
         if(null === ($this->input->post('nombre'))){
             $data['especialidades'] = $this->especialidades_model->getEspecialidades();
-            $this->load->view('admin/includes/head');
+            $this->load->view('admin/includes/headWoValidation');
             $this->load->view('admin/doctores/crear', $data);
         }else{
             $especialidades_post = explode(".", $this->input->post('especialidades'));
@@ -52,7 +52,7 @@ class Doctores extends CI_Controller {
             }            
             $data['doctores'] = $this->doctores_model->getDoctores();
             $data['tipo'] = 'crear';
-            $this->load->view('admin/includes/head');
+            $this->load->view('admin/includes/headWoValidation');
             $this->load->view('admin/doctores/index', $data);
         }
     }
@@ -64,7 +64,7 @@ class Doctores extends CI_Controller {
             $data['doctor'] = $this->doctores_model->getDoctor($id);
             $data['especialidadesXDoctor'] = $this->doctorxespecialidad_model->getEspecialidadesXDoctor($id);
             $data['especialidades'] = $this->especialidades_model->getEspecialidades();
-            $this->load->view('admin/includes/head');
+            $this->load->view('admin/includes/headWoValidation');
             $this->load->view('admin/doctores/editar', $data);
         }else{
             echo "Ha ocurrido un error, intentelo de nuevo por favor";
@@ -86,7 +86,7 @@ class Doctores extends CI_Controller {
         }
         $data['tipo'] = 'editar';
         $data['doctores'] = $this->doctores_model->getDoctores();
-        $this->load->view('admin/includes/head');
+        $this->load->view('admin/includes/headWoValidation');
         $this->load->view('admin/doctores/index', $data);
     }
     
@@ -97,7 +97,7 @@ class Doctores extends CI_Controller {
             $data['result'] = $this->doctorxespecialidad_model->eliminarDoctorxespecialidad($idDoctor);
             $data['tipo'] = 'eliminar';
             $data['doctores'] = $this->doctores_model->getDoctores();
-            $this->load->view('admin/includes/head');
+            $this->load->view('admin/includes/headWoValidation');
             $this->load->view('admin/doctores/index', $data);
         }else{
             echo "Ha ocurrido un error, intentelo de nuevo por favor";

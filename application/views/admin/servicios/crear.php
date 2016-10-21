@@ -1,6 +1,7 @@
     <body>
         <h3>Creación de Servicio.</h3>
         <p>Desde aquí podrá crear un nuevo servicio para mostrar desde la página.</p>
+        
         <?=  form_open(base_url()."admin/servicios/crearServicio") ?>
         <?
             $nombre = array(
@@ -19,7 +20,7 @@
         ?>
         <div class="form-group">
         <?= form_label('Nombre: ', 'nombre') ?>
-        <?= form_input($nombre) ?>
+        <?= form_input($nombre) ?>        
         </div>
         <div class="form-group">
         <?= form_label('Descripcion: ', 'descripcion') ?>

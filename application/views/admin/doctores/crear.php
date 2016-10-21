@@ -4,9 +4,7 @@
         $(function () {
             $('#especialidades').multiselect({
                 includeSelectAllOption: true,
-                enableFiltering: true,
-                disableIfEmpty: true,
-                disabledText: 'Especialidades'
+                enableFiltering: true
             });
             $('#submit').click(function () {
                 var selected = $("#especialidades option:selected");
@@ -51,7 +49,7 @@
         <?= form_input($nombre) ?>
         </div>
         <div class="form-group">
-            <select id="especialidades" multiple="multiple">
+            <select id="especialidades" multiple="multiple" name='especialidades'>
             <? foreach($especialidades->result() as $especialidad): ?>    
                 <option value="<?= $especialidad->id; ?>"><?= $especialidad->nombre; ?></option>    
             <? endforeach; ?>
