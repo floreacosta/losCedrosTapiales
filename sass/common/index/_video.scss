@@ -3,7 +3,7 @@
 		visibility: hidden;
 	}
 
-	video {
+	> video {
 		width: 100%;
 		height: auto;
 		position: relative;
@@ -65,7 +65,7 @@
 		background-color: rgba(13, 71, 72, 0.8);
 
 		display: none;
-		
+
 		button {
 			border: 0;
 			position: absolute;
@@ -114,10 +114,10 @@
 		height: 100%;
 
 		video {
-			width: 80%;
-			left: 10%;
+			height: auto;
+			width: 90%;
+			left: 5%;
 			position: absolute;
-			padding: 5%;
 
 			top: 50%;
 			@include transform(translateY(-50%));
@@ -172,6 +172,10 @@
 				display: block;
 			}
 		}
+	}
+
+	.section-primary .video-open video {
+	    padding: 5%;
 	}
 }
 

@@ -27,11 +27,12 @@
 
 			h3 {
 				@include heading-level-3;
-				font-size: 1.5em;
+				font-size: 1.3em;
 			}
 
 			p {
 				@include text-primary();
+				font-size: 1em;
 				color: $color-dark;
 				margin-top: 1em;
 				margin-bottom: 8px;
@@ -100,6 +101,22 @@
 
 			&:nth-child(odd) {
 				clear: none;
+			}
+		}
+	}
+}
+
+@media (min-width: 800px) {
+	.article-sections-item {
+		figure {
+			figcaption {
+				h3 {
+					font-size: 1.5em;
+				}
+
+				p {
+					font-size: 1.1em;
+				}
 			}
 		}
 	}

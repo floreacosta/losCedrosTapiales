@@ -141,7 +141,7 @@
 		<a name="schedule"></a>
 		<article class="article-visit-schedule" id="visit">
 			<h1>Horarios de visita</h1>
-			<h2>Internación General y Obstetricia: <span>10 a 20 h.</span></h2>
-			<h2>Terapia Intensiva y Unidad Coronaria: <span>12 a 13 h. y de 19 a 20 h.</span></h2>
+			<h2>Internación: <span>15 a 17 h.</span></h2>
+			<h2>Unidad de Cuidados Intensivos: <span>12 a 12:30 h. y 18 a 18:30 h.</span></h2>
 		</article>
 	</main>
