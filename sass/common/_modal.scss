@@ -20,6 +20,9 @@
 		position: relative;
 		color: $color-secondary;
 
+		top: 50%;
+		@include transform (translateY(-50%));
+
 		.button-close-information {
     		margin-top: 0px;
     		@include button-close;
@@ -43,6 +46,7 @@
 			font-size: 1.3em;
 			text-transform: capitalize;
 			position: relative;
+			color: $color-dark;
 
 			&:before {
 				content: '';

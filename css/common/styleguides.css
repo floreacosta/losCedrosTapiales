@@ -1,13 +1,9 @@
 /*
 Error: Undefined mixin 'border-radius'.
-        on line 51 of C:/xampp/htdocs/losCedrosTapiales/sass/common/_modal.scss, in `border-radius'
-        from line 51 of C:/xampp/htdocs/losCedrosTapiales/sass/common/_modal.scss
+        on line 55 of C:/xampp/htdocs/losCedrosTapiales/sass/common/_modal.scss, in `border-radius'
+        from line 55 of C:/xampp/htdocs/losCedrosTapiales/sass/common/_modal.scss
         from line 15 of C:/xampp/htdocs/losCedrosTapiales/sass/common/styleguides.scss
 
-46: 		}
-47: 	}
-48: 
-49: 	section {
 50: 		margin: 2em 0;
 51: 	
 52: 		> p {
@@ -15,10 +11,14 @@ Error: Undefined mixin 'border-radius'.
 54: 			margin-bottom: 1em;
 55: 			font-style: italic;
 56: 		}
+57: 	}
+58: }
+59: 
+60: .container {
 
 Backtrace:
-C:/xampp/htdocs/losCedrosTapiales/sass/common/_modal.scss:51:in `border-radius'
-C:/xampp/htdocs/losCedrosTapiales/sass/common/_modal.scss:51
+C:/xampp/htdocs/losCedrosTapiales/sass/common/_modal.scss:55:in `border-radius'
+C:/xampp/htdocs/losCedrosTapiales/sass/common/_modal.scss:55
 C:/xampp/htdocs/losCedrosTapiales/sass/common/styleguides.scss:15
 C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:351:in `block in visit_mixin'
 C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/stack.rb:98:in `block in with_mixin'
@@ -121,4 +121,4 @@ C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/vendor/listen/lib/listen/adap
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined mixin 'border-radius'.\A         on line 51 of C:/xampp/htdocs/losCedrosTapiales/sass/common/_modal.scss, in `border-radius'\A         from line 51 of C:/xampp/htdocs/losCedrosTapiales/sass/common/_modal.scss\A         from line 15 of C:/xampp/htdocs/losCedrosTapiales/sass/common/styleguides.scss\A \A 46: 		}\A 47: 	}\A 48: \A 49: 	section {\A 50: 		margin: 2em 0;\A 51: 	\A 52: 		> p {\A 53: 			font-weight: normal;\A 54: 			margin-bottom: 1em;\A 55: 			font-style: italic;\A 56: 		}"; }
+  content: "Error: Undefined mixin 'border-radius'.\A         on line 55 of C:/xampp/htdocs/losCedrosTapiales/sass/common/_modal.scss, in `border-radius'\A         from line 55 of C:/xampp/htdocs/losCedrosTapiales/sass/common/_modal.scss\A         from line 15 of C:/xampp/htdocs/losCedrosTapiales/sass/common/styleguides.scss\A \A 50: 		margin: 2em 0;\A 51: 	\A 52: 		> p {\A 53: 			font-weight: normal;\A 54: 			margin-bottom: 1em;\A 55: 			font-style: italic;\A 56: 		}\A 57: 	}\A 58: }\A 59: \A 60: .container {"; }
