@@ -5,7 +5,6 @@
 	position: relative;
 	padding: 1em;
 
-	/*
 	&:before {
 	    content: 'Proximamente';
 			@include font-calibri-bold;
@@ -22,10 +21,9 @@
 	    left: 0;
 	    text-align: center;
 	    top: 50%;
-	    transform: translateY(-50%);
+			@include transform (translateY(-50%));
 	}
-	*/
-	
+
 	div {
 		display: inline-block;
 

@@ -12,27 +12,28 @@
 
 	.modal-container {
 		background-color: $white;
-		padding: 3em;
-		width: 70%;
+		padding: 2em;
+		width: 90%;
 		margin: auto;
 		box-shadow: $shadow;
 		top: calc(50vh - 150px);
 		position: relative;
 		color: $color-secondary;
 
+		top: 50%;
+		@include transform (translateY(-50%));
+
 		.button-close-information {
-    		margin-top: -25px;
+    		margin-top: 0px;
     		@include button-close;
 		}
 
 		li.col-3 {
-			width: 30%;
-			display: inline-block;
+			display: block;
 		}
 
 		h2 {
-			font-size: 2em;
-			width: 100%;
+			font-size: 1.4em;
 			display: block;
 			margin-bottom: 25px;
 			text-transform: uppercase;
@@ -45,6 +46,7 @@
 			font-size: 1.3em;
 			text-transform: capitalize;
 			position: relative;
+			color: $color-dark;
 
 			&:before {
 				content: '';
@@ -88,7 +90,7 @@
 		width: 75%;
 		top: 50px;
 
-		button{
+		button {
 			@include button-close;
 			margin-top: -90px;
 			margin-right: -50px;
@@ -101,6 +103,40 @@
 
 		video {
 			width: 100%;
+		}
+	}
+}
+
+@media (min-width: 500px){
+	.modal {
+
+		.modal-container {
+
+			h2 {
+				font-size: 2em;
+			}
+
+			li.col-3 {
+				width: 48%;
+				display: inline-block;
+    		white-space: nowrap;
+			}
+
+		}
+	}
+}
+
+@media (min-width: 700px){
+	.modal .modal-container {
+		padding: 3em;
+		width: 70%;
+
+		.button-close-information {
+				margin-top: -25px;
+		}
+
+		li.col-3 {
+			width: 30%;
 		}
 	}
 }
