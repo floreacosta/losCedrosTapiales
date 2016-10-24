@@ -76,25 +76,28 @@ class Coberturas extends CI_Controller {
     {
         $id_post = $this->input->post('hiddenId');
         $nombre_post = $this->input->post('nombre');
-        
-        $config['upload_path']          = './img/obras-sociales';
-        $config['allowed_types']        = 'gif|jpg|png';
-        $config['max_size']             = 100;
-        $config['max_width']            = 609;
-        $config['max_height']           = 216;
-        
-        $this->load->library('upload', $config);
-        $this->upload->initialize($config);        
-        
-        if (!$this->upload->do_upload('user_file')){
-            $data['error'] = array('error' => $this->upload->display_errors());
-            $this->load->view('admin/includes/head');
-            $this->load->view('admin/coberturas/index', $data);
-        }
-        else{
-            $imagen_post = $this->upload->data()['file_name'];
-            $data = array('upload_data' => $this->upload->data());
-            $this->updateCoberturas($id_post, $nombre_post, $imagen_post);
+        if(isset($_FILES['image']['tmp_name'])) {
+            $config['upload_path']          = './img/obras-sociales';
+            $config['allowed_types']        = 'gif|jpg|png';
+            $config['max_size']             = 100;
+            $config['max_width']            = 609;
+            $config['max_height']           = 216;
+
+            $this->load->library('upload', $config);
+            $this->upload->initialize($config);        
+
+            if (!$this->upload->do_upload('user_file')){
+                $data['error'] = array('error' => $this->upload->display_errors());
+                $this->load->view('admin/includes/head');
+                $this->load->view('admin/coberturas/index', $data);
+            }
+            else{
+                $imagen_post = $this->upload->data()['file_name'];
+                $data = array('upload_data' => $this->upload->data());
+                $this->updateCoberturas($id_post, $nombre_post, $imagen_post);
+            }
+        }else{
+            $this->updateCoberturas($id_post, $nombre_post);
         }
     }
     
@@ -111,8 +114,13 @@ class Coberturas extends CI_Controller {
         }        
     }
     
-    public function updateCoberturas($id = null, $nombre = null, $imagen = null){       
-        $data['result'] = $this->coberturas_model->editarCobertura($id, $nombre, $imagen);        
+    public function updateCoberturas($id = null, $nombre = null, $imagen = null){
+        if($imagen === null){
+            $data['result'] = $this->coberturas_model->editarCoberturaSinImagen($id, $nombre, $imagen);
+        }else{
+            $data['result'] = $this->coberturas_model->editarCobertura($id, $nombre, $imagen);
+        }
+                
         $data['coberturas'] = $this->coberturas_model->getCoberturas();
         $data['tipo'] = 'editar';
         $this->load->view('admin/includes/head');

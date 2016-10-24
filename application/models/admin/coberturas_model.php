@@ -41,6 +41,15 @@ class Coberturas_model extends CI_Model {
         return $result;
     }
     
+    function editarCoberturaSinImagen($id, $nombre){
+        $data = array(
+            'nombre' => $nombre
+        );        
+        $this->db->where('id', $id);
+        $result = $this->db->update('coberturas', $data);
+        return $result;
+    }
+    
     function eliminarCobertura($id){
         $this->db->where('id', $id);
         $result = $this->db->delete('coberturas');

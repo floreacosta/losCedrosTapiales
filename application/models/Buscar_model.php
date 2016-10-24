@@ -25,13 +25,6 @@ class Buscar_model extends CI_Model {
         }
         
         $this->db->like('nombre', $busqueda);
-        $query = $this->db->get('doctores');
-        
-        if($query->num_rows() > 0){
-            $resultados[] = 'doctores';
-        }
-        
-        $this->db->like('nombre', $busqueda);
         $query = $this->db->get('instalaciones');
         
         if($query->num_rows() > 0){
