@@ -15,7 +15,7 @@ class Doctores extends CI_Controller {
     }
     
     public function index(){
-        $data['doctores'] = $this->doctores_model->getDoctores();
+        $data['doctores'] = $this->doctorxespecialidad_model->getDoctoresConEspecialidadesAgrupadas();
         
         $this->load->view('admin/includes/headWoValidation');
         $this->load->view('admin/doctores/index', $data);
@@ -84,6 +84,7 @@ class Doctores extends CI_Controller {
         foreach($especialidades_post as $especialidad){
             $this->doctorxespecialidad_model->crearDoctorxespecialidad($idDoctor, $especialidad);
         }
+        
         $data['tipo'] = 'editar';
         $data['doctores'] = $this->doctores_model->getDoctores();
         $this->load->view('admin/includes/headWoValidation');

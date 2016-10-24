@@ -63,7 +63,7 @@ class Coberturas extends CI_Controller {
         if ( ! $this->upload->do_upload('user_file')){
             $data['error'] = array('error' => $this->upload->display_errors());
             $this->load->view('admin/includes/head');
-            $this->load->view('admin/coberturas/crear', $data);
+            $this->load->view('admin/coberturas/index', $data);
         }
         else{
             $imagen_post = $this->upload->data()['file_name'];
@@ -89,7 +89,7 @@ class Coberturas extends CI_Controller {
         if (!$this->upload->do_upload('user_file')){
             $data['error'] = array('error' => $this->upload->display_errors());
             $this->load->view('admin/includes/head');
-            $this->load->view('admin/coberturas/crear', $data);
+            $this->load->view('admin/coberturas/index', $data);
         }
         else{
             $imagen_post = $this->upload->data()['file_name'];
@@ -103,7 +103,7 @@ class Coberturas extends CI_Controller {
         if($this->input->get('id') !== null){
             $id = $this->input->get('id');
             $data['cobertura'] = $this->coberturas_model->getCobertura($id);
-            $this->load->view('admin/includes/head');
+            $this->load->view('admin/includes/headNIm');
             $this->load->view('admin/coberturas/editar', $data);
         }else{
             echo "Ha ocurrido un error, intentelo de nuevo por favor";

@@ -30,11 +30,17 @@ class Login extends CI_Controller {
                     $this->session->set_userdata($create_session);
                     
                     redirect(base_url()."admin/index");
+                }else{
+                    $data['fail'] = true; 
+                    $this->load->view('admin/includes/head');
+                    $this->load->view('admin/login', $data);
                 }
             
+        }else{
+            $data['fail'] = false;
+            $this->load->view('admin/includes/head');
+            $this->load->view('admin/login', $data);
         }       
-        $this->load->view('admin/includes/head');
-        $this->load->view('admin/login');
     }
     
     private function _resolve_user_login($user, $pass){

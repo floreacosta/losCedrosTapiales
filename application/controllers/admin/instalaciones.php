@@ -64,7 +64,7 @@ class Instalaciones extends CI_Controller {
         if ( ! $this->upload->do_upload('user_file')){
             $data['error'] = array('error' => $this->upload->display_errors());
             $this->load->view('admin/includes/head');
-            $this->load->view('admin/instalaciones/crear', $data);
+            $this->load->view('admin/instalaciones/index', $data);
         }
         else{
             $imagen_post = $this->upload->data()['file_name'];
@@ -90,10 +90,8 @@ class Instalaciones extends CI_Controller {
         
         if ( ! $this->upload->do_upload('user_file')){
             $data['error'] = array('error' => $this->upload->display_errors());
-            var_dump($data['error']);
-            die;
             $this->load->view('admin/includes/head');
-            $this->load->view('admin/instalaciones/crear', $data);
+            $this->load->view('admin/instalaciones/index', $data);
         }
         else{
             $imagen_post = $this->upload->data()['file_name'];
@@ -107,7 +105,7 @@ class Instalaciones extends CI_Controller {
         if($this->input->get('id') !== null){
             $id = $this->input->get('id');
             $data['instalacion'] = $this->instalaciones_model->getInstalacion($id);
-            $this->load->view('admin/includes/head');
+            $this->load->view('admin/includes/headNIm');
             $this->load->view('admin/instalaciones/editar', $data);
         }else{
             echo "Ha ocurrido un error, intentelo de nuevo por favor";
