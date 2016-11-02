@@ -17,13 +17,6 @@
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<script type="text/javascript" src="<?= base_url(); ?>admin/js/bootstrap.js"></script>
         <script type="text/javascript" src="<?= base_url(); ?>admin/js/npm.js"></script>
-        <link href="http://cdn.rawgit.com/davidstutz/bootstrap-multiselect/master/dist/css/bootstrap-multiselect.css" rel="stylesheet" type="text/css" />
-        <script src="http://cdn.rawgit.com/davidstutz/bootstrap-multiselect/master/dist/js/bootstrap-multiselect.js"  type="text/javascript"></script>
-        <script type="text/javascript" src="<?= base_url(); ?>admin/js/doctorValidation.js"></script>
-        <style>
-            .open > .dropdown-menu {
-                max-height: 400px;
-                overflow: scroll;
-            }        
-        </style>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js"></script>
+        <script type="text/javascript" src="<?= base_url(); ?>admin/js/validationRulesNIm.js"></script>    
 </head>

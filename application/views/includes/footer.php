@@ -41,8 +41,10 @@
 
 		<div class="col-4 search">
 			<label class="common-input">
+                            <form action="<?= base_url(); ?>buscar" method="post">
 				<input type="text" placeholder="Buscar..." value="" name="search"/>
-				<button type="submit" value=""></button>
+                                <button type="submit" value=""></button>
+                            </form>
 			</label>
 		</div>
 	</footer>

@@ -1,4 +1,5 @@
     <body>
+        <div class="container">
     <h3>Bienvenido al sistema de gestión de Los Cedros Tapiales.</h3>
     <p>Desde aquí podrá cambiar el contenido de las secciones vistas por los usuarios.</p>
     <p>Una vez finalizada la edición de contenido, no olvide cerrar su sesión.</p>
@@ -12,5 +13,6 @@
     </div>
     
     <a href="<?= base_url(); ?>admin/index/logout" class="btn btn-info" role="button">Cerrar sesión</a>
+    </div>
     </body>
 </html>

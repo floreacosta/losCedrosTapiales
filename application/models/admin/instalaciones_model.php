@@ -42,6 +42,16 @@ class Instalaciones_model extends CI_Model {
         return $result;
     }
     
+    function editarInstalacionSinImagen($id, $nombre, $descripcion){
+        $data = array(
+            'nombre' => $nombre,
+            'descripcion' => $descripcion
+        );        
+        $this->db->where('id', $id);
+        $result = $this->db->update('instalaciones', $data);
+        return $result;
+    }
+    
     function eliminarInstalacion($id){
         $this->db->where('id', $id);
         $result = $this->db->delete('instalaciones');

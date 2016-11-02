@@ -64,7 +64,7 @@ class Instalaciones extends CI_Controller {
         if ( ! $this->upload->do_upload('user_file')){
             $data['error'] = array('error' => $this->upload->display_errors());
             $this->load->view('admin/includes/head');
-            $this->load->view('admin/instalaciones/crear', $data);
+            $this->load->view('admin/instalaciones/index', $data);
         }
         else{
             $imagen_post = $this->upload->data()['file_name'];
@@ -78,28 +78,30 @@ class Instalaciones extends CI_Controller {
         $id_post = $this->input->post('hiddenId');
         $nombre_post = $this->input->post('nombre');        
         $descripcion_post = $this->input->post('descripcion');
-        
-        $config['upload_path']          = './img';
-        $config['allowed_types']        = 'gif|jpg|png';
-        $config['max_size']             = 2000;
-        $config['max_width']            = 2000;
-        $config['max_height']           = 2000;
-        
-        $this->load->library('upload', $config);
-        $this->upload->initialize($config);        
-        
-        if ( ! $this->upload->do_upload('user_file')){
-            $data['error'] = array('error' => $this->upload->display_errors());
-            var_dump($data['error']);
-            die;
-            $this->load->view('admin/includes/head');
-            $this->load->view('admin/instalaciones/crear', $data);
+        if(isset($_FILES['image']['tmp_name'])) {
+            $config['upload_path']          = './img';
+            $config['allowed_types']        = 'gif|jpg|png';
+            $config['max_size']             = 2000;
+            $config['max_width']            = 2000;
+            $config['max_height']           = 2000;
+
+            $this->load->library('upload', $config);
+            $this->upload->initialize($config);        
+
+            if ( ! $this->upload->do_upload('user_file')){
+                $data['error'] = array('error' => $this->upload->display_errors());
+                $this->load->view('admin/includes/head');
+                $this->load->view('admin/instalaciones/index', $data);
+            }
+            else{
+                $imagen_post = $this->upload->data()['file_name'];
+                $data = array('upload_data' => $this->upload->data());
+                $this->updateInstalaciones($id_post, $nombre_post, $imagen_post, $descripcion_post);
+            }
+        }else{
+            $this->updateInstalaciones($id_post, $nombre_post, $descripcion_post);
         }
-        else{
-            $imagen_post = $this->upload->data()['file_name'];
-            $data = array('upload_data' => $this->upload->data());
-            $this->updateInstalaciones($id_post, $nombre_post, $imagen_post, $descripcion_post);
-        }
+        
     }
     
     public function editarFormularioInstalaciones() {
@@ -107,7 +109,7 @@ class Instalaciones extends CI_Controller {
         if($this->input->get('id') !== null){
             $id = $this->input->get('id');
             $data['instalacion'] = $this->instalaciones_model->getInstalacion($id);
-            $this->load->view('admin/includes/head');
+            $this->load->view('admin/includes/headNIm');
             $this->load->view('admin/instalaciones/editar', $data);
         }else{
             echo "Ha ocurrido un error, intentelo de nuevo por favor";
@@ -116,7 +118,11 @@ class Instalaciones extends CI_Controller {
     }
     
     public function updateInstalaciones($id = null, $nombre = null, $imagen = null, $descripcion = null){       
-        $data['result'] = $this->instalaciones_model->editarInstalacion($id, $nombre, $imagen, $descripcion);        
+        if($imagen === NULL){
+            $data['result'] = $this->instalaciones_model->editarInstalacionSinImagen($id, $nombre, $descripcion);
+        }else{
+            $data['result'] = $this->instalaciones_model->editarInstalacion($id, $nombre, $imagen, $descripcion);
+        }
         $data['instalaciones'] = $this->instalaciones_model->getInstalaciones();
         $data['tipo'] = 'editar';
         $this->load->view('admin/includes/head');

@@ -1,4 +1,13 @@
+    <? if(isset($fail)){ 
+        if($fail) { ?>
+        <div class="alert alert-danger text-center">
+            Su usuario o contraseño es incorrecto, por favor intentelo de nuevo.
+        </div>
+    <? }
+    }?>
+    
     <body>
+        <div class="container">
         <h3>Bienvenido al sistema de gestión de la Clínica Los Cedros Tapiales.</h3>    
         <p>Por favor, ingrese su nombre de usuario y contraseña.</p>
         <br>
@@ -35,6 +44,7 @@
             <br>
             <?= form_submit('','Entrar al sistema', $buttonClass) ?>
             <?= form_close() ?>
+        </div>
         </div>
     </body>
 </html>
