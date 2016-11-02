@@ -124,19 +124,24 @@ function heightMap() {
 
 $(document).ready(heightSection);
 function heightSection() {
-        var ventana = $(window).width();
-        var h = document.getElementById('video-background');
-        if((ventana > 0) && (ventana < 500)) {
-                $('#section-primary').css('height', 'auto');
-        } else if ((ventana >= 500) && (ventana <= 1024)){
-                if (h != "NULL") {
-                        h = h.offsetHeight + "px";
-                        document.getElementById('section-primary').style.height = h;
-                }
-        } else {
-                $('#section-primary').css('height', '500px');
-        }
 
+				$(document).on('ready',function(){
+								var ventana = $(window).width();
+				        var h = document.getElementById('video-background');
+				        if((ventana > 0) && (ventana < 500)) {
+				                $('#section-primary').css('height', 'auto');
+												console.log($('#section-primary').offsetHeight);
+				        } else if ((ventana >= 500) && (ventana <= 1024)){
+				                if (h != "NULL") {
+				                        h = h.offsetHeight + "px";
+				                        document.getElementById('section-primary').style.height = h;
+																console.log($('#section-primary').offsetHeight);
+				                }
+				        } else {
+				                $('#section-primary').css('height', '500px');
+												console.log($('#section-primary').offsetHeight);
+				        }
+				});
 
         $(window).resize(function() {
                 var ventana = $(window).width();

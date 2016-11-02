@@ -1,6 +1,6 @@
 .home {
 	margin-top: 0;
-	
+
 	section {
 		margin: 0 -5.5%;
 		overflow: hidden;
@@ -21,7 +21,7 @@
 * Responsive width
 **/
 
-@media (min-width: 735px) {
+@media (min-width: 700px) {
 	.home {
 		width: calc(100% - 10%);
 

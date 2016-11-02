@@ -15,7 +15,7 @@
 				<div class="logo">
 					<a href="#"><img src="<?= base_url(); ?>img/logo.png" title="Clínica Los Cedros de Tapiales S.A."/></a>
 				</div>
-				
+
 				<nav class="menu">
 					<div class="button-menu">
 						<button class="toggle">
@@ -52,7 +52,7 @@
 						Términos y Condiciones.
 					</p>
 				</div>
-	
+
 				<div class="col-4 site-map">
 					<ul>
 						<h3>Institucional</h3>
@@ -120,16 +120,16 @@
 			<div class="container">
 				<div class="box-description flecha-left">
 					<p>Área de urgencias y emergencias con 9 shock-rooms equipados con complejidad de cuidados críticos.</p>
-				</div>			
+				</div>
 				<div class="box-description flecha-top">
 					<p>Área de urgencias y emergencias con 9 shock-rooms equipados con complejidad de cuidados críticos.</p>
-				</div>			
+				</div>
 				<div class="box-description flecha-bottom">
 					<p>Área de urgencias y emergencias con 9 shock-rooms equipados con complejidad de cuidados críticos.</p>
-				</div>			
+				</div>
 				<div class="box-description flecha-right">
 					<p>Área de urgencias y emergencias con 9 shock-rooms equipados con complejidad de cuidados críticos.</p>
-				</div>			
+				</div>
 			</div>
 		</section>
 
@@ -153,7 +153,7 @@
 			<p>7. Modal</p>
 			<div class="container">
 				<article class="modal">
-					<div class="modal-container">					
+					<div class="modal-container">
 						<button title="Cerrar"></button>
 						<h2>Cirugía Infantil</h2>
 						<ul>
@@ -230,6 +230,28 @@
 			<div class="prevention-item">
 				<h2>Asesoramiento y supervisión por médicos</h2>
 				<p>Permanentemente en los horarios de atención de CEPEM hay profesionales médicos capacitados para responder y solucionar en forma personal o telefónica todas las inquietudes o problemas que puedan surgir en relación o como consecuencia de la vacunación.</p>
+			</div>
+		</section>
+
+		<section>
+			<p>13. Slider</p>
+
+			<div class="container-slider">
+
+				<figure class="image-primary">
+					<button class="button-prev" title="Anterior"></button>
+					<button class="button-next" title="Siguiente"></button>
+					<img alt="" src="<?= base_url(); ?>img/1.jpg"/>
+					<figcaption class="image-description">Descripción de la imagen</figcaption>
+				</figure>
+
+				<div class="container-image-seconodary">
+					<a class="image-secondary" href=""><img alt="" src="<?= base_url(); ?>img/2.jpg"/></a>
+					<a class="image-secondary" href=""><img alt="" src="<?= base_url(); ?>img/3.jpg"/></a>
+					<a class="image-secondary" href=""><img alt="" src="<?= base_url(); ?>img/4.jpg"/></a>
+					<a class="image-secondary" href=""><img alt="" src="<?= base_url(); ?>img/5.jpg"/></a>
+					<a class="image-secondary" href=""><img alt="" src="<?= base_url(); ?>img/6.jpg"/></a>
+				</div>
 			</div>
 		</section>
 
