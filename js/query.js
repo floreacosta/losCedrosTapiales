@@ -202,3 +202,21 @@ function modalEspecialidades() {
 								$(elemento).removeClass("show");
         });
 }
+/*
+$(document).ready(slider);
+function slider(){
+	$("#slider-list").click(function(e){
+		elemento = e.target.id;
+		elemento = "#modal" + elemento;
+		$(elemento).addClass("show");
+	});
+
+	$('#button-close-information').click(function(e){
+		$(elemento).removeClass("show");
+	});
+
+	$(".modal").click(function(e){
+		$(elemento).removeClass("show");
+	});	
+}
+*/
