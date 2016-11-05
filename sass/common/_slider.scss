@@ -16,6 +16,7 @@
 			background: $color-secondary;
 			width: 45px;
 			height: 45px;
+			opacity: .7;
 			@include box-shadow($shadow);
 		}
 }
@@ -27,53 +28,40 @@
 	width: 35px;
 	height: 35px;
 	position: absolute;
-	top: 50%;
-	@include transform(translateY(-50%));
+	top: calc(50% - 17px);
+	@include transform(rotate(-90deg));
 	@include border-radius(50%);
 	cursor: pointer;
 
-	&:before {
-		content:'';
-		display: inline-block;
-		background: $color-light;
-		position: relative;
-		width: 12px;
-		height: 6px;
-		@include border-radius(40%);
-    left: 5px;
+	&:before,
+	&:after {
+		content: '';
+    background: $color-light;
+    width: 2px;
+    height: 15px;
+    display: inline-block;
+    margin: auto;
+		@include transform(rotate(45deg));
 	}
 
 	&:after {
-		content: '';
-		box-shadow: inset -4px 4px 0px 0px $color-light;
-		@include border-radius(20%);
-		@include transform(rotate(45deg));
-    display: inline-block;
-		width: 12px;
-		height: 12px;
-		position: relative;
-		left: -6px;
-		top: 4px;
+		@include transform(rotate(-45deg));
+    margin-left: 7px;
 	}
 
 	&:hover {
 		animation-name: buttonSlider;
-		animation-duration: .5s;
+		animation-duration: .3s;
 		animation-fill-mode: forwards;
 	}
 }
 
 .button-prev {
 	left: 22px;
-
-	&:after {
-		@include transform(rotate(-135deg));
-		left: -9px;
-    top: 3px;
-	}
 }
 
 .button-next {
+	@include transform(rotate(90deg));
 	right: 22px;
 }
 
