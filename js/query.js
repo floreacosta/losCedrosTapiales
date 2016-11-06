@@ -204,19 +204,56 @@ function modalEspecialidades() {
 }
 /*
 $(document).ready(slider);
-function slider(){
-	$("#slider-list").click(function(e){
-		elemento = e.target.id;
-		elemento = "#modal" + elemento;
-		$(elemento).addClass("show");
-	});
+	function slider(){
+		$("#slider-list").click(function(e){
+			elemento = e.target.id;
+			elemento = "#modal" + elemento;
+			$(elemento).addClass("show");
+		});
 
-	$('#button-close-information').click(function(e){
-		$(elemento).removeClass("show");
-	});
+		$('#button-close-information').click(function(e){
+			$(elemento).removeClass("show");
+		});
 
-	$(".modal").click(function(e){
-		$(elemento).removeClass("show");
-	});	
+		$(".modal").click(function(e){
+			$(elemento).removeClass("show");
+		});
 }
 */
+
+$(document).ready(buttonPrev);
+	function buttonPrev(){
+		var deslizar = 	parseInt($(".image-primary").css("left").replace("%", ""));
+		alert(deslizar);
+
+		if (!(deslizar == 0)) {
+			alert("Funciono");
+			$("#button-prev").click(function(){
+				deslizar = (deslizar + $(".content-image-primary").width());
+				var espacioAdeslizar = deslizar + "px";
+
+				$(".image-primary").css("left", espacioAdeslizar);
+			});
+		} else {
+			alert("No funciono?");
+		}
+}
+
+$(document).ready(buttonNext);
+	function buttonNext(){
+		var deslizar = 	parseInt($(".image-primary").css("left").replace("%", ""));
+		var cantidadDeImagenes = $(".content-image-primary").width() * 5;
+		cantidadDeImagenes = cantidadDeImagenes - (cantidadDeImagenes * 2);
+		alert(cantidadDeImagenes);
+
+		if(!(deslizar <= cantidadDeImagenes)) {
+			$("#button-next").click(function(){
+				deslizar = (deslizar - $(".content-image-primary").width());
+				var espacioAdeslizar = deslizar + "px";
+
+				$(".image-primary").css("left", espacioAdeslizar);
+			});
+		} else {
+			alert("No funciono?");
+		}
+}

@@ -238,14 +238,44 @@
 
 			<div class="container-slider">
 
+				<button class="button-prev" id="button-prev" title="Anterior" onClick="buttonPrev()"></button>
+				<button class="button-next" id="button-next" title="Siguiente" onClick="buttonNext()"></button>
+
 				<figure class="image-primary">
-					<button class="button-prev" title="Anterior"></button>
-					<button class="button-next" title="Siguiente"></button>
-					<img alt="" src="<?= base_url(); ?>img/1.jpg"/>
-					<figcaption class="image-description">Descripción de la imagen</figcaption>
+
+					<div id="image1" class="content-image-primary">
+						<img alt="" src="<?= base_url(); ?>img/1.jpg"/>
+						<figcaption class="image-description">Descripción de la imagen 1</figcaption>
+					</div>
+
+					<div class="content-image-primary">
+						<img alt="" src="<?= base_url(); ?>img/2.jpg"/>
+						<figcaption class="image-description">Descripción de la imagen 2</figcaption>
+					</div>
+
+					<div class="content-image-primary">
+						<img alt="" src="<?= base_url(); ?>img/3.jpg"/>
+						<figcaption class="image-description">Descripción de la imagen 3</figcaption>
+					</div>
+
+					<div class="content-image-primary">
+						<img alt="" src="<?= base_url(); ?>img/4.jpg"/>
+						<figcaption class="image-description">Descripción de la imagen 4</figcaption>
+					</div>
+
+					<div class="content-image-primary">
+						<img alt="" src="<?= base_url(); ?>img/5.jpg"/>
+						<figcaption class="image-description">Descripción de la imagen 5</figcaption>
+					</div>
+
+					<div class="content-image-primary">
+						<img alt="" src="<?= base_url(); ?>img/6.jpg"/>
+						<figcaption class="image-description">Descripción de la imagen 6</figcaption>
+					</div>
+
 				</figure>
 
-				<div class="container-image-seconodary">
+				<div class="container-image-seconodary" onClick="slider()">
 					<a class="image-secondary" href=""><img alt="" src="<?= base_url(); ?>img/2.jpg"/></a>
 					<a class="image-secondary" href=""><img alt="" src="<?= base_url(); ?>img/3.jpg"/></a>
 					<a class="image-secondary" href=""><img alt="" src="<?= base_url(); ?>img/4.jpg"/></a>
