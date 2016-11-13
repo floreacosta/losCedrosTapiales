@@ -1,12 +1,12 @@
 	<nav class="tooltip-box">
-		<a id="turn-tooltip" href="index.php#online-turn" class="tooltip tooltip-active">
+		<a id="turn-tooltip" href="index.php#online-turn" class="tooltip">
 			<span class="tooltip-text tooltip-text-primary">Turnos online</span>
 			<span class="tooltip-img-content">
 				<img class="tooltip-online-turn" src="<?= base_url(); ?>img/icons.png"/>
 			</span>
 		</a>
-		<a id="address-tooltip" href="index.php#address" class="tooltip">
-			<span class="tooltip-text">Ubicación</span>
+		<a id="address-tooltip" href="index.php#address" class="tooltip tooltip-active">
+			<span class="tooltip-text tooltip-text-primary">Ubicación</span>
 			<span class="tooltip-img-content">
 				<img class="tooltip-address" src="<?= base_url(); ?>img/icons.png"/>
 			</span>
