@@ -1,5 +1,6 @@
 @import "compass/reset";
 @import "compass/css3/box-shadow";
+@import "compass/css3/border-radius";
 @import "_mixin";
 
 @import "_variable";
@@ -48,7 +49,7 @@
 
 	section {
 		margin: 2em 0;
-	
+
 		> p {
 			font-weight: normal;
 			margin-bottom: 1em;
