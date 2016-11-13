@@ -1,27 +1,20 @@
-.container-slider {
-	display: inline-block;
-	width: auto;
-	height: auto;
-	position: relative;
-	overflow: hidden;
-}
-
-
+/* Animacion de botones */
 @keyframes buttonSlider {
     from {
-			width: 35px;
-			height: 35px;
- 		}
+		width: 35px;
+		height: 35px;
+	}
 
     to {
-			background: $color-secondary;
-			width: 45px;
-			height: 45px;
-			opacity: .7;
-			@include box-shadow($shadow);
-		}
+		background: $color-secondary;
+		width: 45px;
+		height: 45px;
+		opacity: .7;
+		@include box-shadow($shadow);
+	}
 }
 
+/* Botones Anterior y Siguiente */
 .button-prev,
 .button-next {
 	border: 0;
@@ -35,20 +28,20 @@
 	z-index: 100;
 	cursor: pointer;
 
-	&:before,
-	&:after {
-		content: '';
-    background: $color-light;
-    width: 2px;
-    height: 15px;
-    display: inline-block;
-    margin: auto;
-		@include transform(rotate(45deg));
-	}
+     &:before,
+     &:after {
+          content: '';
+          background: $color-light;
+          width: 2px;
+          height: 15px;
+          display: inline-block;
+          margin: auto;
+          @include transform(rotate(45deg));
+     }
 
 	&:after {
 		@include transform(rotate(-45deg));
-    margin-left: 9px;
+          margin-left: 9px;
 	}
 
 	&:hover {
@@ -67,43 +60,72 @@
 	right: 22px;
 }
 
-.content-image-primary {
-	position: relative;
-	width: calc(16.67% - 4px);
-	display: inline-block;
-}
+/* Nuevos estilos */
+.container-slider {
+     width: 100%;
+     position: relative;
+     margin: 0 auto;
+     display: none;
+     overflow: hidden;
 
-.image-description {
-	display: block;
-	padding: 1em;
-	position: absolute;
-	bottom: 0;
-	background: rgba(13, 71, 72, .7);
-	color: $color-light;
-	width: 100%;
-  margin-bottom: 3px;
+     &.slider-active {
+          display: block;
+     }
+
+     img {
+          width: 100%;
+          display: inline-block;
+          height: auto;
+          max-width: 100%;
+     }
 }
 
 .image-primary {
-	position: relative;
-	display: block;
-	width: 600%;
-	left: 0%;
+     position: relative;
+     width: 100%;
 }
 
-.container-image-seconodary {
-	position: relative;
-	display: block;
+.content-imagen {
+     width: 500%;
+     height: auto;
+     display: inline-block;
+}
+
+.content-image-primary {
+     width: 20%;
+     float: left;
+     position: relative;
+     display: inline-block;
+
+     img {
+          width: 100%;
+          height: auto;
+     }
+}
+
+.image-description {
+     position: absolute;
+     width: 100%;
+     padding: 10px;
+     bottom: 0;
+     background: rgba(13, 71, 72, .7);
+	color: $color-light;
+}
+
+.container-image-secondary {
+     width: 100%;
+     display: inline-block;
+     height: auto;
+     position: relative;
 }
 
 .image-secondary {
-	width: calc(24.6%);
-	display: inline-block;
-	height: auto;
-	margin-bottom: .5em;
-	position: relative;
+     width: 20%;
+     height: auto;
+     display: block;
+     float: left;
 
-	&:hover {
+     &:hover {
 		&:after {
 			content: '+';
 			color: $color-light;
@@ -122,8 +144,11 @@
 			content: '';
 			position: absolute;
 			background: rgba(13, 71, 72, .7);
+			top: 0;
+			left: 0;
 			width: 100%;
 			height: calc(100% - 2px);
+			z-index: 1;
 			display: inline-block;
 		}
 	}

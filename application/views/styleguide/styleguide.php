@@ -237,54 +237,46 @@
 			<p>13. Slider</p>
 
 			<div class="container-slider">
-
-				<button class="button-prev" id="button-prev" title="Anterior" onClick="buttonPrev()"></button>
-				<button class="button-next" id="button-next" title="Siguiente" onClick="buttonNext()"></button>
+				<button class="button-prev" id="button-prev" title="Anterior"></button>
+				<button class="button-next" id="button-next" title="Siguiente"></button>
 
 				<figure class="image-primary">
+					<ul class="bxslider content-imagen" id="slider-container-images">
+						<li class="content-image-primary">
+							<img alt="" src="<?= base_url(); ?>img/1.jpg"/>
+							<figcaption class="image-description">Descripción de la imagen 1</figcaption>
+						</li>
 
-					<div id="image1" class="content-image-primary">
-						<img alt="" src="<?= base_url(); ?>img/1.jpg"/>
-						<figcaption class="image-description">Descripción de la imagen 1</figcaption>
-					</div>
+						<li class="content-image-primary">
+							<img alt="" src="<?= base_url(); ?>img/2.jpg"/>
+							<figcaption class="image-description">Descripción de la imagen 2</figcaption>
+						</li>
 
-					<div class="content-image-primary">
-						<img alt="" src="<?= base_url(); ?>img/2.jpg"/>
-						<figcaption class="image-description">Descripción de la imagen 2</figcaption>
-					</div>
+						<li class="content-image-primary">
+							<img alt="" src="<?= base_url(); ?>img/3.jpg"/>
+							<figcaption class="image-description">Descripción de la imagen 3</figcaption>
+						</li>
 
-					<div class="content-image-primary">
-						<img alt="" src="<?= base_url(); ?>img/3.jpg"/>
-						<figcaption class="image-description">Descripción de la imagen 3</figcaption>
-					</div>
+						<li class="content-image-primary">
+							<img alt="" src="<?= base_url(); ?>img/4.jpg"/>
+							<figcaption class="image-description">Descripción de la imagen 4</figcaption>
+						</li>
 
-					<div class="content-image-primary">
-						<img alt="" src="<?= base_url(); ?>img/4.jpg"/>
-						<figcaption class="image-description">Descripción de la imagen 4</figcaption>
-					</div>
-
-					<div class="content-image-primary">
-						<img alt="" src="<?= base_url(); ?>img/5.jpg"/>
-						<figcaption class="image-description">Descripción de la imagen 5</figcaption>
-					</div>
-
-					<div class="content-image-primary">
-						<img alt="" src="<?= base_url(); ?>img/6.jpg"/>
-						<figcaption class="image-description">Descripción de la imagen 6</figcaption>
-					</div>
-
+						<li class="content-image-primary">
+							<img alt="" src="<?= base_url(); ?>img/5.jpg"/>
+							<figcaption class="image-description">Descripción de la imagen 5</figcaption>
+						</li>
+					</ul>
 				</figure>
 
-				<div class="container-image-seconodary" onClick="slider()">
+				<div class="container-image-secondary">
 					<a class="image-secondary" href=""><img alt="" src="<?= base_url(); ?>img/2.jpg"/></a>
 					<a class="image-secondary" href=""><img alt="" src="<?= base_url(); ?>img/3.jpg"/></a>
 					<a class="image-secondary" href=""><img alt="" src="<?= base_url(); ?>img/4.jpg"/></a>
 					<a class="image-secondary" href=""><img alt="" src="<?= base_url(); ?>img/5.jpg"/></a>
-					<a class="image-secondary" href=""><img alt="" src="<?= base_url(); ?>img/6.jpg"/></a>
 				</div>
 			</div>
 		</section>
-
 	</main>
 </body>
 </html>
