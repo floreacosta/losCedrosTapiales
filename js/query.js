@@ -186,8 +186,8 @@ function openDescription() {
 		$(li).addClass("item-active");
 
 		slider = "#slider-" + li.id;
-		$(".container-all-slider div").each(function(){
-			$(".container-all-slider div").removeClass("slider-active");
+		$(".container-all-slider > div").each(function(){
+			$(".container-all-slider > div").removeClass("slider-active");
 		});
 		$(slider).addClass("slider-active");
 	});
