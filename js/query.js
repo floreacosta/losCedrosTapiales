@@ -209,6 +209,8 @@ function slider() {
           } else {
 			if (espacioAmover == (anchoImagen * page)) {
 				espacioAmover = anchoImagen * (page + 1);
+			} else if (page == cantImagenes) {
+				espacioAmover = anchoImagen * (page - 1);
 			} else {
 				espacioAmover = anchoImagen * page;
 			}
