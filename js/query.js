@@ -195,9 +195,9 @@ function openDescription() {
 
 $(document).ready(slider);
 function slider() {
-     var cantImagenes = $(".content-imagen li").size();
+     var cantImagenes = $(".slider-active .content-imagen li").size();
      var anchoContenedor = (cantImagenes * 100) + "%";
-     $(".content-imagen").css("width", anchoContenedor);
+     $(".slider-active .content-imagen").css("width", anchoContenedor);
 
      var page = 1;
      $("#button-next").click(function(){
@@ -205,17 +205,17 @@ function slider() {
           var anchoImagen = $(".content-imagen li img").width() * -1;
           if (page >= cantImagenes) {
                page = 1;
-               $(".content-imagen").animate({left: "0px"}, 500);
+               $(".slider-active .content-imagen").animate({left: "0px"}, 500);
           } else {
                espacioAmover = anchoImagen * page;
-               $(".content-imagen").animate({left: (espacioAmover + "px")}, 500);
+               $(".slider-active .content-imagen").animate({left: (espacioAmover + "px")}, 500);
                page++;
           }
 
           $(window).resize(function(){
-               var anchoImagen = $(".content-imagen li img").width() * -1;
+               var anchoImagen = $(".slider-active .content-imagen li img").width() * -1;
                espacioAmover = anchoImagen * (page - 1);
-               $(".content-imagen").css("left", (espacioAmover + "px"));
+               $(".slider-active .content-imagen").css("left", (espacioAmover + "px"));
           });
      });
 
