@@ -81,10 +81,11 @@
 					</figure>
 
 					<div class="container-image-secondary">
-						<a class="image-secondary" href=""><img alt="" src="<?= base_url(); ?>img/2.jpg"/></a>
-						<a class="image-secondary" href=""><img alt="" src="<?= base_url(); ?>img/3.jpg"/></a>
-						<a class="image-secondary" href=""><img alt="" src="<?= base_url(); ?>img/4.jpg"/></a>
-						<a class="image-secondary" href=""><img alt="" src="<?= base_url(); ?>img/5.jpg"/></a>
+						<a class="image-secondary" id="image-1" href=""><img alt="" src="<?= base_url(); ?>img/2.jpg"/></a>
+						<a class="image-secondary" id="image-2" href=""><img alt="" src="<?= base_url(); ?>img/3.jpg"/></a>
+						<a class="image-secondary" id="image-3" href=""><img alt="" src="<?= base_url(); ?>img/4.jpg"/></a>
+						<a class="image-secondary" id="image-4" href=""><img alt="" src="<?= base_url(); ?>img/5.jpg"/></a>
+						<a class="image-secondary" id="image-5" href=""><img alt="" src="<?= base_url(); ?>img/5.jpg"/></a>
 					</div>
 				</div>
 
@@ -122,10 +123,11 @@
 					</figure>
 
 					<div class="container-image-secondary">
-						<a class="image-secondary" href=""><img alt="" src="<?= base_url(); ?>img/2.jpg"/></a>
-						<a class="image-secondary" href=""><img alt="" src="<?= base_url(); ?>img/3.jpg"/></a>
-						<a class="image-secondary" href=""><img alt="" src="<?= base_url(); ?>img/4.jpg"/></a>
-						<a class="image-secondary" href=""><img alt="" src="<?= base_url(); ?>img/5.jpg"/></a>
+						<a class="image-secondary" id="image-1" href=""><img alt="" src="<?= base_url(); ?>img/2.jpg"/></a>
+						<a class="image-secondary" id="image-2" href=""><img alt="" src="<?= base_url(); ?>img/3.jpg"/></a>
+						<a class="image-secondary" id="image-3" href=""><img alt="" src="<?= base_url(); ?>img/4.jpg"/></a>
+						<a class="image-secondary" id="image-4" href=""><img alt="" src="<?= base_url(); ?>img/5.jpg"/></a>
+						<a class="image-secondary" id="image-5" href=""><img alt="" src="<?= base_url(); ?>img/5.jpg"/></a>
 					</div>
 				</div>
 
@@ -163,10 +165,11 @@
 					</figure>
 
 					<div class="container-image-secondary">
-						<a class="image-secondary" href=""><img alt="" src="<?= base_url(); ?>img/2.jpg"/></a>
-						<a class="image-secondary" href=""><img alt="" src="<?= base_url(); ?>img/3.jpg"/></a>
-						<a class="image-secondary" href=""><img alt="" src="<?= base_url(); ?>img/4.jpg"/></a>
-						<a class="image-secondary" href=""><img alt="" src="<?= base_url(); ?>img/5.jpg"/></a>
+						<a class="image-secondary" id="image-1" href=""><img alt="" src="<?= base_url(); ?>img/2.jpg"/></a>
+						<a class="image-secondary" id="image-2" href=""><img alt="" src="<?= base_url(); ?>img/3.jpg"/></a>
+						<a class="image-secondary" id="image-3" href=""><img alt="" src="<?= base_url(); ?>img/4.jpg"/></a>
+						<a class="image-secondary" id="image-4" href=""><img alt="" src="<?= base_url(); ?>img/5.jpg"/></a>
+						<a class="image-secondary" id="image-5" href=""><img alt="" src="<?= base_url(); ?>img/5.jpg"/></a>
 					</div>
 				</div>
 
@@ -204,10 +207,11 @@
 					</figure>
 
 					<div class="container-image-secondary">
-						<a class="image-secondary" href=""><img alt="" src="<?= base_url(); ?>img/2.jpg"/></a>
-						<a class="image-secondary" href=""><img alt="" src="<?= base_url(); ?>img/3.jpg"/></a>
-						<a class="image-secondary" href=""><img alt="" src="<?= base_url(); ?>img/4.jpg"/></a>
-						<a class="image-secondary" href=""><img alt="" src="<?= base_url(); ?>img/5.jpg"/></a>
+						<a class="image-secondary" id="image-1" href=""><img alt="" src="<?= base_url(); ?>img/2.jpg"/></a>
+						<a class="image-secondary" id="image-2" href=""><img alt="" src="<?= base_url(); ?>img/3.jpg"/></a>
+						<a class="image-secondary" id="image-3" href=""><img alt="" src="<?= base_url(); ?>img/4.jpg"/></a>
+						<a class="image-secondary" id="image-4" href=""><img alt="" src="<?= base_url(); ?>img/5.jpg"/></a>
+						<a class="image-secondary" id="image-5" href=""><img alt="" src="<?= base_url(); ?>img/5.jpg"/></a>
 					</div>
 				</div>
 				<div class="container-slider" id="slider-5">
@@ -244,10 +248,11 @@
 					</figure>
 
 					<div class="container-image-secondary">
-						<a class="image-secondary" href=""><img alt="" src="<?= base_url(); ?>img/2.jpg"/></a>
-						<a class="image-secondary" href=""><img alt="" src="<?= base_url(); ?>img/3.jpg"/></a>
-						<a class="image-secondary" href=""><img alt="" src="<?= base_url(); ?>img/4.jpg"/></a>
-						<a class="image-secondary" href=""><img alt="" src="<?= base_url(); ?>img/5.jpg"/></a>
+						<a class="image-secondary" id="image-1" href=""><img alt="" src="<?= base_url(); ?>img/2.jpg"/></a>
+						<a class="image-secondary" id="image-2" href=""><img alt="" src="<?= base_url(); ?>img/3.jpg"/></a>
+						<a class="image-secondary" id="image-3" href=""><img alt="" src="<?= base_url(); ?>img/4.jpg"/></a>
+						<a class="image-secondary" id="image-4" href=""><img alt="" src="<?= base_url(); ?>img/5.jpg"/></a>
+						<a class="image-secondary" id="image-5" href=""><img alt="" src="<?= base_url(); ?>img/5.jpg"/></a>
 					</div>
 				</div>
 
@@ -285,10 +290,11 @@
 					</figure>
 
 					<div class="container-image-secondary">
-						<a class="image-secondary" href=""><img alt="" src="<?= base_url(); ?>img/2.jpg"/></a>
-						<a class="image-secondary" href=""><img alt="" src="<?= base_url(); ?>img/3.jpg"/></a>
-						<a class="image-secondary" href=""><img alt="" src="<?= base_url(); ?>img/4.jpg"/></a>
-						<a class="image-secondary" href=""><img alt="" src="<?= base_url(); ?>img/5.jpg"/></a>
+						<a class="image-secondary" id="image-1" href=""><img alt="" src="<?= base_url(); ?>img/2.jpg"/></a>
+						<a class="image-secondary" id="image-2" href=""><img alt="" src="<?= base_url(); ?>img/3.jpg"/></a>
+						<a class="image-secondary" id="image-3" href=""><img alt="" src="<?= base_url(); ?>img/4.jpg"/></a>
+						<a class="image-secondary" id="image-4" href=""><img alt="" src="<?= base_url(); ?>img/5.jpg"/></a>
+						<a class="image-secondary" id="image-5" href=""><img alt="" src="<?= base_url(); ?>img/5.jpg"/></a>
 					</div>
 				</div>
 
@@ -326,10 +332,11 @@
 					</figure>
 
 					<div class="container-image-secondary">
-						<a class="image-secondary" href=""><img alt="" src="<?= base_url(); ?>img/2.jpg"/></a>
-						<a class="image-secondary" href=""><img alt="" src="<?= base_url(); ?>img/3.jpg"/></a>
-						<a class="image-secondary" href=""><img alt="" src="<?= base_url(); ?>img/4.jpg"/></a>
-						<a class="image-secondary" href=""><img alt="" src="<?= base_url(); ?>img/5.jpg"/></a>
+						<a class="image-secondary" id="image-1" href=""><img alt="" src="<?= base_url(); ?>img/2.jpg"/></a>
+						<a class="image-secondary" id="image-2" href=""><img alt="" src="<?= base_url(); ?>img/3.jpg"/></a>
+						<a class="image-secondary" id="image-3" href=""><img alt="" src="<?= base_url(); ?>img/4.jpg"/></a>
+						<a class="image-secondary" id="image-4" href=""><img alt="" src="<?= base_url(); ?>img/5.jpg"/></a>
+						<a class="image-secondary" id="image-5" href=""><img alt="" src="<?= base_url(); ?>img/5.jpg"/></a>
 					</div>
 				</div>
 			</article>
