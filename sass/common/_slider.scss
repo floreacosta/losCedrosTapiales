@@ -22,7 +22,7 @@
 	width: 35px;
 	height: 35px;
 	position: absolute;
-	top: calc(30% - 17px);
+	top: calc(35% - 17px);
 	@include transform(rotate(-90deg));
 	@include border-radius(50%);
 	z-index: 100;

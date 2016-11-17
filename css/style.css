@@ -1825,7 +1825,7 @@ footer .search label button:hover {
   width: 35px;
   height: 35px;
   position: absolute;
-  top: calc(30% - 17px);
+  top: calc(35% - 17px);
   -moz-transform: rotate(-90deg);
   -ms-transform: rotate(-90deg);
   -webkit-transform: rotate(-90deg);
