@@ -37,26 +37,26 @@ $(document).ready(function() {
 $(document).ready(menu);
 var contador = 1;
 function menu(){
-        $('.toggle').click(function(){
-                if(contador == 1){
+   $('.toggle').click(function(){
+	      if(contador == 1){
 
-                        $('#element').animate({
-                                right: '0em'
-                        });
+              $('#element').animate({
+                      right: '0em'
+              });
 
-                        $('.menu-element').css("height", "328px");
+              $('.menu-element').css("height", "328px");
 
-                        contador = 0;
-                } else {
-                        contador = 1;
+              contador = 0;
+	      } else {
+              contador = 1;
 
-                        $('#element').animate({
-                                right: '-100%'
-                        });
+              $('#element').animate({
+                      right: '-100%'
+              });
 
-                        $('.menu-element').css("height", "auto");
-                }
-        });
+              $('.menu-element').css("height", "auto");
+	      }
+   });
 }
 
 $(document).ready(fixedMenu);
@@ -107,50 +107,32 @@ function closeVideoContainer(){
 
 $(document).ready(heightMap);
 function heightMap() {
-        var h = document.getElementById('informationBox');
-        if (h != "NULL") {
-                h = h.offsetHeight + "px";
-                document.getElementById('map').style.height = h;
-        }
-
-        $(window).resize(function() {
-                h = document.getElementById('informationBox');
-                if (h != "NULL") {
-                        h = h.offsetHeight + "px";
-                        document.getElementById('map').style.height = h;
-                }
-        });
+	var h = $("#informationBox").outerHeight() + "px";
+	$("#map").css("height", h);
+	$(window).resize(function() {
+		var h = $("#informationBox").outerHeight() + "px";
+		$("#map").css("height", h);
+	});
 }
 
 $(document).ready(heightSection);
 function heightSection() {
-	$(document).on('ready',function(){
-		var ventana = $(window).width();
-		var h = document.getElementById('video-background');
+	var ventana = $(window).width();
+	var h = $("#video-background").outerHeight() + "px";
 
-		if((ventana > 0) && (ventana < 500)) {
-			$('#section-primary').css('height', 'auto');
-		} else if ((ventana >= 500) && (ventana <= 1024)){
-			if (h != "NULL") {
-				h = h.offsetHeight + "px";
-				document.getElementById('section-primary').style.height = h;
-			}
-		} else {
-			$('#section-primary').css('height', '500px');
-		}
-	});
+	if((ventana > 0) && (ventana < 500)) {
+		$('#section-primary').css('height', 'auto');
+	} else if ((ventana >= 500) && (ventana <= 1024)){
+		$("#section-primary").css("height", h);
+	} else {
+		$('#section-primary').css('height', '500px');
+	}
 
 	$(window).resize(function() {
-		var ventana = $(window).width();
-		var h = document.getElementById('video-background');
-
 		if((ventana > 0) && (ventana < 500)) {
 			$('#section-primary').css('height', 'auto');
 		} else if ((ventana >= 500) && (ventana <= 1024)){
-			if (h != "NULL") {
-				h = h.offsetHeight + "px";
-				document.getElementById('section-primary').style.height = h;
-			}
+			$("#section-primary").css("height", h);
 		} else {
 			$('#section-primary').css('height', '500px');
 		}
@@ -159,29 +141,22 @@ function heightSection() {
 
 $(document).ready(heightSectionSecondary);
 function heightSectionSecondary() {
-        var ventana = $(window).width();
-        var h = document.getElementById('imagen-background');
-        if(ventana < 1024) {
-                if (h != "NULL") {
-                        h = h.offsetHeight + "px";
-                        document.getElementById('section-secondary').style.height = h;
-                }
-        } else {
-                $('#section-secondary').css('height', '500px');
-        }
+	var ventana = $(window).width();
+	var h = $("#imagen-background").outerHeight() + "px";
 
-        $(window).resize(function() {
-                var ventana = $(window).width();
-                var h = document.getElementById('imagen-background');
-                if(ventana < 1024) {
-                        if (h != "NULL") {
-                                h = h.offsetHeight + "px";
-                                document.getElementById('section-secondary').style.height = h;
-                        }
-                } else {
-                        $('#section-secondary').css('height', '500px');
-                }
-        });
+	if(ventana < 1024) {
+		$('#section-secondary').css('height', h);
+	} else {
+	      $('#section-secondary').css('height', '500px');
+	}
+
+	$(window).resize(function() {
+	      if(ventana < 1024) {
+			 $('#section-secondary').css('height', h);
+	      } else {
+			 $('#section-secondary').css('height', '500px');
+	      }
+	});
 }
 
 $(document).ready(modalEspecialidades);
