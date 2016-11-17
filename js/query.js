@@ -194,14 +194,15 @@ function openDescription() {
 	});
 }
 
-$(document).ready(openImage);
-function openImage() {
+$(document).ready(slider);
+function slider() {
 	var listadoImagenes = [];
 	$(".slider-active .container-image-secondary a").each(function(index){
 		listadoImagenes.push(this);
 	});
-	console.log(listadoImagenes);
-	//imagenClick = listadoImagenes[]
+
+	var page = 1;
+
 	$(".slider-active .container-image-secondary").click(function(e){
 		e.preventDefault();
 		var a = e.target.id;
@@ -210,18 +211,15 @@ function openImage() {
 			if(a == listadoImagenes[i].id) {
 				var posicion = $(".slider-active .content-imagen li img").width() * i * -1;
 				$(".slider-active .content-imagen").css("left", posicion);
+				page = (i + 1);
 			}
 		}
 	});
-}
 
-$(document).ready(slider);
-function slider() {
      var cantImagenes = $(".slider-active .content-imagen li").size();
      var anchoContenedor = (cantImagenes * 100) + "%";
      $(".slider-active .content-imagen").css("width", anchoContenedor);
 
-     var page = 1;
 	var espacioAmover = 0;
      $("#button-next").click(function(){
           var anchoImagen = $(".content-imagen li img").width() * -1;
@@ -270,4 +268,5 @@ function slider() {
                $(".content-imagen").css("left", (espacioAmover + "px"));
           });
      });
+
 }
