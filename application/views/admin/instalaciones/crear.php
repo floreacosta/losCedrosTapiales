@@ -26,6 +26,7 @@
                                 <li><a href="<?= base_url(); ?>admin/instalaciones">Instalaciones</a></li>
                                 <li><a href="<?= base_url(); ?>admin/servicios">Servicios</a></li>
                                 <li><a href="<?= base_url(); ?>admin/usuarios">Usuarios</a></li>
+                                <li><a href="<?= base_url(); ?>admin/categorias">Categorias</a></li>
                             </ul>
                             </li>
                         </ul>
@@ -75,6 +76,14 @@
         <div class="form-group">
         <?= form_label('Descripción: ', 'descripcion') ?>
         <?= form_textarea($descripcion) ?>
+        </div>
+        <div class="form-group">
+        <?= form_label('Categoria: ', 'categoria') ?>
+        <select name="myselect">
+            <option value="one" <?php echo  set_select('myselect', 'one', TRUE); ?> >One</option>
+            <option value="two" <?php echo  set_select('myselect', 'two'); ?> >Two</option>
+            <option value="three" <?php echo  set_select('myselect', 'three'); ?> >Three</option>
+        </select>
         </div>
         <?= form_submit('','Crear instalacion', $buttonClass) ?>
         <?= form_close() ?>

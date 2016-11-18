@@ -53,6 +53,7 @@
                             <li><a href="<?= base_url(); ?>admin/instalaciones">Instalaciones</a></li>
                             <li><a href="<?= base_url(); ?>admin/servicios">Servicios</a></li>
                             <li><a href="<?= base_url(); ?>admin/usuarios">Usuarios</a></li>
+                            <li><a href="<?= base_url(); ?>admin/categorias">Categorias</a></li>
                         </ul>
                         </li>
                     </ul>
@@ -71,6 +72,7 @@
             <th>Nombre</th>  
             <th>Imagen</th>
             <th>Descripción<th>
+            <th>Categoría<th>
             <th></th>
             <th></th>
           </tr>
@@ -78,11 +80,12 @@
         <tbody>
             <? foreach($instalaciones->result() as $instalacion): ?>    
             <tr>
-                <td><?= $instalacion->nombre; ?></td>
-                <td><img class="img-thumbnail" src="<?= base_url(); ?>img/<?= $instalacion->imagen; ?>"></td>
-                <td><?= $instalacion->descripcion; ?></td>
-                <td><a href="<?= base_url(); ?>admin/instalaciones/editarFormularioInstalaciones?id=<?= $instalacion->id ?>">Editar</a></td>
-                <td><a href="<?= base_url(); ?>admin/instalaciones/EliminarInstalacion?id=<?= $instalacion->id ?>">Eliminar</a></td>
+                <td><?= $instalacion->instalacionNombre; ?></td>
+                <td><img class="img-thumbnail" src="<?= base_url(); ?>img/<?= $instalacion->instalacionImagen; ?>"></td>
+                <td><?= $instalacion->instalacionDescripcion; ?></td>
+                <td><?= $instalacion->categoriaNombre; ?></td>
+                <td><a href="<?= base_url(); ?>admin/instalaciones/editarFormularioInstalaciones?id=<?= $instalacion->Id ?>">Editar</a></td>
+                <td><a href="<?= base_url(); ?>admin/instalaciones/EliminarInstalacion?id=<?= $instalacion->Id ?>">Eliminar</a></td>
             </tr>
             <? endforeach; ?>
         </tbody>

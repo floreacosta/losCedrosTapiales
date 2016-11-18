@@ -33,12 +33,12 @@ class Instalaciones extends CI_Controller {
         }        
     }
     
-    public function crearInstalacion($nombre = null, $imagen = null, $descripcion = null){
+    public function crearInstalacion($nombre = null, $imagen = null, $descripcion = null, $categoria = null){
         if(null === $nombre){
             $this->load->view('admin/includes/head');
             $this->load->view('admin/instalaciones/crear');
         }else{
-            $data['result'] = $this->instalaciones_model->crearInstalacion($nombre, $imagen, $descripcion);        
+            $data['result'] = $this->instalaciones_model->crearInstalacion($nombre, $imagen, $descripcion, $categoria);        
             $data['instalaciones'] = $this->instalaciones_model->getInstalaciones();
             $data['tipo'] = 'crear';
             $data['error'] = array('error' => ' ' );
@@ -51,6 +51,7 @@ class Instalaciones extends CI_Controller {
     {
         $nombre_post = $this->input->post('nombre');
         $descripcion_post = $this->input->post('descripcion');
+        $categoria_post = $this->input->post('categoria');
         
         $config['upload_path']          = './img';
         $config['allowed_types']        = 'gif|jpg|png';
@@ -69,7 +70,7 @@ class Instalaciones extends CI_Controller {
         else{
             $imagen_post = $this->upload->data()['file_name'];
             $data = array('upload_data' => $this->upload->data());
-            $this->crearInstalacion($nombre_post, $imagen_post, $descripcion_post);
+            $this->crearInstalacion($nombre_post, $imagen_post, $descripcion_post, $categoria_post);
         }
     }
     
@@ -78,6 +79,7 @@ class Instalaciones extends CI_Controller {
         $id_post = $this->input->post('hiddenId');
         $nombre_post = $this->input->post('nombre');        
         $descripcion_post = $this->input->post('descripcion');
+        $categoria_post = $this->input->post('categoria');
         if(isset($_FILES['image']['tmp_name'])) {
             $config['upload_path']          = './img';
             $config['allowed_types']        = 'gif|jpg|png';
@@ -96,10 +98,10 @@ class Instalaciones extends CI_Controller {
             else{
                 $imagen_post = $this->upload->data()['file_name'];
                 $data = array('upload_data' => $this->upload->data());
-                $this->updateInstalaciones($id_post, $nombre_post, $imagen_post, $descripcion_post);
+                $this->updateInstalaciones($id_post, $nombre_post, $imagen_post, $descripcion_post, $categoria_post);
             }
         }else{
-            $this->updateInstalaciones($id_post, $nombre_post, $descripcion_post);
+            $this->updateInstalaciones($id_post, $nombre_post, $descripcion_post, $categoria_post);
         }
         
     }
@@ -117,11 +119,11 @@ class Instalaciones extends CI_Controller {
         }        
     }
     
-    public function updateInstalaciones($id = null, $nombre = null, $imagen = null, $descripcion = null){       
+    public function updateInstalaciones($id = null, $nombre = null, $imagen = null, $descripcion = null, $categoria = null){       
         if($imagen === NULL){
-            $data['result'] = $this->instalaciones_model->editarInstalacionSinImagen($id, $nombre, $descripcion);
+            $data['result'] = $this->instalaciones_model->editarInstalacionSinImagen($id, $nombre, $descripcion, $categoria);
         }else{
-            $data['result'] = $this->instalaciones_model->editarInstalacion($id, $nombre, $imagen, $descripcion);
+            $data['result'] = $this->instalaciones_model->editarInstalacion($id, $nombre, $imagen, $descripcion, $categoria);
         }
         $data['instalaciones'] = $this->instalaciones_model->getInstalaciones();
         $data['tipo'] = 'editar';

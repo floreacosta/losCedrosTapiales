@@ -27,6 +27,7 @@
                                 <li><a href="<?= base_url(); ?>admin/instalaciones">Instalaciones</a></li>
                                 <li><a href="<?= base_url(); ?>admin/servicios">Servicios</a></li>
                                 <li><a href="<?= base_url(); ?>admin/usuarios">Usuarios</a></li>
+                                <li><a href="<?= base_url(); ?>admin/categorias">Categorias</a></li>
                             </ul>
                             </li>
                         </ul>

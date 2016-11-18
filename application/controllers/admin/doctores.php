@@ -45,7 +45,8 @@ class Doctores extends CI_Controller {
             array_pop($especialidades_post);            
             
             $nombre_post = $this->input->post('nombre');
-            $idDoctor = $this->doctores_model->crearDoctor($nombre_post);        
+            $esMedicoCabecera_post = $this->input->post('esMedicoCabecera');
+            $idDoctor = $this->doctores_model->crearDoctor($nombre_post, $esMedicoCabecera_post);        
             
             foreach($especialidades_post as $especialidad){
                 $data['result'] = $this->doctorxespecialidad_model->crearDoctorxespecialidad($idDoctor, $especialidad);
@@ -77,10 +78,11 @@ class Doctores extends CI_Controller {
         array_pop($especialidades_post);            
 
         $nombre_post = $this->input->post('nombre');
+        $esMedicoCabecera_post = $this->input->post('esMedicoCabecera');
         $idDoctor = $this->input->post('hiddenId');
         $this->doctorxespecialidad_model->eliminarDoctorxespecialidad($idDoctor);
 
-        $data['result'] = $this->doctores_model->editarDoctor($idDoctor, $nombre_post);
+        $data['result'] = $this->doctores_model->editarDoctor($idDoctor, $nombre_post, $esMedicoCabecera_post);
         foreach($especialidades_post as $especialidad){
             $this->doctorxespecialidad_model->crearDoctorxespecialidad($idDoctor, $especialidad);
         }

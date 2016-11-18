@@ -10,6 +10,7 @@
         <a href="<?= base_url(); ?>admin/instalaciones" class="list-group-item">Administrar instalaciones</a>
         <a href="<?= base_url(); ?>admin/especialidades" class="list-group-item">Administrar especialidades</a>
         <a href="<?= base_url(); ?>admin/doctores" class="list-group-item">Administrar doctores</a>
+        <a href="<?= base_url(); ?>admin/categorias" class="list-group-item">Administrar categorías</a>
     </div>
     
     <a href="<?= base_url(); ?>admin/index/logout" class="btn btn-info" role="button">Cerrar sesión</a>

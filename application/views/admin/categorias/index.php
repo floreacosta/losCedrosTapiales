@@ -4,15 +4,15 @@
             if($tipo === 'crear'){
     ?>
                 <div class="alert alert-success text-center">
-                    Servicio creado con exito.
+                    Categoria creada con exito.
                 </div>
     <?        }else if($tipo === 'editar'){ ?>
                 <div class="alert alert-success text-center">
-                    Servicio editado con exito.
+                    Categoria editada con exito.
                 </div>
     <?        }else{ ?>
                 <div class="alert alert-success text-center">
-                    Servicio eliminado con exito.
+                    Categoria eliminada con exito.
                 </div>
     <?        }
     ?>
@@ -43,7 +43,7 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li><a href="<?= base_url(); ?>admin/servicios/crearServicio">Crear servicio</a></li>
+                        <li><a href="<?= base_url(); ?>admin/categorias/crearCategorias">Crear categoria</a></li>
                         <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Secciones <span class="caret"></span></a>
                         <ul class="dropdown-menu">
@@ -64,30 +64,26 @@
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
-        <h2>Gestión de servicios.</h2>
-        <p>Desde aquí podrá dar de alta nuevos servicios, editar los existentes o eliminarlos.</p>
+        <h2>Gestión de categorias.</h2>
+        <p>Desde aquí podrá dar de alta nuevas categorias, editar las existentes o eliminarlas.</p>
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>Nombre</th>  
-                    <th>Descripción</th>
-                    <th>Editar servicio</th>
-                    <th>Eliminar servicio</th>
+                    <th>Nombre</th>
+                    <th>Editar categoria</th>
+                    <th>Eliminar categoria</th>
                 </tr>
             </thead>
             <tbody>
-                <? foreach($servicios->result() as $servicio): ?>    
+                <? foreach($categorias->result() as $categoria): ?>    
                 <tr>
-                    <td><?= $servicio->nombre; ?></td>
-                    <td><?= $servicio->descripcion; ?></td>
-                    <td><a href="<?= base_url(); ?>admin/servicios/editarFormularioServicios?id=<?= $servicio->id ?>">Editar</a></td>
-                    <td><a href="<?= base_url(); ?>admin/servicios/EliminarServicio?id=<?= $servicio->id ?>">Eliminar</a></td>
+                    <td><?= $categoria->nombre; ?></td>
+                    <td><a href="<?= base_url(); ?>admin/categorias/editarFormularioCategorias?id=<?= $categoria->id ?>">Editar</a></td>
+                    <td><a href="<?= base_url(); ?>admin/categorias/EliminarCategoria?id=<?= $categoria->id ?>">Eliminar</a></td>
                 </tr>
                 <? endforeach; ?>
             </tbody>
         </table>
-        </div>
+    </div>
     </body>
 </html>
-
-    

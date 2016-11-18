@@ -20,19 +20,21 @@ class Doctores_model extends CI_Model {
         else return false;
     }
     
-    function crearDoctor($nombre){
+    function crearDoctor($nombre, $esMedicoCabecera){
         
         $data = array(
-            'nombre' => $nombre
+            'nombre' => $nombre,
+            'esMedicoCabecera' => $esMedicoCabecera
         );
         
         $this->db->insert('doctores', $data);
         return $this->db->insert_id();
     }
     
-    function editarDoctor($id, $nombre){
+    function editarDoctor($id, $nombre, $esMedicoCabecera){
         $data = array(
-            'nombre' => $nombre
+            'nombre' => $nombre,
+            'esMedicoCabecera' => $esMedicoCabecera   
         );        
         $this->db->where('id', $id);
         $result = $this->db->update('doctores', $data);

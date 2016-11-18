@@ -64,7 +64,7 @@
             </div><!-- /.container-fluid -->
         </nav>
         <h2>Gestión de servicios.</h2>
-        <p>Desde aquí podrá dar de alta nuevos servicios, editar los existentes o eliminarlos.</p>
+        <p>Desde aquí podrá dar de alta nuevas especialidades, editar las existentes o eliminarlas.</p>
         <table class="table table-striped">
             <thead>
                 <tr>

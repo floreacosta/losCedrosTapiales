@@ -16,7 +16,7 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
-                            <li><a href="<?= base_url(); ?>admin/servicios">Menú anterior</a></li>
+                            <li><a href="<?= base_url(); ?>admin/categorias">Menú anterior</a></li>
                             <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Secciones <span class="caret"></span></a>
                             <ul class="dropdown-menu">
@@ -37,41 +37,25 @@
                     </div><!-- /.navbar-collapse -->
                 </div><!-- /.container-fluid -->
             </nav>
-        <h3>Edición de servicio.</h3>
-        <p>Desde aquí podrá cambiar los datos del servicio seleccionado.</p>
-        <?=  form_open('admin/servicios/updateServicios') ?>
+        <h3>Creación de Categoría.</h3>
+        <p>Desde aquí podrá crear una nueva categoría.</p>
+        <?=  form_open(base_url()."admin/categorias/crearCategorias") ?>
+
         <?
-            $resultado = $servicio->result()[0];
-                        
-            $hidden = array(
-                'hiddenId' => $resultado->id
-            );
             $nombre = array(
                 'name' => 'nombre',
                 'type' => 'text',
-                'value' => $resultado->nombre,
                 'class' => 'form-control'
-            );
-            $descripcion = array(
-                'name' => 'descripcion',
-                'type' => 'textarea',
-                'value' => $resultado->descripcion,
-                'class' => 'form-control'
-            );
+            );                                    
             $buttonClass = array(
                 'class' => 'btn btn-primary'
             );
         ?>
-        <?= form_hidden($hidden) ?>
         <div class="form-group">
-        <?= form_label('Nombre: ', 'nombre') ?>
+        <?= form_label('Categoría: ', 'nombre') ?>
         <?= form_input($nombre) ?>
         </div>
-        <div class="form-group">
-        <?= form_label('Descripción: ', 'descripcion') ?>
-        <?= form_textarea($descripcion) ?>
-        </div>
-        <?= form_submit('','Editar servicio', $buttonClass) ?>
+        <?= form_submit('','Crear categoría', $buttonClass) ?>
         <?= form_close() ?>
         </div>
     </body>

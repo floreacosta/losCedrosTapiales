@@ -26,6 +26,7 @@
                                 <li><a href="<?= base_url(); ?>admin/instalaciones">Instalaciones</a></li>
                                 <li><a href="<?= base_url(); ?>admin/servicios">Servicios</a></li>
                                 <li><a href="<?= base_url(); ?>admin/usuarios">Usuarios</a></li>
+                                <li><a href="<?= base_url(); ?>admin/categorias">Categorias</a></li>
                             </ul>
                             </li>
                         </ul>
@@ -54,6 +55,11 @@
                 'id' => 'submit',
                 'class' => 'btn btn-primary'
             );
+            $checkbox = array(
+                'name'          => 'esMedicoCabecera',
+                'id'            => 'esMedicoCabecera',
+                'checked'       => FALSE
+            );
         ?>
         <div class="form-group" id="div-form-nombre">
         <?= form_label('Nombre: ', 'nombre') ?>
@@ -62,7 +68,12 @@
         <i id="validate-ok-nombre" class="form-control-feedback glyphicon glyphicon-ok" style="display: none;" data-bv-icon-for="nombre"></i>
         <small id="warning-text-nombre" class="help-block" style="display:none;" data-bv-validator="notEmpty" data-bv-validator-for="nombre">Por favor, ingrese un nombre</small>
         </div>
+        <div class="form-group">
+        <?= form_label('Es medico de cabecera: ', 'esMedicoCabecera') ?>
+        <?= form_checkbox($checkbox) ?>
+        </div>
         <div class="form-group" id="div-form-descripcion">
+            <?= form_label('Especialidades: ', 'especialidades') ?>
             <select id="especialidades" multiple="multiple" name='especialidades' data-bv-icon-for="especialidades" onchange='checkEspecialidades()'>
             <? foreach($especialidades->result() as $especialidad): ?>    
                 <option value="<?= $especialidad->id; ?>"><?= $especialidad->nombre; ?></option>    
