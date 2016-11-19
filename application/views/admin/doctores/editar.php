@@ -67,12 +67,6 @@
                 'id' => 'submit',
                 'class' => 'btn btn-primary'
             );
-            
-            $checkbox = array(
-                'name'          => 'esMedicoCabecera',
-                'id'            => 'esMedicoCabecera',
-                'checked'       => $resultadoDoctor->esMedicoCabecera
-            );
               
             $especialidadesConSeleccion = array();
 
@@ -104,11 +98,9 @@
         <small id="warning-text-nombre" class="help-block" style="display:none;" data-bv-validator="notEmpty" data-bv-validator-for="nombre">Por favor, ingrese un nombre</small>
         </div>
         <br>
-        <div class="form-group">
-        <?= form_label('Es medico de cabecera: ', 'esMedicoCabecera') ?>
-        <?= form_checkbox($checkbox) ?>
+        <div class="checkbox">
+            <label><input name='esMedicoCabecera' type="checkbox" value="check" <? echo(($resultadoDoctor->esMedicoCabecera == 1) ? 'checked' : ''); ?> >Es Medico Cabecera</label>
         </div>
-        <br>
         <div class="form-group" id="div-form-descripcion">
         <?= form_label('Especialidades: ', 'especialidades') ?>
         <select id="especialidades" multiple="multiple" name='especialidades' data-bv-icon-for="especialidades" onchange='checkEspecialidades()'>

@@ -58,6 +58,7 @@
             $checkbox = array(
                 'name'          => 'esMedicoCabecera',
                 'id'            => 'esMedicoCabecera',
+                'class'         => 'form-control',
                 'checked'       => FALSE
             );
         ?>
@@ -68,9 +69,8 @@
         <i id="validate-ok-nombre" class="form-control-feedback glyphicon glyphicon-ok" style="display: none;" data-bv-icon-for="nombre"></i>
         <small id="warning-text-nombre" class="help-block" style="display:none;" data-bv-validator="notEmpty" data-bv-validator-for="nombre">Por favor, ingrese un nombre</small>
         </div>
-        <div class="form-group">
-        <?= form_label('Es medico de cabecera: ', 'esMedicoCabecera') ?>
-        <?= form_checkbox($checkbox) ?>
+        <div class="checkbox">
+            <label><input name='esMedicoCabecera' type="checkbox" value="check">Es Medico Cabecera</label>
         </div>
         <div class="form-group" id="div-form-descripcion">
             <?= form_label('Especialidades: ', 'especialidades') ?>

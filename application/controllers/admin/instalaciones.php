@@ -10,6 +10,7 @@ class Instalaciones extends CI_Controller {
         $this->load->library('upload');
         $this->load->database();
         $this->load->model('admin/instalaciones_model');
+        $this->load->model('admin/categorias_model');
         $this->check_session();
     }
     
@@ -35,8 +36,9 @@ class Instalaciones extends CI_Controller {
     
     public function crearInstalacion($nombre = null, $imagen = null, $descripcion = null, $categoria = null){
         if(null === $nombre){
+            $data['categorias'] = $this->categorias_model->getCategorias();
             $this->load->view('admin/includes/head');
-            $this->load->view('admin/instalaciones/crear');
+            $this->load->view('admin/instalaciones/crear', $data);
         }else{
             $data['result'] = $this->instalaciones_model->crearInstalacion($nombre, $imagen, $descripcion, $categoria);        
             $data['instalaciones'] = $this->instalaciones_model->getInstalaciones();
@@ -98,7 +100,7 @@ class Instalaciones extends CI_Controller {
             else{
                 $imagen_post = $this->upload->data()['file_name'];
                 $data = array('upload_data' => $this->upload->data());
-                $this->updateInstalaciones($id_post, $nombre_post, $imagen_post, $descripcion_post, $categoria_post);
+                $this->updateInstalaciones($id_post, $nombre_post, $descripcion_post, $categoria_post, $imagen_post);
             }
         }else{
             $this->updateInstalaciones($id_post, $nombre_post, $descripcion_post, $categoria_post);
@@ -111,6 +113,7 @@ class Instalaciones extends CI_Controller {
         if($this->input->get('id') !== null){
             $id = $this->input->get('id');
             $data['instalacion'] = $this->instalaciones_model->getInstalacion($id);
+            $data['categorias'] = $this->categorias_model->getCategorias();
             $this->load->view('admin/includes/headNIm');
             $this->load->view('admin/instalaciones/editar', $data);
         }else{
@@ -119,7 +122,8 @@ class Instalaciones extends CI_Controller {
         }        
     }
     
-    public function updateInstalaciones($id = null, $nombre = null, $imagen = null, $descripcion = null, $categoria = null){       
+    public function updateInstalaciones($id = null, $nombre = null, $descripcion = null, $categoria = null, $imagen = null){       
+        
         if($imagen === NULL){
             $data['result'] = $this->instalaciones_model->editarInstalacionSinImagen($id, $nombre, $descripcion, $categoria);
         }else{

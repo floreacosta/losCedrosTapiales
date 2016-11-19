@@ -45,13 +45,17 @@ class Doctores extends CI_Controller {
             array_pop($especialidades_post);            
             
             $nombre_post = $this->input->post('nombre');
-            $esMedicoCabecera_post = $this->input->post('esMedicoCabecera');
-            $idDoctor = $this->doctores_model->crearDoctor($nombre_post, $esMedicoCabecera_post);        
+            if(null !== $this->input->post('esMedicoCabecera')){
+                $esMedicoCabecera_post = 1;
+            }else{
+                $esMedicoCabecera_post = 0;
+            }             
+            $idDoctor = $this->doctores_model->crearDoctor($nombre_post, $esMedicoCabecera_post);
             
             foreach($especialidades_post as $especialidad){
                 $data['result'] = $this->doctorxespecialidad_model->crearDoctorxespecialidad($idDoctor, $especialidad);
             }            
-            $data['doctores'] = $this->doctores_model->getDoctores();
+            $data['doctores'] = $this->doctorxespecialidad_model->getDoctoresConEspecialidadesAgrupadas();
             $data['tipo'] = 'crear';
             $this->load->view('admin/includes/headWoValidation');
             $this->load->view('admin/doctores/index', $data);
@@ -78,7 +82,11 @@ class Doctores extends CI_Controller {
         array_pop($especialidades_post);            
 
         $nombre_post = $this->input->post('nombre');
-        $esMedicoCabecera_post = $this->input->post('esMedicoCabecera');
+        if(null !== $this->input->post('esMedicoCabecera')){
+            $esMedicoCabecera_post = 1;
+        }else{
+            $esMedicoCabecera_post = 0;
+        }  
         $idDoctor = $this->input->post('hiddenId');
         $this->doctorxespecialidad_model->eliminarDoctorxespecialidad($idDoctor);
 
@@ -88,7 +96,7 @@ class Doctores extends CI_Controller {
         }
         
         $data['tipo'] = 'editar';
-        $data['doctores'] = $this->doctores_model->getDoctores();
+        $data['doctores'] = $this->doctorxespecialidad_model->getDoctoresConEspecialidadesAgrupadas();
         $this->load->view('admin/includes/headWoValidation');
         $this->load->view('admin/doctores/index', $data);
     }
@@ -99,7 +107,7 @@ class Doctores extends CI_Controller {
             $this->doctores_model->eliminarDoctor($idDoctor);
             $data['result'] = $this->doctorxespecialidad_model->eliminarDoctorxespecialidad($idDoctor);
             $data['tipo'] = 'eliminar';
-            $data['doctores'] = $this->doctores_model->getDoctores();
+            $data['doctores'] = $this->doctorxespecialidad_model->getDoctoresConEspecialidadesAgrupadas();
             $this->load->view('admin/includes/headWoValidation');
             $this->load->view('admin/doctores/index', $data);
         }else{

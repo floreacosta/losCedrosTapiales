@@ -72,7 +72,7 @@
             <th>Nombre</th>  
             <th>Imagen</th>
             <th>Descripción<th>
-            <th>Categoría<th>
+            <th><th>
             <th></th>
             <th></th>
           </tr>

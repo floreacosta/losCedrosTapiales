@@ -71,6 +71,7 @@
                 <tr>
                     <th>Nombre</th>
                     <th>Especialidades</th>
+                    <th>Es Medico Cabecera</th>
                     <th>Editar servicio</th>
                     <th>Eliminar servicio</th>
                 </tr>
@@ -80,6 +81,7 @@
                 <tr>
                     <td><?= $doctor->doctorNombre; ?></td>
                     <td><?= $doctor->especialidades; ?></td>
+                    <td><? echo(($doctor->doctorEsCabecera == 1) ? 'Si' : 'No');?></td>
                     <td><a href="<?= base_url(); ?>admin/doctores/editarFormularioDoctores?id=<?= $doctor->Id ?>">Editar</a></td>
                     <td><a href="<?= base_url(); ?>admin/doctores/EliminarDoctor?id=<?= $doctor->Id ?>">Eliminar</a></td>
                 </tr>

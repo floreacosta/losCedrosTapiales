@@ -41,15 +41,14 @@
         <p>Desde aquí podrá cambiar los datos de la instalación seleccionada.</p>
         <?=  form_open_multipart('admin/instalaciones/subirImagenEditar') ?>
         <?
-            $resultado = $instalacion->result()[0];
-                        
+            $resultado = $instalacion->result()[0];      
             $hidden = array(
-                'hiddenId' => $resultado->id
+                'hiddenId' => $resultado->Id
             );
             $nombre = array(
                 'name' => 'nombre',
                 'type' => 'text',
-                'value' => $resultado->nombre,
+                'value' => $resultado->instalacionNombre,
                 'class' => 'form-control'
             );
             $imagen = array(
@@ -62,7 +61,7 @@
             $descripcion = array(
                 'name' => 'descripcion',
                 'type' => 'text',
-                'value' => $resultado->descripcion,
+                'value' => $resultado->instalacionDescripcion,
                 'class' => 'form-control'
             );
             $buttonClass = array(
@@ -76,7 +75,7 @@
         </div>
         <div class="form-group">
         <?= form_label('Imagen actual: ', 'nombre') ?>
-        <img class="img-thumbnail" src="<?= base_url(); ?>img/<?= $resultado->imagen; ?>" />
+        <img class="img-thumbnail" src="<?= base_url(); ?>img/<?= $resultado->instalacionImagen; ?>" />
         </div>
         <div class="form-group">
         <?= form_label('Nueva Imagen: ', 'user_file') ?>
@@ -88,10 +87,14 @@
         </div>
         <div class="form-group">
         <?= form_label('Categoria: ', 'categoria') ?>
-        <select name="myselect">
-            <option value="one" <?php echo  set_select('myselect', 'one', TRUE); ?> >One</option>
-            <option value="two" <?php echo  set_select('myselect', 'two'); ?> >Two</option>
-            <option value="three" <?php echo  set_select('myselect', 'three'); ?> >Three</option>
+        <select name="categoria" class="form-control">
+            <? foreach($categorias->result() as $categoria): ?>
+                <? if($categoria->nombre === $resultado->categoriaNombre){ ?>
+                <option value="<?= $categoria->id; ?>" selected><?= $categoria->nombre; ?></option> 
+                <? }else{ ?>
+                <option value="<?= $categoria->id; ?>"><?= $categoria->nombre; ?></option>
+                <? } ?>
+            <? endforeach; ?>
         </select>
         </div>
         <?= form_submit('','Editar instalacion', $buttonClass) ?>

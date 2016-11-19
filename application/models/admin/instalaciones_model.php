@@ -15,7 +15,9 @@ class Instalaciones_model extends CI_Model {
     }
     
     function getInstalacion($id){
-        $this->db->where('id', $id);
+        $this->db->select("instalaciones.id as `Id`, instalaciones.nombre as `instalacionNombre`, instalaciones.imagen as `instalacionImagen`, instalaciones.descripcion as `instalacionDescripcion`, categorias.nombre as `categoriaNombre` ");
+        $this->db->join('categorias', 'instalaciones.idCategoria = categorias.id', 'left');
+        $this->db->where('instalaciones.Id', $id);
         $query = $this->db->get('instalaciones');
         if($query->num_rows() > 0) return $query;
         else return false;
@@ -34,7 +36,7 @@ class Instalaciones_model extends CI_Model {
         return $result;
     }
     
-    function editarInstalacion($id, $nombre, $imagen, $descripcion, $categoria){
+    function editarInstalacion($id, $nombre, $descripcion, $categoria, $imagen){
         $data = array(
             'nombre' => $nombre,
             'imagen' => $imagen,
@@ -47,10 +49,11 @@ class Instalaciones_model extends CI_Model {
     }
     
     function editarInstalacionSinImagen($id, $nombre, $descripcion, $categoria){
+        
         $data = array(
             'nombre' => $nombre,
             'descripcion' => $descripcion,
-            'categoria' => $categoria
+            'idCategoria' => $categoria
         );        
         $this->db->where('id', $id);
         $result = $this->db->update('instalaciones', $data);
