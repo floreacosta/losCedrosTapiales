@@ -115,10 +115,6 @@ function heightMap() {
 	});
 }
 
-$(document).ready(heightSection);
-function heightSection() {
-}
-
 $(document).ready(modalEspecialidades);
 function modalEspecialidades() {
 	$("#element-list").click(function(e){
@@ -177,6 +173,9 @@ function slider() {
 	});
 
      var cantImagenes = $(".slider-active .content-imagen li").size();
+	var anchoLi = (100 / cantImagenes) + "%";
+	$(".content-image-primary").css("width", anchoLi);
+
      var anchoContenedor = (cantImagenes * 100) + "%";
      $(".slider-active .content-imagen").css("width", anchoContenedor);
 

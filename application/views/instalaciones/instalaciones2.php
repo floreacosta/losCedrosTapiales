@@ -54,38 +54,26 @@
 					<figure class="image-primary">
 						<ul class="content-imagen" id="slider-container-images">
 							<li class="content-image-primary">
-								<img alt="" src="<?= base_url(); ?>img/1.jpg"/>
+								<img alt="" src="<?= base_url(); ?>img/slider/edificio-1.jpg"/>
 								<figcaption class="image-description">Descripción de la imagen 1</figcaption>
 							</li>
 
 							<li class="content-image-primary">
-								<img alt="" src="<?= base_url(); ?>img/2.jpg"/>
+								<img alt="" src="<?= base_url(); ?>img/slider/edificio-2.jpg"/>
 								<figcaption class="image-description">Descripción de la imagen 2</figcaption>
 							</li>
 
 							<li class="content-image-primary">
-								<img alt="" src="<?= base_url(); ?>img/3.jpg"/>
+								<img alt="" src="<?= base_url(); ?>img/slider/edificio-3.jpg"/>
 								<figcaption class="image-description">Descripción de la imagen 3</figcaption>
-							</li>
-
-							<li class="content-image-primary">
-								<img alt="" src="<?= base_url(); ?>img/4.jpg"/>
-								<figcaption class="image-description">Descripción de la imagen 4</figcaption>
-							</li>
-
-							<li class="content-image-primary">
-								<img alt="" src="<?= base_url(); ?>img/5.jpg"/>
-								<figcaption class="image-description">Descripción de la imagen 5</figcaption>
 							</li>
 						</ul>
 					</figure>
 
 					<div class="container-image-secondary">
-						<a class="image-secondary" id="image-1" href=""><img alt="" src="<?= base_url(); ?>img/2.jpg"/></a>
-						<a class="image-secondary" id="image-2" href=""><img alt="" src="<?= base_url(); ?>img/3.jpg"/></a>
-						<a class="image-secondary" id="image-3" href=""><img alt="" src="<?= base_url(); ?>img/4.jpg"/></a>
-						<a class="image-secondary" id="image-4" href=""><img alt="" src="<?= base_url(); ?>img/5.jpg"/></a>
-						<a class="image-secondary" id="image-5" href=""><img alt="" src="<?= base_url(); ?>img/5.jpg"/></a>
+						<a class="image-secondary" id="image-1" href=""><img alt="" src="<?= base_url(); ?>img/slider/edificio-1.jpg"/></a>
+						<a class="image-secondary" id="image-2" href=""><img alt="" src="<?= base_url(); ?>img/slider/edificio-2.jpg"/></a>
+						<a class="image-secondary" id="image-3" href=""><img alt="" src="<?= base_url(); ?>img/slider/edificio-3.jpg"/></a>
 					</div>
 				</div>
 
@@ -96,38 +84,55 @@
 					<figure class="image-primary">
 						<ul class="content-imagen" id="slider-container-images">
 							<li class="content-image-primary">
-								<img alt="" src="<?= base_url(); ?>img/2.jpg"/>
+								<img alt="" src="<?= base_url(); ?>img/slider/sala-de-espera-0.1.jpg"/>
 								<figcaption class="image-description">Descripción de la imagen 2</figcaption>
 							</li>
 
 							<li class="content-image-primary">
-								<img alt="" src="<?= base_url(); ?>img/1.jpg"/>
+								<img alt="" src="<?= base_url(); ?>img/slider/sala-de-espera-0.2.jpg"/>
 								<figcaption class="image-description">Descripción de la imagen 1</figcaption>
 							</li>
 
 							<li class="content-image-primary">
-								<img alt="" src="<?= base_url(); ?>img/3.jpg"/>
+								<img alt="" src="<?= base_url(); ?>img/slider/sala-de-espera-0.jpg"/>
 								<figcaption class="image-description">Descripción de la imagen 3</figcaption>
 							</li>
 
 							<li class="content-image-primary">
-								<img alt="" src="<?= base_url(); ?>img/4.jpg"/>
+								<img alt="" src="<?= base_url(); ?>img/slider/sala-de-espera-1.jpg"/>
 								<figcaption class="image-description">Descripción de la imagen 4</figcaption>
 							</li>
 
 							<li class="content-image-primary">
-								<img alt="" src="<?= base_url(); ?>img/5.jpg"/>
+								<img alt="" src="<?= base_url(); ?>img/slider/sala-de-espera-2.jpg"/>
+								<figcaption class="image-description">Descripción de la imagen 5</figcaption>
+							</li>
+							<li class="content-image-primary">
+								<img alt="" src="<?= base_url(); ?>img/slider/sala-de-espera-3.jpg"/>
+								<figcaption class="image-description">Descripción de la imagen 3</figcaption>
+							</li>
+
+							<li class="content-image-primary">
+								<img alt="" src="<?= base_url(); ?>img/slider/sala-de-espera-4.jpg"/>
+								<figcaption class="image-description">Descripción de la imagen 4</figcaption>
+							</li>
+
+							<li class="content-image-primary">
+								<img alt="" src="<?= base_url(); ?>img/slider/sala-de-espera-5.jpg"/>
 								<figcaption class="image-description">Descripción de la imagen 5</figcaption>
 							</li>
 						</ul>
 					</figure>
 
 					<div class="container-image-secondary">
-						<a class="image-secondary" id="image-1" href=""><img alt="" src="<?= base_url(); ?>img/2.jpg"/></a>
-						<a class="image-secondary" id="image-2" href=""><img alt="" src="<?= base_url(); ?>img/3.jpg"/></a>
-						<a class="image-secondary" id="image-3" href=""><img alt="" src="<?= base_url(); ?>img/4.jpg"/></a>
-						<a class="image-secondary" id="image-4" href=""><img alt="" src="<?= base_url(); ?>img/5.jpg"/></a>
-						<a class="image-secondary" id="image-5" href=""><img alt="" src="<?= base_url(); ?>img/5.jpg"/></a>
+						<a class="image-secondary" id="image-1" href=""><img alt="" src="<?= base_url(); ?>img/slider/sala-de-espera-0.1.jpg"/></a>
+						<a class="image-secondary" id="image-2" href=""><img alt="" src="<?= base_url(); ?>img/slider/sala-de-espera-0.2.jpg"/></a>
+						<a class="image-secondary" id="image-3" href=""><img alt="" src="<?= base_url(); ?>img/slider/sala-de-espera-0.jpg"/></a>
+						<a class="image-secondary" id="image-4" href=""><img alt="" src="<?= base_url(); ?>img/slider/sala-de-espera-1.jpg"/></a>
+						<a class="image-secondary" id="image-5" href=""><img alt="" src="<?= base_url(); ?>img/slider/sala-de-espera-2.jpg"/></a>
+						<a class="image-secondary" id="image-6" href=""><img alt="" src="<?= base_url(); ?>img/slider/sala-de-espera-3.jpg"/></a>
+						<a class="image-secondary" id="image-7" href=""><img alt="" src="<?= base_url(); ?>img/slider/sala-de-espera-4.jpg"/></a>
+						<a class="image-secondary" id="image-8" href=""><img alt="" src="<?= base_url(); ?>img/slider/sala-de-espera-5.jpg"/></a>
 					</div>
 				</div>
 
@@ -138,38 +143,44 @@
 					<figure class="image-primary">
 						<ul class="content-imagen" id="slider-container-images">
 							<li class="content-image-primary">
-								<img alt="" src="<?= base_url(); ?>img/1.jpg"/>
+								<img alt="" src="<?= base_url(); ?>img/slider/habitaciones-0.jpg"/>
 								<figcaption class="image-description">Descripción de la imagen 1</figcaption>
 							</li>
 
 							<li class="content-image-primary">
-								<img alt="" src="<?= base_url(); ?>img/2.jpg"/>
+								<img alt="" src="<?= base_url(); ?>img/slider/habitaciones-1.jpg"/>
 								<figcaption class="image-description">Descripción de la imagen 2</figcaption>
 							</li>
 
 							<li class="content-image-primary">
-								<img alt="" src="<?= base_url(); ?>img/3.jpg"/>
+								<img alt="" src="<?= base_url(); ?>img/slider/habitaciones-2.jpg"/>
 								<figcaption class="image-description">Descripción de la imagen 3</figcaption>
 							</li>
 
 							<li class="content-image-primary">
-								<img alt="" src="<?= base_url(); ?>img/4.jpg"/>
+								<img alt="" src="<?= base_url(); ?>img/slider/habitaciones-3.jpg"/>
 								<figcaption class="image-description">Descripción de la imagen 4</figcaption>
 							</li>
 
 							<li class="content-image-primary">
-								<img alt="" src="<?= base_url(); ?>img/5.jpg"/>
+								<img alt="" src="<?= base_url(); ?>img/slider/habitaciones-4.jpg"/>
+								<figcaption class="image-description">Descripción de la imagen 5</figcaption>
+							</li>
+
+							<li class="content-image-primary">
+								<img alt="" src="<?= base_url(); ?>img/slider/habitaciones-5.jpg"/>
 								<figcaption class="image-description">Descripción de la imagen 5</figcaption>
 							</li>
 						</ul>
 					</figure>
 
 					<div class="container-image-secondary">
-						<a class="image-secondary" id="image-1" href=""><img alt="" src="<?= base_url(); ?>img/2.jpg"/></a>
-						<a class="image-secondary" id="image-2" href=""><img alt="" src="<?= base_url(); ?>img/3.jpg"/></a>
-						<a class="image-secondary" id="image-3" href=""><img alt="" src="<?= base_url(); ?>img/4.jpg"/></a>
-						<a class="image-secondary" id="image-4" href=""><img alt="" src="<?= base_url(); ?>img/5.jpg"/></a>
-						<a class="image-secondary" id="image-5" href=""><img alt="" src="<?= base_url(); ?>img/5.jpg"/></a>
+						<a class="image-secondary" id="image-1" href=""><img alt="" src="<?= base_url(); ?>img/slider/habitaciones-0.jpg"/></a>
+						<a class="image-secondary" id="image-2" href=""><img alt="" src="<?= base_url(); ?>img/slider/habitaciones-1.jpg"/></a>
+						<a class="image-secondary" id="image-3" href=""><img alt="" src="<?= base_url(); ?>img/slider/habitaciones-2.jpg"/></a>
+						<a class="image-secondary" id="image-4" href=""><img alt="" src="<?= base_url(); ?>img/slider/habitaciones-3.jpg"/></a>
+						<a class="image-secondary" id="image-5" href=""><img alt="" src="<?= base_url(); ?>img/slider/habitaciones-4.jpg"/></a>
+						<a class="image-secondary" id="image-6" href=""><img alt="" src="<?= base_url(); ?>img/slider/habitaciones-5.jpg"/></a>
 					</div>
 				</div>
 
@@ -180,40 +191,24 @@
 					<figure class="image-primary">
 						<ul class="content-imagen" id="slider-container-images">
 							<li class="content-image-primary">
-								<img alt="" src="<?= base_url(); ?>img/2.jpg"/>
+								<img alt="" src="<?= base_url(); ?>img/slider/consultorios-1.jpg"/>
 								<figcaption class="image-description">Descripción de la imagen 2</figcaption>
 							</li>
 
 							<li class="content-image-primary">
-								<img alt="" src="<?= base_url(); ?>img/1.jpg"/>
+								<img alt="" src="<?= base_url(); ?>img/slider/consultorios-2.jpg"/>
 								<figcaption class="image-description">Descripción de la imagen 1</figcaption>
 							</li>
 
-							<li class="content-image-primary">
-								<img alt="" src="<?= base_url(); ?>img/3.jpg"/>
-								<figcaption class="image-description">Descripción de la imagen 3</figcaption>
-							</li>
-
-							<li class="content-image-primary">
-								<img alt="" src="<?= base_url(); ?>img/4.jpg"/>
-								<figcaption class="image-description">Descripción de la imagen 4</figcaption>
-							</li>
-
-							<li class="content-image-primary">
-								<img alt="" src="<?= base_url(); ?>img/5.jpg"/>
-								<figcaption class="image-description">Descripción de la imagen 5</figcaption>
-							</li>
 						</ul>
 					</figure>
 
 					<div class="container-image-secondary">
-						<a class="image-secondary" id="image-1" href=""><img alt="" src="<?= base_url(); ?>img/2.jpg"/></a>
-						<a class="image-secondary" id="image-2" href=""><img alt="" src="<?= base_url(); ?>img/3.jpg"/></a>
-						<a class="image-secondary" id="image-3" href=""><img alt="" src="<?= base_url(); ?>img/4.jpg"/></a>
-						<a class="image-secondary" id="image-4" href=""><img alt="" src="<?= base_url(); ?>img/5.jpg"/></a>
-						<a class="image-secondary" id="image-5" href=""><img alt="" src="<?= base_url(); ?>img/5.jpg"/></a>
+						<a class="image-secondary" id="image-1" href=""><img alt="" src="<?= base_url(); ?>img/slider/consultorios-1.jpg"/></a>
+						<a class="image-secondary" id="image-2" href=""><img alt="" src="<?= base_url(); ?>img/slider/consultorios-2.jpg"/></a>
 					</div>
 				</div>
+
 				<div class="container-slider" id="slider-5">
 					<button class="button-prev" id="button-prev" title="Anterior"></button>
 					<button class="button-next" id="button-next" title="Siguiente"></button>
@@ -221,38 +216,80 @@
 					<figure class="image-primary">
 						<ul class="content-imagen" id="slider-container-images">
 							<li class="content-image-primary">
-								<img alt="" src="<?= base_url(); ?>img/1.jpg"/>
+								<img alt="" src="<?= base_url(); ?>img/slider/equipamiento-tecnico-1.jpg"/>
 								<figcaption class="image-description">Descripción de la imagen 1</figcaption>
 							</li>
 
 							<li class="content-image-primary">
-								<img alt="" src="<?= base_url(); ?>img/2.jpg"/>
+								<img alt="" src="<?= base_url(); ?>img/slider/equipamiento-tecnico-2.jpg"/>
 								<figcaption class="image-description">Descripción de la imagen 2</figcaption>
 							</li>
 
 							<li class="content-image-primary">
-								<img alt="" src="<?= base_url(); ?>img/3.jpg"/>
+								<img alt="" src="<?= base_url(); ?>img/slider/equipamiento-tecnico-3.jpg"/>
 								<figcaption class="image-description">Descripción de la imagen 3</figcaption>
 							</li>
 
 							<li class="content-image-primary">
-								<img alt="" src="<?= base_url(); ?>img/4.jpg"/>
+								<img alt="" src="<?= base_url(); ?>img/slider/equipamiento-tecnico-4.jpg"/>
 								<figcaption class="image-description">Descripción de la imagen 4</figcaption>
 							</li>
 
 							<li class="content-image-primary">
-								<img alt="" src="<?= base_url(); ?>img/5.jpg"/>
+								<img alt="" src="<?= base_url(); ?>img/slider/equipamiento-tecnico-5.jpg"/>
 								<figcaption class="image-description">Descripción de la imagen 5</figcaption>
 							</li>
+							<li class="content-image-primary">
+								<img alt="" src="<?= base_url(); ?>img/slider/equipamiento-tecnico-6.jpg"/>
+								<figcaption class="image-description">Descripción de la imagen 1</figcaption>
+							</li>
+
+							<li class="content-image-primary">
+								<img alt="" src="<?= base_url(); ?>img/slider/equipamiento-tecnico-7.1.jpg"/>
+								<figcaption class="image-description">Descripción de la imagen 2</figcaption>
+							</li>
+
+							<li class="content-image-primary">
+								<img alt="" src="<?= base_url(); ?>img/slider/equipamiento-tecnico-7.jpg"/>
+								<figcaption class="image-description">Descripción de la imagen 3</figcaption>
+							</li>
+
+							<li class="content-image-primary">
+								<img alt="" src="<?= base_url(); ?>img/slider/equipamiento-tecnico-9.jpg"/>
+								<figcaption class="image-description">Descripción de la imagen 4</figcaption>
+							</li>
+
+							<li class="content-image-primary">
+								<img alt="" src="<?= base_url(); ?>img/slider/equipamiento-tecnico-10.jpg"/>
+								<figcaption class="image-description">Descripción de la imagen 5</figcaption>
+							</li>
+
+							<li class="content-image-primary">
+								<img alt="" src="<?= base_url(); ?>img/slider/equipamiento-tecnico-11.1.jpg"/>
+								<figcaption class="image-description">Descripción de la imagen 2</figcaption>
+							</li>
+
+							<li class="content-image-primary">
+								<img alt="" src="<?= base_url(); ?>img/slider/equipamiento-tecnico-11.2.jpg"/>
+								<figcaption class="image-description">Descripción de la imagen 3</figcaption>
+							</li>
+
 						</ul>
 					</figure>
 
 					<div class="container-image-secondary">
-						<a class="image-secondary" id="image-1" href=""><img alt="" src="<?= base_url(); ?>img/2.jpg"/></a>
-						<a class="image-secondary" id="image-2" href=""><img alt="" src="<?= base_url(); ?>img/3.jpg"/></a>
-						<a class="image-secondary" id="image-3" href=""><img alt="" src="<?= base_url(); ?>img/4.jpg"/></a>
-						<a class="image-secondary" id="image-4" href=""><img alt="" src="<?= base_url(); ?>img/5.jpg"/></a>
-						<a class="image-secondary" id="image-5" href=""><img alt="" src="<?= base_url(); ?>img/5.jpg"/></a>
+						<a class="image-secondary" id="image-1" href=""><img alt="" src="<?= base_url(); ?>img/slider/equipamiento-tecnico-1.jpg"/></a>
+						<a class="image-secondary" id="image-2" href=""><img alt="" src="<?= base_url(); ?>img/slider/equipamiento-tecnico-2.jpg"/></a>
+						<a class="image-secondary" id="image-3" href=""><img alt="" src="<?= base_url(); ?>img/slider/equipamiento-tecnico-3.jpg"/></a>
+						<a class="image-secondary" id="image-4" href=""><img alt="" src="<?= base_url(); ?>img/slider/equipamiento-tecnico-4.jpg"/></a>
+						<a class="image-secondary" id="image-5" href=""><img alt="" src="<?= base_url(); ?>img/slider/equipamiento-tecnico-5.jpg"/></a>
+						<a class="image-secondary" id="image-6" href=""><img alt="" src="<?= base_url(); ?>img/slider/equipamiento-tecnico-6.jpg"/></a>
+						<a class="image-secondary" id="image-7" href=""><img alt="" src="<?= base_url(); ?>img/slider/equipamiento-tecnico-7.1.jpg"/></a>
+						<a class="image-secondary" id="image-8" href=""><img alt="" src="<?= base_url(); ?>img/slider/equipamiento-tecnico-7.jpg"/></a>
+						<a class="image-secondary" id="image-9" href=""><img alt="" src="<?= base_url(); ?>img/slider/equipamiento-tecnico-9.jpg"/></a>
+						<a class="image-secondary" id="image-10" href=""><img alt="" src="<?= base_url(); ?>img/slider/equipamiento-tecnico-10.jpg"/></a>
+						<a class="image-secondary" id="image-11" href=""><img alt="" src="<?= base_url(); ?>img/slider/equipamiento-tecnico-11.1.jpg"/></a>
+						<a class="image-secondary" id="image-12" href=""><img alt="" src="<?= base_url(); ?>img/slider/equipamiento-tecnico-11.2.jpg"/></a>
 					</div>
 				</div>
 
@@ -263,38 +300,27 @@
 					<figure class="image-primary">
 						<ul class="content-imagen" id="slider-container-images">
 							<li class="content-image-primary">
-								<img alt="" src="<?= base_url(); ?>img/2.jpg"/>
+								<img alt="" src="<?= base_url(); ?>img/slider/laboratorio-1.jpg"/>
 								<figcaption class="image-description">Descripción de la imagen 2</figcaption>
 							</li>
 
 							<li class="content-image-primary">
-								<img alt="" src="<?= base_url(); ?>img/1.jpg"/>
+								<img alt="" src="<?= base_url(); ?>img/slider/laboratorio-2.jpg"/>
 								<figcaption class="image-description">Descripción de la imagen 1</figcaption>
 							</li>
 
 							<li class="content-image-primary">
-								<img alt="" src="<?= base_url(); ?>img/3.jpg"/>
+								<img alt="" src="<?= base_url(); ?>img/slider/laboratorio-3.jpg"/>
 								<figcaption class="image-description">Descripción de la imagen 3</figcaption>
 							</li>
 
-							<li class="content-image-primary">
-								<img alt="" src="<?= base_url(); ?>img/4.jpg"/>
-								<figcaption class="image-description">Descripción de la imagen 4</figcaption>
-							</li>
-
-							<li class="content-image-primary">
-								<img alt="" src="<?= base_url(); ?>img/5.jpg"/>
-								<figcaption class="image-description">Descripción de la imagen 5</figcaption>
-							</li>
 						</ul>
 					</figure>
 
 					<div class="container-image-secondary">
-						<a class="image-secondary" id="image-1" href=""><img alt="" src="<?= base_url(); ?>img/2.jpg"/></a>
-						<a class="image-secondary" id="image-2" href=""><img alt="" src="<?= base_url(); ?>img/3.jpg"/></a>
-						<a class="image-secondary" id="image-3" href=""><img alt="" src="<?= base_url(); ?>img/4.jpg"/></a>
-						<a class="image-secondary" id="image-4" href=""><img alt="" src="<?= base_url(); ?>img/5.jpg"/></a>
-						<a class="image-secondary" id="image-5" href=""><img alt="" src="<?= base_url(); ?>img/5.jpg"/></a>
+						<a class="image-secondary" id="image-1" href=""><img alt="" src="<?= base_url(); ?>img/slider/laboratorio-1.jpg"/></a>
+						<a class="image-secondary" id="image-2" href=""><img alt="" src="<?= base_url(); ?>img/slider/laboratorio-2.jpg"/></a>
+						<a class="image-secondary" id="image-3" href=""><img alt="" src="<?= base_url(); ?>img/slider/laboratorio-3.jpg"/></a>
 					</div>
 				</div>
 
@@ -305,38 +331,27 @@
 					<figure class="image-primary">
 						<ul class="content-imagen" id="slider-container-images">
 							<li class="content-image-primary">
-								<img alt="" src="<?= base_url(); ?>img/1.jpg"/>
+								<img alt="" src="<?= base_url(); ?>img/slider/pediatria-1.jpg"/>
 								<figcaption class="image-description">Descripción de la imagen 1</figcaption>
 							</li>
 
 							<li class="content-image-primary">
-								<img alt="" src="<?= base_url(); ?>img/2.jpg"/>
+								<img alt="" src="<?= base_url(); ?>img/slider/pediatria-2.jpg"/>
 								<figcaption class="image-description">Descripción de la imagen 2</figcaption>
 							</li>
 
 							<li class="content-image-primary">
-								<img alt="" src="<?= base_url(); ?>img/3.jpg"/>
+								<img alt="" src="<?= base_url(); ?>img/slider/pediatria-3.jpg"/>
 								<figcaption class="image-description">Descripción de la imagen 3</figcaption>
 							</li>
 
-							<li class="content-image-primary">
-								<img alt="" src="<?= base_url(); ?>img/4.jpg"/>
-								<figcaption class="image-description">Descripción de la imagen 4</figcaption>
-							</li>
-
-							<li class="content-image-primary">
-								<img alt="" src="<?= base_url(); ?>img/5.jpg"/>
-								<figcaption class="image-description">Descripción de la imagen 5</figcaption>
-							</li>
 						</ul>
 					</figure>
 
 					<div class="container-image-secondary">
-						<a class="image-secondary" id="image-1" href=""><img alt="" src="<?= base_url(); ?>img/2.jpg"/></a>
-						<a class="image-secondary" id="image-2" href=""><img alt="" src="<?= base_url(); ?>img/3.jpg"/></a>
-						<a class="image-secondary" id="image-3" href=""><img alt="" src="<?= base_url(); ?>img/4.jpg"/></a>
-						<a class="image-secondary" id="image-4" href=""><img alt="" src="<?= base_url(); ?>img/5.jpg"/></a>
-						<a class="image-secondary" id="image-5" href=""><img alt="" src="<?= base_url(); ?>img/5.jpg"/></a>
+						<a class="image-secondary" id="image-1" href=""><img alt="" src="<?= base_url(); ?>img/slider/pediatria-1.jpg"/></a>
+						<a class="image-secondary" id="image-2" href=""><img alt="" src="<?= base_url(); ?>img/slider/pediatria-2.jpg"/></a>
+						<a class="image-secondary" id="image-3" href=""><img alt="" src="<?= base_url(); ?>img/slider/pediatria-3.jpg"/></a>
 					</div>
 				</div>
 			</article>
