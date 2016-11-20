@@ -154,8 +154,9 @@ function instalaciones() {
 		//Le agrego la clase ".slider-active" al slider correspondiente al item cliqueado
 		$(slider).addClass("slider-active");
 
-
-		/* Código del listado de imagenes debajo del slider */
+		/**
+		/* Código del listado de imágenes debajo del slider (accesos directos a cada imagen)
+		**/
 
 		//Declaro un array donde guardo el listado de imagenes para poder recorrerlo
 		var listadoImagenes = [];
@@ -166,7 +167,8 @@ function instalaciones() {
 		//Contador de páginas o imagenes a las que se le dará NEXT
 		var page = 1;
 
-		//Capturo el ID de la imagen cliqueada para que se muestre directamente en el slider sin cliquear los botones NEXT y PREVIUS
+		//Capturo el ID de la imagen cliqueada para que se muestre
+		//directamente en el slider sin cliquear los botones NEXT y PREV
 		$(slider + " .container-image-secondary").click(function(e){
 			//Le quito el funcionamiento por defecto al link
 			e.preventDefault();
@@ -179,12 +181,13 @@ function instalaciones() {
 				//Si "a" (que contiene el ID de la imagen cliqueada) es IGUAL al id de la imagen del ARRAY
 				if(a == listadoImagenes[i].id) {
 					//Capturo la posición del contenedor
-					//Ancho de la imagen * la posición del ARRAY * -1 (para hacerlo negativo, por ser necesario para los estilos)
+					//Ancho de la imagen * la posición del ARRAY * -1
+					//(para hacerlo negativo, por ser necesario para los estilos)
 					var posicion = $(slider + " .content-imagen li img").width() * i * -1;
 					//Le doy el valor de "posicion" al estilo LEFT
 					$(slider + " .content-imagen").css("left", posicion);
-					//Le indico al contador general en que página o imagen estoy ubicada
-					//para darle la información a los botones NEXT y PREVIUS
+					//Le indico al contador general en qué página o imagen estoy ubicada
+					//para darle la información a los botones NEXT y PREV
 					page = (i + 1);
 				}
 			}
