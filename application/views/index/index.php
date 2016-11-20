@@ -26,24 +26,23 @@
 
 	<main class="home">
 		<section class="section-primary" id="section-primary">
-			<div class="background-shadow"></div>
+               <article class="title-information">
+                    <h1>
+                         <strong>Clínica Los Cedros</strong>
+                         <br/>
+                         de Tapiales S.A.
+                    </h1>
+                    <p><i>Clínica Los Cedros</i> constituye una institución sólida desde el año 1983 en la que se destaca por la excelencia que otorga en sus prestaciones médicas y que sigue manteniendo la filosofía de brindar atención al mejor nivel.
+                    </p>
+                    <p>La confianza lograda nos permitió ir creciendo junto con las familias de nuestros pacientes.</p>
+
+                    <button id="button-video-open" title="Video a pantalla completa">Video</button>
+               </article>
 			<video loop muted autoplay id="video-background">
 				<source src="<?= base_url(); ?>video/losCedros.webm" type='video/webm; codecs="vp8, vorbis"' />
 				<source src="<?= base_url(); ?>video/losCedros.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
 				<source src="<?= base_url(); ?>video/losCedros.ogv" type='video/ogg; codecs="theora, vorbis"' />
 			</video>
-			<article class="title-information">
-				<h1>
-					<strong>Clínica Los Cedros</strong>
-					<br/>
-					de Tapiales S.A.
-				</h1>
-				<p><i>Clínica Los Cedros</i> constituye una institución sólida desde el año 1983 en la que se destaca por la excelencia que otorga en sus prestaciones médicas y que sigue manteniendo la filosofía de brindar atención al mejor nivel.
-				</p>
-				<p>La confianza lograda nos permitió ir creciendo junto con las familias de nuestros pacientes.</p>
-
-				<button id="button-video-open" title="Video a pantalla completa">Video</button>
-			</article>
 			<div id="video-container" class="video-container">
 				<button id="button-video-close" onClick="closeVideo()" title="Cerrar video"></button>
 				<video controls>
@@ -55,7 +54,6 @@
 		</section>
 
 		<article class="article-sections-item">
-
 			<figure>
 				<img src="<?= base_url(); ?>img/thumbs-instalaciones.jpg" alt="Instalaciones y Equipamiento"/>
 				<figcaption>
@@ -102,7 +100,6 @@
 		</article>
 
 		<section class="section-secondary" id="section-secondary">
-			<div class="background-shadow"></div>
 			<img id="imagen-background" src="<?= base_url(); ?>img/recepcion.jpg" alt="Recepción"/>
 		</section>
 

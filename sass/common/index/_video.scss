@@ -1,7 +1,4 @@
 .section-primary {
-	.background-shadow {
-		visibility: hidden;
-	}
 
 	> video {
 		width: 100%;
@@ -12,7 +9,6 @@
 
 	.title-information {
 		margin: 5%;
-		margin-bottom: 2em;
 		position: relative;
 		z-index: 400;
 
@@ -110,14 +106,16 @@
 		position: fixed;
 		display: block;
 		top: 0;
+		left: 0;
 		width: 100%;
 		height: 100%;
 
 		video {
 			height: auto;
-			width: 90%;
-			left: 5%;
-			position: absolute;
+			display: block;
+		     margin: 0 auto;
+		     width: 75%;
+		     height: auto;
 
 			top: 50%;
 			@include transform(translateY(-50%));
@@ -131,18 +129,12 @@
 
 @media (min-width: 500px){
 	.section-primary {
-		.background-shadow {
-			visibility: visible;
-		}
-
 		video {
 			display: inline-block;
 		}
 
 		.title-information {
-			margin-top: 0;
 			position: absolute;
-			bottom: 10%;
 			font-size: 80%;
 
 			br {
@@ -173,24 +165,12 @@
 			}
 		}
 	}
-
-	.section-primary .video-open video {
-	    padding: 5%;
-	}
 }
 
 @media (min-width: 735px) {
 	.section-primary {
 		.title-information {
 			font-size: 100%;
-		}
-
-		video {
-			width: 100%;
-			position: absolute;
-
-			top: 50%;
-			@include transform(translateY(-50%));
 		}
 	}
 }

@@ -92,41 +92,42 @@ body {
   font-weight: normal;
   font-variant: normal;
   font-style: normal;
+  position: relative;
 }
 
-/* line 21, ../../sass/common/_global.scss */
+/* line 22, ../../sass/common/_global.scss */
 img {
   width: 100%;
   height: auto;
 }
 
-/* line 26, ../../sass/common/_global.scss */
+/* line 27, ../../sass/common/_global.scss */
 a {
   display: inline-block;
   color: #0d4748;
 }
-/* line 30, ../../sass/common/_global.scss */
+/* line 31, ../../sass/common/_global.scss */
 a:visited {
   color: #0d4748;
 }
 
-/* line 35, ../../sass/common/_global.scss */
+/* line 36, ../../sass/common/_global.scss */
 button,
 input {
   cursor: pointer;
   outline: 0;
 }
 
-/* line 41, ../../sass/common/_global.scss */
+/* line 42, ../../sass/common/_global.scss */
 main {
-  margin: 5%;
-}
-/* line 44, ../../sass/common/_global.scss */
-main > section {
-  margin: 3em 0;
+  padding: 0px 5% 5%;
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+  position: relative;
 }
 
-/* line 49, ../../sass/common/_global.scss */
+/* line 50, ../../sass/common/_global.scss */
 .col-paragraph {
   position: relative;
   display: block;
@@ -158,7 +159,7 @@ main > section {
 /**
 * Heading
 **/
-/* line 57, ../../sass/common/_global.scss */
+/* line 58, ../../sass/common/_global.scss */
 h1 {
   font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
   font-weight: bold;
@@ -170,7 +171,7 @@ h1 {
   margin: .5em 0;
 }
 
-/* line 61, ../../sass/common/_global.scss */
+/* line 62, ../../sass/common/_global.scss */
 h2 {
   font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
   font-weight: bold;
@@ -183,7 +184,7 @@ h2 {
   margin-bottom: .4em;
 }
 
-/* line 65, ../../sass/common/_global.scss */
+/* line 66, ../../sass/common/_global.scss */
 h3 {
   font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
   font-weight: bold;
@@ -195,7 +196,7 @@ h3 {
   margin-bottom: .7em;
 }
 
-/* line 69, ../../sass/common/_global.scss */
+/* line 70, ../../sass/common/_global.scss */
 .photograpy-primary,
 .photograpy-secondary {
   position: relative;
@@ -205,7 +206,7 @@ h3 {
   height: auto;
   display: inline-block;
 }
-/* line 71, ../../sass/common/_global.scss */
+/* line 72, ../../sass/common/_global.scss */
 .photograpy-primary a,
 .photograpy-secondary a {
   float: left;
@@ -215,7 +216,7 @@ h3 {
 * Responsive
 **/
 @media (min-width: 500px) {
-  /* line 92, ../../sass/common/_global.scss */
+  /* line 93, ../../sass/common/_global.scss */
   .col-paragraph {
     position: relative;
     display: block;
@@ -245,13 +246,13 @@ h3 {
   }
 }
 @media (min-width: 700px) {
-  /* line 98, ../../sass/common/_global.scss */
+  /* line 99, ../../sass/common/_global.scss */
   .photograpy-information {
     padding-left: 15%;
     display: inline-block;
     width: 50%;
   }
-  /* line 103, ../../sass/common/_global.scss */
+  /* line 104, ../../sass/common/_global.scss */
   .photograpy-information .col-paragraph-photograpy {
     position: relative;
     display: block;
@@ -281,12 +282,12 @@ h3 {
     margin-right: 0;
   }
 
-  /* line 109, ../../sass/common/_global.scss */
+  /* line 110, ../../sass/common/_global.scss */
   .photograpy-secondary img {
     width: 50%;
     padding-right: 1%;
   }
-  /* line 113, ../../sass/common/_global.scss */
+  /* line 114, ../../sass/common/_global.scss */
   .photograpy-secondary img.second-img {
     float: right;
     padding-right: 0;
@@ -294,12 +295,12 @@ h3 {
   }
 }
 @media (min-width: 900px) {
-  /* line 122, ../../sass/common/_global.scss */
+  /* line 123, ../../sass/common/_global.scss */
   main {
-    margin: 2% 5%;
+    padding: 2% 5%;
   }
 
-  /* line 126, ../../sass/common/_global.scss */
+  /* line 127, ../../sass/common/_global.scss */
   .col-paragraph {
     position: relative;
     display: block;

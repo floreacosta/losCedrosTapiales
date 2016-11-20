@@ -16,6 +16,7 @@ body {
 	color: $color-primary;
 	font-size: 16px;
 	@include font-calibri-normal;
+	position: relative;
 }
 
 img {
@@ -39,11 +40,11 @@ input {
 }
 
 main {
-	margin: 5%;
-
-	> section {
-		margin: 3em 0;
-	}
+	padding: 0px 5% 5%;
+     width: 100%;
+     display: block;
+	margin: 0 auto;
+	position: relative;
 }
 
 .col-paragraph {
@@ -120,7 +121,7 @@ h3 {
 
 @media (min-width: 900px){
 	main {
-	    margin: 2% 5%;
+	    padding: 2% 5%;
 	}
 
 	.col-paragraph {

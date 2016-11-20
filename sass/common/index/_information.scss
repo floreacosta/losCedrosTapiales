@@ -48,15 +48,8 @@
 
 @media (min-width: 500px){
 	.section-secondary {
-		.background-shadow{
-			background: rgba(13, 71, 72, 0.6);
-		}
-
 		img {
 			display: block;
-			position: absolute;
-			top: 50%;
-			@include transform (translateY(-50%));
 		}
 	}
 }
@@ -121,12 +114,6 @@
 
 }
 
-@media (min-width: 735px) {
-	.home section.section-secondary {
-			height: auto;
-	}
-}
-
 @media (min-width: 900px){
 	.section-secondary {
 		height: 75vh;
@@ -139,7 +126,14 @@
 }
 
 @media (min-width: 900px){
-	.home section.section-secondary {
-		height: 75vh;
+	.home {
+		.section-secondary {
+			height: 70vh;
+
+			img {
+				top: 50%;
+				@include transform (translateY(-50%));
+			}
+		}
 	}
 }

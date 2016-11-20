@@ -117,46 +117,6 @@ function heightMap() {
 
 $(document).ready(heightSection);
 function heightSection() {
-	var ventana = $(window).width();
-	var h = $("#video-background").outerHeight() + "px";
-
-	if((ventana > 0) && (ventana < 500)) {
-		$('#section-primary').css('height', 'auto');
-	} else if ((ventana >= 500) && (ventana <= 1024)){
-		$("#section-primary").css("height", h);
-	} else {
-		$('#section-primary').css('height', '500px');
-	}
-
-	$(window).resize(function() {
-		if((ventana > 0) && (ventana < 500)) {
-			$('#section-primary').css('height', 'auto');
-		} else if ((ventana >= 500) && (ventana <= 1024)){
-			$("#section-primary").css("height", h);
-		} else {
-			$('#section-primary').css('height', '500px');
-		}
-	});
-}
-
-$(document).ready(heightSectionSecondary);
-function heightSectionSecondary() {
-	var ventana = $(window).width();
-	var h = $("#imagen-background").outerHeight() + "px";
-
-	if(ventana < 1024) {
-		$('#section-secondary').css('height', h);
-	} else {
-	      $('#section-secondary').css('height', '500px');
-	}
-
-	$(window).resize(function() {
-	      if(ventana < 1024) {
-			 $('#section-secondary').css('height', h);
-	      } else {
-			 $('#section-secondary').css('height', '500px');
-	      }
-	});
 }
 
 $(document).ready(modalEspecialidades);
