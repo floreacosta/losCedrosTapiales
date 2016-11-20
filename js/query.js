@@ -134,26 +134,11 @@ function modalEspecialidades() {
 
 $(document).ready(instalaciones);
 function instalaciones() {
-	//Ubico el item del listado (menu de sliders) en el que hago click
-	$(".menu-instalaciones2 li span").click(function(e){
-		var li = e.target.parentNode;
-		//Recorro todo el menú y le remuevo la clase ".item-active" a todos
-		$(".menu-instalaciones2 li").each(function(){
-			$(".menu-instalaciones2 li").removeClass("item-active");
-		});
-		//Le agrego la clase ".item-active" al que se cliqueó
-		$(li).addClass("item-active");
 
-		//Preparo la variable con el ID del slider que corresponde al item cliqueado
-		slider = "#slider-" + li.id;
-		//Remuevo de todos los slider la clase ".slider-active"
-		$(".container-all-slider > div").each(function(){
-			$(".container-all-slider > div").removeClass("slider-active");
-		});
-
-		//Le agrego la clase ".slider-active" al slider correspondiente al item cliqueado
-		$(slider).addClass("slider-active");
-
+	/**
+	/* Función slider
+	**/
+	var sliderFunction = function (slider) {
 		/**
 		/* Código del listado de imágenes debajo del slider (accesos directos a cada imagen)
 		**/
@@ -199,15 +184,15 @@ function instalaciones() {
 		$(slider + " .content-image-primary").css("width", anchoLi);
 
 		var anchoContenedor = (cantImagenes * 100) + "%";
-	     $(slider + " .content-imagen").css("width", anchoContenedor);
+		$(slider + " .content-imagen").css("width", anchoContenedor);
 
 		var espacioAmover = 0;
-	     $(slider + " #button-next").click(function(){
-	          var anchoImagen = $(slider + " .content-imagen li img").width() * -1;
-	          if (page >= cantImagenes) {
-	               page = 1;
-	               $(slider + " .content-imagen").animate({left: "0px"}, 500);
-	          } else {
+		$(slider + " #button-next").click(function(){
+			var anchoImagen = $(slider + " .content-imagen li img").width() * -1;
+			if (page >= cantImagenes) {
+				page = 1;
+				$(slider + " .content-imagen").animate({left: "0px"}, 500);
+			} else {
 				if (espacioAmover == (anchoImagen * page)) {
 					espacioAmover = anchoImagen * (page + 1);
 				} else if (page == cantImagenes) {
@@ -216,40 +201,67 @@ function instalaciones() {
 					espacioAmover = anchoImagen * page;
 				}
 				page++;
-	               $(slider + " .content-imagen").animate({left: (espacioAmover + "px")}, 500);
-	          }
+				$(slider + " .content-imagen").animate({left: (espacioAmover + "px")}, 500);
+			}
 
-	          $(window).resize(function(){
-	               var anchoImagen = $(slider + " .content-imagen li img").width() * -1;
-	               espacioAmover = anchoImagen * (page - 1);
-	               $(slider + " .content-imagen").css("left", (espacioAmover + "px"));
-	          });
-	     });
+			$(window).resize(function(){
+				var anchoImagen = $(slider + " .content-imagen li img").width() * -1;
+				espacioAmover = anchoImagen * (page - 1);
+				$(slider + " .content-imagen").css("left", (espacioAmover + "px"));
+			});
+		});
 
-	     $(slider + " #button-prev").click(function(){
-	          var anchoImagen = $(slider + " .content-imagen li img").width() * -1;
-	          if (page <= 1) {
-	               page = cantImagenes;
+		$(slider + " #button-prev").click(function(){
+			var anchoImagen = $(slider + " .content-imagen li img").width() * -1;
+			if (page <= 1) {
+				page = cantImagenes;
 				page--;
-	               espacioAmover = anchoImagen * (cantImagenes - 1);
-	               $(slider + " .content-imagen").animate({left: (espacioAmover + "px")}, 500);
-	          } else {
-	               page--;
+				espacioAmover = anchoImagen * (cantImagenes - 1);
+				$(slider + " .content-imagen").animate({left: (espacioAmover + "px")}, 500);
+			} else {
+				page--;
 				if (espacioAmover == (anchoImagen * page)) {
 					espacioAmover = anchoImagen * (page - 1);
 				} else {
 					espacioAmover = anchoImagen * page;
 				}
-	               $(slider + " .content-imagen").animate({left: (espacioAmover + "px")}, 500);
-	          }
+				$(slider + " .content-imagen").animate({left: (espacioAmover + "px")}, 500);
+			}
 
-	          $(window).resize(function(){
+			$(window).resize(function(){
 				var anchoImagen = $(slider + " .content-imagen li img").width();
-	               espacioAmover = anchoImagen * (page - 1);
-	               $(slider + " .content-imagen").css("left", (espacioAmover + "px"));
-	          });
-	     });
+				espacioAmover = anchoImagen * (page - 1);
+				$(slider + " .content-imagen").css("left", (espacioAmover + "px"));
+			});
+		});
+	} //funcion slider ();
+
+	//Primer slider, por defecto abierto
+	sliderFunction("#slider-1");
+
+	//Ubico el item del listado (menu de sliders) en el que hago click
+	$(".menu-instalaciones2 li span").click(function(e){
+		var li = e.target.parentNode;
+		//Recorro todo el menú y le remuevo la clase ".item-active" a todos
+		$(".menu-instalaciones2 li").each(function(){
+			$(".menu-instalaciones2 li").removeClass("item-active");
+		});
+		//Le agrego la clase ".item-active" al que se cliqueó
+		$(li).addClass("item-active");
+
+		//Preparo la variable con el ID del slider que corresponde al item cliqueado
+		slider = "#slider-" + li.id;
+		//Remuevo de todos los slider la clase ".slider-active"
+		$(".container-all-slider > div").each(function(){
+			$(".container-all-slider > div").removeClass("slider-active");
+		});
+
+		//Le agrego la clase ".slider-active" al slider correspondiente al item cliqueado
+		$(slider).addClass("slider-active");
+
+		//Hago funcionar el slider con el ID correspondiente al slider en cuestión
+		sliderFunction(slider);
 	});
 
-	console.log(slider);
+	console.log("No se clickeo");
 }
