@@ -2678,8 +2678,9 @@ footer .search label button:hover {
   font-size: 1.2em;
   margin-bottom: 10px;
   display: inline-block;
+  cursor: pointer;
 }
-/* line 29, ../sass/common/instalaciones/_instalaciones.scss */
+/* line 30, ../sass/common/instalaciones/_instalaciones.scss */
 .menu-instalaciones2 li span:hover {
   background: #0d4748;
   -moz-border-radius: 10px;
@@ -2687,7 +2688,7 @@ footer .search label button:hover {
   border-radius: 10px;
   color: #f2f1f1;
 }
-/* line 36, ../sass/common/instalaciones/_instalaciones.scss */
+/* line 37, ../sass/common/instalaciones/_instalaciones.scss */
 .menu-instalaciones2 li.item-active span {
   background: #0d4748;
   -moz-border-radius: 10px;
@@ -2695,41 +2696,41 @@ footer .search label button:hover {
   border-radius: 10px;
   color: #f2f1f1;
 }
-/* line 43, ../sass/common/instalaciones/_instalaciones.scss */
+/* line 44, ../sass/common/instalaciones/_instalaciones.scss */
 .menu-instalaciones2 .item-description {
   margin-bottom: 10px;
   width: 90%;
 }
 
-/* line 49, ../sass/common/instalaciones/_instalaciones.scss */
+/* line 50, ../sass/common/instalaciones/_instalaciones.scss */
 li span + .item-description {
   display: none;
 }
 
-/* line 53, ../sass/common/instalaciones/_instalaciones.scss */
+/* line 54, ../sass/common/instalaciones/_instalaciones.scss */
 li.item-active span + .item-description {
   display: block;
 }
 
-/* line 57, ../sass/common/instalaciones/_instalaciones.scss */
+/* line 58, ../sass/common/instalaciones/_instalaciones.scss */
 .container-all-slider {
   display: inline-block;
   width: auto;
   height: auto;
 }
 
-/* line 63, ../sass/common/instalaciones/_instalaciones.scss */
+/* line 64, ../sass/common/instalaciones/_instalaciones.scss */
 .menu-instalaciones {
   margin-top: -1em;
   width: 100%;
 }
-/* line 67, ../sass/common/instalaciones/_instalaciones.scss */
+/* line 68, ../sass/common/instalaciones/_instalaciones.scss */
 .menu-instalaciones li {
   display: inline-block;
   margin-right: 2em;
   height: 46px;
 }
-/* line 72, ../sass/common/instalaciones/_instalaciones.scss */
+/* line 73, ../sass/common/instalaciones/_instalaciones.scss */
 .menu-instalaciones li a {
   font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
   font-weight: normal;
@@ -2746,11 +2747,11 @@ li.item-active span + .item-description {
   margin-top: 5px;
   margin-bottom: 15px;
 }
-/* line 79, ../sass/common/instalaciones/_instalaciones.scss */
+/* line 80, ../sass/common/instalaciones/_instalaciones.scss */
 .menu-instalaciones li:last-of-type {
   margin-right: 0;
 }
-/* line 83, ../sass/common/instalaciones/_instalaciones.scss */
+/* line 84, ../sass/common/instalaciones/_instalaciones.scss */
 .menu-instalaciones li:hover {
   border-bottom: solid 4px #0d4748;
 }
@@ -2759,43 +2760,43 @@ li.item-active span + .item-description {
 * Responsive width
 **/
 @media (min-width: 735px) {
-  /* line 94, ../sass/common/instalaciones/_instalaciones.scss */
+  /* line 95, ../sass/common/instalaciones/_instalaciones.scss */
   .photograpy-information {
     margin: 0;
   }
 }
 @media (min-width: 700px) {
-  /* line 100, ../sass/common/instalaciones/_instalaciones.scss */
+  /* line 101, ../sass/common/instalaciones/_instalaciones.scss */
   .menu-instalaciones2 {
     width: 30%;
   }
-  /* line 103, ../sass/common/instalaciones/_instalaciones.scss */
+  /* line 104, ../sass/common/instalaciones/_instalaciones.scss */
   .menu-instalaciones2 li {
     display: block;
   }
 
-  /* line 108, ../sass/common/instalaciones/_instalaciones.scss */
+  /* line 109, ../sass/common/instalaciones/_instalaciones.scss */
   .container-all-slider {
     width: 70%;
     float: right;
   }
 
-  /* line 113, ../sass/common/instalaciones/_instalaciones.scss */
+  /* line 114, ../sass/common/instalaciones/_instalaciones.scss */
   .container-slider {
     width: 85%;
   }
-  /* line 116, ../sass/common/instalaciones/_instalaciones.scss */
+  /* line 117, ../sass/common/instalaciones/_instalaciones.scss */
   .container-slider.slider-active {
     display: inline-block;
   }
 
-  /* line 121, ../sass/common/instalaciones/_instalaciones.scss */
+  /* line 122, ../sass/common/instalaciones/_instalaciones.scss */
   .photograpy-secondary {
     margin-bottom: .5em;
     margin-top: .5em;
   }
 
-  /* line 126, ../sass/common/instalaciones/_instalaciones.scss */
+  /* line 127, ../sass/common/instalaciones/_instalaciones.scss */
   .menu-instalaciones {
     margin-top: 0em;
   }

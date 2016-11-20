@@ -132,100 +132,121 @@ function modalEspecialidades() {
 	});
 }
 
-$(document).ready(openDescription);
-function openDescription() {
+$(document).ready(instalaciones);
+function instalaciones() {
+	//Ubico el item del listado (menu de sliders) en el que hago click
 	$(".menu-instalaciones2 li span").click(function(e){
 		var li = e.target.parentNode;
+		//Recorro todo el menú y le remuevo la clase ".item-active" a todos
 		$(".menu-instalaciones2 li").each(function(){
 			$(".menu-instalaciones2 li").removeClass("item-active");
 		});
+		//Le agrego la clase ".item-active" al que se cliqueó
 		$(li).addClass("item-active");
 
+		//Preparo la variable con el ID del slider que corresponde al item cliqueado
 		slider = "#slider-" + li.id;
+		//Remuevo de todos los slider la clase ".slider-active"
 		$(".container-all-slider > div").each(function(){
 			$(".container-all-slider > div").removeClass("slider-active");
 		});
 
+		//Le agrego la clase ".slider-active" al slider correspondiente al item cliqueado
 		$(slider).addClass("slider-active");
-	});
-}
 
-$(document).ready(slider);
-function slider() {
-	var listadoImagenes = [];
-	$(".slider-active .container-image-secondary a").each(function(index){
-		listadoImagenes.push(this);
-	});
 
-	var page = 1;
+		/* Código del listado de imagenes debajo del slider */
 
-	$(".slider-active .container-image-secondary").click(function(e){
-		e.preventDefault();
-		var a = e.target.id;
+		//Declaro un array donde guardo el listado de imagenes para poder recorrerlo
+		var listadoImagenes = [];
+		$(slider + " .container-image-secondary a").each(function(index){
+			listadoImagenes.push(this);
+		});
 
-		for(var i = 0; i < listadoImagenes.length; i++) {
-			if(a == listadoImagenes[i].id) {
-				var posicion = $(".slider-active .content-imagen li img").width() * i * -1;
-				$(".slider-active .content-imagen").css("left", posicion);
-				page = (i + 1);
+		//Contador de páginas o imagenes a las que se le dará NEXT
+		var page = 1;
+
+		//Capturo el ID de la imagen cliqueada para que se muestre directamente en el slider sin cliquear los botones NEXT y PREVIUS
+		$(slider + " .container-image-secondary").click(function(e){
+			//Le quito el funcionamiento por defecto al link
+			e.preventDefault();
+
+			//Capturo el ID
+			var a = e.target.id;
+
+			//Recorro el array de imágenes
+			for(var i = 0; i < listadoImagenes.length; i++) {
+				//Si "a" (que contiene el ID de la imagen cliqueada) es IGUAL al id de la imagen del ARRAY
+				if(a == listadoImagenes[i].id) {
+					//Capturo la posición del contenedor
+					//Ancho de la imagen * la posición del ARRAY * -1 (para hacerlo negativo, por ser necesario para los estilos)
+					var posicion = $(slider + " .content-imagen li img").width() * i * -1;
+					//Le doy el valor de "posicion" al estilo LEFT
+					$(slider + " .content-imagen").css("left", posicion);
+					//Le indico al contador general en que página o imagen estoy ubicada
+					//para darle la información a los botones NEXT y PREVIUS
+					page = (i + 1);
+				}
 			}
-		}
+		});
+
+		var cantImagenes = $(slider + " .content-imagen li").size();
+		var anchoLi = (100 / cantImagenes) + "%";
+
+		$(slider + " .content-image-primary").css("width", anchoLi);
+
+		var anchoContenedor = (cantImagenes * 100) + "%";
+	     $(slider + " .content-imagen").css("width", anchoContenedor);
+
+		var espacioAmover = 0;
+	     $(slider + " #button-next").click(function(){
+	          var anchoImagen = $(slider + " .content-imagen li img").width() * -1;
+	          if (page >= cantImagenes) {
+	               page = 1;
+	               $(slider + " .content-imagen").animate({left: "0px"}, 500);
+	          } else {
+				if (espacioAmover == (anchoImagen * page)) {
+					espacioAmover = anchoImagen * (page + 1);
+				} else if (page == cantImagenes) {
+					espacioAmover = anchoImagen * (page - 1);
+				} else {
+					espacioAmover = anchoImagen * page;
+				}
+				page++;
+	               $(slider + " .content-imagen").animate({left: (espacioAmover + "px")}, 500);
+	          }
+
+	          $(window).resize(function(){
+	               var anchoImagen = $(slider + " .content-imagen li img").width() * -1;
+	               espacioAmover = anchoImagen * (page - 1);
+	               $(slider + " .content-imagen").css("left", (espacioAmover + "px"));
+	          });
+	     });
+
+	     $(slider + " #button-prev").click(function(){
+	          var anchoImagen = $(slider + " .content-imagen li img").width() * -1;
+	          if (page <= 1) {
+	               page = cantImagenes;
+				page--;
+	               espacioAmover = anchoImagen * (cantImagenes - 1);
+	               $(slider + " .content-imagen").animate({left: (espacioAmover + "px")}, 500);
+	          } else {
+	               page--;
+				if (espacioAmover == (anchoImagen * page)) {
+					espacioAmover = anchoImagen * (page - 1);
+				} else {
+					espacioAmover = anchoImagen * page;
+				}
+	               $(slider + " .content-imagen").animate({left: (espacioAmover + "px")}, 500);
+	          }
+
+	          $(window).resize(function(){
+				var anchoImagen = $(slider + " .content-imagen li img").width();
+	               espacioAmover = anchoImagen * (page - 1);
+	               $(slider + " .content-imagen").css("left", (espacioAmover + "px"));
+	          });
+	     });
 	});
 
-     var cantImagenes = $(".slider-active .content-imagen li").size();
-	var anchoLi = (100 / cantImagenes) + "%";
-	$(".content-image-primary").css("width", anchoLi);
-
-     var anchoContenedor = (cantImagenes * 100) + "%";
-     $(".slider-active .content-imagen").css("width", anchoContenedor);
-
-	var espacioAmover = 0;
-     $("#button-next").click(function(){
-          var anchoImagen = $(".content-imagen li img").width() * -1;
-          if (page >= cantImagenes) {
-               page = 1;
-               $(".slider-active .content-imagen").animate({left: "0px"}, 500);
-          } else {
-			if (espacioAmover == (anchoImagen * page)) {
-				espacioAmover = anchoImagen * (page + 1);
-			} else if (page == cantImagenes) {
-				espacioAmover = anchoImagen * (page - 1);
-			} else {
-				espacioAmover = anchoImagen * page;
-			}
-			page++;
-               $(".slider-active .content-imagen").animate({left: (espacioAmover + "px")}, 500);
-          }
-
-          $(window).resize(function(){
-               var anchoImagen = $(".slider-active .content-imagen li img").width() * -1;
-               espacioAmover = anchoImagen * (page - 1);
-               $(".slider-active .content-imagen").css("left", (espacioAmover + "px"));
-          });
-     });
-
-     $("#button-prev").click(function(){
-          var anchoImagen = $(".content-imagen li img").width() * -1;
-          if (page <= 1) {
-               page = cantImagenes;
-			page--;
-               espacioAmover = anchoImagen * (cantImagenes - 1);
-               $(".content-imagen").animate({left: (espacioAmover + "px")}, 500);
-          } else {
-               page--;
-			if (espacioAmover == (anchoImagen * page)) {
-				espacioAmover = anchoImagen * (page - 1);
-			} else {
-				espacioAmover = anchoImagen * page;
-			}
-               $(".content-imagen").animate({left: (espacioAmover + "px")}, 500);
-          }
-
-          $(window).resize(function(){
-			var anchoImagen = $(".content-imagen li img").width();
-               espacioAmover = anchoImagen * (page - 1);
-               $(".content-imagen").css("left", (espacioAmover + "px"));
-          });
-     });
-
+	console.log(slider);
 }

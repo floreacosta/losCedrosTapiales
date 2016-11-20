@@ -15,7 +15,7 @@
 		</div>
 
 		<section>
-			<ul class="menu-instalaciones2" onClick="openDescription()">
+			<ul class="menu-instalaciones2" onClick="instalaciones()">
 				<li id="1" class="item-active">
 					<span title="Edificio">Edificio</span>
 					<div class="item-description">Clínica Los Cedros de tapiales ofrece una infraestructura de de 4 plantas totalmente renovados.<br/>Posee 5 sectores de internación clínica, quirúrgica y de obstetricia.</div>
