@@ -38,7 +38,8 @@ class Categorias extends CI_Controller {
             $this->load->view('admin/categorias/crear');
         }else{
             $nombre_post = $this->input->post('nombre');
-            $data['result'] = $this->categorias_model->crearCategoria($nombre_post);        
+            $descripcion_post = $this->input->post('descripcion');
+            $data['result'] = $this->categorias_model->crearCategoria($nombre_post, $descripcion_post);        
             $data['categorias'] = $this->categorias_model->getCategorias();
             $data['tipo'] = 'crear';
             $this->load->view('admin/includes/head');
@@ -61,8 +62,9 @@ class Categorias extends CI_Controller {
 
     public function updateCategorias(){
         $id_post = $this->input->post('hiddenId');
-        $nombre_post = $this->input->post('nombre');      
-        $data['result'] = $this->categorias_model->editarCategoria($id_post, $nombre_post);        
+        $nombre_post = $this->input->post('nombre');
+        $descripcion_post = $this->input->post('descripcion');
+        $data['result'] = $this->categorias_model->editarCategoria($id_post, $nombre_post, $descripcion_post);        
         $data['categorias'] = $this->categorias_model->getCategorias();
         $data['tipo'] = 'editar';
         $this->load->view('admin/includes/head');

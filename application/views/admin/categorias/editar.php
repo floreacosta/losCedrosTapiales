@@ -52,6 +52,12 @@
                 'value' => $resultado->nombre,
                 'class' => 'form-control'
             );
+            $descripcion = array(
+                'name' => 'descripcion',
+                'type' => 'textarea',
+                'value' => $resultado->descripcion,
+                'class' => 'form-control'
+            );
             $buttonClass = array(
                 'class' => 'btn btn-primary'
             );
@@ -60,6 +66,10 @@
         <div class="form-group">
         <?= form_label('Nombre: ', 'nombre') ?>
         <?= form_input($nombre) ?>
+        </div>
+        <div class="form-group">
+        <?= form_label('Descripción: ', 'descripcion') ?>
+        <?= form_textarea($descripcion) ?>
         </div>
         <?= form_submit('','Editar categoria', $buttonClass) ?>
         <?= form_close() ?>

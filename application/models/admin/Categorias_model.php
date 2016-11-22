@@ -20,19 +20,21 @@ class Categorias_model extends CI_Model {
         else return false;
     }
     
-    function crearCategoria($nombre){
+    function crearCategoria($nombre, $descripcion){
         
         $data = array(
-            'nombre' => $nombre
+            'nombre' => $nombre,
+            'descripcion' => $descripcion
         );
         
         $result = $this->db->insert('categorias', $data);
         return $result;
     }
     
-    function editarCategoria($id, $nombre){
+    function editarCategoria($id, $nombre, $descripcion){
         $data = array(
-            'nombre' => $nombre
+            'nombre' => $nombre,
+            'descripcion' => $descripcion
         );        
         $this->db->where('id', $id);
         $result = $this->db->update('categorias', $data);

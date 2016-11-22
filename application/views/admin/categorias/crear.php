@@ -50,10 +50,19 @@
             $buttonClass = array(
                 'class' => 'btn btn-primary'
             );
+            $descripcion = array(
+                'name' => 'descripcion',
+                'type' => 'textarea',
+                'class' => 'form-control'
+            );
         ?>
         <div class="form-group">
         <?= form_label('Categoría: ', 'nombre') ?>
         <?= form_input($nombre) ?>
+        </div>
+        <div class="form-group">
+        <?= form_label('Descripción: ', 'descripcion') ?>
+        <?= form_textarea($descripcion) ?>
         </div>
         <?= form_submit('','Crear categoría', $buttonClass) ?>
         <?= form_close() ?>

@@ -70,6 +70,7 @@
             <thead>
                 <tr>
                     <th>Nombre</th>
+                    <th>Descripción</th>
                     <th>Editar categoria</th>
                     <th>Eliminar categoria</th>
                 </tr>
@@ -78,6 +79,7 @@
                 <? foreach($categorias->result() as $categoria): ?>    
                 <tr>
                     <td><?= $categoria->nombre; ?></td>
+                    <td><?= $categoria->descripcion; ?></td>
                     <td><a href="<?= base_url(); ?>admin/categorias/editarFormularioCategorias?id=<?= $categoria->id ?>">Editar</a></td>
                     <td><a href="<?= base_url(); ?>admin/categorias/EliminarCategoria?id=<?= $categoria->id ?>">Eliminar</a></td>
                 </tr>

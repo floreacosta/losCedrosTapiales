@@ -10,10 +10,12 @@ class Instalaciones extends CI_Controller {
         $this->load->helper('url');
         $this->load->database();
         $this->load->model('instalaciones_model');
+        $this->load->model('admin/categorias_model');
     }
 
     public function index()
 	{
+            $data['categorias'] = $this->categorias_model->getCategorias();
             $data['instalaciones'] = $this->instalaciones_model->getInstalaciones();
             $this->load->view('includes/head');
             $this->load->view('includes/header');

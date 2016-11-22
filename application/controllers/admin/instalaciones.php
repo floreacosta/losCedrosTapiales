@@ -57,9 +57,9 @@ class Instalaciones extends CI_Controller {
         
         $config['upload_path']          = './img';
         $config['allowed_types']        = 'gif|jpg|png';
-        $config['max_size']             = 2000;
-        $config['max_width']            = 2000;
-        $config['max_height']           = 2000;
+        $config['max_size']             = 10000;
+        $config['max_width']            = 10000;
+        $config['max_height']           = 10000;
         
         $this->load->library('upload', $config);
         $this->upload->initialize($config);        
@@ -82,17 +82,20 @@ class Instalaciones extends CI_Controller {
         $nombre_post = $this->input->post('nombre');        
         $descripcion_post = $this->input->post('descripcion');
         $categoria_post = $this->input->post('categoria');
-        if(isset($_FILES['image']['tmp_name'])) {
+        
+        if('' !== $_FILES['user_file']['tmp_name']) {
             $config['upload_path']          = './img';
             $config['allowed_types']        = 'gif|jpg|png';
-            $config['max_size']             = 2000;
-            $config['max_width']            = 2000;
-            $config['max_height']           = 2000;
+            $config['max_size']             = 10000;
+            $config['max_width']            = 10000;
+            $config['max_height']           = 10000;
 
             $this->load->library('upload', $config);
-            $this->upload->initialize($config);        
-
+            $this->upload->initialize($config);
+            
             if ( ! $this->upload->do_upload('user_file')){
+                var_dump($this->upload->display_errors());
+                die;
                 $data['error'] = array('error' => $this->upload->display_errors());
                 $this->load->view('admin/includes/head');
                 $this->load->view('admin/instalaciones/index', $data);
@@ -127,7 +130,7 @@ class Instalaciones extends CI_Controller {
         if($imagen === NULL){
             $data['result'] = $this->instalaciones_model->editarInstalacionSinImagen($id, $nombre, $descripcion, $categoria);
         }else{
-            $data['result'] = $this->instalaciones_model->editarInstalacion($id, $nombre, $imagen, $descripcion, $categoria);
+            $data['result'] = $this->instalaciones_model->editarInstalacion($id, $nombre, $descripcion, $categoria, $imagen);
         }
         $data['instalaciones'] = $this->instalaciones_model->getInstalaciones();
         $data['tipo'] = 'editar';

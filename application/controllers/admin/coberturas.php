@@ -76,7 +76,7 @@ class Coberturas extends CI_Controller {
     {
         $id_post = $this->input->post('hiddenId');
         $nombre_post = $this->input->post('nombre');
-        if(isset($_FILES['image']['tmp_name'])) {
+        if('' !== $_FILES['user_file']['tmp_name']) {
             $config['upload_path']          = './img/obras-sociales';
             $config['allowed_types']        = 'gif|jpg|png';
             $config['max_size']             = 100;
