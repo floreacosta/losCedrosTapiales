@@ -47,6 +47,10 @@ main {
 	position: relative;
 }
 
+section {
+	display: inline-block;
+}
+
 .col-paragraph {
 	@include text-paragraph(100%, 1, 0px);
 }
@@ -74,11 +78,13 @@ h3 {
 	}
 
 	position: relative;
-	margin: -5.55%;
-	margin-bottom: .5em;
-	margin-top: .5em;
+//	margin: -5.55%;
 	height: auto;
 	display: inline-block;
+}
+
+.photograpy-primary {
+	margin-bottom: 3em;
 }
 
 .photograpy-information {

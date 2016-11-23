@@ -59,6 +59,7 @@ li.item-active span + .item-description {
 	display: inline-block;
 	width: auto;
 	height: auto;
+	padding-left: 50px;
 }
 
 .menu-instalaciones {
@@ -98,6 +99,10 @@ li.item-active span + .item-description {
 }
 
 @media (min-width: 700px) {
+	.photograpy-primary {
+		margin-top: 1em;
+	}
+
 	.menu-instalaciones2 {
 		width: 30%;
 
@@ -108,6 +113,7 @@ li.item-active span + .item-description {
 
 	.container-all-slider {
 		width: 70%;
+		padding-left: 50px;
 		float: right;
 	}
 

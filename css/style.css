@@ -132,6 +132,11 @@ main {
 }
 
 /* line 50, ../sass/common/_global.scss */
+section {
+  display: inline-block;
+}
+
+/* line 54, ../sass/common/_global.scss */
 .col-paragraph {
   position: relative;
   display: block;
@@ -163,7 +168,7 @@ main {
 /**
 * Heading
 **/
-/* line 58, ../sass/common/_global.scss */
+/* line 62, ../sass/common/_global.scss */
 h1 {
   font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
   font-weight: bold;
@@ -175,7 +180,7 @@ h1 {
   margin: .5em 0;
 }
 
-/* line 62, ../sass/common/_global.scss */
+/* line 66, ../sass/common/_global.scss */
 h2 {
   font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
   font-weight: bold;
@@ -188,7 +193,7 @@ h2 {
   margin-bottom: .4em;
 }
 
-/* line 66, ../sass/common/_global.scss */
+/* line 70, ../sass/common/_global.scss */
 h3 {
   font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
   font-weight: bold;
@@ -200,27 +205,29 @@ h3 {
   margin-bottom: .7em;
 }
 
-/* line 70, ../sass/common/_global.scss */
+/* line 74, ../sass/common/_global.scss */
 .photograpy-primary,
 .photograpy-secondary {
   position: relative;
-  margin: -5.55%;
-  margin-bottom: .5em;
-  margin-top: .5em;
   height: auto;
   display: inline-block;
 }
-/* line 72, ../sass/common/_global.scss */
+/* line 76, ../sass/common/_global.scss */
 .photograpy-primary a,
 .photograpy-secondary a {
   float: left;
+}
+
+/* line 86, ../sass/common/_global.scss */
+.photograpy-primary {
+  margin-bottom: 3em;
 }
 
 /**
 * Responsive
 **/
 @media (min-width: 500px) {
-  /* line 93, ../sass/common/_global.scss */
+  /* line 99, ../sass/common/_global.scss */
   .col-paragraph {
     position: relative;
     display: block;
@@ -250,13 +257,13 @@ h3 {
   }
 }
 @media (min-width: 700px) {
-  /* line 99, ../sass/common/_global.scss */
+  /* line 105, ../sass/common/_global.scss */
   .photograpy-information {
     padding-left: 15%;
     display: inline-block;
     width: 50%;
   }
-  /* line 104, ../sass/common/_global.scss */
+  /* line 110, ../sass/common/_global.scss */
   .photograpy-information .col-paragraph-photograpy {
     position: relative;
     display: block;
@@ -286,12 +293,12 @@ h3 {
     margin-right: 0;
   }
 
-  /* line 110, ../sass/common/_global.scss */
+  /* line 116, ../sass/common/_global.scss */
   .photograpy-secondary img {
     width: 50%;
     padding-right: 1%;
   }
-  /* line 114, ../sass/common/_global.scss */
+  /* line 120, ../sass/common/_global.scss */
   .photograpy-secondary img.second-img {
     float: right;
     padding-right: 0;
@@ -299,12 +306,12 @@ h3 {
   }
 }
 @media (min-width: 900px) {
-  /* line 123, ../sass/common/_global.scss */
+  /* line 129, ../sass/common/_global.scss */
   main {
     padding: 2% 5%;
   }
 
-  /* line 127, ../sass/common/_global.scss */
+  /* line 133, ../sass/common/_global.scss */
   .col-paragraph {
     position: relative;
     display: block;
@@ -1344,19 +1351,20 @@ footer .search label button:hover {
 /* Item explicaci├│n de fotografia */
 /* line 2, ../sass/common/_tooltip-photo.scss */
 .box-description {
+  z-index: 200;
   margin-top: 1em;
   margin-bottom: 1em;
   position: relative;
-  margin-left: 5%;
-  margin-right: 5%;
 }
 
 /**
 * Responsive
 **/
 @media (min-width: 700px) {
-  /* line 19, ../sass/common/_tooltip-photo.scss */
+  /* line 18, ../sass/common/_tooltip-photo.scss */
   .box-description {
+    margin-left: 5%;
+    margin-right: 5%;
     width: 30%;
     background-color: #ffffff;
     color: #3d8232;
@@ -1371,7 +1379,7 @@ footer .search label button:hover {
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   }
 
-  /* line 32, ../sass/common/_tooltip-photo.scss */
+  /* line 33, ../sass/common/_tooltip-photo.scss */
   .flecha-top:before,
   .flecha-bottom:before,
   .flecha-left:before,
@@ -1381,7 +1389,7 @@ footer .search label button:hover {
     border-style: solid;
   }
 
-  /* line 41, ../sass/common/_tooltip-photo.scss */
+  /* line 42, ../sass/common/_tooltip-photo.scss */
   .flecha-right:before {
     top: 50%;
     left: 100%;
@@ -1390,7 +1398,7 @@ footer .search label button:hover {
     border-color: transparent transparent transparent #ffffff;
   }
 
-  /* line 49, ../sass/common/_tooltip-photo.scss */
+  /* line 50, ../sass/common/_tooltip-photo.scss */
   .flecha-left:before {
     top: 50%;
     right: 100%;
@@ -1399,7 +1407,7 @@ footer .search label button:hover {
     border-color: transparent #ffffff transparent transparent;
   }
 
-  /* line 57, ../sass/common/_tooltip-photo.scss */
+  /* line 58, ../sass/common/_tooltip-photo.scss */
   .flecha-top:before {
     bottom: 100%;
     right: 50%;
@@ -1408,7 +1416,7 @@ footer .search label button:hover {
     border-color: transparent transparent #ffffff transparent;
   }
 
-  /* line 65, ../sass/common/_tooltip-photo.scss */
+  /* line 66, ../sass/common/_tooltip-photo.scss */
   .flecha-bottom:before {
     top: calc(100% + .5em);
     right: 50%;
@@ -1417,46 +1425,46 @@ footer .search label button:hover {
     border-color: #ffffff transparent transparent transparent;
   }
 
-  /* line 73, ../sass/common/_tooltip-photo.scss */
+  /* line 74, ../sass/common/_tooltip-photo.scss */
   #box-1 {
     top: 50%;
     left: 5%;
   }
 
-  /* line 78, ../sass/common/_tooltip-photo.scss */
+  /* line 79, ../sass/common/_tooltip-photo.scss */
   #box-2 {
     top: 10%;
     right: 5%;
   }
 
-  /* line 83, ../sass/common/_tooltip-photo.scss */
+  /* line 84, ../sass/common/_tooltip-photo.scss */
   #box-3 {
     top: -18%;
     left: 10%;
   }
 
-  /* line 88, ../sass/common/_tooltip-photo.scss */
+  /* line 89, ../sass/common/_tooltip-photo.scss */
   #box-4 {
     bottom: -17%;
     right: 10%;
     z-index: 200;
   }
 
-  /* line 94, ../sass/common/_tooltip-photo.scss */
+  /* line 95, ../sass/common/_tooltip-photo.scss */
   #box-5,
   #box-8 {
     right: 38%;
     top: 30%;
   }
 
-  /* line 100, ../sass/common/_tooltip-photo.scss */
+  /* line 101, ../sass/common/_tooltip-photo.scss */
   #box-6,
   #box-9 {
     left: 10%;
     top: -18%;
   }
 
-  /* line 106, ../sass/common/_tooltip-photo.scss */
+  /* line 107, ../sass/common/_tooltip-photo.scss */
   #box-7,
   #box-10 {
     right: 10%;
@@ -1465,7 +1473,7 @@ footer .search label button:hover {
   }
 }
 @media (min-width: 1024px) {
-  /* line 116, ../sass/common/_tooltip-photo.scss */
+  /* line 117, ../sass/common/_tooltip-photo.scss */
   .box-description {
     width: 25%;
   }
@@ -2717,20 +2725,21 @@ li.item-active span + .item-description {
   display: inline-block;
   width: auto;
   height: auto;
+  padding-left: 50px;
 }
 
-/* line 64, ../sass/common/instalaciones/_instalaciones.scss */
+/* line 65, ../sass/common/instalaciones/_instalaciones.scss */
 .menu-instalaciones {
   margin-top: -1em;
   width: 100%;
 }
-/* line 68, ../sass/common/instalaciones/_instalaciones.scss */
+/* line 69, ../sass/common/instalaciones/_instalaciones.scss */
 .menu-instalaciones li {
   display: inline-block;
   margin-right: 2em;
   height: 46px;
 }
-/* line 73, ../sass/common/instalaciones/_instalaciones.scss */
+/* line 74, ../sass/common/instalaciones/_instalaciones.scss */
 .menu-instalaciones li a {
   font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
   font-weight: normal;
@@ -2747,11 +2756,11 @@ li.item-active span + .item-description {
   margin-top: 5px;
   margin-bottom: 15px;
 }
-/* line 80, ../sass/common/instalaciones/_instalaciones.scss */
+/* line 81, ../sass/common/instalaciones/_instalaciones.scss */
 .menu-instalaciones li:last-of-type {
   margin-right: 0;
 }
-/* line 84, ../sass/common/instalaciones/_instalaciones.scss */
+/* line 85, ../sass/common/instalaciones/_instalaciones.scss */
 .menu-instalaciones li:hover {
   border-bottom: solid 4px #0d4748;
 }
@@ -2760,43 +2769,49 @@ li.item-active span + .item-description {
 * Responsive width
 **/
 @media (min-width: 735px) {
-  /* line 95, ../sass/common/instalaciones/_instalaciones.scss */
+  /* line 96, ../sass/common/instalaciones/_instalaciones.scss */
   .photograpy-information {
     margin: 0;
   }
 }
 @media (min-width: 700px) {
-  /* line 101, ../sass/common/instalaciones/_instalaciones.scss */
+  /* line 102, ../sass/common/instalaciones/_instalaciones.scss */
+  .photograpy-primary {
+    margin-top: 1em;
+  }
+
+  /* line 106, ../sass/common/instalaciones/_instalaciones.scss */
   .menu-instalaciones2 {
     width: 30%;
   }
-  /* line 104, ../sass/common/instalaciones/_instalaciones.scss */
+  /* line 109, ../sass/common/instalaciones/_instalaciones.scss */
   .menu-instalaciones2 li {
     display: block;
   }
 
-  /* line 109, ../sass/common/instalaciones/_instalaciones.scss */
+  /* line 114, ../sass/common/instalaciones/_instalaciones.scss */
   .container-all-slider {
     width: 70%;
+    padding-left: 50px;
     float: right;
   }
 
-  /* line 114, ../sass/common/instalaciones/_instalaciones.scss */
+  /* line 120, ../sass/common/instalaciones/_instalaciones.scss */
   .container-slider {
     width: 85%;
   }
-  /* line 117, ../sass/common/instalaciones/_instalaciones.scss */
+  /* line 123, ../sass/common/instalaciones/_instalaciones.scss */
   .container-slider.slider-active {
     display: inline-block;
   }
 
-  /* line 122, ../sass/common/instalaciones/_instalaciones.scss */
+  /* line 128, ../sass/common/instalaciones/_instalaciones.scss */
   .photograpy-secondary {
     margin-bottom: .5em;
     margin-top: .5em;
   }
 
-  /* line 127, ../sass/common/instalaciones/_instalaciones.scss */
+  /* line 133, ../sass/common/instalaciones/_instalaciones.scss */
   .menu-instalaciones {
     margin-top: 0em;
   }
