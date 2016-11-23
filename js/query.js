@@ -135,9 +135,7 @@ function modalEspecialidades() {
 $(document).ready(instalaciones);
 function instalaciones() {
 
-	/**
-	/* Función slider
-	**/
+	// Función slider
 	var sliderFunction = function (slider) {
 		/**
 		/* Código del listado de imágenes debajo del slider (accesos directos a cada imagen)
@@ -262,6 +260,4 @@ function instalaciones() {
 		//Hago funcionar el slider con el ID correspondiente al slider en cuestión
 		sliderFunction(slider);
 	});
-
-	console.log("No se clickeo");
 }

@@ -16,7 +16,7 @@
 
 		<section>
 			<ul class="menu-instalaciones2" onClick="instalaciones()">
-                            <? 
+                            <?
                                 $contador = 0;
                             ?>
                             <?    foreach($categorias->result() as $categoria): ?>
@@ -27,28 +27,28 @@
                                         <div class="item-description"><?= $categoria->descripcion ?></div>
                                     </li>
                                 <? }else{ ?>
-                                    
+
                                     <li id="<?= $categoria->id ?>" >
                                         <span title="<?= $categoria->nombre ?>"><?= $categoria->nombre ?></span>
                                         <div class="item-description"><?= $categoria->descripcion ?></div>
                                     </li>
-                                
-                                <? } 
+
+                                <? }
                                 $contador++;
                                 ?>
-                                
-                                
+
+
                             <? endforeach; ?>
 			</ul>
-                        <? 
+                        <?
                             $contador = 0;
-                        ?>    
+                        ?>
 			<article class="container-all-slider">
                             <?    foreach($categorias->result() as $categoria): ?>
                             <? if($contador === 0){ ?>
-                            <div class="container-slider slider-active" id="slider-<?= $categoria->id ?>">
+                            <div class="container-slider slider-active" id="slider-<?= $contador + 1 ?>">
                             <? }else{ ?>
-                            <div class="container-slider" id="slider-<?= $categoria->id ?>">
+                            <div class="container-slider" id="slider-<?= $contador + 1 ?>">
                             <? } ?>
                                 <button class="button-prev" id="button-prev" title="Anterior"></button>
                                 <button class="button-next" id="button-next" title="Siguiente"></button>
@@ -61,21 +61,27 @@
                                                     <figcaption class="image-description"><?= $instalacion->descripcion ?></figcaption>
                                                 </li>
                                                 <? } ?>
-                                            <? endforeach; ?>                                            
+                                            <? endforeach; ?>
                                         </ul>
                                     </figure>
 
                                     <div class="container-image-secondary">
+								 <?
+			                              $imageContador = 0;
+			                          ?>
                                         <?    foreach($instalaciones->result() as $instalacion): ?>
                                             <? if($instalacion->idCategoria === $categoria->id){ ?>
-                                            <a class="image-secondary" id="image-1" href=""><img alt="" src="<?= base_url(); ?>img/<?= $instalacion->imagen ?>"/></a>
+									<?
+										$imageContador++;
+									?>
+                                            <a class="image-secondary" id="image-<?= $imageContador ?>" href=""><img alt="" src="<?= base_url(); ?>img/<?= $instalacion->imagen ?>"/></a>
                                             <? } ?>
                                         <? endforeach; ?>
                                     </div>
                             </div>
                             <? $contador++; ?>
                             <? endforeach; ?>
-                            
+
 			</article>
 
 		</section>
