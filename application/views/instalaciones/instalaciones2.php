@@ -22,13 +22,13 @@
                             <?    foreach($categorias->result() as $categoria): ?>
                                 <?
                                     if($contador === 0){ ?>
-                                    <li id="<?= $categoria->id ?>" class="item-active">
+                                    <li id="<?= $contador + 1 ?>" class="item-active">
                                         <span title="<?= $categoria->nombre ?>"><?= $categoria->nombre ?></span>
                                         <div class="item-description"><?= $categoria->descripcion ?></div>
                                     </li>
                                 <? }else{ ?>
 
-                                    <li id="<?= $categoria->id ?>" >
+                                    <li id="<?= $contador + 1 ?>" >
                                         <span title="<?= $categoria->nombre ?>"><?= $categoria->nombre ?></span>
                                         <div class="item-description"><?= $categoria->descripcion ?></div>
                                     </li>
