@@ -736,7 +736,7 @@ footer .search label button:hover {
   z-index: 10;
   padding: 10px;
   border-radius: 10px;
-  left: -19px;
+  left: -6px;
   top: -9px;
 }
 /* line 139, ../sass/components/_footer.scss */
@@ -752,7 +752,7 @@ footer .search label button:hover {
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
   width: 100%;
-  left: -11px;
+  left: 0px;
   font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
   font-weight: bold;
   font-variant: normal;
@@ -807,20 +807,29 @@ footer .search label button:hover {
   }
 }
 @media (min-width: 900px) {
-  /* line 199, ../sass/components/_footer.scss */
+  /* line 202, ../sass/components/_footer.scss */
+  .information .turn-online:hover:before {
+    left: -19px;
+  }
+  /* line 206, ../sass/components/_footer.scss */
+  .information .turn-online:hover:after {
+    left: -11px;
+  }
+
+  /* line 212, ../sass/components/_footer.scss */
   .information,
   .search {
     margin-top: 0em;
   }
 
-  /* line 204, ../sass/components/_footer.scss */
+  /* line 217, ../sass/components/_footer.scss */
   .col-4 {
     width: 23%;
     margin: 0 1%;
   }
 }
 @media (min-width: 1024px) {
-  /* line 211, ../sass/components/_footer.scss */
+  /* line 224, ../sass/components/_footer.scss */
   footer {
     padding: 2em 4em;
   }
@@ -1834,7 +1843,7 @@ footer .search label button:hover {
   width: 35px;
   height: 35px;
   position: absolute;
-  top: calc(35% - 17px);
+  top: calc(50% - 17px);
   -moz-transform: rotate(-90deg);
   -ms-transform: rotate(-90deg);
   -webkit-transform: rotate(-90deg);
@@ -1919,30 +1928,31 @@ footer .search label button:hover {
   -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  display: inline-block;
 }
 
-/* line 89, ../sass/common/_slider.scss */
+/* line 90, ../sass/common/_slider.scss */
 .content-imagen {
   width: 500%;
   height: auto;
   display: block;
 }
 
-/* line 95, ../sass/common/_slider.scss */
+/* line 96, ../sass/common/_slider.scss */
 .content-image-primary {
   width: 20%;
   float: left;
   position: relative;
   display: inline-block;
 }
-/* line 101, ../sass/common/_slider.scss */
+/* line 102, ../sass/common/_slider.scss */
 .content-image-primary img {
   width: 100%;
   height: auto;
   display: block;
 }
 
-/* line 108, ../sass/common/_slider.scss */
+/* line 109, ../sass/common/_slider.scss */
 .image-description {
   position: absolute;
   width: 100%;
@@ -1952,7 +1962,7 @@ footer .search label button:hover {
   color: #f2f1f1;
 }
 
-/* line 117, ../sass/common/_slider.scss */
+/* line 118, ../sass/common/_slider.scss */
 .container-image-secondary {
   width: 104%;
   left: -2%;
@@ -1962,7 +1972,7 @@ footer .search label button:hover {
   position: relative;
 }
 
-/* line 126, ../sass/common/_slider.scss */
+/* line 127, ../sass/common/_slider.scss */
 .image-secondary {
   width: 23%;
   margin: 0% 1%;
@@ -1971,7 +1981,7 @@ footer .search label button:hover {
   float: left;
   margin-bottom: .5em;
 }
-/* line 135, ../sass/common/_slider.scss */
+/* line 136, ../sass/common/_slider.scss */
 .image-secondary:hover:after {
   content: '+';
   color: #f2f1f1;
@@ -1988,7 +1998,7 @@ footer .search label button:hover {
   font-size: 45px;
   line-height: 1.25;
 }
-/* line 149, ../sass/common/_slider.scss */
+/* line 150, ../sass/common/_slider.scss */
 .image-secondary:hover:before {
   content: '';
   position: absolute;
@@ -2665,16 +2675,10 @@ footer .search label button:hover {
   width: 100%;
   margin-bottom: 1em;
 }
-/* line 16, ../sass/common/instalaciones/_instalaciones.scss */
-.menu-instalaciones2 li {
-  display: inline-block;
-}
 /* line 19, ../sass/common/instalaciones/_instalaciones.scss */
 .menu-instalaciones2 li span {
-  margin-right: 20px;
-  padding: .5em;
+  padding: .5em 0em;
   position: relative;
-  left: -.5em;
   font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
   font-weight: bold;
   font-variant: normal;
@@ -2688,58 +2692,81 @@ footer .search label button:hover {
   display: inline-block;
   cursor: pointer;
 }
-/* line 30, ../sass/common/instalaciones/_instalaciones.scss */
-.menu-instalaciones2 li span:hover {
+/* line 29, ../sass/common/instalaciones/_instalaciones.scss */
+.menu-instalaciones2 li span:hover:before {
+  content: '';
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 4px;
+  display: inline-block;
   background: #0d4748;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
-  color: #f2f1f1;
 }
-/* line 37, ../sass/common/instalaciones/_instalaciones.scss */
-.menu-instalaciones2 li.item-active span {
+/* line 42, ../sass/common/instalaciones/_instalaciones.scss */
+.menu-instalaciones2 li.item-active span:before {
+  content: '';
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 4px;
+  display: inline-block;
   background: #0d4748;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
-  color: #f2f1f1;
 }
-/* line 44, ../sass/common/instalaciones/_instalaciones.scss */
+/* line 54, ../sass/common/instalaciones/_instalaciones.scss */
 .menu-instalaciones2 .item-description {
   margin-bottom: 10px;
   width: 90%;
 }
 
-/* line 50, ../sass/common/instalaciones/_instalaciones.scss */
+/* line 60, ../sass/common/instalaciones/_instalaciones.scss */
 li span + .item-description {
   display: none;
 }
 
-/* line 54, ../sass/common/instalaciones/_instalaciones.scss */
+/* line 64, ../sass/common/instalaciones/_instalaciones.scss */
 li.item-active span + .item-description {
   display: block;
 }
 
-/* line 58, ../sass/common/instalaciones/_instalaciones.scss */
+/* line 68, ../sass/common/instalaciones/_instalaciones.scss */
+.instalaciones-subheading {
+  position: relative;
+  display: block;
+  padding-bottom: .25em;
+  margin-bottom: 1em;
+  font-size: 2em;
+  /*
+  &:before {
+  	content:'';
+  	position: absolute;
+  	bottom: 0px;
+  	width: 100%;
+  	height: 4px;
+  	display: inline-block;
+  	background: $color-primary;
+  }
+  */
+}
+
+/* line 88, ../sass/common/instalaciones/_instalaciones.scss */
 .container-all-slider {
   display: inline-block;
   width: auto;
   height: auto;
-  padding-left: 50px;
 }
 
-/* line 65, ../sass/common/instalaciones/_instalaciones.scss */
+/* line 94, ../sass/common/instalaciones/_instalaciones.scss */
 .menu-instalaciones {
   margin-top: -1em;
   width: 100%;
 }
-/* line 69, ../sass/common/instalaciones/_instalaciones.scss */
+/* line 98, ../sass/common/instalaciones/_instalaciones.scss */
 .menu-instalaciones li {
   display: inline-block;
   margin-right: 2em;
   height: 46px;
 }
-/* line 74, ../sass/common/instalaciones/_instalaciones.scss */
+/* line 103, ../sass/common/instalaciones/_instalaciones.scss */
 .menu-instalaciones li a {
   font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
   font-weight: normal;
@@ -2756,11 +2783,11 @@ li.item-active span + .item-description {
   margin-top: 5px;
   margin-bottom: 15px;
 }
-/* line 81, ../sass/common/instalaciones/_instalaciones.scss */
+/* line 110, ../sass/common/instalaciones/_instalaciones.scss */
 .menu-instalaciones li:last-of-type {
   margin-right: 0;
 }
-/* line 85, ../sass/common/instalaciones/_instalaciones.scss */
+/* line 114, ../sass/common/instalaciones/_instalaciones.scss */
 .menu-instalaciones li:hover {
   border-bottom: solid 4px #0d4748;
 }
@@ -2769,49 +2796,49 @@ li.item-active span + .item-description {
 * Responsive width
 **/
 @media (min-width: 735px) {
-  /* line 96, ../sass/common/instalaciones/_instalaciones.scss */
+  /* line 125, ../sass/common/instalaciones/_instalaciones.scss */
   .photograpy-information {
     margin: 0;
   }
 }
 @media (min-width: 700px) {
-  /* line 102, ../sass/common/instalaciones/_instalaciones.scss */
+  /* line 131, ../sass/common/instalaciones/_instalaciones.scss */
   .photograpy-primary {
     margin-top: 1em;
   }
 
-  /* line 106, ../sass/common/instalaciones/_instalaciones.scss */
+  /* line 135, ../sass/common/instalaciones/_instalaciones.scss */
   .menu-instalaciones2 {
     width: 30%;
   }
-  /* line 109, ../sass/common/instalaciones/_instalaciones.scss */
+  /* line 138, ../sass/common/instalaciones/_instalaciones.scss */
   .menu-instalaciones2 li {
     display: block;
   }
 
-  /* line 114, ../sass/common/instalaciones/_instalaciones.scss */
+  /* line 143, ../sass/common/instalaciones/_instalaciones.scss */
   .container-all-slider {
     width: 70%;
     padding-left: 50px;
     float: right;
   }
 
-  /* line 120, ../sass/common/instalaciones/_instalaciones.scss */
+  /* line 149, ../sass/common/instalaciones/_instalaciones.scss */
   .container-slider {
-    width: 85%;
+    width: 100%;
   }
-  /* line 123, ../sass/common/instalaciones/_instalaciones.scss */
+  /* line 152, ../sass/common/instalaciones/_instalaciones.scss */
   .container-slider.slider-active {
     display: inline-block;
   }
 
-  /* line 128, ../sass/common/instalaciones/_instalaciones.scss */
+  /* line 157, ../sass/common/instalaciones/_instalaciones.scss */
   .photograpy-secondary {
     margin-bottom: .5em;
     margin-top: .5em;
   }
 
-  /* line 133, ../sass/common/instalaciones/_instalaciones.scss */
+  /* line 162, ../sass/common/instalaciones/_instalaciones.scss */
   .menu-instalaciones {
     margin-top: 0em;
   }

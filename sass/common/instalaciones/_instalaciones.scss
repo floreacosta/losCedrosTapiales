@@ -14,13 +14,11 @@
 	margin-bottom: 1em;
 
 	li {
-		display: inline-block;
+		//display: inline-block;
 
 		span {
-			margin-right: 20px;
-			padding: .5em;
+			padding: .5em 0em;
 			position: relative;
-		     left: -.5em;
 			@include heading-level-3();
 			font-size: 1.2em;
 			margin-bottom: 10px;
@@ -28,16 +26,28 @@
 			cursor: pointer;
 
 			&:hover {
-				background: $color-primary;
-				@include border-radius(10px);
-				color: $color-light;
+				&:before {
+					content:'';
+					position: absolute;
+					bottom: 0px;
+					width: 100%;
+					height: 4px;
+					display: inline-block;
+					background: $color-primary;
+				}
 			}
 		}
 
 		&.item-active span {
-			background: $color-primary;
-			@include border-radius(10px);
-			color: $color-light;
+			&:before {
+				content:'';
+				position: absolute;
+				bottom: 0px;
+				width: 100%;
+				height: 4px;
+				display: inline-block;
+				background: $color-primary;
+			}
 		}
 	}
 
@@ -55,11 +65,30 @@ li.item-active span + .item-description {
 	display: block;
 }
 
+.instalaciones-subheading {
+	position: relative;
+	display: block;
+	padding-bottom: .25em;
+	margin-bottom: 1em;
+	font-size: 2em;
+
+	/*
+	&:before {
+		content:'';
+		position: absolute;
+		bottom: 0px;
+		width: 100%;
+		height: 4px;
+		display: inline-block;
+		background: $color-primary;
+	}
+	*/
+}
+
 .container-all-slider {
 	display: inline-block;
 	width: auto;
 	height: auto;
-	padding-left: 50px;
 }
 
 .menu-instalaciones {
@@ -118,7 +147,7 @@ li.item-active span + .item-description {
 	}
 
 	.container-slider {
-		width: 85%;
+		width: 100%;
 
 		&.slider-active {
 			display: inline-block;

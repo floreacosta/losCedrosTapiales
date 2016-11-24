@@ -25,6 +25,7 @@
 				<a name="edificio"></a>
 				<img src="<?= base_url(); ?>img/presentacion.jpg" alt="Clinica Los Cedros de Tapiales"/>
 			</div>
+			<h2 class="instalaciones-subheading">Recorrido por las instalaciones</h2>
 			<ul class="menu-instalaciones2" onClick="instalaciones()">
                             <?
                                 $contador = 0;
@@ -60,9 +61,9 @@
                             <? }else{ ?>
                             <div class="container-slider" id="slider-<?= $contador + 1 ?>">
                             <? } ?>
-                                <button class="button-prev" id="button-prev" title="Anterior"></button>
-                                <button class="button-next" id="button-next" title="Siguiente"></button>
                                     <figure class="image-primary">
+								 <button class="button-prev" id="button-prev" title="Anterior"></button>
+								 <button class="button-next" id="button-next" title="Siguiente"></button>
 					<ul class="content-imagen" id="slider-container-images">
                                             <?    foreach($instalaciones->result() as $instalacion): ?>
                                                 <? if($instalacion->idCategoria === $categoria->id){ ?>

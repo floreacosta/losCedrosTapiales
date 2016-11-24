@@ -132,7 +132,7 @@ footer {
 			z-index: 10;
 			padding: 10px;
 			border-radius: 10px;
-			left: -19px;
+		     left: -6px;
 			top: -9px;
 		}
 
@@ -145,7 +145,7 @@ footer {
 			top: 50%;
 			@include transform(translateY(-50%));
 			width: 100%;
-			left: -11px;
+			left: 0px;
 			@include font-calibri-bold();
 		}
 	}
@@ -196,6 +196,19 @@ footer {
 }
 
 @media (min-width: 900px){
+	.information .turn-online {
+
+		&:hover {
+			&:before {
+			     left: -19px;
+			}
+
+			&:after {
+				left: -11px;
+			}
+		}
+	}
+
 	.information,
 	.search {
 		margin-top: 0em;
