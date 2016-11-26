@@ -176,33 +176,50 @@ function instalaciones() {
 			}
 		});
 
+		//Se busca la cantidad de imagenes que tiene cada sección.
 		var cantImagenes = $(slider + " .content-imagen li").size();
+		//Se calcula el ancho en % de las imágenes según cuantas son:
+		//Ejemplo: si son 3 imágenes, deberían tener un ancho de 33.33%. Si son 4 imágenes, deberían tener un ancho de 25%.
 		var anchoLi = (100 / cantImagenes) + "%";
 
+		//Se le da el ancho calculado a cada LI (contenedor de cada imagen).
 		$(slider + " .content-image-primary").css("width", anchoLi);
 
+		//Se calcula el ancho total del contenedor que englobal a TODAS las imágenes en %.
 		var anchoContenedor = (cantImagenes * 100) + "%";
+		//Se le asigna el valor calculado al contenedor GLOBAL
 		$(slider + " .content-imagen").css("width", anchoContenedor);
 
+		//Se inicializa la variable del espacio a mover del contenedor GLOBAL de las imagenes en 0.
 		var espacioAmover = 0;
-		$(slider + " #button-next").click(function(){
-			var anchoImagen = $(slider + " .content-imagen li img").width() * -1;
-			var tiempoDesliz = cantImagenes * 100;
 
+		//Función del BOTÓN NEXT
+		$(slider + " #button-next").click(function(){
+			//Se calcula el ancho de imagen para el momento en que se toco NEXT
+			var anchoImagen = $(slider + " .content-imagen li img").width() * -1;
+			//Se calcula el tiempo que tomará la animación según la cantidad de imágenes de ese slider.
+			var tiempoDesliz = cantImagenes * 300;
+
+			//Lógica de BOTÓN NEXT
+			//Si la posición de la imagen actual es == a la cantidad total de imágenes
 			if (page == cantImagenes) {
+				//Vuelve a la primer imagen del slider (page = 1)
 				page = 1;
-				$(slider + " .content-imagen").animate({left: "0px"}, tiempoDesliz);
+				//Se reinicia la variable espacioAmover por si es la segunda pasada de slider.
 				espacioAmover = 0;
+				//Se posiciona en 0px al contenedor GLOBAL que se mueve según la imagen que toca mostrar.
+				$(slider + " .content-imagen").animate({left: "0px"}, tiempoDesliz);
 			} else {
-				if (espacioAmover == (anchoImagen * page)) {
-					espacioAmover = anchoImagen * (page + 1);
-				} else {
-					espacioAmover = anchoImagen * page;
-				}
+				//Se carga la variable "espacioAmover" con el ancho de la imagen * la posición de la imagen que se muestra
+				espacioAmover = anchoImagen * page;
+
+				//Se aumenta Page para la próxima pasada
 				page++;
+				//Se asigna el espacioAmover al ANIMATE
 				$(slider + " .content-imagen").animate({left: (espacioAmover + "px")}, tiempoDesliz);
 			}
 
+			//Código para hacer responsive el slider en jquery
 			$(window).resize(function(){
 				var anchoImagen = $(slider + " .content-imagen li img").width() * -1;
 				var espacioAmover = 0;
@@ -211,24 +228,40 @@ function instalaciones() {
 			});
 		});
 
+		//Función BUTTON PREV
 		$(slider + " #button-prev").click(function(){
+			//Se calcula el ancho de imagen para el momento en que se toco NEXT
 			var anchoImagen = $(slider + " .content-imagen li img").width() * -1;
+			//Se calcula el tiempo que tomará la animación según la cantidad de imágenes de ese slider.
 			var tiempoDesliz = cantImagenes * 300;
 
+			//Lógica de BUTTON PREV
+			//Si la posición de la imagen a mostrar es menor o igual a la primer imagen
+			//Es decir, si estás en la primer imagen y vas hacia atrás
 			if (page <= 1) {
+				//Page se iguala a la cantidad total de imagenes, para posicionarse en la última
 				page = cantImagenes;
+				//Se calcula el espacio que se tiene que mover para mostrar a la última imagen
 				espacioAmover = anchoImagen * (cantImagenes - 1);
+				//Se le da el espacio a mover al ANIMATE
 				$(slider + " .content-imagen").animate({left: (espacioAmover + "px")}, tiempoDesliz);
 			} else {
+				//Si no se descuenta una posicion a Page
 				page--;
+				//Se pregunta si el espacio a mover es == al ancho de imagen * posición de la imagen
 				if (espacioAmover == (anchoImagen * page)) {
+					//El espacio a mover se iguala al anchoImagen * (la página que se quiere mostrar - 1) para ir una posición atrás.
+					//Es decir, si estamos en -200px de posición, hay que ir a -100px.
+					//Entonces espacioAmover = a 100px (ancho de imagen) * (2 (page) - 1); Porque la imagen 2 está en la posición -100px.
 					espacioAmover = anchoImagen * (page - 1);
 				} else {
 					espacioAmover = anchoImagen * page;
 				}
+				//Se asigna el espacioAmover al ANIMATE
 				$(slider + " .content-imagen").animate({left: (espacioAmover + "px")}, tiempoDesliz);
 			}
 
+			//Para hacer responsive al SLIDER.
 			$(window).resize(function(){
 				var anchoImagen = $(slider + " .content-imagen li img").width();
 				var espacioAmover = 0;
