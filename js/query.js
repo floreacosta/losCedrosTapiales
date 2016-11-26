@@ -197,8 +197,13 @@ function instalaciones() {
 		$(slider + " #button-next").click(function(){
 			//Se calcula el ancho de imagen para el momento en que se toco NEXT
 			var anchoImagen = $(slider + " .content-imagen li img").width() * -1;
+
 			//Se calcula el tiempo que tomará la animación según la cantidad de imágenes de ese slider.
-			var tiempoDesliz = cantImagenes * 300;
+			if (cantImagenes > 5) {
+				var tiempoDesliz = cantImagenes * 100;
+			} else {
+				var tiempoDesliz = cantImagenes * 300;
+			}
 
 			//Lógica de BOTÓN NEXT
 			//Si la posición de la imagen actual es == a la cantidad total de imágenes
@@ -232,8 +237,13 @@ function instalaciones() {
 		$(slider + " #button-prev").click(function(){
 			//Se calcula el ancho de imagen para el momento en que se toco NEXT
 			var anchoImagen = $(slider + " .content-imagen li img").width() * -1;
+
 			//Se calcula el tiempo que tomará la animación según la cantidad de imágenes de ese slider.
-			var tiempoDesliz = cantImagenes * 300;
+			if (cantImagenes > 5) {
+				var tiempoDesliz = cantImagenes * 100;
+			} else {
+				var tiempoDesliz = cantImagenes * 300;
+			}
 
 			//Lógica de BUTTON PREV
 			//Si la posición de la imagen a mostrar es menor o igual a la primer imagen
