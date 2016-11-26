@@ -187,23 +187,25 @@ function instalaciones() {
 		var espacioAmover = 0;
 		$(slider + " #button-next").click(function(){
 			var anchoImagen = $(slider + " .content-imagen li img").width() * -1;
-			if (page >= cantImagenes) {
+			var tiempoDesliz = cantImagenes * 100;
+
+			if (page == cantImagenes) {
 				page = 1;
-				$(slider + " .content-imagen").animate({left: "0px"}, 500);
+				$(slider + " .content-imagen").animate({left: "0px"}, tiempoDesliz);
+				espacioAmover = 0;
 			} else {
 				if (espacioAmover == (anchoImagen * page)) {
 					espacioAmover = anchoImagen * (page + 1);
-				} else if (page == cantImagenes) {
-					espacioAmover = anchoImagen * (page - 1);
 				} else {
 					espacioAmover = anchoImagen * page;
 				}
 				page++;
-				$(slider + " .content-imagen").animate({left: (espacioAmover + "px")}, 500);
+				$(slider + " .content-imagen").animate({left: (espacioAmover + "px")}, tiempoDesliz);
 			}
 
 			$(window).resize(function(){
 				var anchoImagen = $(slider + " .content-imagen li img").width() * -1;
+				var espacioAmover = 0;
 				espacioAmover = anchoImagen * (page - 1);
 				$(slider + " .content-imagen").css("left", (espacioAmover + "px"));
 			});
@@ -211,11 +213,12 @@ function instalaciones() {
 
 		$(slider + " #button-prev").click(function(){
 			var anchoImagen = $(slider + " .content-imagen li img").width() * -1;
+			var tiempoDesliz = cantImagenes * 300;
+
 			if (page <= 1) {
 				page = cantImagenes;
-				page--;
 				espacioAmover = anchoImagen * (cantImagenes - 1);
-				$(slider + " .content-imagen").animate({left: (espacioAmover + "px")}, 500);
+				$(slider + " .content-imagen").animate({left: (espacioAmover + "px")}, tiempoDesliz);
 			} else {
 				page--;
 				if (espacioAmover == (anchoImagen * page)) {
@@ -223,11 +226,12 @@ function instalaciones() {
 				} else {
 					espacioAmover = anchoImagen * page;
 				}
-				$(slider + " .content-imagen").animate({left: (espacioAmover + "px")}, 500);
+				$(slider + " .content-imagen").animate({left: (espacioAmover + "px")}, tiempoDesliz);
 			}
 
 			$(window).resize(function(){
 				var anchoImagen = $(slider + " .content-imagen li img").width();
+				var espacioAmover = 0;
 				espacioAmover = anchoImagen * (page - 1);
 				$(slider + " .content-imagen").css("left", (espacioAmover + "px"));
 			});
