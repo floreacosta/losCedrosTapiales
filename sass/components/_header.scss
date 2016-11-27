@@ -74,10 +74,22 @@ header {
 /* Caja contenedora de elementos del menú */
 .menu-element {
 	width: 100%;
-	//height: 328px;
 	display: inline-block;
 	overflow: hidden;
 	position: relative;
+
+	&:before {
+		content: '';
+	    width: 100%;
+	    height: 1px;
+	    position: absolute;
+	    right: 0;
+	    top: -1px;
+	    background: white;
+	    box-shadow: $shadow;
+	    display: inline-block;
+	    z-index: 10000;
+	}
 
 	ul {
 		display: inline-block;
@@ -113,7 +125,12 @@ header {
 					border-radius: 50%;
 					right: 0;
 					top: calc((80px / 2) - .25em);
+
 				}
+			}
+
+			&:last-of-type {
+				border: 0;
 			}
 
 			&:hover {

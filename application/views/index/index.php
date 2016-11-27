@@ -91,7 +91,6 @@
 			</figure>
 		</article>
 
-		<a name="online-turn"></a>
 		<article id="turn" class="article-online-turn">
 			<div>
 				<h1>Solicitud de turnos Online</h1>
@@ -105,7 +104,6 @@
 
 		<article class="article-information-for-user" id="contact">
 			<div class="telephone-line" id="informationBox">
-				<a name="address"></a>
 				<span>
 					<h3>Ubicación</h3>
 					<p>Domingo Millan 20, Villa Madero - Cp.: 1688</p>
@@ -135,7 +133,6 @@
 			<div class="location-google-map location" id="map"></div>
 		</article>
 
-		<a name="schedule"></a>
 		<article class="article-visit-schedule" id="visit">
 			<h1>Horarios de visita</h1>
 			<h2>Internación: <span>15 a 17 h.</span></h2>
