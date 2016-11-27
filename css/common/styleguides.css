@@ -790,7 +790,16 @@ footer .search label button:hover {
     margin-top: 0em;
   }
 
-  /* line 171, ../../sass/components/_footer.scss */
+  /* line 173, ../../sass/components/_footer.scss */
+  .information .turn-online:hover:before {
+    left: -22px;
+  }
+  /* line 177, ../../sass/components/_footer.scss */
+  .information .turn-online:hover:after {
+    left: -12px;
+  }
+
+  /* line 183, ../../sass/components/_footer.scss */
   .col-4 {
     position: relative;
     display: inline-block;
@@ -798,51 +807,51 @@ footer .search label button:hover {
     width: 46%;
     margin: 0 2%;
   }
-  /* line 178, ../../sass/components/_footer.scss */
+  /* line 190, ../../sass/components/_footer.scss */
   .col-4:nth-child(odd) {
     margin-left: 0;
   }
 
-  /* line 183, ../../sass/components/_footer.scss */
+  /* line 195, ../../sass/components/_footer.scss */
   .information,
   .search {
     margin-top: 2em;
   }
 
-  /* line 188, ../../sass/components/_footer.scss */
+  /* line 200, ../../sass/components/_footer.scss */
   .extra-information {
     padding: 1.5em 3em;
     text-align: left;
   }
-  /* line 192, ../../sass/components/_footer.scss */
+  /* line 204, ../../sass/components/_footer.scss */
   .extra-information span:last-of-type {
     float: right;
   }
 }
 @media (min-width: 900px) {
-  /* line 202, ../../sass/components/_footer.scss */
+  /* line 214, ../../sass/components/_footer.scss */
   .information .turn-online:hover:before {
     left: -19px;
   }
-  /* line 206, ../../sass/components/_footer.scss */
+  /* line 218, ../../sass/components/_footer.scss */
   .information .turn-online:hover:after {
     left: -11px;
   }
 
-  /* line 212, ../../sass/components/_footer.scss */
+  /* line 224, ../../sass/components/_footer.scss */
   .information,
   .search {
     margin-top: 0em;
   }
 
-  /* line 217, ../../sass/components/_footer.scss */
+  /* line 229, ../../sass/components/_footer.scss */
   .col-4 {
     width: 23%;
     margin: 0 1%;
   }
 }
 @media (min-width: 1024px) {
-  /* line 224, ../../sass/components/_footer.scss */
+  /* line 236, ../../sass/components/_footer.scss */
   footer {
     padding: 2em 4em;
   }

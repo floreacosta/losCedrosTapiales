@@ -8,21 +8,21 @@
 	}
 
 	.title-information {
-		margin: 5%;
+	    margin: 5% 0%;
 		position: relative;
 		z-index: 400;
 
 		h1 {
-			font-weight: 300;
+			@include font-calibri-light();
 
 			strong {
-				font-weight: bold;
+				@include font-calibri-bold();
 			}
 		}
 
 		p {
 			@include text-primary();
-			font-weight: 300;
+			@include font-calibri-light();
 
 			i {
 				font-style: italic;
@@ -39,7 +39,7 @@
 			padding-right: 1em;
 			line-height: 35px;
 			cursor: pointer;
-			font-weight: 300;
+			@include font-calibri-bold();
 
 			&:before {
 				content: '-';
@@ -136,6 +136,7 @@
 		.title-information {
 			position: absolute;
 			font-size: 80%;
+			margin: 5%;
 
 			br {
 				display: none;

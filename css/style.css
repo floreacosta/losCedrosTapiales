@@ -794,7 +794,16 @@ footer .search label button:hover {
     margin-top: 0em;
   }
 
-  /* line 171, ../sass/components/_footer.scss */
+  /* line 173, ../sass/components/_footer.scss */
+  .information .turn-online:hover:before {
+    left: -22px;
+  }
+  /* line 177, ../sass/components/_footer.scss */
+  .information .turn-online:hover:after {
+    left: -12px;
+  }
+
+  /* line 183, ../sass/components/_footer.scss */
   .col-4 {
     position: relative;
     display: inline-block;
@@ -802,51 +811,51 @@ footer .search label button:hover {
     width: 46%;
     margin: 0 2%;
   }
-  /* line 178, ../sass/components/_footer.scss */
+  /* line 190, ../sass/components/_footer.scss */
   .col-4:nth-child(odd) {
     margin-left: 0;
   }
 
-  /* line 183, ../sass/components/_footer.scss */
+  /* line 195, ../sass/components/_footer.scss */
   .information,
   .search {
     margin-top: 2em;
   }
 
-  /* line 188, ../sass/components/_footer.scss */
+  /* line 200, ../sass/components/_footer.scss */
   .extra-information {
     padding: 1.5em 3em;
     text-align: left;
   }
-  /* line 192, ../sass/components/_footer.scss */
+  /* line 204, ../sass/components/_footer.scss */
   .extra-information span:last-of-type {
     float: right;
   }
 }
 @media (min-width: 900px) {
-  /* line 202, ../sass/components/_footer.scss */
+  /* line 214, ../sass/components/_footer.scss */
   .information .turn-online:hover:before {
     left: -19px;
   }
-  /* line 206, ../sass/components/_footer.scss */
+  /* line 218, ../sass/components/_footer.scss */
   .information .turn-online:hover:after {
     left: -11px;
   }
 
-  /* line 212, ../sass/components/_footer.scss */
+  /* line 224, ../sass/components/_footer.scss */
   .information,
   .search {
     margin-top: 0em;
   }
 
-  /* line 217, ../sass/components/_footer.scss */
+  /* line 229, ../sass/components/_footer.scss */
   .col-4 {
     width: 23%;
     margin: 0 1%;
   }
 }
 @media (min-width: 1024px) {
-  /* line 224, ../sass/components/_footer.scss */
+  /* line 236, ../sass/components/_footer.scss */
   footer {
     padding: 2em 4em;
   }
@@ -2108,17 +2117,23 @@ footer .search label button:hover {
 }
 /* line 10, ../sass/common/index/_video.scss */
 .section-primary .title-information {
-  margin: 5%;
+  margin: 5% 0%;
   position: relative;
   z-index: 400;
 }
 /* line 15, ../sass/common/index/_video.scss */
 .section-primary .title-information h1 {
+  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
   font-weight: 300;
+  font-variant: normal;
+  font-style: normal;
 }
 /* line 18, ../sass/common/index/_video.scss */
 .section-primary .title-information h1 strong {
+  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
   font-weight: bold;
+  font-variant: normal;
+  font-style: normal;
 }
 /* line 23, ../sass/common/index/_video.scss */
 .section-primary .title-information p {
@@ -2130,7 +2145,10 @@ footer .search label button:hover {
   font-size: 1.15em;
   line-height: 1.20em;
   margin: 1.5em 0;
+  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
   font-weight: 300;
+  font-variant: normal;
+  font-style: normal;
 }
 /* line 27, ../sass/common/index/_video.scss */
 .section-primary .title-information p i {
@@ -2147,7 +2165,10 @@ footer .search label button:hover {
   padding-right: 1em;
   line-height: 35px;
   cursor: pointer;
-  font-weight: 300;
+  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+  font-weight: bold;
+  font-variant: normal;
+  font-style: normal;
 }
 /* line 44, ../sass/common/index/_video.scss */
 .section-primary .title-information button:before {
@@ -2247,16 +2268,17 @@ footer .search label button:hover {
   .section-primary .title-information {
     position: absolute;
     font-size: 80%;
+    margin: 5%;
   }
-  /* line 140, ../sass/common/index/_video.scss */
+  /* line 141, ../sass/common/index/_video.scss */
   .section-primary .title-information br {
     display: none;
   }
-  /* line 144, ../sass/common/index/_video.scss */
+  /* line 145, ../sass/common/index/_video.scss */
   .section-primary .title-information h1 {
     margin-top: 0;
   }
-  /* line 148, ../sass/common/index/_video.scss */
+  /* line 149, ../sass/common/index/_video.scss */
   .section-primary .title-information h1,
   .section-primary .title-information p,
   .section-primary .title-information button,
@@ -2265,30 +2287,30 @@ footer .search label button:hover {
   }
 }
 @media (min-width: 600px) {
-  /* line 160, ../sass/common/index/_video.scss */
+  /* line 161, ../sass/common/index/_video.scss */
   .section-primary .title-information {
     width: 65%;
   }
-  /* line 163, ../sass/common/index/_video.scss */
+  /* line 164, ../sass/common/index/_video.scss */
   .section-primary .title-information br {
     display: block;
   }
 }
 @media (min-width: 735px) {
-  /* line 172, ../sass/common/index/_video.scss */
+  /* line 173, ../sass/common/index/_video.scss */
   .section-primary .title-information {
     font-size: 100%;
   }
 }
 @media (min-width: 1024px) {
-  /* line 180, ../sass/common/index/_video.scss */
+  /* line 181, ../sass/common/index/_video.scss */
   .section-primary .title-information {
     margin-left: 10%;
     bottom: 15%;
   }
 }
 @media (min-width: 1400px) {
-  /* line 189, ../sass/common/index/_video.scss */
+  /* line 190, ../sass/common/index/_video.scss */
   .section-primary .title-information {
     bottom: 22%;
     width: 35%;

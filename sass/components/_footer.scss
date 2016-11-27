@@ -168,6 +168,18 @@ footer {
 		}
 	}
 
+	.information .turn-online {
+		&:hover {
+			&:before {
+			     left: -22px;
+			}
+
+			&:after {
+				left: -12px;
+			}
+		}
+	}
+
 	.col-4 {
 		position: relative;
 		display: inline-block;
