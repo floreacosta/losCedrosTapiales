@@ -5,21 +5,48 @@
 <script>
       function initMap() {
         // Create a map object and specify the DOM element for display.
-		var myLatLng = { lat: -34.6994319, lng: -58.5061351 };
+		var ubicacionLosCedros = { lat: -34.6994319, lng: -58.5061351 };
 
 		var map = new google.maps.Map(document.getElementById('map'), {
-			center: myLatLng,
+			center: ubicacionLosCedros,
 			scrollwheel: true,
 			zoom: 17,
 			zoomControl: true
 		});
 
-		var marker = new google.maps.Marker({
-			position: myLatLng,
-			map: map,
-			title: 'Clínica Los Cedros de Tapiales S.A.'
-		});
-      }
+        // This event listener calls addMarker() when the map is clicked.
+        google.maps.event.addListener(map, 'click', function(event) {
+            addMarker(event.latLng, map);
+        });
+
+        // Add a marker at the center of the map.
+        addMarker(ubicacionLosCedros, map);
+
+        // Adds a marker to the map.
+        function addMarker(ubicacionLosCedros, map) {
+            // Add the marker at the clicked location, and add the next-available label
+            // from the array of alphabetical characters.
+            var image = 'img/icon_map.png';
+    		var marker = new google.maps.Marker({
+    			map: map,
+                draggable: true,
+                animation: google.maps.Animation.DROP,
+                position: ubicacionLosCedros,
+    			title: 'Clínica Los Cedros de Tapiales S.A.',
+                icon: image
+    		});
+            marker.addListener('click', toggleBounce);
+
+            function toggleBounce() {
+                if (marker.getAnimation() !== null) {
+                    marker.setAnimation(null);
+                } else {
+                    marker.setAnimation(google.maps.Animation.BOUNCE);
+                }
+            }
+        }
+
+    }
 </script>
 
 <body>
