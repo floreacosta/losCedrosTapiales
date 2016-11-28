@@ -68,7 +68,7 @@
                                             <?    foreach($instalaciones->result() as $instalacion): ?>
                                                 <? if($instalacion->idCategoria === $categoria->id){ ?>
                                                 <li class="content-image-primary">
-                                                    <img alt="" src="<?= base_url(); ?>img/<?= $instalacion->imagen ?>"/>
+                                                    <img alt="" src="<?= base_url(); ?>img/slider/<?= $instalacion->imagen ?>"/>
                                                     <figcaption class="image-description"><?= $instalacion->descripcion ?></figcaption>
                                                 </li>
                                                 <? } ?>
@@ -85,7 +85,7 @@
 									<?
 										$imageContador++;
 									?>
-                                            <a class="image-secondary" id="image-<?= $imageContador ?>" href=""><img alt="" src="<?= base_url(); ?>img/<?= $instalacion->imagen ?>"/></a>
+                                            <a class="image-secondary" id="image-<?= $imageContador ?>" href=""><img alt="" src="<?= base_url(); ?>img/slider/<?= $instalacion->imagen ?>"/></a>
                                             <? } ?>
                                         <? endforeach; ?>
                                     </div>

@@ -75,7 +75,7 @@
         </div>
         <div class="form-group">
         <?= form_label('Imagen actual: ', 'nombre') ?>
-        <img class="img-thumbnail" src="<?= base_url(); ?>img/<?= $resultado->instalacionImagen; ?>" />
+        <img class="img-thumbnail" src="<?= base_url(); ?>img/slider/<?= $resultado->instalacionImagen; ?>" />
         </div>
         <div class="form-group">
         <?= form_label('Nueva Imagen: ', 'user_file') ?>

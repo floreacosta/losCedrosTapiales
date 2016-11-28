@@ -55,7 +55,7 @@ class Instalaciones extends CI_Controller {
         $descripcion_post = $this->input->post('descripcion');
         $categoria_post = $this->input->post('categoria');
         
-        $config['upload_path']          = './img';
+        $config['upload_path']          = './img/slider';
         $config['allowed_types']        = 'gif|jpg|png';
         $config['max_size']             = 10000;
         $config['max_width']            = 10000;
@@ -84,7 +84,7 @@ class Instalaciones extends CI_Controller {
         $categoria_post = $this->input->post('categoria');
         
         if('' !== $_FILES['user_file']['tmp_name']) {
-            $config['upload_path']          = './img';
+            $config['upload_path']          = './img/slider';
             $config['allowed_types']        = 'gif|jpg|png';
             $config['max_size']             = 10000;
             $config['max_width']            = 10000;

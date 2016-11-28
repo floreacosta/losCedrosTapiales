@@ -81,7 +81,7 @@
             <? foreach($instalaciones->result() as $instalacion): ?>    
             <tr>
                 <td><?= $instalacion->instalacionNombre; ?></td>
-                <td><img class="img-thumbnail" src="<?= base_url(); ?>img/<?= $instalacion->instalacionImagen; ?>"></td>
+                <td><img class="img-thumbnail" src="<?= base_url(); ?>img/slider/<?= $instalacion->instalacionImagen; ?>"></td>
                 <td><?= $instalacion->instalacionDescripcion; ?></td>
                 <td><?= $instalacion->categoriaNombre; ?></td>
                 <td><a href="<?= base_url(); ?>admin/instalaciones/editarFormularioInstalaciones?id=<?= $instalacion->Id ?>">Editar</a></td>

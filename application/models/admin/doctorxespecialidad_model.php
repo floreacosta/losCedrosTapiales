@@ -51,7 +51,7 @@ class Doctorxespecialidad_model extends CI_Model {
         $this->db->select("doctores.id as `Id`, doctores.nombre as `doctorNombre`, GROUP_CONCAT(especialidades.nombre ORDER BY especialidades.nombre ASC SEPARATOR ', ') as `especialidades`, doctores.esMedicoCabecera as `doctorEsCabecera`");
         $this->db->from("doctorXEspecialidad, doctores, especialidades");
         $this->db->where("doctores.id = doctorXEspecialidad.idDoctor");
-        $this->db->where("especialidades.id = doctorxespecialidad.idEspecialidad");
+        $this->db->where("especialidades.id = doctorXEspecialidad.idEspecialidad");
         $this->db->group_by(array("Id", "doctorNombre"));
         $this->db->order_by("doctorNombre");
         $query = $this->db->get();
