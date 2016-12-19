@@ -335,9 +335,9 @@ function redireccionamientoTooltip () {
 			e.preventDefault();
 
 			var urlPath = window.location;
-			if(urlPath != "http://www.losCedrosTapiales.com/index") {
+			if(urlPath != "http://www.losCedrosTapiales.com/testAdmin/") {
 				$(window).attr({
-					'location': "http://www.losCedrosTapiales.com/index"
+					'location': "http://www.losCedrosTapiales.com/testAdmin/"
 				});
 			}
 
