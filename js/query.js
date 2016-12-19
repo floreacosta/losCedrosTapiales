@@ -334,10 +334,10 @@ function redireccionamientoTooltip () {
 		$(pathLocation).click(function(e) {
 			e.preventDefault();
 
-			var urlPath = window.location;
-			if(urlPath != "http://www.losCedrosTapiales.com/testAdmin/") {
+			var urlPath = window.location.origin;
+			if(urlPath != "http://www.loscedrostapiales.com") {
 				$(window).attr({
-					'location': "http://www.losCedrosTapiales.com/testAdmin/"
+					'location': "http://www.loscedrostapiales.com/"
 				});
 			}
 
