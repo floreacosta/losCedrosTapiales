@@ -1,0 +1,1 @@
+ALTER TABLE doctores ADD IF NOT EXISTS esMedicoCabecera TINYINT;

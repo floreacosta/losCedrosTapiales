@@ -1,0 +1,1 @@
+ALTER TABLE instalaciones ADD IF NOT EXISTS idCategoria INT
