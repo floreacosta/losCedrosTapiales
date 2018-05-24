@@ -1,12 +1,20 @@
 require 'compass/import-once/activate'
 # Require any additional compass plugins here.
 
+Encoding.default_external = 'UTF-8'
+
 # Set this to the root of your project when deployed:
 http_path = "/"
 css_dir = "css"
-sass_dir = "sass"
+sass_dir = "scss"
 images_dir = "img"
 javascripts_dir = "js"
+
+output_style = (environment == :production) ? :compressed : :expanded
+sass_options = { :cache => false }
+line_comments = false
+color_output = true
+preferred_syntax = :scss
 
 # You can select your preferred output style here (can be overridden via the command line):
 # output_style = :expanded or :nested or :compact or :compressed

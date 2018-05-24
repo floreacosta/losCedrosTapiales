@@ -1,0 +1,35 @@
+{
+  "name": "cedrostapiales",
+  "version": "1.0.0",
+  "description": "Clinica los Cedros de Tapiales",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/floreacosta/losCedrosTapiales.git"
+  },
+  "keywords": [
+    "clinica",
+    "cedros",
+    "tapiales"
+  ],
+  "author": "minutentag",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/floreacosta/losCedrosTapiales/issues"
+  },
+  "homepage": "https://github.com/floreacosta/losCedrosTapiales#readme",
+  "devDependencies": {
+    "compass-mixins": "^0.12.10",
+    "grunt": "^1.0.2",
+    "grunt-babel": "^7.0.0",
+    "grunt-contrib-compass": "^1.1.1",
+    "grunt-contrib-watch": "^1.0.1",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.6.1",
+    "grunt-contrib-uglify": "^3.3.0",
+    "load-grunt-tasks": "^3.5.2"
+  }
+}
