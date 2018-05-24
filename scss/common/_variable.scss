@@ -8,3 +8,14 @@ $color-rolover: #9db5b6;
 
 $white: #ffffff;
 $shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+
+/*
+ * NOTE: Media Querys
+ */
+
+/* min-width: 0px */
+$mobile: '0px';
+/* min-width: (400px + 1px) */
+$tablet: '769px';
+/* min-width: (1024px + 1px) */
+$desktop: '1025px';
