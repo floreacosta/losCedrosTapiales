@@ -1,11 +1,14 @@
 /* Ubicación y Horarios de atención */
 .section-secondary {
-	.background-shadow{
-		background: rgba(13, 71, 72, 0.6);
-	}
+	display: none;
 
 	img {
-		display: none;
+		width: 100%;
+		display: block;
+	}
+
+	.background-shadow {
+		@include box-shadow(rgba(13, 71, 72, 0.6));
 	}
 }
 
@@ -36,35 +39,22 @@
 	span a {
 		text-decoration: underline;
 	}
-
-	.location-google-map {
-		display: none;
-	}
 }
 
 /**
 * Responsive width
 **/
 
-@media (min-width: 500px){
+@media (min-width: $tablet) {
 	.section-secondary {
-		img {
-			display: block;
-		}
-	}
-}
-
-@media (min-width: 700px) {
-	.section-secondary {
-		height: auto;
+		display: block;
 	}
 
 	.article-information-for-user {
-		height: auto;
 		position: relative;
 		display: inline-block;
 		margin-top: -170px;
-		z-index: 203;
+		z-index: 1;
 
 		.telephone-line,
 		.location-google-map {
@@ -74,7 +64,7 @@
 			color: $white;
 			display: inline-block;
 			float: left;
-			box-shadow: $shadow;
+			@include box-shadow($shadow);
 
 			h3 {
 				color: $white;
@@ -111,10 +101,9 @@
 			display: none;
 		}
 	}
-
 }
 
-@media (min-width: 900px){
+@media (min-width: $desktop) {
 	.section-secondary {
 		height: 75vh;
 	}
@@ -123,16 +112,14 @@
 		font-size: 100%;
 		padding: 2em;
 	}
-}
 
-@media (min-width: 900px){
-	.home {
+	.home-page {
 		.section-secondary {
 			height: 70vh;
 
 			img {
 				top: 50%;
-				@include transform (translateY(-50%));
+				@include transform(translateY(-50%));
 			}
 		}
 	}

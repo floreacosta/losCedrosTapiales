@@ -41,15 +41,15 @@ input {
 
 main {
 	padding: 0px 5% 5%;
-     width: 100%;
-     display: block;
+	width: 100%;
+	display: block;
 	margin: 0 auto;
 	position: relative;
 }
 
-section {
-	display: inline-block;
-}
+// section {
+// 	display: inline-block;
+// }
 
 .col-paragraph {
 	@include text-paragraph(100%, 1, 0px);
@@ -73,14 +73,14 @@ h3 {
 
 .photograpy-primary,
 .photograpy-secondary {
+//	margin: -5.55%;
+	position: relative;
+	height: auto;
+	display: inline-block;
+
 	a {
 		float: left;
 	}
-
-	position: relative;
-//	margin: -5.55%;
-	height: auto;
-	display: inline-block;
 }
 
 .photograpy-primary {
@@ -95,44 +95,44 @@ h3 {
 * Responsive
 **/
 
-@media (min-width: 500px) {
-	.col-paragraph {
-		@include text-paragraph(80%, 2, 20px);
-	}
+@media (min-width: $tablet) {
+	// .col-paragraph {
+	// 	@include text-paragraph(80%, 2, 20px);
+	// }
 }
 
-@media (min-width: 700px){
-	.photograpy-information {
-		padding-left: 15%;
-		display: inline-block;
-		width: 50%;
-
-		.col-paragraph-photograpy {
-			@include text-paragraph(50%, 2, 20px);
-			width: 80%;
-		}
-	}
-
-	.photograpy-secondary img {
-		width: 50%;
-		padding-right: 1%;
-
-		&.second-img {
-			float: right;
-			padding-right: 0;
-			padding-left: 1%;
-		}
-	}
+@media (min-width: $desktop) {
+	// .photograpy-information {
+	// 	padding-left: 15%;
+	// 	display: inline-block;
+	// 	width: 50%;
+	//
+	// 	.col-paragraph-photograpy {
+	// 		@include text-paragraph(50%, 2, 20px);
+	// 		width: 80%;
+	// 	}
+	// }
+	//
+	// .photograpy-secondary img {
+	// 	width: 50%;
+	// 	padding-right: 1%;
+	//
+	// 	&.second-img {
+	// 		float: right;
+	// 		padding-right: 0;
+	// 		padding-left: 1%;
+	// 	}
+	// }
 }
 
 @media (min-width: 900px){
-	main {
-	    padding: 2% 5%;
-	}
-
-	.col-paragraph {
-		@include text-paragraph(75%, 3, 20px);
-	}
+	// main {
+	//     padding: 2% 5%;
+	// }
+	//
+	// .col-paragraph {
+	// 	@include text-paragraph(75%, 3, 20px);
+	// }
 }
 
 @media (min-width: 1024px){

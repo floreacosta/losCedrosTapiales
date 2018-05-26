@@ -99,10 +99,10 @@ function closeVideoContainer() {
 $(document).ready(heightMap);
 function heightMap() {
     var h = $("#informationBox").outerHeight() + "px";
-    $("#map").css("height", h);
+    $("#google-map-container").css("height", h);
     $(window).resize(function() {
         var h = $("#informationBox").outerHeight() + "px";
-        $("#map").css("height", h);
+        $("#google-map-container").css("height", h);
     });
 }
 

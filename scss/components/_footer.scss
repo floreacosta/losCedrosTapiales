@@ -1,4 +1,4 @@
-footer {
+.global-footer {
 	clear: both;
 	background-color: $color-light;
 	width: 100%;
@@ -15,28 +15,34 @@ footer {
 		color: $color-secondary;
 	}
 
-	> div {
-		margin-top: 2em;
-
-		&:first-of-type {
-			margin-top: 0;
-		}
+	.logo {
+		width: 12em;
+		margin: auto;
 	}
+}
 
-	.institutional,
-	.line-phone {
-		.logo {
-			width: 12em;
-			margin: auto;
-		}
+.search,
+.information,
+.site-map,
+.institutional {
+	margin-top: 2em;
+	display: block;
+	width: 100%;
+}
 
-		h3,
-		p {
-			margin-top: 2em;
-		}
-	}
+.institutional {
+	margin-top: 0;
+}
 
-	.site-map li {
+.institutional,
+.line-phone {
+	// h3, p {
+	// 	margin-top: 2em;
+	// }
+}
+
+.site-map {
+	li {
 		padding: .35em 0;
 		color: $color-secondary;
 
@@ -44,56 +50,85 @@ footer {
 			text-decoration: underline;
 		}
 	}
+}
 
-	.turn-online span a {
+.turn-online {
+	a {
 		@include font-calibri-bold;
 		color: $color-secondary;
 		text-decoration: underline;
 	}
+}
 
-	.line-phone span {
+.line-phone {
+	span {
 		line-height: 1.4em;
 		color: $color-secondary;
 	}
+}
 
+.search-form {
+	width: 100%;
+	position: relative;
+}
 
-	.search {
-		label {
-			width: 100%;
-			position: relative;
+.search-input-container {
+	width: calc(100% - 40px);
+	position: relative;
+	display: inline-block;
+	margin-right: 10px;
+}
 
-			input[type="text"] {
-				border: 0;
-				background-color: $color-primary;
-				color: $white;
-				border-radius: .5em;
-				line-height: 2.4em;
-				padding: 0 1em;
-				box-shadow: $shadow;
-				width: 70%;
-				min-width: 50%;
-				font-size: 1em;
+.search-input {
+	border: 0;
+	background-color: $color-primary;
+	color: $white;
+	line-height: 2.4em;
+	padding: 0 1em;
+	width: 100%;
+	font-size: 1em;
+	@include border-radius(.5em);
+	@include box-shadow($shadow);
 
-				&:focus {
-					outline: 0;
-				}
-			}
+	&:focus {
+		outline: 0;
+	}
+}
 
-			button {
-				border: 0;
-				background-color: transparent;
-				line-height: 2.4em;
-				cursor: pointer;
+.search-button {
+	font-size: 0px;
+	display: inline-block;
+	position: relative;
+	-webkit-appearance: none;
+	margin: 0px;
+	border: 0px;
+	width: 30px;
+	float: right;
+	margin-top: 6px;
 
-				&:before {
-					@include icon-search;
-				}
+	&:after,
+	&:before {
+		content: '';
+		display: inline-block;
+		position: relative;
+	}
 
-				&:hover {
-					opacity: .7;
-				}
-			}
-		}
+	&:before {
+		width: 14px;
+		height: 14px;
+		@include border-radius(50%);
+		border: solid 3px $color-primary;
+	}
+
+	&:after {
+		width: 3px;
+		height: 12px;
+		background: $color-primary;
+		@include border-radius(20%);
+		@include transform(rotate(45deg));
+		position: absolute;
+		bottom: -6px;
+		left: 0px;
 	}
 }
 
@@ -107,7 +142,7 @@ footer {
 	font-size: .8em;
 	text-align: center;
 
-	span a {
+	a {
 		text-decoration: underline;
 		color: $white;
 
@@ -119,7 +154,8 @@ footer {
 }
 
 
-.information .turn-online {
+.turn-online {
+	display: none; // NOTE: oculto
 	position: relative;
 
 	&:hover {
@@ -132,7 +168,7 @@ footer {
 			z-index: 10;
 			padding: 10px;
 			border-radius: 10px;
-		     left: -6px;
+			left: -6px;
 			top: -9px;
 		}
 
@@ -150,28 +186,43 @@ footer {
 		}
 	}
 }
+
 /**
 * Responsive
 **/
 
-@media (min-width: 500px){
-	footer {
-		padding: 2em;
+@media (min-width: $tablet) {
+	.global-footer {
+		display: flex;
+		// @include display-flex;
 		text-align: left;
 
 		.logo {
-			margin-left: 0 !important;
-		}
-
-		> div {
-			margin-top: 0em;
+			margin: 0px;
 		}
 	}
 
-	.information .turn-online {
+	.search,
+	.information,
+	.site-map,
+	.institutional {
+		position: relative;
+		display: inline-block;
+		vertical-align: top;
+		width: 48%;
+		margin: 0px;
+		margin-right: 4%;
+	}
+
+	.search {
+		width: 50%;
+		margin-right: 0px;
+	}
+
+	.turn-online {
 		&:hover {
 			&:before {
-			     left: -22px;
+				left: -22px;
 			}
 
 			&:after {
@@ -180,39 +231,33 @@ footer {
 		}
 	}
 
-	.col-4 {
-		position: relative;
-		display: inline-block;
-		vertical-align: top;
-		width: 46%;
-		margin: 0 2%;
-
-		&:nth-child(odd) {
-			margin-left: 0;
-		}
-	}
-
-	.information,
-	.search {
-		margin-top: 2em;
-	}
-
 	.extra-information {
 		padding: 1.5em 3em;
 		text-align: left;
 
-		span:last-of-type {
-			float: right;
+		span {
+			&:last-of-type {
+				float: right;
+			}
 		}
 	}
 }
 
-@media (min-width: 900px){
-	.information .turn-online {
+@media (min-width: $desktop) {
+	.global-footer {
+		padding: 2em 4em;
+	}
 
+	.search-button {
+		&:hover {
+			// @include opacity(.7);
+		}
+	}
+
+	.turn-online {
 		&:hover {
 			&:before {
-			     left: -19px;
+				left: -19px;
 			}
 
 			&:after {
@@ -221,23 +266,20 @@ footer {
 		}
 	}
 
+	.search,
+	.information,
+	.site-map,
+	.institutional {
+		width: 23%;
+	}
+
+	.institutional,
+	.information {
+		margin-right: 4%;
+	}
+
 	.information,
 	.search {
 		margin-top: 0em;
 	}
-
-	.col-4{
-		width: 23%;
-		margin: 0 1%;
-	}
-}
-
-@media (min-width: 1024px){
-	footer {
-		padding: 2em 4em;
-	}
-}
-
-@media (min-width: 1400px){
-
 }

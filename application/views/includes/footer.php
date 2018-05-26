@@ -1,4 +1,4 @@
-	<footer>
+	<footer class="global-footer">
 		<div class="col-4 institutional">
 			<div class="logo">
 				<a href="<?= base_url(); ?>index"><img src="<?= base_url(); ?>img/logo.png" title="Clínica Los Cedros de Tapiales S.A."/></a>
@@ -40,18 +40,18 @@
 		</div>
 
 		<div class="col-4 search">
-			<label class="common-input">
-                            <form action="<?= base_url(); ?>buscar" method="post">
-				<input type="text" placeholder="Buscar..." value="" name="search"/>
-                                <button type="submit" value=""></button>
-                            </form>
-			</label>
+      <form class="search-form" action="<?= base_url(); ?>buscar" method="post">
+				<label class="common-input search-input-container">
+					<input class="search-input" type="text" placeholder="Buscar..." value="" name="search" />
+				</label>
+				<button class="search-button" type="submit" value="">Buscar</button>
+      </form>
 		</div>
 	</footer>
 
 	<article class="extra-information">
-		<span>2016 | Design and Developer by <a href="#">Acosta Prado</a></span>
-		<span>Clinica Los Cedros de Tapiales S.A.</span>
+		<span>2018 | Design and Developer by <a href="#">Acosta Prado</a></span>
+		<span>Sanatorio Privado Madero</span>
 	</article>
 </body>
 </html>
