@@ -123,12 +123,12 @@ function getModalEspecialidades () {
     $(elemento).removeClass("show");
   });
 
-  $(".modal").click(() => {
+  $(".modal-component").click(() => {
     $(elemento).removeClass("show");
   });
 }
 
-function getSlider() {
+function getSlider () {
   // Función slider
   let sliderFunction = function sliderFunction(slider) {
     /**
@@ -192,12 +192,7 @@ function getSlider() {
       //Se calcula el ancho de imagen para el momento en que se toco NEXT
       let anchoImagen = $(slider + " .content-imagen li img").width() * -1;
 
-      //Se calcula el tiempo que tomará la animación según la cantidad de imágenes de ese slider.
-      if (cantImagenes > 5) {
-        let tiempoDesliz = cantImagenes * 100;
-      } else {
-        let tiempoDesliz = cantImagenes * 300;
-      }
+      let tiempoDesliz = 300;
 
       //Lógica de BOTÓN NEXT
       //Si la posición de la imagen actual es == a la cantidad total de imágenes
@@ -279,11 +274,11 @@ function getSlider() {
   sliderFunction("#slider-1");
 
   //Ubico el item del listado (menu de sliders) en el que hago click
-  $(".menu-instalaciones2 li span").click(function (e) {
+  $(".item-category").click(function (e) {
     let li = e.target.parentNode;
     //Recorro todo el menú y le remuevo la clase ".item-active" a todos
-    $(".menu-instalaciones2 li").each(function () {
-        $(".menu-instalaciones2 li").removeClass("item-active");
+    $(".item-container").each(function () {
+      $(".item-container").removeClass("item-active");
     });
     //Le agrego la clase ".item-active" al que se cliqueó
     $(li).addClass("item-active");

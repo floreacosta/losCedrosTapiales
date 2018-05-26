@@ -26,16 +26,14 @@ function gruntTask (grunt) {
       },
       dist: {
         files: {
-          'js/query.js': ['js/script/query.js'],
-          'js/map.js': ['js/script/map.js']
+          'js/query.js': ['js/script/query.js']
         }
       }
     },
     uglify: {
       dist: {
         files: {
-          'js/query.min.js': ['js/query.js'],
-          'js/map.min.js': ['js/map.js']
+          'js/query.min.js': ['js/query.js']
         }
       }
     }

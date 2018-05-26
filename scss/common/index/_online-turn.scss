@@ -11,13 +11,13 @@
 
 	&:before {
 		content: '';
-	    height: 100%;
-	    width: 100%;
-	    position: absolute;
-	    background: rgba(110, 110, 110, .8);
-	    z-index: 203;
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		background: $color-primary-opacity;
+		z-index: 203;
 		top: 0;
-	    left: 0;
+		left: 0;
 	}
 
 	&:after {
@@ -26,9 +26,9 @@
 		color: $white;
 		letter-spacing: 2px;
 		text-transform: uppercase;
-	    font-size: 22px;
+		font-size: 22px;
 		z-index: 204;
-	    text-align: center;
+		text-align: center;
 		display: inline-block;
 		position: absolute;
 		width: 100%;

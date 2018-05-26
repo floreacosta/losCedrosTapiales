@@ -41,10 +41,16 @@ input {
 
 main {
 	padding: 0px 5% 5%;
+	padding-top: 5%;
 	width: 100%;
 	display: block;
 	margin: 0 auto;
 	position: relative;
+	min-height: calc(100vh - 96px - 537px - 62px);
+
+	&.home-page {
+		padding-top: 0%;
+	}
 }
 
 // section {
@@ -96,12 +102,19 @@ h3 {
 **/
 
 @media (min-width: $tablet) {
+	main {
+		min-height: calc(100vh - 96px - 205px - 38px);
+	}
+
 	// .col-paragraph {
 	// 	@include text-paragraph(80%, 2, 20px);
 	// }
 }
 
 @media (min-width: $desktop) {
+	main {
+		min-height: calc(100vh - 88px - 231px - 50px);
+	}
 	// .photograpy-information {
 	// 	padding-left: 15%;
 	// 	display: inline-block;

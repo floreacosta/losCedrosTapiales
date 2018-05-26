@@ -5,7 +5,7 @@ header {
 	position: relative;
 	background: $white;
 	box-shadow: $shadow;
-	z-index: 600;
+	z-index: 4;
 
 	/* Lineas que arman el botón hamburguesa del Menú Mobile */
 	hr {
@@ -76,6 +76,7 @@ header {
 	display: inline-block;
 	overflow: hidden;
 	position: relative;
+	z-index: 6;
 
 	&:before {
 		content: '';
@@ -124,7 +125,6 @@ header {
 					border-radius: 50%;
 					right: 0;
 					top: calc((80px / 2) - .25em);
-
 				}
 			}
 
@@ -133,7 +133,8 @@ header {
 			}
 
 			&:hover {
-				background-color: $color-rolover;
+				background-color: $color-primary-opacity;
+
 				a {
 					color: $white;
 				}

@@ -1,205 +1,68 @@
-video {
-  display: block;
+.home-background-video-content,
+.modal-video-content {
   width: 100%;
 }
 
-.section-primary {
-	> video {
-		width: 100%;
-		height: auto;
-		position: relative;
-		display: none;
-	}
+.video-container {
+  padding: 30px;
+}
 
-	// .title-information {
-  //   margin: 5% 0%;
-  //   position: relative;
-  //   z-index: 400;
-  //
-	// 	h1 {
-	// 		@include font-calibri-light();
-  //
-	// 		strong {
-	// 			@include font-calibri-bold();
-	// 		}
-	// 	}
-  //
-	// 	p {
-	// 		@include text-primary();
-	// 		@include font-calibri-light();
-  //
-	// 		i {
-	// 			font-style: italic;
-	// 		}
-	// 	}
-  //
-	// 	button {
-	// 		border: solid 2px $color-tertiary;
-	// 		background-color: transparent;
-	// 		color: $color-primary;
-	// 		font-size: 18px;
-	// 		border-radius: .5em;
-	// 		padding-left: 2.2em;
-	// 		padding-right: 1em;
-	// 		line-height: 35px;
-	// 		cursor: pointer;
-	// 		@include font-calibri-bold();
-  //
-	// 		&:before {
-	// 			content: '-';
-	// 			font-family: 'modern_pictogramsnormal';
-	// 			@include transform(rotate(90deg));
-	// 			color: $color-primary;
-	// 			font-size: 2em;
-	// 			position: absolute;
-	// 			left: .45em;
-	// 		}
-	// 	}
-	// }
+.modal-video-content {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  @include transform(translate(-50%, -50%));
+}
 
-	.video-container {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		z-index: 600;
-		background-color: rgba(13, 71, 72, 0.8);
+.button-video-close {
+  font-size: 0px;
+  border: 0;
+  cursor: pointer;
+  background-color: $color-primary;
+  padding: 7px;
+  @include border-radius(50%);
+  border-radius: 50%;
+  float: right;
 
-		display: none;
+  &:hover {
+    background-color: $color-light;
 
-		button {
-			border: 0;
-			position: absolute;
-			cursor: pointer;
-			background-color: $color-dark;
-			padding: .5em;
-			border-radius: 50%;
-			right: 2em;
-			top: 2em;
+    &:before,
+    &:after {
+      background: $color-primary;
+    }
+  }
 
-			&:hover {
-				background-color: $color-light;
+  &:before,
+  &:after {
+    content:'';
+    width: 2px;
+    height: 15px;
+    display: block;
+    margin: auto;
+    background: $white;
+    @include border-radius(25px);
+    @include transform(rotate(45deg));
+  }
 
-				&:before,
-				&:after {
-					background: $color-primary;
-				}
-			}
-
-			&:before,
-			&:after {
-				content:'';
-				width: 2px;
-				height: 15px;
-				display: block;
-				margin: auto;
-				background: $white;
-				border-radius: 25px;
-				@include transform(rotate(45deg));
-			}
-
-			&:after {
-				width: 15px;
-				height: 2px;
-				position: relative;
-				top: -8px;
-			}
-		}
-	}
-
-	.video-open {
-		position: fixed;
-		display: block;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-
-		video {
-			height: auto;
-			display: block;
-		     margin: 0 auto;
-		     width: 75%;
-		     height: auto;
-
-			top: 50%;
-			@include transform(translateY(-50%));
-		}
-	}
-}/* Section */
+  &:after {
+    width: 15px;
+    height: 2px;
+    position: relative;
+    top: -8px;
+  }
+}
 
 /**
 * Responsive width
 **/
 
 @media (min-width: $tablet) {
+  .modal-video-content {
+    width: auto;
+    max-height: 80vh;
+  }
 }
 
 @media (min-width: $desktop) {
 }
-
-// @media (min-width: 500px){
-// 	.section-primary {
-// 		video {
-// 			display: inline-block;
-// 		}
-//
-// 		.title-information {
-// 			position: absolute;
-// 			font-size: 80%;
-// 			margin: 5%;
-//
-// 			br {
-// 				display: none;
-// 			}
-//
-// 			h1 {
-// 				margin-top: 0;
-// 			}
-//
-// 			h1,
-// 			p,
-// 			button,
-// 			button:before {
-// 				color: $white;
-// 			}
-// 		}
-// 	}
-// }
-//
-// @media (min-width: 600px) {
-// 	.section-primary {
-// 		.title-information {
-// 			width: 65%;
-//
-// 			br {
-// 				display: block;
-// 			}
-// 		}
-// 	}
-// }
-//
-// @media (min-width: 735px) {
-// 	.section-primary {
-// 		.title-information {
-// 			font-size: 100%;
-// 		}
-// 	}
-// }
-//
-// @media (min-width: 1024px){
-// 	.section-primary {
-// 		.title-information {
-// 			margin-left: 10%;
-// 			bottom: 15%;
-// 		}
-// 	}
-// }
-//
-// @media (min-width: 1400px){
-// 	.section-primary {
-// 		.title-information {
-// 			bottom: 22%;
-// 			width: 35%;
-// 		}
-// 	}
-// }

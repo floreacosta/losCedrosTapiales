@@ -1,11 +1,11 @@
 .tooltip-box {
-    display: none;
-    width: 2.5em;
-    float: right;
-    position: fixed;
-    right: 2.5em;
-    margin-top: 80px;
-    z-index: 300;
+  display: none;
+  width: 2.5em;
+  float: right;
+  position: fixed;
+  right: 2.5em;
+  z-index: 3;
+  top: 140px;
 }
 
 .tooltip {
@@ -15,117 +15,110 @@
     cursor: pointer;
 
     &:before {
-        content:'';
-        display: inline-block;
-        color: $white;
-        width: 2.5em;
-        height: 2.5em;
-        position: relative;
-        top: -11px;
-        border-radius: 50%;
-        background-color: $color-primary;
-        box-shadow: $shadow;
+      content:'';
+      display: inline-block;
+      color: $white;
+      width: 2.5em;
+      height: 2.5em;
+      position: relative;
+      top: -11px;
+      border-radius: 50%;
+      background-color: $color-primary;
+      box-shadow: $shadow;
     }
 
     .tooltip-text {
-        visibility: hidden;
-        width: 120px;
-        background-color: $white;
-        color: $color-tertiary;
-        text-align: center;
-        border-radius: 6px;
-        padding: .4em 0;
-        position: absolute;
-        z-index: 1;
-        top: -5px;
-        right: 135%;
-        box-shadow: $shadow;
-        @include font-calibri-bold;
+      visibility: hidden;
+      width: 120px;
+      background-color: $white;
+      color: $color-tertiary;
+      text-align: center;
+      border-radius: 6px;
+      padding: .4em 0;
+      position: absolute;
+      z-index: 1;
+      top: -5px;
+      right: 135%;
+      box-shadow: $shadow;
+      @include font-calibri-bold;
 
-        &:after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 100%;
-            margin-top: -8px;
-            border-width: 8px;
-            border-style: solid;
-            border-color: transparent transparent transparent $white;
-        }
+      &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        margin-top: -8px;
+        border-width: 8px;
+        border-style: solid;
+        border-color: transparent transparent transparent $white;
+      }
     }
 
     &:hover {
-        .tooltip-text {
-            visibility: visible;
-        }
+      .tooltip-text {
+        visibility: visible;
+      }
     }
 
     .tooltip-img-content {
-        top: -10px;
-        width: 40px;
-        height: 40px;
-        display: inline-block;
-        position: absolute;
-        overflow: hidden;
+      top: -10px;
+      width: 40px;
+      height: 40px;
+      display: inline-block;
+      position: absolute;
+      overflow: hidden;
     }
 }
 
 .tooltip-text-primary {
-    visibility: visible !important;
+  visibility: visible !important;
 }
 
 .tooltip-active:before {
-    background-color: $color-tertiary;
+  background-color: $color-tertiary;
 }
 
 .tooltip-online-turn {
-    width: 23px;
-    position: relative;
-    left: 9px;
-    top: 7px;
+  width: 23px;
+  position: relative;
+  left: 9px;
+  top: 7px;
 }
 
 .tooltip-address {
-    width: 23px;
-    position: relative;
-    left: 9px;
-    top: -34px;
+  width: 23px;
+  position: relative;
+  left: 9px;
+  top: -34px;
 }
 
 .tooltip-contact {
-    width: 23px;
-    position: relative;
-    left: 9px;
-    top: -75px;
+  width: 23px;
+  position: relative;
+  left: 9px;
+  top: -75px;
 }
 
 .tooltip-schedule {
-    width: 23px;
-    position: relative;
-    left: 9px;
-    top: -114px;
+  width: 23px;
+  position: relative;
+  left: 9px;
+  top: -114px;
 }
 
 #turn-tooltip {
-     display: none;
+   display: none;
 }
 
 /**
 * Responsive
 **/
 
-@media (min-width: 500px){
+@media (min-width: $tablet) {
+  .tooltip-box {
+    display: block;
+  }
 }
 
-@media (min-width: 600px){
-    .tooltip-box {
-        display: block;
-    }
-}
-
-@media (min-width: 1024px){
-}
-
-@media (min-width: 1400px){
-
+@media (min-width: $desktop) {
 }

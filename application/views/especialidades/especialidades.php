@@ -28,23 +28,24 @@
 
 						if ($inicialActual !== $inicialAnterior ) { //Si la inicial nueva es distinta a la anterior imprimo la inicial
               ?>
-	              <div class="iformation-item-container">
-	                <h3><?= substr($especialidad->nombre, 0, 1); ?></h3>
+	              <div class="information-item-container">
+	                <h3 class="especialidad-letter"><?= substr($especialidad->nombre, 0, 1); ?></h3>
 								</div>
 
                 <li class="information-item information-content">
-									<span onClick="modalEspecialidades()" id=<?= $especialidad->id; ?> ><?= $especialidad->nombre; ?></span>
-                  <div id="modal<?= $especialidad->id; ?>" class="modal">
+									<span class="especialidades-title" onClick="getModalEspecialidades()" id=<?= $especialidad->id; ?> ><?= $especialidad->nombre; ?></span>
+                  <div id="modal<?= $especialidad->id; ?>" class="modal-component">
                     <section class="modal-container">
                       <button class="button-close-information" id="button-close-information" title="Cerrar"></button>
-                      <h2><?= $especialidad->nombre; ?></h2>
-                      <h5>Nuestros profesionales</h5>
-                      <ul>
+                      <h2 class="especialidades-category-title"><?= $especialidad->nombre; ?></h2>
+                      <div class="especialidades-subtitle">Nuestros profesionales</div>
+
+                      <ul class="especialistas-list">
                         <?
 													foreach($doctoresConEspecialidad->result() as $doctorConEspecialidad){
 	                          if($doctorConEspecialidad->idEspecialidad === $especialidad->id) {
 															?>
-																<li class="col-3">
+																<li class="especialista-item col-3">
 	                                <h4><?= strtolower($doctorConEspecialidad->nombre); ?></h4>
 	                              </li>
 															<?
@@ -59,18 +60,18 @@
                 } else { //Si son iguales solo imprimo la especialidad
               ?>
                 <li class="information-item">
-									<span onClick="modalEspecialidades()" id=<?= $especialidad->id; ?> ><?= $especialidad->nombre; ?></span>
-                	<div id="modal<?= $especialidad->id; ?>" class="modal">
+									<span class="especialidades-title" onClick="getModalEspecialidades()" id=<?= $especialidad->id; ?> ><?= $especialidad->nombre; ?></span>
+                	<div id="modal<?= $especialidad->id; ?>" class="modal-component">
                     <section class="modal-container">
                       <button class="button-close-information" id="button-close-information" title="Cerrar">Cerrar</button>
-                      <h2><?= $especialidad->nombre; ?></h2>
-                      <h5>Nuestros profesionales</h5>
-                      <ul>
+											<h2 class="especialidades-category-title"><?= $especialidad->nombre; ?></h2>
+                      <div class="especialidades-subtitle">Nuestros profesionales</div>
+											<ul class="especialistas-list">
                         <?
 													foreach($doctoresConEspecialidad->result() as $doctorConEspecialidad) {
                             if($doctorConEspecialidad->idEspecialidad === $especialidad->id) {
 															?>
-	                              <li class="col-3">
+																<li class="especialista-item col-3">
                                   <h4> <?= strtolower($doctorConEspecialidad->nombre); ?></h4>
 	                              </li>
 	                      			<?

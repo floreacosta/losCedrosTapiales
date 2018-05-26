@@ -13,56 +13,59 @@
 	width: 100%;
 	margin-bottom: 1em;
 
-	li {
-		//display: inline-block;
-
-		span {
-			padding: .5em 0em;
-			position: relative;
-			@include heading-level-3();
-			font-size: 1.2em;
-			margin-bottom: 10px;
-			display: inline-block;
-			cursor: pointer;
-
-			&:hover {
-				&:before {
-					content:'';
-					position: absolute;
-					bottom: 0px;
-					width: 100%;
-					height: 4px;
-					display: inline-block;
-					background: $color-primary;
-				}
-			}
-		}
-
-		&.item-active span {
-			&:before {
-				content:'';
-				position: absolute;
-				bottom: 0px;
-				width: 100%;
-				height: 4px;
-				display: inline-block;
-				background: $color-primary;
-			}
-		}
-	}
-
 	.item-description {
 		margin-bottom: 10px;
 		width: 90%;
 	}
 }
 
-li span + .item-description {
-	display: none;
+.item-container {
+	display: inline-block;
+	margin-right: 2em;
+
+	a {
+		@include text-primary;
+		@include font-calibri-bold;
+		margin-top: 5px;
+		margin-bottom: 15px;
+	}
+
+	&:last-of-type {
+		margin-right: 0;
+	}
 }
 
-li.item-active span + .item-description {
-	display: block;
+.item-category {
+	padding: .5em 0em;
+	position: relative;
+	@include heading-level-3();
+	font-size: 1.2em;
+	margin-bottom: 10px;
+	display: inline-block;
+	cursor: pointer;
+
+	+ .item-description {
+		display: none;
+	}
+}
+
+
+.item-active {
+	.item-category {
+		&:before {
+			content:'';
+			position: absolute;
+			bottom: 0px;
+			width: 100%;
+			height: 4px;
+			display: inline-block;
+			background: $color-primary;
+		}
+
+		+ .item-description {
+			display: block;
+		}
+	}
 }
 
 .instalaciones-subheading {
@@ -71,18 +74,6 @@ li.item-active span + .item-description {
 	padding-bottom: .25em;
 	margin-bottom: 1em;
 	font-size: 2em;
-
-	/*
-	&:before {
-		content:'';
-		position: absolute;
-		bottom: 0px;
-		width: 100%;
-		height: 4px;
-		display: inline-block;
-		background: $color-primary;
-	}
-	*/
 }
 
 .container-all-slider {
@@ -94,27 +85,6 @@ li.item-active span + .item-description {
 .menu-instalaciones {
 	margin-top: -1em;
 	width: 100%;
-
-	li {
-		display: inline-block;
-		margin-right: 2em;
-		height: 46px;
-
-		a {
-			@include text-primary;
-			@include font-calibri-bold;
-			margin-top: 5px;
-			margin-bottom: 15px;
-		}
-
-		&:last-of-type {
-			margin-right: 0;
-		}
-
-		&:hover {
-			border-bottom: solid 4px $color-primary;
-		}
-	}
 }
 
 /**
@@ -161,5 +131,32 @@ li.item-active span + .item-description {
 
 	.menu-instalaciones {
 		margin-top: 0em;
+	}
+}
+
+/**
+* Responsive width
+**/
+
+@media (min-width: $tablet) {
+}
+
+@media (min-width: $desktop) {
+	.item-category {
+		&:before {
+			content: none;
+		}
+
+		&:hover {
+			&:before {
+				content:'';
+				position: absolute;
+				bottom: 0px;
+				width: 100%;
+				height: 4px;
+				display: inline-block;
+				background: $color-primary;
+			}
+		}
 	}
 }

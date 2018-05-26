@@ -34,6 +34,5 @@
 	<meta name="theme-color" content="#ffffff">
 
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCl1eZ_cCxoh4jm8J6oLzEZOUyTsQSS-7Y&callback=initMap"></script>
-	<script type="text/javascript" src="<?= base_url(); ?>js/map.js"></script>
+	<script type="text/javascript" src="<?= base_url(); ?>js/script/query.js"></script>
 </head>

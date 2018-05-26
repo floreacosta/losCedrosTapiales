@@ -54,5 +54,4 @@
 		<span>Sanatorio Privado Madero</span>
 	</article>
 </body>
-<script type="text/javascript" src="<?= base_url(); ?>js/query.js"></script>
 </html>

@@ -1,3 +1,52 @@
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCl1eZ_cCxoh4jm8J6oLzEZOUyTsQSS-7Y&callback=initMap"></script>
+<script>
+	function initMap () {
+	  // Create a map object and specify the DOM element for display.
+	  var ubicacionLosCedros = {
+	    lat: -34.6994319,
+	    lng: -58.5061351
+	  };
+
+	  var map = new google.maps.Map(document.getElementById('google-map-container'), {
+	    center: ubicacionLosCedros,
+	    scrollwheel: true,
+	    zoom: 17,
+	    zoomControl: true
+	  });
+
+	  // This event listener calls addMarker() when the map is clicked.
+	  google.maps.event.addListener(map, 'click', function (e) {
+	    addMarker(e.latLng, map);
+	  });
+
+	  // Add a marker at the center of the map.
+	  addMarker(ubicacionLosCedros, map);
+
+	  // Adds a marker to the map.
+	  function addMarker (ubicacionLosCedros, map) {
+	    // Add the marker at the clicked location, and add the next-available label
+	    // from the array of alphabetical characters.
+	    var image = 'img/icon_map.png';
+	    var marker = new google.maps.Marker({
+	      map: map,
+	      draggable: true,
+	      animation: google.maps.Animation.DROP,
+	      position: ubicacionLosCedros,
+	      title: 'Sanatorio Privado Madero',
+	      icon: image
+	    });
+
+	    marker.addListener('click', function () {
+	      if (marker.getAnimation() !== null) {
+	        marker.setAnimation(null);
+	      } else {
+	        marker.setAnimation(google.maps.Animation.BOUNCE);
+	      }
+	    });
+	  }
+	}
+</script>
+
 <body>
 	<main class="home-page">
 		<section class="section-primary" id="section-primary">
@@ -13,7 +62,7 @@
         <!--<h1><strong>Sanatorio Privado</strong><br/>Madero</h1>-->
         <p><i>Sanatorio Privado Madero</i> constituye una institución sólida desde el año 1983 en la que se destaca por la excelencia que otorga en sus prestaciones médicas y que sigue manteniendo la filosofía de brindar atención al mejor nivel.</p>
         <p>La confianza lograda nos permitió ir creciendo junto con las familias de nuestros pacientes.</p>
-        <button class="button-open-home-video" id="button-video-open" title="Video a pantalla completa">Video</button>
+        <button class="button-open-home-video" onClick="getOpenVideo()" id="button-video-open" title="Video a pantalla compvara">Video</button>
       </div>
 		</section>
 
@@ -98,9 +147,8 @@
 	</main>
 
   <div id="video-container" class="video-container modal-component">
-    <button id="button-video-close" onClick="closeVideo()" title="Cerrar video">Cerrar</button>
-
-    <video controls>
+    <button class="button-video-close" id="button-video-close" onClick="getCloseVideo()" title="Cerrar video">Cerrar</button>
+    <video class="modal-video-content" controls>
       <source src="<?= base_url(); ?>video/losCedros.webm" type='video/webm; codecs="vp8, vorbis"' />
       <source src="<?= base_url(); ?>video/losCedros.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
       <source src="<?= base_url(); ?>video/losCedros.ogv" type='video/ogg; codecs="theora, vorbis"' />

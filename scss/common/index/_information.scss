@@ -8,7 +8,7 @@
 	}
 
 	.background-shadow {
-		@include box-shadow(rgba(13, 71, 72, 0.6));
+		@include box-shadow($color-primary-opacity);
 	}
 }
 

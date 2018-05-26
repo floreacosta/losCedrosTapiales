@@ -281,11 +281,11 @@ function getSlider() {
   sliderFunction("#slider-1");
 
   //Ubico el item del listado (menu de sliders) en el que hago click
-  $(".menu-instalaciones2 li span").click(function (e) {
+  $(".item-category").click(function (e) {
     var li = e.target.parentNode;
     //Recorro todo el menú y le remuevo la clase ".item-active" a todos
-    $(".menu-instalaciones2 li").each(function () {
-      $(".menu-instalaciones2 li").removeClass("item-active");
+    $(".item-container").each(function () {
+      $(".item-container").removeClass("item-active");
     });
     //Le agrego la clase ".item-active" al que se cliqueó
     $(li).addClass("item-active");

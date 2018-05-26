@@ -23,21 +23,21 @@
 			</div>
 
 			<h2 class="instalaciones-subheading">Recorrido por las instalaciones</h2>
-			<ul class="menu-instalaciones" onClick="instalaciones()">
+			<ul class="menu-instalaciones" onClick="getSlider()">
 	      <?
           $contador = 0;
 	      ?>
 	      <? foreach($categorias->result() as $categoria): ?>
 	          <?
               if($contador === 0){ ?>
-              <li id="<?= $contador + 1 ?>" class="item-active">
-                <span title="<?= $categoria->nombre ?>"><?= $categoria->nombre ?></span>
+              <li id="<?= $contador + 1 ?>" class="item-container item-active">
+                <span class="item-category" title="<?= $categoria->nombre ?>"><?= $categoria->nombre ?></span>
                 <div class="item-description"><?= $categoria->descripcion ?></div>
               </li>
 	          <? } else { ?>
 
-	              <li id="<?= $contador + 1 ?>" >
-                  <span title="<?= $categoria->nombre ?>"><?= $categoria->nombre ?></span>
+	              <li class="item-container" id="<?= $contador + 1 ?>" >
+                  <span class="item-category" title="<?= $categoria->nombre ?>"><?= $categoria->nombre ?></span>
                   <div class="item-description"><?= $categoria->descripcion ?></div>
 	              </li>
 
