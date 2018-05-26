@@ -6,17 +6,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<meta name="expires" content="-1"/>
 	<meta name="description" content="" />
-	<meta name="author" content="Florencia Acosta - Graphic Designer & Front End Developer | Fernando Prado - Back End Developer & Data Base Management" />
+	<meta name="author" content="Florencia Acosta - Graphic Designer & Front End Developer | Fernando Prado - Back End Developer & Data Base Manager" />
 	<meta name="keywords" content=""/>
 
-	<title>Clínica Los Cedros de Tapiales S.A.</title>
+	<title>Sanatorio Privado Madero</title>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<link href="<?= base_url(); ?>font/modernpictogram/modernpictogram.css" media="screen, projection" rel="stylesheet" type="text/css" />
 	<link href="<?= base_url(); ?>css/style.css" media="screen, projection" rel="stylesheet" type="text/css" />
-
-	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-	<script type="text/javascript" src="<?= base_url(); ?>js/query.js"></script>
 
 	<link rel="apple-touch-icon" sizes="57x57" href="<?= base_url(); ?>img/favicon/apple-icon-57x57.png">
 	<link rel="apple-touch-icon" sizes="60x60" href="<?= base_url(); ?>img/favicon/apple-icon-60x60.png">
@@ -35,4 +32,8 @@
 	<meta name="msapplication-TileColor" content="#ffffff">
 	<meta name="msapplication-TileImage" content="<?= base_url(); ?>img/favicon/ms-icon-144x144.png">
 	<meta name="theme-color" content="#ffffff">
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCl1eZ_cCxoh4jm8J6oLzEZOUyTsQSS-7Y&callback=initMap"></script>
+	<script type="text/javascript" src="<?= base_url(); ?>js/map.js"></script>
 </head>
