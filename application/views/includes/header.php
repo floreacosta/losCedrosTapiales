@@ -1,23 +1,46 @@
-	<header>
-		<div class="logo">
-			<a href="<?= base_url(); ?>index" title="Los Cedros de Tapiales S.A."><img alt="Los Cedros de Tapiales" src="<?= base_url(); ?>img/logo.png"/></a>
+	<header class="global-header-container">
+		<div class="logo logo-container">
+			<a href="<?= base_url(); ?>index" title="Sanatorio Privado Madero" class="logo-link-container">
+				<img alt="Sanatorio Privado Madero" src="<?= base_url(); ?>img/logo.png" class="logo-image" />
+			</a>
 		</div>
-		
-		<nav class="menu">
-			<div class="button-menu">
-				<button class="toggle">
-					<hr/>
-					<hr/>
-					<hr/>
-				</button>
-			</div>
-			<div class="menu-element">
-				<ul id="element">
-					<li><a href="<?= base_url(); ?>instalaciones" id="instalaciones" title="Instalaciones">Instalaciones</a></li>
-					<li><a href="<?= base_url(); ?>especialidades" id="especialidades" title="Especialidades">Especialidades</a></li>
-					<li><a href="<?= base_url(); ?>coberturamedica" id="coberturas" title="Coberturas Médicas">Coberturas</a></li>
-					<li><a href="<?= base_url(); ?>servicios" id="servicios" title="Servicios">Servicios</a></li>
-				</ul>
-			</div>
-		</nav>
+
+		<div class="hamburguer-open-container">
+			<button class="hamburguer-button" id="hamburguer-open-menu">
+				<hr/>
+				<hr/>
+				<hr/>
+			</button>
+		</div>
 	</header>
+
+	<nav class="menu global-menu-container">
+		<div class="hamburguer-close-menu">
+			<button class="close-button toggle" id="hamburguer-close-menu">
+				<hr/>
+				<hr/>
+			</button>
+		</div>
+
+		<ul id="element" class="global-menu-content menu-element">
+			<li class="global-menu-item">
+				<a href="<?= base_url(); ?>institucional" id="institucional" title="Institucional">Institucional</a>
+			</li>
+
+			<li class="global-menu-item">
+				<a href="<?= base_url(); ?>instalaciones" id="instalaciones" title="Instalaciones">Instalaciones</a>
+			</li>
+
+			<li class="global-menu-item">
+				<a href="<?= base_url(); ?>especialidades" id="especialidades" title="Especialidades">Especialidades</a>
+			</li>
+
+			<li class="global-menu-item">
+				<a href="<?= base_url(); ?>coberturamedica" id="coberturas" title="Coberturas Médicas">Coberturas</a>
+			</li>
+
+			<li class="global-menu-item">
+				<a href="<?= base_url(); ?>servicios" id="servicios" title="Servicios">Servicios</a>
+			</li>
+		</ul>
+	</nav>

@@ -8,7 +8,7 @@ class Institucional extends CI_Controller {
     }
 
     public function index()
-	{   
+	{
             $this->load->view('includes/head');
             $this->load->view('includes/header');
             $this->load->view('includes/tooltip');

@@ -9,7 +9,6 @@
 .section-primary {
 	display: inline-block;
 	width: 100%;
-	margin-bottom: 20px;
 }
 
 .title-information {
@@ -34,26 +33,45 @@
 	}
 }
 
-.button-open-home-video {
-	border: solid 2px $color-tertiary;
-	background-color: transparent;
-	color: $color-primary;
-	font-size: 18px;
-	border-radius: .5em;
-	padding-left: 2.2em;
-	padding-right: 1em;
-	line-height: 35px;
-	cursor: pointer;
-	@include font-calibri-bold();
+.title-information {
+	position: absolute;
+	top: 50px;
+	left: 0px;
 
-	&:before {
+	h1, p {
+		color: $white;
+	}
+}
+
+.global-title-information {
+	width: 100%;
+	display: block;
+	margin-top: 0px;
+}
+
+.global-information-container {
+	display: none;
+}
+
+.button-open-home-video {
+	background-color: $color-tertiary;
+	color: $white;
+	font-size: 16px;
+	cursor: pointer;
+	position: relative;
+	padding: 8px 20px;
+	padding-right: 35px;
+	@include border-radius(10px);
+	@include box-shadow($shadow);
+
+	&:after {
 		content: '-';
 		font-family: 'modern_pictogramsnormal';
 		@include transform(rotate(90deg));
-		color: $color-primary;
-		font-size: 2em;
+		color: $white;
+		font-size: 1.2em;
 		position: absolute;
-		left: .45em;
+		right: 12px;
 	}
 }
 
@@ -61,7 +79,6 @@
 
 }
 
-.home-background-video,
 .modal-component {
 	display: none;
 }
@@ -73,9 +90,9 @@
 }
 
 .home-background-video {
-	width: calc(100% + 11%);
+	width: calc(100% + 50px);
+	left: -25px;
 	position: relative;
-	left: -5.5%;
 	overflow: hidden;
 
 	&:after {
@@ -95,31 +112,102 @@
 	@extend .home-background-video;
 }
 
+.patient-responsabilities-container {
+	padding-top: 27px;
+}
+
+.patient-responsabilities-title {
+	font-size: 31px;
+	line-height: 31px;
+	margin-bottom: 23px;
+}
+
+.patient-responsabilities-message {
+	line-height: 22px;
+	color: $color-dark;
+	@include font-calibri-normal();
+}
+
+.open-pacient-responsabilities-button {
+	@extend .patient-responsabilities-message;
+	font-size: 14px;
+	text-decoration: underline;
+}
+
+.patient-responsabilities-content {
+	.general-header-title {
+		@include heading-level-3();
+	}
+}
+
+.patient-responsabilities-list {
+	margin-bottom: 30px;
+
+	&:last-of-type {
+		margin-top: 0px;
+	}
+}
+
+.patient-responsabilities-item {
+	font-size: 12px;
+	line-height: 18px;
+	color: $color-dark;
+	padding-left: 15px;
+	margin-bottom: 5px;
+	@include font-calibri-normal();
+	@include item-circle();
+}
+
+.download-form-message {
+	background: $color-primary;
+	width: calc(100% + 60px);
+	left: -30px;
+	position: relative;
+	padding: 20px 30px;
+	color: $white;
+	margin-top: 20px;
+  line-height: 20px;
+}
+
+.download-form-button {
+	color: $white;
+	text-decoration: underline;
+	display: inline;
+
+	&:visited {
+		color: $white;
+	}
+}
+
+.contact-information-container {
+	text-align: center;
+}
+
 /**
 * Responsive width
 **/
 
 @media (min-width: $tablet) {
+	// .title-information {
+	// 	position: absolute;
+	// 	bottom: 60px;
+	// 	left: 0px;
+	// 	width: 60%;
+	//
+	// 	h1, p {
+	// 		color: $white;
+	// 	}
+	// }
+
 	.home-page {
-		.title-information {
-			position: absolute;
-			bottom: 60px;
-			left: 0px;
-			width: 60%;
-
-			h1, p {
-				color: $white;
-			}
-		}
-
-		.button-open-home-video {
-			border-color: $white;
-			color: $white;
-
-			&:after, &:before {
-				color: $white;
-			}
-		}
+		// .button-open-home-video {
+		// 	border-color: $white;
+		// 	color: $white;
+		//
+		// 	&:after, &:before {
+		// 		color: $white;
+		// 	}
+		// }
 	}
 
 	.section-primary {
@@ -132,11 +220,12 @@
 }
 
 @media (min-width: $desktop) {
+	.title-information {
+		width: 40%;
+		bottom: 100px;
+	}
+
 	.home-page {
-		.title-information {
-			width: 40%;
-			bottom: 100px;
-		}
 	}
 
 	.home-background-video {

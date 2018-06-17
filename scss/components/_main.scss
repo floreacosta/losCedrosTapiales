@@ -1,0 +1,13 @@
+main {
+  padding: 0px 25px;
+	padding-top: 5%;
+	width: 100%;
+	display: block;
+	margin: 0 auto;
+	position: relative;
+	min-height: calc(100vh - 96px - 537px - 62px);
+
+	&.home-page {
+		padding-top: 0%;
+	}
+}

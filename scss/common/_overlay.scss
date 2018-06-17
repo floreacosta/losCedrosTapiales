@@ -1,0 +1,54 @@
+.general-overlay-container {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+  background: $white;
+  top: 0px;
+  left: 0px;
+  z-index: 5;
+
+  &.general-overlay-active {
+    display: block;
+  }
+}
+
+.general-overlay-content {
+  padding: 20px;
+  padding-top: 0px;
+}
+
+.general-header-overlay {
+  padding: 20px;
+  text-align: right;
+}
+
+.general-close-overlay-button {
+  font-size: 0px;
+  width: 25px;
+  height: 25px;
+  @include transform(rotate(45deg));
+
+  &:after,
+  &:before {
+    content: '';
+    background: $color-primary;
+    display: inline-block;
+    position: relative;
+  }
+
+  &:before {
+    width: 100%;
+    height: 2px;
+  }
+
+  &:after {
+    height: 100%;
+    width: 2px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include transform(translate(-50%, -50%));
+  }
+}

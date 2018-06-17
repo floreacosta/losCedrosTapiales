@@ -16,6 +16,7 @@
 @import "components/_main";
 @import "components/_footer";
 
+@import "common/_overlay";
 @import "common/_tooltip";
 @import "common/_item-box";
 @import "common/_modal";
@@ -31,5 +32,7 @@
 @import "common/index/_online-turn";
 @import "common/index/_information";
 @import "common/index/_schedule";
+@import "common/index/_accordion";
 
 @import "common/instalaciones/_instalaciones";
+@import "common/institucional/_institucional";

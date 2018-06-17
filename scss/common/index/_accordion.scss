@@ -1,0 +1,100 @@
+.accordion-container {
+  width: calc(100% + 50px);
+  left: -25px;
+  position: relative;
+  background: $accordion-background;
+  @include box-shadow($shadow);
+  font-size: 19px;
+  @include font-calibri-bold();
+}
+
+.accordion-title-container {
+  padding: 30px 32px;
+  padding-right: 36px;
+  display: block;
+  width: 100%;
+  text-align: left;
+  border: 0px;
+  @include heading-level-3();
+  margin: 0px;
+}
+
+.accordion-title {
+  display: inline-block;
+  width: calc(100% - 20px);
+  vertical-align: middle;
+}
+
+.accordion-button {
+  width: 15px;
+  height: 15px;
+  border: solid 2px $color-dark-one;
+  border-top: 0px;
+  border-right: 0px;
+  font-size: 0px;
+  display: inline-block;
+  @include transform(rotate(-45deg));
+  vertical-align: middle;
+  margin-top: -3px;
+}
+
+.accordion-content {
+  padding: 0px 32px;
+  height: 0px;
+  overflow: hidden;
+}
+
+.accordion-container-active {
+  .accordion-button {
+    @include transform(rotate(135deg));
+    margin-top: 4px;
+  }
+
+  .accordion-content {
+    height: auto;
+    padding-bottom: 25px;
+  }
+}
+
+.most-important-data-container {
+  .accordion-container {
+    margin-bottom: 10px;
+  }
+
+  .medical-rules-message-container,
+  .admission-message-container {
+    line-height: 22px;
+  }
+
+  .medical-rules-message-container,
+  .admission-message-container,
+  li {
+    color: $color-dark;
+    font-size: 16px;
+    line-height: 18px;
+    @include font-calibri-normal();
+  }
+
+  li {
+    padding-left: 15px;
+    margin-bottom: 10px;
+
+    &:before {
+      content: '';
+      display: inline-block;
+      left: 0px;
+      top: 6px;
+      background: $color-primary;
+      width: 5px;
+      height: 5px;
+      position: absolute;
+      @include border-radius(50%);
+    }
+  }
+
+  .general-schedule-message {
+    font-size: 16px;
+    margin-top: 15px;
+    display: block;
+  }
+}

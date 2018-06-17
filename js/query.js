@@ -3,6 +3,7 @@
 $(document).ready(function () {
   getActiveSection();
   getOpenCloseMenu();
+  getToggleAccordion();
   getFixedMenu();
   getOpenVideo();
   getCloseVideo();
@@ -50,17 +51,24 @@ function getActiveSection() {
 }
 
 function getOpenCloseMenu() {
-  var contador = 1;
-  $('.toggle').click(function () {
-    if (contador == 1) {
-      $('#element').animate({ right: '0em' });
-      $('.menu-element').css("height", "333px");
-      contador = 0;
-    } else {
-      contador = 1;
-      $('#element').animate({ right: '-100%' });
-      $('.menu-element').css("height", "auto");
-    }
+  var menu = $('.global-menu-container');
+  $('#hamburguer-open-menu').click(function () {
+    menu.animate({ right: '0em' }).addClass('active-global-menu');
+  });
+
+  $('#hamburguer-close-menu').click(function () {
+    menu.animate({ right: '-100%' }).removeClass('active-global-menu');
+  });
+}
+
+function getToggleAccordion() {
+  var _this = this;
+
+  var accordion = $(".accordion-title-container");
+
+  accordion.click(function () {
+    console.log($(_this).parent());
+    $(_this).parent().addClass("accordion-container-active");
   });
 }
 
@@ -125,7 +133,7 @@ function getModalEspecialidades() {
     $(elemento).removeClass("show");
   });
 
-  $(".modal").click(function () {
+  $(".modal-component").click(function () {
     $(elemento).removeClass("show");
   });
 }
@@ -194,12 +202,7 @@ function getSlider() {
       //Se calcula el ancho de imagen para el momento en que se toco NEXT
       var anchoImagen = $(slider + " .content-imagen li img").width() * -1;
 
-      //Se calcula el tiempo que tomará la animación según la cantidad de imágenes de ese slider.
-      if (cantImagenes > 5) {
-        var _tiempoDesliz = cantImagenes * 100;
-      } else {
-        var _tiempoDesliz2 = cantImagenes * 300;
-      }
+      var tiempoDesliz = 300;
 
       //Lógica de BOTÓN NEXT
       //Si la posición de la imagen actual es == a la cantidad total de imágenes
@@ -236,9 +239,9 @@ function getSlider() {
 
       //Se calcula el tiempo que tomará la animación según la cantidad de imágenes de ese slider.
       if (cantImagenes > 5) {
-        var _tiempoDesliz3 = cantImagenes * 100;
+        var _tiempoDesliz = cantImagenes * 100;
       } else {
-        var _tiempoDesliz4 = cantImagenes * 300;
+        var _tiempoDesliz2 = cantImagenes * 300;
       }
 
       //Lógica de BUTTON PREV

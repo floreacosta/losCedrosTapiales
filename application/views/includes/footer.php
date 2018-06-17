@@ -1,4 +1,13 @@
 	<footer class="global-footer">
+		<div class="search-input-component-container mobile-component">
+      <form class="search-form" action="<?= base_url(); ?>buscar" method="post">
+				<label class="common-input search-input-container">
+					<input class="search-input" type="text" placeholder="Buscar..." value="" name="search" />
+				</label>
+				<button class="search-button" type="submit" value="">Buscar</button>
+      </form>
+		</div>
+
 		<div class="col-4 institutional">
 			<div class="logo">
 				<a href="<?= base_url(); ?>index"><img src="<?= base_url(); ?>img/logo.png" title="Clínica Los Cedros de Tapiales S.A."/></a>
@@ -23,23 +32,16 @@
 			</ul>
 		</div>
 
-		<div class="col-4 information">
-			<div class="turn-online">
-				<h3>Turnos On-line</h3>
-				<span>|  Click <a href="<?= base_url(); ?>">aquí</a> para continuar</span>
-			</div>
-
-			<div class="line-phone">
-				<h3>Líneas rotativas</h3>
-				<span>
-					(011) 4622-8188 / (011) 4622-8199
-					<br/>
-					(011) 4622-8203 / (011) 4622-8209
-				</span>
-			</div>
+		<div class="contact-information-container line-phone">
+			<h3 class="contact-information-title">Líneas rotativas</h3>
+			<p class="contact-information-content">
+				(011) 4622-8188 / (011) 4622-8199
+				<br/>
+				(011) 4622-8203 / (011) 4622-8209
+			</p>
 		</div>
 
-		<div class="col-4 search">
+		<div class="search-input-component-container desktop-component">
       <form class="search-form" action="<?= base_url(); ?>buscar" method="post">
 				<label class="common-input search-input-container">
 					<input class="search-input" type="text" placeholder="Buscar..." value="" name="search" />
@@ -51,7 +53,7 @@
 
 	<article class="extra-information">
 		<span>2018 | Design and Developer by <a href="#">Acosta Prado</a></span>
-		<span>Sanatorio Privado Madero</span>
+		<!-- <span>Sanatorio Privado Madero</span> -->
 	</article>
 </body>
 </html>

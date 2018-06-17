@@ -59,62 +59,74 @@
       </div>
 
       <div class="title-information">
-        <!--<h1><strong>Sanatorio Privado</strong><br/>Madero</h1>-->
-        <p><i>Sanatorio Privado Madero</i> constituye una institución sólida desde el año 1983 en la que se destaca por la excelencia que otorga en sus prestaciones médicas y que sigue manteniendo la filosofía de brindar atención al mejor nivel.</p>
-        <p>La confianza lograda nos permitió ir creciendo junto con las familias de nuestros pacientes.</p>
-        <button class="button-open-home-video" onClick="getOpenVideo()" id="button-video-open" title="Video a pantalla compvara">Video</button>
+        <h1 class="global-title-information"><strong>Sanatorio Privado</strong><br/>Madero</h1>
+				<div class="global-information-container">
+					<p><i>Sanatorio Privado Madero</i> constituye una institución sólida desde el año 1983 en la que se destaca por la excelencia que otorga en sus prestaciones médicas y que sigue manteniendo la filosofía de brindar atención al mejor nivel.</p>
+	        <p>La confianza lograda nos permitió ir creciendo junto con las familias de nuestros pacientes.</p>
+				</div>
+        <button class="button-open-home-video" id="button-video-open" title="Video a pantalla completa">Video</button>
       </div>
 		</section>
 
 		<article class="article-sections-item">
 			<figure class="article-item-content">
-				<img src="<?= base_url(); ?>img/thumbs-instalaciones.jpg" alt="Instalaciones y Equipamiento" />
-				<figcaption class="article-item-description">
-					<h3>Instalaciones y Equipamiento</h3>
-					<p>Brindamos infraestructura e instalaciones para que profesionales atiendan sus pacientes en un ambiente confortable y adecuado.</p>
-					<a href="<?= base_url(); ?>instalaciones" title="Ver más">+</a>
-				</figcaption>
+				<a href="<?= base_url(); ?>instalaciones" title="Ver más">
+					<img src="<?= base_url(); ?>img/thumbs-instalaciones.jpg" alt="Instalaciones y Equipamiento" />
+					<figcaption class="article-item-description">
+						<h3>Instalaciones y Equipamiento</h3>
+						<p>Brindamos infraestructura e instalaciones para que profesionales atiendan sus pacientes en un ambiente confortable y adecuado.</p>
+						<i class="icon-more-info">+</i>
+					</figcaption>
+				</a>
 			</figure>
 
 			<figure class="article-item-content">
-				<img src="<?= base_url(); ?>img/thumbs-laboratorio.jpg" alt="Especialidades"/>
-				<figcaption class="article-item-description">
-					<h3>Especialidades</h3>
-					<p>Contamos con un abanico de especialidades detalladas según sus días, horarios y profesionales médicos.</p>
-					<a href="<?= base_url(); ?>especialidades" title="Ver más">+</a>
-				</figcaption>
+				<a href="<?= base_url(); ?>especialidades" title="Ver más">
+					<img src="<?= base_url(); ?>img/thumbs-laboratorio.jpg" alt="Especialidades"/>
+					<figcaption class="article-item-description">
+						<h3>Especialidades</h3>
+						<p>Contamos con un abanico de especialidades detalladas según sus días, horarios y profesionales médicos.</p>
+						<i class="icon-more-info">+</i>
+					</figcaption>
+				</a>
 			</figure>
 
 			<figure class="article-item-content">
-				<img src="<?= base_url(); ?>img/thumbs-cobertura-medica.jpg" alt="Coberturas Médicas"/>
-				<figcaption class="article-item-description">
-					<h3>Coberturas Médicas</h3>
-					<p>Nuestra administración establece el nexo con las Coberturas Médicas y Obras Sociales a fin de brindar para sus afiliados el acceso a una atención médica calificada según sus necesidades.</p>
-					<a href="<?= base_url(); ?>coberturamedica" title="Ver más">+</a>
-				</figcaption>
+				<a href="<?= base_url(); ?>coberturamedica" title="Ver más">
+					<img src="<?= base_url(); ?>img/thumbs-cobertura-medica.jpg" alt="Coberturas Médicas"/>
+					<figcaption class="article-item-description">
+						<h3>Coberturas Médicas</h3>
+						<p>Nuestra administración establece el nexo con las Coberturas Médicas y Obras Sociales a fin de brindar para sus afiliados el acceso a una atención médica calificada según sus necesidades.</p>
+						<i class="icon-more-info">+</i>
+					</figcaption>
+				</a>
 			</figure>
 
 			<figure class="article-item-content">
-				<img src="<?= base_url(); ?>img/thumbs-medicina-preventiva.jpg" alt="Medicina Preventiva"/>
-				<figcaption class="article-item-description">
-					<h3>Servicios Prestados</h3>
-					<p>Contamos con el asesoramiento preventivo por parte de profesionales capacitados para dar la mejor atención a sus pacientes.</p>
-					<a href="servicios" title="Ver más">+</a>
-				</figcaption>
+				<a href="<?= base_url(); ?>servicios" title="Ver más">
+					<img src="<?= base_url(); ?>img/thumbs-medicina-preventiva.jpg" alt="Medicina Preventiva"/>
+					<figcaption class="article-item-description">
+						<h3>Servicios Prestados</h3>
+						<p>Contamos con el asesoramiento preventivo por parte de profesionales capacitados para dar la mejor atención a sus pacientes.</p>
+						<i class="icon-more-info">+</i>
+					</figcaption>
+				</a>
 			</figure>
 		</article>
 
-		<article id="turn" class="article-online-turn">
-			<div>
-				<h1>Solicitud de turnos Online</h1>
-				<span>| Click <a href="<?= base_url(); ?>">aquí</a> para continuar</span>
-			</div>
-		</article>
+		<section class="most-important-data-container">
+			<? include 'includes/accordion/most-important-data.php' ?>
+		</section>
+
+		<section class="patient-responsabilities-container">
+			<? include 'includes/patient-responsabilities/patient-responsabilities.php' ?>
+		</section>
 
 		<section class="section-secondary" id="section-secondary">
 			<img id="imagen-background" src="<?= base_url(); ?>img/recepcion.jpg" alt="Recepción"/>
 		</section>
 
+		<!--
 		<article class="article-information-for-user" id="contact">
 			<div class="telephone-line" id="informationBox">
 				<span>
@@ -144,6 +156,7 @@
 			<h2>Internación: <span>15 a 17 h.</span></h2>
 			<h2>Unidad de Cuidados Intensivos: <span>12 a 12:30 h. y 18 a 18:30 h.</span></h2>
 		</article>
+		-->
 	</main>
 
   <div id="video-container" class="video-container modal-component">

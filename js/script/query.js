@@ -1,7 +1,9 @@
 $(document).ready(() => {
+  getOverlay();
   getActiveSection();
   getOpenCloseMenu();
-  getFixedMenu();
+  getToggleAccordion();
+  // getFixedMenu();
   getOpenVideo();
   getCloseVideo();
   getCloseModalVideoContainer();
@@ -11,6 +13,13 @@ $(document).ready(() => {
   getBarraTooltip();
   getRedireccionamientoTooltip();
 });
+
+/* NOTE: key/value to set an overlay and call it
+  [id_button_open_overlay] = [id_overlay]
+*/
+const OVERLAY_KEY = {
+  'patient_responsabilities_button': 'patient_responsabilities'
+};
 
 function getActiveSection () {
   let URLactual = window.location.pathname;
@@ -48,34 +57,57 @@ function getActiveSection () {
 }
 
 function getOpenCloseMenu () {
-  let contador = 1;
-  $('.toggle').click(() => {
-    if (contador == 1) {
-      $('#element').animate({ right: '0em' });
-      $('.menu-element').css("height", "333px");
-      contador = 0;
-    } else {
-      contador = 1;
-      $('#element').animate({ right: '-100%' });
-      $('.menu-element').css("height", "auto");
-    }
+  let menu = $('.global-menu-container');
+  $('#hamburguer-open-menu').click(() => {
+    menu.animate({ right: '0em' }).addClass('active-global-menu');
+  });
+
+  $('#hamburguer-close-menu').click(() => {
+    menu.animate({ right: '-100%' }).removeClass('active-global-menu');
   });
 }
 
-function getFixedMenu () {
-  $(window).resize(() => {
-    let ventana = $(window).width();
-    let right = $('#element').css('right');
-    let pat = 'px';
+function getToggleAccordion () {
+  let accordion = $(".accordion-container");
 
-    right = right.replace(pat, '');
-    right = parseInt(right);
-
-    if (ventana > 1024 && right < -1024) {
-      $('#element').css('right', '2em');
-    }
+  accordion.click(function () {
+    $(this).toggleClass("accordion-container-active");
   });
 }
+
+function getOverlay () {
+  $('.open-overlay').click(function () {
+    let button = $(this);
+    let foundedOverlayButton = Object.keys(OVERLAY_KEY).find(function (b) {
+      if (b === button.attr('id')) {
+        return b;
+      }
+    });
+
+    let overlay = "#" + (OVERLAY_KEY[foundedOverlayButton]);
+    let activeClass = "general-overlay-active";
+
+    $(overlay).addClass(activeClass);
+    $('.general-close-overlay-button').click(function () {
+      $(overlay).removeClass(activeClass);
+    });
+  });
+}
+
+// function getFixedMenu () {
+//   $(window).resize(() => {
+//     let ventana = $(window).width();
+//     let right = $('#element').css('right');
+//     let pat = 'px';
+//
+//     right = right.replace(pat, '');
+//     right = parseInt(right);
+//
+//     if (ventana > 1024 && right < -1024) {
+//       $('#element').css('right', '2em');
+//     }
+//   });
+// }
 
 function getOpenVideo () {
   $('#button-video-open').click(() => {
