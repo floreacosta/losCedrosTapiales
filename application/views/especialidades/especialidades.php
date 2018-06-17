@@ -33,53 +33,62 @@
 								</div>
 
                 <li class="information-item information-content">
-									<span class="especialidades-title" onClick="getModalEspecialidades()" id=<?= $especialidad->id; ?> ><?= $especialidad->nombre; ?></span>
-                  <div id="modal<?= $especialidad->id; ?>" class="modal-component">
-                    <section class="modal-container">
-                      <button class="button-close-information" id="button-close-information" title="Cerrar"></button>
-                      <h2 class="especialidades-category-title"><?= $especialidad->nombre; ?></h2>
-                      <div class="especialidades-subtitle">Nuestros profesionales</div>
+									<button class="especialidades-title especialidades-open-overlay" id="especialidad_y_profesionales_button" ><?= $especialidad->nombre; ?></button>
 
-                      <ul class="especialistas-list">
-                        <?
+                  <div id="modal_<?= $especialidad->id; ?>" class="general-overlay-container especialidades-overlay-container">
+										<header class="general-header-overlay">
+											<h2 class="especialidades-category-title"><?= $especialidad->nombre; ?></h2>
+									    <button class="general-close-overlay-button button-close-information" id="button-close-information">Close Overlay</button>
+									  </header>
+
+										<div class="general-overlay-content">
+											<div class="especialidades-overlay-content">
+	                      <h3 class="especialidades-subtitle">Nuestros profesionales</h3>
+
+	                      <ul class="especialistas-list">
+	                        <?
 													foreach($doctoresConEspecialidad->result() as $doctorConEspecialidad){
 	                          if($doctorConEspecialidad->idEspecialidad === $especialidad->id) {
-															?>
-																<li class="especialista-item col-3">
-	                                <h4><?= strtolower($doctorConEspecialidad->nombre); ?></h4>
-	                              </li>
-															<?
+													?>
+															<li class="especialista-item col-3"><?= strtolower($doctorConEspecialidad->nombre); ?></li>
+													<?
 	                          }
                         	}
-                        ?>
-                      </ul>
-                    </section>
+	                        ?>
+	                      </ul>
+	                    </div>
+										</div>
                   </div>
                 </li>
               <?
                 } else { //Si son iguales solo imprimo la especialidad
               ?>
-                <li class="information-item">
-									<span class="especialidades-title" onClick="getModalEspecialidades()" id=<?= $especialidad->id; ?> ><?= $especialidad->nombre; ?></span>
-                	<div id="modal<?= $especialidad->id; ?>" class="modal-component">
-                    <section class="modal-container">
-                      <button class="button-close-information" id="button-close-information" title="Cerrar">Cerrar</button>
+                <li class="information-item information-content">
+									<button class="especialidades-title especialidades-open-overlay" id="especialidad_y_profesionales_button" ><?= $especialidad->nombre; ?></button>
+
+                	<div id="modal_<?= $especialidad->id; ?>" class="general-overlay-container especialidades-overlay-container">
+										<header class="general-header-overlay">
 											<h2 class="especialidades-category-title"><?= $especialidad->nombre; ?></h2>
-                      <div class="especialidades-subtitle">Nuestros profesionales</div>
-											<ul class="especialistas-list">
-                        <?
-													foreach($doctoresConEspecialidad->result() as $doctorConEspecialidad) {
-                            if($doctorConEspecialidad->idEspecialidad === $especialidad->id) {
+									    <button class="general-close-overlay-button button-close-information" id="button-close-information">Close Overlay</button>
+									  </header>
+
+                    <div class="general-overlay-content">
+											<div class="especialidades-overlay-content">
+                      	<h3 class="especialidades-subtitle">Nuestros profesionales</h3>
+
+												<ul class="especialistas-list">
+	                        <?
+														foreach($doctoresConEspecialidad->result() as $doctorConEspecialidad) {
+	                            if($doctorConEspecialidad->idEspecialidad === $especialidad->id) {
 															?>
-																<li class="especialista-item col-3">
-                                  <h4> <?= strtolower($doctorConEspecialidad->nombre); ?></h4>
-	                              </li>
+																<li class="especialista-item col-3"><?= strtolower($doctorConEspecialidad->nombre); ?></li>
 	                      			<?
-                          	}
-                        	}
-                        ?>
-                      </ul>
-                    </section>
+	                          	}
+	                        	}
+	                        ?>
+	                      </ul>
+                    	</div>
+										</div>
                 	</div>
                 </li>
               <?

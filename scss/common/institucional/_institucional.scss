@@ -1,3 +1,7 @@
+/*
+ * NOTE: Institucional
+ */
+
 .institucional-content {
   padding-bottom: 20px;
 
@@ -36,12 +40,14 @@
 }
 
 .history-content-list {
+  margin-top: 10px;
+
   li {
     font-size: 16px;
     line-height: 20px;
     color: $color-dark;
     padding-left: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     @include item-circle();
   }
 
@@ -49,4 +55,14 @@
     @include font-calibri-bold();
     color: $color-primary;
   }
+}
+
+/*
+ * Responsive width
+ */
+
+@media (min-width: $tablet) {
+}
+
+@media (min-width: $desktop) {
 }

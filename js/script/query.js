@@ -7,7 +7,7 @@ $(document).ready(() => {
   getOpenVideo();
   getCloseVideo();
   getCloseModalVideoContainer();
-  getHeightMap();
+  // getHeightMap();
   getModalEspecialidades();
   getSlider();
   getBarraTooltip();
@@ -18,7 +18,8 @@ $(document).ready(() => {
   [id_button_open_overlay] = [id_overlay]
 */
 const OVERLAY_KEY = {
-  'patient_responsabilities_button': 'patient_responsabilities'
+  'patient_responsabilities_button': 'patient_responsabilities',
+  'especialidad_y_profesionales_button': 'especialidad_y_profesionales'
 };
 
 function getActiveSection () {
@@ -135,28 +136,27 @@ function getCloseModalVideoContainer () {
   });
 }
 
-function getHeightMap () {
-  let h = $("#informationBox").outerHeight() + "px";
-  $("#google-map-container").css("height", h);
-  $(window).resize(function () {
-    let h = $("#informationBox").outerHeight() + "px";
-    $("#google-map-container").css("height", h);
-  });
-}
+// function getHeightMap () {
+//   let h = $("#informationBox").outerHeight() + "px";
+//   $("#google-map-container").css("height", h);
+//   $(window).resize(function () {
+//     let h = $("#informationBox").outerHeight() + "px";
+//     $("#google-map-container").css("height", h);
+//   });
+// }
 
 function getModalEspecialidades () {
-  $("#element-list").click((e) => {
-    elemento = e.target.id;
-    elemento = "#modal" + elemento;
-    $(elemento).addClass("show");
-  });
+  let button = $('.especialidades-open-overlay');
+  let activeClass = "general-overlay-active";
 
-  $('#button-close-information').click(() => {
-    $(elemento).removeClass("show");
-  });
+  button.click(function () {
+    let component = $(this).parent().find(".general-overlay-container");
 
-  $(".modal-component").click(() => {
-    $(elemento).removeClass("show");
+    component.addClass(activeClass);
+
+    component.find(".general-close-overlay-button").click(function () {
+      component.removeClass(activeClass);
+    });
   });
 }
 
