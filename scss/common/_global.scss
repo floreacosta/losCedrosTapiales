@@ -12,10 +12,8 @@
 * Global
 **/
 
-body {
-	color: $color-primary;
-	font-size: 16px;
-	@include font-calibri-normal;
+body, p {
+	@include text-base();
 	position: relative;
 }
 
@@ -66,7 +64,6 @@ h3 {
 
 .photograpy-primary,
 .photograpy-secondary {
-//	margin: -5.55%;
 	position: relative;
 	height: auto;
 	display: inline-block;
@@ -84,6 +81,16 @@ h3 {
 
 }
 
+.section-title {
+	@include heading-level-2;
+}
+
+.section-title,
+.subheading-section {
+	margin-bottom: 20px;
+}
+
+
 /**
 * Responsive
 **/
@@ -92,52 +99,10 @@ h3 {
 	main {
 		min-height: calc(100vh - 96px - 205px - 38px);
 	}
-
-	// .col-paragraph {
-	// 	@include text-paragraph(80%, 2, 20px);
-	// }
 }
 
 @media (min-width: $desktop) {
 	main {
 		min-height: calc(100vh - 88px - 231px - 50px);
 	}
-	// .photograpy-information {
-	// 	padding-left: 15%;
-	// 	display: inline-block;
-	// 	width: 50%;
-	//
-	// 	.col-paragraph-photograpy {
-	// 		@include text-paragraph(50%, 2, 20px);
-	// 		width: 80%;
-	// 	}
-	// }
-	//
-	// .photograpy-secondary img {
-	// 	width: 50%;
-	// 	padding-right: 1%;
-	//
-	// 	&.second-img {
-	// 		float: right;
-	// 		padding-right: 0;
-	// 		padding-left: 1%;
-	// 	}
-	// }
-}
-
-@media (min-width: 900px){
-	// main {
-	//     padding: 2% 5%;
-	// }
-	//
-	// .col-paragraph {
-	// 	@include text-paragraph(75%, 3, 20px);
-	// }
-}
-
-@media (min-width: 1024px){
-}
-
-@media (min-width: 1400px){
-
 }

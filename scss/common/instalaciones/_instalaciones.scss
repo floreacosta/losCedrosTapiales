@@ -38,11 +38,11 @@
 .item-category {
 	padding: .5em 0em;
 	position: relative;
-	@include heading-level-3();
-	font-size: 1.2em;
 	margin-bottom: 10px;
 	display: inline-block;
 	cursor: pointer;
+	@include heading-level-3();
+	font-size: 1.2em;
 
 	+ .item-description {
 		display: none;

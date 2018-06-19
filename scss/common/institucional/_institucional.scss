@@ -6,9 +6,6 @@
   padding-bottom: 20px;
 
   p {
-    font-size: 16px;
-    line-height: 20px;
-    color: $color-dark;
     margin-bottom: 10px;
   }
 
@@ -43,9 +40,8 @@
   margin-top: 10px;
 
   li {
-    font-size: 16px;
+    @include text-base();
     line-height: 20px;
-    color: $color-dark;
     padding-left: 20px;
     margin-bottom: 15px;
     @include item-circle();

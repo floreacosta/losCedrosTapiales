@@ -17,40 +17,37 @@
 	vertical-align: top;
 	margin-bottom: 1em;
 
-	&:after {
-		content: '';
-		width: .7em;
-		height: .7em;
-		display: inline-block;
-		background-color: $color-secondary;
-		border-radius: 50%;
-		position: absolute;
-
-		left: calc(0em - .35em);
-		top: calc(50% - .35em);
-	}
-
 	&:last-of-type {
 		margin-right: 0;
 	}
 
-	&:hover {
-		background-color: $color-primary-opacity;
+	@include item-circle();
+	&:before {
+		top: 50%;
+		@include transform(translateY(-50%));
+		left: -3px;
+		width: 8px;
+		height: 8px;
 	}
+
+	// &:hover {
+	// 	background-color: $color-primary-opacity;
+	// }
 }
 
 .especialidades-title {
 	position: relative;
 	display: inline-block;
 	vertical-align: middle;
-	color: $color-tertiary;
 	padding: 1em;
 	cursor: pointer;
 	width: 100%;
+	text-align: left;
+	@include text-base($color-tertiary);
 
-	&:hover {
-		color: $white;
-	}
+	// &:hover {
+	// 	color: $white;
+	// }
 }
 
 .especialidades-subtitle {
@@ -61,21 +58,33 @@
 .especialista-item {
 	color: $color-dark;
 	display: block;
+	text-transform: capitalize;
+	padding-left: 18px;
+	position: relative;
+	margin-bottom: 5px;
+
+	@include item-circle();
+	&:before {
+		top: 8px;
+	}
 }
 
 /* Logos / Coberturas Médicas */
 .logotypes-medic {
-	margin-bottom: 1em;
+	margin-bottom: 20px;
+	width: calc(50% - 2px);
+	display: inline-block;
+	float: right;
+	height: 80px;
 
 	img {
 		display: block;
-		width: 95%;
-		margin: auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    @include transform(translate(-50%, -50%));
+    width: 90%;
 	}
-}
-
-.show {
-	display: block !important;
 }
 
 /**

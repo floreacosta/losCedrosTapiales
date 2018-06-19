@@ -23,40 +23,37 @@
 			</div>
 
 			<h2 class="instalaciones-subheading">Recorrido por las instalaciones</h2>
-			<ul class="menu-instalaciones" onClick="getSlider()">
+			<ul class="menu-instalaciones">
 	      <?
           $contador = 0;
 	      ?>
 	      <? foreach($categorias->result() as $categoria): ?>
-	          <?
-              if($contador === 0){ ?>
-              <li id="<?= $contador + 1 ?>" class="item-container item-active">
+          <?
+            if($contador === 0) {
+					?>
+          <?
+						} else {
+					?>
+              <li class="item-container" id="<?= $contador + 1 ?>" >
                 <span class="item-category" title="<?= $categoria->nombre ?>"><?= $categoria->nombre ?></span>
                 <div class="item-description"><?= $categoria->descripcion ?></div>
               </li>
-	          <? } else { ?>
-
-	              <li class="item-container" id="<?= $contador + 1 ?>" >
-                  <span class="item-category" title="<?= $categoria->nombre ?>"><?= $categoria->nombre ?></span>
-                  <div class="item-description"><?= $categoria->descripcion ?></div>
-	              </li>
-
-	          <? }
+          <?
+						}
 	          $contador++;
-	          ?>
-
-
+          ?>
 	      <? endforeach; ?>
 			</ul>
       <?
         $contador = 0;
       ?>
 			<article class="container-all-slider">
-      <?    foreach($categorias->result() as $categoria): ?>
+      <?
+				foreach($categorias->result() as $categoria): ?>
       <?
 				if ($contador === 0) {
 			?>
-      <div class="container-slider slider-active" id="slider-<?= $contador + 1 ?>">
+      	<div class="container-slider slider-active" id="slider-<?= $contador + 1 ?>">
       <?
 				} else {
 					?>
@@ -74,7 +71,7 @@
 										if($instalacion->idCategoria === $categoria->id) {
 											?>
 			                  <li class="content-image-primary">
-			                    <img alt="" src="<?= base_url(); ?>img/slider/<?= $instalacion->imagen ?>"/>
+			                    <img alt="<?= $instalacion->imagen ?>" src="<?= base_url(); ?>img/slider/<?= $instalacion->imagen ?>"/>
 			                    <figcaption class="image-description"><?= $instalacion->descripcion ?></figcaption>
 			                  </li>
 	                  	<?
@@ -94,9 +91,9 @@
 				<?
 					$imageContador++;
 				?>
-            <a class="image-secondary" id="image-<?= $imageContador ?>" href="">
+            <button class="image-secondary" id="image-<?= $imageContador ?>">
 							<img alt="" src="<?= base_url(); ?>img/slider/<?= $instalacion->imagen ?>"/>
-						</a>
+						</button>
           	<? } ?>
         	<? endforeach; ?>
         </div>

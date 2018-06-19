@@ -24,7 +24,6 @@
 }
 
 .article-item-description {
-	// background-color: $color-light;
 	background: $white;
 	padding: 1.5em;
 	width: 100%;
@@ -36,13 +35,9 @@
 		@include heading-level-2();
 		text-transform: none;
 		margin-top: 0px;
-		// font-size: 1.3em;
 	}
 
 	p {
-		@include text-primary();
-		font-size: 1em;
-		color: $color-dark;
 		margin-top: 1em;
 		margin-bottom: 0px;
 	}
@@ -56,7 +51,7 @@
 .icon-more-info {
 	background-color: $color-tertiary;
 	color: $white;
-	border-radius: 50%;
+	@include border-radius(50%);
 	height: 40px;
 	width: 40px;
 	text-align: center;

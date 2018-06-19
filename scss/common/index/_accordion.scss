@@ -62,22 +62,15 @@
   }
 
   .medical-rules-message-container,
-  .admission-message-container {
-    line-height: 22px;
-  }
-
-  .medical-rules-message-container,
   .admission-message-container,
   li {
-    color: $color-dark;
-    font-size: 16px;
-    line-height: 18px;
-    @include font-calibri-normal();
+    @include text-base();
   }
 
   li {
     padding-left: 15px;
     margin-bottom: 10px;
+    line-height: 18px;
 
     &:before {
       content: '';
@@ -93,7 +86,7 @@
   }
 
   .general-schedule-message {
-    font-size: 16px;
+    @include text-base();
     margin-top: 15px;
     display: block;
   }

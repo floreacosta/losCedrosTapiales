@@ -8,15 +8,15 @@
 		</nav>
 
 		<section class="institucional-content">
-      <h1 class="institutional-title">Misión:</h1>
+      <h1 class="institutional-title">Misión</h1>
       <p>Somos una institución que busca rescatar las virtudes del pasado y utilizarlas como cimiento para crear un nuevo Sanatorio.</p>
       <p>Tenemos como principal objetivo el bienestar de nuestros pacientes y para logarlo estamos comprometidos a tener una conducta honesta, de respeto y dialogo continuo para satisfacer las necesidades del paciente y su familia.</p>
 
-      <h2 class="institutional-title vision-title">Visión:</h2>
+      <h2 class="institutional-title vision-title">Visión</h2>
       <p>Se una institución que proporcione atención medica de calidad  con alto sentido humano.</p>
 
       <div class="history-container">
-        <h2 class="institutional-title">Historia:</h2>
+        <h2 class="institutional-title">Historia</h2>
         <p>La institución fue creada en 1983 en el marco de una alianza con la fundación Los Cedros. Esta ubicada en un punto estratégico del partido de La Matanza muy cerca de dos importantes accesos (Autopista Ricchieri y Avenida General Paz). Durante más de 30 años pudo brindar servicios de salud a toda su área de influencia.</p>
         <p>En el año 2015 se comenzó un ambicioso proyecto de reestructuración. Este proceso consintió no solo en cambios edilicios, sino también en un cambio de mentalidad, ubicando el bienestar del paciente como centro de toda toma de dediciones.</p>
 

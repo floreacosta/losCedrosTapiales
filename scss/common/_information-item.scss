@@ -3,7 +3,7 @@
 **/
 
 .prevention-item {
-	padding: 1em;
+	padding: 1.3em 1em;
 	color: $color-dark;
 	background-color: $color-light;
 	display: block;
@@ -12,12 +12,8 @@
 	@include layout-item-information(100%, 100%);
 
 	h2 {
-		margin-top: 0;
-	}
-
-	p {
-		font-size: 1em;
-		line-height: 1.2em;
+		font-size: 1.3em;
+		margin-bottom: 5px;
 	}
 }
 
