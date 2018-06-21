@@ -51,3 +51,11 @@ CREATE TABLE IF NOT EXISTS usuarios(
    usuario varchar(30) not null,
    pass varchar(255) not null
 ) ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS autoridades(
+   id int not null auto_increment primary key,
+   nombre varchar(100) not null,
+   cargo varchar(100),
+   imagen varchar(255),
+   cv text
+) ENGINE=InnoDB;

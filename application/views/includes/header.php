@@ -28,11 +28,11 @@
 			</li>
 
 			<li class="global-menu-item">
-				<a href="<?= base_url(); ?>instalaciones" id="instalaciones" title="Instalaciones">Instalaciones</a>
+				<a href="<?= base_url(); ?>instalacion" id="instalaciones" title="Instalaciones">Instalaciones</a>
 			</li>
 
 			<li class="global-menu-item">
-				<a href="<?= base_url(); ?>especialidades" id="especialidades" title="Especialidades">Especialidades</a>
+				<a href="<?= base_url(); ?>especialidad" id="especialidades" title="Especialidades">Especialidades</a>
 			</li>
 
 			<li class="global-menu-item">
@@ -40,7 +40,7 @@
 			</li>
 
 			<li class="global-menu-item">
-				<a href="<?= base_url(); ?>servicios" id="servicios" title="Servicios">Servicios</a>
+				<a href="<?= base_url(); ?>servicio" id="servicios" title="Servicios">Servicios</a>
 			</li>
 		</ul>
 	</nav>

@@ -70,7 +70,7 @@
 
 		<article class="article-sections-item">
 			<figure class="article-item-content">
-				<a href="<?= base_url(); ?>instalaciones" title="Ver más">
+				<a href="<?= base_url(); ?>instalacion" title="Ver más">
 					<img src="<?= base_url(); ?>img/thumbs-instalaciones.jpg" alt="Instalaciones y Equipamiento" />
 					<figcaption class="article-item-description">
 						<h3>Instalaciones y Equipamiento</h3>
@@ -81,7 +81,7 @@
 			</figure>
 
 			<figure class="article-item-content">
-				<a href="<?= base_url(); ?>especialidades" title="Ver más">
+				<a href="<?= base_url(); ?>especialidad" title="Ver más">
 					<img src="<?= base_url(); ?>img/thumbs-laboratorio.jpg" alt="Especialidades"/>
 					<figcaption class="article-item-description">
 						<h3>Especialidades</h3>
@@ -103,7 +103,7 @@
 			</figure>
 
 			<figure class="article-item-content">
-				<a href="<?= base_url(); ?>servicios" title="Ver más">
+				<a href="<?= base_url(); ?>servicio" title="Ver más">
 					<img src="<?= base_url(); ?>img/thumbs-medicina-preventiva.jpg" alt="Medicina Preventiva"/>
 					<figcaption class="article-item-description">
 						<h3>Servicios Prestados</h3>

@@ -1,37 +1,38 @@
-INSERT INTO `especialidades` (`id`, `nombre`) VALUES (1, 'Alergia y Neumología');
-INSERT INTO `especialidades` (`id`, `nombre`) VALUES (2, 'Anestesiología Cardiovascular');
-INSERT INTO `especialidades` (`id`, `nombre`) VALUES (3, 'Cirugía Cabeza y Cuello');
-INSERT INTO `especialidades` (`id`, `nombre`) VALUES (4, 'Cirugía General <b>(guardia permanente)</b>');
-INSERT INTO `especialidades` (`id`, `nombre`) VALUES (5, 'Cirugía Infantil');
-INSERT INTO `especialidades` (`id`, `nombre`) VALUES (6, 'Cirugía Plástica Reparadora');
-INSERT INTO `especialidades` (`id`, `nombre`) VALUES (7, 'Cirugía Vascular');
-INSERT INTO `especialidades` (`id`, `nombre`) VALUES (8, 'Clínica Médica <b>(guardia permanente)</b>');
-INSERT INTO `especialidades` (`id`, `nombre`) VALUES (9, 'Columna');
-INSERT INTO `especialidades` (`id`, `nombre`) VALUES (10, 'Diabetes y Nutrición');
-INSERT INTO `especialidades` (`id`, `nombre`) VALUES (11, 'Dietología');
-INSERT INTO `especialidades` (`id`, `nombre`) VALUES (12, 'Dermatología');
-INSERT INTO `especialidades` (`id`, `nombre`) VALUES (13, 'Ecografías <b>(guardia permanente)</b>');
-INSERT INTO `especialidades` (`id`, `nombre`) VALUES (14, 'Endocrinología');
-INSERT INTO `especialidades` (`id`, `nombre`) VALUES (15, 'Especialista en Flebología');
-INSERT INTO `especialidades` (`id`, `nombre`) VALUES (16, 'Gastroenterología');
-INSERT INTO `especialidades` (`id`, `nombre`) VALUES (17, 'Ginecología y obstetricia <b>(guardia permanente)</b>');
-INSERT INTO `especialidades` (`id`, `nombre`) VALUES (18, 'Hematología');
-INSERT INTO `especialidades` (`id`, `nombre`) VALUES (19, 'Infectología');
-INSERT INTO `especialidades` (`id`, `nombre`) VALUES (20, 'Nefrología');
-INSERT INTO `especialidades` (`id`, `nombre`) VALUES (21, 'Neumonología');
-INSERT INTO `especialidades` (`id`, `nombre`) VALUES (22, 'Neurocirugía');
-INSERT INTO `especialidades` (`id`, `nombre`) VALUES (23, 'Neurología');
-INSERT INTO `especialidades` (`id`, `nombre`) VALUES (24, 'Obstetricia');
-INSERT INTO `especialidades` (`id`, `nombre`) VALUES (25, 'Oftalmología');
-INSERT INTO `especialidades` (`id`, `nombre`) VALUES (26, 'Otorrinolaringología');
-INSERT INTO `especialidades` (`id`, `nombre`) VALUES (27, 'Patología Mamaria');
-INSERT INTO `especialidades` (`id`, `nombre`) VALUES (28, 'Pediatría <b>(guardia permanente)</b>');
-INSERT INTO `especialidades` (`id`, `nombre`) VALUES (29, 'Reumatología');
-INSERT INTO `especialidades` (`id`, `nombre`) VALUES (30, 'Traumatología <b>(guardia permanente)</b>');
-INSERT INTO `especialidades` (`id`, `nombre`) VALUES (31, 'Urología');
-INSERT INTO `especialidades` (`id`, `nombre`) VALUES (32, 'Cardiología');
-INSERT INTO `especialidades` (`id`, `nombre`) VALUES (33, 'Fonoaudilogía');
-INSERT INTO `especialidades` (`id`, `nombre`) VALUES (34, 'Cirugía Torácica');
-INSERT INTO `especialidades` (`id`, `nombre`) VALUES (35, 'Cardiología Infantil');
-INSERT INTO `especialidades` (`id`, `nombre`) VALUES (36, 'Oncología');
-INSERT INTO `especialidades` (`id`, `nombre`) VALUES (37, 'Fibrobroncospía');
+INSERT INTO especialidades (id, nombre) VALUES
+(1, 'Alergia y Neumología'),
+(2, 'Anestesiología Cardiovascular'),
+(3, 'Cirugía Cabeza y Cuello'),
+(4, 'Cirugía General <b>(guardia permanente)</b>'),
+(5, 'Cirugía Infantil'),
+(6, 'Cirugía Plástica Reparadora'),
+(7, 'Cirugía Vascular'),
+(8, 'Clínica Médica <b>(guardia permanente)</b>'),
+(9, 'Columna'),
+(10, 'Diabetes y Nutrición'),
+(11, 'Dietología'),
+(12, 'Dermatología'),
+(13, 'Ecografías <b>(guardia permanente)</b>'),
+(14, 'Endocrinología'),
+(15, 'Especialista en Flebología'),
+(16, 'Gastroenterología'),
+(17, 'Ginecología y obstetricia <b>(guardia permanente)</b>'),
+(18, 'Hematología'),
+(19, 'Infectología'),
+(20, 'Nefrología'),
+(21, 'Neumonología'),
+(22, 'Neurocirugía'),
+(23, 'Neurología'),
+(24, 'Obstetricia'),
+(25, 'Oftalmología'),
+(26, 'Otorrinolaringología'),
+(27, 'Patología Mamaria'),
+(28, 'Pediatría <b>(guardia permanente)</b>'),
+(29, 'Reumatología'),
+(30, 'Traumatología <b>(guardia permanente)</b>'),
+(31, 'Urología'),
+(32, 'Cardiología'),
+(33, 'Fonoaudilogía'),
+(34, 'Cirugía Torácica'),
+(35, 'Cardiología Infantil'),
+(36, 'Oncología'),
+(37, 'Fibrobroncospía');

@@ -40,5 +40,25 @@
       </div>
 
       <p>Finalizado todo este proceso y entusiasmados por los logros obtenidos en tan corto plazo. En el año 2018 se decidió rebautizar la institución y darle un nombre que identifique el nuevo proyecto. Así nace el <strong class="institucional-content-item">SANATORIO PRIVADO MADERO.</strong></p>
+
+			<div class="autoridades-container">
+				<h2 class="institutional-title">Autoridades</h2>
+				<div class="autoridades-content">
+					<?
+						foreach($autoridades->result() as $autoridad):
+							?>
+								<div class="autoridad-item">
+									<figure class="autoridad-image">
+										<img alt="<?= $autoridad->nombre; ?>" src="/<?= $autoridad->imagen; ?>" />
+									</figure>
+									<h2 class="autoridad-name"><?= $autoridad->nombre; ?></h2>
+									<strong class="autoridad-title"><?= $autoridad->cargo; ?></strong>
+									<p class="cv-link-container"><a href="<?= $autoridad->cv ?>" class="cv-link">Ver Experiencia</a></p>
+								</div>
+							<?
+						endforeach;
+					?>
+				</div>
+			</div>
 		</section>
 	</main>

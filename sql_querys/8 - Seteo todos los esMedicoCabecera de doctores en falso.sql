@@ -1,1 +1,1 @@
-UPDATE doctores set esMedicoCabecera = 0
+UPDATE doctores set esMedicoCabecera = 0;

@@ -6,38 +6,38 @@ class Buscar_model extends CI_Model {
         parent::__construct();
         $this->load->database();
     }
-    
+
     function getResultadosBusqueda($busqueda)
     {
         $resultados = array();
         $this->db->like('nombre', $busqueda);
-        $query = $this->db->get('especialidades');
-        
+        $query = $this->db->get('especialidad');
+
         if($query->num_rows() > 0){
-            $resultados[] = 'especialidades';
+            $resultados[] = 'especialidad';
         }
-        
+
         $this->db->like('nombre', $busqueda);
-        $query = $this->db->get('coberturas');
-        
+        $query = $this->db->get('cobertura');
+
         if($query->num_rows() > 0){
-            $resultados[] = 'coberturas';
+            $resultados[] = 'cobertura';
         }
-        
+
         $this->db->like('nombre', $busqueda);
-        $query = $this->db->get('instalaciones');
-        
+        $query = $this->db->get('instalacion');
+
         if($query->num_rows() > 0){
-            $resultados[] = 'instalaciones';
+            $resultados[] = 'instalacion';
         }
-        
+
         $this->db->like('nombre', $busqueda);
-        $query = $this->db->get('servicios');
-        
+        $query = $this->db->get('servicio');
+
         if($query->num_rows() > 0){
-            $resultados[] = 'servicios';
+            $resultados[] = 'servicio';
         }
-        
+
         return $resultados;
     }
 }

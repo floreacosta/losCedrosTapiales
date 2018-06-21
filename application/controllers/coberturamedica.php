@@ -6,12 +6,12 @@ class Coberturamedica extends CI_Controller {
         parent::__construct();
         $this->load->helper('url');
         $this->load->database();
-        $this->load->model('coberturas_model');
+        $this->load->model('Cobertura_model');
     }
 
     public function index()
-	{   
-            $data['coberturas'] = $this->coberturas_model->getCoberturas();
+	{
+            $data['coberturas'] = $this->Cobertura_model->getCoberturas();
             $this->load->view('includes/head');
             $this->load->view('includes/header');
             $this->load->view('includes/tooltip');
