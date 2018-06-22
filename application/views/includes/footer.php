@@ -8,9 +8,9 @@
       </form>
 		</div>
 
-		<div class="col-4 institutional">
+		<div class="institutional">
 			<div class="logo">
-				<a href="<?= base_url(); ?>index"><img src="<?= base_url(); ?>img/logo.png" title="Clínica Los Cedros de Tapiales S.A."/></a>
+				<a href="<?= base_url(); ?>index"><img src="<?= base_url(); ?>img/logo.png" title="Sanatorio Privado Madero"/></a>
 			</div>
 			<p>
 				Todos los derechos reservados.
@@ -21,9 +21,9 @@
 			</p>
 		</div>
 
-		<div class="col-4 site-map">
+		<div class="site-map">
+			<h3>Institucional</h3>
 			<ul>
-				<h3>Institucional</h3>
 				<li><a href="<?= base_url(); ?>index">Home</a></li>
 				<li><a href="<?= base_url(); ?>instalaciones">Instalaciones</a></li>
 				<li><a href="<?= base_url(); ?>especialidades">Especialidades</a></li>
@@ -52,7 +52,7 @@
 	</footer>
 
 	<article class="extra-information">
-		<span>2018 | Design and Developer by <a href="#">Acosta Prado</a></span>
+		<div>2018 | Design and Developer by <span>Acosta Prado</a></div>
 		<!-- <span>Sanatorio Privado Madero</span> -->
 	</article>
 </body>

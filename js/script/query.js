@@ -17,7 +17,8 @@ $(document).ready(() => {
 */
 const OVERLAY_KEY = {
   'patient_responsabilities_button': 'patient_responsabilities',
-  'especialidad_y_profesionales_button': 'especialidad_y_profesionales'
+  'especialidad_y_profesionales_button': 'especialidad_y_profesionales',
+  'institutional_video_button': 'institutional_video'
 };
 
 function getActiveSection () {

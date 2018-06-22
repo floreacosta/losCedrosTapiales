@@ -4,7 +4,6 @@
 	height: auto;
 	position: relative;
 	display: block;
-	// padding: 1em;
 	text-align: center;
 
 	p {
@@ -30,19 +29,11 @@
 .site-map,
 .institutional {
 	margin-top: 2em;
-	// display: block;
 	width: 100%;
 }
 
 .institutional {
 	margin-top: 0;
-}
-
-.institutional,
-.line-phone {
-	// h3, p {
-	// 	margin-top: 2em;
-	// }
 }
 
 .site-map {
@@ -152,6 +143,7 @@
 }
 
 .contact-information-container {
+	text-align: center;
 	margin-top: 52px;
 	margin-bottom: 56px;
 }
@@ -166,14 +158,9 @@
 	font-size: .7em;
 	text-align: center;
 
-	a {
-		text-decoration: underline;
+	span {
+		@include font-calibri-bold;
 		color: $white;
-
-		&:hover {
-			background-color: $white;
-			color: $color-secondary;
-		}
 	}
 }
 
@@ -183,8 +170,8 @@
 
 @media (min-width: $tablet) {
 	.global-footer {
-		display: flex;
-		// @include display-flex;
+		background: $color-light;
+		padding: 40px 6%;
 		text-align: left;
 
 		.logo {
@@ -192,41 +179,10 @@
 		}
 	}
 
-	.search,
-	.site-map,
-	.institutional {
-		position: relative;
-		display: inline-block;
-		vertical-align: top;
-		width: 48%;
-		margin: 0px;
-		margin-right: 4%;
-	}
-
-	.search {
-		width: 50%;
-		margin-right: 0px;
-	}
-
-	.extra-information {
-		padding: 1.5em 3em;
-		text-align: left;
-
-		span {
-			&:last-of-type {
-				float: right;
-			}
-		}
-	}
-}
-
-@media (min-width: $desktop) {
-	.global-footer {
-		background-color: $color-light;
-		padding: 2em 4em;
-	}
-
 	.search-input-component-container {
+		background: transparent;
+		padding: 0px;
+
 		&.mobile-component {
 			display: none;
 		}
@@ -236,23 +192,89 @@
 		}
 	}
 
-	.search-button {
-		&:hover {
-			// @include opacity(.7);
+	.site-map,
+	.institutional,
+	.contact-information-container,
+	.search-input-component-container {
+		position: relative;
+		display: inline-block;
+		text-align: left;
+		vertical-align: top;
+		width: calc(50% - 20px);
+		margin: 0px;
+	}
+
+	.institutional {
+		margin-bottom: 20px;
+	}
+
+	.search-input-component-container {
+		vertical-align: bottom;
+	}
+
+	.site-map {
+		margin-bottom: 20px;
+
+		h3 {
+			margin-bottom: 10px;
+		}
+
+		ul {
+			overflow: hidden;
+		}
+
+		li {
+			float: left;
+			margin-right: 20px;
+			padding: 0px;
+			margin-bottom: 5px;
 		}
 	}
 
-	.search,
+	.extra-information {
+		padding: .5em 3em;
+	}
+
+	.search-input-component-container,
+	.site-map {
+		margin-left: 30px;
+	}
+}
+
+@media (min-width: $desktop) {
+	.global-footer {
+		background-color: $color-light;
+		padding: 2em 4em;
+
+		.logo {
+			margin-bottom: 10px;
+		}
+	}
+
 	.site-map,
-	.institutional {
-		width: 23%;
+	.institutional,
+	.contact-information-container,
+	.search-input-component-container {
+		width: calc(25% - 30px);
+		margin: 0px;
 	}
 
-	.institutional {
-		margin-right: 4%;
+	.site-map,
+	.institutional,
+	.contact-information-container {
+		margin-right: 20px;
 	}
 
-	.search {
-		margin-top: 0em;
+	.search-input-component-container {
+		vertical-align: top;
+		width: 25%;
+	}
+
+	.site-map {
+		li {
+			float: none;
+			margin-right: 0px;
+			margin-bottom: 5px;
+		}
 	}
 }

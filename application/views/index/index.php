@@ -52,9 +52,7 @@
 		<section class="section-primary" id="section-primary">
       <div class="home-background-video">
         <video loop muted autoplay id="video-background" class="home-background-video-content">
-  				<source src="<?= base_url(); ?>video/losCedros.webm" type='video/webm; codecs="vp8, vorbis"' />
-  				<source src="<?= base_url(); ?>video/losCedros.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
-  				<source src="<?= base_url(); ?>video/losCedros.ogv" type='video/ogg; codecs="theora, vorbis"' />
+					<? include 'includes/video/video.php' ?>
   			</video>
       </div>
 
@@ -64,7 +62,7 @@
 					<p><i>Sanatorio Privado Madero</i> constituye una institución sólida desde el año 1983 en la que se destaca por la excelencia que otorga en sus prestaciones médicas y que sigue manteniendo la filosofía de brindar atención al mejor nivel.</p>
 	        <p>La confianza lograda nos permitió ir creciendo junto con las familias de nuestros pacientes.</p>
 				</div>
-        <button class="button-open-home-video" id="button-video-open" title="Video a pantalla completa">Video</button>
+        <button class="open-overlay button-open-home-video" id="institutional_video_button" title="Video a pantalla completa">Video</button>
       </div>
 		</section>
 
@@ -126,6 +124,8 @@
 			<img id="imagen-background" src="<?= base_url(); ?>img/recepcion.jpg" alt="Recepción"/>
 		</section>
 
+		<? include 'includes/video/modal-video.php' ?>
+
 		<!--
 		<article class="article-information-for-user" id="contact">
 			<div class="telephone-line" id="informationBox">
@@ -158,12 +158,3 @@
 		</article>
 		-->
 	</main>
-
-  <div id="video-container" class="video-container modal-component">
-    <button class="button-video-close" id="button-video-close" onClick="getCloseVideo()" title="Cerrar video">Cerrar</button>
-    <video class="modal-video-content" controls>
-      <source src="<?= base_url(); ?>video/losCedros.webm" type='video/webm; codecs="vp8, vorbis"' />
-      <source src="<?= base_url(); ?>video/losCedros.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
-      <source src="<?= base_url(); ?>video/losCedros.ogv" type='video/ogg; codecs="theora, vorbis"' />
-    </video>
-  </div>

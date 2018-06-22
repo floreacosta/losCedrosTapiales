@@ -180,17 +180,13 @@
 	}
 }
 
-.contact-information-container {
-	text-align: center;
-}
-
 /**
 * Responsive width
 **/
 
 @media (min-width: $mobile) {
 	.home-background-video {
-    max-height: 400px;
+    max-height: 350px;
   }
 
 	.title-information {
@@ -199,27 +195,9 @@
 }
 
 @media (min-width: $tablet) {
-	// .title-information {
-	// 	position: absolute;
-	// 	bottom: 60px;
-	// 	left: 0px;
-	// 	width: 60%;
-	//
-	// 	h1, p {
-	// 		color: $white;
-	// 	}
-	// }
-
-	.home-page {
-		// .button-open-home-video {
-		// 	border-color: $white;
-		// 	color: $white;
-		//
-		// 	&:after, &:before {
-		// 		color: $white;
-		// 	}
-		// }
-	}
+	.home-background-video {
+    max-height: 500px;
+  }
 
 	.section-primary {
 		margin-bottom: 0px;
@@ -240,11 +218,8 @@
 		bottom: 100px;
 	}
 
-	.home-page {
-	}
-
 	.home-background-video {
-		height: 500px;
+		// height: 500px;
 		position: relative;
 
 		video {
