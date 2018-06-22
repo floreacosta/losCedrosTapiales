@@ -51,9 +51,11 @@
 									<figure class="autoridad-image">
 										<img alt="<?= $autoridad->nombre; ?>" src="/<?= $autoridad->imagen; ?>" />
 									</figure>
-									<h2 class="autoridad-name"><?= $autoridad->nombre; ?></h2>
-									<strong class="autoridad-title"><?= $autoridad->cargo; ?></strong>
-									<p class="cv-link-container"><a href="<?= $autoridad->cv ?>" class="cv-link">Ver Experiencia</a></p>
+									<div class="autoridad-information">
+										<h2 class="autoridad-name"><?= $autoridad->nombre; ?></h2>
+										<strong class="autoridad-title"><?= $autoridad->cargo; ?></strong>
+										<a href="<?= $autoridad->cv ?>" class="cv-link">Ver Experiencia</a>
+									</div>
 								</div>
 							<?
 						endforeach;

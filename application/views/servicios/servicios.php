@@ -16,9 +16,12 @@
 				foreach($servicios->result() as $servicio):
 					?>
 						<div class="prevention-item">
-							<h2><?= $servicio->nombre; ?></h2>
-							<h3><?= $servicio->jefe; ?></h3>
-							<p><?= $servicio->descripcion; ?></p>
+							<h2 class="service-title"><?= $servicio->nombre; ?></h2>
+							<h3>
+								<span class="service-head-title">Jefe de área:</span>
+								<strong class="service-head-name"><?= $servicio->jefe; ?></strong>
+							</h3>
+							<p class="service-description"><?= $servicio->descripcion; ?></p>
 						</div>
 					<?
 				endforeach;

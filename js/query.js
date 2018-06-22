@@ -53,11 +53,11 @@ function getActiveSection() {
 function getOpenCloseMenu() {
   var menu = $('.global-menu-container');
   $('#hamburguer-open-menu').click(function () {
-    menu.animate({ right: '0em' }).addClass('active-global-menu');
+    menu.find('.global-menu-content-component').animate({ right: '0em' });
   });
 
   $('#hamburguer-close-menu').click(function () {
-    menu.animate({ right: '-100%' }).removeClass('active-global-menu');
+    menu.find('.global-menu-content-component').animate({ right: '-100%' });
   });
 }
 

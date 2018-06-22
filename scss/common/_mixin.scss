@@ -34,6 +34,11 @@
 	@include font-calibri-normal();
 }
 
+@mixin text-base-secondary ($color: $color-dark) {
+	@include text-base($color);
+	font-size: 12px;
+}
+
 @mixin heading-level-1() {
 	@include font-calibri-bold;
 	color: $color-secondary;

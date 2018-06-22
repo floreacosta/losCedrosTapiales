@@ -15,8 +15,16 @@
 		font-size: 1.3em;
 		margin-bottom: 5px;
 	}
+
+	h3 {
+		margin-top: 10px;
+		margin-bottom: 8px;
+	}
 }
 
+.service-head-title {
+	@include font-calibri-normal();
+}
 
 /**
 * Responsive

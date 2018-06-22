@@ -2,8 +2,8 @@
   display: none;
   position: fixed;
   width: 100%;
+  background: $color-dark-one-opacity;
   height: 100vh;
-  background: $white;
   top: 0px;
   left: 0px;
   z-index: 5;
@@ -13,19 +13,30 @@
   }
 }
 
+.general-overlay-content-component {
+  background: $white;
+  height: auto;
+  // max-height: 50vh;
+  top: 50%;
+  position: relative;
+  overflow: auto;
+  @include box-shadow($shadow);
+  @include transform(translateY(-50%));
+}
+
 .general-overlay-content {
+  // height: calc(100vh - 78px);
   padding: 20px;
   padding-top: 0px;
-  height: calc(100vh - 78px);
+  max-height: calc(50vh - 60px);
   overflow: auto;
 }
 
 .general-header-overlay {
-  padding: 20px;
+  padding: 22px 20px;
   text-align: right;
   width: calc(100% - 30px);
   text-align: left;
-  min-height: 78px;
 }
 
 .general-close-overlay-button {
@@ -57,5 +68,44 @@
     top: 50%;
     left: 50%;
     @include transform(translate(-50%, -50%));
+  }
+}
+
+.especialidades-overlay-container {
+  .general-header-overlay {
+    margin-bottom: 20px;
+
+    &:after {
+      content: '';
+      display: inline-block;
+      width: calc(100% + 30px);
+      position: absolute;
+      left: 0px;
+      bottom: 0px;
+      background: $color-primary;
+      height: 1px;
+    }
+  }
+}
+
+.patient-responsabilities-overlay {
+  .general-overlay-content-component {
+    top: auto;
+    @include transform(translateY(0px));
+  }
+
+  .general-overlay-content {
+    max-height: none;
+    height: calc(100vh - 119px);
+  }
+}
+
+@media (min-width: $desktop) {
+  .general-overlay-content-component {
+    @include transform(translate(-50%, -50%));
+    width: 80vw;
+    top: 50%;
+    left: 50%;
+    display: inline-block;
   }
 }

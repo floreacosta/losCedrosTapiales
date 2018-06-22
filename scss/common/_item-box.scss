@@ -8,6 +8,12 @@
 	}
 }
 
+.cobertura-medica-page {
+	.element-list {
+		overflow: hidden;
+	}
+}
+
 .information-item {
 	background-color: $color-light;
 	position: relative;
@@ -74,7 +80,7 @@
 	margin-bottom: 20px;
 	width: calc(50% - 2px);
 	display: inline-block;
-	float: right;
+	float: left;
 	height: 80px;
 
 	img {
@@ -87,25 +93,68 @@
 	}
 }
 
+.information-item-container {
+	display: block;
+	clear: both;
+	margin-bottom: 10px;
+}
+
 /**
 * Responsive
 **/
 
-@media (min-width: $tablet) {
-	.information-item,
+@media (min-width: $mobile) {
 	.logotypes-medic {
 		position: relative;
-		display: inline-block;
+		display: block;
 		vertical-align: top;
-		width: 46%;
-		margin-right: 3%;
+		width: calc(33.33% - 5px);
+		margin-right: 5px;
+		height: 110px;
+	}
+}
+
+@media (min-width: $tablet) {
+	.cobertura-medica-page {
+		.element-list {
+			width: calc(100% + 10px);
+		}
+	}
+
+	.especialidades-page {
+		.element-list {
+
+		}
+
+		.information-item {
+			width: calc(33.33% - 10px);
+			margin-right: 10px;
+			float: left;
+		}
+	}
+
+	.cobertura-medica-page .information-item {
+		position: relative;
+		display: block;
+		vertical-align: top;
+		width: calc(50% - 10px);
+		margin-right: 10px;
+	}
+
+	.logotypes-medic {
+		width: calc(20% - 5px);
 	}
 }
 
 @media (min-width: $desktop) {
-	.information-item,
-	.logotypes-medic {
-		width: 18%;
-		margin-right: 1%;
+	.cobertura-medica-page {
+		.element-list {
+			width: calc(100% + 5px);
+		}
+	}
+
+	.cobertura-medica-page .information-item {
+		width: calc(20% - 5px);
+		margin-right: 5px;
 	}
 }

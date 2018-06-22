@@ -103,6 +103,11 @@
 	.article-item-content {
 		width: 23%;
 
+		img {
+			display: block;
+			@include box-shadow($shadow);
+		}
+
 		&:nth-child(even) {
 			margin-right: 2%;
 		}

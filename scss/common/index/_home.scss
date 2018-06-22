@@ -188,6 +188,16 @@
 * Responsive width
 **/
 
+@media (min-width: $mobile) {
+	.home-background-video {
+    max-height: 400px;
+  }
+
+	.title-information {
+		width: 60%;
+	}
+}
+
 @media (min-width: $tablet) {
 	// .title-information {
 	// 	position: absolute;
@@ -221,6 +231,10 @@
 }
 
 @media (min-width: $desktop) {
+	.global-information-container {
+		display: block;
+	}
+
 	.title-information {
 		width: 40%;
 		bottom: 100px;
@@ -238,5 +252,11 @@
 			top: 50%;
 			@include transform(translateY(-50%));
 		}
+	}
+
+	.home-background-video,
+	.section-secondary {
+		width: 114%;
+		left: -7%;
 	}
 }

@@ -58,16 +58,16 @@
 }
 
 .global-menu-container {
-	position: fixed;
-	top: 0px;
-	right: -100%;
-	bottom: 0px;
-	width: 70%;
+	position: absolute;
+	width: 100vw;
 	height: 100vh;
-	z-index: 6;
-	background: $color-dark-one;
+	top: 0px;
+	left: 0px;
+	display: none;
 
 	&.active-global-menu {
+		display: inline-block;
+
 		&:before {
 			content: '';
 			position: absolute;
@@ -77,11 +77,22 @@
 			width: 100vw;
 			height: 100vh;
 			display: inline-block;
-			z-index: 0;
+			z-index: 6;
 			background: $color-dark-one-opacity;
 			@include opacity(.5);
 		}
 	}
+}
+
+.global-menu-content-component {
+	position: fixed;
+	top: 0px;
+	right: -100%;
+	bottom: 0px;
+	width: 70%;
+	height: 100vh;
+	z-index: 6;
+	background: $color-dark-one;
 }
 
 /* Contenedor del Botón Hamburguesa */
@@ -161,11 +172,74 @@
 **/
 
 @media (min-width: $tablet) {
+	.logo-container {
+		width: auto;
+	}
 }
 
 @media (min-width: $desktop) {
+	.logo-container {
+		vertical-align: middle;
+	}
+
+	.global-header-container {
+		padding-left: 6%;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		padding-right: 0px;
+	}
+
+	.hamburguer-open-container {
+		display: none;
+	}
+
+	.global-menu-container {
+		display: inline-block;
+    position: relative;
+    width: calc(100% - 164px);
+    height: auto;
+    top: auto;
+    left: auto;
+		vertical-align: middle;
+		text-align: right;
+	}
+
+	.global-menu-content-component {
+		position: relative;
+		display: block;
+		right: auto;
+		height: auto;
+		width: auto;
+		bottom: auto;
+		background: transparent;
+		top: auto;
+		float: right;
+	}
+
+	.hamburguer-close-menu {
+		display: none;
+	}
+
+	.global-menu-item {
+		text-align: left;
+		border: 0px;
+		display: block;
+		float: left;
+
+		a {
+			color: $color-dark;
+			padding: 2.5em 2em;
+		}
+	}
+
+	.global-menu-content {
+		display: block;
+    overflow: hidden;
+	}
+
 	/* Elementos contenidos en el menú */
 	.global-menu-item {
+		&.active,
 		&:hover {
 			background-color: $color-primary-opacity;
 
@@ -179,107 +253,3 @@
 		}
 	}/* items del menu */
 }
-
-// @media (min-width: 500px) {
-// 	header .logo {
-// 		width: 14em;
-// 		left: 1em;
-// 	}
-//
-// 	/* Caja contenedora de elementos del menú */
-// 	.menu-element ul {
-// 		width: 50%;
-// 	}
-// }
-//
-// @media (min-width: 900px) {
-//
-// 	/* Caja contenedora de elementos del menú */
-// 	.menu-element ul {
-// 		width: 30%;
-// 	}
-// }
-//
-// @media (min-width: 1024px) {
-// 	header {
-// 		height: 5.5em;
-//
-// 		.logo {
-// 			width: 20%;
-// 			height: 100%;
-// 			display: inline-block;
-// 			float: left;
-// 			padding: .5em 1em;
-// 			position: relative;
-// 			left: 3em;
-//
-// 			a {
-// 				width: 13em;
-//
-// 				img {
-// 					max-width: 100%;
-// 					position: relative;
-// 					vertical-align: middle;
-// 				}
-// 			}
-// 		}
-// 	}
-//
-// 	/* Contenedor del Botón Hamburguesa */
-// 	.button-menu {
-// 		display: none;
-// 	}
-//
-// 	/* menú en desktop, 1024px en adelante */
-// 	.menu-element {
-//
-// 		ul {
-// 			height: 100%;
-// 			width: calc(14.4em + 392.2px);
-// 			float: right;
-// 			position: relative;
-// 			right: 2em;
-// 			background-color: transparent;
-// 			box-shadow: none;
-// 			top: 0;
-//
-// 			li {
-// 				padding: 0 1.8em;
-// 				float: left;
-// 				line-height: calc(5.5em - 6px);
-// 				border: 0;
-//
-// 				&:hover {
-// 					background-color: transparent;
-//
-// 					a {
-// 						color: $color-primary;
-// 					}
-// 				}
-//
-// 				a {
-// 					color: $color-primary;
-// 					width: 100%;
-// 					@include font-calibri-bold;
-// 					display: inline-block;
-// 					text-align: center;
-//
-// 					&:after {
-// 						content:'';
-// 						display: none;
-// 					}
-//
-// 					&:hover,
-// 					&.active {
-// 						border-bottom: solid 6px $color-primary;
-// 					}
-// 				}
-// 			}
-// 		}	/* Fin menú en desktop, 1024px en adelante */
-// 	}
-//
-// }
-//
-// @media (min-width: 1400px) {
-//
-// }

@@ -38,6 +38,10 @@ input {
 	border: 0px;
 }
 
+.no-scrolling {
+  overflow: hidden;
+}
+
 // section {
 // 	display: inline-block;
 // }
@@ -88,6 +92,10 @@ h3 {
 .section-title,
 .subheading-section {
 	margin-bottom: 20px;
+
+	p {
+		width: 60%;
+	}
 }
 
 
@@ -96,13 +104,7 @@ h3 {
 **/
 
 @media (min-width: $tablet) {
-	main {
-		min-height: calc(100vh - 96px - 205px - 38px);
-	}
 }
 
 @media (min-width: $desktop) {
-	main {
-		min-height: calc(100vh - 88px - 231px - 50px);
-	}
 }

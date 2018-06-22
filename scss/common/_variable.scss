@@ -19,9 +19,9 @@ $accordion-background: #ededec;
  * NOTE: Media Querys
  */
 
-/* min-width: 0px */
-$mobile: '0px';
-/* min-width: (400px + 1px) */
+/* max-width: 0px */
+$mobile: '375px';
+/* max-width: (400px + 1px) */
 $tablet: '769px';
-/* min-width: (1024px + 1px) */
+/* max-width: (1024px + 1px) */
 $desktop: '1025px';

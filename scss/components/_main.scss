@@ -1,6 +1,5 @@
 main {
-  padding: 0px 25px;
-	padding-top: 5%;
+  padding: 5% 25px;
 	width: 100%;
 	display: block;
 	margin: 0 auto;
@@ -9,5 +8,19 @@ main {
 
 	&.home-page {
 		padding-top: 0%;
+	}
+}
+
+@media (min-width: $tablet) {
+	main {
+		min-height: calc(100vh - 96px - 205px - 38px);
+	}
+}
+
+@media (min-width: $desktop) {
+	main {
+    padding: 6%;
+		min-height: calc(100vh - 88px - 231px - 50px);
+    overflow: hidden;
 	}
 }

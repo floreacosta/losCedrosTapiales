@@ -3,11 +3,9 @@ $(document).ready(() => {
   getActiveSection();
   getOpenCloseMenu();
   getToggleAccordion();
-  // getFixedMenu();
   getOpenVideo();
   getCloseVideo();
   getCloseModalVideoContainer();
-  // getHeightMap();
   getModalEspecialidades();
   getActiveSlider();
   getBarraTooltip();
@@ -23,48 +21,30 @@ const OVERLAY_KEY = {
 };
 
 function getActiveSection () {
-  let URLactual = window.location.pathname;
-  switch (URLactual) {
-    case '/losCedrosTapiales/institucional':
-      $("#instalaciones").addClass("active");
-      $("#servicios").remove("active");
-      $("#coberturas").remove("active");
-      $("#especialidades").remove("active");
-      break;
-    case '/losCedrosTapiales/servicios':
-      $("#instalaciones").remove("active");
-      $("#servicios").addClass("active");
-      $("#coberturas").remove("active");
-      $("#especialidades").remove("active");
-      break;
-    case '/losCedrosTapiales/coberturamedica':
-      $("#instalaciones").remove("active");
-      $("#servicios").remove("active");
-      $("#coberturas").addClass("active");
-      $("#especialidades").remove("active");
-      break;
-    case '/losCedrosTapiales/especialidades':
-      $("#instalaciones").remove("active");
-      $("#servicios").remove("active");
-      $("#coberturas").remove("active");
-      $("#especialidades").addClass("active");
-    default:
-      $("#instalaciones").remove("active");
-      $("#servicios").remove("active");
-      $("#coberturas").remove("active");
-      $("#especialidades").remove("active");
-      break;
-  }
+  let url = window.location.pathname;
+  let menu = $('.global-menu-content');
+  menu.each(function () {
+    let item = $(this);
+    $(this).removeClass('active');
+
+    if (item.attr('id') === url.substr(1)) {
+      item.addClass('active');
+    }
+  });
+
+  menu.find('#' + url.substr(1)).parent().addClass('active');
 }
 
 function getOpenCloseMenu () {
   let menu = $('.global-menu-container');
   $('#hamburguer-open-menu').click(() => {
-    menu.animate({ right: '0em' }).addClass('active-global-menu');
+    menu.addClass('active-global-menu');
+    menu.find('.global-menu-content-component').animate({ right: '0em' });
   });
 
   $('#hamburguer-close-menu').click(() => {
-    menu.animate({ right: '-100%' }).removeClass('active-global-menu');
+    menu.removeClass('active-global-menu');
+    menu.find('.global-menu-content-component').animate({ right: '-100%' }).removeClass('active-global-menu');
   });
 }
 
@@ -89,26 +69,13 @@ function getOverlay () {
     let activeClass = "general-overlay-active";
 
     $(overlay).addClass(activeClass);
+    $("body").addClass('no-scrolling');
     $('.general-close-overlay-button').click(function () {
       $(overlay).removeClass(activeClass);
+      $("body").removeClass('no-scrolling');
     });
   });
 }
-
-// function getFixedMenu () {
-//   $(window).resize(() => {
-//     let ventana = $(window).width();
-//     let right = $('#element').css('right');
-//     let pat = 'px';
-//
-//     right = right.replace(pat, '');
-//     right = parseInt(right);
-//
-//     if (ventana > 1024 && right < -1024) {
-//       $('#element').css('right', '2em');
-//     }
-//   });
-// }
 
 function getOpenVideo () {
   $('#button-video-open').click(() => {
@@ -144,9 +111,11 @@ function getModalEspecialidades () {
     let component = $(this).parent().find(".general-overlay-container");
 
     component.addClass(activeClass);
+    $("body").addClass('no-scrolling');
 
     component.find(".general-close-overlay-button").click(function () {
       component.removeClass(activeClass);
+      $("body").removeClass('no-scrolling');
     });
   });
 }
@@ -192,6 +161,8 @@ function getCarrousel () {
   let contentImage = currentSlider.find('.content-imagen');
   let imageWidth = Math.trunc(contentImage.innerWidth() / imageList.length);
 
+  getActiveImageOnCarrousel(currentSlider, contentImage, imageWidth);
+
   nextButton.click(function () {
     if (contentImage.innerWidth() >= (-(contentImage.position().left - imageWidth) + imageWidth)) {
       contentImage.animate({
@@ -206,6 +177,26 @@ function getCarrousel () {
         right: ((-contentImage.position().left) - imageWidth) + 'px'
       });
     }
+  });
+}
+
+function getActiveImageOnCarrousel (sliderActive, generalImageContainer, imageWidth) {
+  let images = sliderActive.find('.container-image-secondary').children();
+  $(images[0]).addClass('active');
+
+  images.each(function (index) {
+    let clicked = $(this);
+
+    clicked.click(function () {
+      images.each(function () {
+        $(this).removeClass('active');
+      });
+
+      $(this).addClass('active');
+      generalImageContainer.animate({
+        right: (imageWidth * index) + 'px'
+      });
+    });
   });
 }
 
