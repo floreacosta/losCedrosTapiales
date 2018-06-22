@@ -52,6 +52,7 @@ function getOpenCloseMenu () {
 function getToggleAccordion () {
   let accordion = $(".accordion-container");
 
+  getAccordionToElement(accordion);
   accordion.click(function () {
     $(this).toggleClass("accordion-container-active");
   });
@@ -101,6 +102,30 @@ function getCloseModalVideoContainer () {
     let v = document.getElementsByTagName("video")[1];
     v.pause();
     v.load();
+  });
+}
+
+function getAccordionToElement (accordion) {
+  let accordionContainerClass = 'accordion-container';
+  let accordionContentClass = 'accordion-title-container';
+  let accordionContent = accordion.find('.accordion-title-container');
+
+  if ($(window).width() > 769) {
+    accordion.removeClass(accordionContainerClass).addClass('element-container');
+    accordionContent.removeClass(accordionContentClass).addClass('title-container');
+  } else {
+    accordion.addClass(accordionContainerClass).removeClass('element-container');
+    accordionContent.addClass(accordionContentClass).removeClass('title-container');
+  }
+
+  $(window).resize(function () {
+    if ($(window).width() > 769) {
+      accordion.removeClass(accordionContainerClass).addClass('element-container');
+      accordionContent.removeClass(accordionContentClass).addClass('title-container');
+    } else {
+      accordion.addClass(accordionContainerClass).removeClass('element-container');
+      accordionContent.addClass(accordionContentClass).removeClass('title-container');
+    };
   });
 }
 

@@ -204,14 +204,16 @@ h3 {
 .subheading-section {
   margin-bottom: 20px;
 }
-.section-title p,
-.subheading-section p {
-  width: 60%;
-}
 
 /**
 * Responsive
 **/
+@media (min-width: 1025px) {
+  .section-title p,
+  .subheading-section p {
+    width: 60%;
+  }
+}
 @font-face {
   font-family: 'modern_pictogramsnormal';
   src: url("../../font/modernpictogram/modernpics-webfont.woff2") format("woff2"), url("../../font/modernpictogram/modernpics-webfont.woff") format("woff");
@@ -806,6 +808,7 @@ main.home-page {
   text-align: right;
   width: calc(100% - 30px);
   text-align: left;
+  z-index: 1;
 }
 
 .general-close-overlay-button {
@@ -856,16 +859,18 @@ main.home-page {
   height: 1px;
 }
 
-.patient-responsabilities-overlay .general-overlay-content-component {
-  top: auto;
-  -moz-transform: translateY(0px);
-  -ms-transform: translateY(0px);
-  -webkit-transform: translateY(0px);
-  transform: translateY(0px);
-}
 .patient-responsabilities-overlay .general-overlay-content {
   max-height: none;
   height: calc(100vh - 119px);
+}
+
+.institutional-video-container .general-header-overlay {
+  padding: 0px;
+}
+.institutional-video-container .general-overlay-content {
+  padding: 20px;
+  max-height: initial;
+  height: auto;
 }
 
 @media (min-width: 1025px) {
@@ -2092,11 +2097,8 @@ main.home-page {
 }
 
 .patient-responsabilities-item {
-  font-size: 12px;
-  line-height: 18px;
-  color: #7b7b79;
   padding-left: 15px;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
   font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
   font-weight: normal;
   font-variant: normal;
@@ -2203,16 +2205,6 @@ main.home-page {
   padding: 30px;
 }
 
-.modal-video-content {
-  position: relative;
-  top: 50%;
-  left: 50%;
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
-
 .button-video-close {
   font-size: 0px;
   border: 0;
@@ -2256,12 +2248,6 @@ main.home-page {
 /**
 * Responsive width
 **/
-@media (min-width: 769px) {
-  .modal-video-content {
-    width: auto;
-    max-height: 80vh;
-  }
-}
 .article-sections-item {
   width: 100%;
   position: relative;
@@ -2629,8 +2615,7 @@ main.home-page {
   font-variant: normal;
   font-style: normal;
 }
-
-.accordion-title-container {
+.accordion-container .accordion-title-container {
   padding: 30px 32px;
   padding-right: 36px;
   display: block;
@@ -2646,14 +2631,12 @@ main.home-page {
   line-height: 1.1em;
   margin: 0px;
 }
-
-.accordion-title {
+.accordion-container .accordion-title {
   display: inline-block;
   width: calc(100% - 20px);
   vertical-align: middle;
 }
-
-.accordion-button {
+.accordion-container .accordion-button {
   width: 15px;
   height: 15px;
   border: solid 2px #8b8d8a;
@@ -2668,8 +2651,7 @@ main.home-page {
   vertical-align: middle;
   margin-top: -3px;
 }
-
-.accordion-content {
+.accordion-container .accordion-content {
   padding: 0px 32px;
   height: 0px;
   overflow: hidden;

@@ -150,11 +150,11 @@
 }
 
 .patient-responsabilities-item {
-	font-size: 12px;
-	line-height: 18px;
-	color: $color-dark;
+	// font-size: 12px;
+	// line-height: 18px;
+	// color: $color-dark;
 	padding-left: 15px;
-	margin-bottom: 5px;
+	margin-bottom: 15px;
 	@include font-calibri-normal();
 	@include item-circle();
 }

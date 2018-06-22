@@ -1,5 +1,5 @@
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCl1eZ_cCxoh4jm8J6oLzEZOUyTsQSS-7Y&callback=initMap"></script>
-<script>
+<!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCl1eZ_cCxoh4jm8J6oLzEZOUyTsQSS-7Y&callback=initMap"></script> -->
+<!-- <script>
 	function initMap () {
 	  // Create a map object and specify the DOM element for display.
 	  var ubicacionLosCedros = {
@@ -45,7 +45,7 @@
 	    });
 	  }
 	}
-</script>
+</script> -->
 
 <body>
 	<main class="home-page">

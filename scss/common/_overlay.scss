@@ -37,6 +37,7 @@
   text-align: right;
   width: calc(100% - 30px);
   text-align: left;
+  z-index: 1;
 }
 
 .general-close-overlay-button {
@@ -89,14 +90,26 @@
 }
 
 .patient-responsabilities-overlay {
-  .general-overlay-content-component {
-    top: auto;
-    @include transform(translateY(0px));
-  }
+  // .general-overlay-content-component {
+  //   top: auto;
+  //   @include transform(translateY(0px));
+  // }
 
   .general-overlay-content {
     max-height: none;
     height: calc(100vh - 119px);
+  }
+}
+
+.institutional-video-container {
+  .general-header-overlay {
+    padding: 0px;
+  }
+
+  .general-overlay-content {
+    padding: 20px;
+    max-height: initial;
+    height: auto;
   }
 }
 
