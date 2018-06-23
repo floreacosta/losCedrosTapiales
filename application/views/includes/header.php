@@ -46,3 +46,4 @@
 			</div>
 		</nav>
 	</header>
+	<div class="fake-header" aria-hidden="true"></div>

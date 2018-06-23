@@ -8,6 +8,7 @@ $(document).ready(() => {
   getActiveSlider();
   getBarraTooltip();
   getRedireccionamientoTooltip();
+  getStickyHeader();
 });
 
 /* NOTE: key/value to set an overlay and call it
@@ -18,6 +19,26 @@ const OVERLAY_KEY = {
   'especialidad_y_profesionales_button': 'especialidad_y_profesionales',
   'institutional_video_button': 'institutional_video'
 };
+
+function getStickyHeader () {
+  let fakeHeader = $('.fake-header');
+  let header = $('.global-header-container');
+
+  let fakeHeaderHeight = function () {
+    fakeHeader.css({
+      height: header.height()
+    });
+  };
+
+  $(this).resize(fakeHeaderHeight);
+  $(this).scroll(() => {
+    if ($(this).scrollTop() > header.height()) {
+      header.addClass('sticky-header');
+    } else {
+      header.removeClass('sticky-header');
+    }
+  });
+}
 
 function getActiveSection () {
   let url = window.location.pathname;

@@ -220,6 +220,17 @@ h3 {
   -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
+.global-header-container.sticky-header {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+}
+
+.fake-header {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
 
 /* Caja contenedora del Logo */
 .logo-container {
@@ -451,6 +462,13 @@ h3 {
   .global-menu-item a {
     color: #7b7b79;
     padding: 2.5em 2em;
+  }
+
+  .sticky-header .logo-container {
+    width: 9em;
+  }
+  .sticky-header .global-menu-item a {
+    padding: 1.8em 2em;
   }
 
   .global-menu-content {

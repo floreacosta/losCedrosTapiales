@@ -6,6 +6,18 @@
 	z-index: 4;
 	padding: .6em 1.7em;
 	@include box-shadow($shadow);
+
+	&.sticky-header {
+		position: fixed;
+		top: 0px;
+		left: 0px;
+	}
+}
+
+.fake-header {
+	position: absolute;
+	top: 0px;
+	width: 100%;
 }
 
 /* Caja contenedora del Logo */
@@ -236,6 +248,18 @@
 		a {
 			color: $color-dark;
 			padding: 2.5em 2em;
+		}
+	}
+
+	.sticky-header {
+		.logo-container {
+			width: 9em;
+		}
+
+		.global-menu-item {
+			a {
+				padding: 1.8em 2em;
+			}
 		}
 	}
 
