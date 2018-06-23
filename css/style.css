@@ -467,6 +467,9 @@ h3 {
   .sticky-header .logo-container {
     width: 9em;
   }
+  .sticky-header .global-menu-container {
+    width: calc(100% - 9em - 5px);
+  }
   .sticky-header .global-menu-item a {
     padding: 1.8em 2em;
   }
