@@ -42,7 +42,7 @@
 		      				<div class="container-slider" id="slider-<?= $categoria->id ?>">
 								<? } ?>
 							    <figure class="image-primary">
-											 <button class="button-prev" id="button-prev" title="Anterior"></button>
+											 <button class="button-prev disabled" id="button-prev" title="Anterior"></button>
 											 <button class="button-next" id="button-next" title="Siguiente"></button>
 												<ul class="content-imagen" id="slider-container-images">
 						              <?

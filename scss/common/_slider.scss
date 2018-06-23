@@ -42,6 +42,12 @@
     top: 1px;
     @include transform(rotate(135deg));
   }
+
+  &.disabled {
+    @include opacity(.8);
+    background: $color-dark;
+    cursor: default;
+  }
 }
 
 .button-next {

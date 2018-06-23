@@ -149,10 +149,6 @@ function getActiveSlider () {
   let sliderActiveClass = 'slider-active';
   let buttonActiveClass = 'item-active';
 
-  // let activeElement = $(sliders.find('.container-slider')[0]);
-  // activeElement.addClass(sliderActiveClass);
-  // activeElement.parent().addClass(buttonActiveClass);
-
   let getHeightContainer = function () {
     sliders.find('.menu-instalaciones').css({
       'min-height': sliders.find('.' + sliderActiveClass).height() + 'px'
@@ -210,33 +206,54 @@ function getCarrousel () {
   let imageWidth = 100 / imageList.length;
   let imageContainerPosition = 0;
 
-  getActiveImageOnCarrousel(currentSlider, imageContainer);
-
+  getActiveImageOnCarrousel(currentSlider, imageContainer, 0);
   nextButton.click(function () {
     if (imageContainerPosition < ((imageList.length - 1) * 100)) {
       imageContainerPosition += imageList.length * imageWidth;
+
       imageContainer.animate({
         right: imageContainerPosition + '%'
       });
+
+      getActiveImageOnCarrousel(currentSlider, imageContainer, (imageContainerPosition / 100));
+    }
+
+    prevButton.removeClass('disabled');
+    if (imageContainerPosition === ((imageList.length - 1) * 100)) {
+      $(this).addClass('disabled');
     }
   });
 
   prevButton.click(function () {
     if (0 < imageContainerPosition) {
       imageContainerPosition -= imageList.length * imageWidth;
+
       imageContainer.animate({
         right: imageContainerPosition + '%'
       });
+
+      getActiveImageOnCarrousel(currentSlider, imageContainer, (imageContainerPosition / 100));
+    }
+
+    nextButton.removeClass('disabled');
+    if (0 === imageContainerPosition) {
+      $(this).addClass('disabled');
     }
   });
 }
 
-function getActiveImageOnCarrousel (sliderActive, generalImageContainer) {
+function getActiveImageOnCarrousel (sliderActive, generalImageContainer, imageIndex) {
   let images = sliderActive.find('.container-image-secondary').children();
-  $(images[0]).addClass('active');
 
   images.each(function (index) {
     let clicked = $(this);
+
+    if (imageIndex === index) {
+      images.each(function () {
+        $(this).removeClass('active');
+      });
+      $(this).addClass('active');
+    }
 
     clicked.click(function () {
       images.each(function () {

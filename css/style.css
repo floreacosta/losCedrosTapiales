@@ -1907,6 +1907,12 @@ main.home-page {
   -webkit-transform: rotate(135deg);
   transform: rotate(135deg);
 }
+.button-prev.disabled, .disabled.button-next {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  opacity: 0.8;
+  background: #7b7b79;
+  cursor: default;
+}
 
 .button-next {
   left: auto;
@@ -3190,14 +3196,10 @@ main.home-page {
     margin-bottom: 50px;
   }
   .most-important-data-container .element-container {
-    padding-bottom: 40px;
     margin-bottom: 40px;
-    border-bottom: solid 2px #c1c1c1;
   }
   .most-important-data-container .element-container.alta-medica-container {
-    padding-bottom: 0px;
     margin-bottom: 0px;
-    border-bottom: 0px;
   }
 
   .patient-responsabilities-container {
