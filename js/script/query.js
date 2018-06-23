@@ -145,34 +145,59 @@ function getModalEspecialidades () {
 
 function getActiveSlider () {
   let sliders = $('.instalaciones-content');
-  let buttons = $('.item-container');
+  let buttons = $('.item-content');
   let sliderActiveClass = 'slider-active';
   let buttonActiveClass = 'item-active';
+
+  // let activeElement = $(sliders.find('.container-slider')[0]);
+  // activeElement.addClass(sliderActiveClass);
+  // activeElement.parent().addClass(buttonActiveClass);
+
+  let getHeightContainer = function () {
+    sliders.find('.menu-instalaciones').css({
+      'min-height': sliders.find('.' + sliderActiveClass).height() + 'px'
+    });
+  };
+
+  getHeightContainer();
+
+  $(this).resize(() => {
+    getHeightContainer();
+  });
 
   let getContainerWidth = function () {
     let contentImage = $('.' + sliderActiveClass).find('.content-imagen');
     let quantityImage = contentImage.children().length * 100;
-    contentImage.css('width', quantityImage + '%');
-    contentImage.children().css('width', Math.trunc(contentImage.innerWidth() / contentImage.children().length) + 'px');
-    getCarrousel();
+    contentImage.css({
+      width: quantityImage + '%'
+    }).children().css({
+      width: (100 / contentImage.children().length) + '%'
+    });
   };
 
   getContainerWidth();
 
+  $(this).resize(() => {
+    getContainerWidth();
+  });
+
   buttons.click(function () {
-    let currentSlider = sliders.find($('#slider-' + $(this).attr('id')));
+    let currentSlider = sliders.find($('#slider-' + $(this).parent().attr('id')));
     buttons.each(function () {
-      $(this).removeClass(buttonActiveClass);
+      $(this).parent().removeClass(buttonActiveClass);
     });
 
     sliders.find('.container-slider').each(function () {
       $(this).removeClass(sliderActiveClass);
     });
 
-    $(this).addClass(buttonActiveClass);
+    $(this).parent().addClass(buttonActiveClass);
     currentSlider.addClass(sliderActiveClass);
     getContainerWidth();
+    getCarrousel();
+    getHeightContainer();
   });
+  getCarrousel();
 }
 
 function getCarrousel () {
@@ -180,30 +205,33 @@ function getCarrousel () {
   let nextButton = currentSlider.find('.button-next');
   let prevButton = currentSlider.find('.button-prev');
 
-  let imageList = currentSlider.find('.content-imagen').children();
-  let contentImage = currentSlider.find('.content-imagen');
-  let imageWidth = Math.trunc(contentImage.innerWidth() / imageList.length);
+  let imageContainer = currentSlider.find('.content-imagen');
+  let imageList = imageContainer.children();
+  let imageWidth = 100 / imageList.length;
+  let imageContainerPosition = 0;
 
-  getActiveImageOnCarrousel(currentSlider, contentImage, imageWidth);
+  getActiveImageOnCarrousel(currentSlider, imageContainer);
 
   nextButton.click(function () {
-    if (contentImage.innerWidth() >= (-(contentImage.position().left - imageWidth) + imageWidth)) {
-      contentImage.animate({
-        right: ((-contentImage.position().left) + imageWidth) + 'px'
+    if (imageContainerPosition < ((imageList.length - 1) * 100)) {
+      imageContainerPosition += imageList.length * imageWidth;
+      imageContainer.animate({
+        right: imageContainerPosition + '%'
       });
     }
   });
 
   prevButton.click(function () {
-    if (0 <= -(contentImage.position().left + imageWidth)) {
-      contentImage.animate({
-        right: ((-contentImage.position().left) - imageWidth) + 'px'
+    if (0 < imageContainerPosition) {
+      imageContainerPosition -= imageList.length * imageWidth;
+      imageContainer.animate({
+        right: imageContainerPosition + '%'
       });
     }
   });
 }
 
-function getActiveImageOnCarrousel (sliderActive, generalImageContainer, imageWidth) {
+function getActiveImageOnCarrousel (sliderActive, generalImageContainer) {
   let images = sliderActive.find('.container-image-secondary').children();
   $(images[0]).addClass('active');
 
@@ -217,7 +245,7 @@ function getActiveImageOnCarrousel (sliderActive, generalImageContainer, imageWi
 
       $(this).addClass('active');
       generalImageContainer.animate({
-        right: (imageWidth * index) + 'px'
+        right: (100 * index) + '%'
       });
     });
   });
@@ -233,7 +261,7 @@ function getBarraTooltip () {
     };
 
   $(window).scroll(() => {
-    if ($(window).width() >= 600) {
+    if ($(window).width() >= 769) {
       scrollTooltip();
     } else {
       $(".tooltip-box").css("display", "none");
@@ -241,7 +269,7 @@ function getBarraTooltip () {
 
     //Para hacer responsive el Tooltip.
     $(window).resize(() => {
-      if ($(window).width() >= 600) {
+      if ($(window).width() >= 769) {
         scrollTooltip();
       } else {
         $(".tooltip-box").css("display", "none");

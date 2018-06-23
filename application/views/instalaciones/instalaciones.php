@@ -18,88 +18,66 @@
 				<div id="box-2" class="box-description flecha-left">
 					<p>Posee 5 sectores de internación clínica, quirúrgica y de obstetricia.</p>
 				</div>
-				<a name="edificio"></a>
-				<img src="<?= base_url(); ?>img/presentacion.jpg" alt="Clinica Los Cedros de Tapiales"/>
+				<!-- <a name="edificio"></a> -->
+				<img src="<?= base_url(); ?>img/presentacion.jpg" alt="Sanatorio Privado Madero"/>
 			</div>
 
 			<h2 class="instalaciones-subheading">Recorrido por las instalaciones</h2>
 			<ul class="menu-instalaciones">
 	      <?
-          $contador = 0;
-	      ?>
-	      <? foreach($categorias->result() as $categoria): ?>
-          <?
-            if($contador === 0) {
-					?>
-          <?
-						} else {
-					?>
-              <li class="item-container" id="<?= $contador + 1 ?>" >
-                <span class="item-category" title="<?= $categoria->nombre ?>"><?= $categoria->nombre ?></span>
-                <div class="item-description"><?= $categoria->descripcion ?></div>
+					foreach($categorias->result() as $key=>$categoria):
+						if ($key === 0) { ?>
+							<li class="item-container item-active" id="<?= $categoria->id ?>">
+						<? } else { ?>
+							<li class="item-container" id="<?= $categoria->id ?>">
+						<? } ?>
+								<div class="item-content">
+									<span class="item-category" title="<?= $categoria->nombre ?>"><?= $categoria->nombre ?></span>
+	                <div class="item-description"><?= $categoria->descripcion ?></div>
+								</div>
+
+								<? if ($key === 0) { ?>
+									<div class="container-slider slider-active" id="slider-<?= $categoria->id ?>">
+								<? } else { ?>
+		      				<div class="container-slider" id="slider-<?= $categoria->id ?>">
+								<? } ?>
+							    <figure class="image-primary">
+											 <button class="button-prev" id="button-prev" title="Anterior"></button>
+											 <button class="button-next" id="button-next" title="Siguiente"></button>
+												<ul class="content-imagen" id="slider-container-images">
+						              <?
+														foreach($instalaciones->result() as $instalacion):
+															if($instalacion->idCategoria === $categoria->id) {
+																?>
+								                  <li class="content-image-primary">
+								                    <img alt="<?= $instalacion->imagen ?>" src="<?= base_url(); ?>img/slider/<?= $instalacion->imagen ?>"/>
+								                    <figcaption class="image-description"><?= $instalacion->descripcion ?></figcaption>
+								                  </li>
+						                  	<?
+															}
+														endforeach;
+													?>
+							          </ul>
+							    </figure>
+
+						      <div class="container-image-secondary">
+						        <?
+											foreach($instalaciones->result() as $instalacion):
+												if($instalacion->idCategoria === $categoria->id) {
+													?>
+								            <button class="image-secondary" id="image-<?= $categoria->id ?>">
+															<img alt="" src="<?= base_url(); ?>img/slider/<?= $instalacion->imagen ?>"/>
+														</button>
+							          	<?
+												}
+											endforeach;
+										?>
+					        </div>
+					      </div>
               </li>
-          <?
-						}
-	          $contador++;
-          ?>
-	      <? endforeach; ?>
-			</ul>
-      <?
-        $contador = 0;
-      ?>
-			<article class="container-all-slider">
-      <?
-				foreach($categorias->result() as $categoria): ?>
-      <?
-				if ($contador === 0) {
-			?>
-      	<div class="container-slider slider-active" id="slider-<?= $contador + 1 ?>">
-      <?
-				} else {
-					?>
-		      	<div class="container-slider" id="slider-<?= $contador + 1 ?>">
-		      <?
-				}
-			?>
-      <figure class="image-primary">
-				 <button class="button-prev" id="button-prev" title="Anterior"></button>
-				 <button class="button-next" id="button-next" title="Siguiente"></button>
-					<ul class="content-imagen" id="slider-container-images">
-              <? foreach($instalaciones->result() as $instalacion):
-								?>
-                  <?
-										if($instalacion->idCategoria === $categoria->id) {
-											?>
-			                  <li class="content-image-primary">
-			                    <img alt="<?= $instalacion->imagen ?>" src="<?= base_url(); ?>img/slider/<?= $instalacion->imagen ?>"/>
-			                    <figcaption class="image-description"><?= $instalacion->descripcion ?></figcaption>
-			                  </li>
-	                  	<?
-										}
-									?>
-	              <?
-							endforeach;
-						?>
-          </ul>
-      </figure>
-      <div class="container-image-secondary">
-			 <?
-			 	$imageContador = 0;
-	      ?>
-        <? foreach($instalaciones->result() as $instalacion): ?>
-            <? if($instalacion->idCategoria === $categoria->id){ ?>
-				<?
-					$imageContador++;
+	      		<?
+					endforeach;
 				?>
-            <button class="image-secondary" id="image-<?= $imageContador ?>">
-							<img alt="" src="<?= base_url(); ?>img/slider/<?= $instalacion->imagen ?>"/>
-						</button>
-          	<? } ?>
-        	<? endforeach; ?>
-        </div>
-      </div>
-      <? $contador++; ?>
-      <? endforeach; ?>
-			</article>
+			</ul>
 		</section>
 	</main>

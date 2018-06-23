@@ -172,21 +172,6 @@ h3 {
   line-height: 1.1em;
 }
 
-.photograpy-primary,
-.photograpy-secondary {
-  position: relative;
-  height: auto;
-  display: inline-block;
-}
-.photograpy-primary a,
-.photograpy-secondary a {
-  float: left;
-}
-
-.photograpy-primary {
-  margin-bottom: 3em;
-}
-
 .section-title {
   font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
   font-weight: bold;
@@ -1967,6 +1952,7 @@ main.home-page {
   height: auto;
   display: block;
   overflow: hidden;
+  right: 0;
 }
 
 .content-image-primary {
@@ -2813,46 +2799,38 @@ main.home-page {
   margin-top: 0em;
 }
 
-.menu-instalaciones {
-  display: inline-block;
+.instalaciones-content .photograpy-primary {
   width: 100%;
-  margin-bottom: 1em;
-}
-.menu-instalaciones .item-description {
-  margin-bottom: 10px;
-  width: 90%;
 }
 
-.item-container {
-  display: inline-block;
-  margin-right: 2em;
-}
-.item-container a {
-  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-  font-weight: normal;
-  font-variant: normal;
-  font-style: normal;
-  color: #023670;
-  font-size: 1.15em;
-  line-height: 1.20em;
-  margin: 1.5em 0;
-  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-  font-weight: bold;
-  font-variant: normal;
-  font-style: normal;
-  margin-top: 5px;
-  margin-bottom: 15px;
-}
-.item-container:last-of-type {
-  margin-right: 0;
-}
-
-.item-category {
-  padding: .5em 0em;
+.photograpy-primary,
+.photograpy-secondary {
   position: relative;
-  margin-bottom: 10px;
-  display: inline-block;
-  cursor: pointer;
+  height: auto;
+  display: block;
+}
+
+.photograpy-primary {
+  margin-bottom: 3em;
+}
+
+.container-slider.slider-active {
+  display: block;
+}
+
+.menu-instalaciones {
+  overflow: hidden;
+}
+.menu-instalaciones .item-container {
+  margin-bottom: 20px;
+}
+.menu-instalaciones .item-container:last-of-type {
+  margin-bottom: 0px;
+}
+.menu-instalaciones .item-category {
+  display: block;
+  position: relative;
+  margin-bottom: 5px;
   font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
   font-weight: bold;
   font-variant: normal;
@@ -2860,23 +2838,36 @@ main.home-page {
   color: #023670;
   font-size: 1.1em;
   line-height: 1.1em;
-  font-size: 1.2em;
 }
-.item-category + .item-description {
+.menu-instalaciones .item-category:after {
+  content: '';
+  top: calc(50% - 3px);
+  right: 0px;
+  position: absolute;
+  border-left: solid 2px #7b7b79;
+  border-top: solid 2px #7b7b79;
+  width: 10px;
+  height: 10px;
+  -moz-transform: rotate(-135deg);
+  -ms-transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+}
+.menu-instalaciones .item-description {
   display: none;
 }
-
-.item-active .item-category:before {
-  content: '';
-  position: absolute;
-  bottom: 0px;
-  width: 100%;
-  height: 4px;
-  display: inline-block;
-  background: #023670;
+.menu-instalaciones .item-container.item-active .item-category:after {
+  top: calc(50% - 9px);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
-.item-active .item-category + .item-description {
+.menu-instalaciones .item-container.item-active .item-description {
   display: block;
+}
+.menu-instalaciones .container-slider {
+  margin-top: 10px;
 }
 
 .instalaciones-subheading {
@@ -2893,68 +2884,46 @@ main.home-page {
   height: auto;
 }
 
-.menu-instalaciones {
-  margin-top: -1em;
-  width: 100%;
-}
-
 /**
 * Responsive width
 **/
-@media (min-width: 735px) {
-  .photograpy-information {
-    margin: 0;
-  }
-}
-@media (min-width: 700px) {
+@media (min-width: 769px) {
   .photograpy-primary {
     margin-top: 1em;
   }
 
-  .menu-instalaciones {
-    width: 30%;
-  }
-  .menu-instalaciones li {
+  .menu-instalaciones .item-container {
+    margin-bottom: 20px;
+    width: calc(50% - 5%);
+    margin-right: 5%;
     display: block;
+    position: static;
   }
-
-  .container-all-slider {
-    width: 70%;
-    padding-left: 50px;
-    float: right;
-  }
-
-  .container-slider {
-    width: 100%;
-  }
-  .container-slider.slider-active {
-    display: inline-block;
+  .menu-instalaciones .container-slider {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 50%;
+    margin: 0px;
   }
 
   .photograpy-secondary {
     margin-bottom: .5em;
     margin-top: .5em;
   }
-
-  .menu-instalaciones {
-    margin-top: 0em;
+}
+@media (min-width: 1025px) {
+  .item-container {
+    cursor: pointer;
   }
 }
-/**
-* Responsive width
-**/
-@media (min-width: 1025px) {
-  .item-category:before {
-    content: none;
+@media (min-width: 1400px) {
+  .menu-instalaciones .item-container {
+    width: calc(30% - 5%);
+    margin-right: 5%;
   }
-  .item-category:hover:before {
-    content: '';
-    position: absolute;
-    bottom: 0px;
-    width: 100%;
-    height: 4px;
-    display: inline-block;
-    background: #023670;
+  .menu-instalaciones .container-slider {
+    width: 70%;
   }
 }
 /*
@@ -2991,9 +2960,6 @@ main.home-page {
   padding: 25px;
   margin-top: 40px;
   margin-bottom: 30px;
-  -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
 
 .history-content-list {

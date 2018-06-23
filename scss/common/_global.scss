@@ -66,25 +66,6 @@ h3 {
 	@include heading-level-3;
 }
 
-.photograpy-primary,
-.photograpy-secondary {
-	position: relative;
-	height: auto;
-	display: inline-block;
-
-	a {
-		float: left;
-	}
-}
-
-.photograpy-primary {
-	margin-bottom: 3em;
-}
-
-.photograpy-information {
-
-}
-
 .section-title {
 	@include heading-level-2;
 }
