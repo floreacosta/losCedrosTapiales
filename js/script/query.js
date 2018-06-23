@@ -90,6 +90,13 @@ function getOverlay () {
       $(overlay).removeClass(activeClass);
       $("body").removeClass('no-scrolling');
     });
+
+    $('.general-overlay-container').click(function (e) {
+      if ($(e.target).hasClass('general-overlay-container')) {
+        $(this).removeClass(activeClass);
+        $("body").removeClass('no-scrolling');
+      }
+    });
   });
 }
 
@@ -132,9 +139,15 @@ function getModalEspecialidades () {
 
   button.click(function () {
     let component = $(this).parent().find(".general-overlay-container");
-
     component.addClass(activeClass);
     $("body").addClass('no-scrolling');
+
+    component.click(function (e) {
+      if ($(e.target).hasClass('general-overlay-container')) {
+        component.removeClass(activeClass);
+        $("body").removeClass('no-scrolling');
+      }
+    });
 
     component.find(".general-close-overlay-button").click(function () {
       component.removeClass(activeClass);
