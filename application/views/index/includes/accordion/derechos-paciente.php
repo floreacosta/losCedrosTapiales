@@ -1,4 +1,4 @@
-<div class="accordion-container">
+<div class="accordion-container derechos-paciente-container">
   <button class="accordion-title-container">
     <h4 class="accordion-title">Derechos y <br/> Responsabilidades del Paciente</h4>
     <i class="accordion-button">Open or Close Accordion</i>

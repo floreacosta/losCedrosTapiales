@@ -1,4 +1,4 @@
-<div class="accordion-container">
+<div class="accordion-container alta-medica-container">
   <button class="accordion-title-container">
     <h4 class="accordion-title">Alta Médica</h4>
     <i class="accordion-button">Open or Close Accordion</i>

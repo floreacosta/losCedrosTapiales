@@ -35,10 +35,6 @@
 		width: 8px;
 		height: 8px;
 	}
-
-	// &:hover {
-	// 	background-color: $color-primary-opacity;
-	// }
 }
 
 .especialidades-title {
@@ -50,10 +46,7 @@
 	width: 100%;
 	text-align: left;
 	@include text-base($color-tertiary);
-
-	// &:hover {
-	// 	color: $white;
-	// }
+	@include text-base-full-desktop;
 }
 
 .especialidades-subtitle {
@@ -156,5 +149,15 @@
 	.cobertura-medica-page .information-item {
 		width: calc(20% - 5px);
 		margin-right: 5px;
+	}
+}
+
+@media (min-width: $full_desktop) {
+	.especialista-item {
+		margin-bottom: 10px;
+
+		&:before {
+			top: 11px;
+		}
 	}
 }

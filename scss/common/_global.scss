@@ -110,3 +110,9 @@ h3 {
 		}
 	}
 }
+
+@media (min-width: $full_desktop) {
+	body, p {
+		@include text-base-full-desktop();
+	}
+}

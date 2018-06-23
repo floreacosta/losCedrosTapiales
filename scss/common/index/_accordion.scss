@@ -56,42 +56,6 @@
   }
 }
 
-.most-important-data-container {
-  .accordion-container {
-    margin-bottom: 10px;
-  }
-
-  .medical-rules-message-container,
-  .admission-message-container,
-  li {
-    @include text-base();
-  }
-
-  li {
-    padding-left: 15px;
-    margin-bottom: 10px;
-    line-height: 18px;
-
-    &:before {
-      content: '';
-      display: inline-block;
-      left: 0px;
-      top: 6px;
-      background: $color-primary;
-      width: 5px;
-      height: 5px;
-      position: absolute;
-      @include border-radius(50%);
-    }
-  }
-
-  .general-schedule-message {
-    @include text-base();
-    margin-top: 15px;
-    display: block;
-  }
-}
-
 .telephone-line {
   .accordion-container-active {
     .accordion-content {
@@ -100,63 +64,7 @@
   }
 }
 
-.most-important-data-container {
-  .element-container {
-    width: calc(50% - 20px);
-    padding: 30px;
-    background: $color-light;
-    display: inline-block;
-    margin-bottom: 20px;
-    vertical-align: top;
-    @include box-shadow($shadow);
-
-    &.accordion-container-active {
-      .accordion-content {
-        padding-bottom: 0px;
-      }
-    }
-
-    .accordion-title {
-      @include heading-level-1;
-      margin-bottom: 20px;
-      cursor: normal;
-    }
-
-    .accordion-button {
-      display: none;
-    }
-
-    &:nth-child(1) {
-      display: block;
-      width: 100%;
-      margin: 0px;
-      margin-bottom: 20px;
-    }
-
-    &:nth-child(even) {
-      margin-left: 36px;
-    }
-
-    &.admision-egresos-container {
-      display: none;
-    }
-  }
-
-  .title-container {
-
-  }
-
-  .accordion-content {
-
-  }
-}
-
 @media (min-width: $tablet) {
-  .most-important-data-container {
-    margin-top: 60px;
-    margin-bottom: 50px;
-  }
-
   .patient-responsabilities-container {
     padding-top: 0px;
   }

@@ -49,7 +49,7 @@
 		                      <ul class="especialistas-list">
 		                        <? foreach($doctoresConEspecialidad->result() as $doctorConEspecialidad){
 		                          if($doctorConEspecialidad->idEspecialidad === $especialidad->id) {
-																?> <li class="especialista-item col-3"><?= strtolower($doctorConEspecialidad->nombre); ?></li> <?
+																?> <li class="especialista-item"><?= strtolower($doctorConEspecialidad->nombre); ?></li> <?
 		                          }
 	                        	} ?>
 		                      </ul>
@@ -78,7 +78,7 @@
 															foreach($doctoresConEspecialidad->result() as $doctorConEspecialidad) {
 		                            if($doctorConEspecialidad->idEspecialidad === $especialidad->id) {
 																?>
-																	<li class="especialista-item col-3"><?= strtolower($doctorConEspecialidad->nombre); ?></li>
+																	<li class="especialista-item"><?= strtolower($doctorConEspecialidad->nombre); ?></li>
 		                      			<?
 		                          	}
 		                        	}

@@ -65,9 +65,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 /*
  * NOTE: Media Querys
  */
-/* max-width: 0px */
-/* max-width: (400px + 1px) */
-/* max-width: (1024px + 1px) */
 * {
   margin: 0;
   padding: 0;
@@ -214,6 +211,13 @@ h3 {
     width: 60%;
   }
 }
+@media (min-width: 1400px) and (min-width: 1400px) {
+  body, p {
+    font-size: 18px;
+    line-height: 30px;
+  }
+}
+
 @font-face {
   font-family: 'modern_pictogramsnormal';
   src: url("../../font/modernpictogram/modernpics-webfont.woff2") format("woff2"), url("../../font/modernpictogram/modernpics-webfont.woff") format("woff");
@@ -343,6 +347,13 @@ h3 {
   width: 100%;
   position: relative;
   text-transform: uppercase;
+  font-size: 16px;
+  line-height: 22px;
+  color: #7b7b79;
+  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+  font-weight: normal;
+  font-variant: normal;
+  font-style: normal;
   font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
   font-weight: bold;
   font-variant: normal;
@@ -395,8 +406,19 @@ h3 {
 @media (min-width: 1025px) {
   .logo-container {
     vertical-align: middle;
+    width: 10em;
   }
 
+  /* Link a Home desde el Logo */
+  .logo-link-container {
+    /* Imagen Logo al 100% */
+  }
+  .logo-link-container img {
+    width: auto;
+    max-width: 100%;
+  }
+
+  /* Link a Home desde Logo */
   .global-header-container {
     padding-left: 6%;
     padding-top: 0px;
@@ -411,7 +433,7 @@ h3 {
   .global-menu-container {
     display: inline-block;
     position: relative;
-    width: calc(100% - 164px);
+    width: calc(100% - 10em - 4px);
     height: auto;
     top: auto;
     left: auto;
@@ -464,6 +486,19 @@ h3 {
 
   /* items del menu */
 }
+@media (min-width: 1400px) {
+  .global-header-container {
+    padding-left: 9%;
+  }
+
+  .logo-container {
+    width: 12em;
+  }
+
+  .global-menu-container {
+    width: calc(100% - 12em - 5px);
+  }
+}
 main {
   padding: 5% 25px;
   width: 100%;
@@ -489,6 +524,13 @@ main.home-page {
     padding-bottom: 4%;
     min-height: calc(100vh - 88px - 231px - 50px);
     overflow: hidden;
+  }
+}
+@media (min-width: 1400px) {
+  main {
+    padding: 9%;
+    padding-top: 4%;
+    padding-bottom: 4%;
   }
 }
 .global-footer {
@@ -888,64 +930,108 @@ main.home-page {
 
 .tooltip {
   position: relative;
-  display: inline-block;
-  margin: .3em 0;
+  display: block;
   cursor: pointer;
+  margin-bottom: 10px;
+}
+.tooltip:last-of-type {
+  margin-bottom: 0px;
 }
 .tooltip:before {
   content: '';
-  display: inline-block;
+  display: block;
   color: #ffffff;
   width: 2.5em;
   height: 2.5em;
   position: relative;
-  top: -11px;
-  border-radius: 50%;
   background-color: #023670;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
 .tooltip .tooltip-text {
   visibility: hidden;
   width: 120px;
-  background-color: #ffffff;
-  color: #00428c;
-  text-align: center;
-  border-radius: 6px;
-  padding: .4em 0;
-  position: absolute;
-  z-index: 1;
-  top: -5px;
-  right: 135%;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  font-size: 16px;
+  line-height: 22px;
+  color: #023670;
+  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+  font-weight: normal;
+  font-variant: normal;
+  font-style: normal;
   font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
   font-weight: bold;
   font-variant: normal;
   font-style: normal;
+  background-color: #ffffff;
+  text-align: center;
+  padding: .4em 0;
+  position: absolute;
+  z-index: 1;
+  right: 55px;
+  top: 50%;
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
 }
 .tooltip .tooltip-text:after {
   content: '';
   position: absolute;
-  top: 50%;
-  left: 100%;
-  margin-top: -8px;
-  border-width: 8px;
-  border-style: solid;
-  border-color: transparent transparent transparent #ffffff;
+  top: calc(50% - 4px);
+  right: -4px;
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  background: #ffffff;
+}
+.tooltip .tooltip-text.tooltip-text-primary {
+  visibility: visible;
 }
 .tooltip:hover .tooltip-text {
   visibility: visible;
 }
 .tooltip .tooltip-img-content {
-  top: -10px;
-  width: 40px;
-  height: 40px;
+  width: 2.5em;
+  height: 2.5em;
   display: inline-block;
   position: absolute;
   overflow: hidden;
+  top: 50%;
+  left: 50%;
+  font-size: 16px;
+  line-height: 22px;
+  color: #7b7b79;
+  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+  font-weight: normal;
+  font-variant: normal;
+  font-style: normal;
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
-
-.tooltip-text-primary {
-  visibility: visible !important;
+.tooltip .tooltip-img-content img {
+  left: 50%;
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  width: 23px;
+  position: relative;
 }
 
 .tooltip-active:before {
@@ -953,35 +1039,19 @@ main.home-page {
 }
 
 .tooltip-online-turn {
-  width: 23px;
-  position: relative;
-  left: 9px;
   top: 7px;
 }
 
 .tooltip-address {
-  width: 23px;
-  position: relative;
-  left: 9px;
   top: -34px;
 }
 
 .tooltip-contact {
-  width: 23px;
-  position: relative;
-  left: 9px;
-  top: -75px;
+  top: -73px;
 }
 
 .tooltip-schedule {
-  width: 23px;
-  position: relative;
-  left: 9px;
-  top: -114px;
-}
-
-#turn-tooltip {
-  display: none;
+  top: -113px;
 }
 
 /**
@@ -1056,6 +1126,12 @@ main.home-page {
   font-weight: normal;
   font-variant: normal;
   font-style: normal;
+}
+@media (min-width: 1400px) {
+  .especialidades-title {
+    font-size: 18px;
+    line-height: 30px;
+  }
 }
 
 .especialidades-subtitle {
@@ -1158,6 +1234,14 @@ main.home-page {
   .cobertura-medica-page .information-item {
     width: calc(20% - 5px);
     margin-right: 5px;
+  }
+}
+@media (min-width: 1400px) {
+  .especialista-item {
+    margin-bottom: 10px;
+  }
+  .especialista-item:before {
+    top: 11px;
   }
 }
 .modal-component {
@@ -2200,6 +2284,18 @@ main.home-page {
     width: 100%;
     left: auto;
     text-align: center;
+    margin-top: 35px;
+  }
+}
+@media (min-width: 1400px) {
+  .title-information {
+    width: 55%;
+  }
+
+  .home-background-video, .section-secondary,
+  .section-secondary {
+    width: 122%;
+    left: -11%;
   }
 }
 .home-background-video-content {
@@ -2500,7 +2596,7 @@ main.home-page {
   font-variant: normal;
   font-style: normal;
   color: #023670;
-  font-size: 2.5em;
+  font-size: 1.6em;
   line-height: 1em;
   text-transform: none;
   color: #023670;
@@ -2598,6 +2694,11 @@ main.home-page {
     transform: translateY(-50%);
   }
 }
+@media (min-width: 1400px) {
+  .article-information-for-user .general-schedule-list li:after, .article-information-for-user .general-schedule-list li:before {
+    top: 11px;
+  }
+}
 .article-visit-schedule {
   background-color: #f2f1f1;
   font-size: 80%;
@@ -2693,101 +2794,11 @@ main.home-page {
   padding-bottom: 25px;
 }
 
-.most-important-data-container .accordion-container {
-  margin-bottom: 10px;
-}
-.most-important-data-container .medical-rules-message-container,
-.most-important-data-container .admission-message-container,
-.most-important-data-container li {
-  font-size: 16px;
-  line-height: 22px;
-  color: #7b7b79;
-  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-  font-weight: normal;
-  font-variant: normal;
-  font-style: normal;
-}
-.most-important-data-container li {
-  padding-left: 15px;
-  margin-bottom: 10px;
-  line-height: 18px;
-}
-.most-important-data-container li:before {
-  content: '';
-  display: inline-block;
-  left: 0px;
-  top: 6px;
-  background: #023670;
-  width: 5px;
-  height: 5px;
-  position: absolute;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
-}
-.most-important-data-container .general-schedule-message {
-  font-size: 16px;
-  line-height: 22px;
-  color: #7b7b79;
-  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-  font-weight: normal;
-  font-variant: normal;
-  font-style: normal;
-  margin-top: 15px;
-  display: block;
-}
-
 .telephone-line .accordion-container-active .accordion-content {
   padding-bottom: 0px;
 }
 
-.most-important-data-container .element-container {
-  width: calc(50% - 20px);
-  padding: 30px;
-  background: #f2f1f1;
-  display: inline-block;
-  margin-bottom: 20px;
-  vertical-align: top;
-  -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-}
-.most-important-data-container .element-container.accordion-container-active .accordion-content {
-  padding-bottom: 0px;
-}
-.most-important-data-container .element-container .accordion-title {
-  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-  font-weight: bold;
-  font-variant: normal;
-  font-style: normal;
-  color: #023670;
-  font-size: 2.5em;
-  line-height: 1em;
-  margin-bottom: 20px;
-  cursor: normal;
-}
-.most-important-data-container .element-container .accordion-button {
-  display: none;
-}
-.most-important-data-container .element-container:nth-child(1) {
-  display: block;
-  width: 100%;
-  margin: 0px;
-  margin-bottom: 20px;
-}
-.most-important-data-container .element-container:nth-child(even) {
-  margin-left: 36px;
-}
-.most-important-data-container .element-container.admision-egresos-container {
-  display: none;
-}
-
 @media (min-width: 769px) {
-  .most-important-data-container {
-    margin-top: 60px;
-    margin-bottom: 50px;
-  }
-
   .patient-responsabilities-container {
     padding-top: 0px;
   }
@@ -3000,6 +3011,12 @@ main.home-page {
   padding-left: 20px;
   margin-bottom: 15px;
 }
+@media (min-width: 1400px) {
+  .history-content-list li {
+    font-size: 18px;
+    line-height: 30px;
+  }
+}
 .history-content-list li:before {
   content: '';
   display: inline-block;
@@ -3110,5 +3127,138 @@ main.home-page {
     margin-right: 20px;
     display: block;
     float: left;
+  }
+}
+@media (min-width: 1400px) {
+  .history-container {
+    width: 122%;
+    left: -11%;
+    padding-right: 11%;
+    padding-left: 11%;
+  }
+
+  .history-content-list li:before {
+    top: 11px;
+  }
+}
+.most-important-data-container .accordion-container {
+  margin-bottom: 10px;
+}
+.most-important-data-container .medical-rules-message-container,
+.most-important-data-container .admission-message-container,
+.most-important-data-container li {
+  font-size: 16px;
+  line-height: 22px;
+  color: #7b7b79;
+  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+  font-weight: normal;
+  font-variant: normal;
+  font-style: normal;
+}
+@media (min-width: 1400px) {
+  .most-important-data-container .medical-rules-message-container,
+  .most-important-data-container .admission-message-container,
+  .most-important-data-container li {
+    font-size: 18px;
+    line-height: 30px;
+  }
+}
+.most-important-data-container li {
+  padding-left: 15px;
+  margin-bottom: 10px;
+  line-height: 18px;
+}
+.most-important-data-container li:before {
+  content: '';
+  display: inline-block;
+  left: 0px;
+  top: 6px;
+  background: #023670;
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+.most-important-data-container .general-schedule-message {
+  font-size: 16px;
+  line-height: 22px;
+  color: #7b7b79;
+  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+  font-weight: normal;
+  font-variant: normal;
+  font-style: normal;
+  margin-top: 15px;
+  display: block;
+}
+@media (min-width: 1400px) {
+  .most-important-data-container .general-schedule-message {
+    font-size: 18px;
+    line-height: 30px;
+  }
+}
+.most-important-data-container .element-container .accordion-title {
+  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+  font-weight: bold;
+  font-variant: normal;
+  font-style: normal;
+  color: #023670;
+  font-size: 2.5em;
+  line-height: 1em;
+  margin-bottom: 20px;
+  cursor: normal;
+}
+.most-important-data-container .element-container .accordion-button {
+  display: none;
+}
+.most-important-data-container .element-container.horarios-visita-container {
+  display: none;
+}
+
+@media (min-width: 769px) {
+  .most-important-data-container {
+    background: #f2f1f1;
+    padding: 40px;
+    margin-top: 60px;
+    margin-bottom: 50px;
+  }
+  .most-important-data-container .element-container {
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+    border-bottom: solid 2px #c1c1c1;
+  }
+  .most-important-data-container .element-container.alta-medica-container {
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    border-bottom: 0px;
+  }
+
+  .patient-responsabilities-container {
+    padding-top: 0px;
+  }
+}
+@media (min-width: 1025px) {
+  .most-important-data-container {
+    width: 114%;
+    left: -7%;
+    padding-right: 7%;
+    padding-left: 7%;
+  }
+}
+@media (min-width: 1400px) {
+  .most-important-data-container {
+    width: 122%;
+    left: -11%;
+    padding-right: 11%;
+    padding-left: 11%;
+  }
+  .most-important-data-container li {
+    margin-bottom: 15px;
+  }
+
+  .admision-egresos-container,
+  .alta-medica-container {
+    margin-top: 50px;
   }
 }

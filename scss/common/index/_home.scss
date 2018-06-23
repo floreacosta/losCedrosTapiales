@@ -224,7 +224,6 @@
 	}
 
 	.home-background-video {
-		// height: 500px;
 		position: relative;
 
 		video {
@@ -248,5 +247,18 @@
 		width: 100%;
 		left: auto;
 		text-align: center;
+		margin-top: 35px;
+	}
+}
+
+@media (min-width: $full_desktop) {
+	.title-information {
+		width: 55%;
+	}
+
+	.home-background-video,
+	.section-secondary {
+		width: 122%;
+    left: -11%;
 	}
 }

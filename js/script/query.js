@@ -1,8 +1,8 @@
 $(document).ready(() => {
   getOverlay();
   getActiveSection();
-  getOpenCloseMenu();
   getToggleAccordion();
+  getOpenCloseMenu();
   getCloseModalVideoContainer();
   getModalEspecialidades();
   getActiveSlider();
@@ -59,7 +59,15 @@ function getToggleAccordion () {
 
   getAccordionToElement(accordion);
   accordion.click(function () {
-    $(this).toggleClass("accordion-container-active");
+    if ($(window).width() < 769) {
+      $(this).toggleClass("accordion-container-active");
+    }
+
+    $(this).resize(() => {
+      if ($(window).width() < 769) {
+        $(this).toggleClass("accordion-container-active");
+      }
+    });
   });
 }
 
@@ -86,7 +94,8 @@ function getOverlay () {
 }
 
 function getCloseModalVideoContainer () {
-  $('.general-close-overlay-button').click(() => {
+  let videoModal = $('.institutional-video-container');
+  videoModal.find('.general-close-overlay-button').click(() => {
     let v = document.getElementsByTagName("video")[1];
     v.pause();
     v.load();

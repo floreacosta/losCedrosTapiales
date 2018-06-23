@@ -125,6 +125,7 @@
 		width: 100%;
 		position: relative;
 		text-transform: uppercase;
+		@include text-base();
 		@include font-calibri-bold;
 	}
 
@@ -175,13 +176,18 @@
 @media (min-width: $desktop) {
 	.logo-container {
 		vertical-align: middle;
+		width: 10em;
 	}
 
-	// .logo-link-container {
-	// 	img {
-	// 		width: 13em;
-	// 	}
-	// }
+	/* Link a Home desde el Logo */
+	.logo-link-container {
+
+		/* Imagen Logo al 100% */
+		img {
+			width: auto;
+			max-width: 100%;
+		}
+	}/* Link a Home desde Logo */
 
 	.global-header-container {
 		padding-left: 6%;
@@ -197,7 +203,7 @@
 	.global-menu-container {
 		display: inline-block;
     position: relative;
-    width: calc(100% - 164px);
+    width: calc(100% - 10em - 4px);
     height: auto;
     top: auto;
     left: auto;
@@ -253,4 +259,18 @@
 			}
 		}
 	}/* items del menu */
+}
+
+@media (min-width: $full_desktop) {
+	.global-header-container {
+		padding-left: 9%;
+	}
+
+	.logo-container {
+		width: 12em;
+	}
+
+	.global-menu-container {
+    width: calc(100% - 12em - 5px);
+	}
 }

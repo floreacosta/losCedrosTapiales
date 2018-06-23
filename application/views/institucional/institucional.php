@@ -46,18 +46,20 @@
 				<div class="autoridades-content">
 					<?
 						foreach($autoridades->result() as $autoridad):
-							?>
-								<div class="autoridad-item">
-									<figure class="autoridad-image">
-										<img alt="<?= $autoridad->nombre; ?>" src="/<?= $autoridad->imagen; ?>" />
-									</figure>
-									<div class="autoridad-information">
-										<h2 class="autoridad-name"><?= $autoridad->nombre; ?></h2>
-										<strong class="autoridad-title"><?= $autoridad->cargo; ?></strong>
-										<a href="<?= $autoridad->cv ?>" class="cv-link">Ver Experiencia</a>
+							if ($autoridad->nombre !== 'Indefinido') {
+								?>
+									<div class="autoridad-item">
+										<figure class="autoridad-image">
+											<img alt="<?= $autoridad->nombre; ?>" src="img/<?= $autoridad->imagen; ?>" />
+										</figure>
+										<div class="autoridad-information">
+											<h2 class="autoridad-name"><?= $autoridad->nombre; ?></h2>
+											<strong class="autoridad-title"><?= $autoridad->cargo; ?></strong>
+											<a href="<?= $autoridad->cv ?>" class="cv-link">Ver Experiencia</a>
+										</div>
 									</div>
-								</div>
-							<?
+								<?								
+							}
 						endforeach;
 					?>
 				</div>

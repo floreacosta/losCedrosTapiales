@@ -1,0 +1,114 @@
+.most-important-data-container {
+  .accordion-container {
+    margin-bottom: 10px;
+  }
+
+  .medical-rules-message-container,
+  .admission-message-container,
+  li {
+    @include text-base();
+    @include text-base-full-desktop();
+  }
+
+  li {
+    padding-left: 15px;
+    margin-bottom: 10px;
+    line-height: 18px;
+
+    &:before {
+      content: '';
+      display: inline-block;
+      left: 0px;
+      top: 6px;
+      background: $color-primary;
+      width: 5px;
+      height: 5px;
+      position: absolute;
+      @include border-radius(50%);
+    }
+  }
+
+  .general-schedule-message {
+    @include text-base();
+    @include text-base-full-desktop();
+    margin-top: 15px;
+    display: block;
+  }
+
+  .element-container {
+    .accordion-title {
+      @include heading-level-1;
+      margin-bottom: 20px;
+      cursor: normal;
+    }
+
+    .accordion-button {
+      display: none;
+    }
+
+    &.horarios-visita-container {
+      display: none;
+    }
+  }
+
+  .title-container {
+
+  }
+
+  .accordion-content {
+
+  }
+}
+
+@media (min-width: $tablet) {
+  .most-important-data-container {
+    background: $color-light;
+    padding: 40px;
+
+    margin-top: 60px;
+    margin-bottom: 50px;
+
+    .element-container {
+      padding-bottom: 40px;
+      margin-bottom: 40px;
+      border-bottom: solid 2px $color-dark-light;
+
+      &.alta-medica-container {
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+        border-bottom: 0px;
+      }
+    }
+  }
+
+  .patient-responsabilities-container {
+    padding-top: 0px;
+  }
+}
+
+@media (min-width: $desktop) {
+  .most-important-data-container {
+    width: 114%;
+		left: -7%;
+    padding-right: 7%;
+    padding-left: 7%;
+  }
+}
+
+@media (min-width: $full_desktop) {
+  .most-important-data-container {
+    width: 122%;
+    left: -11%;
+    padding-right: 11%;
+    padding-left: 11%;
+
+    li {
+      margin-bottom: 15px;
+    }
+  }
+
+  .admision-egresos-container,
+  .alta-medica-container {
+    margin-top: 50px;
+  }
+}

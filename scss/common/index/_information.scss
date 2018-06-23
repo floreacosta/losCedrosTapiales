@@ -17,7 +17,6 @@
 	margin: 2em 0;
 	clear: both;
 	width: 100%;
-	// overflow: hidden;
 
 	.element-container {
 		margin-bottom: 40px;
@@ -25,7 +24,7 @@
 
 	.title-container {
 		display: block;
-		@include heading-level-1;
+		@include heading-level-2;
 		text-transform: none;
 		color: $color-primary;
 		width: 100%;
@@ -60,7 +59,6 @@
 
 			&:after,
 			&:before {
-				// background: $white;
 				top: 8px;
 			}
 		}
@@ -99,36 +97,6 @@
 		.location-google-map {
 			margin-left: 40px;
 		}
-
-		// .telephone-line {
-		// 	margin-left: 0;
-		// 	border-left: 8px solid $color-tertiary;
-	  //   padding: 1em 2em;
-	  //   position: relative;
-		//
-		// 	span {
-		// 		margin-bottom: 1em;
-		// 	}
-		//
-		// 	&:after {
-		// 		content: '';
-		// 		position: absolute;
-		// 		top: 0px;
-		// 		left: 100%;
-		// 		border-width: 33px;
-		// 		border-style: solid;
-		// 		border-color: transparent transparent transparent $color-secondary;
-		// 	}
-		// }
-		//
-		// .location-google-map {
-		// 	display: inline-block;
-		// 	margin-right: 0;
-		// }
-		//
-		// > span {
-		// 	display: none;
-		// }
 	}
 }
 
@@ -149,6 +117,19 @@
 			img {
 				top: 50%;
 				@include transform(translateY(-50%));
+			}
+		}
+	}
+}
+
+@media (min-width: $full_desktop) {
+	.article-information-for-user {
+		.general-schedule-list {
+			li {
+				&:after,
+				&:before {
+					top: 11px;
+				}
 			}
 		}
 	}

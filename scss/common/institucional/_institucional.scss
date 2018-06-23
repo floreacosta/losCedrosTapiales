@@ -46,6 +46,7 @@
   li {
     @include text-base();
     line-height: 20px;
+    @include text-base-full-desktop();
     padding-left: 20px;
     margin-bottom: 15px;
     @include item-circle();
@@ -195,5 +196,22 @@
     margin-right: 20px;
     display: block;
     float: left;
+  }
+}
+
+@media (min-width: $full_desktop) {
+  .history-container {
+    width: 122%;
+    left: -11%;
+    padding-right: 11%;
+    padding-left: 11%;
+  }
+
+  .history-content-list {
+    li {
+      &:before {
+        top: 11px;
+      }
+    }
   }
 }

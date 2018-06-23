@@ -1,4 +1,4 @@
-<div class="accordion-container">
+<div class="accordion-container admision-egresos-container">
   <button class="accordion-title-container">
     <h4 class="accordion-title">Admisión y Egresos</h4>
     <i class="accordion-button">Open or Close Accordion</i>

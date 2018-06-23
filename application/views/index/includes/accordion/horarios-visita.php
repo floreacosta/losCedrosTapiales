@@ -1,4 +1,4 @@
-<div class="accordion-container admision-egresos-container">
+<div class="accordion-container horarios-visita-container">
   <button class="accordion-title-container">
     <h4 class="accordion-title">Horarios de Visita</h4>
     <i class="accordion-button">Open or Close Accordion</i>

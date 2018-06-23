@@ -27,3 +27,11 @@ main {
     overflow: hidden;
 	}
 }
+
+@media (min-width: $full_desktop) {
+  main {
+    padding: 9%;
+    padding-top: 4%;
+    padding-bottom: 4%;
+	}
+}
