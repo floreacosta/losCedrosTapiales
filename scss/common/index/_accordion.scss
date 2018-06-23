@@ -92,6 +92,14 @@
   }
 }
 
+.telephone-line {
+  .accordion-container-active {
+    .accordion-content {
+      padding-bottom: 0px;
+    }
+  }
+}
+
 .most-important-data-container {
   .element-container {
     width: calc(50% - 20px);
@@ -99,6 +107,7 @@
     background: $color-light;
     display: inline-block;
     margin-bottom: 20px;
+    vertical-align: top;
     @include box-shadow($shadow);
 
     &.accordion-container-active {
@@ -117,33 +126,19 @@
       display: none;
     }
 
-    &:nth-child(even) {
-      float: right;
-      margin-left: 40px;
+    &:nth-child(1) {
+      display: block;
+      width: 100%;
+      margin: 0px;
+      margin-bottom: 20px;
     }
 
-    &:nth-child(4) {
-      float: none;
-      margin: 0px;
-      display: block;
+    &:nth-child(even) {
+      margin-left: 36px;
     }
 
     &.admision-egresos-container {
-      background: transparent;
-      padding: 0px;
-      @include box-shadow(none);
-
-      li {
-        background: $color-primary;
-        color: $white;
-        margin-top: 10px;
-        padding: 20px;
-
-        &:before,
-        &:after {
-          content: none;
-        }
-      }
+      display: none;
     }
   }
 
@@ -159,12 +154,7 @@
 @media (min-width: $tablet) {
   .most-important-data-container {
     margin-top: 60px;
-    border-top: solid 2px $color-light;
-    padding-top: 60px;
-
     margin-bottom: 50px;
-    border-bottom: solid 2px $color-light;
-    padding-bottom: 60px;
   }
 
   .patient-responsabilities-container {

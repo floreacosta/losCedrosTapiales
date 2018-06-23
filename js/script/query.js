@@ -3,8 +3,6 @@ $(document).ready(() => {
   getActiveSection();
   getOpenCloseMenu();
   getToggleAccordion();
-  getOpenVideo();
-  getCloseVideo();
   getCloseModalVideoContainer();
   getModalEspecialidades();
   getActiveSlider();
@@ -79,6 +77,7 @@ function getOverlay () {
 
     $(overlay).addClass(activeClass);
     $("body").addClass('no-scrolling');
+
     $('.general-close-overlay-button').click(function () {
       $(overlay).removeClass(activeClass);
       $("body").removeClass('no-scrolling');
@@ -86,26 +85,8 @@ function getOverlay () {
   });
 }
 
-function getOpenVideo () {
-  $('#button-video-open').click(() => {
-    $("#video-container").addClass("video-open");
-  });
-}
-
-function getCloseVideo () {
-  $('#button-video-close').click(() => {
-    $("#video-container").removeClass("video-open");
-
-    let v = document.getElementsByTagName("video")[1];
-    v.pause();
-    v.load();
-  });
-}
-
 function getCloseModalVideoContainer () {
-  $('#video-container').click(() => {
-    $("#video-container").removeClass("video-open");
-
+  $('.general-close-overlay-button').click(() => {
     let v = document.getElementsByTagName("video")[1];
     v.pause();
     v.load();
@@ -261,37 +242,8 @@ function getBarraTooltip () {
 }
 
 function getRedireccionamientoTooltip () {
-  let redirectTooltip = (pathLocation, pathPosition, positionMinus) => {
-    $(pathLocation).click((e) => {
-        e.preventDefault();
-        let urlPath = window.location.origin;
-        if (urlPath != "http://www.loscedrostapiales.com") {
-          $(window).attr({
-            'location': "http://www.loscedrostapiales.com/"
-          });
-        }
-
-        let posicion = $(pathPosition).position().top - positionMinus;
-        $("body, html").animate({ scrollTop: posicion + "px" }, 800);
-    });
-  },
-    turnosTooltip = () => {
-    redirectTooltip("#turn-tooltip", ".article-online-turn", 200);
-  },
-    ubicacionTooltip = () => {
-    redirectTooltip("#address-tooltip", ".article-information-for-user", 200);
-  },
-    contactoTooltip = () => {
-    redirectTooltip("#contact-tooltip", ".article-information-for-user", 200);
-  },
-    horariosTooltip = () => {
-    redirectTooltip("#schedule-tooltip", ".article-visit-schedule", 100);
-  };
-
-  /* Redirección */
-  turnosTooltip();
-  ubicacionTooltip();
-  contactoTooltip();
-  horariosTooltip();
+  let tooltip = $('.tooltip-box');
+  tooltip.find('.tooltip').click(function () {
+    window.location = window.location.origin + '/' + $(this).attr('href');
+  });
 }
-//# sourceMappingURL=query.js.map

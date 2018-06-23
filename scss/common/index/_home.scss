@@ -207,6 +207,10 @@
 	.patient-responsabilities-message {
 		@include column-count(2);
 	}
+
+	.article-information-for-user {
+		display: block;
+	}
 }
 
 @media (min-width: $desktop) {

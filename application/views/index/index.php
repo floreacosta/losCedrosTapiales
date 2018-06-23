@@ -1,5 +1,5 @@
-<!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCl1eZ_cCxoh4jm8J6oLzEZOUyTsQSS-7Y&callback=initMap"></script> -->
-<!-- <script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCl1eZ_cCxoh4jm8J6oLzEZOUyTsQSS-7Y&callback=initMap"></script>
+<script>
 	function initMap () {
 	  // Create a map object and specify the DOM element for display.
 	  var ubicacionLosCedros = {
@@ -45,7 +45,7 @@
 	    });
 	  }
 	}
-</script> -->
+</script>
 
 <body>
 	<main class="home-page">
@@ -124,37 +124,29 @@
 			<img id="imagen-background" src="<?= base_url(); ?>img/recepcion.jpg" alt="Recepción"/>
 		</section>
 
-		<? include 'includes/video/modal-video.php' ?>
+		<article class="article-information-for-user">
+			<div class="telephone-line" id="schedule">
+				<div>
+					<? include 'includes/accordion/horarios-visita.php' ?>
+				</div>
 
-		<!--
-		<article class="article-information-for-user" id="contact">
-			<div class="telephone-line" id="informationBox">
-				<span>
-					<h3>Ubicación</h3>
-					<p>Domingo Millan 20, Villa Madero - Cp.: 1688</p>
-				</span>
+				<div class="contact-information-container line-phone" id="address">
+					<h3 class="contact-information-title">Ubicación</h3>
+					<p class="contact-information-content">Domingo Millan 20, Villa Madero - Cp.: 1688</p>
+				</div>
 
-				<span>
-					<h3>Horarios</h3>
-					<p><span>Para turnos:</span>Lunes a Viernes de 8 a 20hs.</p>
-					<p><span>Urgencias médicas:</span>7 días a la semana, las 24hs.</p>
-				</span>
-
-				<span>
-					<a name="contact"></a>
-					<h3>Líneas rotativas</h3>
-					<p>(011) 4622-8188 / (011) 4622-8199<br/>(011) 4622-8203 / (011) 4622-8209</p>
-				</span>
+				<div class="contact-information-container line-phone" id="contact">
+					<h3 class="contact-information-title">Líneas rotativas</h3>
+					<p class="contact-information-content">
+						(011) 4622-8188 / (011) 4622-8199
+						<br/>
+						(011) 4622-8203 / (011) 4622-8209
+					</p>
+				</div>
 			</div>
 
-			<span>Click <a href="https://goo.gl/maps/yPByzy2b1YR2">aquí</a> para ver en Google Maps.</span>
 			<div class="location-google-map location" id="google-map-container"></div>
 		</article>
 
-		<article class="article-visit-schedule" id="visit">
-			<h1>Horarios de visita</h1>
-			<h2>Internación: <span>15 a 17 h.</span></h2>
-			<h2>Unidad de Cuidados Intensivos: <span>12 a 12:30 h. y 18 a 18:30 h.</span></h2>
-		</article>
-		-->
+		<? include 'includes/video/modal-video.php' ?>
 	</main>

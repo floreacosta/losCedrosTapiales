@@ -177,67 +177,67 @@
 		.logo {
 			margin: 0px;
 		}
-	}
 
-	.search-input-component-container {
-		background: transparent;
-		padding: 0px;
-
-		&.mobile-component {
-			display: none;
-		}
-
-		&.desktop-component {
+		.site-map,
+		.institutional,
+		.contact-information-container,
+		.search-input-component-container {
+			position: relative;
 			display: inline-block;
-		}
-	}
-
-	.site-map,
-	.institutional,
-	.contact-information-container,
-	.search-input-component-container {
-		position: relative;
-		display: inline-block;
-		text-align: left;
-		vertical-align: top;
-		width: calc(50% - 20px);
-		margin: 0px;
-	}
-
-	.institutional {
-		margin-bottom: 20px;
-	}
-
-	.search-input-component-container {
-		vertical-align: bottom;
-	}
-
-	.site-map {
-		margin-bottom: 20px;
-
-		h3 {
-			margin-bottom: 10px;
+			text-align: left;
+			vertical-align: top;
+			width: calc(50% - 20px);
+			margin: 0px;
 		}
 
-		ul {
-			overflow: hidden;
+		.institutional {
+			margin-bottom: 20px;
 		}
 
-		li {
-			float: left;
-			margin-right: 20px;
+		.search-input-component-container {
+			vertical-align: bottom;
+		}
+
+		.site-map {
+			margin-bottom: 20px;
+
+			h3 {
+				margin-bottom: 10px;
+			}
+
+			ul {
+				overflow: hidden;
+			}
+
+			li {
+				float: left;
+				margin-right: 20px;
+				padding: 0px;
+				margin-bottom: 5px;
+			}
+		}
+
+		.extra-information {
+			padding: .5em 3em;
+		}
+
+		.search-input-component-container,
+		.site-map {
+			margin-left: 30px;
+		}
+
+		.search-input-component-container {
+			background: transparent;
 			padding: 0px;
-			margin-bottom: 5px;
+
+			&.mobile-component {
+				display: none;
+			}
+
+			&.desktop-component {
+				display: inline-block;
+			}
 		}
-	}
-
-	.extra-information {
-		padding: .5em 3em;
-	}
-
-	.search-input-component-container,
-	.site-map {
-		margin-left: 30px;
 	}
 }
 
@@ -249,32 +249,32 @@
 		.logo {
 			margin-bottom: 10px;
 		}
-	}
 
-	.site-map,
-	.institutional,
-	.contact-information-container,
-	.search-input-component-container {
-		width: calc(25% - 30px);
-		margin: 0px;
-	}
+		.site-map,
+		.institutional,
+		.contact-information-container,
+		.search-input-component-container {
+			width: calc(25% - 30px);
+			margin: 0px;
+		}
 
-	.site-map,
-	.institutional,
-	.contact-information-container {
-		margin-right: 20px;
-	}
+		.site-map,
+		.institutional,
+		.contact-information-container {
+			margin-right: 20px;
+		}
 
-	.search-input-component-container {
-		vertical-align: top;
-		width: 25%;
-	}
+		.search-input-component-container {
+			vertical-align: top;
+			width: 25%;
+		}
 
-	.site-map {
-		li {
-			float: none;
-			margin-right: 0px;
-			margin-bottom: 5px;
+		.site-map {
+			li {
+				float: none;
+				margin-right: 0px;
+				margin-bottom: 5px;
+			}
 		}
 	}
 }

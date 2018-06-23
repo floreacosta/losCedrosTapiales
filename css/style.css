@@ -678,22 +678,10 @@ main.home-page {
   .global-footer .logo {
     margin: 0px;
   }
-
-  .search-input-component-container {
-    background: transparent;
-    padding: 0px;
-  }
-  .search-input-component-container.mobile-component {
-    display: none;
-  }
-  .search-input-component-container.desktop-component {
-    display: inline-block;
-  }
-
-  .site-map,
-  .institutional,
-  .contact-information-container,
-  .search-input-component-container {
+  .global-footer .site-map,
+  .global-footer .institutional,
+  .global-footer .contact-information-container,
+  .global-footer .search-input-component-container {
     position: relative;
     display: inline-block;
     text-align: left;
@@ -701,38 +689,43 @@ main.home-page {
     width: calc(50% - 20px);
     margin: 0px;
   }
-
-  .institutional {
+  .global-footer .institutional {
     margin-bottom: 20px;
   }
-
-  .search-input-component-container {
+  .global-footer .search-input-component-container {
     vertical-align: bottom;
   }
-
-  .site-map {
+  .global-footer .site-map {
     margin-bottom: 20px;
   }
-  .site-map h3 {
+  .global-footer .site-map h3 {
     margin-bottom: 10px;
   }
-  .site-map ul {
+  .global-footer .site-map ul {
     overflow: hidden;
   }
-  .site-map li {
+  .global-footer .site-map li {
     float: left;
     margin-right: 20px;
     padding: 0px;
     margin-bottom: 5px;
   }
-
-  .extra-information {
+  .global-footer .extra-information {
     padding: .5em 3em;
   }
-
-  .search-input-component-container,
-  .site-map {
+  .global-footer .search-input-component-container,
+  .global-footer .site-map {
     margin-left: 30px;
+  }
+  .global-footer .search-input-component-container {
+    background: transparent;
+    padding: 0px;
+  }
+  .global-footer .search-input-component-container.mobile-component {
+    display: none;
+  }
+  .global-footer .search-input-component-container.desktop-component {
+    display: inline-block;
   }
 }
 @media (min-width: 1025px) {
@@ -743,27 +736,23 @@ main.home-page {
   .global-footer .logo {
     margin-bottom: 10px;
   }
-
-  .site-map,
-  .institutional,
-  .contact-information-container,
-  .search-input-component-container {
+  .global-footer .site-map,
+  .global-footer .institutional,
+  .global-footer .contact-information-container,
+  .global-footer .search-input-component-container {
     width: calc(25% - 30px);
     margin: 0px;
   }
-
-  .site-map,
-  .institutional,
-  .contact-information-container {
+  .global-footer .site-map,
+  .global-footer .institutional,
+  .global-footer .contact-information-container {
     margin-right: 20px;
   }
-
-  .search-input-component-container {
+  .global-footer .search-input-component-container {
     vertical-align: top;
     width: 25%;
   }
-
-  .site-map li {
+  .global-footer .site-map li {
     float: none;
     margin-right: 0px;
     margin-bottom: 5px;
@@ -2170,6 +2159,10 @@ main.home-page {
     -webkit-column-count: 2;
     column-count: 2;
   }
+
+  .article-information-for-user {
+    display: block;
+  }
 }
 @media (min-width: 1025px) {
   .global-information-container {
@@ -2492,27 +2485,63 @@ main.home-page {
 }
 
 .article-information-for-user {
+  display: none;
   margin: 2em 0;
   clear: both;
-  display: block;
   width: 100%;
 }
-.article-information-for-user .telephone-line span {
+.article-information-for-user .element-container {
+  margin-bottom: 40px;
+}
+.article-information-for-user .title-container {
   display: block;
-  margin-bottom: 0.5em;
+  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+  font-weight: bold;
+  font-variant: normal;
+  font-style: normal;
+  color: #023670;
+  font-size: 2.5em;
+  line-height: 1em;
+  text-transform: none;
+  color: #023670;
+  width: 100%;
+  text-align: left;
+  margin-bottom: 20px;
 }
-.article-information-for-user .telephone-line span h3 {
-  margin-bottom: .3em;
+.article-information-for-user .accordion-button {
+  display: none;
 }
-.article-information-for-user .telephone-line span p {
-  margin-bottom: .5em;
+.article-information-for-user .contact-information-container {
+  margin: 0px;
+  margin-top: 20px;
+  text-align: left;
 }
-.article-information-for-user .telephone-line span p span {
-  font-size: .8em;
-  font-style: italic;
+.article-information-for-user .contact-information-container .contact-information-title,
+.article-information-for-user .contact-information-container .contact-information-content {
+  color: #023670;
 }
-.article-information-for-user span a {
-  text-decoration: underline;
+.article-information-for-user .accordion-title {
+  margin-bottom: 10px;
+}
+.article-information-for-user .general-schedule-list li {
+  margin-bottom: 10px;
+  padding-left: 20px;
+}
+.article-information-for-user .general-schedule-list li:before {
+  content: '';
+  display: inline-block;
+  background: #023670;
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  left: 0px;
+  top: 6px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+.article-information-for-user .general-schedule-list li:after, .article-information-for-user .general-schedule-list li:before {
+  top: 8px;
 }
 
 /**
@@ -2525,50 +2554,27 @@ main.home-page {
 
   .article-information-for-user {
     position: relative;
-    display: inline-block;
+    display: -webkit-flex;
+    display: flex;
     margin-top: -170px;
     z-index: 1;
   }
   .article-information-for-user .telephone-line,
   .article-information-for-user .location-google-map {
-    width: 48%;
-    margin: 0 2%;
-    background-color: #023670;
-    color: #ffffff;
-    display: inline-block;
-    float: left;
+    width: calc(50% - 20px);
     -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
     -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   }
-  .article-information-for-user .telephone-line h3,
-  .article-information-for-user .location-google-map h3 {
-    color: #ffffff;
-  }
   .article-information-for-user .telephone-line {
-    margin-left: 0;
-    border-left: 8px solid #00428c;
-    padding: 1em 2em;
-    position: relative;
-  }
-  .article-information-for-user .telephone-line span {
-    margin-bottom: 1em;
-  }
-  .article-information-for-user .telephone-line:after {
-    content: '';
-    position: absolute;
-    top: 0px;
-    left: 100%;
-    border-width: 33px;
-    border-style: solid;
-    border-color: transparent transparent transparent #023670;
+    background-color: #f2f1f1;
+    color: #023670;
+    display: inline-block;
+    float: left;
+    padding: 40px;
   }
   .article-information-for-user .location-google-map {
-    display: inline-block;
-    margin-right: 0;
-  }
-  .article-information-for-user > span {
-    display: none;
+    margin-left: 40px;
   }
 }
 @media (min-width: 1025px) {
@@ -2731,12 +2737,17 @@ main.home-page {
   display: block;
 }
 
+.telephone-line .accordion-container-active .accordion-content {
+  padding-bottom: 0px;
+}
+
 .most-important-data-container .element-container {
   width: calc(50% - 20px);
   padding: 30px;
   background: #f2f1f1;
   display: inline-block;
   margin-bottom: 20px;
+  vertical-align: top;
   -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
@@ -2758,40 +2769,23 @@ main.home-page {
 .most-important-data-container .element-container .accordion-button {
   display: none;
 }
-.most-important-data-container .element-container:nth-child(even) {
-  float: right;
-  margin-left: 40px;
-}
-.most-important-data-container .element-container:nth-child(4) {
-  float: none;
-  margin: 0px;
+.most-important-data-container .element-container:nth-child(1) {
   display: block;
+  width: 100%;
+  margin: 0px;
+  margin-bottom: 20px;
+}
+.most-important-data-container .element-container:nth-child(even) {
+  margin-left: 36px;
 }
 .most-important-data-container .element-container.admision-egresos-container {
-  background: transparent;
-  padding: 0px;
-  -moz-box-shadow: none;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-.most-important-data-container .element-container.admision-egresos-container li {
-  background: #023670;
-  color: #ffffff;
-  margin-top: 10px;
-  padding: 20px;
-}
-.most-important-data-container .element-container.admision-egresos-container li:before, .most-important-data-container .element-container.admision-egresos-container li:after {
-  content: none;
+  display: none;
 }
 
 @media (min-width: 769px) {
   .most-important-data-container {
     margin-top: 60px;
-    border-top: solid 2px #f2f1f1;
-    padding-top: 60px;
     margin-bottom: 50px;
-    border-bottom: solid 2px #f2f1f1;
-    padding-bottom: 60px;
   }
 
   .patient-responsabilities-container {
