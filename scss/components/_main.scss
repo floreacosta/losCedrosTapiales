@@ -21,6 +21,8 @@ main {
 @media (min-width: $desktop) {
 	main {
     padding: 6%;
+    padding-top: 4%;
+    padding-bottom: 4%;
 		min-height: calc(100vh - 88px - 231px - 50px);
     overflow: hidden;
 	}

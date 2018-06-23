@@ -24,6 +24,7 @@ const OVERLAY_KEY = {
 function getActiveSection () {
   let url = window.location.pathname;
   let menu = $('.global-menu-content');
+
   menu.each(function () {
     let item = $(this);
     $(this).removeClass('active');
@@ -33,19 +34,25 @@ function getActiveSection () {
     }
   });
 
-  menu.find('#' + url.substr(1)).parent().addClass('active');
+  if (url.substr(1) !== '') {
+    menu.find('#' + url.substr(1)).parent().addClass('active');
+  }
 }
 
 function getOpenCloseMenu () {
   let menu = $('.global-menu-container');
   $('#hamburguer-open-menu').click(() => {
     menu.addClass('active-global-menu');
-    menu.find('.global-menu-content-component').animate({ right: '0em' });
+    menu.find('.global-menu-content-component').animate({
+      right: '0em'
+    });
   });
 
   $('#hamburguer-close-menu').click(() => {
     menu.removeClass('active-global-menu');
-    menu.find('.global-menu-content-component').animate({ right: '-100%' }).removeClass('active-global-menu');
+    menu.find('.global-menu-content-component').animate({
+      right: '-100%'
+    }).removeClass('active-global-menu');
   });
 }
 
@@ -108,7 +115,7 @@ function getCloseModalVideoContainer () {
 function getAccordionToElement (accordion) {
   let accordionContainerClass = 'accordion-container';
   let accordionContentClass = 'accordion-title-container';
-  let accordionContent = accordion.find('.accordion-title-container');
+  let accordionContent = accordion.find('.' + accordionContentClass);
 
   if ($(window).width() > 769) {
     accordion.removeClass(accordionContainerClass).addClass('element-container');

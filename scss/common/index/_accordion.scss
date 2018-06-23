@@ -91,3 +91,83 @@
     display: block;
   }
 }
+
+.most-important-data-container {
+  .element-container {
+    width: calc(50% - 20px);
+    padding: 30px;
+    background: $color-light;
+    display: inline-block;
+    margin-bottom: 20px;
+    @include box-shadow($shadow);
+
+    &.accordion-container-active {
+      .accordion-content {
+        padding-bottom: 0px;
+      }
+    }
+
+    .accordion-title {
+      @include heading-level-1;
+      margin-bottom: 20px;
+      cursor: normal;
+    }
+
+    .accordion-button {
+      display: none;
+    }
+
+    &:nth-child(even) {
+      float: right;
+      margin-left: 40px;
+    }
+
+    &:nth-child(4) {
+      float: none;
+      margin: 0px;
+      display: block;
+    }
+
+    &.admision-egresos-container {
+      background: transparent;
+      padding: 0px;
+      @include box-shadow(none);
+
+      li {
+        background: $color-primary;
+        color: $white;
+        margin-top: 10px;
+        padding: 20px;
+
+        &:before,
+        &:after {
+          content: none;
+        }
+      }
+    }
+  }
+
+  .title-container {
+
+  }
+
+  .accordion-content {
+
+  }
+}
+
+@media (min-width: $tablet) {
+  .most-important-data-container {
+    margin-top: 60px;
+    border-top: solid 2px $color-light;
+    padding-top: 60px;
+
+    margin-bottom: 50px;
+    border-bottom: solid 2px $color-light;
+    padding-bottom: 60px;
+  }
+
+  .patient-responsabilities-container {
+    padding-top: 0px;
+  }
+}
