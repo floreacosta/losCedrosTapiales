@@ -112,7 +112,7 @@
 			</figure>
 		</article>
 
-		<section class="most-important-data-container">
+		<section class="all-accordion-container most-important-data-container">
 			<? include 'includes/accordion/most-important-data.php' ?>
 		</section>
 

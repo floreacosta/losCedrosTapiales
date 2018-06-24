@@ -133,16 +133,11 @@
 	a {
 		padding: 2em 1em;
 		display: inline-block;
-		color: $white;
 		width: 100%;
 		position: relative;
 		text-transform: uppercase;
-		@include text-base();
+		@include text-base($white);
 		@include font-calibri-bold;
-	}
-
-	&:last-of-type {
-		border: 0;
 	}
 }/* items del menu */
 

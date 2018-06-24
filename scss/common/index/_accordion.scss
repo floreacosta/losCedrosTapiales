@@ -35,6 +35,7 @@
     @include transform(rotate(-45deg));
     vertical-align: middle;
     margin-top: -3px;
+    @include single-transition(all, 300ms, ease, false);
   }
 
   .accordion-content {
@@ -47,12 +48,14 @@
 .accordion-container-active {
   .accordion-button {
     @include transform(rotate(135deg));
+    @include single-transition(all, 300ms, ease, false);
     margin-top: 4px;
   }
 
   .accordion-content {
     height: auto;
     padding-bottom: 25px;
+    @include single-transition(all, 300ms, ease, false);
   }
 }
 

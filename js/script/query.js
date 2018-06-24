@@ -93,6 +93,7 @@ function getToggleAccordion () {
 }
 
 function getOverlay () {
+  let body = $("body");
   $('.open-overlay').click(function () {
     let button = $(this);
     let foundedOverlayButton = Object.keys(OVERLAY_KEY).find(function (b) {
@@ -105,17 +106,17 @@ function getOverlay () {
     let activeClass = "general-overlay-active";
 
     $(overlay).addClass(activeClass);
-    $("body").addClass('no-scrolling');
+    body.addClass('no-scrolling');
 
     $('.general-close-overlay-button').click(function () {
       $(overlay).removeClass(activeClass);
-      $("body").removeClass('no-scrolling');
+      body.removeClass('no-scrolling');
     });
 
     $('.general-overlay-container').click(function (e) {
       if ($(e.target).hasClass('general-overlay-container')) {
         $(this).removeClass(activeClass);
-        $("body").removeClass('no-scrolling');
+        body.removeClass('no-scrolling');
       }
     });
   });
@@ -157,22 +158,23 @@ function getAccordionToElement (accordion) {
 function getModalEspecialidades () {
   let button = $('.especialidades-open-overlay');
   let activeClass = "general-overlay-active";
+  let body = $("body");
 
   button.click(function () {
     let component = $(this).parent().find(".general-overlay-container");
     component.addClass(activeClass);
-    $("body").addClass('no-scrolling');
+    body.addClass('no-scrolling');
 
     component.click(function (e) {
       if ($(e.target).hasClass('general-overlay-container')) {
         component.removeClass(activeClass);
-        $("body").removeClass('no-scrolling');
+        body.removeClass('no-scrolling');
       }
     });
 
     component.find(".general-close-overlay-button").click(function () {
       component.removeClass(activeClass);
-      $("body").removeClass('no-scrolling');
+      body.removeClass('no-scrolling');
     });
   });
 }
@@ -207,19 +209,24 @@ function getActiveSlider () {
     getContainerWidth();
   });
 
-
   buttons.click(function () {
+    let clicked = $(this);
     let currentSlider = sliders.find($('#slider-' + $(this).parent().attr('id')));
     buttons.each(function () {
-      $(this).parent().removeClass(buttonActiveClass);
+      if (!(clicked.parent().hasClass(buttonActiveClass))) {
+        $(this).parent().removeClass(buttonActiveClass);
+      }
     });
 
     sliders.find('.container-slider').each(function () {
-      $(this).removeClass(sliderActiveClass);
+      if (!(currentSlider.hasClass(sliderActiveClass))) {
+        $(this).removeClass(sliderActiveClass);
+      }
     });
 
-    $(this).parent().addClass(buttonActiveClass);
-    currentSlider.addClass(sliderActiveClass);
+    clicked.parent().toggleClass(buttonActiveClass);
+    currentSlider.toggleClass(sliderActiveClass);
+
     getContainerWidth();
     getContainerHeigth();
     getCarrousel();
@@ -258,7 +265,7 @@ function getCarrousel () {
       prevButton.removeClass('disabled');
     } else {
       nextButton.removeClass('disabled');
-      prevButton.removeClass('disabled');      
+      prevButton.removeClass('disabled');
     }
   };
 
@@ -311,19 +318,23 @@ function getCarrousel () {
 }
 
 function getBarraTooltip () {
-    let scrollTooltip = function () {
-      if ($(this).scrollTop() > 200) {
-        $(".tooltip-box").fadeOut("slow");
-      } else if ($(this).scrollTop() < 200) {
-        $(".tooltip-box").fadeIn("slow");
-      }
-    };
+  let tooltipBox = $(".tooltip-box");
+
+  let scrollTooltip = function () {
+    if ($(this).scrollTop() > 200) {
+      tooltipBox.fadeOut("slow");
+    } else if ($(this).scrollTop() < 200) {
+      tooltipBox.fadeIn("slow");
+    }
+  };
 
   $(window).scroll(() => {
     if ($(window).width() >= 769) {
       scrollTooltip();
     } else {
-      $(".tooltip-box").css("display", "none");
+      tooltipBox.css({
+        display: "none"
+      });
     }
 
     //Para hacer responsive el Tooltip.
@@ -331,15 +342,17 @@ function getBarraTooltip () {
       if ($(window).width() >= 769) {
         scrollTooltip();
       } else {
-        $(".tooltip-box").css("display", "none");
+        tooltipBox.css({
+          display: "none"
+        });
       }
     });
   });
 }
 
 function getRedireccionamientoTooltip () {
-  let tooltip = $('.tooltip-box');
-  tooltip.find('.tooltip').click(function () {
+  let tooltipBox = $('.tooltip-box');
+  tooltipBox.find('.tooltip').click(function () {
     window.location = window.location.origin + '/' + $(this).attr('href');
   });
 }

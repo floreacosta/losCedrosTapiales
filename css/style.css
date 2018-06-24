@@ -339,13 +339,12 @@ h3 {
 .global-menu-item a {
   padding: 2em 1em;
   display: inline-block;
-  color: #ffffff;
   width: 100%;
   position: relative;
   text-transform: uppercase;
   font-size: 16px;
   line-height: 22px;
-  color: #7b7b79;
+  color: #ffffff;
   font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
   font-weight: normal;
   font-variant: normal;
@@ -354,9 +353,6 @@ h3 {
   font-weight: bold;
   font-variant: normal;
   font-style: normal;
-}
-.global-menu-item:last-of-type {
-  border: 0;
 }
 
 /* items del menu */
@@ -1199,7 +1195,7 @@ main.home-page {
 /**
 * Responsive
 **/
-@media (min-width: 375px) {
+@media (min-width: 376px) {
   .logotypes-medic {
     position: relative;
     display: block;
@@ -2229,7 +2225,7 @@ main.home-page {
 /**
 * Responsive width
 **/
-@media (min-width: 375px) {
+@media (min-width: 376px) {
   .home-background-video, .section-secondary {
     max-height: 350px;
   }
@@ -2788,6 +2784,10 @@ main.home-page {
   transform: rotate(-45deg);
   vertical-align: middle;
   margin-top: -3px;
+  -moz-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
 }
 .accordion-container .accordion-content {
   padding: 0px 32px;
@@ -2800,11 +2800,19 @@ main.home-page {
   -ms-transform: rotate(135deg);
   -webkit-transform: rotate(135deg);
   transform: rotate(135deg);
+  -moz-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
   margin-top: 4px;
 }
 .accordion-container-active .accordion-content {
   height: auto;
   padding-bottom: 25px;
+  -moz-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
 }
 
 .telephone-line .accordion-container-active .accordion-content {
@@ -2843,10 +2851,14 @@ main.home-page {
 
 .container-slider.slider-active {
   display: block;
+  -moz-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
 }
 
 .menu-instalaciones {
-  overflow: hidden;
+  overflow: visible;
 }
 .menu-instalaciones .item-container {
   margin-bottom: 20px;
@@ -2879,6 +2891,10 @@ main.home-page {
   -ms-transform: rotate(-135deg);
   -webkit-transform: rotate(-135deg);
   transform: rotate(-135deg);
+  -moz-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
 }
 .menu-instalaciones .item-description {
   display: none;
@@ -2889,9 +2905,17 @@ main.home-page {
   -ms-transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
+  -moz-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
 }
 .menu-instalaciones .item-container.item-active .item-description {
   display: block;
+  -moz-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
 }
 .menu-instalaciones .container-slider {
   margin-top: 10px;
@@ -2903,12 +2927,6 @@ main.home-page {
   padding-bottom: .25em;
   margin-bottom: 1em;
   font-size: 2em;
-}
-
-.container-all-slider {
-  display: inline-block;
-  width: auto;
-  height: auto;
 }
 
 /**
