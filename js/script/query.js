@@ -183,17 +183,11 @@ function getActiveSlider () {
   let sliderActiveClass = 'slider-active';
   let buttonActiveClass = 'item-active';
 
-  let getHeightContainer = function () {
+  let getContainerHeigth = function () {
     sliders.find('.menu-instalaciones').css({
       'min-height': sliders.find('.' + sliderActiveClass).height() + 'px'
     });
   };
-
-  getHeightContainer();
-
-  $(this).resize(() => {
-    getHeightContainer();
-  });
 
   let getContainerWidth = function () {
     let contentImage = $('.' + sliderActiveClass).find('.content-imagen');
@@ -205,11 +199,14 @@ function getActiveSlider () {
     });
   };
 
+  getContainerHeigth();
   getContainerWidth();
 
   $(this).resize(() => {
+    getContainerHeigth();
     getContainerWidth();
   });
+
 
   buttons.click(function () {
     let currentSlider = sliders.find($('#slider-' + $(this).parent().attr('id')));
@@ -224,8 +221,8 @@ function getActiveSlider () {
     $(this).parent().addClass(buttonActiveClass);
     currentSlider.addClass(sliderActiveClass);
     getContainerWidth();
+    getContainerHeigth();
     getCarrousel();
-    getHeightContainer();
   });
   getCarrousel();
 }
@@ -238,9 +235,33 @@ function getCarrousel () {
   let imageContainer = currentSlider.find('.content-imagen');
   let imageList = imageContainer.children();
   let imageWidth = 100 / imageList.length;
+  let thumbs = currentSlider.find('.container-image-secondary').children();
   let imageContainerPosition = 0;
 
-  getActiveImageOnCarrousel(currentSlider, imageContainer, 0);
+  let activeThumb = function () {
+    thumbs.each(function (index) {
+      if ((imageContainerPosition / 100) === index) {
+        thumbs.each(function () {
+          $(this).removeClass('active');
+        });
+        $(this).addClass('active');
+      }
+    });
+  };
+
+  let disabledButton = function () {
+    if (imageContainerPosition <= 0) {
+      prevButton.addClass('disabled');
+      nextButton.removeClass('disabled');
+    } else if (imageContainerPosition >= ((imageList.length - 1) * 100)) {
+      nextButton.addClass('disabled');
+      prevButton.removeClass('disabled');
+    } else {
+      nextButton.removeClass('disabled');
+      prevButton.removeClass('disabled');      
+    }
+  };
+
   nextButton.click(function () {
     if (imageContainerPosition < ((imageList.length - 1) * 100)) {
       imageContainerPosition += imageList.length * imageWidth;
@@ -249,13 +270,10 @@ function getCarrousel () {
         right: imageContainerPosition + '%'
       });
 
-      getActiveImageOnCarrousel(currentSlider, imageContainer, (imageContainerPosition / 100));
+      activeThumb();
     }
 
-    prevButton.removeClass('disabled');
-    if (imageContainerPosition === ((imageList.length - 1) * 100)) {
-      $(this).addClass('disabled');
-    }
+    disabledButton();
   });
 
   prevButton.click(function () {
@@ -266,38 +284,28 @@ function getCarrousel () {
         right: imageContainerPosition + '%'
       });
 
-      getActiveImageOnCarrousel(currentSlider, imageContainer, (imageContainerPosition / 100));
+      activeThumb();
     }
 
-    nextButton.removeClass('disabled');
-    if (0 === imageContainerPosition) {
-      $(this).addClass('disabled');
-    }
+    disabledButton();
   });
-}
 
-function getActiveImageOnCarrousel (sliderActive, generalImageContainer, imageIndex) {
-  let images = sliderActive.find('.container-image-secondary').children();
-
-  images.each(function (index) {
+  activeThumb();
+  thumbs.each(function (index) {
     let clicked = $(this);
 
-    if (imageIndex === index) {
-      images.each(function () {
-        $(this).removeClass('active');
-      });
-      $(this).addClass('active');
-    }
-
     clicked.click(function () {
-      images.each(function () {
+      thumbs.each(function () {
         $(this).removeClass('active');
       });
 
       $(this).addClass('active');
-      generalImageContainer.animate({
+      imageContainerPosition = 100 * index;
+      imageContainer.animate({
         right: (100 * index) + '%'
       });
+
+      disabledButton();
     });
   });
 }
