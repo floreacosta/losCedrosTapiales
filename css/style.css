@@ -187,6 +187,12 @@ h3 {
   margin-bottom: 20px;
 }
 
+.scroll-from-tooltip {
+  -moz-box-shadow: 0px 0px 0px 3px #7b7b79 inset;
+  -webkit-box-shadow: 0px 0px 0px 3px #7b7b79 inset;
+  box-shadow: 0px 0px 0px 3px #7b7b79 inset;
+}
+
 /**
 * Responsive
 **/
@@ -2222,6 +2228,38 @@ main.home-page {
   color: #ffffff;
 }
 
+.scroll-to-top {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  background: #023670;
+  -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  font-size: 0px;
+  z-index: 4;
+  bottom: 40px;
+  right: 40px;
+  display: none;
+}
+.scroll-to-top:after {
+  content: '';
+  position: absolute;
+  border-left: solid 2px #ffffff;
+  border-top: solid 2px #ffffff;
+  width: 14px;
+  height: 14px;
+  left: calc(50% - 7px);
+  top: calc(50% - 5px);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
 /**
 * Responsive width
 **/
@@ -2595,8 +2633,8 @@ main.home-page {
   clear: both;
   width: 100%;
 }
-.article-information-for-user .element-container {
-  margin-bottom: 40px;
+.article-information-for-user .schedule-information-container {
+  margin-bottom: 20px;
 }
 .article-information-for-user .title-container {
   display: block;
@@ -2667,16 +2705,19 @@ main.home-page {
   .article-information-for-user .telephone-line,
   .article-information-for-user .location-google-map {
     width: calc(50% - 20px);
-    -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-    -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   }
   .article-information-for-user .telephone-line {
     background-color: #f2f1f1;
     color: #023670;
     display: inline-block;
     float: left;
-    padding: 40px;
+    padding: 20px;
+  }
+  .article-information-for-user .schedule-information-container,
+  .article-information-for-user .contact-information-container,
+  .article-information-for-user .contact-information-container {
+    padding: 20px;
+    margin: 0px;
   }
   .article-information-for-user .location-google-map {
     margin-left: 40px;

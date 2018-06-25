@@ -9,6 +9,8 @@ $(document).ready(() => {
   getBarraTooltip();
   getRedireccionamientoTooltip();
   getStickyHeader();
+  getHightlitedSection();
+  getScrollToTopButton();
 });
 
 /* NOTE: key/value to set an overlay and call it
@@ -26,13 +28,15 @@ function getStickyHeader () {
 
   let fakeHeaderHeight = function () {
     fakeHeader.css({
-      height: header.height()
+      height: header.innerHeight()
     });
   };
 
+  fakeHeaderHeight();
   $(this).resize(fakeHeaderHeight);
+
   $(this).scroll(() => {
-    if ($(this).scrollTop() > header.height()) {
+    if ($(this).scrollTop() > header.innerHeight()) {
       header.addClass('sticky-header');
     } else {
       header.removeClass('sticky-header');
@@ -354,5 +358,46 @@ function getRedireccionamientoTooltip () {
   let tooltipBox = $('.tooltip-box');
   tooltipBox.find('.tooltip').click(function () {
     window.location = window.location.origin + '/' + $(this).attr('href');
+    getHightlitedSection();
+  });
+}
+
+function getHightlitedSection () {
+  let headerHeight = $('.fake-header').innerHeight();
+  $(this).resize(() => {
+    headerHeight = $('.fake-header').innerHeight();
+  });
+
+  let element = window.location.hash;
+  if (element !== '') {
+    let scrollTo;
+    setTimeout(function () {
+      scrollTo = $(element).offset().top - ((headerHeight * 2) - 20); // to fix some margin
+      $("html").scrollTop(scrollTo);
+    }, 10);
+
+    $(element).addClass('scroll-from-tooltip');
+    setTimeout(function () {
+      $(element).removeClass('scroll-from-tooltip');
+    }, 2000);
+  }
+}
+
+function getScrollToTopButton () {
+  let button = $('.scroll-to-top');
+
+  $(window).scroll(() => {
+    if ($(this).scrollTop() > $(window).height()) {
+      console.log($(this).scrollTop());
+      console.log('deberia verse');
+      button.fadeIn("slow");
+    } else {
+      console.log('NO deberia verse');
+      button.fadeOut("slow");
+    }
+  });
+
+  button.click(() => {
+    $("html").scrollTop(0);
   });
 }

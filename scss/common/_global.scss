@@ -75,6 +75,9 @@ h3 {
 	margin-bottom: 20px;
 }
 
+.scroll-from-tooltip {
+	@include box-shadow($border_shadow);
+}
 
 /**
 * Responsive

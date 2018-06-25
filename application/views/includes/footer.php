@@ -25,10 +25,10 @@
 			<h3>Institucional</h3>
 			<ul>
 				<li><a href="<?= base_url(); ?>index">Home</a></li>
-				<li><a href="<?= base_url(); ?>instalaciones">Instalaciones</a></li>
-				<li><a href="<?= base_url(); ?>especialidades">Especialidades</a></li>
+				<li><a href="<?= base_url(); ?>instalacion">Instalaciones</a></li>
+				<li><a href="<?= base_url(); ?>especialidad">Especialidades</a></li>
 				<li><a href="<?= base_url(); ?>coberturamedica">Coberturas</a></li>
-				<li><a href="<?= base_url(); ?>servicios">Servicios</a></li>
+				<li><a href="<?= base_url(); ?>servicio">Servicios</a></li>
 			</ul>
 		</div>
 

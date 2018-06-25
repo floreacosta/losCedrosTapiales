@@ -125,8 +125,8 @@
 		</section>
 
 		<article class="article-information-for-user">
-			<div class="telephone-line" id="schedule">
-				<div>
+			<div class="telephone-line">
+				<div class="schedule-information-container" id="schedule">
 					<? include 'includes/accordion/horarios-visita.php' ?>
 				</div>
 

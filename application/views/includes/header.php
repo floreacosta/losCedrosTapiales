@@ -47,3 +47,4 @@
 		</nav>
 	</header>
 	<div class="fake-header" aria-hidden="true"></div>
+	<button class="scroll-to-top">Scroll to Top</button>

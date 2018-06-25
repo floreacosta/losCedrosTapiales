@@ -18,8 +18,8 @@
 	clear: both;
 	width: 100%;
 
-	.element-container {
-		margin-bottom: 40px;
+	.schedule-information-container {
+		margin-bottom: 20px;
 	}
 
 	.title-container {
@@ -83,7 +83,7 @@
 		.telephone-line,
 		.location-google-map {
 			width: calc(50% - 20px);
-			@include box-shadow($shadow);
+			// @include box-shadow($shadow);
 		}
 
 		.telephone-line {
@@ -91,7 +91,14 @@
 			color: $color-primary;
 			display: inline-block;
 			float: left;
-			padding: 40px;
+			padding: 20px;
+		}
+
+		.schedule-information-container,
+		.contact-information-container,
+		.contact-information-container {
+			padding: 20px;
+			margin: 0px;
 		}
 
 		.location-google-map {

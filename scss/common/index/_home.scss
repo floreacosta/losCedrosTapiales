@@ -177,6 +177,33 @@
 	}
 }
 
+.scroll-to-top {
+	position: fixed;
+	width: 40px;
+	height: 40px;
+	background: $color-primary;
+	@include box-shadow($shadow);
+	@include border-radius(50%);
+	font-size: 0px;
+	z-index: 4;
+	bottom: 40px;
+	right: 40px;
+	// @include opacity(0);
+	display: none;
+
+	&:after {
+		content: '';
+		position: absolute;
+		border-left: solid 2px $white;
+		border-top: solid 2px $white;
+		width: 14px;
+		height: 14px;
+		left: calc(50% - 7px);
+		top: calc(50% - 5px);
+		@include transform(rotate(45deg));
+	}
+}
+
 /**
 * Responsive width
 **/
