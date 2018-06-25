@@ -66,9 +66,12 @@
 }
 
 .autoridad-item {
+  margin-bottom: 10px;
+}
+
+.autoridad-information {
   padding: 10px;
   background: $color-light;
-  margin-bottom: 10px;
 }
 
 // .autoridad-item {
@@ -109,12 +112,13 @@
 .autoridad-title {
   display: block;
   width: 100%;
-  min-height: 44px;
+  // min-height: 44px;
 }
 
 .cv-link {
   @include text-base-secondary($color-primary);
   position: relative;
+  display: none; // NOTE: Provisional
   // margin-left: 7px;
   // padding-left: 10px;
 
@@ -189,6 +193,8 @@
   .autoridades-content {
     width: calc(100% + 20px);
     overflow: hidden;
+    @include display-flex;
+    @include flex-wrap(wrap);
   }
 
   .autoridad-item {

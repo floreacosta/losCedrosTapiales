@@ -3095,9 +3095,12 @@ main.home-page {
 }
 
 .autoridad-item {
+  margin-bottom: 10px;
+}
+
+.autoridad-information {
   padding: 10px;
   background: #f2f1f1;
-  margin-bottom: 10px;
 }
 
 .autoridad-image {
@@ -3112,7 +3115,6 @@ main.home-page {
 .autoridad-title {
   display: block;
   width: 100%;
-  min-height: 44px;
 }
 
 .cv-link {
@@ -3125,6 +3127,7 @@ main.home-page {
   font-style: normal;
   font-size: 12px;
   position: relative;
+  display: none;
 }
 
 /*
@@ -3172,6 +3175,10 @@ main.home-page {
   .autoridades-content {
     width: calc(100% + 20px);
     overflow: hidden;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
   }
 
   .autoridad-item {
