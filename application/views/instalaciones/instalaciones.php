@@ -33,7 +33,9 @@
 						<? } ?>
 								<div class="item-content">
 									<span class="item-category" title="<?= $categoria->nombre ?>"><?= $categoria->nombre ?></span>
-	                <div class="item-description"><?= $categoria->descripcion ?></div>
+									<? if ($categoria->descripcion !== '') {
+										?> <div class="item-description"><?= $categoria->descripcion ?></div><?
+									} ?>
 								</div>
 
 								<? if ($key === 0) { ?>
