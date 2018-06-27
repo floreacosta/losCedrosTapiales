@@ -1,373 +1,415 @@
-"use strict";
+'use strict';
 
 $(document).ready(function () {
+  getOverlay();
   getActiveSection();
-  getOpenCloseMenu();
   getToggleAccordion();
-  getFixedMenu();
-  getOpenVideo();
-  getCloseVideo();
+  getOpenCloseMenu();
   getCloseModalVideoContainer();
-  getHeightMap();
   getModalEspecialidades();
-  getSlider();
+  getActiveSlider();
   getBarraTooltip();
   getRedireccionamientoTooltip();
+  getStickyHeader();
+  getHightlitedSection();
+  getScrollToTopButton();
 });
 
+/* NOTE: key/value to set an overlay and call it
+  [id_button_open_overlay] = [id_overlay]
+*/
+var OVERLAY_KEY = {
+  'patient_responsabilities_button': 'patient_responsabilities',
+  'especialidad_y_profesionales_button': 'especialidad_y_profesionales',
+  'institutional_video_button': 'institutional_video'
+};
+
+function getStickyHeader() {
+  var fakeHeader = $('.fake-header');
+  var header = $('.global-header-container');
+  var body = $(window);
+
+  var fakeHeaderHeight = function fakeHeaderHeight() {
+    fakeHeader.css({
+      height: header.innerHeight()
+    });
+  };
+
+  fakeHeaderHeight();
+  body.resize(fakeHeaderHeight);
+
+  body.scroll(function () {
+    if (body.scrollTop() > header.innerHeight()) {
+      header.addClass('sticky-header');
+    } else {
+      header.removeClass('sticky-header');
+    }
+  });
+}
+
 function getActiveSection() {
-  var URLactual = window.location.pathname;
-  switch (URLactual) {
-    case '/losCedrosTapiales/institucional':
-      $("#instalaciones").addClass("active");
-      $("#servicios").remove("active");
-      $("#coberturas").remove("active");
-      $("#especialidades").remove("active");
-      break;
-    case '/losCedrosTapiales/servicios':
-      $("#instalaciones").remove("active");
-      $("#servicios").addClass("active");
-      $("#coberturas").remove("active");
-      $("#especialidades").remove("active");
-      break;
-    case '/losCedrosTapiales/coberturamedica':
-      $("#instalaciones").remove("active");
-      $("#servicios").remove("active");
-      $("#coberturas").addClass("active");
-      $("#especialidades").remove("active");
-      break;
-    case '/losCedrosTapiales/especialidades':
-      $("#instalaciones").remove("active");
-      $("#servicios").remove("active");
-      $("#coberturas").remove("active");
-      $("#especialidades").addClass("active");
-    default:
-      $("#instalaciones").remove("active");
-      $("#servicios").remove("active");
-      $("#coberturas").remove("active");
-      $("#especialidades").remove("active");
-      break;
+  var url = window.location.pathname;
+  var menu = $('.global-menu-content');
+  var urlLenght = url.split('/').length;
+
+  menu.each(function () {
+    var item = $(this);
+    $(this).removeClass('active');
+
+    if (item.attr('id') === url.substr(1)) {
+      item.addClass('active');
+    }
+  });
+
+  if (url.split('/')[urlLenght - 1] !== '') {
+    menu.find('#' + url.split('/')[urlLenght - 1]).parent().addClass('active');
   }
 }
 
 function getOpenCloseMenu() {
   var menu = $('.global-menu-container');
   $('#hamburguer-open-menu').click(function () {
-    menu.find('.global-menu-content-component').animate({ right: '0em' });
+    menu.addClass('active-global-menu');
+    menu.find('.global-menu-content-component').animate({
+      right: '0em'
+    });
   });
 
   $('#hamburguer-close-menu').click(function () {
-    menu.find('.global-menu-content-component').animate({ right: '-100%' });
+    menu.removeClass('active-global-menu');
+    menu.find('.global-menu-content-component').animate({
+      right: '-100%'
+    }).removeClass('active-global-menu');
   });
 }
 
 function getToggleAccordion() {
-  var _this = this;
+  var accordion = $(".accordion-container");
+  var body = $(window);
 
-  var accordion = $(".accordion-title-container");
-
+  getAccordionToElement(accordion);
   accordion.click(function () {
-    console.log($(_this).parent());
-    $(_this).parent().addClass("accordion-container-active");
-  });
-}
+    var _this = this;
 
-function getFixedMenu() {
-  $(window).resize(function () {
-    var ventana = $(window).width();
-    var right = $('#element').css('right');
-    var pat = 'px';
-
-    right = right.replace(pat, '');
-    right = parseInt(right);
-
-    if (ventana > 1024 && right < -1024) {
-      $('#element').css('right', '2em');
+    if (body.width() < 769) {
+      $(this).toggleClass("accordion-container-active");
     }
+
+    body.resize(function () {
+      if (body.width() < 769) {
+        $(_this).toggleClass("accordion-container-active");
+      }
+    });
   });
 }
 
-function getOpenVideo() {
-  $('#button-video-open').click(function () {
-    $("#video-container").addClass("video-open");
-  });
-}
+function getOverlay() {
+  var body = $("body");
+  $('.open-overlay').click(function () {
+    var button = $(this);
+    var foundedOverlayButton = Object.keys(OVERLAY_KEY).find(function (b) {
+      if (b === button.attr('id')) {
+        return b;
+      }
+    });
 
-function getCloseVideo() {
-  $('#button-video-close').click(function () {
-    $("#video-container").removeClass("video-open");
+    var overlay = "#" + OVERLAY_KEY[foundedOverlayButton];
+    var activeClass = "general-overlay-active";
 
-    var v = document.getElementsByTagName("video")[1];
-    v.pause();
-    v.load();
+    $(overlay).addClass(activeClass);
+    body.addClass('no-scrolling');
+
+    $('.general-close-overlay-button').click(function () {
+      $(overlay).removeClass(activeClass);
+      body.removeClass('no-scrolling');
+    });
+
+    $('.general-overlay-container').click(function (e) {
+      if ($(e.target).hasClass('general-overlay-container')) {
+        $(this).removeClass(activeClass);
+        body.removeClass('no-scrolling');
+      }
+    });
   });
 }
 
 function getCloseModalVideoContainer() {
-  $('#video-container').click(function () {
-    $("#video-container").removeClass("video-open");
-
+  var videoModal = $('.institutional-video-container');
+  videoModal.find('.general-close-overlay-button').click(function () {
     var v = document.getElementsByTagName("video")[1];
     v.pause();
     v.load();
   });
 }
 
-function getHeightMap() {
-  var h = $("#informationBox").outerHeight() + "px";
-  $("#google-map-container").css("height", h);
-  $(window).resize(function () {
-    var h = $("#informationBox").outerHeight() + "px";
-    $("#google-map-container").css("height", h);
+function getAccordionToElement(accordion) {
+  var accordionContainerClass = 'accordion-container';
+  var accordionContentClass = 'accordion-title-container';
+  var accordionContent = accordion.find('.' + accordionContentClass);
+  var body = $(window);
+
+  if (body.width() > 769) {
+    accordion.removeClass(accordionContainerClass).addClass('element-container');
+    accordionContent.removeClass(accordionContentClass).addClass('title-container');
+  } else {
+    accordion.addClass(accordionContainerClass).removeClass('element-container');
+    accordionContent.addClass(accordionContentClass).removeClass('title-container');
+  }
+
+  body.resize(function () {
+    if (body.width() > 769) {
+      accordion.removeClass(accordionContainerClass).addClass('element-container');
+      accordionContent.removeClass(accordionContentClass).addClass('title-container');
+    } else {
+      accordion.addClass(accordionContainerClass).removeClass('element-container');
+      accordionContent.addClass(accordionContentClass).removeClass('title-container');
+    };
   });
 }
 
 function getModalEspecialidades() {
-  $("#element-list").click(function (e) {
-    elemento = e.target.id;
-    elemento = "#modal" + elemento;
-    $(elemento).addClass("show");
-  });
+  var button = $('.especialidades-open-overlay');
+  var activeClass = "general-overlay-active";
+  var body = $("body");
 
-  $('#button-close-information').click(function () {
-    $(elemento).removeClass("show");
-  });
+  button.click(function () {
+    var component = $(this).parent().find(".general-overlay-container");
+    component.addClass(activeClass);
+    body.addClass('no-scrolling');
 
-  $(".modal-component").click(function () {
-    $(elemento).removeClass("show");
+    component.click(function (e) {
+      if ($(e.target).hasClass('general-overlay-container')) {
+        component.removeClass(activeClass);
+        body.removeClass('no-scrolling');
+      }
+    });
+
+    component.find(".general-close-overlay-button").click(function () {
+      component.removeClass(activeClass);
+      body.removeClass('no-scrolling');
+    });
   });
 }
 
-function getSlider() {
-  // Función slider
-  var sliderFunction = function sliderFunction(slider) {
-    /**
-    /* Funcionalidad del listado de imágenes debajo del slider (accesos directos a cada imagen)
-    **/
+function getActiveSlider() {
+  var sliders = $('.instalaciones-content');
+  var buttons = $('.item-content');
+  var sliderActiveClass = 'slider-active';
+  var buttonActiveClass = 'item-active';
+  var body = $(window);
 
-    //Declaro un array donde guardo el listado de imagenes para poder recorrerlo
-    var listadoImagenes = [];
-    $(slider + " .container-image-secondary a").each(function (index) {
-      listadoImagenes.push(this);
+  var getContainerHeigth = function getContainerHeigth() {
+    sliders.find('.menu-instalaciones').css({
+      'min-height': sliders.find('.' + sliderActiveClass).height() + 'px'
     });
+  };
 
-    //Contador de páginas o imagenes a las que se le dará NEXT
-    var page = 1;
+  var getContainerWidth = function getContainerWidth() {
+    var contentImage = $('.' + sliderActiveClass).find('.content-imagen');
+    var quantityImage = contentImage.children().length * 100;
+    contentImage.css({
+      width: quantityImage + '%'
+    }).children().css({
+      width: 100 / contentImage.children().length + '%'
+    });
+  };
 
-    //Capturo el ID de la imagen cliqueada para que se muestre
-    //directamente en el slider sin cliquear los botones NEXT y PREV
-    $(slider + " .container-image-secondary").click(function (e) {
-      //Le quito el funcionamiento por defecto al link
-      e.preventDefault();
+  getContainerHeigth();
+  getContainerWidth();
 
-      //Capturo el ID
-      var a = e.target.id;
+  body.resize(function () {
+    getContainerHeigth();
+    getContainerWidth();
+  });
 
-      //Recorro el array de imágenes
-      for (var i = 0; i < listadoImagenes.length; i++) {
-        //Si "a" (que contiene el ID de la imagen cliqueada) es IGUAL al id de la imagen del ARRAY
-        if (a == listadoImagenes[i].id) {
-          //Capturo la posición del contenedor
-          //Ancho de la imagen * la posición del ARRAY * -1
-          //(para hacerlo negativo, por ser necesario para los estilos)
-          var posicion = $(slider + " .content-imagen li img").width() * i * -1;
-          //Le doy el valor de "posicion" al estilo LEFT
-          $(slider + " .content-imagen").css("left", posicion);
-          //Le indico al contador general en qué página o imagen estoy ubicada
-          //para darle la información a los botones NEXT y PREV
-          page = i + 1;
-        }
+  buttons.click(function () {
+    var clicked = $(this);
+    var currentSlider = sliders.find($('#slider-' + $(this).parent().attr('id')));
+    buttons.each(function () {
+      if (!clicked.parent().hasClass(buttonActiveClass)) {
+        $(this).parent().removeClass(buttonActiveClass);
       }
     });
 
-    //Se busca la cantidad de imagenes que tiene cada sección.
-    var cantImagenes = $(slider + " .content-imagen li").size();
-    //Se calcula el ancho en % de las imágenes según cuantas son:
-    //Ejemplo: si son 3 imágenes, deberían tener un ancho de 33.33%. Si son 4 imágenes, deberían tener un ancho de 25%.
-    var anchoLi = 100 / cantImagenes + "%";
-
-    //Se le da el ancho calculado a cada LI (contenedor de cada imagen).
-    $(slider + " .content-image-primary").css("width", anchoLi);
-
-    //Se calcula el ancho total del contenedor que englobal a TODAS las imágenes en %.
-    var anchoContenedor = cantImagenes * 100 + "%";
-    //Se le asigna el valor calculado al contenedor GLOBAL
-    $(slider + " .content-imagen").css("width", anchoContenedor);
-
-    //Se inicializa la letiable del espacio a mover del contenedor GLOBAL de las imagenes en 0.
-    var espacioAmover = 0;
-
-    //Función del BOTÓN NEXT
-    $(slider + " #button-next").click(function () {
-      //Se calcula el ancho de imagen para el momento en que se toco NEXT
-      var anchoImagen = $(slider + " .content-imagen li img").width() * -1;
-
-      var tiempoDesliz = 300;
-
-      //Lógica de BOTÓN NEXT
-      //Si la posición de la imagen actual es == a la cantidad total de imágenes
-      if (page == cantImagenes) {
-        //Vuelve a la primer imagen del slider (page = 1)
-        page = 1;
-        //Se reinicia la letiable espacioAmover por si es la segunda pasada de slider.
-        espacioAmover = 0;
-        //Se posiciona en 0px al contenedor GLOBAL que se mueve según la imagen que toca mostrar.
-        $(slider + " .content-imagen").animate({ left: "0px" }, tiempoDesliz);
-      } else {
-        //Se carga la letiable "espacioAmover" con el ancho de la imagen * la posición de la imagen que se muestra
-        espacioAmover = anchoImagen * page;
-
-        //Se aumenta Page para la próxima pasada
-        page++;
-        //Se asigna el espacioAmover al ANIMATE
-        $(slider + " .content-imagen").animate({ left: espacioAmover + "px" }, tiempoDesliz);
+    sliders.find('.container-slider').each(function () {
+      if (!currentSlider.hasClass(sliderActiveClass)) {
+        $(this).removeClass(sliderActiveClass);
       }
+    });
 
-      //Código para hacer responsive el slider en jquery
-      $(window).resize(function () {
-        var anchoImagen = $(slider + " .content-imagen li img").width() * -1;
-        var espacioAmover = 0;
-        espacioAmover = anchoImagen * (page - 1);
-        $(slider + " .content-imagen").css("left", espacioAmover + "px");
+    clicked.parent().toggleClass(buttonActiveClass);
+    currentSlider.toggleClass(sliderActiveClass);
+
+    getContainerWidth();
+    getContainerHeigth();
+    getCarrousel();
+  });
+  getCarrousel();
+}
+
+function getCarrousel() {
+  var currentSlider = $('.slider-active');
+  var nextButton = currentSlider.find('.button-next');
+  var prevButton = currentSlider.find('.button-prev');
+
+  var imageContainer = currentSlider.find('.content-imagen');
+  var imageList = imageContainer.children();
+  var imageWidth = 100 / imageList.length;
+  var thumbs = currentSlider.find('.container-image-secondary').children();
+  var imageContainerPosition = 0;
+
+  var activeThumb = function activeThumb() {
+    thumbs.each(function (index) {
+      if (imageContainerPosition / 100 === index) {
+        thumbs.each(function () {
+          $(this).removeClass('active');
+        });
+        $(this).addClass('active');
+      }
+    });
+  };
+
+  var disabledButton = function disabledButton() {
+    if (imageContainerPosition <= 0) {
+      prevButton.addClass('disabled');
+      nextButton.removeClass('disabled');
+    } else if (imageContainerPosition >= (imageList.length - 1) * 100) {
+      nextButton.addClass('disabled');
+      prevButton.removeClass('disabled');
+    } else {
+      nextButton.removeClass('disabled');
+      prevButton.removeClass('disabled');
+    }
+  };
+
+  nextButton.click(function () {
+    if (imageContainerPosition < (imageList.length - 1) * 100) {
+      imageContainerPosition += imageList.length * imageWidth;
+
+      imageContainer.animate({
+        right: imageContainerPosition + '%'
       });
-    });
 
-    //Función BUTTON PREV
-    $(slider + " #button-prev").click(function () {
-      //Se calcula el ancho de imagen para el momento en que se toco NEXT
-      var anchoImagen = $(slider + " .content-imagen li img").width() * -1;
+      activeThumb();
+    }
 
-      //Se calcula el tiempo que tomará la animación según la cantidad de imágenes de ese slider.
-      if (cantImagenes > 5) {
-        var _tiempoDesliz = cantImagenes * 100;
-      } else {
-        var _tiempoDesliz2 = cantImagenes * 300;
-      }
+    disabledButton();
+  });
 
-      //Lógica de BUTTON PREV
-      //Si la posición de la imagen a mostrar es menor o igual a la primer imagen
-      //Es decir, si estás en la primer imagen y vas hacia atrás
-      if (page <= 1) {
-        //Page se iguala a la cantidad total de imagenes, para posicionarse en la última
-        page = cantImagenes;
-        //Se calcula el espacio que se tiene que mover para mostrar a la última imagen
-        espacioAmover = anchoImagen * (cantImagenes - 1);
-        //Se le da el espacio a mover al ANIMATE
-        $(slider + " .content-imagen").animate({ left: espacioAmover + "px" }, tiempoDesliz);
-      } else {
-        //Si no se descuenta una posicion a Page
-        page--;
-        //Se pregunta si el espacio a mover es == al ancho de imagen * posición de la imagen
-        if (espacioAmover == anchoImagen * page) {
-          //El espacio a mover se iguala al anchoImagen * (la página que se quiere mostrar - 1) para ir una posición atrás.
-          //Es decir, si estamos en -200px de posición, hay que ir a -100px.
-          //Entonces espacioAmover = a 100px (ancho de imagen) * (2 (page) - 1); Porque la imagen 2 está en la posición -100px.
-          espacioAmover = anchoImagen * (page - 1);
-        } else {
-          espacioAmover = anchoImagen * page;
-        }
-        //Se asigna el espacioAmover al ANIMATE
-        $(slider + " .content-imagen").animate({ left: espacioAmover + "px" }, tiempoDesliz);
-      }
+  prevButton.click(function () {
+    if (0 < imageContainerPosition) {
+      imageContainerPosition -= imageList.length * imageWidth;
 
-      //Para hacer responsive al SLIDER.
-      $(window).resize(function () {
-        var anchoImagen = $(slider + " .content-imagen li img").width();
-        var espacioAmover = 0;
-        espacioAmover = anchoImagen * (page - 1);
-        $(slider + " .content-imagen").css("left", espacioAmover + "px");
+      imageContainer.animate({
+        right: imageContainerPosition + '%'
       });
+
+      activeThumb();
+    }
+
+    disabledButton();
+  });
+
+  activeThumb();
+  thumbs.each(function (index) {
+    var clicked = $(this);
+
+    clicked.click(function () {
+      thumbs.each(function () {
+        $(this).removeClass('active');
+      });
+
+      $(this).addClass('active');
+      imageContainerPosition = 100 * index;
+      imageContainer.animate({
+        right: 100 * index + '%'
+      });
+
+      disabledButton();
     });
-  }; //funcion slider ();
-
-  //Primer slider, por defecto abierto
-  sliderFunction("#slider-1");
-
-  //Ubico el item del listado (menu de sliders) en el que hago click
-  $(".item-category").click(function (e) {
-    var li = e.target.parentNode;
-    //Recorro todo el menú y le remuevo la clase ".item-active" a todos
-    $(".item-container").each(function () {
-      $(".item-container").removeClass("item-active");
-    });
-    //Le agrego la clase ".item-active" al que se cliqueó
-    $(li).addClass("item-active");
-
-    //Preparo la letiable con el ID del slider que corresponde al item cliqueado
-    slider = "#slider-" + li.id;
-    //Remuevo de todos los slider la clase ".slider-active"
-    $(".container-all-slider > div").each(function () {
-      $(".container-all-slider > div").removeClass("slider-active");
-    });
-
-    //Le agrego la clase ".slider-active" al slider correspondiente al item cliqueado
-    $(slider).addClass("slider-active");
-
-    //Hago funcionar el slider con el ID correspondiente al slider en cuestión
-    sliderFunction(slider);
   });
 }
 
 function getBarraTooltip() {
+  var tooltipBox = $(".tooltip-box");
+  var body = $(window);
+
   var scrollTooltip = function scrollTooltip() {
-    if ($(this).scrollTop() > 200) {
-      $(".tooltip-box").fadeOut("slow");
-    } else if ($(this).scrollTop() < 200) {
-      $(".tooltip-box").fadeIn("slow");
+    if (body.scrollTop() > 200) {
+      tooltipBox.fadeOut("slow");
+    } else if (body.scrollTop() < 200) {
+      tooltipBox.fadeIn("slow");
     }
   };
 
-  $(window).scroll(function () {
-    if ($(window).width() >= 600) {
+  body.scroll(function () {
+    if (body.width() >= 769) {
       scrollTooltip();
     } else {
-      $(".tooltip-box").css("display", "none");
+      tooltipBox.css({
+        display: "none"
+      });
     }
 
     //Para hacer responsive el Tooltip.
-    $(window).resize(function () {
-      if ($(window).width() >= 600) {
+    body.resize(function () {
+      if (body.width() >= 769) {
         scrollTooltip();
       } else {
-        $(".tooltip-box").css("display", "none");
+        tooltipBox.css({
+          display: "none"
+        });
       }
     });
   });
 }
 
 function getRedireccionamientoTooltip() {
-  var redirectTooltip = function redirectTooltip(pathLocation, pathPosition, positionMinus) {
-    $(pathLocation).click(function (e) {
-      e.preventDefault();
-      var urlPath = window.location.origin;
-      if (urlPath != "http://www.loscedrostapiales.com") {
-        $(window).attr({
-          'location': "http://www.loscedrostapiales.com/"
-        });
-      }
-
-      var posicion = $(pathPosition).position().top - positionMinus;
-      $("body, html").animate({ scrollTop: posicion + "px" }, 800);
-    });
-  },
-      turnosTooltip = function turnosTooltip() {
-    redirectTooltip("#turn-tooltip", ".article-online-turn", 200);
-  },
-      ubicacionTooltip = function ubicacionTooltip() {
-    redirectTooltip("#address-tooltip", ".article-information-for-user", 200);
-  },
-      contactoTooltip = function contactoTooltip() {
-    redirectTooltip("#contact-tooltip", ".article-information-for-user", 200);
-  },
-      horariosTooltip = function horariosTooltip() {
-    redirectTooltip("#schedule-tooltip", ".article-visit-schedule", 100);
-  };
-
-  /* Redirección */
-  turnosTooltip();
-  ubicacionTooltip();
-  contactoTooltip();
-  horariosTooltip();
+  var tooltipBox = $('.tooltip-box');
+  tooltipBox.find('.tooltip').click(function () {
+    window.location = window.location.origin + '/' + $(this).attr('href');
+    getHightlitedSection();
+  });
 }
-//# sourceMappingURL=query.js.map
+
+function getHightlitedSection() {
+  var headerHeight = $('.fake-header').innerHeight();
+  $(this).resize(function () {
+    headerHeight = $('.fake-header').innerHeight();
+  });
+
+  var element = window.location.hash;
+  if (element !== '') {
+    var scrollTo = void 0;
+    setTimeout(function () {
+      scrollTo = $(element).offset().top - (headerHeight * 2 - 20); // to fix some margin
+      $('html, body').animate({ scrollTop: scrollTo }, 'slow');
+      return false;
+      // $("html").scrollTop(scrollTo);
+    }, 10);
+
+    $(element).addClass('scroll-from-tooltip');
+    setTimeout(function () {
+      $(element).removeClass('scroll-from-tooltip');
+    }, 2000);
+  }
+}
+
+function getScrollToTopButton() {
+  var button = $('.scroll-to-top');
+  var body = $(window);
+
+  body.scroll(function () {
+    if (body.scrollTop() > body.height()) {
+      button.fadeIn("slow");
+    } else {
+      button.fadeOut("slow");
+    }
+  });
+
+  button.click(function () {
+    $('html, body').animate({ scrollTop: 0 }, 'slow');
+    return false;
+  });
+}
 //# sourceMappingURL=query.js.map

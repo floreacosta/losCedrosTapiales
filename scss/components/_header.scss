@@ -137,6 +137,7 @@
 		position: relative;
 		text-transform: uppercase;
 		@include text-base($white);
+		font-size: 15px;
 		@include font-calibri-bold;
 	}
 }/* items del menu */
@@ -242,7 +243,7 @@
 
 		a {
 			color: $color-dark;
-			padding: 2.5em 2em;
+			padding: 2.5em 1.8em;
 		}
 	}
 

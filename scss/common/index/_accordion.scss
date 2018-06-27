@@ -35,6 +35,7 @@
     @include transform(rotate(-45deg));
     vertical-align: middle;
     margin-top: -3px;
+    float: right;
     @include single-transition(all, 300ms, ease, false);
   }
 

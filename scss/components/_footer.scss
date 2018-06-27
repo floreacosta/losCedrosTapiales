@@ -7,8 +7,8 @@
 	text-align: center;
 
 	p {
-		line-height: 22px;
 		@include font-calibri-normal;
+		@include text-base();
 		margin: 0;
 		color: $color-secondary;
 	}
@@ -37,6 +37,10 @@
 }
 
 .site-map {
+	a {
+		@include text-base($color-primary);
+	}
+
 	li {
 		padding: .35em 0;
 		color: $color-secondary;
@@ -85,7 +89,7 @@
 	line-height: 2.8em;
 	padding: 0 1em;
 	width: 100%;
-	font-size: 1em;
+	font-size: .9em;
 	margin-right: 10px;
 	@include border-radius(5px);
 	@include box-shadow($shadow);

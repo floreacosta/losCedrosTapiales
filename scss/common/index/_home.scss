@@ -65,13 +65,37 @@
 	@include box-shadow($shadow);
 
 	&:after {
-		content: '-';
-		font-family: 'modern_pictogramsnormal';
-		@include transform(rotate(90deg));
-		color: $white;
-		font-size: 1.2em;
-		position: absolute;
-		right: 12px;
+		// content: '-';
+		// font-family: 'modern_pictogramsnormal';
+		// @include transform(rotate(90deg));
+		// color: $white;
+		// font-size: 1.2em;
+		// position: absolute;
+		// right: 12px;
+	}
+}
+
+.play-icon-container {
+	height: 10px;
+	width: 10px;
+	border: 0px;
+	position: absolute;
+	right: 12px;
+	overflow: hidden;
+	font-size: 0px;
+	top: 50%;
+	@include transform(translateY(-50%));
+
+	&:after {
+		content: '';
+		display: inline-block;
+		width: 8px;
+		height: 8px;
+		@include transform(rotate(-45deg));
+		background: $white;
+		position: relative;
+    top: 1px;
+    right: 6px;
 	}
 }
 
@@ -117,13 +141,13 @@
 }
 
 .patient-responsabilities-title {
-	font-size: 31px;
+	font-size: 30px;
 	line-height: 31px;
 	margin-bottom: 23px;
 }
 
 .patient-responsabilities-message {
-	line-height: 22px;
+	// line-height: 22px;
 	color: $color-dark;
 	@include font-calibri-normal();
 }
@@ -246,7 +270,7 @@
 	}
 
 	.title-information {
-		width: 40%;
+		width: 45%;
 		bottom: 100px;
 	}
 

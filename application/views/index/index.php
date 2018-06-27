@@ -62,7 +62,7 @@
 					<p><i>Sanatorio Privado Madero</i> constituye una institución sólida desde el año 1983 en la que se destaca por la excelencia que otorga en sus prestaciones médicas y que sigue manteniendo la filosofía de brindar atención al mejor nivel.</p>
 	        <p>La confianza lograda nos permitió ir creciendo junto con las familias de nuestros pacientes.</p>
 				</div>
-        <button class="open-overlay button-open-home-video" id="institutional_video_button" title="Video a pantalla completa">Video</button>
+        <button class="open-overlay button-open-home-video" id="institutional_video_button" title="Video a pantalla completa">Video<i class="play-icon-container" aria-hidden="true">Play</i></button>
       </div>
 		</section>
 

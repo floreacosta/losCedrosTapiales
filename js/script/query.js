@@ -25,6 +25,7 @@ const OVERLAY_KEY = {
 function getStickyHeader () {
   let fakeHeader = $('.fake-header');
   let header = $('.global-header-container');
+  let body = $(window);
 
   let fakeHeaderHeight = function () {
     fakeHeader.css({
@@ -33,10 +34,10 @@ function getStickyHeader () {
   };
 
   fakeHeaderHeight();
-  $(this).resize(fakeHeaderHeight);
+  body.resize(fakeHeaderHeight);
 
-  $(this).scroll(() => {
-    if ($(this).scrollTop() > header.innerHeight()) {
+  body.scroll(() => {
+    if (body.scrollTop() > header.innerHeight()) {
       header.addClass('sticky-header');
     } else {
       header.removeClass('sticky-header');
@@ -47,6 +48,7 @@ function getStickyHeader () {
 function getActiveSection () {
   let url = window.location.pathname;
   let menu = $('.global-menu-content');
+  let urlLenght = url.split('/').length;
 
   menu.each(function () {
     let item = $(this);
@@ -57,8 +59,8 @@ function getActiveSection () {
     }
   });
 
-  if (url.substr(1) !== '') {
-    menu.find('#' + url.substr(1)).parent().addClass('active');
+  if (url.split('/')[urlLenght - 1] !== '') {
+    menu.find('#' + url.split('/')[urlLenght - 1]).parent().addClass('active');
   }
 }
 
@@ -81,15 +83,16 @@ function getOpenCloseMenu () {
 
 function getToggleAccordion () {
   let accordion = $(".accordion-container");
+  let body = $(window);
 
   getAccordionToElement(accordion);
   accordion.click(function () {
-    if ($(window).width() < 769) {
+    if (body.width() < 769) {
       $(this).toggleClass("accordion-container-active");
     }
 
-    $(this).resize(() => {
-      if ($(window).width() < 769) {
+    body.resize(() => {
+      if (body.width() < 769) {
         $(this).toggleClass("accordion-container-active");
       }
     });
@@ -139,8 +142,9 @@ function getAccordionToElement (accordion) {
   let accordionContainerClass = 'accordion-container';
   let accordionContentClass = 'accordion-title-container';
   let accordionContent = accordion.find('.' + accordionContentClass);
+  let body = $(window);
 
-  if ($(window).width() > 769) {
+  if (body.width() > 769) {
     accordion.removeClass(accordionContainerClass).addClass('element-container');
     accordionContent.removeClass(accordionContentClass).addClass('title-container');
   } else {
@@ -148,8 +152,8 @@ function getAccordionToElement (accordion) {
     accordionContent.addClass(accordionContentClass).removeClass('title-container');
   }
 
-  $(window).resize(function () {
-    if ($(window).width() > 769) {
+  body.resize(function () {
+    if (body.width() > 769) {
       accordion.removeClass(accordionContainerClass).addClass('element-container');
       accordionContent.removeClass(accordionContentClass).addClass('title-container');
     } else {
@@ -188,6 +192,7 @@ function getActiveSlider () {
   let buttons = $('.item-content');
   let sliderActiveClass = 'slider-active';
   let buttonActiveClass = 'item-active';
+  let body = $(window);
 
   let getContainerHeigth = function () {
     sliders.find('.menu-instalaciones').css({
@@ -208,7 +213,7 @@ function getActiveSlider () {
   getContainerHeigth();
   getContainerWidth();
 
-  $(this).resize(() => {
+  body.resize(() => {
     getContainerHeigth();
     getContainerWidth();
   });
@@ -323,17 +328,18 @@ function getCarrousel () {
 
 function getBarraTooltip () {
   let tooltipBox = $(".tooltip-box");
+  let body = $(window);
 
   let scrollTooltip = function () {
-    if ($(this).scrollTop() > 200) {
+    if (body.scrollTop() > 200) {
       tooltipBox.fadeOut("slow");
-    } else if ($(this).scrollTop() < 200) {
+    } else if (body.scrollTop() < 200) {
       tooltipBox.fadeIn("slow");
     }
   };
 
-  $(window).scroll(() => {
-    if ($(window).width() >= 769) {
+  body.scroll(() => {
+    if (body.width() >= 769) {
       scrollTooltip();
     } else {
       tooltipBox.css({
@@ -342,8 +348,8 @@ function getBarraTooltip () {
     }
 
     //Para hacer responsive el Tooltip.
-    $(window).resize(() => {
-      if ($(window).width() >= 769) {
+    body.resize(() => {
+      if (body.width() >= 769) {
         scrollTooltip();
       } else {
         tooltipBox.css({
@@ -373,7 +379,9 @@ function getHightlitedSection () {
     let scrollTo;
     setTimeout(function () {
       scrollTo = $(element).offset().top - ((headerHeight * 2) - 20); // to fix some margin
-      $("html").scrollTop(scrollTo);
+      $('html, body').animate({ scrollTop: scrollTo }, 'slow');
+      return false;
+      // $("html").scrollTop(scrollTo);
     }, 10);
 
     $(element).addClass('scroll-from-tooltip');
@@ -385,19 +393,18 @@ function getHightlitedSection () {
 
 function getScrollToTopButton () {
   let button = $('.scroll-to-top');
+  let body = $(window);
 
-  $(window).scroll(() => {
-    if ($(this).scrollTop() > $(window).height()) {
-      console.log($(this).scrollTop());
-      console.log('deberia verse');
+  body.scroll(() => {
+    if (body.scrollTop() > body.height()) {
       button.fadeIn("slow");
     } else {
-      console.log('NO deberia verse');
       button.fadeOut("slow");
     }
   });
 
   button.click(() => {
-    $("html").scrollTop(0);
+    $('html, body').animate({ scrollTop: 0 }, 'slow');
+    return false;
   });
 }

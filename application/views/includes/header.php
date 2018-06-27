@@ -1,6 +1,6 @@
 	<header class="global-header-container">
 		<div class="logo logo-container">
-			<a href="<?= base_url(); ?>index" title="Sanatorio Privado Madero" class="logo-link-container">
+			<a href="<?= base_url(); ?>" title="Sanatorio Privado Madero" class="logo-link-container">
 				<img alt="Sanatorio Privado Madero" src="<?= base_url(); ?>img/logo.png" class="logo-image" />
 			</a>
 		</div>

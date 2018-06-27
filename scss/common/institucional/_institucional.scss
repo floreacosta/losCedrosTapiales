@@ -45,7 +45,6 @@
 
   li {
     @include text-base();
-    line-height: 20px;
     @include text-base-full-desktop();
     padding-left: 20px;
     margin-bottom: 15px;
