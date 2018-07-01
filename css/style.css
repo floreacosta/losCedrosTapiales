@@ -241,8 +241,8 @@ h3 {
 /* Caja contenedora del Logo */
 .logo-container {
   width: 72px;
-  height: 100%;
-  display: inline-block;
+  height: 49.89px;
+  display: block;
   position: relative;
   overflow: hidden;
 }
@@ -399,6 +399,7 @@ h3 {
 **/
 @media (min-width: 769px) {
   .logo-container {
+    display: inline-block;
     width: auto;
   }
 }
@@ -469,6 +470,7 @@ h3 {
 
   .sticky-header .logo-container {
     width: 9em;
+    height: 50.52px;
   }
   .sticky-header .global-menu-container {
     width: calc(100% - 9em - 5px);
@@ -502,6 +504,7 @@ h3 {
 
   .logo-container {
     width: 12em;
+    height: 67.36px;
   }
 
   .global-menu-container {

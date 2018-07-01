@@ -1,0 +1,43 @@
+/**
+* Item information
+**/
+
+.prevention-item {
+	padding: 1.3em 1em;
+	color: $color-dark;
+	background-color: $color-light;
+	display: block;
+	margin: 1em 0;
+
+	@include layout-item-information(100%, 100%);
+
+	h2 {
+		font-size: 1.3em;
+		margin-bottom: 5px;
+	}
+
+	h3 {
+		margin-top: 10px;
+		margin-bottom: 8px;
+	}
+}
+
+.service-head-title {
+	@include font-calibri-normal();
+}
+
+/**
+* Responsive
+**/
+
+@media (min-width: $tablet) {
+	.prevention-item {
+		@include layout-item-information(100%, 75%);
+	}
+}
+
+@media (min-width: $desktop) {
+	.prevention-item {
+		@include layout-item-information(75%, 50%);
+	}
+}

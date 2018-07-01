@@ -1,0 +1,125 @@
+.tooltip-box {
+  display: none;
+  width: 2.5em;
+  float: right;
+  position: fixed;
+  right: 2.5em;
+  z-index: 3;
+  top: 140px;
+}
+
+.tooltip {
+    position: relative;
+    display: block;
+    cursor: pointer;
+    margin-bottom: 10px;
+
+    &:last-of-type {
+      margin-bottom: 0px;
+    }
+
+    &:before {
+      content:'';
+      display: block;
+      color: $white;
+      width: 2.5em;
+      height: 2.5em;
+      position: relative;
+      background-color: $color-primary;
+      @include border-radius(50%);
+      @include box-shadow($shadow);
+    }
+
+    .tooltip-text {
+      visibility: hidden;
+      width: 120px;
+      @include text-base($color-primary);
+      @include font-calibri-bold;
+      background-color: $white;
+      text-align: center;
+      padding: .4em 0;
+      position: absolute;
+      z-index: 1;
+      right: 55px;
+      top: 50%;
+      @include transform(translateY(-50%));
+      @include box-shadow($shadow);
+      @include border-radius(6px);
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: calc(50% - 4px);
+        right: -4px;
+        width: 8px;
+        height: 8px;
+        display: inline-block;
+        @include transform(rotate(45deg));
+        background: $white;
+      }
+
+      &.tooltip-text-primary {
+        visibility: visible;
+      }
+    }
+
+    &:hover {
+      .tooltip-text {
+        visibility: visible;
+      }
+    }
+
+    .tooltip-img-content {
+      width: 2.5em;
+      height: 2.5em;
+      display: inline-block;
+      position: absolute;
+      overflow: hidden;
+      top: 50%;
+      left: 50%;
+      @include text-base();
+      @include transform(translate(-50%, -50%));
+
+      img {
+        left: 50%;
+        @include transform(translateX(-50%));
+        width: 23px;
+        position: relative;
+      }
+    }
+}
+
+.tooltip-active {
+  &:before {
+    background-color: $color-tertiary;
+  }
+}
+
+.tooltip-online-turn {
+  top: 7px;
+}
+
+.tooltip-address {
+  top: -34px;
+}
+
+.tooltip-contact {
+  top: -73px;
+}
+
+.tooltip-schedule {
+  top: -113px;
+}
+
+/**
+* Responsive
+**/
+
+@media (min-width: $tablet) {
+  .tooltip-box {
+    display: block;
+  }
+}
+
+@media (min-width: $desktop) {
+}

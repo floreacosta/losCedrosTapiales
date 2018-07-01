@@ -1,0 +1,154 @@
+/* Institucional */
+.photograpy-information {
+	margin: 0 5% 8%;
+}
+
+.photograpy-secondary {
+	margin-bottom: 0em;
+	margin-top: 0em;
+}
+
+.instalaciones-content {
+	.photograpy-primary {
+		width: 100%;
+	}
+}
+
+.photograpy-primary,
+.photograpy-secondary {
+	position: relative;
+	height: auto;
+	display: block;
+}
+
+.photograpy-primary {
+	margin-bottom: 3em;
+}
+
+.photograpy-information {
+
+}
+
+.container-slider {
+	&.slider-active {
+		display: block;
+		@include single-transition(all, 300ms, ease, false);
+	}
+}
+
+.menu-instalaciones {
+	overflow: visible;
+
+	.item-container {
+		margin-bottom: 20px;
+
+		&:last-of-type {
+			margin-bottom: 0px;
+		}
+	}
+
+	.item-category {
+		display: block;
+		position: relative;
+		margin-bottom: 5px;
+		@include heading-level-3;
+
+		&:after {
+			content: '';
+			top: calc(50% - 3px);
+			right: 0px;
+			position: absolute;
+			border-left: solid 2px $color-dark;
+			border-top: solid 2px $color-dark;
+			width: 10px;
+			height: 10px;
+			@include transform(rotate(-135deg));
+			@include single-transition(all, 300ms, ease, false);
+		}
+	}
+
+	.item-description {
+		display: none;
+	}
+
+	.item-container {
+		&.item-active {
+			.item-category {
+				&:after {
+					top: calc(50% - 9px);
+					@include transform(rotate(45deg));
+					@include single-transition(all, 300ms, ease, false);
+				}
+			}
+
+			.item-description {
+				display: block;
+				@include single-transition(all, 300ms, ease, false);
+			}
+		}
+	}
+
+	.container-slider {
+		margin-top: 10px;
+	}
+}
+
+.instalaciones-subheading {
+	position: relative;
+	display: block;
+	padding-bottom: .25em;
+	margin-bottom: 1em;
+	font-size: 2em;
+}
+
+/**
+* Responsive width
+**/
+
+@media (min-width: $tablet) {
+	.photograpy-primary {
+		margin-top: 1em;
+	}
+
+	.menu-instalaciones {
+		.item-container {
+			margin-bottom: 20px;
+			width: calc(50% - 5%);
+			margin-right: 5%;
+			display: block;
+			position: static;
+		}
+
+		.container-slider {
+			position: absolute;
+			right: 0px;
+			top: 0px;
+			width: 50%;
+			margin: 0px;
+		}
+	}
+
+	.photograpy-secondary {
+		margin-bottom: .5em;
+		margin-top: .5em;
+	}
+}
+
+@media (min-width: $desktop) {
+	.item-container {
+		cursor: pointer;
+	}
+}
+
+@media (min-width: $full_desktop) {
+	.menu-instalaciones {
+		.item-container {
+			width: calc(30% - 5%);
+			margin-right: 5%;
+		}
+
+		.container-slider {
+			width: 70%;
+		}
+	}
+}

@@ -1,0 +1,163 @@
+.element-list {
+	position: relative;
+
+	h3 {
+		width: 100%;
+		line-height: 2em;
+		font-size: 1.3em;
+	}
+}
+
+.cobertura-medica-page {
+	.element-list {
+		overflow: hidden;
+	}
+}
+
+.information-item {
+	background-color: $color-light;
+	position: relative;
+	vertical-align: middle;
+	display: block;
+	width: 100%;
+	vertical-align: top;
+	margin-bottom: 1em;
+
+	&:last-of-type {
+		margin-right: 0;
+	}
+
+	@include item-circle();
+	&:before {
+		top: 50%;
+		@include transform(translateY(-50%));
+		left: -3px;
+		width: 8px;
+		height: 8px;
+	}
+}
+
+.especialidades-title {
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	padding: 1em;
+	cursor: pointer;
+	width: 100%;
+	text-align: left;
+	@include text-base($color-tertiary);
+	@include text-base-full-desktop;
+}
+
+.especialidades-subtitle {
+	font-size: 21px;
+	margin-bottom: 18px;
+}
+
+.especialista-item {
+	color: $color-dark;
+	display: block;
+	text-transform: capitalize;
+	padding-left: 18px;
+	position: relative;
+	margin-bottom: 5px;
+
+	@include item-circle();
+	&:before {
+		top: 8px;
+	}
+}
+
+/* Logos / Coberturas Médicas */
+.logotypes-medic {
+	margin-bottom: 20px;
+	width: calc(50% - 2px);
+	display: inline-block;
+	float: left;
+	height: 80px;
+
+	img {
+		display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    @include transform(translate(-50%, -50%));
+    width: 90%;
+	}
+}
+
+.information-item-container {
+	display: block;
+	clear: both;
+	margin-bottom: 10px;
+}
+
+/**
+* Responsive
+**/
+
+@media (min-width: $mobile) {
+	.logotypes-medic {
+		position: relative;
+		display: block;
+		vertical-align: top;
+		width: calc(33.33% - 5px);
+		margin-right: 5px;
+		height: 110px;
+	}
+}
+
+@media (min-width: $tablet) {
+	.cobertura-medica-page {
+		.element-list {
+			width: calc(100% + 10px);
+		}
+	}
+
+	.especialidades-page {
+		.element-list {
+
+		}
+
+		.information-item {
+			width: calc(33.33% - 10px);
+			margin-right: 10px;
+			float: left;
+		}
+	}
+
+	.cobertura-medica-page .information-item {
+		position: relative;
+		display: block;
+		vertical-align: top;
+		width: calc(50% - 10px);
+		margin-right: 10px;
+	}
+
+	.logotypes-medic {
+		width: calc(20% - 5px);
+	}
+}
+
+@media (min-width: $desktop) {
+	.cobertura-medica-page {
+		.element-list {
+			width: calc(100% + 5px);
+		}
+	}
+
+	.cobertura-medica-page .information-item {
+		width: calc(20% - 5px);
+		margin-right: 5px;
+	}
+}
+
+@media (min-width: $full_desktop) {
+	.especialista-item {
+		margin-bottom: 10px;
+
+		&:before {
+			top: 11px;
+		}
+	}
+}

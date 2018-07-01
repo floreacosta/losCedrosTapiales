@@ -23,8 +23,8 @@
 /* Caja contenedora del Logo */
 .logo-container {
 	width: 72px;
-	height: 100%;
-	display: inline-block;
+	height: 49.89px;
+	display: block;
 	position: relative;
 	overflow: hidden;
 }
@@ -177,6 +177,7 @@
 
 @media (min-width: $tablet) {
 	.logo-container {
+		display: inline-block;
 		width: auto;
 	}
 }
@@ -189,7 +190,6 @@
 
 	/* Link a Home desde el Logo */
 	.logo-link-container {
-
 		/* Imagen Logo al 100% */
 		img {
 			width: auto;
@@ -250,6 +250,7 @@
 	.sticky-header {
 		.logo-container {
 			width: 9em;
+			height: 50.52px;
 		}
 
 		.global-menu-container {
@@ -292,6 +293,7 @@
 
 	.logo-container {
 		width: 12em;
+		height: 67.36px;
 	}
 
 	.global-menu-container {

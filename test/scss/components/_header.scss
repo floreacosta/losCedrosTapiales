@@ -1,0 +1,299 @@
+/* Contenedor del Header */
+.global-header-container {
+	width: 100%;
+	position: relative;
+	background: $white;
+	z-index: 4;
+	padding: .6em 1.7em;
+	@include box-shadow($shadow);
+
+	&.sticky-header {
+		position: fixed;
+		top: 0px;
+		left: 0px;
+	}
+}
+
+.fake-header {
+	position: absolute;
+	top: 0px;
+	width: 100%;
+}
+
+/* Caja contenedora del Logo */
+.logo-container {
+	width: 72px;
+	height: 100%;
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+}
+
+/* Link a Home desde el Logo */
+.logo-link-container {
+	display: inline-block;
+
+	/* Imagen Logo al 100% */
+	img {
+		// max-width: 100%;
+		position: relative;
+		vertical-align: middle;
+		width: 10em;
+	}
+}/* Link a Home desde Logo */
+
+.hamburguer-open-container {
+	display: inline-block;
+	position: absolute;
+	right: 34px;
+	top: 50%;
+	@include transform(translateY(-50%));
+}
+
+.hamburguer-button {
+	width: 30px;
+	border: 0px;
+
+	/* Lineas que arman el botón hamburguesa del Menú Mobile */
+	hr {
+		height: 2px;
+    width: 100%;
+    margin: 7px 0;
+		border: 0;
+		background: $color-primary;
+	}
+}
+
+.global-menu-container {
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	top: 0px;
+	left: 0px;
+	display: none;
+
+	&.active-global-menu {
+		display: inline-block;
+
+		&:before {
+			content: '';
+			position: absolute;
+			top: 0px;
+			right: 0px;
+			bottom: 0px;
+			width: 100vw;
+			height: 100vh;
+			display: inline-block;
+			z-index: 6;
+			background: $color-dark-one-opacity;
+			@include opacity(.5);
+		}
+	}
+}
+
+.global-menu-content-component {
+	position: fixed;
+	top: 0px;
+	right: -100%;
+	bottom: 0px;
+	width: 70%;
+	height: 100vh;
+	z-index: 6;
+	background: $color-dark-one;
+}
+
+/* Contenedor del Botón Hamburguesa */
+.button-menu {
+	position: relative;
+
+	/* Botón Hamburguesa */
+	button {
+		border: 0;
+		background: transparent;
+		width: 100%;
+		position: relative;
+		vertical-align: middle;
+		padding: 1em 0;
+		cursor: pointer;
+	}
+}
+
+/* Caja contenedora de elementos del menú */
+.global-menu-content {
+}/* navegación en móviles */
+
+.global-menu-content {
+}
+
+/* Elementos contenidos en el menú */
+.global-menu-item {
+	text-align: right;
+	border-bottom: solid 1px $white;
+
+	a {
+		padding: 2em 1em;
+		display: inline-block;
+		width: 100%;
+		position: relative;
+		text-transform: uppercase;
+		@include text-base($white);
+		@include font-calibri-bold;
+	}
+}/* items del menu */
+
+.hamburguer-close-menu {
+	width: 100%;
+	padding: 18px 1em;
+	border-bottom: solid 1px $white;
+	text-align: right;
+
+	.close-button {
+		width: 3em;
+		height: 3em;
+		border: 0px;
+
+		@include transform(rotate(45deg));
+		position: relative;
+		display: inline-block;
+	}
+
+	hr {
+		height: 2px;
+		width: 100%;
+		border: 0px;
+		background: $white;
+
+		&:last-of-type {
+			top: -1px;
+			@include transform(rotate(90deg));
+		}
+	}
+}
+
+/**
+* Responsive
+**/
+
+@media (min-width: $tablet) {
+	.logo-container {
+		width: auto;
+	}
+}
+
+@media (min-width: $desktop) {
+	.logo-container {
+		vertical-align: middle;
+		width: 10em;
+	}
+
+	/* Link a Home desde el Logo */
+	.logo-link-container {
+
+		/* Imagen Logo al 100% */
+		img {
+			width: auto;
+			max-width: 100%;
+		}
+	}/* Link a Home desde Logo */
+
+	.global-header-container {
+		padding-left: 6%;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		padding-right: 0px;
+	}
+
+	.hamburguer-open-container {
+		display: none;
+	}
+
+	.global-menu-container {
+		display: inline-block;
+    position: relative;
+    width: calc(100% - 10em - 4px);
+    height: auto;
+    top: auto;
+    left: auto;
+		vertical-align: middle;
+		text-align: right;
+	}
+
+	.global-menu-content-component {
+		position: relative;
+		display: block;
+		right: auto;
+		height: auto;
+		width: auto;
+		bottom: auto;
+		background: transparent;
+		top: auto;
+		float: right;
+	}
+
+	.hamburguer-close-menu {
+		display: none;
+	}
+
+	.global-menu-item {
+		text-align: left;
+		border: 0px;
+		display: block;
+		float: left;
+
+		a {
+			color: $color-dark;
+			padding: 2.5em 2em;
+		}
+	}
+
+	.sticky-header {
+		.logo-container {
+			width: 9em;
+		}
+
+		.global-menu-container {
+			width: calc(100% - 9em - 5px);
+		}
+
+		.global-menu-item {
+			a {
+				padding: 1.8em 2em;
+			}
+		}
+	}
+
+	.global-menu-content {
+		display: block;
+    overflow: hidden;
+	}
+
+	/* Elementos contenidos en el menú */
+	.global-menu-item {
+		&.active,
+		&:hover {
+			background-color: $color-primary-opacity;
+
+			a {
+				color: $white;
+			}
+
+			a:after {
+				background-color: $white;
+			}
+		}
+	}/* items del menu */
+}
+
+@media (min-width: $full_desktop) {
+	.global-header-container {
+		padding-left: 9%;
+	}
+
+	.logo-container {
+		width: 12em;
+	}
+
+	.global-menu-container {
+    width: calc(100% - 12em - 5px);
+	}
+}

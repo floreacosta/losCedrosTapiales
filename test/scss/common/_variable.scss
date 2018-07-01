@@ -1,0 +1,27 @@
+$color-primary: #023670; /* Azul oscuro */ /* #0d4748 Verde oscuro */
+$color-secondary: $color-primary; /* #34694e Verde oscuro para títulos */
+$color-tertiary: #00428c; /* #3d8232 Verde claro */
+$color-light: #f2f1f1; /* Gris claro */
+$color-dark: #7b7b79; /* Gris oscuro, texto */
+$color-dark-light: #c1c1c1;
+$color-primary-opacity: rgba(2, 54, 111, 0.7);
+
+$color-dark-one: #8b8d8a;
+$color-dark-one-opacity: rgba(139, 141, 138, .8);
+
+$color-rolover: #9db5b6;
+
+$white: #ffffff;
+$shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+$border_shadow: 0px 0px 0px 3px $color-dark inset;
+
+$accordion-background: #ededec;
+
+/*
+ * NOTE: Media Querys
+ */
+
+$mobile: '376px';
+$tablet: '769px';
+$desktop: '1025px';
+$full_desktop: '1400px';

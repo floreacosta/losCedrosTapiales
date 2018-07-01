@@ -1,0 +1,37 @@
+main {
+  padding: 5% 25px;
+	width: 100%;
+	display: block;
+	margin: 0 auto;
+	position: relative;
+	min-height: calc(100vh - 96px - 537px - 62px);
+
+	&.home-page {
+		padding-top: 0%;
+    padding-bottom: 0%;
+	}
+}
+
+@media (min-width: $tablet) {
+	main {
+		min-height: calc(100vh - 96px - 205px - 38px);
+	}
+}
+
+@media (min-width: $desktop) {
+	main {
+    padding: 6%;
+    padding-top: 4%;
+    padding-bottom: 4%;
+		min-height: calc(100vh - 88px - 231px - 50px);
+    overflow: hidden;
+	}
+}
+
+@media (min-width: $full_desktop) {
+  main {
+    padding: 9%;
+    padding-top: 4%;
+    padding-bottom: 4%;
+	}
+}

@@ -1,0 +1,67 @@
+@import "compass/reset";
+@import "compass/css3/box-shadow";
+@import "compass/css3/border-radius";
+@import "_mixin";
+
+@import "_variable";
+@import "_global";
+@import "_fonts";
+
+@import "../components/_header";
+@import "../components/_main";
+@import "../components/_footer";
+
+@import "_tooltip";
+@import "_item-box";
+@import "_modal";
+@import "_information-item";
+@import "_breadcrum";
+@import "_tooltip-photo";
+@import "_flaticon";
+
+.styleguides {
+	margin: 2em 3%;
+	background: $white;
+
+	> h1, > h2, > h3, > h4 {
+		font-family: "Calibri, san-serif";
+		font-weight: bold;
+		font-style: normal;
+	}
+
+	> h1 {
+		font-size: 2em;
+	}
+
+	> h2 {
+		font-size: 1.3em;
+		font-weight: normal;
+	}
+
+	> p {
+		font-weight: normal;
+		margin: 2em 0;
+
+		span {
+			font-weight: bold;
+		}
+	}
+
+	section {
+		margin: 2em 0;
+
+		> p {
+			font-weight: normal;
+			margin-bottom: 1em;
+			font-style: italic;
+		}
+	}
+}
+
+.container {
+    width: 100%;
+    margin: auto;
+    background-color: grey;
+    padding: 1em;
+    position: relative;
+}

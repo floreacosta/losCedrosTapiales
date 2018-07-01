@@ -1,0 +1,27 @@
+.article-visit-schedule {
+	background-color: $color-light;
+	font-size: 80%;
+	padding: 1.5em;
+	display: inline-block;
+	width: 100%;
+	box-shadow: $shadow;
+
+	h1 {
+		margin-top: 0;
+	}
+
+	span {
+		@include font-calibri-light()
+	}
+}
+
+/**
+* Responsive width
+**/
+
+@media (min-width: 900px){
+	.article-visit-schedule {
+		font-size: 100%;
+		padding: 2em;
+	}
+}

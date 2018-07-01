@@ -1,0 +1,41 @@
+@import "compass/css3/columns";
+@import "compass/css3/box-shadow";
+@import "compass/css3/transform";
+@import "compass/css3/opacity";
+@import "compass/css3/flexbox";
+@import "compass/css3/border-radius";
+@import "compass/css3/appearance";
+@import "compass/css3/columns";
+@import "compass/reset";
+@import "common/_mixin";
+@import "compass/css3/transition";
+
+@import "common/_variable";
+@import "common/_global";
+@import "common/_fonts";
+
+@import "components/_header";
+@import "components/_main";
+@import "components/_footer";
+
+@import "common/_overlay";
+@import "common/_tooltip";
+@import "common/_item-box";
+@import "common/_modal";
+@import "common/_information-item";
+@import "common/_breadcrum";
+@import "common/_tooltip-photo";
+@import "common/_flaticon";
+@import "common/_slider";
+
+@import "common/index/_home";
+@import "common/index/_video";
+@import "common/index/_sections";
+@import "common/index/_online-turn";
+@import "common/index/_information";
+@import "common/index/_schedule";
+@import "common/index/_accordion";
+
+@import "common/instalaciones/_instalaciones";
+@import "common/institucional/_institucional";
+@import "common/most-important-data/_most-important-data";

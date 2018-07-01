@@ -1,0 +1,280 @@
+.global-footer {
+	clear: both;
+	width: 100%;
+	height: auto;
+	position: relative;
+	display: block;
+	text-align: center;
+
+	p {
+		line-height: 22px;
+		@include font-calibri-normal;
+		margin: 0;
+		color: $color-secondary;
+	}
+
+	.logo {
+		width: 12em;
+		margin: auto;
+	}
+}
+
+.search-input-component-container.desktop-component,
+.institutional,
+.site-map {
+	display: none;
+}
+
+.search,
+.site-map,
+.institutional {
+	margin-top: 2em;
+	width: 100%;
+}
+
+.institutional {
+	margin-top: 0;
+}
+
+.site-map {
+	li {
+		padding: .35em 0;
+		color: $color-secondary;
+
+		a:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+.turn-online {
+	a {
+		@include font-calibri-bold;
+		color: $color-secondary;
+		text-decoration: underline;
+	}
+}
+
+.line-phone {
+	span {
+		line-height: 1.4em;
+		color: $color-secondary;
+	}
+}
+
+.search-form {
+	width: 100%;
+	position: relative;
+}
+
+.search-input-component-container {
+	background: $color-light;
+	padding: 42px 40px;
+}
+
+.search-input-container {
+	width: calc(100% - 60px);
+	position: relative;
+	display: inline-block;
+}
+
+.search-input {
+	border: 0;
+	background-color: $white;
+	color: $color-primary;
+	line-height: 2.8em;
+	padding: 0 1em;
+	width: 100%;
+	font-size: 1em;
+	margin-right: 10px;
+	@include border-radius(5px);
+	@include box-shadow($shadow);
+	border: solid 1px $color-light;
+
+	&:focus {
+		outline: 0;
+	}
+}
+
+.search-button {
+	font-size: 0px;
+	display: inline-block;
+	position: relative;
+	-webkit-appearance: none;
+	margin: 0px;
+	border: 0px;
+	width: 50px;
+  height: 46px;
+	float: right;
+	background: $white;
+	padding-left: 5px;
+	border: solid 1px $color-light;
+	@include border-radius(5px);
+	@include box-shadow($shadow);
+
+	&:after,
+	&:before {
+		content: '';
+		display: inline-block;
+		position: relative;
+	}
+
+	&:before {
+		width: 14px;
+		height: 14px;
+		@include border-radius(50%);
+		border: solid 3px $color-primary;
+	}
+
+	&:after {
+		width: 3px;
+		height: 12px;
+		background: $color-primary;
+		@include border-radius(20%);
+		@include transform(rotate(45deg));
+		position: absolute;
+		top: 24px;
+		left: 15px;
+	}
+}
+
+.contact-information-title {
+	margin-bottom: 16px;
+}
+
+.contact-information-container {
+	text-align: center;
+	margin-top: 52px;
+	margin-bottom: 56px;
+}
+
+.extra-information {
+	background-color: $color-secondary;
+	padding: 10px 3em;
+	position: relative;
+	width: 100%;
+	display: block;
+	color: $white;
+	font-size: .7em;
+	text-align: center;
+
+	span {
+		@include font-calibri-bold;
+		color: $white;
+	}
+}
+
+/**
+* Responsive
+**/
+
+@media (min-width: $tablet) {
+	.global-footer {
+		background: $color-light;
+		padding: 40px 6%;
+		text-align: left;
+
+		.logo {
+			margin: 0px;
+		}
+
+		.site-map,
+		.institutional,
+		.contact-information-container,
+		.search-input-component-container {
+			position: relative;
+			display: inline-block;
+			text-align: left;
+			vertical-align: top;
+			width: calc(50% - 20px);
+			margin: 0px;
+		}
+
+		.institutional {
+			margin-bottom: 20px;
+		}
+
+		.search-input-component-container {
+			vertical-align: bottom;
+		}
+
+		.site-map {
+			margin-bottom: 20px;
+
+			h3 {
+				margin-bottom: 10px;
+			}
+
+			ul {
+				overflow: hidden;
+			}
+
+			li {
+				float: left;
+				margin-right: 20px;
+				padding: 0px;
+				margin-bottom: 5px;
+			}
+		}
+
+		.extra-information {
+			padding: .5em 3em;
+		}
+
+		.search-input-component-container,
+		.site-map {
+			margin-left: 30px;
+		}
+
+		.search-input-component-container {
+			background: transparent;
+			padding: 0px;
+
+			&.mobile-component {
+				display: none;
+			}
+
+			&.desktop-component {
+				display: inline-block;
+			}
+		}
+	}
+}
+
+@media (min-width: $desktop) {
+	.global-footer {
+		background-color: $color-light;
+		padding: 2em 4em;
+
+		.logo {
+			margin-bottom: 10px;
+		}
+
+		.site-map,
+		.institutional,
+		.contact-information-container,
+		.search-input-component-container {
+			width: calc(25% - 30px);
+			margin: 0px;
+		}
+
+		.site-map,
+		.institutional,
+		.contact-information-container {
+			margin-right: 20px;
+		}
+
+		.search-input-component-container {
+			vertical-align: top;
+			width: 25%;
+		}
+
+		.site-map {
+			li {
+				float: none;
+				margin-right: 0px;
+				margin-bottom: 5px;
+			}
+		}
+	}
+}

@@ -1,0 +1,143 @@
+/* Ubicación y Horarios de atención */
+.section-secondary {
+	display: none;
+
+	img {
+		width: 100%;
+		display: block;
+	}
+
+	.background-shadow {
+		@include box-shadow($color-primary-opacity);
+	}
+}
+
+.article-information-for-user {
+	display: none;
+	margin: 2em 0;
+	clear: both;
+	width: 100%;
+
+	.schedule-information-container {
+		margin-bottom: 20px;
+	}
+
+	.title-container {
+		display: block;
+		@include heading-level-2;
+		text-transform: none;
+		color: $color-primary;
+		width: 100%;
+		text-align: left;
+		margin-bottom: 20px;
+	}
+
+	.accordion-button {
+		display: none;
+	}
+
+	.contact-information-container {
+		margin: 0px;
+		margin-top: 20px;
+		text-align: left;
+
+		.contact-information-title,
+		.contact-information-content {
+			color: $color-primary;
+		}
+	}
+
+	.accordion-title {
+		margin-bottom: 10px;
+	}
+
+	.general-schedule-list {
+		li {
+			margin-bottom: 10px;
+			padding-left: 20px;
+			@include item-circle;
+
+			&:after,
+			&:before {
+				top: 8px;
+			}
+		}
+	}
+}
+
+/**
+* Responsive width
+**/
+
+@media (min-width: $tablet) {
+	.section-secondary {
+		display: block;
+	}
+
+	.article-information-for-user {
+		position: relative;
+		@include display-flex;
+		margin-top: -170px;
+		z-index: 1;
+
+		.telephone-line,
+		.location-google-map {
+			width: calc(50% - 20px);
+			// @include box-shadow($shadow);
+		}
+
+		.telephone-line {
+			background-color: $color-light;
+			color: $color-primary;
+			display: inline-block;
+			float: left;
+			padding: 20px;
+		}
+
+		.schedule-information-container,
+		.contact-information-container,
+		.contact-information-container {
+			padding: 20px;
+			margin: 0px;
+		}
+
+		.location-google-map {
+			margin-left: 40px;
+		}
+	}
+}
+
+@media (min-width: $desktop) {
+	.section-secondary {
+		height: 75vh;
+	}
+
+	.article-visit-schedule {
+		font-size: 100%;
+		padding: 2em;
+	}
+
+	.home-page {
+		.section-secondary {
+			height: 70vh;
+
+			img {
+				top: 50%;
+				@include transform(translateY(-50%));
+			}
+		}
+	}
+}
+
+@media (min-width: $full_desktop) {
+	.article-information-for-user {
+		.general-schedule-list {
+			li {
+				&:after,
+				&:before {
+					top: 11px;
+				}
+			}
+		}
+	}
+}
