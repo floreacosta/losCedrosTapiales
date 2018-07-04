@@ -3,17 +3,26 @@ CREATE DATABASE IF NOT EXISTS clinicaloscedros;
 USE clinicaloscedros;
 
 CREATE TABLE IF NOT EXISTS empleado (
-   id int not null auto_increment primary key,
-   nombre varchar(100) not null,
-	imagen varchar(255) not null,
-   sexo char not null
+  id int not null auto_increment primary key,
+  nombre varchar(100) not null,
+  imagen varchar(255) not null,
+  titulo varchar(30),
+  cv text,
+  sexo char not null
 ) ENGINE=InnoDB CHARACTER SET = utf8, COLLATE = utf8_general_ci;
 
-CREATE TABLE IF NOT EXISTS autoridad (
+CREATE TABLE IF NOT EXISTS jefe_sector (
    id int not null auto_increment primary key,
    idEmpleado int not null,
    cargo text not null,
-   cv text,
+
+   CONSTRAINT foreign_key_idEmpleado FOREIGN KEY (idEmpleado) REFERENCES empleado (id)
+) ENGINE=InnoDB CHARACTER SET = utf8, COLLATE = utf8_general_ci;
+
+CREATE TABLE IF NOT EXISTS jefe_servicio (
+   id int not null auto_increment primary key,
+   idEmpleado int not null,
+   cargo text not null,
 
    CONSTRAINT foreign_key_idEmpleado FOREIGN KEY (idEmpleado) REFERENCES empleado (id)
 ) ENGINE=InnoDB CHARACTER SET = utf8, COLLATE = utf8_general_ci;

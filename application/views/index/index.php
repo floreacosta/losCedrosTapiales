@@ -112,12 +112,16 @@
 			</figure>
 		</article>
 
-		<section class="all-accordion-container most-important-data-container">
-			<? include 'includes/accordion/most-important-data.php' ?>
+		<section class="history-container">
+			<? include 'includes/autoridades/autoridades-information.php' ?>
 		</section>
 
 		<section class="patient-responsabilities-container">
 			<? include 'includes/patient-responsabilities/patient-responsabilities.php' ?>
+		</section>
+
+		<section class="all-accordion-container most-important-data-container">
+			<? include 'includes/accordion/most-important-data.php' ?>
 		</section>
 
 		<section class="section-secondary" id="section-secondary">

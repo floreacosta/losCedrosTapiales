@@ -1,12 +1,12 @@
 /*
 Error: Undefined mixin 'opacity'.
-        on line 89 of /Applications/XAMPP/xamppfiles/htdocs/cedros/scss/components/_header.scss, in `opacity'
-        from line 89 of /Applications/XAMPP/xamppfiles/htdocs/cedros/scss/components/_header.scss
+        on line 93 of /Applications/XAMPP/xamppfiles/htdocs/cedros/scss/components/_header.scss, in `opacity'
+        from line 93 of /Applications/XAMPP/xamppfiles/htdocs/cedros/scss/components/_header.scss
         from line 10 of /Applications/XAMPP/xamppfiles/htdocs/cedros/scss/common/styleguides.scss
 
 Backtrace:
-/Applications/XAMPP/xamppfiles/htdocs/cedros/scss/components/_header.scss:89:in `opacity'
-/Applications/XAMPP/xamppfiles/htdocs/cedros/scss/components/_header.scss:89
+/Applications/XAMPP/xamppfiles/htdocs/cedros/scss/components/_header.scss:93:in `opacity'
+/Applications/XAMPP/xamppfiles/htdocs/cedros/scss/components/_header.scss:93
 /Applications/XAMPP/xamppfiles/htdocs/cedros/scss/common/styleguides.scss:10
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:348:in `block in visit_mixin'
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/stack.rb:98:in `block in with_mixin'
@@ -101,4 +101,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined mixin 'opacity'.\A         on line 89 of /Applications/XAMPP/xamppfiles/htdocs/cedros/scss/components/_header.scss, in `opacity'\A         from line 89 of /Applications/XAMPP/xamppfiles/htdocs/cedros/scss/components/_header.scss\A         from line 10 of /Applications/XAMPP/xamppfiles/htdocs/cedros/scss/common/styleguides.scss"; }
+  content: "Error: Undefined mixin 'opacity'.\A         on line 93 of /Applications/XAMPP/xamppfiles/htdocs/cedros/scss/components/_header.scss, in `opacity'\A         from line 93 of /Applications/XAMPP/xamppfiles/htdocs/cedros/scss/components/_header.scss\A         from line 10 of /Applications/XAMPP/xamppfiles/htdocs/cedros/scss/common/styleguides.scss"; }

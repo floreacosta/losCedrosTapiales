@@ -14,15 +14,23 @@
 		<section class="servicios-content">
 			<?
 				foreach($servicios->result() as $servicio):
-					?>
-						<div class="prevention-item">
+					if (($active_servicio !== NULL) && ($active_servicio == $servicio->id)) {
+						?>
+							<div class="prevention-item active-service" id="<?= $servicio->id; ?>">
+						<?
+					} else {
+						?>
+							<div class="prevention-item" id="<?= $servicio->id; ?>">
+						<?
+					}
+						?>
 							<h2 class="service-title"><?= $servicio->nombre; ?></h2>
 							<?
 							 if ($servicio->jefe !== 'Indefinido') {
 								 ?>
 								 <h3>
 									 <span class="service-head-title">Jefe de área:</span>
-									 <strong class="service-head-name"><?= $servicio->jefe; ?></strong>
+									 <strong class="service-head-name"><?= $servicio->titulo;?> <?= $servicio->jefe; ?></strong>
 								 </h3>
 								 <?
 							 }

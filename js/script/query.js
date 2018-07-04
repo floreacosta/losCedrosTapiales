@@ -11,6 +11,7 @@ $(document).ready(() => {
   getStickyHeader();
   getHightlitedSection();
   getScrollToTopButton();
+  getActiveService();
 });
 
 /* NOTE: key/value to set an overlay and call it
@@ -407,4 +408,33 @@ function getScrollToTopButton () {
     $('html, body').animate({ scrollTop: 0 }, 'slow');
     return false;
   });
+}
+
+function getActiveService () {
+  let headerHeight = $('.fake-header').innerHeight();
+  $(this).resize(() => {
+    headerHeight = $('.fake-header').innerHeight();
+  });
+
+  let activeService = $(".prevention-item.active-service");
+  let body = $('html, body');
+
+  if (activeService.length > 0) {
+    let scrollTo;
+    setTimeout(function () {
+      scrollTo = $(activeService).offset().top - ((headerHeight * 2) - 40); // to fix some margin
+      (body).animate({
+        scrollTop: scrollTo
+      }, 'slow');
+
+      let activeServiceAnimationClass = "active-service";
+      setTimeout(function () {
+        $(window).scroll(function () {
+          activeService.removeClass(activeServiceAnimationClass);
+        });
+      }, 1000);
+
+      return false;
+    }, 10);
+  }
 }

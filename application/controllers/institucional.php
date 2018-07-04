@@ -10,7 +10,8 @@ class Institucional extends CI_Controller {
   }
 
   public function index() {
-    $data['autoridades'] = $this->Institucional_model->getAutoridades();
+    $data['jefe_sectores'] = $this->Institucional_model->getJefeSectores();
+    $data['jefe_servicios'] = $this->Institucional_model->getJefeServicios();
     $this->load->view('includes/head');
     $this->load->view('includes/header');
     $this->load->view('includes/tooltip');

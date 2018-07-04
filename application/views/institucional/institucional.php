@@ -15,7 +15,7 @@
       <h2 class="institutional-title vision-title">Visión</h2>
       <p>Ser una institución que proporcione atención medica de calidad  con alto sentido humano.</p>
 
-      <div class="history-container">
+      <!-- <div class="history-container">
         <h2 class="institutional-title">Historia</h2>
         <p>La institución fue creada en 1983 en el marco de una alianza con la fundación Los Cedros. Esta ubicada en un punto estratégico del partido de La Matanza muy cerca de dos importantes accesos (Autopista Ricchieri y Avenida General Paz). Durante más de 30 años pudo brindar servicios de salud a toda su área de influencia.</p>
         <p>En el año 2015 se comenzó un ambicioso proyecto de reestructuración. Este proceso consistió no solo en cambios edilicios, sino también en un cambio de mentalidad, ubicando el bienestar del paciente como centro de toda toma de decisiones.</p>
@@ -38,24 +38,46 @@
           <li>Se generaron alianzas estratégicas con diferentes <strong>Entidades</strong> con el fin de brindar una solución a sus afiliados.</li>
         </ul>
       </div>
-
-      <p>Finalizado todo este proceso y entusiasmados por los logros obtenidos en tan corto plazo. En el año 2018 se decidió rebautizar la institución y darle un nombre que identifique el nuevo proyecto. Así nace el <strong class="institucional-content-item">SANATORIO PRIVADO MADERO.</strong></p>
+			<p>Finalizado todo este proceso y entusiasmados por los logros obtenidos en tan corto plazo. En el año 2018 se decidió rebautizar la institución y darle un nombre que identifique el nuevo proyecto. Así nace el <strong class="institucional-content-item">SANATORIO PRIVADO MADERO.</strong></p>
+ 			-->
 
 			<div class="autoridades-container">
 				<h2 class="institutional-title">Autoridades</h2>
-				<div class="autoridades-content">
+				<div class="jefe-sector-content">
 					<?
-						foreach($autoridades->result() as $autoridad):
-							if ($autoridad->nombre !== 'Indefinido') {
+						foreach($jefe_sectores->result() as $jefe_sector):
+							if ($jefe_sector->nombre !== 'Indefinido') {
 								?>
 									<div class="autoridad-item">
 										<figure class="autoridad-image">
-											<img alt="<?= $autoridad->nombre; ?>" src="img/<?= $autoridad->imagen; ?>" />
+											<img alt="<?= $jefe_sector->nombre; ?>" src="img/<?= $jefe_sector->imagen; ?>" />
 										</figure>
 										<div class="autoridad-information">
-											<h2 class="autoridad-name"><?= $autoridad->nombre; ?></h2>
-											<strong class="autoridad-title"><?= $autoridad->cargo; ?></strong>
-											<a href="<?= $autoridad->cv ?>" class="cv-link">Ver Experiencia</a>
+											<h2 class="autoridad-name"><?= $jefe_sector->nombre; ?></h2>
+											<strong class="autoridad-title"><?= $jefe_sector->cargo; ?></strong>
+											<a href="<?= $jefe_sector->cv ?>" class="cv-link">Ver Experiencia</a>
+										</div>
+									</div>
+								<?
+							}
+						endforeach;
+					?>
+				</div>
+
+				<h2 class="institutional-title institutional-service-title">Jefe de Servicios</h2>
+				<div class="jefe-servicio-content">
+					<?
+						foreach($jefe_servicios->result() as $jefe_servicio):
+							if ($jefe_servicio->nombre !== 'Indefinido') {
+								?>
+									<div class="autoridad-item">
+										<figure class="autoridad-image">
+											<img alt="<?= $jefe_servicio->nombre; ?>" src="img/<?= $jefe_servicio->imagen; ?>" />
+										</figure>
+										<div class="autoridad-information">
+											<h2 class="autoridad-name"><?= $jefe_servicio->nombre; ?></h2>
+											<strong class="autoridad-title"><?= $jefe_servicio->cargo; ?></strong>
+											<a href="<?= $jefe_servicio->cv ?>" class="cv-link">Ver Experiencia</a>
 										</div>
 									</div>
 								<?

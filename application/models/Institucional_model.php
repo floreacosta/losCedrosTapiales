@@ -7,10 +7,20 @@ class Institucional_model extends CI_Model {
         $this->load->database();
     }
 
-    function getAutoridades() {
-      $this->db->select('empleado.nombre, empleado.imagen, empleado.sexo, autoridad.cargo, autoridad.cv');
-      $this->db->from('autoridad');
-      $this->db->join('empleado', 'autoridad.idEmpleado = empleado.id');
+    function getJefeSectores() {
+      $this->db->select('empleado.nombre, empleado.imagen, empleado.sexo, jefe_sector.cargo, empleado.cv');
+      $this->db->from('jefe_sector');
+      $this->db->join('empleado', 'jefe_sector.idEmpleado = empleado.id');
+      $query = $this->db->get();
+
+      if($query->num_rows() > 0) return $query;
+      else return false;
+    }
+
+    function getJefeServicios() {
+      $this->db->select('empleado.nombre, empleado.imagen, empleado.sexo, jefe_servicio.cargo, empleado.cv');
+      $this->db->from('jefe_servicio');
+      $this->db->join('empleado', 'jefe_servicio.idEmpleado = empleado.id');
       $query = $this->db->get();
 
       if($query->num_rows() > 0) return $query;

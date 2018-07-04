@@ -13,8 +13,8 @@ class Servicio extends CI_Controller {
         $this->load->model('Servicio_model');
     }
 
-    public function index()
-    {
+    public function index($id = 0) {
+        $data['active_servicio'] = $id;
         $data['servicios'] = $this->Servicio_model->getServices();
         $this->load->view('includes/head');
         $this->load->view('includes/header');
@@ -22,5 +22,4 @@ class Servicio extends CI_Controller {
         $this->load->view('servicios/servicios', $data);
         $this->load->view('includes/footer');
     }
-
 }

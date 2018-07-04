@@ -54,6 +54,7 @@ $route['404_override'] = '';
 
 //ruteo para backend
 $route['admin'] = 'admin/login';
+$route['servicio/id_(:num)'] = 'servicio/index/$1';
 //$route['admin/(:any)'] = 'admin/login';
 //$route['(:any)'] = '$1';
 //$route['admin/login'] = 'admin/login';

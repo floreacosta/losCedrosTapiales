@@ -231,6 +231,9 @@ h3 {
   top: 0px;
   left: 0px;
 }
+.global-header-container.sticky-header + .fake-header {
+  position: relative;
+}
 
 .fake-header {
   position: absolute;
@@ -1143,7 +1146,6 @@ main.home-page {
   display: inline-block;
   vertical-align: middle;
   padding: 1em;
-  cursor: pointer;
   width: 100%;
   text-align: left;
   font-size: 16px;
@@ -1449,6 +1451,11 @@ main.home-page {
 .prevention-item h3 {
   margin-top: 10px;
   margin-bottom: 8px;
+}
+.prevention-item.active-service {
+  -moz-box-shadow: 0px 0px 0px 3px #7b7b79 inset;
+  -webkit-box-shadow: 0px 0px 0px 3px #7b7b79 inset;
+  box-shadow: 0px 0px 0px 3px #7b7b79 inset;
 }
 
 .service-head-title {
@@ -2908,6 +2915,9 @@ main.home-page {
   margin-top: 0em;
 }
 
+.instalaciones-content {
+  margin-top: 40px;
+}
 .instalaciones-content .photograpy-primary {
   width: 100%;
 }
@@ -3048,9 +3058,6 @@ main.home-page {
 /*
  * NOTE: Institucional
  */
-.institucional-content {
-  padding-bottom: 20px;
-}
 .institucional-content p {
   margin-bottom: 10px;
 }
@@ -3070,6 +3077,10 @@ main.home-page {
 .institutional-title.vision-title {
   margin-top: 40px;
 }
+.institutional-title.institutional-service-title {
+  font-size: 24px;
+  margin-top: 35px;
+}
 
 .history-container {
   width: calc(100% + 50px);
@@ -3078,7 +3089,6 @@ main.home-page {
   background: #f2f1f1;
   padding: 25px;
   margin-top: 40px;
-  margin-bottom: 30px;
 }
 
 .history-content-list {
@@ -3121,9 +3131,24 @@ main.home-page {
   font-style: normal;
   color: #023670;
 }
+.history-content-list a {
+  text-decoration: underline;
+  cursor: pointer;
+}
 
 .autoridades-container {
   margin-top: 20px;
+}
+.autoridades-container .institutional-title {
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+  border-bottom: solid 1px #023670;
+}
+
+.jefe-sector-content,
+.jefe-servicio-content {
+  display: block;
+  overflow: hidden;
 }
 
 .autoridad-item {
@@ -3190,6 +3215,12 @@ main.home-page {
     margin-left: 40px;
     float: right;
   }
+  .history-content-list a {
+    text-decoration: none;
+  }
+  .history-content-list a:hover {
+    text-decoration: underline;
+  }
 
   .history-container {
     width: 114%;
@@ -3204,7 +3235,8 @@ main.home-page {
     margin-top: 60px;
   }
 
-  .autoridades-content {
+  .jefe-sector-content,
+  .jefe-servicio-content {
     width: calc(100% + 20px);
     overflow: hidden;
     display: -webkit-flex;
@@ -3231,6 +3263,10 @@ main.home-page {
   .history-content-list li:before {
     top: 11px;
   }
+}
+.most-important-data-container {
+  margin-bottom: 40px;
+  margin-top: 40px;
 }
 .most-important-data-container .accordion-container {
   margin-bottom: 10px;
@@ -3323,6 +3359,7 @@ main.home-page {
 
   .patient-responsabilities-container {
     padding-top: 0px;
+    margin-top: 40px;
   }
 }
 @media (min-width: 1025px) {
@@ -3331,6 +3368,7 @@ main.home-page {
     left: -7%;
     padding-right: 7%;
     padding-left: 7%;
+    margin-bottom: 0px;
   }
 }
 @media (min-width: 1400px) {
