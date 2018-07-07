@@ -247,7 +247,8 @@
 
 		a {
 			color: $color-dark;
-			padding: 2.5em 1.8em;
+			padding: 2.5em 1.2em;
+
 		}
 	}
 
@@ -263,7 +264,7 @@
 
 		.global-menu-item {
 			a {
-				padding: 1.8em 2em;
+				padding: 1.8em 1.3em;
 			}
 		}
 	}
@@ -302,5 +303,19 @@
 
 	.global-menu-container {
     width: calc(100% - 12em - 5px);
+	}
+
+	.global-menu-item {
+		a {
+			padding: 2.5em 1.8em;
+		}
+	}
+
+	.sticky-header {
+		.global-menu-item {
+			a {
+				padding: 1.8em 1.8em;
+			}
+		}
 	}
 }

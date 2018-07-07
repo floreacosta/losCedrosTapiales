@@ -153,4 +153,9 @@
 		</article>
 
 		<? include 'includes/video/modal-video.php' ?>
+
+		<section class="section-news-container">
+			NOTICIAS - TO DO
+			<a href="<?= base_url(); ?>noticias">Ver todas las noticias</a>
+		</section>
 	</main>

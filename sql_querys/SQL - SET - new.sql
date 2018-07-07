@@ -358,3 +358,103 @@ INSERT INTO doctorXEspecialidad (id, idEspecialidad, idDoctor) VALUES
 (101, 16, 83),
 (102, 16, 84),
 (103, 5, 85);
+
+INSERT INTO tipoXestudio (id, nombre, descripcion) VALUES
+(1, 'Imágenes', ''),
+(2, 'Laboratorio', '');
+
+INSERT INTO estudio (id, nombre, descripcion, idTipo) VALUES
+(1, 'Sangre de rutina', 'Ayuno de 8 horas. Durante el mismo sólo se puede tomar agua. Para el pedido de colesterol total o cualquiera de sus fracciones (HDL, LDL Y VLDL, triglicéridos) y hepatograma debe seguirse estrictamente la siguiente indicación: Ayuno de 12 horas.', 1),
+(2, 'Orina completa', 'Se deberá recolectar la primera orina de la mañana en frasco estéril (no provisto por el Laboratorio). En su defecto, recolectar orina de 3 horas de retención mínima.', 1),
+(3, 'Recolección de orina de 24 hs', '
+Para la realización de los siguientes análisis, debe recolectarse la orina de 24 horas:
+- Beta 2 microglobulina.
+- Calcio en orina Creatinina en orina.
+- Fosfato en orina Ionograma en orina.
+- Magnesio en orina.
+- Manganeso en orina.
+- Microalbuminuria.
+- Plomo en orina.
+- Porfirinas en orina (llamar al laboratorio para especificaciones).
+- Proteínas de Bence Jones.
+- Proteinuria Urea en orina.
+- Clearence en orina.
+Para realizar este estudio destinar recipiente limpio y lavado (puede ser botella de agua mineral o cualquier recipiente adquirido en farmacia). Utilizar los recipientes que sean necesarios para toda la recolección.
+Descartar la primera micción de la mañana.
+A partir de allí, juntar todo el volumen de todas las micciones hasta la misma hora del día siguiente, en la que se junta esa última micción.
+Los resultados serán informados por el volumen emitido, de allí la importancia de una adecuada recolección.
+Si Ud tiene dichos estudios conjuntamente con una extracción de sangre, el mismo día que finaliza la recolección de la orina, asistir al laboratorio con ayuno de 8 hs o 12 hs según corresponda.', 1
+),
+(4, 'Urocultivo', '
+Debe utilizar un recipiente estéril (comprado en farmacias) Este análisis debe realizarse recolectando la primera orina de la mañana o una orina con 3 horas de retención mínima, siguiendo las indicaciones de higiene previa mencionadas a posteriori y toma de muestra. Suspender todo tratamiento antibiótico 72 horas antes de la toma de muestra, salvo expresa indicación médica. No se aceptarán muestras derramadas.
+Hombres: Higienizarse con jabón desinfectante las manos y los genitales, retrayendo el prepucio. Enjuagar con abundante agua y secar con gasa estéril o toalla limpia sin uso. Debe descartar el primer chorro en el inodoro, continuar orinando dentro del recipiente. Desechar el último chorro fuera del recipiente nuevamente. Tapar el recipiente y remitir inmediatamente al laboratorio.
+Mujeres: Higienizarse con jabón desinfectante las manos y los genitales externos, no realizar lavajes internos. Enjuagar con abundante agua y secar con gasa estéril o toalla limpia sin uso. Colocar tampón vaginal. Separar con los dedos los labios de la vulva y orinar el primer chorro fuera del recipiente. Continuar orinando dentro del recipiente.Desechar el último chorro fuera del recipiente. Tapar el recipiente y remitir inmediatamente al laboratorio.
+Niños: En niños y niñas mayores la toma de muestra se realizará igual que para adultos. En niños y niñas que no controlan esfínteres se debe observar los hábitos miccionales del bebé. Higienizar con agua y jabón la zona genital y secar con gasa estéril. A las niñas, limpiar de adelante hacia atrás y a los niños, retrayendo el prepucio. Recolectar la orina dentro del recipiente (5 -10 cc) Tapar el recipiente y remitir inmediatamente al laboratorio. No son aptas las bolsas colectoras para realizar este estudio.
+Pacientes con sonda vesical: Higienizar la sonda con antiséptico y realizar punción de la sonda en la zona proximal de la salida de la uretra ,recolectarla con jeringa y colocarla en un frasco esteril.
+** CONSERVAR Y TRANSPORTAR REFRIGERADA HASTA EL LABORATORIO.
+** Rotular el frasco con NOBRE, APELLIDO Y EDAD.', 1
+),
+(5, 'Parasitológico seriado', '
+Debe utilizar un recipiente con formol al 5% suministrado por el laboratorio.
+No consumir aceites, vaselina, laxantes, ni medicamentos que contengan carbón.
+En caso de haberse sacado radiografías con ingestión de elementos de contraste (tipo solubar o similares), dejar pasar 3 días antes de empezar a juntar la muestra.
+Recolectar un poco de materia fecal emitida espontáneamente (del tamaño de una cucharada de té) de cada deposición diaria durante 7 días consecutivos. Si un día no hay deposiciones juntar un día más. Si hay varias deposiciones por día juntar de una sola.
+Conservar a temperatura ambiente y una vez finalizado remitir al laboratorio.', 1),
+(6, 'Test de Graham', '
+Debe utilizar un recipiente con formol al 5% suministrado por el laboratorio.
+La noche anterior NO lavar el ano con agua, ni colocar talco ni pomadas.
+No ir de cuerpo antes de realizar la toma de la muestra.
+A la mañana siguiente, al despertar y sin levantarse de la cama, con una gasita limpia que previamente habrá humedecido con solución fisiológica, limpiar el margen, los pliegues y la zona anal.
+Luego, colocar la gasita en el frasco.
+Realizar de idéntica forma durante 7 días consecutivos, guardando la gasa correspondiente por día y cerrando el frasco inmediatamente.
+Conservar a temperatura ambiente y una vez finalizado remitir al laboratorio.', 1),
+(7, 'Sangre oculta en materia fecal', '
+Debe utilizar un recipiente estéril, de boca ancha y seco (sin formol, comprado en farmacias).
+No tomar antibióticos 72 horas antes de tomar la muestra, salvo indicación médica.
+Colocar en el recipiente un trocito de material fecal del tamaño de una cuchara de té, o su equivalente en el caso de diarrea.
+Si existieran zonas con pus y/o sangre y/o cualquier otra cosa de aspecto raro o sospechoso, tomar el material de esa zona.
+Cerrar el recipiente y no volver a abrirlo.', 1),
+(8, 'Ecografías', '
+De una deposición espontánea, colocar en un frasco limpio y seco una pequeña porción de materia fecal, tamaño cuchara de té. Esta muestra no debe tener contacto con la orina ni con ningún otro líquido.
+Guardar en heladera y remitirlo al laboratorio antes de las 24 hs de obtenida la muestra.
+No ingerir suplementos de hierro por vía oral 72 hs previas a la toma de la muestra.
+Evitar el sangrado de las encías al cepillarse los dientes.
+En caso de ser seriado de sangre oculta (según pedido médico) recoger una pequeña porción de materia fecal durante 3 días consecutivos en distintos recipientes plásticos, limpios y secos, rotulándolos como número 1, 2 y 3. Hasta remitir las muestras al laboratorio, mantenerlas refrigeradas.', 2),
+(9, 'Ecodoppler', '
+Abdominal: 8 hs de ayuno.
+Hepatobiliopancreática/HBP: 8hs de ayuno.
+Renal: Sin preparación.
+Vejiga y vías urinarias: tomar 1 litro de agua una hr antes del turno y retener.
+Renal y vesicoprostática: tomar 1 litro de agua una hr antes del turno y retener.
+Ginecológica o tocoginecológica: tomar 1 litro de agua una hr antes del turno y retener.
+Transrectal: 8 hs de ayuno, Realizar un enemol la noche anterior al estudio, Realizar un enemol 2hs antes del turno.', 2),
+(10, 'Estudios seriados', '
+- Seriada Esófagogastroduodenal:
+Día previo al examen: deberá comer liviano, sin grasas, sin picantes y nada de alcohol.
+Día del examen: presentarse con 8hs de ayuno total. Evite fumar. No tome ninguna medicación. Si no puede suspender alguna medicación debe tratar de ingerir las pastillas con la mínima cantidad de agua posible. Si la toma coincide con el horario del estudio deberá efectuarla después de terminado el mismo.
+Traer estudios previos de estómago y duodeno si los posee.
+Indicaciones posteriores a la realización del estudios: Tomar 2 litros de agua por día e ingerir una cucharada de leche de magnesia con la cena durante los tres días subsiguientes.
+
+- Videodeglución: presentarse con 8 hs de ayuno total.
+  Traer:
+  - 2 rebanadas de pan lactal o vainillas.
+  - 1 yogurt firme de vainilla o frutilla.
+  - 1 cucharita descartable.
+  - 1 dvd marca Sony.
+  - Cistouretrografía: No hacer ayuno.
+
+  Traer:
+  - Análisis de urocultivo negativo de no más de 15 días de realizado.
+  - 2 toallas de mano.
+  - Histerosalpingografía: Llamar o concurrir para la solicitud del turno el primer día del ciclo femenino. El turno se le asignará entre el séptimo y el décimo día de su ciclo (según disponibilidad).
+  Día del examen: 4hs. de ayuno, Abstinencia sexual desde el primer día del ciclo menstrual. -No tomar Cafiaspirina, Bayaspirina ni antiinflamatorios.
+
+  Traer:
+  - Apósitos.
+  - Toallón.
+  - Estudios anteriores.', 2),
+(11, 'Punción de tiroides', '
+7 días antes no debe ingerir aspirinas ni antiinflamatorios. En el caso de pacientes con tratamientos de aspirinas (pacientes con patologías cardíacas) deben suspender su uso 3 días antes del estudio.
+El día del estudio debe concurrir al mismo con 5hs de ayuno.
+Traer estudios anteriores.
+Traer resultado del tiempo de coagulación realizado dentro del mes.', 2);
