@@ -22,7 +22,7 @@
 	}
 
 	&.active-service {
-		@include box-shadow($border_shadow);
+		@include box-shadow($border-shadow);
 	}
 }
 

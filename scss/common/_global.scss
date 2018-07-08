@@ -42,10 +42,6 @@ input {
   overflow: hidden;
 }
 
-// section {
-// 	display: inline-block;
-// }
-
 .col-paragraph {
 	@include text-paragraph(100%, 1, 0px);
 }
@@ -76,7 +72,37 @@ h3 {
 }
 
 .scroll-from-tooltip {
-	@include box-shadow($border_shadow);
+	@include box-shadow($border-shadow);
+}
+
+.animation-on-hover {
+	&:after,
+	&:before {
+		content: '';
+		width: 0%;
+		height: 4px;
+		bottom: 0px;
+		position: absolute;
+		background: $color-primary;
+		z-index: -1;
+		@include single-transition(all, 200ms, ease, false);
+	}
+
+	&:after {
+		right: 50%;
+	}
+
+	&:before {
+		left: 50%;
+	}
+
+	&:hover {
+		&:after,
+		&:before {
+			width: 50%;
+			@include single-transition(all, 200ms, ease, false);
+		}
+	}
 }
 
 /**

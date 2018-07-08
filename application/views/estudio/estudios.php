@@ -16,8 +16,16 @@
 			<nav class="estudios-tipos" aria-label="Tipos de Estudios">
 				<?
 					foreach($estudios_tipos->result() as $tipo):
+						if ($tipo-> id == 1) {
+							?>
+							<button aria-label="<?= $tipo->nombre ?>" class="estudios-tipo-item active" id="<?= $tipo->id ?>">
+							<?
+						} else {
+							?>
+								<button aria-label="<?= $tipo->nombre ?>" class="estudios-tipo-item" id="<?= $tipo->id ?>">
+							<?
+						}
 					?>
-						<button aria-label="<?= $tipo->nombre ?>" class="estudios-tipo-item" tabindex="0" id="estudio_tipo_<?= $tipo->id ?>">
 							<strong class="estudios-tipo-item-nombre"><?= $tipo->nombre ?></strong>
 							<p class="estudios-tipo-item-descripcion"><?= $tipo->descripcion ?></p>
 						</button>
@@ -28,9 +36,15 @@
 
 			<?
 				foreach($estudios_tipos->result() as $tipo):
-					?>
-						<div class="estudios-list-container estudio-list-<?= $tipo->id ?>" id="estudio_tipo_content_<?= $tipo->id ?>">
-					<?
+					if ($tipo-> id == 1) {
+						?>
+							<div class="estudios-list-container active estudio-list-<?= $tipo->id ?>" id="estudio_tipo_content_<?= $tipo->id ?>">
+						<?
+					} else {
+						?>
+							<div class="estudios-list-container estudio-list-<?= $tipo->id ?>" id="estudio_tipo_content_<?= $tipo->id ?>">
+						<?
+					}
 						foreach($estudios_todos->result() as $estudio):
 							if ($tipo->id == $estudio->idTipo) {
 								?>

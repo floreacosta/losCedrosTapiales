@@ -1,0 +1,76 @@
+/*
+ * NOTE: Estudios
+ */
+
+.estudios-content {
+
+}
+
+.estudios-tipos {
+  display: block;
+  width: 100%;
+  @include display-flex;
+}
+
+.estudios-tipo-item {
+  width: 50%;
+  padding: 1em;
+  float: right;
+  background: $color-light;
+
+  strong {
+    @include text-base();
+    color: $color-dark;
+  }
+
+  &.active {
+    @include box-shadow($border-shadow-2);
+
+    strong {
+      color: $color-primary;
+      @include font-calibri-bold;
+    }
+  }
+}
+
+.estudios-tipo-item-nombre {
+
+}
+
+.estudios-tipo-item-descripcion {
+
+}
+
+.estudios-list-container {
+  background: $color-light;
+  padding: 1em;
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}
+
+.estudios-item {
+
+}
+
+.estudios-item-nombre {
+
+}
+
+.estudios-item-descripcion {
+
+}
+
+@media (min-width: $mobile) {
+}
+
+@media (min-width: $tablet) {
+}
+
+@media (min-width: $desktop) {
+}
+
+@media (min-width: $full_desktop) {
+}

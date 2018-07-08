@@ -1,5 +1,6 @@
 $(document).ready(() => {
   getOverlay();
+  getSections();
   getActiveSection();
   getToggleAccordion();
   getOpenCloseMenu();
@@ -12,6 +13,7 @@ $(document).ready(() => {
   getHightlitedSection();
   getScrollToTopButton();
   getActiveService();
+  getActiveEstudioTipo();
 });
 
 /* NOTE: key/value to set an overlay and call it
@@ -43,6 +45,14 @@ function getStickyHeader () {
     } else {
       header.removeClass('sticky-header');
     }
+  });
+}
+
+function getSections () {
+  let menu = $('.global-menu-content');
+  menu.children().each(function () {
+    let item = $(this);
+    getAnimationToHoverElement(item);
   });
 }
 
@@ -438,3 +448,52 @@ function getActiveService () {
     }, 10);
   }
 }
+
+function getAnimationToHoverElement ($element) {
+  let animationClass = "animation-on-hover";
+
+  $element.hover(() => {
+    $(this).addClass(animationClass);
+  });
+}
+
+function getActiveEstudioTipo () {
+  let estudios = $('.estudios-content');
+
+  let estudioTiposButton = estudios.find('.estudios-tipo-item');
+  let estudiosContent = estudios.find('.estudios-list-container');
+
+  estudioTiposButton.each(function () {
+    $(this).click(function () {
+      estudioTiposButton.each(function () {
+        $(this).removeClass('active');
+      });
+
+      $(this).addClass('active');
+
+      let buttonId = $(this).attr('id');
+      estudiosContent.each(function () {
+        $(this).removeClass('active');
+      });
+      estudios.find('#estudio_tipo_content_' + buttonId).addClass('active');
+    });
+  });
+}
+
+// if ($(this).hasClass('active')) {
+//   let activeTipo = $(this);
+//
+//   activeTipo.click(function () {
+//     estudioTiposButton.each(function () {
+//       $(this).removeClass('active');
+//     });
+//
+//     $(this).addClass('active');
+//
+//     let tipoId = activeTipo.attr('id');
+//     estudiosContent.each(function () {
+//       $(this).removeClass('active');
+//     });
+//     estudiosContent.find('#estudio_tipo_content_' + tipoId).addClass('active');
+//   });
+// }
