@@ -3147,6 +3147,10 @@ main.home-page {
   cursor: pointer;
 }
 
+.external-link-to-google-map {
+  text-decoration: underline;
+}
+
 .autoridades-container {
   margin-top: 20px;
 }
@@ -3230,6 +3234,13 @@ main.home-page {
     text-decoration: none;
   }
   .history-content-list a:hover {
+    text-decoration: underline;
+  }
+
+  .external-link-to-google-map {
+    text-decoration: none;
+  }
+  .external-link-to-google-map:hover, .external-link-to-google-map:active, .external-link-to-google-map:focus {
     text-decoration: underline;
   }
 

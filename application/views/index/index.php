@@ -113,7 +113,7 @@
 		</article>
 
 		<section class="history-container">
-			<? include 'includes/autoridades/autoridades-information.php' ?>
+			<? include 'includes/historia/historia-information.php' ?>
 		</section>
 
 		<section class="patient-responsabilities-container">

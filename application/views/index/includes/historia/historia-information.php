@@ -20,4 +20,4 @@
   <li>Se generaron alianzas estratégicas con diferentes <strong>Entidades</strong> con el fin de brindar una solución a sus afiliados.</li>
 </ul>
 
-<p>Finalizado todo este proceso y entusiasmados por los logros obtenidos en tan corto plazo. En el año 2018 se decidió rebautizar la institución y darle un nombre que identifique el nuevo proyecto. Así nace el <strong class="institucional-content-item"><a href="https://goo.gl/maps/vYijsHyfkwx" target="_blank" aria-label="Google Map - Sanatorio Privado Madero">SANATORIO PRIVADO MADERO.</a></strong></p>
+<p>Finalizado todo este proceso y entusiasmados por los logros obtenidos en tan corto plazo. En el año 2018 se decidió rebautizar la institución y darle un nombre que identifique el nuevo proyecto. Así nace el <strong class="institucional-content-item"><a href="https://goo.gl/maps/vYijsHyfkwx" target="_blank" class="external-link-to-google-map" aria-label="Google Map - Sanatorio Privado Madero">SANATORIO PRIVADO MADERO.</a></strong></p>

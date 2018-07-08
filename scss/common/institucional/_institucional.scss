@@ -67,6 +67,10 @@
   }
 }
 
+.external-link-to-google-map {
+  text-decoration: underline;
+}
+
 .autoridades-container {
   margin-top: 20px;
 
@@ -209,6 +213,16 @@
       &:hover {
         text-decoration: underline;
       }
+    }
+  }
+
+  .external-link-to-google-map {
+    text-decoration: none;
+
+    &:hover,
+    &:active,
+    &:focus {
+      text-decoration: underline;
     }
   }
 
