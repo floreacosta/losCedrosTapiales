@@ -6,6 +6,7 @@ $(document).ready(() => {
   getOpenCloseMenu();
   getCloseModalVideoContainer();
   getModalEspecialidades();
+  getModalEstudios();
   getActiveSlider();
   getBarraTooltip();
   getRedireccionamientoTooltip();
@@ -176,6 +177,30 @@ function getAccordionToElement (accordion) {
 
 function getModalEspecialidades () {
   let button = $('.especialidades-open-overlay');
+  let activeClass = "general-overlay-active";
+  let body = $("body");
+
+  button.click(function () {
+    let component = $(this).parent().find(".general-overlay-container");
+    component.addClass(activeClass);
+    body.addClass('no-scrolling');
+
+    component.click(function (e) {
+      if ($(e.target).hasClass('general-overlay-container')) {
+        component.removeClass(activeClass);
+        body.removeClass('no-scrolling');
+      }
+    });
+
+    component.find(".general-close-overlay-button").click(function () {
+      component.removeClass(activeClass);
+      body.removeClass('no-scrolling');
+    });
+  });
+}
+
+function getModalEstudios () {
+  let button = $('.estudios-item-nombre');
   let activeClass = "general-overlay-active";
   let body = $("body");
 
@@ -453,7 +478,7 @@ function getAnimationToHoverElement ($element) {
   let animationClass = "animation-on-hover";
 
   $element.hover(() => {
-    $(this).addClass(animationClass);
+    $element.addClass(animationClass);
   });
 }
 
@@ -479,21 +504,3 @@ function getActiveEstudioTipo () {
     });
   });
 }
-
-// if ($(this).hasClass('active')) {
-//   let activeTipo = $(this);
-//
-//   activeTipo.click(function () {
-//     estudioTiposButton.each(function () {
-//       $(this).removeClass('active');
-//     });
-//
-//     $(this).addClass('active');
-//
-//     let tipoId = activeTipo.attr('id');
-//     estudiosContent.each(function () {
-//       $(this).removeClass('active');
-//     });
-//     estudiosContent.find('#estudio_tipo_content_' + tipoId).addClass('active');
-//   });
-// }

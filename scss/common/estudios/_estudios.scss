@@ -17,6 +17,8 @@
   padding: 1em;
   float: right;
   background: $color-light;
+  padding-bottom: calc(1em - 2px);
+  border-bottom: solid 2px $color-primary;
 
   strong {
     @include text-base();
@@ -24,7 +26,11 @@
   }
 
   &.active {
-    @include box-shadow($border-shadow-2);
+    padding: calc(1em - 4px);
+    padding-bottom: 1em;
+    border: solid 2px $color-primary;
+    border-bottom: 0px;
+    // @include box-shadow($border-shadow-2);
 
     strong {
       color: $color-primary;
@@ -56,7 +62,13 @@
 }
 
 .estudios-item-nombre {
-
+  @include text-base();
+  @include text-base-full-desktop();
+  display: block;
+  width: 100%;
+  padding: .5em 0px;
+  text-align: left;
+  text-decoration: underline;
 }
 
 .estudios-item-descripcion {
@@ -70,6 +82,13 @@
 }
 
 @media (min-width: $desktop) {
+  .estudios-item-nombre {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
 @media (min-width: $full_desktop) {

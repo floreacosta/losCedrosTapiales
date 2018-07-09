@@ -48,9 +48,21 @@
 						foreach($estudios_todos->result() as $estudio):
 							if ($tipo->id == $estudio->idTipo) {
 								?>
-									<div aria-label="<?= $estudio->nombre ?>" class="estudios-item" id="estudio_<?= $estudio->id ?>">
-										<strong class="estudios-item-nombre"><?= $estudio->nombre ?></strong>
-										<div class="estudios-item-descripcion"><?= $estudio->descripcion ?></div>
+									<div class="estudios-item" id="estudio_<?= $estudio->id ?>">
+										<button class="estudios-item-nombre" id="estudio_description_<?= $estudio->id ?>_button" aria-label="Abrir descripción de <?= $estudio->nombre ?>"><?= $estudio->nombre ?></button>
+
+										<div class="general-overlay-container" id="estudio_description_<?= $estudio->id ?>">
+										  <div class="general-overlay-content-component">
+										    <header class="general-header-overlay">
+										      <h2 class=""><?= $estudio->nombre ?></h2>
+										      <button class="general-close-overlay-button">Close Overlay</button>
+										    </header>
+
+										    <div class="general-overlay-content">
+													<div class="estudios-item-descripcion"><?= $estudio->descripcion ?></div>
+										    </div>
+										  </div>
+										</div>
 									</div>
 								<?
 							}

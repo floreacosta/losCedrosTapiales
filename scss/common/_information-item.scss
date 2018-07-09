@@ -36,12 +36,12 @@
 
 @media (min-width: $tablet) {
 	.prevention-item {
-		@include layout-item-information(100%, 75%);
+		@include layout-item-information(100%, 100%);
 	}
 }
 
 @media (min-width: $desktop) {
 	.prevention-item {
-		@include layout-item-information(75%, 50%);
+		@include layout-item-information(75%, 75%);
 	}
 }
