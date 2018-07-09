@@ -6,21 +6,21 @@ class Doctor_model extends CI_Model {
         parent::__construct();
     }
 
-    function getDoctores(){
+    function getDoctores() {
         $this->db->order_by("nombre", "asc");
         $query = $this->db->get('doctor');
-        if($query->num_rows() > 0) return $query;
+        if ($query->num_rows() > 0) return $query;
         else return false;
     }
 
-    function getDoctor($id){
+    function getDoctor($id) {
         $this->db->where('id', $id);
         $query = $this->db->get('doctor');
-        if($query->num_rows() > 0) return $query;
+        if ($query->num_rows() > 0) return $query;
         else return false;
     }
 
-    function crearDoctor($nombre, $esMedicoCabecera){
+    function crearDoctor($nombre, $esMedicoCabecera) {
 
         $data = array(
             'nombre' => $nombre
@@ -30,7 +30,7 @@ class Doctor_model extends CI_Model {
         return $this->db->insert_id();
     }
 
-    function editarDoctor($id, $nombre, $esMedicoCabecera){
+    function editarDoctor($id, $nombre, $esMedicoCabecera) {
         $data = array(
             'nombre' => $nombre
         );
@@ -39,7 +39,7 @@ class Doctor_model extends CI_Model {
         return $result;
     }
 
-    function eliminarDoctor($id){
+    function eliminarDoctor($id) {
         $this->db->where('id', $id);
         $result = $this->db->delete('doctor');
         return $result;

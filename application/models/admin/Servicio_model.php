@@ -6,21 +6,21 @@ class Servicio_model extends CI_Model {
         parent::__construct();
     }
 
-    function getServicios(){
+    function getServicios() {
         $query = $this->db->get('servicio');
         $this->db->order_by("nombre", "asc");
-        if($query->num_rows() > 0) return $query;
+        if ($query->num_rows() > 0) return $query;
         else return false;
     }
 
-    function getServicio($id){
+    function getServicio($id) {
         $this->db->where('id', $id);
         $query = $this->db->get('servicio');
-        if($query->num_rows() > 0) return $query;
+        if ($query->num_rows() > 0) return $query;
         else return false;
     }
 
-    function crearServicio($nombre, $descripcion){
+    function crearServicio($nombre, $descripcion) {
 
         $data = array(
             'nombre' => $nombre,
@@ -32,7 +32,7 @@ class Servicio_model extends CI_Model {
 
     }
 
-    function editarServicio($id, $nombre, $descripcion){
+    function editarServicio($id, $nombre, $descripcion) {
         $data = array(
             'nombre' => $nombre,
             'descripcion' => $descripcion
@@ -42,7 +42,7 @@ class Servicio_model extends CI_Model {
         return $result;
     }
 
-    function eliminarServicio($id){
+    function eliminarServicio($id) {
         $this->db->where('id', $id);
         $result = $this->db->delete('servicio');
         return $result;

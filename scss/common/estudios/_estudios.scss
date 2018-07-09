@@ -17,24 +17,26 @@
   padding: 1em;
   float: right;
   background: $color-light;
-  padding-bottom: calc(1em - 2px);
-  border-bottom: solid 2px $color-primary;
+  padding-bottom: calc(1em - 3px);
+  border-bottom: solid 3px $color-primary;
+  @include border-radius(6px 6px 0px 0px);
 
   strong {
     @include text-base();
+    @include text-base-full-desktop();
     color: $color-dark;
   }
 
   &.active {
-    padding: calc(1em - 4px);
+    padding: calc(1em - 3px);
     padding-bottom: 1em;
-    border: solid 2px $color-primary;
+    border: solid 3px $color-primary;
     border-bottom: 0px;
-    // @include box-shadow($border-shadow-2);
+    background: $color-primary;
 
     strong {
-      color: $color-primary;
       @include font-calibri-bold;
+      color: $white;
     }
   }
 }
@@ -67,8 +69,14 @@
   display: block;
   width: 100%;
   padding: .5em 0px;
+  padding-left: 15px;
   text-align: left;
-  text-decoration: underline;
+
+  @include item-circle();
+  &:before {
+    top: 50%;
+    @include transform(translateY(-50%));
+  }
 }
 
 .estudios-item-descripcion {

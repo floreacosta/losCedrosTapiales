@@ -2244,8 +2244,20 @@ main.home-page {
 }
 
 .open-pacient-responsabilities-button {
-  font-size: 14px;
+  font-size: 16px;
+  line-height: 24px;
+  color: #7b7b79;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-variant: normal;
+  font-style: normal;
   text-decoration: underline;
+}
+@media (min-width: 1400px) {
+  .open-pacient-responsabilities-button {
+    font-size: 18px;
+    line-height: 30px;
+  }
 }
 
 .patient-responsabilities-content .general-header-title {
@@ -3451,8 +3463,11 @@ main.home-page {
   padding: 1em;
   float: right;
   background: #f2f1f1;
-  padding-bottom: calc(1em - 2px);
-  border-bottom: solid 2px #023670;
+  padding-bottom: calc(1em - 3px);
+  border-bottom: solid 3px #023670;
+  -moz-border-radius: 6px 6px 0px 0px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px 6px 0px 0px;
 }
 .estudios-tipo-item strong {
   font-size: 16px;
@@ -3464,18 +3479,25 @@ main.home-page {
   font-style: normal;
   color: #7b7b79;
 }
+@media (min-width: 1400px) {
+  .estudios-tipo-item strong {
+    font-size: 18px;
+    line-height: 30px;
+  }
+}
 .estudios-tipo-item.active {
-  padding: calc(1em - 4px);
+  padding: calc(1em - 3px);
   padding-bottom: 1em;
-  border: solid 2px #023670;
+  border: solid 3px #023670;
   border-bottom: 0px;
+  background: #023670;
 }
 .estudios-tipo-item.active strong {
-  color: #023670;
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
   font-variant: normal;
   font-style: normal;
+  color: #ffffff;
 }
 
 .estudios-list-container {
@@ -3498,14 +3520,34 @@ main.home-page {
   display: block;
   width: 100%;
   padding: .5em 0px;
+  padding-left: 15px;
   text-align: left;
-  text-decoration: underline;
 }
 @media (min-width: 1400px) {
   .estudios-item-nombre {
     font-size: 18px;
     line-height: 30px;
   }
+}
+.estudios-item-nombre:before {
+  content: '';
+  display: inline-block;
+  background: #023670;
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  left: 0px;
+  top: 6px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+.estudios-item-nombre:before {
+  top: 50%;
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 @media (min-width: 1025px) {

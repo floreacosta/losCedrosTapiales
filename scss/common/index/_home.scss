@@ -154,7 +154,9 @@
 
 .open-pacient-responsabilities-button {
 	@extend .patient-responsabilities-message;
-	font-size: 14px;
+	// font-size: 14px;
+	@include text-base();
+  @include text-base-full-desktop();
 	text-decoration: underline;
 }
 

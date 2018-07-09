@@ -1,9 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Instalaciones extends CI_Controller {
-
-    public function __construct(){
+class Instalacion extends CI_Controller {
+    public function __construct() {
         // $this->load does not exist until after you call this
         parent::__construct(); // Construct CI's core so that you can use it
         $this->load->helper('url');
@@ -14,34 +13,34 @@ class Instalaciones extends CI_Controller {
         $this->check_session();
     }
 
-    public function index(){
-        $data['instalaciones'] = $this->instalaciones_model->getInstalaciones();
+    public function index() {
+        $data['instalaciones'] = $this->Instalacion_model->getInstalaciones();
         $this->load->view('admin/includes/head');
         $this->load->view('admin/instalaciones/index', $data);
     }
 
-    public function logout(){
+    public function logout() {
         $this->session->unset_userdata('id_usuario');
         $this->session->unset_userdata('ip_address');
         $this->session->sess_destroy();
         redirect(base_url()."admin/login");
     }
 
-    public function check_session(){
+    public function check_session() {
         $id_usuario = $this->session->userdata('id_usuario');
-        if(!$id_usuario){
+        if (!$id_usuario) {
             redirect(base_url()."admin/login");
         }
     }
 
-    public function crearInstalacion($nombre = null, $imagen = null, $descripcion = null, $categoria = null){
-        if(null === $nombre){
-            $data['categorias'] = $this->categorias_model->getCategorias();
+    public function crearInstalacion($nombre = null, $imagen = null, $descripcion = null, $categoria = null) {
+        if (null === $nombre) {
+            $data['categorias'] = $this->Categoria_model->getCategorias();
             $this->load->view('admin/includes/head');
             $this->load->view('admin/instalaciones/crear', $data);
-        }else{
-            $data['result'] = $this->instalaciones_model->crearInstalacion($nombre, $imagen, $descripcion, $categoria);
-            $data['instalaciones'] = $this->instalaciones_model->getInstalaciones();
+        } else {
+            $data['result'] = $this->Instalacion_model->crearInstalacion($nombre, $imagen, $descripcion, $categoria);
+            $data['instalaciones'] = $this->Instalacion_model->getInstalaciones();
             $data['tipo'] = 'crear';
             $data['error'] = array('error' => ' ' );
             $this->load->view('admin/includes/head');
@@ -49,104 +48,99 @@ class Instalaciones extends CI_Controller {
         }
     }
 
-    public function subirImagen()
-    {
+    public function subirImagen() {
         $nombre_post = $this->input->post('nombre');
         $descripcion_post = $this->input->post('descripcion');
         $categoria_post = $this->input->post('categoria');
 
-        $config['upload_path']          = './img/slider';
-        $config['allowed_types']        = 'gif|jpg|png';
-        $config['max_size']             = 10000;
-        $config['max_width']            = 10000;
-        $config['max_height']           = 10000;
+        $config['upload_path'] = './img/slider';
+        $config['allowed_types'] = 'gif|jpg|png';
+        $config['max_size'] = 10000;
+        $config['max_width'] = 10000;
+        $config['max_height'] = 10000;
 
         $this->load->library('upload', $config);
         $this->upload->initialize($config);
 
-        if ( ! $this->upload->do_upload('user_file')){
+        if (!$this->upload->do_upload('user_file')) {
             $data['error'] = array('error' => $this->upload->display_errors());
             $this->load->view('admin/includes/head');
             $this->load->view('admin/instalaciones/index', $data);
-        }
-        else{
+        } else {
             $imagen_post = $this->upload->data()['file_name'];
             $data = array('upload_data' => $this->upload->data());
             $this->crearInstalacion($nombre_post, $imagen_post, $descripcion_post, $categoria_post);
         }
     }
 
-    public function subirImagenEditar()
-    {
+    public function subirImagenEditar() {
         $id_post = $this->input->post('hiddenId');
         $nombre_post = $this->input->post('nombre');
         $descripcion_post = $this->input->post('descripcion');
         $categoria_post = $this->input->post('categoria');
 
-        if('' !== $_FILES['user_file']['tmp_name']) {
-            $config['upload_path']          = './img/slider';
-            $config['allowed_types']        = 'gif|jpg|png';
-            $config['max_size']             = 10000;
-            $config['max_width']            = 10000;
-            $config['max_height']           = 10000;
+        if ('' !== $_FILES['user_file']['tmp_name']) {
+            $config['upload_path'] = './img/slider';
+            $config['allowed_types'] = 'gif|jpg|png';
+            $config['max_size'] = 10000;
+            $config['max_width'] = 10000;
+            $config['max_height'] = 10000;
 
             $this->load->library('upload', $config);
             $this->upload->initialize($config);
 
-            if ( ! $this->upload->do_upload('user_file')){
+            if ( ! $this->upload->do_upload('user_file')) {
                 var_dump($this->upload->display_errors());
                 die;
                 $data['error'] = array('error' => $this->upload->display_errors());
                 $this->load->view('admin/includes/head');
                 $this->load->view('admin/instalaciones/index', $data);
-            }
-            else{
+            } else {
                 $imagen_post = $this->upload->data()['file_name'];
                 $data = array('upload_data' => $this->upload->data());
                 $this->updateInstalaciones($id_post, $nombre_post, $descripcion_post, $categoria_post, $imagen_post);
             }
-        }else{
+        } else {
             $this->updateInstalaciones($id_post, $nombre_post, $descripcion_post, $categoria_post);
         }
 
     }
 
     public function editarFormularioInstalaciones() {
-
-        if($this->input->get('id') !== null){
+        if ($this->input->get('id') !== null) {
             $id = $this->input->get('id');
-            $data['instalacion'] = $this->instalaciones_model->getInstalacion($id);
-            $data['categorias'] = $this->categorias_model->getCategorias();
+            $data['instalacion'] = $this->Instalacion_model->getInstalacion($id);
+            $data['categorias'] = $this->Categoria_model->getCategorias();
             $this->load->view('admin/includes/headNIm');
             $this->load->view('admin/instalaciones/editar', $data);
-        }else{
+        } else {
             echo "Ha ocurrido un error, intentelo de nuevo por favor";
             echo anchor(base_url().'admin/instalaciones', 'Volver');
         }
     }
 
-    public function updateInstalaciones($id = null, $nombre = null, $descripcion = null, $categoria = null, $imagen = null){
+    public function updateInstalaciones($id = null, $nombre = null, $descripcion = null, $categoria = null, $imagen = null) {
 
-        if($imagen === NULL){
-            $data['result'] = $this->instalaciones_model->editarInstalacionSinImagen($id, $nombre, $descripcion, $categoria);
-        }else{
-            $data['result'] = $this->instalaciones_model->editarInstalacion($id, $nombre, $descripcion, $categoria, $imagen);
+        if ($imagen === NULL) {
+            $data['result'] = $this->Instalacion_model->editarInstalacionSinImagen($id, $nombre, $descripcion, $categoria);
+        } else {
+            $data['result'] = $this->Instalacion_model->editarInstalacion($id, $nombre, $descripcion, $categoria, $imagen);
         }
-        $data['instalaciones'] = $this->instalaciones_model->getInstalaciones();
+        $data['instalaciones'] = $this->Instalacion_model->getInstalaciones();
         $data['tipo'] = 'editar';
         $this->load->view('admin/includes/head');
         $this->load->view('admin/instalaciones/index', $data);
     }
 
     public function EliminarInstalacion() {
-      if($this->input->get('id') !== null){
+        if ($this->input->get('id') !== null) {
             $id = $this->input->get('id');
-            $data['result'] = $this->instalaciones_model->eliminarInstalacion($id);
-            $data['instalaciones'] = $this->instalaciones_model->getInstalaciones();
+            $data['result'] = $this->Instalacion_model->eliminarInstalacion($id);
+            $data['instalaciones'] = $this->Instalacion_model->getInstalaciones();
             $data['tipo'] = 'eliminar';
             $this->load->view('admin/includes/head');
             $this->load->view('admin/instalaciones/index', $data);
-        }else{
+        } else {
             echo "Ha ocurrido un error, intentelo de nuevo por favor";
             echo anchor(base_url().'admin/instalaciones', 'Volver');
         }

@@ -6,24 +6,24 @@ class Instalacion_model extends CI_Model {
         parent::__construct();
     }
 
-    function getInstalaciones(){
+    function getInstalaciones() {
         $this->db->select("instalacion.id as `Id`, instalacion.nombre as `instalacionNombre`, instalacion.imagen as `instalacionImagen`, instalacion.descripcion as `instalacionDescripcion`, categoria.nombre as `categoriaNombre` ");
         $this->db->join('categoria', 'instalacion.idCategoria = categoria.id', 'left');
         $query = $this->db->get('instalacion');
-        if($query->num_rows() > 0) return $query;
+        if ($query->num_rows() > 0) return $query;
         else return false;
     }
 
-    function getInstalacion($id){
+    function getInstalacion($id) {
         $this->db->select("instalacion.id as `Id`, instalacion.nombre as `instalacionNombre`, instalacion.imagen as `instalacionImagen`, instalacion.descripcion as `instalacionDescripcion`, categoria.nombre as `categoriaNombre` ");
         $this->db->join('categoria', 'instalacion.idCategoria = categoria.id', 'left');
         $this->db->where('instalacion.Id', $id);
         $query = $this->db->get('instalacion');
-        if($query->num_rows() > 0) return $query;
+        if ($query->num_rows() > 0) return $query;
         else return false;
     }
 
-    function crearInstalacion($nombre, $imagen, $descripcion, $categoria){
+    function crearInstalacion($nombre, $imagen, $descripcion, $categoria) {
 
         $data = array(
             'nombre' => $nombre,
@@ -36,7 +36,7 @@ class Instalacion_model extends CI_Model {
         return $result;
     }
 
-    function editarInstalacion($id, $nombre, $descripcion, $categoria, $imagen){
+    function editarInstalacion($id, $nombre, $descripcion, $categoria, $imagen) {
         $data = array(
             'nombre' => $nombre,
             'imagen' => $imagen,
@@ -48,7 +48,7 @@ class Instalacion_model extends CI_Model {
         return $result;
     }
 
-    function editarInstalacionSinImagen($id, $nombre, $descripcion, $categoria){
+    function editarInstalacionSinImagen($id, $nombre, $descripcion, $categoria) {
 
         $data = array(
             'nombre' => $nombre,
@@ -60,7 +60,7 @@ class Instalacion_model extends CI_Model {
         return $result;
     }
 
-    function eliminarInstalacion($id){
+    function eliminarInstalacion($id) {
         $this->db->where('id', $id);
         $result = $this->db->delete('instalacion');
         return $result;

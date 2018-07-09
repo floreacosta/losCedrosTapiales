@@ -219,9 +219,9 @@ INSERT INTO cobertura (id, nombre, imagen) VALUES
 
 INSERT INTO servicio (id, nombre, descripcion, idDoctor) VALUES
 (1, "Servicio de Guardia", "La Guardia Externa cuenta con 5 amplios consultorios y funciona las 24hs los 365 días del año. Cuenta además con 6 puestos de Observación, 4 camas de hospital de día y Shock-room.", 88),
-(2, "Servicio de Internación", "El servicio cuenta con 140 camas. Todas las camas están ubicadas en habitaciones con baño privado, aire acondiconado frío / calor de regulación individual, TV por cable en pantallas de LCD.", 86),
-(3, "Terapia Intensiva Polivalente", "El Sanatorio cuenta con 26 camas destinadas a la Alta Complejidad Médica, esto es, Terapia Intensiva de Adultos, Unidad De Cuidados Especiales, Recuperación de Cirugía Cardiovascular.", 87),
-(4, "Unidad de Cuidados Especiales", "", 0),
+(2, "Servicio de Internación", "El servicio cuenta con 140 camas. Todas las camas están ubicadas en habitaciones con baño privado, aire acondiconado frío / calor de regulación individual, TV por cable en pantallas de LCD.", 51),
+(3, "Unidad de Terapia Intensiva Polivalente", "El Sanatorio cuenta con 19 camas destinadas a la Alta Complejidad Médica, esto es, Terapia Intensiva de Adultos, Unidad De Cuidados Especiales, Recuperación de Cirugía Cardiovascular.", 86),
+(4, "Unidad de Cuidados Especiales", "Este es el sitio cuenta con 8 camas con equipamiento de terapia internsiva para brindar una asistencia clínica que se desarrolla para la atención de aquellos pacientes, que padecen o pueden padecer, un compromiso severo de sus funciones vitales, allí encuentran un soporte adecuado y constante para restablecerlas.", 87),
 (5, "Centro Quirúrgico", "Contamos con cinco quirófanos de moderna tecnología en donde se realizan todo tipo de intervenciones quirúrgicas tanto ambulatorias como las que requieren internación.", 17),
 (6, "Servicio de Hemodinamia", "Cuenta con 1 salas de Hemodinamia de última generación con angiógrafo de alta resolución con detectores planos (Flat Detector) que permiten adquirir imágenes en forma digital de las arterias del corazón, sistema nervioso central y de la vasculatura periférica facilitando la realización de estudios diagnósticos y terapéuticos con imágenes de alta calidad. El área cuenta con sala de recuperación.", 89),
 (7, "Servicio de Cirugía Cardiovascular", "Contamos con una sala de recuperación perioperatoria especializada, con personal médico y paramédico altamente entrenado y un soporte multidiciplinario (Enfermería, Kinesiología, Nefrología, Infectología, Neumonología, etc) que nos permite ofrecerle una atención jerarquizada de acuerdo a las características individuales de cada paciente.", 63),
@@ -229,7 +229,8 @@ INSERT INTO servicio (id, nombre, descripcion, idDoctor) VALUES
 (9, "Servicio de Diagnóstico por Imagen", "Cuenta con un sistema de Integración digital de todos sus equipos lo que permite, de forma ágil y sencilla, que los estudios realizados estén disponibles rápidamente en las diferentes áreas del sanatorio para que los médicos solicitantes puedan visualizarlos en forma inmediata a su realización.", 101),
 (10, "Laboratorio", "El laboratorio de análisis clínico se encuentra absolutamente robotizado e informatizado y son el resultado de la búsqueda constante de nuevas metodologías más sensibles, específicas y eficientes para procesar mayor volumen de muestras en el menor tiempo posible.", 94);
 -- (11, "Servicio de Radiología", "Estudios simples y contrastados con guardias permanentes las 24 hs.", 30),
-(12, "Servicio de Hemodiálisis", "", 16);
+(12, "Servicio de Hemodiálisis", "", 16),
+(13, "Servicio de Rehabilitación Respiratoria", "En nuentro Centro de Rehabilitacion Repiratoria realizamos un programa multidiciplinario de asistencia al paciente con patología respiratoria crónica que se lleva a cabo de una forma individualizada intentando conseguir la mayor autonomía posible según la gravedad de la patología de base del paciente. Para lograr estas pautas realizamos ejercicio físico, tratamiento de aspecto psicosociales, educación del paciente y su familia. Atendemos Pacientes con EPOC, Insuficiencia Respiratoria, Internación subaguda de internación prolongada, Traqueostomizados.", 22);
 
 INSERT INTO instalacion (id, nombre, imagen, descripcion, idCategoria) VALUES
 (1, 'Instalaciones internas', 'edificio-11.jpg', '', 4),
@@ -366,8 +367,7 @@ INSERT INTO tipoXestudio (id, nombre, descripcion) VALUES
 INSERT INTO estudio (id, nombre, descripcion, idTipo) VALUES
 (1, 'Sangre de rutina', 'Ayuno de 8 horas. Durante el mismo sólo se puede tomar agua. Para el pedido de colesterol total o cualquiera de sus fracciones (HDL, LDL Y VLDL, triglicéridos) y hepatograma debe seguirse estrictamente la siguiente indicación: Ayuno de 12 horas.', 1),
 (2, 'Orina completa', 'Se deberá recolectar la primera orina de la mañana en frasco estéril (no provisto por el Laboratorio). En su defecto, recolectar orina de 3 horas de retención mínima.', 1),
-(3, 'Recolección de orina de 24 hs', '
-Para la realización de los siguientes análisis, debe recolectarse la orina de 24 horas:
+(3, 'Recolección de orina de 24 hs', 'Para la realización de los siguientes análisis, debe recolectarse la orina de 24 horas:
 - Beta 2 microglobulina.
 - Calcio en orina Creatinina en orina.
 - Fosfato en orina Ionograma en orina.
@@ -385,8 +385,7 @@ A partir de allí, juntar todo el volumen de todas las micciones hasta la misma 
 Los resultados serán informados por el volumen emitido, de allí la importancia de una adecuada recolección.
 Si Ud tiene dichos estudios conjuntamente con una extracción de sangre, el mismo día que finaliza la recolección de la orina, asistir al laboratorio con ayuno de 8 hs o 12 hs según corresponda.', 1
 ),
-(4, 'Urocultivo', '
-Debe utilizar un recipiente estéril (comprado en farmacias) Este análisis debe realizarse recolectando la primera orina de la mañana o una orina con 3 horas de retención mínima, siguiendo las indicaciones de higiene previa mencionadas a posteriori y toma de muestra. Suspender todo tratamiento antibiótico 72 horas antes de la toma de muestra, salvo expresa indicación médica. No se aceptarán muestras derramadas.
+(4, 'Urocultivo', 'Debe utilizar un recipiente estéril (comprado en farmacias) Este análisis debe realizarse recolectando la primera orina de la mañana o una orina con 3 horas de retención mínima, siguiendo las indicaciones de higiene previa mencionadas a posteriori y toma de muestra. Suspender todo tratamiento antibiótico 72 horas antes de la toma de muestra, salvo expresa indicación médica. No se aceptarán muestras derramadas.
 Hombres: Higienizarse con jabón desinfectante las manos y los genitales, retrayendo el prepucio. Enjuagar con abundante agua y secar con gasa estéril o toalla limpia sin uso. Debe descartar el primer chorro en el inodoro, continuar orinando dentro del recipiente. Desechar el último chorro fuera del recipiente nuevamente. Tapar el recipiente y remitir inmediatamente al laboratorio.
 Mujeres: Higienizarse con jabón desinfectante las manos y los genitales externos, no realizar lavajes internos. Enjuagar con abundante agua y secar con gasa estéril o toalla limpia sin uso. Colocar tampón vaginal. Separar con los dedos los labios de la vulva y orinar el primer chorro fuera del recipiente. Continuar orinando dentro del recipiente.Desechar el último chorro fuera del recipiente. Tapar el recipiente y remitir inmediatamente al laboratorio.
 Niños: En niños y niñas mayores la toma de muestra se realizará igual que para adultos. En niños y niñas que no controlan esfínteres se debe observar los hábitos miccionales del bebé. Higienizar con agua y jabón la zona genital y secar con gasa estéril. A las niñas, limpiar de adelante hacia atrás y a los niños, retrayendo el prepucio. Recolectar la orina dentro del recipiente (5 -10 cc) Tapar el recipiente y remitir inmediatamente al laboratorio. No son aptas las bolsas colectoras para realizar este estudio.
@@ -394,34 +393,29 @@ Pacientes con sonda vesical: Higienizar la sonda con antiséptico y realizar pun
 ** CONSERVAR Y TRANSPORTAR REFRIGERADA HASTA EL LABORATORIO.
 ** Rotular el frasco con NOBRE, APELLIDO Y EDAD.', 1
 ),
-(5, 'Parasitológico seriado', '
-Debe utilizar un recipiente con formol al 5% suministrado por el laboratorio.
+(5, 'Parasitológico seriado', 'Debe utilizar un recipiente con formol al 5% suministrado por el laboratorio.
 No consumir aceites, vaselina, laxantes, ni medicamentos que contengan carbón.
 En caso de haberse sacado radiografías con ingestión de elementos de contraste (tipo solubar o similares), dejar pasar 3 días antes de empezar a juntar la muestra.
 Recolectar un poco de materia fecal emitida espontáneamente (del tamaño de una cucharada de té) de cada deposición diaria durante 7 días consecutivos. Si un día no hay deposiciones juntar un día más. Si hay varias deposiciones por día juntar de una sola.
 Conservar a temperatura ambiente y una vez finalizado remitir al laboratorio.', 1),
-(6, 'Test de Graham', '
-Debe utilizar un recipiente con formol al 5% suministrado por el laboratorio.
+(6, 'Test de Graham', 'Debe utilizar un recipiente con formol al 5% suministrado por el laboratorio.
 La noche anterior NO lavar el ano con agua, ni colocar talco ni pomadas.
 No ir de cuerpo antes de realizar la toma de la muestra.
 A la mañana siguiente, al despertar y sin levantarse de la cama, con una gasita limpia que previamente habrá humedecido con solución fisiológica, limpiar el margen, los pliegues y la zona anal.
 Luego, colocar la gasita en el frasco.
 Realizar de idéntica forma durante 7 días consecutivos, guardando la gasa correspondiente por día y cerrando el frasco inmediatamente.
 Conservar a temperatura ambiente y una vez finalizado remitir al laboratorio.', 1),
-(7, 'Sangre oculta en materia fecal', '
-Debe utilizar un recipiente estéril, de boca ancha y seco (sin formol, comprado en farmacias).
+(7, 'Sangre oculta en materia fecal', 'Debe utilizar un recipiente estéril, de boca ancha y seco (sin formol, comprado en farmacias).
 No tomar antibióticos 72 horas antes de tomar la muestra, salvo indicación médica.
 Colocar en el recipiente un trocito de material fecal del tamaño de una cuchara de té, o su equivalente en el caso de diarrea.
 Si existieran zonas con pus y/o sangre y/o cualquier otra cosa de aspecto raro o sospechoso, tomar el material de esa zona.
 Cerrar el recipiente y no volver a abrirlo.', 1),
-(8, 'Ecografías', '
-De una deposición espontánea, colocar en un frasco limpio y seco una pequeña porción de materia fecal, tamaño cuchara de té. Esta muestra no debe tener contacto con la orina ni con ningún otro líquido.
+(8, 'Ecografías', 'De una deposición espontánea, colocar en un frasco limpio y seco una pequeña porción de materia fecal, tamaño cuchara de té. Esta muestra no debe tener contacto con la orina ni con ningún otro líquido.
 Guardar en heladera y remitirlo al laboratorio antes de las 24 hs de obtenida la muestra.
 No ingerir suplementos de hierro por vía oral 72 hs previas a la toma de la muestra.
 Evitar el sangrado de las encías al cepillarse los dientes.
 En caso de ser seriado de sangre oculta (según pedido médico) recoger una pequeña porción de materia fecal durante 3 días consecutivos en distintos recipientes plásticos, limpios y secos, rotulándolos como número 1, 2 y 3. Hasta remitir las muestras al laboratorio, mantenerlas refrigeradas.', 2),
-(9, 'Ecodoppler', '
-Abdominal: 8 hs de ayuno.
+(9, 'Ecodoppler', 'Abdominal: 8 hs de ayuno.
 Hepatobiliopancreática/HBP: 8hs de ayuno.
 Renal: Sin preparación.
 Vejiga y vías urinarias: tomar 1 litro de agua una hr antes del turno y retener.
@@ -453,8 +447,7 @@ Indicaciones posteriores a la realización del estudios: Tomar 2 litros de agua 
   - Apósitos.
   - Toallón.
   - Estudios anteriores.', 2),
-(11, 'Punción de tiroides', '
-7 días antes no debe ingerir aspirinas ni antiinflamatorios. En el caso de pacientes con tratamientos de aspirinas (pacientes con patologías cardíacas) deben suspender su uso 3 días antes del estudio.
+(11, 'Punción de tiroides', '7 días antes no debe ingerir aspirinas ni antiinflamatorios. En el caso de pacientes con tratamientos de aspirinas (pacientes con patologías cardíacas) deben suspender su uso 3 días antes del estudio.
 El día del estudio debe concurrir al mismo con 5hs de ayuno.
 Traer estudios anteriores.
 Traer resultado del tiempo de coagulación realizado dentro del mes.', 2);
