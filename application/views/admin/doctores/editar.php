@@ -9,7 +9,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="#">Admin</a>
+                        <a class="navbar-brand" href="<?= base_url(); ?>admin/index">Admin</a>
                     </div>
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -17,16 +17,19 @@
                         <ul class="nav navbar-nav">
                             <li><a href="<?= base_url(); ?>admin/doctores">Menú anterior</a></li>
                             <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Secciones <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="<?= base_url(); ?>admin/coberturas">Coberturas</a></li>
-                                <li><a href="<?= base_url(); ?>admin/doctores">Doctores</a></li>
-                                <li><a href="<?= base_url(); ?>admin/especialidades">Especialidades</a></li>
-                                <li><a href="<?= base_url(); ?>admin/instalaciones">Instalaciones</a></li>
-                                <li><a href="<?= base_url(); ?>admin/servicios">Servicios</a></li>
-                                <li><a href="<?= base_url(); ?>admin/usuarios">Usuarios</a></li>
-                                <li><a href="<?= base_url(); ?>admin/categorias">Categorias</a></li>
-                            </ul>
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                Secciones <span class="caret"></span>
+                              </a>
+
+                              <ul class="dropdown-menu" role="navigation" aria-label="Menú desplegable - Secciones de administración">
+                                  <li><a href="<?= base_url(); ?>admin/cobertura">Coberturas</a></li>
+                                  <li><a href="<?= base_url(); ?>admin/doctor">Doctores</a></li>
+                                  <li><a href="<?= base_url(); ?>admin/especialidad">Especialidades</a></li>
+                                  <li><a href="<?= base_url(); ?>admin/instalacion">Instalaciones</a></li>
+                                  <li><a href="<?= base_url(); ?>admin/servicio">Servicios</a></li>
+                                  <li><a href="<?= base_url(); ?>admin/usuario">Usuarios</a></li>
+                                  <li><a href="<?= base_url(); ?>admin/categoria">Categorias</a></li>
+                              </ul>
                             </li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
@@ -40,7 +43,7 @@
         <h3>Edición de doctor.</h3>
         <p>Desde aquí podrá cambiar los datos del doctor seleccionado.</p>
         <p>El doctor puede tener varias especialidades seleccionadas.</p>
-        <?=  form_open('admin/doctores/updateDoctores') ?>
+        <?=  form_open('admin/doctor/updateDoctores') ?>
 
         <?
             $resultadoDoctor = $doctor->result()[0];
@@ -49,7 +52,7 @@
             $resultadoEspecialidadesXDoctor = $especialidadesXDoctor->result();
             else
             $resultadoEspecialidadesXDoctor = array();
-            
+
             $hidden = array(
                 'hiddenId' => $resultadoDoctor->id
             );
@@ -67,7 +70,7 @@
                 'id' => 'submit',
                 'class' => 'btn btn-primary'
             );
-              
+
             $especialidadesConSeleccion = array();
 
             foreach ($resultadoEspecialidadesCompleto as $especialidad) {
@@ -79,7 +82,7 @@
                         }else{
                             $esSeleccionada = false;
                         }
-                    } 
+                    }
                 }
                 $array = array(
                     'idEspecialidad' => $especialidad->id,
@@ -104,8 +107,8 @@
         <div class="form-group" id="div-form-descripcion">
         <?= form_label('Especialidades: ', 'especialidades') ?>
         <select id="especialidades" multiple="multiple" name='especialidades' data-bv-icon-for="especialidades" onchange='checkEspecialidades()'>
-        <? foreach($especialidadesConSeleccion as $especialidadConSeleccion): ?>    
-            <option <?= ($especialidadConSeleccion["esSeleccionada"] ? 'selected=selected' : '') ?> value="<?= $especialidadConSeleccion["idEspecialidad"]; ?>"><?= $especialidadConSeleccion["nombreEspecialidad"]; ?></option>    
+        <? foreach($especialidadesConSeleccion as $especialidadConSeleccion): ?>
+            <option <?= ($especialidadConSeleccion["esSeleccionada"] ? 'selected=selected' : '') ?> value="<?= $especialidadConSeleccion["idEspecialidad"]; ?>"><?= $especialidadConSeleccion["nombreEspecialidad"]; ?></option>
         <? endforeach; ?>
         </select>
         <i id="validate-wrong-descripcion" class="form-control-feedback glyphicon glyphicon-remove" style="display:none;" data-bv-icon-for="especialidades"></i>

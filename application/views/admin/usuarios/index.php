@@ -43,19 +43,19 @@
                       <span class="icon-bar"></span>
                       <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Admin</a>
+                    <a class="navbar-brand" href="<?= base_url(); ?>admin/index">Admin</a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li><a href="<?= base_url(); ?>admin/usuarios/crearUsuario">Crear usuario</a></li>
+                        <li><a href="<?= base_url(); ?>admin/usuario/crearUsuario">Crear usuario</a></li>
                         <li class="dropdown">
                           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                             Secciones <span class="caret"></span>
                           </a>
 
-                          <ul class="dropdown-menu">
+                          <ul class="dropdown-menu" role="navigation" aria-label="Menú desplegable - Secciones de administración">
                               <li><a href="<?= base_url(); ?>admin/cobertura">Coberturas</a></li>
                               <li><a href="<?= base_url(); ?>admin/doctor">Doctores</a></li>
                               <li><a href="<?= base_url(); ?>admin/especialidad">Especialidades</a></li>
@@ -90,8 +90,8 @@
               <tr>
                   <td><?= $usuario->nombre; ?></td>
                   <td><?= $usuario->usuario; ?></td>
-                  <td><a href="<?= base_url(); ?>admin/usuarios/editarFormularioUsuario?id=<?= $usuario->id ?>">Editar</a></td>
-                  <td><a href="<?= base_url(); ?>admin/usuarios/EliminarUsuario?id=<?= $usuario->id ?>">Eliminar</a></td>
+                  <td><a href="<?= base_url(); ?>admin/usuario/editarFormularioUsuario?id=<?= $usuario->id ?>">Editar</a></td>
+                  <td><a href="<?= base_url(); ?>admin/usuario/EliminarUsuario?id=<?= $usuario->id ?>">Eliminar</a></td>
               </tr>
               <? endforeach; ?>
           </tbody>

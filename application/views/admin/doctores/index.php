@@ -1,24 +1,24 @@
-<body>        
-    <? if(isset($result)){
-        if($result){
-            if($tipo === 'crear'){
+<body>
+    <? if (isset($result)) {
+        if ($result) {
+            if ($tipo === 'crear') {
     ?>
                 <div class="alert alert-success text-center">
                     Doctor creado con exito.
                 </div>
-    <?        }else if($tipo === 'editar'){ ?>
+    <?        } else if ($tipo === 'editar') { ?>
                 <div class="alert alert-success text-center">
                     Doctor editado con exito.
                 </div>
-    <?        }else{ ?>
+    <?        } else { ?>
                 <div class="alert alert-success text-center">
                     Doctor eliminado con exito.
                 </div>
     <?        }
     ?>
-    
-    
-    <?    }else{ ?>
+
+
+    <?    } else { ?>
     <div class="alert alert-danger text-center">
         Ocurrió un error, por favor vuelva a intentarlo más tarde.
     </div>
@@ -37,24 +37,27 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Admin</a>
+                    <a class="navbar-brand" href="<?= base_url(); ?>admin/index">Admin</a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li><a href="<?= base_url(); ?>admin/doctores/crearDoctor">Crear doctor</a></li>
+                        <li><a href="<?= base_url(); ?>admin/doctor/crearDoctor">Crear doctor</a></li>
                         <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Secciones <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="<?= base_url(); ?>admin/coberturas">Coberturas</a></li>
-                            <li><a href="<?= base_url(); ?>admin/doctores">Doctores</a></li>
-                            <li><a href="<?= base_url(); ?>admin/especialidades">Especialidades</a></li>
-                            <li><a href="<?= base_url(); ?>admin/instalaciones">Instalaciones</a></li>
-                            <li><a href="<?= base_url(); ?>admin/servicios">Servicios</a></li>
-                            <li><a href="<?= base_url(); ?>admin/usuarios">Usuarios</a></li>
-                            <li><a href="<?= base_url(); ?>admin/categorias">Categorias</a></li>
-                        </ul>
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            Secciones <span class="caret"></span>
+                          </a>
+
+                          <ul class="dropdown-menu" role="navigation" aria-label="Menú desplegable - Secciones de administración">
+                              <li><a href="<?= base_url(); ?>admin/cobertura">Coberturas</a></li>
+                              <li><a href="<?= base_url(); ?>admin/doctor">Doctores</a></li>
+                              <li><a href="<?= base_url(); ?>admin/especialidad">Especialidades</a></li>
+                              <li><a href="<?= base_url(); ?>admin/instalacion">Instalaciones</a></li>
+                              <li><a href="<?= base_url(); ?>admin/servicio">Servicios</a></li>
+                              <li><a href="<?= base_url(); ?>admin/usuario">Usuarios</a></li>
+                              <li><a href="<?= base_url(); ?>admin/categoria">Categorias</a></li>
+                          </ul>
                         </li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
@@ -82,8 +85,8 @@
                     <td><?= $doctor->doctorNombre; ?></td>
                     <td><?= $doctor->especialidades; ?></td>
                     <td><? echo(($doctor->doctorEsCabecera == 1) ? 'Si' : 'No');?></td>
-                    <td><a href="<?= base_url(); ?>admin/doctores/editarFormularioDoctores?id=<?= $doctor->Id ?>">Editar</a></td>
-                    <td><a href="<?= base_url(); ?>admin/doctores/EliminarDoctor?id=<?= $doctor->Id ?>">Eliminar</a></td>
+                    <td><a href="<?= base_url(); ?>admin/doctor/editarFormularioDoctores?id=<?= $doctor->Id ?>">Editar</a></td>
+                    <td><a href="<?= base_url(); ?>admin/doctor/EliminarDoctor?id=<?= $doctor->Id ?>">Eliminar</a></td>
                 </tr>
                 <? endforeach; ?>
             </tbody>
