@@ -11,6 +11,13 @@ CREATE TABLE IF NOT EXISTS empleado (
   sexo char not null
 ) ENGINE=InnoDB CHARACTER SET = utf8, COLLATE = utf8_general_ci;
 
+CREATE TABLE IF NOT EXISTS doctor (
+   id int not null auto_increment primary key,
+   idEmpleado int not null,
+
+   CONSTRAINT foreign_key_idEmpleado FOREIGN KEY (idEmpleado) REFERENCES empleado (id)
+) ENGINE=InnoDB;
+
 CREATE TABLE IF NOT EXISTS jefe_sector (
    id int not null auto_increment primary key,
    idEmpleado int not null,
@@ -26,13 +33,6 @@ CREATE TABLE IF NOT EXISTS jefe_servicio (
 
    CONSTRAINT foreign_key_idEmpleado FOREIGN KEY (idEmpleado) REFERENCES empleado (id)
 ) ENGINE=InnoDB CHARACTER SET = utf8, COLLATE = utf8_general_ci;
-
-CREATE TABLE IF NOT EXISTS doctor (
-   id int not null auto_increment primary key,
-   idEmpleado int not null,
-
-   CONSTRAINT foreign_key_idEmpleado FOREIGN KEY (idEmpleado) REFERENCES empleado (id)
-) ENGINE=InnoDB;
 
 CREATE TABLE IF NOT EXISTS categoria (
    id int not null auto_increment primary key,

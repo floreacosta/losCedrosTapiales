@@ -114,7 +114,7 @@ class Instalacion extends CI_Controller {
             $this->load->view('admin/includes/headNIm');
             $this->load->view('admin/instalaciones/editar', $data);
         } else {
-            echo "Ha ocurrido un error, intentelo de nuevo por favor";
+            echo "Ha ocurrido un error, inténtelo de nuevo por favor";
             echo anchor(base_url().'admin/instalaciones', 'Volver');
         }
     }
@@ -141,7 +141,7 @@ class Instalacion extends CI_Controller {
             $this->load->view('admin/includes/head');
             $this->load->view('admin/instalaciones/index', $data);
         } else {
-            echo "Ha ocurrido un error, intentelo de nuevo por favor";
+            echo "Ha ocurrido un error, inténtelo de nuevo por favor";
             echo anchor(base_url().'admin/instalaciones', 'Volver');
         }
     }

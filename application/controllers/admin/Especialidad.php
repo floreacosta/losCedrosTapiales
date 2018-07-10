@@ -53,7 +53,7 @@ class Especialidad extends CI_Controller {
             $this->load->view('admin/includes/head');
             $this->load->view('admin/especialidades/editar', $data);
         } else {
-            echo "Ha ocurrido un error, intentelo de nuevo por favor";
+            echo "Ha ocurrido un error, inténtelo de nuevo por favor";
             echo anchor(base_url().'admin/especialidades', 'Volver');
         }
     }
@@ -78,7 +78,7 @@ class Especialidad extends CI_Controller {
             $this->load->view('admin/includes/head');
             $this->load->view('admin/especialidades/index', $data);
         } else {
-            echo "Ha ocurrido un error, intentelo de nuevo por favor";
+            echo "Ha ocurrido un error, inténtelo de nuevo por favor";
             echo anchor(base_url().'admin/especialidades', 'Volver');
         }
     }

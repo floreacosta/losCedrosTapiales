@@ -9,6 +9,7 @@
           <a href="<?= base_url(); ?>admin/cobertura" class="list-group-item">Administrar coberturas</a>
           <a href="<?= base_url(); ?>admin/servicio" class="list-group-item">Administrar servicios</a>
           <a href="<?= base_url(); ?>admin/instalacion" class="list-group-item">Administrar instalaciones</a>
+          <a href="<?= base_url(); ?>admin/estudio" class="list-group-item">Administrar estudios</a>
           <a href="<?= base_url(); ?>admin/especialidad" class="list-group-item">Administrar especialidades</a>
           <a href="<?= base_url(); ?>admin/doctor" class="list-group-item">Administrar doctores</a>
           <a href="<?= base_url(); ?>admin/categoria" class="list-group-item">Administrar categorías</a>

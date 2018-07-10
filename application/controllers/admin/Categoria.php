@@ -54,7 +54,7 @@ class Categoria extends CI_Controller {
             $this->load->view('admin/includes/head');
             $this->load->view('admin/categorias/editar', $data);
         } else {
-            echo "Ha ocurrido un error, intentelo de nuevo por favor";
+            echo "Ha ocurrido un error, inténtelo de nuevo por favor";
             echo anchor(base_url().'admin/categorias', 'Volver');
         }
     }
@@ -80,7 +80,7 @@ class Categoria extends CI_Controller {
             $this->load->view('admin/includes/head');
             $this->load->view('admin/categorias/index', $data);
         } else {
-            echo "Ha ocurrido un error, intentelo de nuevo por favor";
+            echo "Ha ocurrido un error, inténtelo de nuevo por favor";
             echo anchor(base_url().'admin/categorias', 'Volver');
         }
     }

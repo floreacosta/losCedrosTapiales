@@ -16,7 +16,7 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
-                            <li><a href="<?= base_url(); ?>admin/especialidad">Menú anterior</a></li>
+                            <li><a href="<?= base_url(); ?>admin/estudio">Menú anterior</a></li>
                             <li class="dropdown">
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                 Secciones <span class="caret"></span>
@@ -26,6 +26,7 @@
                                   <li><a href="<?= base_url(); ?>admin/cobertura">Coberturas</a></li>
                                   <li><a href="<?= base_url(); ?>admin/doctor">Doctores</a></li>
                                   <li><a href="<?= base_url(); ?>admin/especialidad">Especialidades</a></li>
+                                  <li><a href="<?= base_url(); ?>admin/estudio">Estudios</a></li>
                                   <li><a href="<?= base_url(); ?>admin/instalacion">Instalaciones</a></li>
                                   <li><a href="<?= base_url(); ?>admin/servicio">Servicios</a></li>
                                   <li><a href="<?= base_url(); ?>admin/usuario">Usuarios</a></li>
@@ -40,32 +41,32 @@
                     </div><!-- /.navbar-collapse -->
                 </div><!-- /.container-fluid -->
             </nav>
-        <h3>Edición de especialidad.</h3>
-        <p>Desde aquí podrá cambiar los datos de la especialidad seleccionada.</p>
-        <?=  form_open('admin/especialidad/updateEspecialidades') ?>
-        <?
-            $resultado = $especialidad->result()[0];
+        <h3>Creación de Estudio.</h3>
+        <p>Desde aquí podrá crear una nuevo estudio para mostrar desde la página.</p>
+        <?=  form_open(base_url()."admin/estudio/crearEstudio") ?>
 
-            $hidden = array(
-                'hiddenId' => $resultado->id
-            );
+        <?
             $nombre = array(
                 'name' => 'nombre',
                 'type' => 'text',
-                'value' => $resultado->nombre,
                 'class' => 'form-control'
             );
             $buttonClass = array(
                 'class' => 'btn btn-primary'
             );
         ?>
-        <?= form_hidden($hidden) ?>
         <div class="form-group">
-        <?= form_label('Nombre: ', 'nombre') ?>
-        <?= form_input($nombre) ?>
-        </div>
-        <?= form_submit('','Editar especialidad', $buttonClass) ?>
-        <?= form_close() ?>
+          <?= form_label('Nombre: ', 'nombre') ?>
+          <?= form_input($nombre) ?>
+
+          <?= form_label('Descripción: ', 'descripcion') ?>
+          <?= form_input($descripcion) ?>
+
+          <?= form_label('Tipo: ', 'tipo') ?>
+          <?= form_input($tipo) ?>
+
+          <?= form_submit('','Crear estudio', $buttonClass) ?>
+          <?= form_close() ?>
         </div>
     </body>
 </html>

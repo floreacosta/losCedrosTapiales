@@ -65,7 +65,7 @@ class Doctor extends CI_Controller {
             $this->load->view('admin/includes/headWoValidation');
             $this->load->view('admin/doctores/editar', $data);
         } else {
-            echo "Ha ocurrido un error, intentelo de nuevo por favor";
+            echo "Ha ocurrido un error, inténtelo de nuevo por favor";
             echo anchor(base_url().'admin/doctores', 'Volver');
         }
     }
@@ -99,7 +99,7 @@ class Doctor extends CI_Controller {
             $this->load->view('admin/includes/headWoValidation');
             $this->load->view('admin/doctores/index', $data);
         } else {
-            echo "Ha ocurrido un error, intentelo de nuevo por favor";
+            echo "Ha ocurrido un error, inténtelo de nuevo por favor";
             echo anchor(base_url().'admin/doctores', 'Volver');
         }
     }

@@ -1,20 +1,21 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Servicio extends CI_Controller {
+class Estudio extends CI_Controller {
     public function __construct() {
         // $this->load does not exist until after you call this
         parent::__construct(); // Construct CI's core so that you can use it
         $this->load->helper('url');
         $this->load->database();
-        $this->load->model('admin/Servicio_model');
+        $this->load->model('admin/Estudio_model');
+        $this->load->model('admin/EstudioTipo_model');
         $this->check_session();
     }
 
     public function index() {
-        $data['servicios'] = $this->Servicio_model->getServicios();
+        $data['estudios'] = $this->Estudio_model->getEstudios();
         $this->load->view('admin/includes/head');
-        $this->load->view('admin/servicios/index', $data);
+        $this->load->view('admin/estudios/index', $data);
     }
 
     public function logout() {
@@ -31,56 +32,58 @@ class Servicio extends CI_Controller {
         }
     }
 
-    public function crearServicio() {
+    public function crearEstudio() {
         if (null === ($this->input->post('nombre'))) {
             $this->load->view('admin/includes/head');
-            $this->load->view('admin/servicios/crear');
+            $this->load->view('admin/estudios/crear');
         } else {
             $nombre_post = $this->input->post('nombre');
-            $descripcion_post = $this->input->post('descripcion');
-            $data['result'] = $this->Servicio_model->crearServicio($nombre_post, $descripcion_post);
-            $data['servicios'] = $this->Servicio_model->getServicios();
+            $data['result'] = $this->Estudio_model->crearEstudio($nombre_post);
+            $data['estudios'] = $this->Estudio_model->getEstudios();
             $data['tipo'] = 'crear';
             $this->load->view('admin/includes/head');
-            $this->load->view('admin/servicios/index', $data);
+            $this->load->view('admin/estudios/index', $data);
         }
     }
 
-    public function editarFormularioServicios() {
+    public function crearTipoEstudio() {
+
+    }
+
+    public function editarFormularioEstudio() {
         if ($this->input->get('id') !== null) {
             $id = $this->input->get('id');
-            $data['servicio'] = $this->Servicio_model->getServicio($id);
+            $data['estudios'] = $this->Estudio_model->getEstudios($id);
             $this->load->view('admin/includes/head');
-            $this->load->view('admin/servicios/editar', $data);
+            $this->load->view('admin/estudios/editar', $data);
         } else {
             echo "Ha ocurrido un error, inténtelo de nuevo por favor";
-            echo anchor(base_url().'admin/servicios', 'Volver');
+            echo anchor(base_url().'admin/estudio', 'Volver');
         }
     }
 
-    public function updateServicios() {
+    public function updateEstudio() {
         $id_post = $this->input->post('hiddenId');
         $nombre_post = $this->input->post('nombre');
-        $descripcion_post = $this->input->post('descripcion');
-        $data['result'] = $this->Servicio_model->editarServicio($id_post, $nombre_post, $descripcion_post);
-        $data['servicios'] = $this->Servicio_model->getServicios();
+        $data['result'] = $this->Estudio_model->editarEstudio($id_post, $nombre_post);
+        $data['estudios'] = $this->Estudio_model->getEstudios();
         $data['tipo'] = 'editar';
         $this->load->view('admin/includes/head');
-        $this->load->view('admin/servicios/index', $data);
+        $this->load->view('admin/estudios/index', $data);
 
     }
 
-    public function EliminarServicio() {
+    public function eliminarEstudio() {
       if ($this->input->get('id') !== null) {
             $id = $this->input->get('id');
-            $data['result'] = $this->Servicio_model->eliminarServicio($id);
-            $data['servicios'] = $this->Servicio_model->getServicios();
+            $data['result'] = $this->Estudio_model->eliminarEstudio($id);
+            $data['estudios'] = $this->Estudio_model->getEstudios();
             $data['tipo'] = 'eliminar';
             $this->load->view('admin/includes/head');
-            $this->load->view('admin/servicios/index', $data);
+            $this->load->view('admin/estudios/index', $data);
         } else {
             echo "Ha ocurrido un error, inténtelo de nuevo por favor";
-            echo anchor(base_url().'admin/servicios', 'Volver');
+            echo anchor(base_url().'admin/estudio', 'Volver');
         }
     }
 }
