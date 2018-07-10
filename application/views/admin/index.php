@@ -13,6 +13,7 @@
           <a href="<?= base_url(); ?>admin/especialidad" class="list-group-item">Administrar especialidades</a>
           <a href="<?= base_url(); ?>admin/doctor" class="list-group-item">Administrar doctores</a>
           <a href="<?= base_url(); ?>admin/categoria" class="list-group-item">Administrar categorías</a>
+          <a href="<?= base_url(); ?>admin/noticia" class="list-group-item">Administrar noticias</a>
       </div>
 
       <a href="<?= base_url(); ?>admin/index/logout" class="btn btn-info" role="button">Cerrar sesión</a>

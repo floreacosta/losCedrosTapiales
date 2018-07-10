@@ -16,7 +16,7 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
-                            <li><a href="<?= base_url(); ?>admin/noticia">Menú anterior</a></li>
+                            <li><a href="<?= base_url(); ?>admin/servicio">Menú anterior</a></li>
                             <li class="dropdown">
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                 Secciones <span class="caret"></span>
@@ -27,11 +27,9 @@
                                   <li><a href="<?= base_url(); ?>admin/doctor">Doctores</a></li>
                                   <li><a href="<?= base_url(); ?>admin/especialidad">Especialidades</a></li>
                                   <li><a href="<?= base_url(); ?>admin/instalacion">Instalaciones</a></li>
-                                  <li><a href="<?= base_url(); ?>admin/estudio">Estudios</a></li>
                                   <li><a href="<?= base_url(); ?>admin/servicio">Servicios</a></li>
                                   <li><a href="<?= base_url(); ?>admin/usuario">Usuarios</a></li>
                                   <li><a href="<?= base_url(); ?>admin/categoria">Categorias</a></li>
-                                  <li><a href="<?= base_url(); ?>admin/noticia">Noticias</a></li>
                               </ul>
                             </li>
                         </ul>
@@ -42,36 +40,35 @@
                     </div><!-- /.navbar-collapse -->
                 </div><!-- /.container-fluid -->
             </nav>
-        <h3>Creación de Noticia.</h3>
-        <p>Desde aquí podrá crear una nueva noticia para mostrar desde la página.</p>
+        <h3>Creación de Servicio.</h3>
+        <p>Desde aquí podrá crear un nuevo servicio para mostrar desde la página.</p>
 
-        <div>
-          <?=  form_open(base_url()."admin/noticia/crearNoticia") ?>
-          <?
-              $nombre = array(
-                  'name' => 'nombre',
-                  'type' => 'text',
-                  'class' => 'form-control'
-              );
-              $descripcion = array(
-                  'name' => 'descripcion',
-                  'type' => 'textarea',
-                  'class' => 'form-control'
-              );
-              $buttonClass = array(
-                  'class' => 'btn btn-primary'
-              );
-          ?>
-          <div class="form-group">
-            <?= form_label('Nombre: ', 'nombre') ?>
-            <?= form_input($nombre) ?>
-          </div>
-          <div class="form-group">
-            <?= form_label('Descripcion: ', 'descripcion') ?>
-            <?= form_textarea($descripcion) ?>
-          </div>
-          <?= form_submit('','Crear servicio', $buttonClass) ?>
-          <?= form_close() ?>
+        <?=  form_open(base_url()."admin/servicio/crearServicio") ?>
+        <?
+            $nombre = array(
+                'name' => 'nombre',
+                'type' => 'text',
+                'class' => 'form-control'
+            );
+            $descripcion = array(
+                'name' => 'descripcion',
+                'type' => 'textarea',
+                'class' => 'form-control'
+            );
+            $buttonClass = array(
+                'class' => 'btn btn-primary'
+            );
+        ?>
+        <div class="form-group">
+        <?= form_label('Nombre: ', 'nombre') ?>
+        <?= form_input($nombre) ?>
+        </div>
+        <div class="form-group">
+        <?= form_label('Descripcion: ', 'descripcion') ?>
+        <?= form_textarea($descripcion) ?>
+        </div>
+        <?= form_submit('','Crear servicio', $buttonClass) ?>
+        <?= form_close() ?>
         </div>
     </body>
 </html>

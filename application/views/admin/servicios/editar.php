@@ -27,9 +27,11 @@
                                   <li><a href="<?= base_url(); ?>admin/doctor">Doctores</a></li>
                                   <li><a href="<?= base_url(); ?>admin/especialidad">Especialidades</a></li>
                                   <li><a href="<?= base_url(); ?>admin/instalacion">Instalaciones</a></li>
+                                  <li><a href="<?= base_url(); ?>admin/estudio">Estudios</a></li>
                                   <li><a href="<?= base_url(); ?>admin/servicio">Servicios</a></li>
                                   <li><a href="<?= base_url(); ?>admin/usuario">Usuarios</a></li>
                                   <li><a href="<?= base_url(); ?>admin/categoria">Categorias</a></li>
+                                  <li><a href="<?= base_url(); ?>admin/noticia">Noticias</a></li>
                               </ul>
                             </li>
                         </ul>
@@ -40,9 +42,9 @@
                     </div><!-- /.navbar-collapse -->
                 </div><!-- /.container-fluid -->
             </nav>
-        <h3>Edición de servicio.</h3>
-        <p>Desde aquí podrá cambiar los datos del servicio seleccionado.</p>
-        <?=  form_open('admin/servicio/updateServicios') ?>
+        <h3>Edición de noticia.</h3>
+        <p>Desde aquí podrá cambiar los datos de la noticia seleccionado.</p>
+        <?=  form_open('admin/noticia/updateNoticia') ?>
         <?
             $resultado = $servicio->result()[0];
 
@@ -65,17 +67,19 @@
                 'class' => 'btn btn-primary'
             );
         ?>
-        <?= form_hidden($hidden) ?>
-        <div class="form-group">
-        <?= form_label('Nombre: ', 'nombre') ?>
-        <?= form_input($nombre) ?>
-        </div>
-        <div class="form-group">
-        <?= form_label('Descripción: ', 'descripcion') ?>
-        <?= form_textarea($descripcion) ?>
-        </div>
-        <?= form_submit('','Editar servicio', $buttonClass) ?>
-        <?= form_close() ?>
+
+        <div>
+          <?= form_hidden($hidden) ?>
+          <div class="form-group">
+            <?= form_label('Nombre: ', 'nombre') ?>
+            <?= form_input($nombre) ?>
+          </div>
+          <div class="form-group">
+            <?= form_label('Descripción: ', 'descripcion') ?>
+            <?= form_textarea($descripcion) ?>
+          </div>
+          <?= form_submit('','Editar noticia', $buttonClass) ?>
+          <?= form_close() ?>
         </div>
     </body>
 </html>

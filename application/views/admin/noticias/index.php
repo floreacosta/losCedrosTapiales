@@ -1,16 +1,16 @@
 <body>
     <? if(isset($result)){
         if($result){
-            if($tipo === 'crear') {
+            if($tipo === 'crear'){
     ?>
                 <div class="alert alert-success text-center">
                     Servicio creado con exito.
                 </div>
-    <?        } else if ($tipo === 'editar') { ?>
+    <?        }else if($tipo === 'editar'){ ?>
                 <div class="alert alert-success text-center">
                     Servicio editado con exito.
                 </div>
-    <?        } else { ?>
+    <?        }else{ ?>
                 <div class="alert alert-success text-center">
                     Servicio eliminado con exito.
                 </div>
@@ -18,7 +18,7 @@
     ?>
 
 
-    <?    } else { ?>
+    <?    }else{ ?>
     <div class="alert alert-danger text-center">
         Ocurrió un error, por favor vuelva a intentarlo más tarde.
     </div>
@@ -43,7 +43,7 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li><a href="<?= base_url(); ?>admin/servicio/crearServicio">Crear noticia</a></li>
+                        <li><a href="<?= base_url(); ?>admin/servicio/crearServicio">Crear servicio</a></li>
                         <li class="dropdown">
                           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                             Secciones <span class="caret"></span>
@@ -54,11 +54,9 @@
                               <li><a href="<?= base_url(); ?>admin/doctor">Doctores</a></li>
                               <li><a href="<?= base_url(); ?>admin/especialidad">Especialidades</a></li>
                               <li><a href="<?= base_url(); ?>admin/instalacion">Instalaciones</a></li>
-                              <li><a href="<?= base_url(); ?>admin/estudio">Estudios</a></li>
                               <li><a href="<?= base_url(); ?>admin/servicio">Servicios</a></li>
                               <li><a href="<?= base_url(); ?>admin/usuario">Usuarios</a></li>
                               <li><a href="<?= base_url(); ?>admin/categoria">Categorias</a></li>
-                              <li><a href="<?= base_url(); ?>admin/noticia">Noticias</a></li>
                           </ul>
                         </li>
                     </ul>
@@ -69,24 +67,24 @@
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
-        <h2>Gestión de noticias.</h2>
-        <p>Desde aquí podrá dar de alta nuevas noticias, editar las existentes o eliminarlos.</p>
+        <h2>Gestión de servicios.</h2>
+        <p>Desde aquí podrá dar de alta nuevos servicios, editar los existentes o eliminarlos.</p>
         <table class="table table-striped">
             <thead>
                 <tr>
                     <th>Nombre</th>
                     <th>Descripción</th>
-                    <th>Editar noticia</th>
-                    <th>Eliminar noticia</th>
+                    <th>Editar servicio</th>
+                    <th>Eliminar servicio</th>
                 </tr>
             </thead>
             <tbody>
-                <? foreach($noticias->result() as $noticia): ?>
+                <? foreach($servicios->result() as $servicio): ?>
                 <tr>
-                    <td><?= $noticia->nombre; ?></td>
-                    <td><?= $noticia->descripcion; ?></td>
-                    <td><a href="<?= base_url(); ?>admin/noticia/editarFormularioNoticia?id=<?= $noticia->id ?>">Editar</a></td>
-                    <td><a href="<?= base_url(); ?>admin/noticia/eliminarNoticia?id=<?= $noticia->id ?>">Eliminar</a></td>
+                    <td><?= $servicio->nombre; ?></td>
+                    <td><?= $servicio->descripcion; ?></td>
+                    <td><a href="<?= base_url(); ?>admin/servicio/editarFormularioServicios?id=<?= $servicio->id ?>">Editar</a></td>
+                    <td><a href="<?= base_url(); ?>admin/servicio/EliminarServicio?id=<?= $servicio->id ?>">Eliminar</a></td>
                 </tr>
                 <? endforeach; ?>
             </tbody>
