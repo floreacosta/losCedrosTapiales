@@ -46,8 +46,7 @@ class Cobertura extends CI_Controller {
         }
     }
 
-    public function subirImagen()
-    {
+    public function subirImagen() {
         $nombre_post = $this->input->post('nombre');
 
         $config['upload_path'] = './img/obras-sociales';
@@ -59,23 +58,22 @@ class Cobertura extends CI_Controller {
         $this->load->library('upload', $config);
         $this->upload->initialize($config);
 
-        if ( ! $this->upload->do_upload('user_file')) {
+        if (!$this->upload->do_upload('user_file')) {
             $data['error'] = array('error' => $this->upload->display_errors());
             $this->load->view('admin/includes/head');
             $this->load->view('admin/coberturas/index', $data);
-        }
-        else{
+        } else {
             $imagen_post = $this->upload->data()['file_name'];
             $data = array('upload_data' => $this->upload->data());
             $this->crearCobertura($nombre_post, $imagen_post);
         }
     }
 
-    public function subirImagenEditar()
-    {
+    public function subirImagenEditar() {
         $id_post = $this->input->post('hiddenId');
         $nombre_post = $this->input->post('nombre');
-        if ('' !== $_FILES['user_file']['tmp_name']) {
+
+        if ($_FILES['user_file']['tmp_name'] !== '') {
             $config['upload_path'] = './img/obras-sociales';
             $config['allowed_types'] = 'gif|jpg|png';
             $config['max_size'] = 100;
@@ -100,7 +98,6 @@ class Cobertura extends CI_Controller {
     }
 
     public function editarFormularioCoberturas() {
-
         if ($this->input->get('id') !== null) {
             $id = $this->input->get('id');
             $data['cobertura'] = $this->Cobertura_model->getCobertura($id);
