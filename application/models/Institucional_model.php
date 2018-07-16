@@ -8,7 +8,7 @@ class Institucional_model extends CI_Model {
     }
 
     function getJefeSectores() {
-      $this->db->select('empleado.nombre, empleado.imagen, empleado.sexo, jefe_sector.cargo, empleado.cv');
+      $this->db->select('empleado.nombre, empleado.sexo, jefe_sector.cargo');
       $this->db->from('jefe_sector');
       $this->db->join('empleado', 'jefe_sector.idEmpleado = empleado.id');
       $query = $this->db->get();
@@ -18,7 +18,7 @@ class Institucional_model extends CI_Model {
     }
 
     function getJefeServicios() {
-      $this->db->select('empleado.nombre, empleado.imagen, empleado.sexo, jefe_servicio.cargo, empleado.cv');
+      $this->db->select('empleado.nombre, empleado.sexo, jefe_servicio.cargo');
       $this->db->from('jefe_servicio');
       $this->db->join('empleado', 'jefe_servicio.idEmpleado = empleado.id');
       $query = $this->db->get();

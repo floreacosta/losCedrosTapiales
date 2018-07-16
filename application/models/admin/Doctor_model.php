@@ -7,40 +7,32 @@ class Doctor_model extends CI_Model {
     }
 
     function getDoctores() {
-        $this->db->order_by("nombre", "asc");
-        $query = $this->db->get('doctor');
-        if ($query->num_rows() > 0) return $query;
-        else return false;
+      $this->db->order_by('empleado.nombre', "asc");
+      $this->db->select("empleado.nombre as `nombre`, empleado.sexo as `sexo`, empleado.titulo as `titulo`, doctor.id as `id`");
+      $this->db->join('empleado', 'empleado.id = doctor.idEmpleado');
+      $query = $this->db->get('doctor');
+      if ($query->num_rows() > 0) return $query;
+      else return false;
     }
 
     function getDoctor($id) {
-        $this->db->where('id', $id);
-        $query = $this->db->get('doctor');
-        if ($query->num_rows() > 0) return $query;
-        else return false;
+      $this->db->where('id', $id);
+      $query = $this->db->get('doctor');
+      if ($query->num_rows() > 0) return $query;
+      else return false;
     }
 
-    function crearDoctor($nombre, $esMedicoCabecera) {
+    function crearDoctor($idEmpleado) {
+      $data = array(
+          'idEmpleado' => $idEmpleado
+      );
 
-        $data = array(
-            'nombre' => $nombre
-        );
-
-        $this->db->insert('doctor', $data);
-        return $this->db->insert_id();
+      $this->db->insert('doctor', $data);
+      return $this->db->insert_id();
     }
 
-    function editarDoctor($id, $nombre, $esMedicoCabecera) {
-        $data = array(
-            'nombre' => $nombre
-        );
-        $this->db->where('id', $id);
-        $result = $this->db->update('doctor', $data);
-        return $result;
-    }
-
-    function eliminarDoctor($id) {
-        $this->db->where('id', $id);
+    function eliminarDoctor($idEmpleado) {
+        $this->db->where('idEmpleado', $idEmpleado);
         $result = $this->db->delete('doctor');
         return $result;
     }

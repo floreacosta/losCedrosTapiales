@@ -7,6 +7,7 @@ $(document).ready(() => {
   getCloseModalVideoContainer();
   getModalEspecialidades();
   getModalEstudios();
+  getModalCarrouselServices();
   getActiveSlider();
   getBarraTooltip();
   getRedireccionamientoTooltip();
@@ -206,6 +207,32 @@ function getModalEstudios () {
 
   button.click(function () {
     let component = $(this).parent().find(".general-overlay-container");
+    component.addClass(activeClass);
+    body.addClass('no-scrolling');
+
+    component.click(function (e) {
+      if ($(e.target).hasClass('general-overlay-container')) {
+        component.removeClass(activeClass);
+        body.removeClass('no-scrolling');
+      }
+    });
+
+    component.find(".general-close-overlay-button").click(function () {
+      component.removeClass(activeClass);
+      body.removeClass('no-scrolling');
+    });
+  });
+}
+
+function getModalCarrouselServices () {
+  let button = $('.prevention-item');
+  let activeClass = "general-overlay-active";
+  let body = $("body");
+
+  getAnimationToHoverElement(button);
+
+  button.click(function () {
+    let component = $(this).find("+ .general-overlay-container");
     component.addClass(activeClass);
     body.addClass('no-scrolling');
 

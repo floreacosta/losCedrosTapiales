@@ -7,11 +7,11 @@ class Servicio_model extends CI_Model {
       $this->load->database();
     }
 
-    function getServices(){
+    function getServices() {
       $this->db->select('servicio.id, servicio.nombre, servicio.descripcion, empleado.nombre as jefe, empleado.titulo');
       $this->db->from('servicio');
-      $this->db->join('doctor', 'servicio.idDoctor = doctor.id');
-      $this->db->join('empleado', 'doctor.idEmpleado = empleado.id');
+      $this->db->join('jefe_servicio', 'servicio.idJefeServicio = jefe_servicio.id');
+      $this->db->join('empleado', 'jefe_servicio.idEmpleado = empleado.id');
       $query = $this->db->get();
 
       if($query->num_rows() > 0) return $query;

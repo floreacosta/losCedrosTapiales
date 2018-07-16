@@ -13,7 +13,7 @@
       <p>Tenemos como principal objetivo el bienestar de nuestros pacientes y para logarlo estamos comprometidos a tener una conducta honesta, de respeto y dialogo continuo para satisfacer las necesidades del paciente y su familia.</p>
 
       <h2 class="institutional-title vision-title">Visión</h2>
-      <p>Ser una institución que proporcione atención medica de calidad  con alto sentido humano.</p>
+      <p>Ser una institución que proporcione atención medica de calidad con alto sentido humano.</p>
 
       <!-- <div class="history-container">
         <h2 class="institutional-title">Historia</h2>
@@ -49,13 +49,9 @@
 							if ($jefe_sector->nombre !== 'Indefinido') {
 								?>
 									<div class="autoridad-item">
-										<figure class="autoridad-image">
-											<img alt="<?= $jefe_sector->nombre; ?>" src="img/<?= $jefe_sector->imagen; ?>" />
-										</figure>
 										<div class="autoridad-information">
 											<h2 class="autoridad-name"><?= $jefe_sector->nombre; ?></h2>
 											<strong class="autoridad-title"><?= $jefe_sector->cargo; ?></strong>
-											<a href="<?= $jefe_sector->cv ?>" class="cv-link">Ver Experiencia</a>
 										</div>
 									</div>
 								<?
@@ -71,13 +67,9 @@
 							if ($jefe_servicio->nombre !== 'Indefinido') {
 								?>
 									<div class="autoridad-item">
-										<figure class="autoridad-image">
-											<img alt="<?= $jefe_servicio->nombre; ?>" src="img/<?= $jefe_servicio->imagen; ?>" />
-										</figure>
 										<div class="autoridad-information">
 											<h2 class="autoridad-name"><?= $jefe_servicio->nombre; ?></h2>
 											<strong class="autoridad-title"><?= $jefe_servicio->cargo; ?></strong>
-											<a href="<?= $jefe_servicio->cv ?>" class="cv-link">Ver Experiencia</a>
 										</div>
 									</div>
 								<?

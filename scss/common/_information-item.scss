@@ -8,6 +8,7 @@
 	background-color: $color-light;
 	display: block;
 	margin: 1em 0;
+	cursor: pointer;
 
 	@include layout-item-information(100%, 100%);
 
@@ -30,6 +31,12 @@
 	@include font-calibri-normal();
 }
 
+.open-service-carrousel {
+	@include font-calibri-bold();
+	color: $color-primary;
+	margin-top: 10px;
+}
+
 /**
 * Responsive
 **/
@@ -43,5 +50,19 @@
 @media (min-width: $desktop) {
 	.prevention-item {
 		@include layout-item-information(75%, 75%);
+
+		&:hover {
+			.open-service-carrousel {
+				display: block;
+			}
+		}
+	}
+
+	.open-service-carrousel {
+		display: none;
+		margin-top: 0px;
+		position: absolute;
+		right: -8em;
+		bottom: 1em;
 	}
 }

@@ -200,7 +200,7 @@ h3 {
   bottom: 0px;
   position: absolute;
   background: #023670;
-  z-index: -1;
+  z-index: 1;
   -moz-transition: all 200ms ease;
   -o-transition: all 200ms ease;
   -webkit-transition: all 200ms ease;
@@ -1475,6 +1475,7 @@ main.home-page {
   background-color: #f2f1f1;
   display: block;
   margin: 1em 0;
+  cursor: pointer;
 }
 .prevention-item:nth-child(even) {
   width: 100%;
@@ -1503,6 +1504,15 @@ main.home-page {
   font-style: normal;
 }
 
+.open-service-carrousel {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-variant: normal;
+  font-style: normal;
+  color: #023670;
+  margin-top: 10px;
+}
+
 /**
 * Responsive
 **/
@@ -1520,6 +1530,17 @@ main.home-page {
   }
   .prevention-item:nth-child(odd) {
     width: 75%;
+  }
+  .prevention-item:hover .open-service-carrousel {
+    display: block;
+  }
+
+  .open-service-carrousel {
+    display: none;
+    margin-top: 0px;
+    position: absolute;
+    right: -8em;
+    bottom: 1em;
   }
 }
 /**

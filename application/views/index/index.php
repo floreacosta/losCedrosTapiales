@@ -68,11 +68,11 @@
 
 		<article class="article-sections-item">
 			<figure class="article-item-content">
-				<a href="<?= base_url(); ?>instalacion" title="Ver más">
-					<img src="<?= base_url(); ?>img/thumbs-instalaciones.jpg" alt="Instalaciones y Equipamiento" />
+				<a href="<?= base_url(); ?>estudio" title="Ver más">
+					<img src="<?= base_url(); ?>img/thumbs-instalaciones.jpg" alt="Estudios y Procedimientos" />
 					<figcaption class="article-item-description">
-						<h3>Instalaciones y Equipamiento</h3>
-						<p>Brindamos infraestructura e instalaciones para que profesionales atiendan sus pacientes en un ambiente confortable y adecuado.</p>
+						<h3>Estudios y Procedimientos</h3>
+						<p>Texto informativo. TO DO.</p>
 						<i class="icon-more-info">+</i>
 					</figcaption>
 				</a>
