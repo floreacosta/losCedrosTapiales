@@ -6,21 +6,21 @@ class Categoria_model extends CI_Model {
         parent::__construct();
     }
 
-    function getCategorias(){
+    function getCategorias() {
         $this->db->order_by("nombre", "asc");
         $query = $this->db->get('categoria');
-        if($query->num_rows() > 0) return $query;
+        if ($query->num_rows() > 0) return $query;
         else return false;
     }
 
-    function getCategoria($id){
+    function getCategoria($id) {
         $this->db->where('id', $id);
         $query = $this->db->get('categoria');
-        if($query->num_rows() > 0) return $query;
+        if ($query->num_rows() > 0) return $query;
         else return false;
     }
 
-    function crearCategoria($nombre, $descripcion){
+    function crearCategoria($nombre, $descripcion) {
 
         $data = array(
             'nombre' => $nombre,
@@ -31,7 +31,7 @@ class Categoria_model extends CI_Model {
         return $result;
     }
 
-    function editarCategoria($id, $nombre, $descripcion){
+    function editarCategoria($id, $nombre, $descripcion) {
         $data = array(
             'nombre' => $nombre,
             'descripcion' => $descripcion
@@ -41,7 +41,7 @@ class Categoria_model extends CI_Model {
         return $result;
     }
 
-    function eliminarCategoria($id){
+    function eliminarCategoria($id) {
         $this->db->where('id', $id);
         $result = $this->db->delete('categoria');
         return $result;

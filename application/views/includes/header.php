@@ -27,9 +27,9 @@
 						<a href="<?= base_url(); ?>institucional" id="institucional" aria-label="Institucional">Institucional</a>
 					</li>
 
-					<!-- <li class="global-menu-item">
+					<li class="global-menu-item">
 						<a href="<?= base_url(); ?>instalacion" id="instalacion" aria-label="Instalaciones">Instalaciones</a>
-					</li> -->
+					</li>
 
 					<li class="global-menu-item">
 						<a href="<?= base_url(); ?>estudio" id="estudio" aria-label="Especialidades">Estudios</a>

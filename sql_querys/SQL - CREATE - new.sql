@@ -34,11 +34,11 @@ CREATE TABLE IF NOT EXISTS jefe_servicio (
    CONSTRAINT foreign_key_idEmpleado FOREIGN KEY (idEmpleado) REFERENCES empleado (id)
 ) ENGINE=InnoDB CHARACTER SET = utf8, COLLATE = utf8_general_ci;
 
--- CREATE TABLE IF NOT EXISTS categoria (
---    id int not null auto_increment primary key,
---    nombre varchar(100) not null,
---    descripcion text
--- ) ENGINE=InnoDB CHARACTER SET = utf8, COLLATE = utf8_general_ci;
+CREATE TABLE IF NOT EXISTS categoria (
+   id int not null auto_increment primary key,
+   nombre varchar(100) not null,
+   descripcion text
+) ENGINE=InnoDB CHARACTER SET = utf8, COLLATE = utf8_general_ci;
 
 CREATE TABLE IF NOT EXISTS especialidad (
    id int not null auto_increment primary key,
@@ -65,9 +65,9 @@ CREATE TABLE IF NOT EXISTS instalacion (
    nombre varchar(100) not null,
 	 imagen varchar(255) not null,
    descripcion text,
-   idServicio int not null,
+   idCategoria int not null,
 
-   CONSTRAINT foreign_key_idServicio FOREIGN KEY (idServicio) REFERENCES servicio (id)
+   CONSTRAINT foreign_key_idCategoria FOREIGN KEY (idCategoria) REFERENCES categoria (id)
 ) ENGINE=InnoDB CHARACTER SET = utf8, COLLATE = utf8_general_ci;
 
 CREATE TABLE IF NOT EXISTS tipoXestudio (

@@ -33,6 +33,7 @@
 	<meta name="msapplication-TileImage" content="<?= base_url(); ?>img/favicon/ms-icon-144x144.png">
 	<meta name="theme-color" content="#ffffff"> -->
 
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<script type="text/javascript" src="<?= base_url(); ?>js/script/query.js"></script>
 </head>

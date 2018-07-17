@@ -6,22 +6,21 @@ class Cobertura_model extends CI_Model {
         parent::__construct();
     }
 
-    function getCoberturas(){
+    function getCoberturas() {
         $this->db->order_by('nombre', 'asc');
         $query = $this->db->get('cobertura');
-        if($query->num_rows() > 0) return $query;
+        if ($query->num_rows() > 0) return $query;
         else return false;
     }
 
-    function getCobertura($id){
+    function getCobertura($id) {
         $this->db->where('id', $id);
         $query = $this->db->get('cobertura');
-        if($query->num_rows() > 0) return $query;
+        if ($query->num_rows() > 0) return $query;
         else return false;
     }
 
-    function crearCobertura($nombre, $imagen){
-
+    function crearCobertura($nombre, $imagen) {
         $data = array(
             'nombre' => $nombre,
             'imagen' => $imagen
@@ -31,7 +30,7 @@ class Cobertura_model extends CI_Model {
         return $result;
     }
 
-    function editarCobertura($id, $nombre, $imagen){
+    function editarCobertura($id, $nombre, $imagen) {
         $data = array(
             'nombre' => $nombre,
             'imagen' => $imagen
@@ -41,7 +40,7 @@ class Cobertura_model extends CI_Model {
         return $result;
     }
 
-    function editarCoberturaSinImagen($id, $nombre){
+    function editarCoberturaSinImagen($id, $nombre) {
         $data = array(
             'nombre' => $nombre
         );
@@ -50,7 +49,7 @@ class Cobertura_model extends CI_Model {
         return $result;
     }
 
-    function eliminarCobertura($id){
+    function eliminarCobertura($id) {
         $this->db->where('id', $id);
         $result = $this->db->delete('cobertura');
         return $result;

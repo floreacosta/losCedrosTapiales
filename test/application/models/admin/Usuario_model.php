@@ -6,21 +6,20 @@ class Usuario_model extends CI_Model {
         parent::__construct();
     }
 
-    function getUsuarios(){
+    function getUsuarios() {
         $query = $this->db->get('usuario');
-        if($query->num_rows() > 0) return $query;
+        if ($query->num_rows() > 0) return $query;
         else return false;
     }
 
-    function getUsuario($id){
+    function getUsuario($id) {
         $this->db->where('id', $id);
         $query = $this->db->get('usuario');
-        if($query->num_rows() > 0) return $query;
+        if ($query->num_rows() > 0) return $query;
         else return false;
     }
 
-    function crearUsuario($nombre, $usuario, $password){
-
+    function crearUsuario($nombre, $usuario, $password) {
         $data = array(
             'nombre' => $nombre,
             'usuario' => $usuario,
@@ -31,7 +30,7 @@ class Usuario_model extends CI_Model {
         return $result;
     }
 
-    function editarUsuario($id, $nombre, $usuario, $password){
+    function editarUsuario($id, $nombre, $usuario, $password) {
         $data = array(
             'nombre' => $nombre,
             'usuario' => $usuario,
@@ -42,7 +41,7 @@ class Usuario_model extends CI_Model {
         return $result;
     }
 
-    function eliminarUsuario($id){
+    function eliminarUsuario($id) {
         $this->db->where('id', $id);
         $result = $this->db->delete('usuario');
         return $result;

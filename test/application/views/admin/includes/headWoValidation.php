@@ -9,7 +9,7 @@
 	<meta name="author" content="Florencia Acosta - Graphic Designer & Front End Developer | Fernando Prado - Back End Developer & Data Base Management" />
 	<meta name="keywords" content=""/>
 
-	<title>Clínica Los Cedros de Tapiales S.A.</title>
+	<title>Sanatorio Privado Madero</title>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<link href="<?= base_url(); ?>admin/css/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css" />

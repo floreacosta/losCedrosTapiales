@@ -57,22 +57,22 @@
       </div>
 
       <div class="title-information">
-        <h1 class="global-title-information"><strong>PRUEBAAAA Sanatorio Privado</strong><br/>Madero</h1>
+        <h1 class="global-title-information"><strong>Sanatorio Privado</strong><br/>Madero</h1>
 				<div class="global-information-container">
 					<p><i>Sanatorio Privado Madero</i> constituye una institución sólida desde el año 1983 en la que se destaca por la excelencia que otorga en sus prestaciones médicas y que sigue manteniendo la filosofía de brindar atención al mejor nivel.</p>
 	        <p>La confianza lograda nos permitió ir creciendo junto con las familias de nuestros pacientes.</p>
 				</div>
-        <button class="open-overlay button-open-home-video" id="institutional_video_button" title="Video a pantalla completa">Video</button>
+        <button class="open-overlay button-open-home-video" id="institutional_video_button" title="Video a pantalla completa">Video<i class="play-icon-container" aria-hidden="true">Play</i></button>
       </div>
 		</section>
 
 		<article class="article-sections-item">
 			<figure class="article-item-content">
-				<a href="<?= base_url(); ?>instalacion" title="Ver más">
-					<img src="<?= base_url(); ?>img/thumbs-instalaciones.jpg" alt="Instalaciones y Equipamiento" />
+				<a href="<?= base_url(); ?>estudio" title="Ver más">
+					<img src="<?= base_url(); ?>img/thumbs-instalaciones.jpg" alt="Estudios y Procedimientos" />
 					<figcaption class="article-item-description">
-						<h3>Instalaciones y Equipamiento</h3>
-						<p>Brindamos infraestructura e instalaciones para que profesionales atiendan sus pacientes en un ambiente confortable y adecuado.</p>
+						<h3>Estudios y Procedimientos</h3>
+						<p>Texto informativo. TO DO.</p>
 						<i class="icon-more-info">+</i>
 					</figcaption>
 				</a>
@@ -112,12 +112,16 @@
 			</figure>
 		</article>
 
-		<section class="all-accordion-container most-important-data-container">
-			<? include 'includes/accordion/most-important-data.php' ?>
+		<section class="history-container">
+			<? include 'includes/historia/historia-information.php' ?>
 		</section>
 
 		<section class="patient-responsabilities-container">
 			<? include 'includes/patient-responsabilities/patient-responsabilities.php' ?>
+		</section>
+
+		<section class="all-accordion-container most-important-data-container">
+			<? include 'includes/accordion/most-important-data.php' ?>
 		</section>
 
 		<section class="section-secondary" id="section-secondary">
@@ -149,4 +153,9 @@
 		</article>
 
 		<? include 'includes/video/modal-video.php' ?>
+
+		<section class="section-news-container">
+			NOTICIAS - TO DO
+			<a href="<?= base_url(); ?>noticias">Ver todas las noticias</a>
+		</section>
 	</main>

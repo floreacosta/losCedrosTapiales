@@ -7,7 +7,7 @@ $(document).ready(() => {
   getCloseModalVideoContainer();
   getModalEspecialidades();
   getModalEstudios();
-  getModalCarrouselServices();
+  // getModalCarrouselServices();
   getActiveSlider();
   getBarraTooltip();
   getRedireccionamientoTooltip();

@@ -1,24 +1,24 @@
-<body>        
+<body>
     <? if(isset($result)){
         if($result){
-            if($tipo === 'crear'){
+            if($tipo === 'crear') {
     ?>
                 <div class="alert alert-success text-center">
                     Servicio creado con exito.
                 </div>
-    <?        }else if($tipo === 'editar'){ ?>
+    <?        } else if ($tipo === 'editar') { ?>
                 <div class="alert alert-success text-center">
                     Servicio editado con exito.
                 </div>
-    <?        }else{ ?>
+    <?        } else { ?>
                 <div class="alert alert-success text-center">
                     Servicio eliminado con exito.
                 </div>
     <?        }
     ?>
-    
-    
-    <?    }else{ ?>
+
+
+    <?    } else { ?>
     <div class="alert alert-danger text-center">
         Ocurrió un error, por favor vuelva a intentarlo más tarde.
     </div>
@@ -37,24 +37,29 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Admin</a>
+                    <a class="navbar-brand" href="<?= base_url(); ?>admin/index">Admin</a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li><a href="<?= base_url(); ?>admin/servicios/crearServicio">Crear servicio</a></li>
+                        <li><a href="<?= base_url(); ?>admin/servicio/crearServicio">Crear noticia</a></li>
                         <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Secciones <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="<?= base_url(); ?>admin/coberturas">Coberturas</a></li>
-                            <li><a href="<?= base_url(); ?>admin/doctores">Doctores</a></li>
-                            <li><a href="<?= base_url(); ?>admin/especialidades">Especialidades</a></li>
-                            <li><a href="<?= base_url(); ?>admin/instalaciones">Instalaciones</a></li>
-                            <li><a href="<?= base_url(); ?>admin/servicios">Servicios</a></li>
-                            <li><a href="<?= base_url(); ?>admin/usuarios">Usuarios</a></li>
-                            <li><a href="<?= base_url(); ?>admin/categorias">Categorias</a></li>
-                        </ul>
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            Secciones <span class="caret"></span>
+                          </a>
+
+                          <ul class="dropdown-menu" role="navigation" aria-label="Menú desplegable - Secciones de administración">
+                            <li><a href="<?= base_url(); ?>admin/cobertura">Coberturas</a></li>
+                            <li><a href="<?= base_url(); ?>admin/doctor">Doctores</a></li>
+                            <li><a href="<?= base_url(); ?>admin/especialidad">Especialidades</a></li>
+                            <li><a href="<?= base_url(); ?>admin/estudio">Estudios</a></li>
+                            <li><a href="<?= base_url(); ?>admin/instalacion">Instalaciones</a></li>
+                            <li><a href="<?= base_url(); ?>admin/servicio">Servicios</a></li>
+                            <li><a href="<?= base_url(); ?>admin/usuario">Usuarios</a></li>
+                            <li><a href="<?= base_url(); ?>admin/categoria">Categorías</a></li>
+                            <li><a href="<?= base_url(); ?>admin/noticia">Noticias</a></li>
+                          </ul>
                         </li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
@@ -64,24 +69,24 @@
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
-        <h2>Gestión de servicios.</h2>
-        <p>Desde aquí podrá dar de alta nuevos servicios, editar los existentes o eliminarlos.</p>
+        <h2>Gestión de noticias.</h2>
+        <p>Desde aquí podrá dar de alta nuevas noticias, editar las existentes o eliminarlos.</p>
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>Nombre</th>  
+                    <th>Nombre</th>
                     <th>Descripción</th>
-                    <th>Editar servicio</th>
-                    <th>Eliminar servicio</th>
+                    <th>Editar noticia</th>
+                    <th>Eliminar noticia</th>
                 </tr>
             </thead>
             <tbody>
-                <? foreach($servicios->result() as $servicio): ?>    
+                <? foreach($noticias->result() as $noticia): ?>
                 <tr>
-                    <td><?= $servicio->nombre; ?></td>
-                    <td><?= $servicio->descripcion; ?></td>
-                    <td><a href="<?= base_url(); ?>admin/servicios/editarFormularioServicios?id=<?= $servicio->id ?>">Editar</a></td>
-                    <td><a href="<?= base_url(); ?>admin/servicios/EliminarServicio?id=<?= $servicio->id ?>">Eliminar</a></td>
+                    <td><?= $noticia->nombre; ?></td>
+                    <td><?= $noticia->descripcion; ?></td>
+                    <td><a href="<?= base_url(); ?>admin/noticia/editarFormularioNoticia?id=<?= $noticia->id ?>">Editar</a></td>
+                    <td><a href="<?= base_url(); ?>admin/noticia/eliminarNoticia?id=<?= $noticia->id ?>">Eliminar</a></td>
                 </tr>
                 <? endforeach; ?>
             </tbody>
@@ -89,5 +94,3 @@
         </div>
     </body>
 </html>
-
-    

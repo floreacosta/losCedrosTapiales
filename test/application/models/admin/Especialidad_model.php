@@ -6,21 +6,21 @@ class Especialidad_model extends CI_Model {
         parent::__construct();
     }
 
-    function getEspecialidades(){
+    function getEspecialidades() {
         $this->db->order_by("nombre", "asc");
         $query = $this->db->get('especialidad');
-        if($query->num_rows() > 0) return $query;
+        if ($query->num_rows() > 0) return $query;
         else return false;
     }
 
-    function getEspecialidad($id){
+    function getEspecialidad($id) {
         $this->db->where('id', $id);
         $query = $this->db->get('especialidad');
-        if($query->num_rows() > 0) return $query;
+        if ($query->num_rows() > 0) return $query;
         else return false;
     }
 
-    function crearEspecialidad($nombre){
+    function crearEspecialidad($nombre) {
 
         $data = array(
             'nombre' => $nombre
@@ -30,7 +30,7 @@ class Especialidad_model extends CI_Model {
         return $result;
     }
 
-    function editarEspecialidad($id, $nombre){
+    function editarEspecialidad($id, $nombre) {
         $data = array(
             'nombre' => $nombre
         );
@@ -39,7 +39,7 @@ class Especialidad_model extends CI_Model {
         return $result;
     }
 
-    function eliminarEspecialidad($id){
+    function eliminarEspecialidad($id) {
         $this->db->where('id', $id);
         $result = $this->db->delete('especialidad');
         return $result;

@@ -101,6 +101,7 @@
   float: left;
   position: relative;
   display: inline-block;
+  // max-width: 500px;
 
   img {
     width: 100%;
@@ -133,6 +134,8 @@
   margin-bottom: .5em;
   margin-right: 6px;
   @include box-shadow($shadow);
+  // max-height: 100px;
+  // overflow: hidden;
 
   &.active {
     @include opacity(.5);

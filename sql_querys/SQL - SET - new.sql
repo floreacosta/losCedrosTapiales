@@ -45,17 +45,14 @@ INSERT INTO jefe_servicio (idEmpleado, cargo) VALUES
 (62, "Jefe de Servicio de Hemodiálisis"),
 (90, "Jefe de Unidad de Cuidados Especiales");
 
--- INSERT INTO categoria (id, nombre, descripcion) VALUES
--- (1, 'Sala de espera', 'Áreas de internación con amplia iluminación y cómoda accesibilidad para todo tipo de pacientes.'),
--- (3, 'Habitaciones', 'Las suites de internación disponen con aire acondicionado, televisión satelital, Wifi y comodidades para acompañantes.'),
--- (4, 'Edificio', 'Clínica Los Cedros de tapiales ofrece una infraestructura de de 4 plantas totalmente renovados.\r\nPosee 5 sectores de internación clínica, quirúrgica y de obstetricia.'),
--- (6, 'Consultorios', 'Consultorios equipados con tecnología de última generación requerida por cada especialidad, contando con equipamiento ginecológico, cardiológico, kinesiológico, etc.'),
--- (7, 'Equipamiento técnico', 'Equipamiento de primera. Área con nuevo tomógrafo helicoideal funcionando las 24hs.'),
--- (8, 'Laboratorio', 'Laboratorio equipado con tecnología moderna, realizando análisis clínicos y bacteriológicos.'),
--- (9, 'Pediatría', 'Guardias pediátricas equipadas con juegos y entretenimientos para los más chicos.'),
--- (10, 'Hemodiálisis', ''),
--- (11, 'Hemodinamia', ''),
--- (12, 'Rehabilitación', '');
+INSERT INTO categoria (id, nombre, descripcion) VALUES
+(4, 'Edificio', 'Clínica Los Cedros de tapiales ofrece una infraestructura de de 4 plantas totalmente renovados.\r\nPosee 5 sectores de internación clínica, quirúrgica y de obstetricia.'),
+(7, 'Equipamiento técnico', 'Equipamiento de primera. Área con nuevo tomógrafo helicoideal funcionando las 24hs.'),
+(3, 'Habitaciones', 'Las suites de internación disponen con aire acondicionado, televisión satelital, Wifi y comodidades para acompañantes.'),
+(8, 'Laboratorio', 'Laboratorio equipado con tecnología moderna, realizando análisis clínicos y bacteriológicos.'),
+(9, 'Pediatría', 'Guardias pediátricas equipadas con juegos y entretenimientos para los más chicos.');
+(1, 'Sala de espera', 'Áreas de internación con amplia iluminación y cómoda accesibilidad para todo tipo de pacientes.'),
+(6, 'Consultorios', 'Consultorios equipados con tecnología de última generación requerida por cada especialidad, contando con equipamiento ginecológico, cardiológico, kinesiológico, etc.'),
 
 INSERT INTO especialidad (nombre) VALUES
 ('Alergia e Inmunología'),
@@ -133,62 +130,6 @@ puede asistir al centro a fin de recibir rehabilitación de forma ambulatoria. D
 ("Unidad de Cuidados Especiales", "Este es el sitio cuenta con 8 camas con equipamiento de terapia internsiva para brindar una asistencia clínica que se desarrolla para la atención de aquellos pacientes, que padecen o pueden padecer, un compromiso severo de sus funciones vitales, allí encuentran un soporte adecuado y constante para restablecerlas.", 33),
 ("Laboratorio", "El laboratorio de análisis clínico se encuentra absolutamente robotizado e informatizado y son el resultado de la búsqueda constante de nuevas metodologías más sensibles, específicas y eficientes para procesar mayor volumen de muestras en el menor tiempo posible.", 23),
 ("Servicio de Rehabilitación Respiratoria", "En nuentro Centro de Rehabilitacion Repiratoria realizamos un programa multidiciplinario de asistencia al paciente con patología respiratoria crónica que se lleva a cabo de una forma individualizada intentando conseguir la mayor autonomía posible según la gravedad de la patología de base del paciente. Para lograr estas pautas realizamos ejercicio físico, tratamiento de aspecto psicosociales, educación del paciente y su familia. Atendemos Pacientes con EPOC, Insuficiencia Respiratoria, Internación subaguda de internación prolongada, Traqueostomizados.", 16);
-
-INSERT INTO instalacion (nombre, imagen, descripcion, idServicio) VALUES
-('Instalaciones internas', 'edificio-11.jpg', '', 4),
-('Edificio 2', 'edificio-2.jpg', '', 4),
-('edificio 3', 'edificio-3.jpg', '', 4),
-('Consultorios', 'consultorios-1.jpg', '', 6),
-('Consultorios 2', 'consultorios-2.jpg', '', 6),
-('Equipamiento', 'equipamiento-tecnico-1.jpg', '', 7),
-('Equipamiento 2', 'equipamiento-tecnico-2.jpg', '', 7),
-('Equipamiento 3', 'equipamiento-tecnico-3.jpg', '', 7),
-('Equipamiento 4', 'equipamiento-tecnico-4.jpg', '', 7),
-('Equipamiento 5', 'equipamiento-tecnico-5.jpg', '', 7),
-('Equipamiento 6', 'equipamiento-tecnico-6.jpg', '', 7),
-('Equipamiento 7', 'equipamiento-tecnico-7.jpg', '', 7),
-('Equipamiento 8', 'equipamiento-tecnico-9.jpg', '', 7),
-('Equipamiento 10', 'equipamiento-tecnico-10.jpg', '', 7),
-('Equipamiento 11', 'equipamiento-tecnico-11_1.jpg', '', 7),
-('Equipamiento 12', 'equipamiento-tecnico-11_2.jpg', '', 7),
-('Habitaciones', 'habitaciones-0.jpg', '', 3),
-('Habitaciones 2', 'habitaciones-1.jpg', '', 3),
-('Habitaciones 3', 'habitaciones-2.jpg', '', 3),
-('Habitaciones 4', 'habitaciones-3.jpg', '', 3),
-('Habitaciones 5', 'habitaciones-4.jpg', '', 3),
-('Habitaciones 6', 'habitaciones-5.jpg', '', 3),
-('Habitaciones 7', 'habitaciones-6.jpg', '', 3),
-('Laboratorio', 'laboratorio-1.jpg', '', 8),
-('Laboratorio 2', 'laboratorio-2.jpg', '', 8),
-('Laboratorio 3', 'laboratorio-3.jpg', '', 8),
-('Pediatría', 'pediatria-1.jpg', '', 9),
-('Pediatría 2', 'pediatria-2.jpg', '', 9),
-('Pediatría 3', 'pediatria-3.jpg', '', 9),
-('Sala de espera', 'sala-de-espera-0_1.jpg', '', 1),
-('Sala de espera 2', 'sala-de-espera-0_2.jpg', '', 1),
-('Sala de espera 3', 'sala-de-espera-0.jpg', '', 1),
-('Sala de espera 4', 'sala-de-espera-1.jpg', '', 1),
-('Sala de espera 5', 'sala-de-espera-2.jpg', '', 1),
-('Sala de espera 6', 'sala-de-espera-3.jpg', '', 1),
-('Sala de espera 7', 'sala-de-espera-4.jpg', '', 1),
-('Sala de espera 8', 'sala-de-espera-5.jpg', '', 1),
-('Edificio 4', '2018-edificio-1.png', '', 4),
-('Edificio 4', '2018-diagnostico-por-imagenes.jpg', '', 4),
-('Maqueta del Edificio', '2018-edificio-maqueta.jpg', '', 1),
-('Habitación', '2018-habitaciones-4.jpg', '', 3),
-('Habitación', '2018-habitaciones-5.jpg', '', 3),
-('Habitación', '2018-habitaciones-7.jpg', '', 3),
-('Hemodialisis', '2018-hemodialisis.jpg', '', 10),
-('Hemodinamia', '2018-hemodinamia-3.jpg', '', 11),
-('Hemodinamia', '2018-hemodinamia-4.jpg', '', 11),
-('Hospital de Día', '2018-hospital-de-dia.jpg', '', 1),
-('Instalaciones', '2018-instalaciones-0.jpg', '', 1),
-('Instalaciones', '2018-instalaciones-1.jpg', '', 1),
-('Instalaciones', '2018-instalaciones-2.jpg', '', 1),
-('Rehabiliatación', '2018-rehabiliatacion-4.jpg', '', 12),
-('Rehabiliatación', '2018-rehabiliatacion-5.jpg', '', 12),
-('Rehabiliatación', '2018-rehabiliatacion-6.jpg', '', 12),
-('Terapia intensiva', '2018-terapia-intensiva.jpg', '', 1);
 
 INSERT INTO usuario (nombre, usuario, pass) VALUES
 ('admin', 'admin', '$2y$10$KQtA15QKnavtmeIFOoqyFeOFL7APjWeTZXQBTMN5Hnxu6ukUujuOe');

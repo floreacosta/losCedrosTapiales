@@ -1,9 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Doctores extends CI_Controller {
-
-    public function __construct(){
+class Doctor extends CI_Controller {
+    public function __construct() {
         // $this->load does not exist until after you call this
         parent::__construct(); // Construct CI's core so that you can use it
         $this->load->helper('url');
@@ -14,43 +13,42 @@ class Doctores extends CI_Controller {
         $this->check_session();
     }
 
-    public function index(){
-        $data['doctores'] = $this->doctorxespecialidad_model->getDoctoresConEspecialidadesAgrupadas();
-
+    public function index() {
+        $data['doctores'] = $this->Doctorxespecialidad_model->getDoctoresConEspecialidadesAgrupadas();
         $this->load->view('admin/includes/headWoValidation');
         $this->load->view('admin/doctores/index', $data);
     }
 
-    public function logout(){
+    public function logout() {
         $this->session->unset_userdata('id_usuario');
         $this->session->unset_userdata('ip_address');
         $this->session->sess_destroy();
         redirect(base_url()."admin/login");
     }
 
-    public function check_session(){
+    public function check_session() {
         $id_usuario = $this->session->userdata('id_usuario');
-        if(!$id_usuario){
+        if (!$id_usuario) {
             redirect(base_url()."admin/login");
         }
     }
 
-    public function crearDoctor(){
-        if(null === ($this->input->post('nombre'))){
-            $data['especialidades'] = $this->especialidades_model->getEspecialidades();
+    public function crearDoctor() {
+        if (null === ($this->input->post('nombre'))) {
+            $data['especialidades'] = $this->Especialidad_model->getEspecialidades();
             $this->load->view('admin/includes/headWoValidation');
             $this->load->view('admin/doctores/crear', $data);
-        }else{
+        } else {
             $especialidades_post = explode(".", $this->input->post('especialidades'));
             array_pop($especialidades_post);
 
             $nombre_post = $this->input->post('nombre');
-            $idDoctor = $this->doctores_model->crearDoctor($nombre_post);
+            $idDoctor = $this->Doctor_model->crearDoctor($nombre_post);
 
-            foreach($especialidades_post as $especialidad){
-                $data['result'] = $this->doctorxespecialidad_model->crearDoctorxespecialidad($idDoctor, $especialidad);
+            foreach($especialidades_post as $especialidad) {
+                $data['result'] = $this->Doctorxespecialidad_model->crearDoctorxespecialidad($idDoctor, $especialidad);
             }
-            $data['doctores'] = $this->doctorxespecialidad_model->getDoctoresConEspecialidadesAgrupadas();
+            $data['doctores'] = $this->Doctorxespecialidad_model->getDoctoresConEspecialidadesAgrupadas();
             $data['tipo'] = 'crear';
             $this->load->view('admin/includes/headWoValidation');
             $this->load->view('admin/doctores/index', $data);
@@ -59,49 +57,49 @@ class Doctores extends CI_Controller {
 
     public function editarFormularioDoctores() {
 
-        if($this->input->get('id') !== null){
+        if ($this->input->get('id') !== null) {
             $id = $this->input->get('id');
-            $data['doctor'] = $this->doctores_model->getDoctor($id);
-            $data['especialidadesXDoctor'] = $this->doctorxespecialidad_model->getEspecialidadesXDoctor($id);
-            $data['especialidades'] = $this->especialidades_model->getEspecialidades();
+            $data['doctor'] = $this->Doctor_model->getDoctor($id);
+            $data['especialidadesXDoctor'] = $this->Doctorxespecialidad_model->getEspecialidadesXDoctor($id);
+            $data['especialidades'] = $this->Especialidad_model->getEspecialidades();
             $this->load->view('admin/includes/headWoValidation');
             $this->load->view('admin/doctores/editar', $data);
-        }else{
-            echo "Ha ocurrido un error, intentelo de nuevo por favor";
+        } else {
+            echo "Ha ocurrido un error, inténtelo de nuevo por favor";
             echo anchor(base_url().'admin/doctores', 'Volver');
         }
     }
 
-    public function updateDoctores(){
+    public function updateDoctores() {
         $especialidades_post = explode(".", $this->input->post('especialidades'));
         array_pop($especialidades_post);
 
         $nombre_post = $this->input->post('nombre');
         $idDoctor = $this->input->post('hiddenId');
-        $this->doctorxespecialidad_model->eliminarDoctorxespecialidad($idDoctor);
+        $this->Doctorxespecialidad_model->eliminarDoctorxespecialidad($idDoctor);
 
-        $data['result'] = $this->doctores_model->editarDoctor($idDoctor, $nombre_post);
-        foreach($especialidades_post as $especialidad){
-            $this->doctorxespecialidad_model->crearDoctorxespecialidad($idDoctor, $especialidad);
+        $data['result'] = $this->Doctor_model->editarDoctor($idDoctor, $nombre_post);
+        foreach($especialidades_post as $especialidad) {
+            $this->Doctorxespecialidad_model->crearDoctorxespecialidad($idDoctor, $especialidad);
         }
 
         $data['tipo'] = 'editar';
-        $data['doctores'] = $this->doctorxespecialidad_model->getDoctoresConEspecialidadesAgrupadas();
+        $data['doctores'] = $this->Doctorxespecialidad_model->getDoctoresConEspecialidadesAgrupadas();
         $this->load->view('admin/includes/headWoValidation');
         $this->load->view('admin/doctores/index', $data);
     }
 
-    public function EliminarDoctor(){
-        if($this->input->get('id') !== null){
+    public function EliminarDoctor() {
+        if ($this->input->get('id') !== null) {
             $idDoctor = $this->input->get('id');
-            $this->doctores_model->eliminarDoctor($idDoctor);
-            $data['result'] = $this->doctorxespecialidad_model->eliminarDoctorxespecialidad($idDoctor);
+            $this->Doctor_model->eliminarDoctor($idDoctor);
+            $data['result'] = $this->Doctorxespecialidad_model->eliminarDoctorxespecialidad($idDoctor);
             $data['tipo'] = 'eliminar';
-            $data['doctores'] = $this->doctorxespecialidad_model->getDoctoresConEspecialidadesAgrupadas();
+            $data['doctores'] = $this->Doctorxespecialidad_model->getDoctoresConEspecialidadesAgrupadas();
             $this->load->view('admin/includes/headWoValidation');
             $this->load->view('admin/doctores/index', $data);
-        }else{
-            echo "Ha ocurrido un error, intentelo de nuevo por favor";
+        } else {
+            echo "Ha ocurrido un error, inténtelo de nuevo por favor";
             echo anchor(base_url().'admin/doctores', 'Volver');
         }
     }

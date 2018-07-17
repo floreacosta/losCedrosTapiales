@@ -36,9 +36,9 @@
 							 }
 							?>
 							<p class="service-description"><?= $servicio->descripcion; ?></p>
-							<div class="open-service-carrousel">Ver imágenes</div>
+							<!-- <div class="open-service-carrousel">Ver imágenes</div> -->
 						</div>
-						<div class="general-overlay-container carrousel-images-services-container" id="carrousel_image_<?= $servicio->id; ?>">
+						<!-- <div class="general-overlay-container carrousel-images-services-container" id="carrousel_image_<?= $servicio->id; ?>">
 							<div class="general-overlay-content-component">
 								<header class="general-header-overlay">
 									<button class="general-close-overlay-button">Close Overlay</button>
@@ -50,7 +50,7 @@
 
 								</div>
 							</div>
-						</div>
+						</div> -->
 					<?
 				endforeach;
 			?>

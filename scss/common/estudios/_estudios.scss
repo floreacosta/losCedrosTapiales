@@ -24,6 +24,7 @@
   strong {
     @include text-base();
     @include text-base-full-desktop();
+    @include font-calibri-bold;
     color: $color-dark;
   }
 
@@ -35,7 +36,7 @@
     background: $color-primary;
 
     strong {
-      @include font-calibri-bold;
+      // @include font-calibri-bold;
       color: $white;
     }
   }

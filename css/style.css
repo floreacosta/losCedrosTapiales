@@ -3498,6 +3498,10 @@ main.home-page {
   font-weight: 400;
   font-variant: normal;
   font-style: normal;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-variant: normal;
+  font-style: normal;
   color: #7b7b79;
 }
 @media (min-width: 1400px) {
@@ -3514,10 +3518,6 @@ main.home-page {
   background: #023670;
 }
 .estudios-tipo-item.active strong {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 500;
-  font-variant: normal;
-  font-style: normal;
   color: #ffffff;
 }
 
