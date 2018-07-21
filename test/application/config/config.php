@@ -26,9 +26,9 @@ $config['base_url'] = 'http://www.loscedrostapiales.com/';
 |
 */
 
-// $config['base_url'] = 'http://loscedrostapiales.com/test/';
+$config['base_url'] = 'http://loscedrostapiales.com/test/';
 
-$config['base_url'] = 'http://local.cedros.com/test/';
+// $config['base_url'] = 'http://local.cedros.com/test/';
 
 /*
 |--------------------------------------------------------------------------

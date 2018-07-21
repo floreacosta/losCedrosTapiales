@@ -11,16 +11,16 @@
 		</div>
 
 		<section class="instalaciones-content">
-			<!-- <div class="photograpy-primary">
+			<div class="photograpy-primary">
 				<div id="box-1" class="box-description flecha-right">
-					<p>Clínica Los Cedros de tapiales ofrece una infraestructura de de 4 plantas totalmente renovados.</p>
+					<p>Sanatorio Privado Madero ofrece una infraestructura de de 4 plantas totalmente renovados.</p>
 				</div>
 				<div id="box-2" class="box-description flecha-left">
 					<p>Posee 5 sectores de internación clínica, quirúrgica y de obstetricia.</p>
-				</div> -->
-				<!-- <a name="edificio"></a> -->
-				<!-- <img src="<?= base_url(); ?>img/presentacion.jpg" alt="Sanatorio Privado Madero"/>
-			</div> -->
+				</div>
+				<a name="edificio"></a>
+				<img src="<?= base_url(); ?>img/slider/2018-edificio-maqueta.jpg" alt="Sanatorio Privado Madero"/>
+			</div>
 
 			<!-- <h2 class="instalaciones-subheading">Recorrido por las instalaciones</h2> -->
 			<ul class="menu-instalaciones">

@@ -11,13 +11,22 @@ class Noticias extends CI_Controller {
         $this->load->model('Noticia_model');
     }
 
-    public function index($id = 0) {
-        $data['noticias_todas'] = $this->Noticia_model->getAllNews();
-        $data['noticia_by_id'] = $this->Noticia_model->getNewById($id);
+    public function index () {
+        $data['noticias'] = $this->Noticia_model->getAllNews();
         $this->load->view('includes/head');
         $this->load->view('includes/header');
         $this->load->view('includes/tooltip');
         $this->load->view('noticias/noticias', $data);
+        $this->load->view('includes/footer');
+    }
+
+    public function getNoticiaById ($id = 0) {
+        $data['id'] = $id;
+        $data['noticia'] = $this->Noticia_model->getNewById($id);
+        $this->load->view('includes/head');
+        $this->load->view('includes/header');
+        $this->load->view('includes/tooltip');
+        $this->load->view('noticias/noticia', $data);
         $this->load->view('includes/footer');
     }
 }

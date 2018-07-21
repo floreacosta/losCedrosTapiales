@@ -72,7 +72,7 @@
 					<img src="<?= base_url(); ?>img/thumbs-instalaciones.jpg" alt="Estudios y Procedimientos" />
 					<figcaption class="article-item-description">
 						<h3>Estudios y Procedimientos</h3>
-						<p>Texto informativo. TO DO.</p>
+						<p>Información de utilidad para el paciente en relación a los estudios y procedimientos que podrá realizar dentro de la institución.</p>
 						<i class="icon-more-info">+</i>
 					</figcaption>
 				</a>

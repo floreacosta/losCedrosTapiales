@@ -13,6 +13,24 @@
 		</div>
 
 		<section class="noticias-content">
-			Noticias LISTADO - TO DO
+			<?
+				$totalNoticias = count($noticias->result());
+				foreach($noticias->result() as $key=>$noticia):
+					if ($totalNoticias <= 0) {
+					?>
+						<section class="noticias-empty">
+							No hay noticias disponibles para ver.
+						</section>
+					<? } else { ?>
+						<a href="<?= base_url(); ?>/noticia_<?= $noticia->id ?>" aria-live="<?= $noticia->titulo?>" class="noticia-item-container" id="noticia_<?= $noticia->id ?>">
+							<div class="noticia-item-heading">
+								<h2 class="noticia-item-title"><?= $noticia->titulo ?></h2>
+								<p class="noticia-item-subtitle"><?= $noticia->bajada ?></p>
+							</div>
+						</a>
+					<?
+					}
+				endforeach;
+			?>
 		</section>
 	</main>

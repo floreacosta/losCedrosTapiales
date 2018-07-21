@@ -155,7 +155,24 @@
 		<? include 'includes/video/modal-video.php' ?>
 
 		<section class="section-news-container">
-			NOTICIAS - TO DO
-			<a href="<?= base_url(); ?>noticias">Ver todas las noticias</a>
+			<?
+				$totalNoticias = count($noticias->result());
+				if ($totalNoticias == 0) {
+				?>
+					<section class="noticias-empty">No hay noticias disponibles para ver.</section>
+				<? } else {
+					foreach($noticias->result() as $key=>$noticia):
+					?>
+						<a href="<?= base_url(); ?>/noticia_<?= $noticia->id ?>" aria-live="<?= $noticia->titulo?>" class="noticia-item-container" id="noticia_<?= $noticia->id ?>">
+							<div class="noticia-item-heading">
+								<h2 class="noticia-item-title"><?= $noticia->titulo ?></h2>
+								<p class="noticia-item-subtitle"><?= $noticia->bajada ?></p>
+							</div>
+						</a>
+					<?
+					endforeach;
+					?> <a class="all-news-link" href="<?= base_url(); ?>noticias">Ver todas las noticias</a> <?
+				}
+			?>
 		</section>
 	</main>

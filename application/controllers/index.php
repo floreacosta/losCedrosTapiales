@@ -10,11 +10,11 @@ class Index extends CI_Controller {
   }
 
   public function index() {
-    $noticias['last_news_list'] = $this->Noticia_model->getLastNews();
+    $data['noticias'] = $this->Noticia_model->getLastNews();
     $this->load->view('includes/head');
     $this->load->view('includes/header');
     $this->load->view('includes/tooltip');
-    $this->load->view('index/index', $noticias);
+    $this->load->view('index/index', $data);
     $this->load->view('includes/footer');
 	}
 }
