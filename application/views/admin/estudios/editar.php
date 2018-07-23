@@ -24,7 +24,7 @@
 
                               <ul class="dropdown-menu" role="navigation" aria-label="Menú desplegable - Secciones de administración">
                                   <li><a href="<?= base_url(); ?>admin/cobertura">Coberturas</a></li>
-                                  <li><a href="<?= base_url(); ?>admin/doctor">Doctores</a></li>
+                                  <li><a href="<?= base_url(); ?>admin/empleado">Empleados</a></li>
                                   <li><a href="<?= base_url(); ?>admin/especialidad">Especialidades</a></li>
                                   <li><a href="<?= base_url(); ?>admin/estudio">Estudios</a></li>
                                   <li><a href="<?= base_url(); ?>admin/instalacion">Instalaciones</a></li>
@@ -47,6 +47,7 @@
         <?=  form_open('admin/estudio/updateEstudio') ?>
         <?
             $resultado = $estudio->result()[0];
+            $resultadoTipo = $tipo->result()[0];
 
             $hidden = array(
                 'hiddenId' => $resultado->id
@@ -57,6 +58,25 @@
                 'value' => $resultado->nombre,
                 'class' => 'form-control'
             );
+            $descripcion = array(
+                'id' => 'cleditorInput',
+                'name' => 'descripcion',
+                'type' => 'textarea',
+                'value' => $resultado->descripcion,
+                'class' => 'form-control'
+            );
+            $tipoEstudio = array();
+            $tipoEstudio['0'] =  'Seleccionar...';
+            foreach ($tipos as $tipo) {
+              $tipoEstudio[$tipo['id']] = $tipo['nombre'];
+            }
+            $tipoEstudios = array(
+                'name' => 'idTipo',
+                'options' => $tipoEstudio,
+                'type' => 'dropdown',
+                'selected' => $resultadoTipo->id,
+                'class' => 'form-control'
+            );
             $buttonClass = array(
                 'class' => 'btn btn-primary'
             );
@@ -64,10 +84,22 @@
 
         <?= form_hidden($hidden) ?>
         <div class="form-group">
-          <?= form_label('Nombre: ', 'nombre') ?>
-          <?= form_input($nombre) ?>
+          <div class="form-group">
+            <?= form_label('Nombre: ', 'nombre') ?>
+            <?= form_input($nombre) ?>
+          </div>
 
-          <?= form_submit('','Editar estudio', $buttonClass) ?>
+          <div class="form-group">
+            <?= form_label('Descripción: ', 'descripcion') ?>
+            <?= form_textarea($descripcion) ?>
+          </div>
+
+          <div class="form-group">
+            <?= form_label('Tipo de estudio: ', 'idTipo') ?>
+            <?= form_dropdown($tipoEstudios) ?>
+          </div>
+
+          <?= form_submit('', 'Editar estudio', $buttonClass) ?>
           <?= form_close() ?>
         </div>
     </body>

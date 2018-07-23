@@ -1,4 +1,112 @@
+CREATE DATABASE IF NOT EXISTS clinicaloscedros;
+
 USE clinicaloscedros;
+
+CREATE TABLE IF NOT EXISTS cargo (
+   id int not null auto_increment primary key,
+   nombre varchar(100) not null
+) ENGINE=InnoDB CHARACTER SET = utf8, COLLATE = utf8_general_ci;
+
+CREATE TABLE IF NOT EXISTS empleado (
+  id int not null auto_increment primary key,
+  nombre varchar(100) not null,
+  idCargo int not null,
+  sexo char not null,
+
+  CONSTRAINT foreign_key_idCargo FOREIGN KEY (idCargo) REFERENCES cargo (id)
+) ENGINE=InnoDB CHARACTER SET = utf8, COLLATE = utf8_general_ci;
+
+CREATE TABLE IF NOT EXISTS sector (
+  id int not null auto_increment primary key,
+  nombre varchar(100) not null
+) ENGINE=InnoDB CHARACTER SET = utf8, COLLATE = utf8_general_ci;
+
+CREATE TABLE IF NOT EXISTS servicio (
+   id int not null auto_increment primary key,
+   nombre varchar(100) not null,
+   descripcion text
+) ENGINE=InnoDB CHARACTER SET = utf8, COLLATE = utf8_general_ci;
+
+CREATE TABLE IF NOT EXISTS jefe_sector (
+   id int not null auto_increment primary key,
+   idEmpleado int not null,
+   idCargo int not null,
+   idSector int not null,
+
+   CONSTRAINT foreign_key_idEmpleado FOREIGN KEY (idEmpleado) REFERENCES empleado (id),
+   CONSTRAINT foreign_key_idCargo FOREIGN KEY (idCargo) REFERENCES cargo (id),
+   CONSTRAINT foreign_key_idSector FOREIGN KEY (idSector) REFERENCES sector (id)
+) ENGINE=InnoDB CHARACTER SET = utf8, COLLATE = utf8_general_ci;
+
+CREATE TABLE IF NOT EXISTS jefe_servicio (
+   id int not null auto_increment primary key,
+   idEmpleado int not null,
+   idCargo int not null,
+   idServicio int,
+   idEspecialidad int,
+
+   CONSTRAINT foreign_key_idEmpleado FOREIGN KEY (idEmpleado) REFERENCES empleado (id),
+   CONSTRAINT foreign_key_idCargo FOREIGN KEY (idCargo) REFERENCES cargo (id)
+) ENGINE=InnoDB CHARACTER SET = utf8, COLLATE = utf8_general_ci;
+
+CREATE TABLE IF NOT EXISTS categoria (
+   id int not null auto_increment primary key,
+   nombre varchar(100) not null,
+   descripcion text
+) ENGINE=InnoDB CHARACTER SET = utf8, COLLATE = utf8_general_ci;
+
+CREATE TABLE IF NOT EXISTS especialidad (
+   id int not null auto_increment primary key,
+   nombre varchar(100) not null
+) ENGINE=InnoDB CHARACTER SET = utf8, COLLATE = utf8_general_ci;
+
+CREATE TABLE IF NOT EXISTS cobertura (
+   id int not null auto_increment primary key,
+   nombre varchar(100) not null,
+	 imagen varchar(255) not null
+) ENGINE=InnoDB CHARACTER SET = utf8, COLLATE = utf8_general_ci;
+
+CREATE TABLE IF NOT EXISTS instalacion (
+   id int not null auto_increment primary key,
+   nombre varchar(100) not null,
+	 imagen varchar(255) not null,
+   descripcion text,
+   idCategoria int not null,
+
+   CONSTRAINT foreign_key_idCategoria FOREIGN KEY (idCategoria) REFERENCES categoria (id)
+) ENGINE=InnoDB CHARACTER SET = utf8, COLLATE = utf8_general_ci;
+
+CREATE TABLE IF NOT EXISTS tipoXestudio (
+  id int not null auto_increment primary key,
+  nombre varchar(100) not null,
+  descripcion text
+
+) ENGINE=InnoDB CHARACTER SET = utf8, COLLATE = utf8_general_ci;
+
+CREATE TABLE IF NOT EXISTS estudio (
+  id int not null auto_increment primary key,
+  nombre varchar(100) not null,
+  descripcion text,
+  idTipo int not null,
+
+  CONSTRAINT foreign_key_idTipoXestudio FOREIGN KEY (idTipo) REFERENCES tipoXestudio (id)
+) ENGINE=InnoDB CHARACTER SET = utf8, COLLATE = utf8_general_ci;
+
+CREATE TABLE IF NOT EXISTS usuario (
+   id int not null auto_increment primary key,
+   nombre varchar(100) not null,
+   usuario varchar(30) not null,
+   pass varchar(255) not null
+) ENGINE=InnoDB CHARACTER SET = utf8, COLLATE = utf8_general_ci;
+
+CREATE TABLE IF NOT EXISTS noticia (
+  id int not null auto_increment primary key,
+  titulo text not null,
+  bajada text,
+  cuerpo text not null,
+  imagen varchar(255),
+  descripcionImagen text
+) ENGINE=InnoDB CHARACTER SET = utf8, COLLATE = utf8_general_ci;
 
 INSERT INTO cargo (nombre) VALUES
 ("Doctor"), /* 1 */
@@ -20,6 +128,116 @@ INSERT INTO cargo (nombre) VALUES
 ("Gerencia"), /* 12 */
 ("Dirección"), /* 13 */
 ("Coordinación"); /* 14 */
+
+INSERT INTO empleado (nombre, idCargo, sexo) VALUES
+("Indefinido", 1, 'I'),
+("Germán Torres Molina", 1, 'M'),
+("Daniel Lambiase", 1, 'M'),
+("Edgardo Bonura", 1, 'M'),
+("Maibi Vela Jara", 2, 'F'),
+("Javier De Sensi", 1, 'M'),
+("Sandra Isasmendi", 2, 'F'),
+("Maite Miguelez", 2, 'F'),
+("Enrique Turina", 1, 'M'),
+("Marcelo Ghione", 1, 'M'),
+("Andrés Rebaudi", 1, 'M'),
+("Pablo Teran", 1, 'M'),
+("Osvaldo Hennings", 1, 'M'),
+("Lidia Tricio", 2, 'F'),
+("Viviana Valencia", 2, 'F'),
+("Mariano Ganduglia", 1, 'M'),
+("Fabricio Ochoa", 1, 'M'),
+("Horacio Pampin", 1, 'M'),
+("Miguel Germano", 1, 'M'),
+("Carlos Meza", 1, 'M'),
+("Dominguez", 1, 'M'),
+("Freddy Pacheco", 1, 'M'),
+("Hugo D. Tedesco", 1, 'M'),
+("Jorge Poliak", 1, 'M'),
+("Liliana Zabala", 2, 'F'),
+("Natalia Romero", 2, 'F'),
+("Tomás Mendez", 1, 'M'),
+("Mariana Pampin", 2, 'F'),
+("Luis Paredes Chavez", 1, 'M'),
+("Cristian Cardenas", 1, 'M'),
+("Carolina Vilches", 2, 'F'),
+("Andrea Cid", 2, 'F'),
+("Gustavo Debaise", 1, 'M'),
+("Marta Garcia", 2, 'F'),
+("Claudia Efthymiadis", 2, 'F'),
+("Sonia Hermida", 2, 'F'),
+("José Ernesto Cafaro", 1, 'M'),
+("Mario Gorno", 1, 'M'),
+("Vicente Ranieli", 1, 'M'),
+("Gustavo Galparsoro", 1, 'M'),
+("Mabel Leidy Tejerina", 2, 'F'),
+("Carrizo", 1, 'M'),
+("Andrés Ciccarello", 1, 'M'),
+("Bernardo Kaltman", 1, 'M'),
+("Anzaldo Rocha", 1, 'M'),
+("Gustavo Miranda", 1, 'M'),
+("Zenon Chumacero Sierra", 1, 'M'),
+("Germán Chico", 1, 'M'),
+("Cristian Sayago Gonzalez", 1, 'M'),
+("Gonzalo Crespi", 1, 'M'),
+("Guillermo Benchetrit", 1, 'M'),
+("Alberto Rodriguez Cetran", 1, 'M'),
+("Fabiana Fabre", 2, 'F'),
+("Mariela Penalva", 2, 'F'),
+("Pablo Aguilera", 1, 'M'),
+("Victorio Butera", 1, 'M'),
+("Roberto Talavera", 1, 'M'),
+("Andrea Zurzolo", 2, 'F'),
+("Marcos Auche", 1, 'M'),
+("Walter Otero", 1, 'M'),
+("Laura Sarasino", 2, 'F'),
+("Marina Blanco", 2, 'F'),
+("Mariano Costa", 1, ''),
+("Luis Guillermo Frank", 1, 'M'),
+("Luis Molteni", 1, 'M'),
+("Vanina Poggio", 2, 'F'),
+("Olga Zodziejko", 2, 'F'),
+("Mirta Salomon", 2, 'F'),
+("Felipe Gonzalez La Riva", 1, 'M'),
+("Carolina Guerra", 2, 'F'),
+("Gaston Occhionero", 1, 'M'),
+("Pablo Franconeri", 1, 'M'),
+("Graciela Ramos", 2, 'F'),
+("Guadalupe Rocha", 2, 'F'),
+("Luciana Gibilisco", 2, 'F'),
+("Di Spagna", 1, 'M'),
+("Jorge Borkowski", 1, 'M'),
+("Federico Dimase", 1, 'M'),
+("Hernán Piza", 1, 'M'),
+("Maria Cecilia Ardaris", 2, 'F'),
+("Silvana Bocca", 2, 'F'),
+("Johanna Furlan", 2, 'F'),
+("Florencia Paris", 2, 'F'),
+("Victoria Mamani", 2, 'F'),
+("Roxana Roatta", 2, 'F'),
+("Matias Berger", 1, 'M'),
+("Alejandro Hafez", 3, 'M'),
+("Vilma Di Pascua", 8, 'F'),
+("Marisa Flores", 2, 'F'),
+("Nicolás D’Agostino", 1, 'M'),
+("Jannet Chacon", 2, 'F'),
+("Alejandro García Escudero", 1, 'M'),
+("Alberto Marani", 1, 'M'),
+("Maximo Zimerman", 1, 'M'),
+("Juan D. Bonello", 1, 'M'),
+("Jorge Borkowsky", 1, 'M'), /* Duplicado (por mala escritura) */
+("Amelia Galli", 2, 'F'),
+("Mario A. Yarrouge", 1, 'M'),
+("Claudia Zuñiga Teppa", 2, "F"),
+("Juan Iturriaga Meza", 1, "M"),
+("Daniel Eloff", 1, "M"),
+("Zenon Chumacera Sierra", 1, "M"),
+("Walter Otero", 1, "M"),
+("Richard Junco Colina", 1, "M"),
+("Silvio J. Stupnik", 1, "M"),
+("Carlos Alberto Costa", 1, "M"),
+("Hernán Piza", 1, "M"),
+("Germán Diaz", 7, "M");
 
 INSERT INTO sector (nombre) VALUES
 ("General"), /* 1 */
@@ -292,3 +510,133 @@ INSERT INTO estudio (nombre, descripcion, idTipo) VALUES
   <li>Traer estudios anteriores.</li>
   <li>Traer resultado del tiempo de coagulación realizado dentro del mes.</li>
 </ul>', 2);
+
+INSERT INTO categoria (nombre, descripcion) VALUES
+('Edificio', 'Sanatorio Privado Madero ofrece una infraestructura de de 4 plantas totalmente renovados.\r\nPosee 5 sectores de internación clínica, quirúrgica y de obstetricia.'),
+('Equipamiento técnico', 'Equipamiento de primera. Área con nuevo tomógrafo helicoideal funcionando las 24hs.'),
+('Habitaciones', 'Las suites de internación disponen con aire acondicionado, televisión satelital, Wifi y comodidades para acompañantes.'),
+('Laboratorio', 'Laboratorio equipado con tecnología moderna, realizando análisis clínicos y bacteriológicos.'),
+('Pediatría', 'Guardias pediátricas equipadas con juegos y entretenimientos para los más chicos.'),
+('Sala de espera', 'Áreas de internación con amplia iluminación y cómoda accesibilidad para todo tipo de pacientes.');
+
+INSERT INTO instalacion (nombre, imagen, descripcion, idCategoria) VALUES
+-- ('Instalaciones internas', 'edificio-11.jpg', ''),
+-- ('Edificio 2', 'edificio-2.jpg', ''),
+-- ('edificio 3', 'edificio-3.jpg', ''),
+-- ('Consultorios', 'consultorios-1.jpg', ''),
+-- ('Consultorios 2', 'consultorios-2.jpg', ''),
+('Equipamiento', 'equipamiento-tecnico-1.jpg', '', 2),
+('Equipamiento 2', 'equipamiento-tecnico-2.jpg', '', 2),
+('Equipamiento 3', 'equipamiento-tecnico-3.jpg', '', 2),
+('Equipamiento 4', 'equipamiento-tecnico-4.jpg', '', 2),
+('Equipamiento 5', 'equipamiento-tecnico-5.jpg', '', 2),
+('Equipamiento 6', 'equipamiento-tecnico-6.jpg', '', 2),
+('Equipamiento 7', 'equipamiento-tecnico-7.jpg', '', 2),
+('Equipamiento 8', 'equipamiento-tecnico-9.jpg', '', 2),
+('Equipamiento 10', 'equipamiento-tecnico-10.jpg', '', 2),
+('Equipamiento 11', 'equipamiento-tecnico-11_1.jpg', '', 2),
+('Equipamiento 12', 'equipamiento-tecnico-11_2.jpg', '', 2),
+('Habitaciones', 'habitaciones-0.jpg', '', 3),
+('Habitaciones 2', 'habitaciones-1.jpg', '', 3),
+('Habitaciones 3', 'habitaciones-2.jpg', '', 3),
+('Habitaciones 4', 'habitaciones-3.jpg', '', 3),
+('Habitaciones 5', 'habitaciones-4.jpg', '', 3),
+('Habitaciones 6', 'habitaciones-5.jpg', '', 3),
+('Habitaciones 7', 'habitaciones-6.jpg', '', 3),
+('Laboratorio', 'laboratorio-1.jpg', '', 4),
+('Laboratorio 2', 'laboratorio-2.jpg', '', 4),
+('Laboratorio 3', 'laboratorio-3.jpg', '', 4),
+('Pediatría', 'pediatria-1.jpg', '', 5),
+('Pediatría 2', 'pediatria-2.jpg', '', 5),
+('Pediatría 3', 'pediatria-3.jpg', '', 5),
+('Sala de espera', 'sala-de-espera-0_1.jpg', '', 6),
+('Sala de espera 2', 'sala-de-espera-0_2.jpg', '', 6),
+('Sala de espera 3', 'sala-de-espera-0.jpg', '', 6),
+('Sala de espera 4', 'sala-de-espera-1.jpg', '', 6),
+('Sala de espera 5', 'sala-de-espera-2.jpg', '', 6),
+('Sala de espera 6', 'sala-de-espera-3.jpg', '', 6),
+('Sala de espera 7', 'sala-de-espera-4.jpg', '', 6),
+('Sala de espera 8', 'sala-de-espera-5.jpg', '', 6),
+('Edificio 4', '2018-edificio-1.png', '', 1),
+('Edificio 4', '2018-diagnostico-por-imagenes.jpg', '', 2),
+('Maqueta del Edificio', '2018-edificio-maqueta.jpg', '', 1),
+('Habitación', '2018-habitaciones-4.jpg', '', 3),
+('Habitación', '2018-habitaciones-5.jpg', '', 3),
+('Habitación', '2018-habitaciones-7.jpg', '', 3),
+('Hemodialisis', '2018-hemodialisis.jpg', '', 2),
+('Hemodinamia', '2018-hemodinamia-3.jpg', '', 2),
+('Hemodinamia', '2018-hemodinamia-4.jpg', '', 2),
+('Hospital de Día', '2018-hospital-de-dia.jpg', '', 2),
+('Instalaciones', '2018-instalaciones-0.jpg', '', 6),
+('Instalaciones', '2018-instalaciones-1.jpg', '', 6),
+('Instalaciones', '2018-instalaciones-2.jpg', '', 6),
+('Rehabiliatación', '2018-rehabiliatacion-4.jpg', '', 2),
+('Rehabiliatación', '2018-rehabiliatacion-5.jpg', '', 2),
+('Rehabiliatación', '2018-rehabiliatacion-6.jpg', '', 2),
+('Terapia intensiva', '2018-terapia-intensiva.jpg', '', 2);
+
+-- 2 - 2018-centro-quirugico.jpg
+-- 2 - 2018-diagnostico-por-imagenes.jpg
+-- 1 - 2018-edificio-1.png
+-- 1 - 2018-edificio-maqueta.jpg
+-- 3 - 2018-habitaciones-4.jpg
+-- 3 - 2018-habitaciones-5.jpg
+-- 3 - 2018-habitaciones-7.jpg
+-- 2 - 2018-hemodialisis.jpg
+-- 2 - 2018-hemodinamia-3.jpg
+-- 2 - 2018-hemodinamia-4.jpg
+-- 2 - 2018-hospital-de-dia.jpg
+-- 6 - 2018-instalaciones-0.jpg
+-- 6 - 2018-instalaciones-1.jpg
+-- 6 - 2018-instalaciones-2.jpg
+-- 2 - 2018-rehabiliatacion-4.jpg
+-- 2 - 2018-rehabiliatacion-5.jpg
+-- 2 - 2018-rehabiliatacion-6.jpg
+-- 2 - 2018-terapia-intensiva.jpg
+-- 2 - equipamiento-tecnico-1.jpg
+-- 2 - equipamiento-tecnico-2.jpg
+-- 2 - equipamiento-tecnico-3.jpg
+-- 2 - equipamiento-tecnico-4.jpg
+-- 2 - equipamiento-tecnico-5.jpg
+-- 2 - equipamiento-tecnico-6.jpg
+-- 2 - equipamiento-tecnico-7_1.jpg
+-- 2 - equipamiento-tecnico-7.jpg
+-- 2 - equipamiento-tecnico-9.jpg
+-- 2 - equipamiento-tecnico-10.jpg
+-- 2 - equipamiento-tecnico-11_1.jpg
+-- 2 - equipamiento-tecnico-11_2.jpg
+-- 3 - habitaciones-0.jpg
+-- 3 - habitaciones-1.jpg
+-- 3 - habitaciones-2.jpg
+-- 3 - habitaciones-3.jpg
+-- 3 - habitaciones-4.jpg
+-- 3 - habitaciones-5.jpg
+-- 3 - habitaciones-6.jpg
+-- 5 - pediatria-1.jpg
+-- 5 - pediatria-2.jpg
+-- 5 - pediatria-3.jpg
+-- 6 - sala-de-espera-0_1.jpg
+-- 6 - sala-de-espera-0_2.jpg
+-- 6 - sala-de-espera-0.jpg
+-- 6 - sala-de-espera-1.jpg
+-- 6 - sala-de-espera-2.jpg
+-- 6 - sala-de-espera-3.jpg
+-- 6 - sala-de-espera-4.jpg
+-- 6 - sala-de-espera-5.jpg
+
+-- NO? 4 - laboratorio-1.jpg
+-- NO? 4 - laboratorio-2.jpg
+-- NO? 4 - laboratorio-3.jpg
+-- NO consultorios-1.jpg
+-- NO consultorios-2.jpg
+-- NO consultorios-21.jpg
+-- NO edificio-2.jpg
+-- NO edificio-3.jpg
+-- NO edificio-11.jpg
+
+INSERT INTO noticia (titulo, bajada, cuerpo, imagen, descripcionImagen) VALUES
+("Lorem Ipsum",
+"Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen.",
+"Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas 'Letraset', las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.",
+"mi-imagen-de-prueba.jpg",
+"Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.");

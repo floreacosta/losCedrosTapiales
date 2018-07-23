@@ -52,7 +52,7 @@
 
                           <ul class="dropdown-menu" role="navigation" aria-label="Menú desplegable - Secciones de administración">
                               <li><a href="<?= base_url(); ?>admin/cobertura">Coberturas</a></li>
-                              <li><a href="<?= base_url(); ?>admin/doctor">Doctores</a></li>
+                              <li><a href="<?= base_url(); ?>admin/empleado">Empleados</a></li>
                               <li><a href="<?= base_url(); ?>admin/especialidad">Especialidades</a></li>
                               <li><a href="<?= base_url(); ?>admin/estudio">Estudios</a></li>
                               <li><a href="<?= base_url(); ?>admin/instalacion">Instalaciones</a></li>
@@ -76,6 +76,30 @@
             <thead>
                 <tr>
                     <th>Nombre</th>
+                    <th></th>
+                    <th>Descripción</th>
+                    <th>Editar tipo de estudio</th>
+                    <th>Eliminar tipo de estudio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <? foreach($tipos as $tipo): ?>
+                  <tr>
+                      <td><?= $tipo['nombre']; ?></td>
+                      <td></td>
+                      <td><?= $tipo['descripcion']; ?></td>
+                      <td><a href="<?= base_url(); ?>admin/estudio/editarFormularioTipoEstudio?id=<?= $tipo['id'] ?>">Editar</a></td>
+                      <td><a href="<?= base_url(); ?>admin/estudio/eliminarTipoEstudio?id=<?= $tipo['id'] ?>">Eliminar</a></td>
+                  </tr>
+                <? endforeach; ?>
+            </tbody>
+        </table>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Tipo de estudio</th>
                     <th>Editar estudio</th>
                     <th>Eliminar estudio</th>
                 </tr>
@@ -84,6 +108,7 @@
                 <? foreach($estudios->result() as $estudio): ?>
                   <tr>
                       <td><?= $estudio->nombre; ?></td>
+                      <td id="<?= $estudio->idTipo; ?>"><?= $estudio->nombreTipo; ?></td>
                       <td><a href="<?= base_url(); ?>admin/estudio/editarFormularioEstudio?id=<?= $estudio->id ?>">Editar</a></td>
                       <td><a href="<?= base_url(); ?>admin/estudio/eliminarEstudio?id=<?= $estudio->id ?>">Eliminar</a></td>
                   </tr>

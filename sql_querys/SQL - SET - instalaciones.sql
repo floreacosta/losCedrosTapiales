@@ -1,3 +1,11 @@
+INSERT INTO categoria (nombre, descripcion) VALUES
+('Edificio', 'Sanatorio Privado Madero ofrece una infraestructura de de 4 plantas totalmente renovados.\r\nPosee 5 sectores de internación clínica, quirúrgica y de obstetricia.'),
+('Equipamiento técnico', 'Equipamiento de primera. Área con nuevo tomógrafo helicoideal funcionando las 24hs.'),
+('Habitaciones', 'Las suites de internación disponen con aire acondicionado, televisión satelital, Wifi y comodidades para acompañantes.'),
+('Laboratorio', 'Laboratorio equipado con tecnología moderna, realizando análisis clínicos y bacteriológicos.'),
+('Pediatría', 'Guardias pediátricas equipadas con juegos y entretenimientos para los más chicos.'),
+('Sala de espera', 'Áreas de internación con amplia iluminación y cómoda accesibilidad para todo tipo de pacientes.');
+
 INSERT INTO instalacion (nombre, imagen, descripcion, idCategoria) VALUES
 -- ('Instalaciones internas', 'edificio-11.jpg', ''),
 -- ('Edificio 2', 'edificio-2.jpg', ''),
@@ -54,19 +62,10 @@ INSERT INTO instalacion (nombre, imagen, descripcion, idCategoria) VALUES
 ('Rehabiliatación', '2018-rehabiliatacion-6.jpg', '', 2),
 ('Terapia intensiva', '2018-terapia-intensiva.jpg', '', 2);
 
-INSERT INTO categoria (nombre, descripcion) VALUES
-('Edificio', 'Sanatorio Privado Madero ofrece una infraestructura de de 4 plantas totalmente renovados.\r\nPosee 5 sectores de internación clínica, quirúrgica y de obstetricia.'),
-('Equipamiento técnico', 'Equipamiento de primera. Área con nuevo tomógrafo helicoideal funcionando las 24hs.'),
-('Habitaciones', 'Las suites de internación disponen con aire acondicionado, televisión satelital, Wifi y comodidades para acompañantes.'),
-('Laboratorio', 'Laboratorio equipado con tecnología moderna, realizando análisis clínicos y bacteriológicos.'),
-('Pediatría', 'Guardias pediátricas equipadas con juegos y entretenimientos para los más chicos.'),
-('Sala de espera', 'Áreas de internación con amplia iluminación y cómoda accesibilidad para todo tipo de pacientes.');
-
-
 -- 2 - 2018-centro-quirugico.jpg
 -- 2 - 2018-diagnostico-por-imagenes.jpg
-1 - 2018-edificio-1.png
-1 - 2018-edificio-maqueta.jpg
+-- 1 - 2018-edificio-1.png
+-- 1 - 2018-edificio-maqueta.jpg
 -- 3 - 2018-habitaciones-4.jpg
 -- 3 - 2018-habitaciones-5.jpg
 -- 3 - 2018-habitaciones-7.jpg
@@ -112,12 +111,12 @@ INSERT INTO categoria (nombre, descripcion) VALUES
 -- 6 - sala-de-espera-4.jpg
 -- 6 - sala-de-espera-5.jpg
 
-NO? 4 - laboratorio-1.jpg
-NO? 4 - laboratorio-2.jpg
-NO? 4 - laboratorio-3.jpg
-NO consultorios-1.jpg
-NO consultorios-2.jpg
-NO consultorios-21.jpg
-NO edificio-2.jpg
-NO edificio-3.jpg
-NO edificio-11.jpg
+-- NO? 4 - laboratorio-1.jpg
+-- NO? 4 - laboratorio-2.jpg
+-- NO? 4 - laboratorio-3.jpg
+-- NO consultorios-1.jpg
+-- NO consultorios-2.jpg
+-- NO consultorios-21.jpg
+-- NO edificio-2.jpg
+-- NO edificio-3.jpg
+-- NO edificio-11.jpg

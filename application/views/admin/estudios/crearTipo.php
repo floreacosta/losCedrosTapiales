@@ -16,7 +16,7 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
-                            <li><a href="<?= base_url(); ?>admin/instalaciones">Menú anterior</a></li>
+                            <li><a href="<?= base_url(); ?>admin/estudio">Menú anterior</a></li>
                             <li class="dropdown">
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                 Secciones <span class="caret"></span>
@@ -42,9 +42,9 @@
                     </div><!-- /.navbar-collapse -->
                 </div><!-- /.container-fluid -->
             </nav>
-        <h3>Creación de instalación.</h3>
-        <p>Desde aquí podrá crear una nueva instalación para mostrar desde la página.</p>
-        <?=  form_open_multipart(base_url()."admin/instalacion/subirImagen") ?>
+        <h3>Creación de un tipo de Estudio.</h3>
+        <p>Desde aquí podrá crear una nuevo estudio para mostrar desde la página.</p>
+        <?=  form_open(base_url()."admin/estudio/crearTipoEstudio") ?>
 
         <?
             $nombre = array(
@@ -54,44 +54,26 @@
             );
             $descripcion = array(
                 'name' => 'descripcion',
-                'type' => 'text',
+                'type' => 'textarea',
                 'class' => 'form-control'
-            );
-            $imagen = array(
-                'name' => 'user_file',
-                'type' => 'file',
-                'size' => 20,
-                'class' => 'form-control-file',
-                'aria-describedby' => 'fileHelp'
             );
             $buttonClass = array(
                 'class' => 'btn btn-primary'
             );
-
         ?>
         <div class="form-group">
-        <?= form_label('Nombre: ', 'nombre') ?>
-        <?= form_input($nombre) ?>
-        </div>
-        <div class="form-group">
-        <?= form_label('Imagen: ', 'user_file') ?>
-        <?= form_input($imagen) ?>
-        <small id="fileHelp" class="form-text text-muted">Seleccione una imagen desde su computadora.</small>
-        </div>
-        <div class="form-group">
-        <?= form_label('Descripción: ', 'descripcion') ?>
-        <?= form_textarea($descripcion) ?>
-        </div>
-        <div class="form-group">
-        <?= form_label('Categoria: ', 'categoria') ?>
-        <select name="categoria" class="form-control">
-            <? foreach($categorias->result() as $categoria): ?>
-                <option value="<?= $categoria->id; ?>"><?= $categoria->nombre; ?></option>
-            <? endforeach; ?>
-        </select>
-        </div>
-        <?= form_submit('','Crear instalacion', $buttonClass) ?>
-        <?= form_close() ?>
+          <div class="form-group">
+            <?= form_label('Nombre: ', 'nombre') ?>
+            <?= form_input($nombre) ?>
+          </div>
+
+          <div class="form-group">
+            <?= form_label('Descripción: ', 'descripcion') ?>
+            <?= form_textarea($descripcion) ?>
+          </div>
+
+          <?= form_submit('','Crear un tipo de estudio', $buttonClass) ?>
+          <?= form_close() ?>
         </div>
     </body>
 </html>

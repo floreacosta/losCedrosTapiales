@@ -20,20 +20,38 @@ class Noticia_model extends CI_Model {
         else return false;
     }
 
-    function crearNoticia($nombre, $descripcion) {
+    function crearNoticia($titulo, $bajada, $cuerpo, $imagen, $descripcionImagen) {
         $data = array(
-            'nombre' => $nombre,
-            'descripcion' => $descripcion
+            'titulo' => $titulo,
+            'bajada' => $bajada,
+            'cuerpo' => $cuerpo,
+            'imagen' => $imagen,
+            'descripcionImagen' => $descripcionImagen
         );
 
         $result = $this->db->insert('noticia', $data);
         return $result;
     }
 
-    function editarNoticia($id, $nombre, $descripcion) {
+    function editarNoticia($id, $titulo, $bajada, $cuerpo, $imagen, $descripcionImagen) {
         $data = array(
-            'nombre' => $nombre,
-            'descripcion' => $descripcion
+          'titulo' => $titulo,
+          'bajada' => $bajada,
+          'cuerpo' => $cuerpo,
+          'imagen' => $imagen,
+          'descripcionImagen' => $descripcionImagen
+        );
+
+        $this->db->where('id', $id);
+        $result = $this->db->update('noticia', $data);
+        return $result;
+    }
+
+    function editarNoticiaSinImagen($id, $titulo, $bajada, $cuerpo) {
+        $data = array(
+          'titulo' => $titulo,
+          'bajada' => $bajada,
+          'cuerpo' => $cuerpo
         );
 
         $this->db->where('id', $id);

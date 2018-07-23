@@ -16,7 +16,7 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
-                            <li><a href="<?= base_url(); ?>admin/servicio">Menú anterior</a></li>
+                            <li><a href="<?= base_url(); ?>admin/noticia">Menú anterior</a></li>
                             <li class="dropdown">
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                 Secciones <span class="caret"></span>
@@ -24,7 +24,7 @@
 
                               <ul class="dropdown-menu" role="navigation" aria-label="Menú desplegable - Secciones de administración">
                                 <li><a href="<?= base_url(); ?>admin/cobertura">Coberturas</a></li>
-                                <li><a href="<?= base_url(); ?>admin/doctor">Doctores</a></li>
+                                <li><a href="<?= base_url(); ?>admin/empleado">Empleados</a></li>
                                 <li><a href="<?= base_url(); ?>admin/especialidad">Especialidades</a></li>
                                 <li><a href="<?= base_url(); ?>admin/estudio">Estudios</a></li>
                                 <li><a href="<?= base_url(); ?>admin/instalacion">Instalaciones</a></li>
@@ -42,35 +42,78 @@
                     </div><!-- /.navbar-collapse -->
                 </div><!-- /.container-fluid -->
             </nav>
-        <h3>Creación de Servicio.</h3>
-        <p>Desde aquí podrá crear un nuevo servicio para mostrar desde la página.</p>
+            <h3>Creación de Noticia.</h3>
+            <p>Desde aquí podrá crear una nueva noticia para mostrar desde la página.</p>
 
-        <?=  form_open(base_url()."admin/servicio/crearServicio") ?>
-        <?
-            $nombre = array(
-                'name' => 'nombre',
-                'type' => 'text',
-                'class' => 'form-control'
-            );
-            $descripcion = array(
-                'name' => 'descripcion',
-                'type' => 'textarea',
-                'class' => 'form-control'
-            );
-            $buttonClass = array(
-                'class' => 'btn btn-primary'
-            );
-        ?>
-        <div class="form-group">
-        <?= form_label('Nombre: ', 'nombre') ?>
-        <?= form_input($nombre) ?>
-        </div>
-        <div class="form-group">
-        <?= form_label('Descripcion: ', 'descripcion') ?>
-        <?= form_textarea($descripcion) ?>
-        </div>
-        <?= form_submit('','Crear servicio', $buttonClass) ?>
-        <?= form_close() ?>
+              <?=  form_open_multipart(base_url().'admin/noticia/subirImagen') ?>
+                <?
+                    $titulo = array(
+                        'name' => 'titulo',
+                        'type' => 'text',
+                        'class' => 'form-control'
+                    );
+
+                    $bajada = array(
+                      'name' => 'bajada',
+                      'type' => 'textarea',
+                      'class' => 'form-control'
+                    );
+
+                    $cuerpo = array(
+                      'id' => 'cleditorInput',
+                      'name' => 'cuerpo',
+                      'type' => 'textarea',
+                      'class' => 'form-control'
+                    );
+
+                    $imagen = array(
+                      'type' => 'file',
+                      'size' => 20,
+                      'class' => 'form-control-file',
+                      'aria-describedby' => 'fileHelp'
+                    );
+
+                    $descripcionImagen = array(
+                      'name' => 'descripcionImagen',
+                      'type' => 'textarea',
+                      'class' => 'form-control'
+                    );
+
+                    $buttonClass = array(
+                        'class' => 'btn btn-primary'
+                    );
+                ?>
+
+                <div>
+                  <div class="form-group">
+                    <?= form_label('Título: ', 'titulo') ?>
+                    <?= form_input($titulo) ?>
+                  </div>
+
+                  <div class="form-group">
+                    <?= form_label('Bajada: ', 'bajada') ?>
+                    <?= form_textarea($bajada) ?>
+                  </div>
+
+                  <div class="form-group">
+                    <?= form_label('Cuerpo: ', 'cuerpo') ?>
+                    <?= form_textarea($cuerpo) ?>
+                  </div>
+
+                  <div class="form-group">
+                    <?= form_label('Imagen: ', 'image_file') ?>
+                    <?= form_input($imagen) ?>
+                    <small id="fileHelp" class="form-text text-muted">Seleccione una imagen desde su computadora.</small>
+                  </div>
+
+                  <div class="form-group">
+                    <?= form_label('Descripción de la imagen: ', 'descripcionImagen') ?>
+                    <?= form_textarea($descripcionImagen) ?>
+                  </div>
+
+                  <?= form_submit('', 'Crear noticia', $buttonClass) ?>
+                <?= form_close() ?>
+            </div>
         </div>
     </body>
 </html>

@@ -24,7 +24,7 @@
 
                               <ul class="dropdown-menu" role="navigation" aria-label="Menú desplegable - Secciones de administración">
                                 <li><a href="<?= base_url(); ?>admin/cobertura">Coberturas</a></li>
-                                <li><a href="<?= base_url(); ?>admin/doctor">Doctores</a></li>
+                                <li><a href="<?= base_url(); ?>admin/empleados">Empleados</a></li>
                                 <li><a href="<?= base_url(); ?>admin/especialidad">Especialidades</a></li>
                                 <li><a href="<?= base_url(); ?>admin/estudio">Estudios</a></li>
                                 <li><a href="<?= base_url(); ?>admin/instalacion">Instalaciones</a></li>
@@ -42,54 +42,63 @@
                     </div><!-- /.navbar-collapse -->
                 </div><!-- /.container-fluid -->
             </nav>
-        <h3>Creación de doctor.</h3>
-        <p>Desde aquí podrá crear un nuevo doctor para mostrar desde la página.</p>
-        <p>El doctor puede tener varias especialidades seleccionadas.</p>
-        <?=  form_open("") ?>
 
+        <h3>Creación de empleados</h3>
+        <p>Desde aquí podrá crear un nuevo empleado para mostrar desde la página.</p>
+
+        <?=  form_open(base_url()."admin/empleado/crearEmpleado") ?>
         <?
             $nombre = array(
                 'name' => 'nombre',
                 'type' => 'text',
                 'class' => 'form-control',
-                'id' => 'nombre',
-                'data-bv-field' => 'nombre',
-                'onchange' => 'checkNombre()'
+                'id' => 'nombre'
+            );
+            $opcionesCargo = array();
+            $opcionesCargo['0'] =  'Seleccionar...';
+            foreach ($cargos as $cargo) {
+              $opcionesCargo[$cargo['id']] =  $cargo['nombre'];
+            }
+            $opcionCargo = array(
+                'name' => 'idCargo',
+                'options' => $opcionesCargo,
+                'type' => 'dropdown',
+                'class' => 'form-control'
+            );
+            $opcionesSexo = array();
+            $opcionesSexo['0'] =  'Seleccionar...';
+            foreach ($sexo as $s) {
+              $opcionesSexo[$s['id']] = $s['nombre'];
+            }
+            $opcionSexo = array(
+                'name' => 'sexo',
+                'options' => $opcionesSexo,
+                'type' => 'dropdown',
+                'class' => 'form-control'
             );
             $submit = array(
-                'id' => 'submit',
-                'class' => 'btn btn-primary'
-            );
-            $checkbox = array(
-                'name'          => 'esMedicoCabecera',
-                'id'            => 'esMedicoCabecera',
-                'class'         => 'form-control',
-                'checked'       => FALSE
+              'class' => 'btn btn-primary'
             );
         ?>
-        <div class="form-group" id="div-form-nombre">
-        <?= form_label('Nombre: ', 'nombre') ?>
-        <?= form_input($nombre) ?>
-        <i id="validate-wrong-nombre" class="form-control-feedback glyphicon glyphicon-remove" style="display:none;" data-bv-icon-for="nombre"></i>
-        <i id="validate-ok-nombre" class="form-control-feedback glyphicon glyphicon-ok" style="display: none;" data-bv-icon-for="nombre"></i>
-        <small id="warning-text-nombre" class="help-block" style="display:none;" data-bv-validator="notEmpty" data-bv-validator-for="nombre">Por favor, ingrese un nombre</small>
-        </div>
-        <div class="checkbox">
-            <label><input name='esMedicoCabecera' type="checkbox" value="check">Es Medico Cabecera</label>
-        </div>
-        <div class="form-group" id="div-form-descripcion">
-            <?= form_label('Especialidades: ', 'especialidades') ?>
-            <select id="especialidades" multiple="multiple" name='especialidades' data-bv-icon-for="especialidades" onchange='checkEspecialidades()'>
-            <? foreach($especialidades->result() as $especialidad): ?>
-                <option value="<?= $especialidad->id; ?>"><?= $especialidad->nombre; ?></option>
-            <? endforeach; ?>
-            </select>
-            <i id="validate-wrong-descripcion" class="form-control-feedback glyphicon glyphicon-remove" style="display:none;" data-bv-icon-for="especialidades"></i>
-            <i id="validate-ok-descripcion" class="form-control-feedback glyphicon glyphicon-ok" style="display: none;" data-bv-icon-for="nombre"></i>
-            <small id="warning-text-descripcion" class="help-block" style="display:none;" data-bv-validator="notEmpty" data-bv-validator-for="especialidades">Por favor, seleccione una o más especialidades</small>
-        </div>
-        <?= form_submit('submit','Crear doctor', $submit) ?>
-        <?= form_close() ?>
+
+        <div>
+          <div class="form-group">
+            <?= form_label('Nombre: ', 'nombre') ?>
+            <?= form_input($nombre) ?>
+            <i id="validate-wrong-nombre" class="form-control-feedback glyphicon glyphicon-remove" style="display:none;" data-bv-icon-for="nombre"></i>
+            <i id="validate-ok-nombre" class="form-control-feedback glyphicon glyphicon-ok" style="display: none;" data-bv-icon-for="nombre"></i>
+            <small id="warning-text-nombre" class="help-block" style="display:none;" data-bv-validator="notEmpty" data-bv-validator-for="nombre">Por favor, ingrese un nombre</small>
+          </div>
+          <div class="form-group">
+            <?= form_label('Cargo: ', 'idCargo') ?>
+            <?= form_dropdown($opcionCargo) ?>
+          </div>
+          <div class="form-group">
+            <?= form_label('Sexo: ', 'sexo') ?>
+            <?= form_dropdown($opcionSexo) ?>
+          </div>
+          <?= form_submit('','Crear empleado', $submit) ?>
+          <?= form_close() ?>
         </div>
     </body>
 </html>

@@ -57,7 +57,7 @@
 
                           <ul class="dropdown-menu" role="navigation" aria-label="Menú desplegable - Secciones de administración">
                             <li><a href="<?= base_url(); ?>admin/cobertura">Coberturas</a></li>
-                            <li><a href="<?= base_url(); ?>admin/doctor">Doctores</a></li>
+                            <li><a href="<?= base_url(); ?>admin/empleado">Empleados</a></li>
                             <li><a href="<?= base_url(); ?>admin/especialidad">Especialidades</a></li>
                             <li><a href="<?= base_url(); ?>admin/estudio">Estudios</a></li>
                             <li><a href="<?= base_url(); ?>admin/instalacion">Instalaciones</a></li>

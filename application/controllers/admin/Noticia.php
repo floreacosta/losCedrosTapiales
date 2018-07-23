@@ -6,6 +6,7 @@ class Noticia extends CI_Controller {
         // $this->load does not exist until after you call this
         parent::__construct(); // Construct CI's core so that you can use it
         $this->load->helper('url');
+        $this->load->library('upload');
         $this->load->database();
         $this->load->model('admin/Noticia_model');
         $this->check_session();
@@ -31,25 +32,86 @@ class Noticia extends CI_Controller {
         }
     }
 
-    public function crearNoticia() {
-        if (null === ($this->input->post('nombre'))) {
+    public function crearNoticia ($titulo = null, $bajada = null, $cuerpo = null, $imagen = null, $descripcionImagen = null) {
+        if ($titulo === null) {
             $this->load->view('admin/includes/head');
             $this->load->view('admin/noticias/crear');
         } else {
-            $nombre_post = $this->input->post('nombre');
-            $descripcion_post = $this->input->post('descripcion');
-            $data['result'] = $this->Servicio_model->crearServicio($nombre_post, $descripcion_post);
-            $data['servicios'] = $this->Servicio_model->getNoticias();
+            $data['result'] = $this->Noticia_model->crearNoticia($titulo, $bajada, $cuerpo, $imagen, $descripcionImagen);
+            $data['noticias'] = $this->Noticia_model->getNoticias();
+
             $data['tipo'] = 'crear';
             $this->load->view('admin/includes/head');
             $this->load->view('admin/noticias/index', $data);
         }
     }
 
-    public function editarFormularioNoticias() {
+    public function subirImagen() {
+        $titulo_post = $this->input->post('titulo');
+        $bajada_post = $this->input->post('bajada');
+        $cuerpo_post = $this->input->post('cuerpo');
+        $descripcionImagen_post = $this->input->post('descripcionImagen');
+
+        $config['upload_path'] = './img/noticias';
+        $config['allowed_types'] = 'gif|jpg|png';
+        $config['max_size'] = 10000;
+        $config['max_width'] = 10000;
+        $config['max_height'] = 10000;
+
+        $this->load->library('upload', $config);
+        $this->upload->initialize($config);
+
+        if (!$this->upload->do_upload('image_file')) {
+            $data['error'] = array('error' => $this->upload->display_errors());
+            $data['noticias'] = $this->Noticia_model->getNoticias();
+            $this->load->view('admin/includes/head');
+            $this->load->view('admin/noticias/index', $data);
+        } else {
+            $imagen_post = $this->upload->data()['file_name'];
+            $data = array('upload_data' => $this->upload->data());
+            $this->crearNoticia($titulo_post, $bajada_post, $cuerpo_post, $imagen_post, $descripcionImagen_post);
+        }
+    }
+
+    public function subirImagenEditar () {
+        $id_post = $this->input->post('hiddenId');
+        $titulo_post = $this->input->post('titulo');
+        $bajada_post = $this->input->post('bajada');
+        $cuerpo_post = $this->input->post('cuerpo');
+        $descripcionImagen_post = $this->input->post('descripcionImagen');
+
+        if ($_FILES['image_file']['tmp_name'] !== '') {
+            $config['upload_path'] = './img/noticias';
+            $config['allowed_types'] = 'gif|jpg|png';
+            $config['max_size'] = 10000;
+            $config['max_width'] = 10000;
+            $config['max_height'] = 10000;
+
+            $this->load->library('upload', $config);
+            $this->upload->initialize($config);
+
+            if (!$this->upload->do_upload('image_file')) {
+                var_dump($this->upload->display_errors());
+                die;
+                $data['noticias'] = $this->Noticia_model->getNoticias();
+                $data['error'] = array('error' => $this->upload->display_errors());
+                $this->load->view('admin/includes/head');
+                $this->load->view('admin/noticias/index', $data);
+            } else {
+                $imagen_post = $this->upload->data()['file_name'];
+                $data = array('upload_data' => $this->upload->data());
+                $this->updateNoticia($id_post, $titulo_post, $bajada_post, $cuerpo_post, $imagen_post, $descripcionImagen_post);
+            }
+        } else {
+            $this->updateNoticia($id_post, $titulo_post, $bajada_post, $cuerpo_post, $imagen_post, $descripcionImagen_post);
+        }
+
+    }
+
+    public function editarFormularioNoticia () {
         if ($this->input->get('id') !== null) {
             $id = $this->input->get('id');
-            $data['servicio'] = $this->Servicio_model->getServicio($id);
+            $data['noticia'] = $this->Noticia_model->getNoticia($id);
             $this->load->view('admin/includes/head');
             $this->load->view('admin/noticias/editar', $data);
         } else {
@@ -58,23 +120,24 @@ class Noticia extends CI_Controller {
         }
     }
 
-    public function updateNoticias() {
-        $id_post = $this->input->post('hiddenId');
-        $nombre_post = $this->input->post('nombre');
-        $descripcion_post = $this->input->post('descripcion');
-        $data['result'] = $this->Servicio_model->editarNoticias($id_post, $nombre_post, $descripcion_post);
-        $data['servicios'] = $this->Servicio_model->getNoticias();
+    public function updateNoticia ($id = null, $titulo = null, $bajada = null, $cuerpo = null, $imagen = null, $descripcionImagen = null) {
+        if ($imagen === null) {
+            $data['result'] = $this->Noticia_model->editarNoticiaSinImagen($id, $titulo, $bajada, $cuerpo, $descripcionImagen);
+        } else {
+            $data['result'] = $this->Noticia_model->editarNoticia($id, $titulo, $bajada, $cuerpo, $imagen, $descripcionImagen);
+        }
+
+        $data['noticias'] = $this->Noticia_model->getNoticias();
         $data['tipo'] = 'editar';
         $this->load->view('admin/includes/head');
-        $this->load->view('admin/servicios/index', $data);
-
+        $this->load->view('admin/noticias/index', $data);
     }
 
-    public function eliminarNoticia() {
+    public function eliminarNoticia () {
       if ($this->input->get('id') !== null) {
             $id = $this->input->get('id');
-            $data['result'] = $this->Servicio_model->eliminarServicio($id);
-            $data['servicios'] = $this->Servicio_model->getNoticias();
+            $data['result'] = $this->Noticia_model->eliminarNoticia($id);
+            $data['noticias'] = $this->Noticia_model->getNoticias();
             $data['tipo'] = 'eliminar';
             $this->load->view('admin/includes/head');
             $this->load->view('admin/noticias/index', $data);

@@ -24,7 +24,7 @@
 
                               <ul class="dropdown-menu" role="navigation" aria-label="Menú desplegable - Secciones de administración">
                                 <li><a href="<?= base_url(); ?>admin/cobertura">Coberturas</a></li>
-                                <li><a href="<?= base_url(); ?>admin/doctor">Doctores</a></li>
+                                <li><a href="<?= base_url(); ?>admin/empleado">Empleados</a></li>
                                 <li><a href="<?= base_url(); ?>admin/especialidad">Especialidades</a></li>
                                 <li><a href="<?= base_url(); ?>admin/estudio">Estudios</a></li>
                                 <li><a href="<?= base_url(); ?>admin/instalacion">Instalaciones</a></li>
@@ -42,11 +42,11 @@
                     </div><!-- /.navbar-collapse -->
                 </div><!-- /.container-fluid -->
             </nav>
-        <h3>Creación de Noticia.</h3>
-        <p>Desde aquí podrá crear una nueva noticia para mostrar desde la página.</p>
+        <h3>Creación de Servicio.</h3>
+        <p>Desde aquí podrá crear un nuevo servicio para mostrar desde la página.</p>
 
         <div>
-          <?=  form_open(base_url()."admin/noticia/crearNoticia") ?>
+          <?=  form_open(base_url()."admin/servicio/crearServicio") ?>
           <?
               $nombre = array(
                   'name' => 'nombre',
@@ -56,6 +56,17 @@
               $descripcion = array(
                   'name' => 'descripcion',
                   'type' => 'textarea',
+                  'class' => 'form-control'
+              );
+              $jefeServicio = array();
+              $jefeServicio['0'] =  'Seleccionar...';
+              foreach ($empleados as $empleado) {
+                $jefeServicio[$empleado['id']] =  $empleado['nombre'];
+              }
+              $jefeServicios = array(
+                  'name' => 'idEmpleado',
+                  'options' => $jefeServicio,
+                  'type' => 'dropdown',
                   'class' => 'form-control'
               );
               $buttonClass = array(
@@ -69,6 +80,10 @@
           <div class="form-group">
             <?= form_label('Descripcion: ', 'descripcion') ?>
             <?= form_textarea($descripcion) ?>
+          </div>
+          <div class="form-group">
+            <?= form_label('Jefe de Servicio: ', 'idEmpleado') ?>
+            <?= form_dropdown($jefeServicios) ?>
           </div>
           <?= form_submit('','Crear servicio', $buttonClass) ?>
           <?= form_close() ?>
