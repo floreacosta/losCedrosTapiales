@@ -21,7 +21,7 @@
 					</div>
 
 					<figure class="noticia-item-image-container">
-						<img alt="Imagen representativa de <?= $item->titulo ?>" class="noticia-item-image" src="<?= $item->imagen ?>" />
+						<img alt="Imagen representativa de <?= $item->titulo ?>" class="noticia-item-image" src="<?= base_url(); ?>img/noticias/<?= $item->imagen ?>" />
 						<figcaption class="noticia-item-image-description">
 							<?= $item->descripcionImagen ?>
 						</figcaption>

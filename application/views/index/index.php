@@ -163,7 +163,7 @@
 				<? } else {
 					foreach($noticias->result() as $key=>$noticia):
 					?>
-						<a href="<?= base_url(); ?>/noticia_<?= $noticia->id ?>" aria-live="<?= $noticia->titulo?>" class="noticia-item-container" id="noticia_<?= $noticia->id ?>">
+						<a href="<?= base_url(); ?>noticias/noticia_<?= $noticia->id ?>" aria-live="<?= $noticia->titulo?>" class="noticia-item-container" id="noticia_<?= $noticia->id ?>">
 							<div class="noticia-item-heading">
 								<h2 class="noticia-item-title"><?= $noticia->titulo ?></h2>
 								<p class="noticia-item-subtitle"><?= $noticia->bajada ?></p>
