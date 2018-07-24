@@ -1,16 +1,21 @@
 $(document).ready(() => {
   getOverlay();
+  getSections();
   getActiveSection();
   getToggleAccordion();
   getOpenCloseMenu();
   getCloseModalVideoContainer();
   getModalEspecialidades();
+  getModalEstudios();
+  // getModalCarrouselServices();
   getActiveSlider();
   getBarraTooltip();
   getRedireccionamientoTooltip();
   getStickyHeader();
   getHightlitedSection();
   getScrollToTopButton();
+  getActiveService();
+  getActiveEstudioTipo();
 });
 
 /* NOTE: key/value to set an overlay and call it
@@ -42,6 +47,14 @@ function getStickyHeader () {
     } else {
       header.removeClass('sticky-header');
     }
+  });
+}
+
+function getSections () {
+  let menu = $('.global-menu-content');
+  menu.children().each(function () {
+    let item = $(this);
+    getAnimationToHoverElement(item);
   });
 }
 
@@ -170,6 +183,56 @@ function getModalEspecialidades () {
 
   button.click(function () {
     let component = $(this).parent().find(".general-overlay-container");
+    component.addClass(activeClass);
+    body.addClass('no-scrolling');
+
+    component.click(function (e) {
+      if ($(e.target).hasClass('general-overlay-container')) {
+        component.removeClass(activeClass);
+        body.removeClass('no-scrolling');
+      }
+    });
+
+    component.find(".general-close-overlay-button").click(function () {
+      component.removeClass(activeClass);
+      body.removeClass('no-scrolling');
+    });
+  });
+}
+
+function getModalEstudios () {
+  let button = $('.estudios-item-nombre');
+  let activeClass = "general-overlay-active";
+  let body = $("body");
+
+  button.click(function () {
+    let component = $(this).parent().find(".general-overlay-container");
+    component.addClass(activeClass);
+    body.addClass('no-scrolling');
+
+    component.click(function (e) {
+      if ($(e.target).hasClass('general-overlay-container')) {
+        component.removeClass(activeClass);
+        body.removeClass('no-scrolling');
+      }
+    });
+
+    component.find(".general-close-overlay-button").click(function () {
+      component.removeClass(activeClass);
+      body.removeClass('no-scrolling');
+    });
+  });
+}
+
+function getModalCarrouselServices () {
+  let button = $('.prevention-item');
+  let activeClass = "general-overlay-active";
+  let body = $("body");
+
+  getAnimationToHoverElement(button);
+
+  button.click(function () {
+    let component = $(this).find("+ .general-overlay-container");
     component.addClass(activeClass);
     body.addClass('no-scrolling');
 
@@ -379,7 +442,9 @@ function getHightlitedSection () {
     let scrollTo;
     setTimeout(function () {
       scrollTo = $(element).offset().top - ((headerHeight * 2) - 20); // to fix some margin
-      $("html").scrollTop(scrollTo);
+      $('html, body').animate({ scrollTop: scrollTo }, 'slow');
+      return false;
+      // $("html").scrollTop(scrollTo);
     }, 10);
 
     $(element).addClass('scroll-from-tooltip');
@@ -402,6 +467,67 @@ function getScrollToTopButton () {
   });
 
   button.click(() => {
-    $("html").scrollTop(0);
+    $('html, body').animate({ scrollTop: 0 }, 'slow');
+    return false;
+  });
+}
+
+function getActiveService () {
+  let headerHeight = $('.fake-header').innerHeight();
+  $(this).resize(() => {
+    headerHeight = $('.fake-header').innerHeight();
+  });
+
+  let activeService = $(".prevention-item.active-service");
+  let body = $('html, body');
+
+  if (activeService.length > 0) {
+    let scrollTo;
+    setTimeout(function () {
+      scrollTo = $(activeService).offset().top - ((headerHeight * 2) - 40); // to fix some margin
+      (body).animate({
+        scrollTop: scrollTo
+      }, 'slow');
+
+      let activeServiceAnimationClass = "active-service";
+      setTimeout(function () {
+        $(window).scroll(function () {
+          activeService.removeClass(activeServiceAnimationClass);
+        });
+      }, 1000);
+
+      return false;
+    }, 10);
+  }
+}
+
+function getAnimationToHoverElement ($element) {
+  let animationClass = "animation-on-hover";
+
+  $element.hover(() => {
+    $element.addClass(animationClass);
+  });
+}
+
+function getActiveEstudioTipo () {
+  let estudios = $('.estudios-content');
+
+  let estudioTiposButton = estudios.find('.estudios-tipo-item');
+  let estudiosContent = estudios.find('.estudios-list-container');
+
+  estudioTiposButton.each(function () {
+    $(this).click(function () {
+      estudioTiposButton.each(function () {
+        $(this).removeClass('active');
+      });
+
+      $(this).addClass('active');
+
+      let buttonId = $(this).attr('id');
+      estudiosContent.each(function () {
+        $(this).removeClass('active');
+      });
+      estudios.find('#estudio_tipo_content_' + buttonId).addClass('active');
+    });
   });
 }

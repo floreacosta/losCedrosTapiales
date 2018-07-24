@@ -16,7 +16,7 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
-                            <li><a href="<?= base_url(); ?>admin/servicio">Menú anterior</a></li>
+                            <li><a href="<?= base_url(); ?>admin/noticia">Menú anterior</a></li>
                             <li class="dropdown">
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                 Secciones <span class="caret"></span>
@@ -24,7 +24,7 @@
 
                               <ul class="dropdown-menu" role="navigation" aria-label="Menú desplegable - Secciones de administración">
                                 <li><a href="<?= base_url(); ?>admin/cobertura">Coberturas</a></li>
-                                <li><a href="<?= base_url(); ?>admin/doctor">Doctores</a></li>
+                                <li><a href="<?= base_url(); ?>admin/empleado">Empleados</a></li>
                                 <li><a href="<?= base_url(); ?>admin/especialidad">Especialidades</a></li>
                                 <li><a href="<?= base_url(); ?>admin/estudio">Estudios</a></li>
                                 <li><a href="<?= base_url(); ?>admin/instalacion">Instalaciones</a></li>
@@ -42,42 +42,97 @@
                     </div><!-- /.navbar-collapse -->
                 </div><!-- /.container-fluid -->
             </nav>
-        <h3>Edición de servicio.</h3>
-        <p>Desde aquí podrá cambiar los datos del servicio seleccionado.</p>
-        <?=  form_open('admin/servicio/updateServicios') ?>
-        <?
-            $resultado = $servicio->result()[0];
 
-            $hidden = array(
-                'hiddenId' => $resultado->id
-            );
-            $nombre = array(
-                'name' => 'nombre',
-                'type' => 'text',
-                'value' => $resultado->nombre,
-                'class' => 'form-control'
-            );
-            $descripcion = array(
-                'name' => 'descripcion',
-                'type' => 'textarea',
-                'value' => $resultado->descripcion,
-                'class' => 'form-control'
-            );
-            $buttonClass = array(
-                'class' => 'btn btn-primary'
-            );
-        ?>
-        <?= form_hidden($hidden) ?>
-        <div class="form-group">
-        <?= form_label('Nombre: ', 'nombre') ?>
-        <?= form_input($nombre) ?>
-        </div>
-        <div class="form-group">
-        <?= form_label('Descripción: ', 'descripcion') ?>
-        <?= form_textarea($descripcion) ?>
-        </div>
-        <?= form_submit('','Editar servicio', $buttonClass) ?>
-        <?= form_close() ?>
+            <h3>Edición de noticia.</h3>
+            <p>Desde aquí podrá cambiar los datos de la noticia seleccionada.</p>
+
+            <div>
+                <?=  form_open_multipart(base_url().'admin/noticia/subirImagenEditar') ?>
+                <?
+                    $resultado = $noticia->result()[0];
+
+                    $hidden = array(
+                        'hiddenId' => $resultado->id
+                    );
+
+                    $titulo = array(
+                        'name' => 'titulo',
+                        'type' => 'text',
+                        'value' => $resultado->titulo,
+                        'class' => 'form-control'
+                    );
+
+                    $bajada = array(
+                      'name' => 'bajada',
+                      'type' => 'textarea',
+                      'value' => $resultado->bajada,
+                      'class' => 'form-control'
+                    );
+
+                    $cuerpo = array(
+                      'id' => 'cleditorInput',
+                      'name' => 'cuerpo',
+                      'type' => 'textarea',
+                      'value' => $resultado->cuerpo,
+                      'class' => 'form-control'
+                    );
+
+                    $imagen = array(
+                      'name' => 'image_file',
+                      'type' => 'file',
+                      'size' => 20,
+                      'class' => 'form-control-file',
+                      'aria-describedby' => 'fileHelp'
+                    );
+
+                    $descripcionImagen = array(
+                      'name' => 'descripcionImagen',
+                      'type' => 'textarea',
+                      'value' => $resultado->descripcionImagen,
+                      'class' => 'form-control'
+                    );
+
+                    $buttonClass = array(
+                        'class' => 'btn btn-primary'
+                    );
+                ?>
+
+                <div>
+                  <?= form_hidden($hidden) ?>
+                  <div class="form-group">
+                    <?= form_label('Título: ', 'titulo') ?>
+                    <?= form_input($titulo) ?>
+                  </div>
+
+                  <div class="form-group">
+                    <?= form_label('Bajada: ', 'bajada') ?>
+                    <?= form_textarea($bajada) ?>
+                  </div>
+
+                  <div class="form-group">
+                    <?= form_label('Cuerpo: ', 'cuerpo') ?>
+                    <?= form_textarea($cuerpo) ?>
+                  </div>
+
+                  <div class="form-group">
+                    <?= form_label('Imagen seleccionada: ') ?>
+                    <img class="img-thumbnail" alt="<?= $resultado->descripcionImagen ?>" src="<?= base_url(); ?>img/noticias/<?= $resultado->imagen ?>" />
+                  </div>
+
+                  <div class="form-group">
+                    <?= form_label('Imagen: ', 'image_file') ?>
+                    <?= form_input($imagen) ?>
+                  </div>
+
+                  <div class="form-group">
+                    <?= form_label('Descripción de la imagen: ', 'descripcionImagen') ?>
+                    <?= form_textarea($descripcionImagen) ?>
+                  </div>
+
+                  <?= form_submit('', 'Editar noticia', $buttonClass) ?>
+                </div>
+              <?= form_close() ?>
+            </div>
         </div>
     </body>
 </html>

@@ -80,10 +80,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 **/
 body, p {
   font-size: 16px;
-  line-height: 22px;
+  line-height: 24px;
   color: #7b7b79;
-  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-  font-weight: normal;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
   font-variant: normal;
   font-style: normal;
   position: relative;
@@ -143,42 +143,42 @@ input {
 * Heading
 **/
 h1 {
-  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
   font-variant: normal;
   font-style: normal;
   color: #023670;
-  font-size: 2.5em;
+  font-size: 2.3em;
   line-height: 1em;
 }
 
 h2 {
-  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
   font-variant: normal;
   font-style: normal;
   color: #023670;
-  font-size: 1.6em;
+  font-size: 1.4em;
   line-height: 1em;
 }
 
 h3 {
-  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
   font-variant: normal;
   font-style: normal;
   color: #023670;
-  font-size: 1.1em;
+  font-size: 1em;
   line-height: 1.1em;
 }
 
 .section-title {
-  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
   font-variant: normal;
   font-style: normal;
   color: #023670;
-  font-size: 1.6em;
+  font-size: 1.4em;
   line-height: 1em;
 }
 
@@ -191,6 +191,33 @@ h3 {
   -moz-box-shadow: 0px 0px 0px 3px #7b7b79 inset;
   -webkit-box-shadow: 0px 0px 0px 3px #7b7b79 inset;
   box-shadow: 0px 0px 0px 3px #7b7b79 inset;
+}
+
+.animation-on-hover:after, .animation-on-hover:before {
+  content: '';
+  width: 0%;
+  height: 4px;
+  bottom: 0px;
+  position: absolute;
+  background: #023670;
+  z-index: 1;
+  -moz-transition: all 200ms ease;
+  -o-transition: all 200ms ease;
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+}
+.animation-on-hover:after {
+  right: 50%;
+}
+.animation-on-hover:before {
+  left: 50%;
+}
+.animation-on-hover:hover:after, .animation-on-hover:hover:before {
+  width: 50%;
+  -moz-transition: all 200ms ease;
+  -o-transition: all 200ms ease;
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
 }
 
 /**
@@ -231,6 +258,9 @@ h3 {
   top: 0px;
   left: 0px;
 }
+.global-header-container.sticky-header + .fake-header {
+  position: relative;
+}
 
 .fake-header {
   position: absolute;
@@ -241,8 +271,8 @@ h3 {
 /* Caja contenedora del Logo */
 .logo-container {
   width: 72px;
-  height: 100%;
-  display: inline-block;
+  height: 49.89px;
+  display: block;
   position: relative;
   overflow: hidden;
 }
@@ -349,14 +379,15 @@ h3 {
   position: relative;
   text-transform: uppercase;
   font-size: 16px;
-  line-height: 22px;
+  line-height: 24px;
   color: #ffffff;
-  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-  font-weight: normal;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
   font-variant: normal;
   font-style: normal;
-  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-  font-weight: bold;
+  font-size: 15px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
   font-variant: normal;
   font-style: normal;
 }
@@ -398,6 +429,7 @@ h3 {
 **/
 @media (min-width: 769px) {
   .logo-container {
+    display: inline-block;
     width: auto;
   }
 }
@@ -463,17 +495,18 @@ h3 {
   }
   .global-menu-item a {
     color: #7b7b79;
-    padding: 2.5em 2em;
+    padding: 2.5em 1.2em;
   }
 
   .sticky-header .logo-container {
     width: 9em;
+    height: 50.52px;
   }
   .sticky-header .global-menu-container {
     width: calc(100% - 9em - 5px);
   }
   .sticky-header .global-menu-item a {
-    padding: 1.8em 2em;
+    padding: 1.8em 1.3em;
   }
 
   .global-menu-content {
@@ -482,13 +515,13 @@ h3 {
   }
 
   /* Elementos contenidos en el menú */
-  .global-menu-item.active, .global-menu-item:hover {
-    background-color: rgba(2, 54, 111, 0.7);
+  .global-menu-item.active {
+    background-color: #023670;
   }
-  .global-menu-item.active a, .global-menu-item:hover a {
+  .global-menu-item.active a {
     color: #ffffff;
   }
-  .global-menu-item.active a:after, .global-menu-item:hover a:after {
+  .global-menu-item.active a:after {
     background-color: #ffffff;
   }
 
@@ -501,12 +534,24 @@ h3 {
 
   .logo-container {
     width: 12em;
+    height: 67.36px;
   }
 
   .global-menu-container {
     width: calc(100% - 12em - 5px);
   }
+
+  .global-menu-item a {
+    padding: 2.5em 1.8em;
+  }
+
+  .sticky-header .global-menu-item a {
+    padding: 1.8em 1.8em;
+  }
 }
+/*
+ * NOTE: Main section (of each page)
+ */
 main {
   padding: 5% 25px;
   width: 100%;
@@ -550,9 +595,15 @@ main.home-page {
   text-align: center;
 }
 .global-footer p {
-  line-height: 22px;
-  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-  font-weight: normal;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-variant: normal;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: #7b7b79;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
   font-variant: normal;
   font-style: normal;
   margin: 0;
@@ -580,6 +631,15 @@ main.home-page {
   margin-top: 0;
 }
 
+.site-map a {
+  font-size: 16px;
+  line-height: 24px;
+  color: #023670;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-variant: normal;
+  font-style: normal;
+}
 .site-map li {
   padding: .35em 0;
   color: #023670;
@@ -589,8 +649,8 @@ main.home-page {
 }
 
 .turn-online a {
-  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
   font-variant: normal;
   font-style: normal;
   color: #023670;
@@ -625,7 +685,7 @@ main.home-page {
   line-height: 2.8em;
   padding: 0 1em;
   width: 100%;
-  font-size: 1em;
+  font-size: .9em;
   margin-right: 10px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -709,8 +769,8 @@ main.home-page {
   text-align: center;
 }
 .extra-information span {
-  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
   font-variant: normal;
   font-style: normal;
   color: #ffffff;
@@ -964,14 +1024,14 @@ main.home-page {
   visibility: hidden;
   width: 120px;
   font-size: 16px;
-  line-height: 22px;
+  line-height: 24px;
   color: #023670;
-  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-  font-weight: normal;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
   font-variant: normal;
   font-style: normal;
-  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
   font-variant: normal;
   font-style: normal;
   background-color: #ffffff;
@@ -1021,10 +1081,10 @@ main.home-page {
   top: 50%;
   left: 50%;
   font-size: 16px;
-  line-height: 22px;
+  line-height: 24px;
   color: #7b7b79;
-  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-  font-weight: normal;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
   font-variant: normal;
   font-style: normal;
   -moz-transform: translate(-50%, -50%);
@@ -1124,14 +1184,13 @@ main.home-page {
   display: inline-block;
   vertical-align: middle;
   padding: 1em;
-  cursor: pointer;
   width: 100%;
   text-align: left;
   font-size: 16px;
-  line-height: 22px;
+  line-height: 24px;
   color: #00428c;
-  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-  font-weight: normal;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
   font-variant: normal;
   font-style: normal;
 }
@@ -1308,14 +1367,14 @@ main.home-page {
   display: block;
   margin-bottom: 25px;
   text-transform: uppercase;
-  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
   font-variant: normal;
   font-style: normal;
 }
 .modal-component .modal-container h4, .modal-component .modal-video .modal-container-video h4, .modal-video .modal-component .modal-container-video h4 {
-  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
   font-variant: normal;
   font-style: normal;
   margin-bottom: 20px;
@@ -1416,6 +1475,7 @@ main.home-page {
   background-color: #f2f1f1;
   display: block;
   margin: 1em 0;
+  cursor: pointer;
 }
 .prevention-item:nth-child(even) {
   width: 100%;
@@ -1431,12 +1491,26 @@ main.home-page {
   margin-top: 10px;
   margin-bottom: 8px;
 }
+.prevention-item.active-service {
+  -moz-box-shadow: 0px 0px 0px 3px #7b7b79 inset;
+  -webkit-box-shadow: 0px 0px 0px 3px #7b7b79 inset;
+  box-shadow: 0px 0px 0px 3px #7b7b79 inset;
+}
 
 .service-head-title {
-  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-  font-weight: normal;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
   font-variant: normal;
   font-style: normal;
+}
+
+.open-service-carrousel {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-variant: normal;
+  font-style: normal;
+  color: #023670;
+  margin-top: 10px;
 }
 
 /**
@@ -1447,7 +1521,7 @@ main.home-page {
     width: 100%;
   }
   .prevention-item:nth-child(odd) {
-    width: 75%;
+    width: 100%;
   }
 }
 @media (min-width: 1025px) {
@@ -1455,7 +1529,18 @@ main.home-page {
     width: 75%;
   }
   .prevention-item:nth-child(odd) {
-    width: 50%;
+    width: 75%;
+  }
+  .prevention-item:hover .open-service-carrousel {
+    display: block;
+  }
+
+  .open-service-carrousel {
+    display: none;
+    margin-top: 0px;
+    position: absolute;
+    right: -8em;
+    bottom: 1em;
   }
 }
 /**
@@ -1470,8 +1555,8 @@ main.home-page {
   font-size: .9em;
 }
 .box-container-breadcrum a.active {
-  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
   font-variant: normal;
   font-style: normal;
   color: #023670;
@@ -2041,27 +2126,27 @@ main.home-page {
   z-index: 1;
 }
 .title-information h1 {
-  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 300;
   font-variant: normal;
   font-style: normal;
 }
 .title-information h1 strong {
-  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
   font-variant: normal;
   font-style: normal;
 }
 .title-information p {
-  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-  font-weight: normal;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
   font-variant: normal;
   font-style: normal;
   color: #023670;
-  font-size: 1.15em;
+  font-size: 1.2em;
   line-height: 1.20em;
   margin: 1.5em 0;
-  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 300;
   font-variant: normal;
   font-style: normal;
@@ -2104,17 +2189,34 @@ main.home-page {
   -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
-.button-open-home-video:after {
-  content: '-';
-  font-family: 'modern_pictogramsnormal';
-  -moz-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  -webkit-transform: rotate(90deg);
-  transform: rotate(90deg);
-  color: #ffffff;
-  font-size: 1.2em;
+
+.play-icon-container {
+  height: 10px;
+  width: 10px;
+  border: 0px;
   position: absolute;
   right: 12px;
+  overflow: hidden;
+  font-size: 0px;
+  top: 50%;
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.play-icon-container:after {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  background: #ffffff;
+  position: relative;
+  top: 1px;
+  right: 6px;
 }
 
 .modal-component {
@@ -2149,32 +2251,43 @@ main.home-page {
 }
 
 .patient-responsabilities-title {
-  font-size: 31px;
+  font-size: 30px;
   line-height: 31px;
   margin-bottom: 23px;
 }
 
 .patient-responsabilities-message, .open-pacient-responsabilities-button {
-  line-height: 22px;
   color: #7b7b79;
-  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-  font-weight: normal;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
   font-variant: normal;
   font-style: normal;
 }
 
 .open-pacient-responsabilities-button {
-  font-size: 14px;
+  font-size: 16px;
+  line-height: 24px;
+  color: #7b7b79;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-variant: normal;
+  font-style: normal;
   text-decoration: underline;
+}
+@media (min-width: 1400px) {
+  .open-pacient-responsabilities-button {
+    font-size: 18px;
+    line-height: 30px;
+  }
 }
 
 .patient-responsabilities-content .general-header-title {
-  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
   font-variant: normal;
   font-style: normal;
   color: #023670;
-  font-size: 1.1em;
+  font-size: 1em;
   line-height: 1.1em;
   margin-bottom: 15px;
 }
@@ -2189,8 +2302,8 @@ main.home-page {
 .patient-responsabilities-item {
   padding-left: 15px;
   margin-bottom: 15px;
-  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-  font-weight: normal;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
   font-variant: normal;
   font-style: normal;
 }
@@ -2301,7 +2414,7 @@ main.home-page {
   }
 
   .title-information {
-    width: 40%;
+    width: 45%;
     bottom: 100px;
   }
 
@@ -2426,7 +2539,7 @@ main.home-page {
   display: none;
 }
 
-.article-item-description {
+.article-item-description, .section-news-container .noticia-item-container, .noticias-content .noticia-item-container {
   background: #ffffff;
   padding: 1.5em;
   width: 100%;
@@ -2438,22 +2551,22 @@ main.home-page {
   -webkit-border-radius: 3px;
   border-radius: 3px;
 }
-.article-item-description h3 {
-  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-  font-weight: bold;
+.article-item-description h3, .section-news-container .noticia-item-container h3, .noticias-content .noticia-item-container h3 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
   font-variant: normal;
   font-style: normal;
   color: #023670;
-  font-size: 1.6em;
+  font-size: 1.4em;
   line-height: 1em;
   text-transform: none;
   margin-top: 0px;
 }
-.article-item-description p {
+.article-item-description p, .section-news-container .noticia-item-container p, .noticias-content .noticia-item-container p {
   margin-top: 1em;
   margin-bottom: 0px;
 }
-.article-item-description a {
+.article-item-description a, .section-news-container .noticia-item-container a, .noticias-content .noticia-item-container a {
   display: inline-block;
   width: 100%;
 }
@@ -2522,11 +2635,8 @@ main.home-page {
     clear: none;
   }
 
-  .article-item-description h3 {
-    font-size: 1.5em;
-  }
-  .article-item-description p {
-    font-size: 1.1em;
+  .article-item-description h3, .section-news-container .noticia-item-container h3, .noticias-content .noticia-item-container h3 {
+    font-size: 1.3em;
   }
 }
 /* Turnos Online */
@@ -2552,8 +2662,8 @@ main.home-page {
 }
 .article-online-turn:after {
   content: 'Proximamente';
-  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
   font-variant: normal;
   font-style: normal;
   color: #ffffff;
@@ -2638,12 +2748,12 @@ main.home-page {
 }
 .article-information-for-user .title-container {
   display: block;
-  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
   font-variant: normal;
   font-style: normal;
   color: #023670;
-  font-size: 1.6em;
+  font-size: 1.4em;
   line-height: 1em;
   text-transform: none;
   color: #023670;
@@ -2761,7 +2871,7 @@ main.home-page {
   margin-top: 0;
 }
 .article-visit-schedule span {
-  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 300;
   font-variant: normal;
   font-style: normal;
@@ -2785,8 +2895,8 @@ main.home-page {
   -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   font-size: 19px;
-  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
   font-variant: normal;
   font-style: normal;
 }
@@ -2797,12 +2907,12 @@ main.home-page {
   width: 100%;
   text-align: left;
   border: 0px;
-  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
   font-variant: normal;
   font-style: normal;
   color: #023670;
-  font-size: 1.1em;
+  font-size: 1em;
   line-height: 1.1em;
   margin: 0px;
 }
@@ -2825,6 +2935,7 @@ main.home-page {
   transform: rotate(-45deg);
   vertical-align: middle;
   margin-top: -3px;
+  float: right;
   -moz-transition: all 300ms ease;
   -o-transition: all 300ms ease;
   -webkit-transition: all 300ms ease;
@@ -2875,6 +2986,9 @@ main.home-page {
   margin-top: 0em;
 }
 
+.instalaciones-content {
+  margin-top: 40px;
+}
 .instalaciones-content .photograpy-primary {
   width: 100%;
 }
@@ -2911,12 +3025,12 @@ main.home-page {
   display: block;
   position: relative;
   margin-bottom: 5px;
-  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
   font-variant: normal;
   font-style: normal;
   color: #023670;
-  font-size: 1.1em;
+  font-size: 1em;
   line-height: 1.1em;
 }
 .menu-instalaciones .item-category:after {
@@ -3015,9 +3129,6 @@ main.home-page {
 /*
  * NOTE: Institucional
  */
-.institucional-content {
-  padding-bottom: 20px;
-}
 .institucional-content p {
   margin-bottom: 10px;
 }
@@ -3037,6 +3148,10 @@ main.home-page {
 .institutional-title.vision-title {
   margin-top: 40px;
 }
+.institutional-title.institutional-service-title {
+  font-size: 24px;
+  margin-top: 35px;
+}
 
 .history-container {
   width: calc(100% + 50px);
@@ -3045,7 +3160,6 @@ main.home-page {
   background: #f2f1f1;
   padding: 25px;
   margin-top: 40px;
-  margin-bottom: 30px;
 }
 
 .history-content-list {
@@ -3053,13 +3167,12 @@ main.home-page {
 }
 .history-content-list li {
   font-size: 16px;
-  line-height: 22px;
+  line-height: 24px;
   color: #7b7b79;
-  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-  font-weight: normal;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
   font-variant: normal;
   font-style: normal;
-  line-height: 20px;
   padding-left: 20px;
   margin-bottom: 15px;
 }
@@ -3083,15 +3196,34 @@ main.home-page {
   border-radius: 50%;
 }
 .history-content-list strong {
-  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
   font-variant: normal;
   font-style: normal;
   color: #023670;
 }
+.history-content-list a {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.external-link-to-google-map {
+  text-decoration: underline;
+}
 
 .autoridades-container {
   margin-top: 20px;
+}
+.autoridades-container .institutional-title {
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+  border-bottom: solid 1px #023670;
+}
+
+.jefe-sector-content,
+.jefe-servicio-content {
+  display: block;
+  overflow: hidden;
 }
 
 .autoridad-item {
@@ -3119,10 +3251,10 @@ main.home-page {
 
 .cv-link {
   font-size: 16px;
-  line-height: 22px;
+  line-height: 24px;
   color: #023670;
-  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-  font-weight: normal;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
   font-variant: normal;
   font-style: normal;
   font-size: 12px;
@@ -3158,6 +3290,19 @@ main.home-page {
     margin-left: 40px;
     float: right;
   }
+  .history-content-list a {
+    text-decoration: none;
+  }
+  .history-content-list a:hover {
+    text-decoration: underline;
+  }
+
+  .external-link-to-google-map {
+    text-decoration: none;
+  }
+  .external-link-to-google-map:hover, .external-link-to-google-map:active, .external-link-to-google-map:focus {
+    text-decoration: underline;
+  }
 
   .history-container {
     width: 114%;
@@ -3172,7 +3317,8 @@ main.home-page {
     margin-top: 60px;
   }
 
-  .autoridades-content {
+  .jefe-sector-content,
+  .jefe-servicio-content {
     width: calc(100% + 20px);
     overflow: hidden;
     display: -webkit-flex;
@@ -3200,6 +3346,10 @@ main.home-page {
     top: 11px;
   }
 }
+.most-important-data-container {
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
 .most-important-data-container .accordion-container {
   margin-bottom: 10px;
 }
@@ -3207,10 +3357,10 @@ main.home-page {
 .most-important-data-container .admission-message-container,
 .most-important-data-container li {
   font-size: 16px;
-  line-height: 22px;
+  line-height: 24px;
   color: #7b7b79;
-  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-  font-weight: normal;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
   font-variant: normal;
   font-style: normal;
 }
@@ -3242,10 +3392,10 @@ main.home-page {
 }
 .most-important-data-container .general-schedule-message {
   font-size: 16px;
-  line-height: 22px;
+  line-height: 24px;
   color: #7b7b79;
-  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-  font-weight: normal;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
   font-variant: normal;
   font-style: normal;
   margin-top: 15px;
@@ -3258,12 +3408,12 @@ main.home-page {
   }
 }
 .most-important-data-container .element-container .accordion-title {
-  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
   font-variant: normal;
   font-style: normal;
   color: #023670;
-  font-size: 2.5em;
+  font-size: 2.3em;
   line-height: 1em;
   margin-bottom: 20px;
   cursor: normal;
@@ -3291,6 +3441,7 @@ main.home-page {
 
   .patient-responsabilities-container {
     padding-top: 0px;
+    margin-top: 40px;
   }
 }
 @media (min-width: 1025px) {
@@ -3299,6 +3450,7 @@ main.home-page {
     left: -7%;
     padding-right: 7%;
     padding-left: 7%;
+    margin-bottom: 0px;
   }
 }
 @media (min-width: 1400px) {
@@ -3315,5 +3467,234 @@ main.home-page {
   .admision-egresos-container,
   .alta-medica-container {
     margin-top: 50px;
+  }
+}
+/*
+ * NOTE: Estudios
+ */
+.estudios-tipos {
+  display: block;
+  width: 100%;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.estudios-tipo-item {
+  width: 50%;
+  padding: 1em;
+  float: right;
+  background: #f2f1f1;
+  padding-bottom: calc(1em - 3px);
+  border-bottom: solid 3px #023670;
+  -moz-border-radius: 6px 6px 0px 0px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px 6px 0px 0px;
+}
+.estudios-tipo-item strong {
+  font-size: 16px;
+  line-height: 24px;
+  color: #7b7b79;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-variant: normal;
+  font-style: normal;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-variant: normal;
+  font-style: normal;
+  color: #7b7b79;
+}
+@media (min-width: 1400px) {
+  .estudios-tipo-item strong {
+    font-size: 18px;
+    line-height: 30px;
+  }
+}
+.estudios-tipo-item.active {
+  padding: calc(1em - 3px);
+  padding-bottom: 1em;
+  border: solid 3px #023670;
+  border-bottom: 0px;
+  background: #023670;
+}
+.estudios-tipo-item.active strong {
+  color: #ffffff;
+}
+
+.estudios-list-container {
+  background: #f2f1f1;
+  padding: 1em;
+  display: none;
+}
+.estudios-list-container.active {
+  display: block;
+}
+
+.estudios-item-nombre {
+  font-size: 16px;
+  line-height: 24px;
+  color: #7b7b79;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-variant: normal;
+  font-style: normal;
+  display: block;
+  width: 100%;
+  padding: .5em 0px;
+  padding-left: 15px;
+  text-align: left;
+}
+@media (min-width: 1400px) {
+  .estudios-item-nombre {
+    font-size: 18px;
+    line-height: 30px;
+  }
+}
+.estudios-item-nombre:before {
+  content: '';
+  display: inline-block;
+  background: #023670;
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  left: 0px;
+  top: 6px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+.estudios-item-nombre:before {
+  top: 50%;
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+@media (min-width: 1025px) {
+  .estudios-item-nombre {
+    text-decoration: none;
+  }
+  .estudios-item-nombre:hover {
+    text-decoration: underline;
+  }
+}
+.section-news-container .section-noticias-content, .noticias-content .section-noticias-content {
+  display: block;
+}
+.section-news-container .section-noticia-title, .noticias-content .section-noticia-title {
+  margin-bottom: 20px;
+}
+.section-news-container .noticia-item-container, .noticias-content .noticia-item-container {
+  background: #ffffff;
+  display: block;
+  margin-bottom: 15px;
+}
+.section-news-container .noticia-item-container:last-of-type, .noticias-content .noticia-item-container:last-of-type {
+  margin-bottom: 0px;
+}
+.section-news-container .noticia-item-container strong, .noticias-content .noticia-item-container strong {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-variant: normal;
+  font-style: normal;
+}
+.section-news-container .noticia-item-title, .noticias-content .noticia-item-title {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-variant: normal;
+  font-style: normal;
+  color: #023670;
+  font-size: 1.4em;
+  line-height: 1em;
+  margin-bottom: 15px;
+}
+.section-news-container .all-news-link, .noticias-content .all-news-link {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+/*
+ * Responsive width
+ */
+@media (min-width: 1025px) {
+  .section-news-container .section-noticias-content, .noticias-content .section-noticias-content {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+  }
+  .section-news-container .noticia-item-container, .noticias-content .noticia-item-container {
+    width: calc(33.33% - 25px);
+    float: right;
+    overflow: hidden;
+    margin-bottom: 10px;
+    margin-right: 25px;
+  }
+  .section-news-container .noticia-item-container:last-of-type, .noticias-content .noticia-item-container:last-of-type {
+    margin-bottom: 15px;
+  }
+}
+.noticia-individual-content .noticia-item-container strong {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-variant: normal;
+  font-style: normal;
+}
+.noticia-individual-content .noticia-item-title {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-variant: normal;
+  font-style: normal;
+  color: #023670;
+  font-size: 2.3em;
+  line-height: 1em;
+  margin-bottom: 15px;
+}
+.noticia-individual-content .noticia-item-subtitle {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-variant: normal;
+  font-style: normal;
+  color: #023670;
+  font-size: 1.2em;
+  line-height: 1.20em;
+  margin: 1.5em 0;
+  color: #7b7b79;
+  margin-top: 0px;
+  line-height: 1.5;
+}
+.noticia-individual-content .noticia-item-image-container {
+  display: block;
+  margin-bottom: 20px;
+}
+.noticia-individual-content .noticia-item-image {
+  display: block;
+  width: 100%;
+  -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  margin-bottom: 10px;
+}
+.noticia-individual-content .noticia-item-image-description {
+  font-size: .9em;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-variant: normal;
+  font-style: normal;
+  color: #023670;
+  color: #7b7b79;
+  font-style: italic;
+}
+.noticia-individual-content .noticia-item-bajada {
+  line-height: 1.8;
+}
+
+/*
+ * Responsive width
+ */
+@media (min-width: 1025px) {
+  .noticia-individual-content .noticia-item-image-container {
+    width: 80%;
   }
 }

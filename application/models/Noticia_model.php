@@ -9,9 +9,10 @@ class Noticia_model extends CI_Model {
 
     // NOTE: get first 4 news
     function getLastNews () {
-      $this->db->limit(4);
+      $this->db->limit(3);
       $this->db->select('id, titulo, bajada');
       $this->db->from('noticia');
+      $this->db->order_by("id", "desc");
       $noticias = $this->db->get();
 
       return $noticias;
@@ -21,6 +22,7 @@ class Noticia_model extends CI_Model {
     function getAllNews () {
       $this->db->select('id, titulo, bajada');
       $this->db->from('noticia');
+      $this->db->order_by("id", "desc");
       $noticias = $this->db->get();
 
       return $noticias;
@@ -29,8 +31,7 @@ class Noticia_model extends CI_Model {
     function getNewById ($id) {
       $this->db->where('id', $id);
       $noticia = $this->db->get('noticia');
-
-      if($noticia->num_rows() > 0) return $noticia;
+      if($noticia->num_rows() > 0) return $noticia->result();
       else return false;
     }
 }

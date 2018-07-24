@@ -22,7 +22,8 @@ class Noticias extends CI_Controller {
 
     public function getNoticiaById ($id = 0) {
         $data['id'] = $id;
-        $data['noticia'] = $this->Noticia_model->getNewById($id);
+        $data['noticia'] = $this->Noticia_model->getNewById($id)[0];
+        // print_r($data['noticia'][0]->titulo);
         $this->load->view('includes/head');
         $this->load->view('includes/header');
         $this->load->view('includes/tooltip');

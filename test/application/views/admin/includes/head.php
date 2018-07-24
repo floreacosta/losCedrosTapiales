@@ -19,4 +19,21 @@
 	<script type="text/javascript" src="<?= base_url(); ?>admin/js/npm.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js"></script>
 	<script type="text/javascript" src="<?= base_url(); ?>admin/js/validationRules.js"></script>
+
+	<link rel="stylesheet" href="<?= base_url(); ?>admin/js/cleditor/jquery.cleditor.css" />
+	<script src="<?= base_url(); ?>admin/js/cleditor/jquery.cleditor.js"></script>
+	<script src="<?= base_url(); ?>admin/js/cleditor/jquery.cleditor.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("#cleditorInput").cleditor({
+				controls: // controls to add to the toolbar
+					"bold italic underline strikethrough subscript superscript | font size " +
+					"style | color highlight removeformat | bullets numbering | outdent " +
+					"indent | alignleft center alignright justify | undo redo | ",
+				useCSS: false,
+				bodyStyle: // style to assign to document body contained within the editor
+					"cursor:text"
+			});
+		});
+	</script>
 </head>

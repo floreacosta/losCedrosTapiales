@@ -7,33 +7,31 @@ class Noticia_model extends CI_Model {
       $this->load->database();
     }
 
+    // NOTE: get first 4 news
     function getLastNews () {
-      // $this->db->select('estudio.id, estudio.nombre, estudio.descripcion, tipoXestudio.id as idTipo, tipoXestudio.nombre as nombreTipo');
-      // $this->db->from('estudio');
-      // $this->db->join('tipoXestudio', 'estudio.idTipo = tipoXestudio.id');
-      // $query = $this->db->get();
+      $this->db->limit(3);
+      $this->db->select('id, titulo, bajada');
+      $this->db->from('noticia');
+      $this->db->order_by("id", "desc");
+      $noticias = $this->db->get();
 
-      // if($query->num_rows() > 0) return $query;
-      // else return false;
+      return $noticias;
     }
 
+    // NOTE: get all news
     function getAllNews () {
-      // $this->db->select('estudio.id, estudio.nombre, estudio.descripcion, tipoXestudio.id as idTipo, tipoXestudio.nombre as nombreTipo');
-      // $this->db->from('estudio');
-      // $this->db->join('tipoXestudio', 'estudio.idTipo = tipoXestudio.id');
-      // $query = $this->db->get();
+      $this->db->select('id, titulo, bajada');
+      $this->db->from('noticia');
+      $this->db->order_by("id", "desc");
+      $noticias = $this->db->get();
 
-      // if($query->num_rows() > 0) return $query;
-      // else return false;
+      return $noticias;
     }
 
     function getNewById ($id) {
-      // $this->db->select('estudio.id, estudio.nombre, estudio.descripcion, tipoXestudio.id as idTipo, tipoXestudio.nombre as nombreTipo');
-      // $this->db->from('estudio');
-      // $this->db->join('tipoXestudio', 'estudio.idTipo = tipoXestudio.id');
-      // $query = $this->db->get();
-
-      // if($query->num_rows() > 0) return $query;
-      // else return false;
+      $this->db->where('id', $id);
+      $noticia = $this->db->get('noticia');
+      if($noticia->num_rows() > 0) return $noticia->result();
+      else return false;
     }
 }

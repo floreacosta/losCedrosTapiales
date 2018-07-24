@@ -47,11 +47,12 @@
 					<?
 						foreach($jefe_sectores->result() as $jefe_sector):
 							if ($jefe_sector->nombre !== 'Indefinido') {
+								$nombreCargo = $jefe_sector->nombreCargo . ' de ' . $jefe_sector->nombreSector;
 								?>
 									<div class="autoridad-item">
 										<div class="autoridad-information">
 											<h2 class="autoridad-name"><?= $jefe_sector->nombre; ?></h2>
-											<strong class="autoridad-title"><?= $jefe_sector->cargo; ?></strong>
+											<strong class="autoridad-title"><?= $nombreCargo; ?></strong>
 										</div>
 									</div>
 								<?
@@ -65,11 +66,38 @@
 					<?
 						foreach($jefe_servicios->result() as $jefe_servicio):
 							if ($jefe_servicio->nombre !== 'Indefinido') {
+								if ($jefe_servicio->sexo == 'F') {
+									$nombreCargo = 'Jefa';
+								} else {
+									$nombreCargo = $jefe_servicio->nombreCargo;
+								}
+								$nombreCargo = $nombreCargo . ' de ' . $jefe_servicio->nombreServicio;
+
 								?>
 									<div class="autoridad-item">
 										<div class="autoridad-information">
 											<h2 class="autoridad-name"><?= $jefe_servicio->nombre; ?></h2>
-											<strong class="autoridad-title"><?= $jefe_servicio->cargo; ?></strong>
+											<strong class="autoridad-title"><?= $nombreCargo; ?></strong>
+										</div>
+									</div>
+								<?
+							}
+						endforeach;
+
+						foreach($jefe_especialidades->result() as $jefe_especialidad):
+							if ($jefe_especialidad->nombre !== 'Indefinido') {
+								if ($jefe_especialidad->sexo == 'F') {
+									$nombreCargo = 'Jefa';
+								} else {
+									$nombreCargo = $jefe_especialidad->nombreCargo;
+								}
+								$nombreCargo = $nombreCargo . ' de ' . $jefe_especialidad->nombreEspecialidad;
+
+								?>
+									<div class="autoridad-item">
+										<div class="autoridad-information">
+											<h2 class="autoridad-name"><?= $jefe_especialidad->nombre; ?></h2>
+											<strong class="autoridad-title"><?= $nombreCargo; ?></strong>
 										</div>
 									</div>
 								<?

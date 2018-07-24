@@ -24,7 +24,6 @@ class Instalacion_model extends CI_Model {
     }
 
     function crearInstalacion($nombre, $imagen, $descripcion, $categoria) {
-
         $data = array(
             'nombre' => $nombre,
             'imagen' => $imagen,
@@ -49,7 +48,6 @@ class Instalacion_model extends CI_Model {
     }
 
     function editarInstalacionSinImagen($id, $nombre, $descripcion, $categoria) {
-
         $data = array(
             'nombre' => $nombre,
             'descripcion' => $descripcion,

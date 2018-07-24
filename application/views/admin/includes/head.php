@@ -29,9 +29,8 @@
 				controls: // controls to add to the toolbar
 					"bold italic underline strikethrough subscript superscript | font size " +
 					"style | color highlight removeformat | bullets numbering | outdent " +
-					"indent | alignleft center alignright justify | undo redo | " +
-					"rule image link unlink | cut copy paste pastetext | print source",
-				useCSS: true,
+					"indent | alignleft center alignright justify | undo redo | ",
+				useCSS: false,
 				bodyStyle: // style to assign to document body contained within the editor
 					"cursor:text"
 			});

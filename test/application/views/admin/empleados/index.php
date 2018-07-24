@@ -4,15 +4,15 @@
             if ($tipo === 'crear') {
     ?>
                 <div class="alert alert-success text-center">
-                    Doctor creado con exito.
+                    Empleado creado con exito.
                 </div>
     <?        } else if ($tipo === 'editar') { ?>
                 <div class="alert alert-success text-center">
-                    Doctor editado con exito.
+                    Empleado editado con exito.
                 </div>
     <?        } else { ?>
                 <div class="alert alert-success text-center">
-                    Doctor eliminado con exito.
+                    Empleado eliminado con exito.
                 </div>
     <?        }
     ?>
@@ -43,7 +43,7 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li><a href="<?= base_url(); ?>admin/doctor/crearDoctor">Crear empleado</a></li>
+                        <li><a href="<?= base_url(); ?>admin/empleado/crearEmpleado">Crear empleado</a></li>
                         <li class="dropdown">
                           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                             Secciones <span class="caret"></span>
@@ -51,7 +51,7 @@
 
                           <ul class="dropdown-menu" role="navigation" aria-label="Menú desplegable - Secciones de administración">
                             <li><a href="<?= base_url(); ?>admin/cobertura">Coberturas</a></li>
-                            <li><a href="<?= base_url(); ?>admin/doctor">Doctores</a></li>
+                            <li><a href="<?= base_url(); ?>admin/empleado">Empleados</a></li>
                             <li><a href="<?= base_url(); ?>admin/especialidad">Especialidades</a></li>
                             <li><a href="<?= base_url(); ?>admin/estudio">Estudios</a></li>
                             <li><a href="<?= base_url(); ?>admin/instalacion">Instalaciones</a></li>
@@ -70,29 +70,25 @@
             </div><!-- /.container-fluid -->
         </nav>
         <h2>Gestión de empleados.</h2>
-        <p>Desde aquí podrá dar de alta nuevos empleados y marcarlos como doctores, editar los existentes o eliminarlos.</p>
+        <p>Desde aquí podrá dar de alta nuevos empleados, editar los existentes o eliminarlos.</p>
         <table class="table table-striped">
             <thead>
                 <tr>
                     <th>Nombre</th>
+                    <th>Cargo</th>
                     <th>Sexo</th>
-                    <th>Título</th>
-                    <th>Cv</th>
-                    <th>Es Doctor?</th>
                     <th>Editar empleado</th>
                     <th>Eliminar empleado</th>
                 </tr>
             </thead>
             <tbody>
-                <? foreach($empleados->result() as $empleado): ?>
+                <? foreach($empleados as $empleado): ?>
                 <tr>
-                    <td><?= $empleado->nombre; ?></td>
-                    <td><?= $empleado->sexo; ?></td>
-                    <td><?= $empleado->titulo; ?></td>
-                    <td><?= $empleado->cv; ?></td>
-                    <td><? echo(($empleado->isDoctor == true) ? 'Si' : 'No');?></td>
-                    <td><a href="<?= base_url(); ?>admin/doctor/editarFormularioDoctores?id=<?= $doctor->Id ?>">Editar</a></td>
-                    <td><a href="<?= base_url(); ?>admin/doctor/EliminarDoctor?id=<?= $doctor->Id ?>">Eliminar</a></td>
+                    <td><?= $empleado['nombre']; ?></td>
+                    <td><?= $empleado['cargo']; ?></td>
+                    <td><?= $empleado['sexo']; ?></td>
+                    <td><a href="<?= base_url(); ?>admin/empleado/editarFormularioEmpleado?id=<?= $empleado['id'] ?>&idC=<?= $empleado['idCargo'] ?>">Editar</a></td>
+                    <td><a href="<?= base_url(); ?>admin/empleado/eliminarEmpleado?id=<?= $empleado['id'] ?>">Eliminar</a></td>
                 </tr>
                 <? endforeach; ?>
             </tbody>

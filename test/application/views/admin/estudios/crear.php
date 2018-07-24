@@ -24,7 +24,7 @@
 
                               <ul class="dropdown-menu" role="navigation" aria-label="Menú desplegable - Secciones de administración">
                                 <li><a href="<?= base_url(); ?>admin/cobertura">Coberturas</a></li>
-                                <li><a href="<?= base_url(); ?>admin/doctor">Doctores</a></li>
+                                <li><a href="<?= base_url(); ?>admin/empleado">Empleados</a></li>
                                 <li><a href="<?= base_url(); ?>admin/especialidad">Especialidades</a></li>
                                 <li><a href="<?= base_url(); ?>admin/estudio">Estudios</a></li>
                                 <li><a href="<?= base_url(); ?>admin/instalacion">Instalaciones</a></li>
@@ -52,19 +52,42 @@
                 'type' => 'text',
                 'class' => 'form-control'
             );
+            $descripcion = array(
+                'id' => 'cleditorInput',
+                'name' => 'descripcion',
+                'type' => 'textarea',
+                'class' => 'form-control'
+            );
+            $tipoEstudio = array();
+            $tipoEstudio['0'] =  'Seleccionar...';
+            foreach ($tipos as $tipo) {
+              $tipoEstudio[$tipo['id']] = $tipo['nombre'];
+            }
+            $tiposEstudio = array(
+                'name' => 'idTipo',
+                'options' => $tipoEstudio,
+                'type' => 'dropdown',
+                'class' => 'form-control'
+            );
             $buttonClass = array(
                 'class' => 'btn btn-primary'
             );
         ?>
         <div class="form-group">
-          <?= form_label('Nombre: ', 'nombre') ?>
-          <?= form_input($nombre) ?>
+          <div class="form-group">
+            <?= form_label('Nombre: ', 'nombre') ?>
+            <?= form_input($nombre) ?>
+          </div>
 
-          <?= form_label('Descripción: ', 'descripcion') ?>
-          <?= form_input($descripcion) ?>
+          <div class="form-group">
+            <?= form_label('Descripción: ', 'descripcion') ?>
+            <?= form_textarea($descripcion) ?>
+          </div>
 
-          <?= form_label('Tipo: ', 'tipo') ?>
-          <?= form_input($tipo) ?>
+          <div class="form-group">
+            <?= form_label('Tipo: ', 'idTipo') ?>
+            <?= form_dropdown($tiposEstudio) ?>
+          </div>
 
           <?= form_submit('','Crear estudio', $buttonClass) ?>
           <?= form_close() ?>

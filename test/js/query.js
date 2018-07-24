@@ -2,17 +2,22 @@
 
 $(document).ready(function () {
   getOverlay();
+  getSections();
   getActiveSection();
   getToggleAccordion();
   getOpenCloseMenu();
   getCloseModalVideoContainer();
   getModalEspecialidades();
+  getModalEstudios();
+  // getModalCarrouselServices();
   getActiveSlider();
   getBarraTooltip();
   getRedireccionamientoTooltip();
   getStickyHeader();
   getHightlitedSection();
   getScrollToTopButton();
+  getActiveService();
+  getActiveEstudioTipo();
 });
 
 /* NOTE: key/value to set an overlay and call it
@@ -47,10 +52,18 @@ function getStickyHeader() {
   });
 }
 
+function getSections() {
+  var menu = $('.global-menu-content');
+  menu.children().each(function () {
+    var item = $(this);
+    getAnimationToHoverElement(item);
+  });
+}
+
 function getActiveSection() {
   var url = window.location.pathname;
-  console.log(url);
   var menu = $('.global-menu-content');
+  var urlLenght = url.split('/').length;
 
   menu.each(function () {
     var item = $(this);
@@ -61,8 +74,8 @@ function getActiveSection() {
     }
   });
 
-  if (url.substr(0) === '#' && url.substr(1) !== '') {
-    menu.find('#' + url.substr(1)).parent().addClass('active');
+  if (url.split('/')[urlLenght - 1] !== '') {
+    menu.find('#' + url.split('/')[urlLenght - 1]).parent().addClass('active');
   }
 }
 
@@ -174,6 +187,56 @@ function getModalEspecialidades() {
 
   button.click(function () {
     var component = $(this).parent().find(".general-overlay-container");
+    component.addClass(activeClass);
+    body.addClass('no-scrolling');
+
+    component.click(function (e) {
+      if ($(e.target).hasClass('general-overlay-container')) {
+        component.removeClass(activeClass);
+        body.removeClass('no-scrolling');
+      }
+    });
+
+    component.find(".general-close-overlay-button").click(function () {
+      component.removeClass(activeClass);
+      body.removeClass('no-scrolling');
+    });
+  });
+}
+
+function getModalEstudios() {
+  var button = $('.estudios-item-nombre');
+  var activeClass = "general-overlay-active";
+  var body = $("body");
+
+  button.click(function () {
+    var component = $(this).parent().find(".general-overlay-container");
+    component.addClass(activeClass);
+    body.addClass('no-scrolling');
+
+    component.click(function (e) {
+      if ($(e.target).hasClass('general-overlay-container')) {
+        component.removeClass(activeClass);
+        body.removeClass('no-scrolling');
+      }
+    });
+
+    component.find(".general-close-overlay-button").click(function () {
+      component.removeClass(activeClass);
+      body.removeClass('no-scrolling');
+    });
+  });
+}
+
+function getModalCarrouselServices() {
+  var button = $('.prevention-item');
+  var activeClass = "general-overlay-active";
+  var body = $("body");
+
+  getAnimationToHoverElement(button);
+
+  button.click(function () {
+    var component = $(this).find("+ .general-overlay-container");
     component.addClass(activeClass);
     body.addClass('no-scrolling');
 
@@ -383,7 +446,9 @@ function getHightlitedSection() {
     var scrollTo = void 0;
     setTimeout(function () {
       scrollTo = $(element).offset().top - (headerHeight * 2 - 20); // to fix some margin
-      $("html").scrollTop(scrollTo);
+      $('html, body').animate({ scrollTop: scrollTo }, 'slow');
+      return false;
+      // $("html").scrollTop(scrollTo);
     }, 10);
 
     $(element).addClass('scroll-from-tooltip');
@@ -406,7 +471,68 @@ function getScrollToTopButton() {
   });
 
   button.click(function () {
-    $("html").scrollTop(0);
+    $('html, body').animate({ scrollTop: 0 }, 'slow');
+    return false;
+  });
+}
+
+function getActiveService() {
+  var headerHeight = $('.fake-header').innerHeight();
+  $(this).resize(function () {
+    headerHeight = $('.fake-header').innerHeight();
+  });
+
+  var activeService = $(".prevention-item.active-service");
+  var body = $('html, body');
+
+  if (activeService.length > 0) {
+    var scrollTo = void 0;
+    setTimeout(function () {
+      scrollTo = $(activeService).offset().top - (headerHeight * 2 - 40); // to fix some margin
+      body.animate({
+        scrollTop: scrollTo
+      }, 'slow');
+
+      var activeServiceAnimationClass = "active-service";
+      setTimeout(function () {
+        $(window).scroll(function () {
+          activeService.removeClass(activeServiceAnimationClass);
+        });
+      }, 1000);
+
+      return false;
+    }, 10);
+  }
+}
+
+function getAnimationToHoverElement($element) {
+  var animationClass = "animation-on-hover";
+
+  $element.hover(function () {
+    $element.addClass(animationClass);
+  });
+}
+
+function getActiveEstudioTipo() {
+  var estudios = $('.estudios-content');
+
+  var estudioTiposButton = estudios.find('.estudios-tipo-item');
+  var estudiosContent = estudios.find('.estudios-list-container');
+
+  estudioTiposButton.each(function () {
+    $(this).click(function () {
+      estudioTiposButton.each(function () {
+        $(this).removeClass('active');
+      });
+
+      $(this).addClass('active');
+
+      var buttonId = $(this).attr('id');
+      estudiosContent.each(function () {
+        $(this).removeClass('active');
+      });
+      estudios.find('#estudio_tipo_content_' + buttonId).addClass('active');
+    });
   });
 }
 //# sourceMappingURL=query.js.map

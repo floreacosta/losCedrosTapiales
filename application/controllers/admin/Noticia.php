@@ -51,6 +51,7 @@ class Noticia extends CI_Controller {
         $bajada_post = $this->input->post('bajada');
         $cuerpo_post = $this->input->post('cuerpo');
         $descripcionImagen_post = $this->input->post('descripcionImagen');
+        $imagen_post = null;
 
         $config['upload_path'] = './img/noticias';
         $config['allowed_types'] = 'gif|jpg|png';
@@ -79,6 +80,7 @@ class Noticia extends CI_Controller {
         $bajada_post = $this->input->post('bajada');
         $cuerpo_post = $this->input->post('cuerpo');
         $descripcionImagen_post = $this->input->post('descripcionImagen');
+        $imagen_post = null;
 
         if ($_FILES['image_file']['tmp_name'] !== '') {
             $config['upload_path'] = './img/noticias';

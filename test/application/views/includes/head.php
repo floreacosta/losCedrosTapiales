@@ -35,5 +35,5 @@
 
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-	<script type="text/javascript" src="<?= base_url(); ?>js/script/query.js"></script>
+	<script type="text/javascript" src="<?= base_url(); ?>js/query.js"></script>
 </head>

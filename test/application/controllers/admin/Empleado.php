@@ -8,15 +8,7 @@ class Empleado extends CI_Controller {
         $this->load->helper('url');
         $this->load->database();
         $this->load->model('admin/Empleado_model');
-        $this->load->model('admin/Doctor_model');
-        $this->load->model('admin/Especialidad_model');
         $this->check_session();
-    }
-
-    public function index() {
-        $data['empleados'] = $this->Empleado_model->getEmpleados();
-        $this->load->view('admin/includes/headWoValidation');
-        $this->load->view('admin/doctores/index', $data);
     }
 
     public function logout() {
@@ -33,73 +25,69 @@ class Empleado extends CI_Controller {
         }
     }
 
+    public function index() {
+        $data['empleados'] = $this->Empleado_model->getEmpleados();
+        $this->load->view('admin/includes/headWoValidation');
+        $this->load->view('admin/empleados/index', $data);
+    }
+
     public function crearEmpleado() {
         if (($this->input->post('nombre')) === null) {
-            $data['especialidades'] = $this->Especialidad_model->getEspecialidades();
+            $data['cargos'] = $this->Empleado_model->getCargos();
+            $data['sexo'] = $this->Empleado_model->getOpcionesSexo();
             $this->load->view('admin/includes/headWoValidation');
-            $this->load->view('admin/doctores/crear', $data);
+            $this->load->view('admin/empleados/crear', $data);
         } else {
-            $especialidades_post = explode(".", $this->input->post('especialidades'));
-            array_pop($especialidades_post);
-
             $nombre_post = $this->input->post('nombre');
-            $idDoctor = $this->Doctor_model->crearDoctor($nombre_post);
-
-            foreach($especialidades_post as $especialidad) {
-                $data['result'] = $this->Doctorxespecialidad_model->crearDoctorxespecialidad($idDoctor, $especialidad);
-            }
-            $data['doctores'] = $this->Doctorxespecialidad_model->getDoctoresConEspecialidadesAgrupadas();
+            $idCargo_post = $this->input->post('idCargo');
+            $sexo_post = $this->input->post('sexo');
+            $data['result'] = $this->Empleado_model->crearEmpleado($nombre_post, $idCargo_post, $sexo_post);
+            $data['empleados'] = $this->Empleado_model->getEmpleados();
             $data['tipo'] = 'crear';
             $this->load->view('admin/includes/headWoValidation');
-            $this->load->view('admin/doctores/index', $data);
+            $this->load->view('admin/empleados/index', $data);
         }
     }
 
-    public function editarFormularioDoctores() {
+    public function editarFormularioEmpleado() {
         if ($this->input->get('id') !== null) {
             $id = $this->input->get('id');
-            $data['doctor'] = $this->Doctor_model->getDoctor($id);
-            $data['especialidadesXDoctor'] = $this->Doctorxespecialidad_model->getEspecialidadesXDoctor($id);
-            $data['especialidades'] = $this->Especialidad_model->getEspecialidades();
+            $idCargo = $this->input->get('idC');
+            $data['empleado'] = $this->Empleado_model->getEmpleado($id);
+            $data['cargos'] = $this->Empleado_model->getCargos();
+            $data['cargo'] = $this->Empleado_model->getCargo($idCargo);
+            $data['sexo'] = $this->Empleado_model->getOpcionesSexo();
             $this->load->view('admin/includes/headWoValidation');
-            $this->load->view('admin/doctores/editar', $data);
+            $this->load->view('admin/empleados/editar', $data);
         } else {
             echo "Ha ocurrido un error, inténtelo de nuevo por favor";
-            echo anchor(base_url().'admin/doctores', 'Volver');
+            echo anchor(base_url().'admin/empleados', 'Volver');
         }
     }
 
-    public function updateDoctores() {
-        $especialidades_post = explode(".", $this->input->post('especialidades'));
-        array_pop($especialidades_post);
-
+    public function updateEmpleado() {
+        $id = $this->input->post('hiddenId');
         $nombre_post = $this->input->post('nombre');
-        $idDoctor = $this->input->post('hiddenId');
-        $this->Doctorxespecialidad_model->eliminarDoctorxespecialidad($idDoctor);
-
-        $data['result'] = $this->Doctor_model->editarDoctor($idDoctor, $nombre_post);
-        foreach($especialidades_post as $especialidad) {
-            $this->Doctorxespecialidad_model->crearDoctorxespecialidad($idDoctor, $especialidad);
-        }
-
+        $idCargo_post = $this->input->post('idCargo');
+        $sexo_post = $this->input->post('sexo');
+        $data['result'] = $this->Empleado_model->editarEmpleado($id, $nombre_post, $idCargo_post, $sexo_post);
+        $data['empleados'] = $this->Empleado_model->getEmpleados();
         $data['tipo'] = 'editar';
-        $data['doctores'] = $this->Doctorxespecialidad_model->getDoctoresConEspecialidadesAgrupadas();
         $this->load->view('admin/includes/headWoValidation');
-        $this->load->view('admin/doctores/index', $data);
+        $this->load->view('admin/empleados/index', $data);
     }
 
-    public function EliminarDoctor() {
+    public function eliminarEmpleado() {
         if ($this->input->get('id') !== null) {
-            $idDoctor = $this->input->get('id');
-            $this->Doctor_model->eliminarDoctor($idDoctor);
-            $data['result'] = $this->Doctorxespecialidad_model->eliminarDoctorxespecialidad($idDoctor);
+            $id = $this->input->get('id');
+            $this->Empleado_model->eliminarEmpleado($id);
+            $data['empleados'] = $this->Empleado_model->getEmpleados();
             $data['tipo'] = 'eliminar';
-            $data['doctores'] = $this->Doctorxespecialidad_model->getDoctoresConEspecialidadesAgrupadas();
             $this->load->view('admin/includes/headWoValidation');
-            $this->load->view('admin/doctores/index', $data);
+            $this->load->view('admin/empleados/index', $data);
         } else {
             echo "Ha ocurrido un error, inténtelo de nuevo por favor";
-            echo anchor(base_url().'admin/doctores', 'Volver');
+            echo anchor(base_url().'admin/empleados', 'Volver');
         }
     }
 }
