@@ -565,6 +565,13 @@ main.home-page {
   padding-bottom: 0%;
 }
 
+b {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-variant: normal;
+  font-style: normal;
+}
+
 @media (min-width: 769px) {
   main {
     min-height: calc(100vh - 96px - 205px - 38px);
@@ -1475,7 +1482,6 @@ main.home-page {
   background-color: #f2f1f1;
   display: block;
   margin: 1em 0;
-  cursor: pointer;
 }
 .prevention-item:nth-child(even) {
   width: 100%;

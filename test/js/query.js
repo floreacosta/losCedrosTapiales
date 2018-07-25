@@ -506,11 +506,14 @@ function getActiveService() {
 }
 
 function getAnimationToHoverElement($element) {
-  var animationClass = "animation-on-hover";
+  var body = $(window);
+  if (body.width() > 769) {
+    var animationClass = "animation-on-hover";
 
-  $element.hover(function () {
-    $element.addClass(animationClass);
-  });
+    $element.hover(function () {
+      $element.addClass(animationClass);
+    });
+  }
 }
 
 function getActiveEstudioTipo() {

@@ -1,18 +1,23 @@
 <body>
+    <? if(isset($error) && $error) { ?>
+      <div class="alert alert-danger text-center">
+          <? print_r($error['error']); ?>
+      </div>
+    <? } ?>
     <? if(isset($result)){
         if($result){
             if($tipo === 'crear'){
     ?>
                 <div class="alert alert-success text-center">
-                    Servicio creado con exito.
+                    Noticia creada con exito.
                 </div>
     <?        }else if($tipo === 'editar'){ ?>
                 <div class="alert alert-success text-center">
-                    Servicio editado con exito.
+                    Noticia editada con exito.
                 </div>
     <?        }else{ ?>
                 <div class="alert alert-success text-center">
-                    Servicio eliminado con exito.
+                    Noticia eliminada con exito.
                 </div>
     <?        }
     ?>
@@ -37,7 +42,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="<?= base_url(); ?>admin/index">Admin</a>
+                    <a class="navbar-brand" href="<?= base_url(); ?>admin/home">Admin</a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->

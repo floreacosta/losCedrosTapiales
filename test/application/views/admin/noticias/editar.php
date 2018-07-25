@@ -10,7 +10,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="<?= base_url(); ?>admin/index">Admin</a>
+                        <a class="navbar-brand" href="<?= base_url(); ?>admin/home">Admin</a>
                     </div>
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -78,7 +78,7 @@
                     );
 
                     $imagen = array(
-                      'name' => 'image_file',
+                      'name' => 'user_file',
                       'type' => 'file',
                       'size' => 20,
                       'class' => 'form-control-file',

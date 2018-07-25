@@ -502,11 +502,14 @@ function getActiveService () {
 }
 
 function getAnimationToHoverElement ($element) {
-  let animationClass = "animation-on-hover";
+  let body = $(window);
+  if (body.width() > 769) {
+    let animationClass = "animation-on-hover";
 
-  $element.hover(() => {
-    $element.addClass(animationClass);
-  });
+    $element.hover(() => {
+      $element.addClass(animationClass);
+    });
+  }
 }
 
 function getActiveEstudioTipo () {

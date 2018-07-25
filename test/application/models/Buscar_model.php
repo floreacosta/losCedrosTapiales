@@ -7,14 +7,27 @@ class Buscar_model extends CI_Model {
         $this->load->database();
     }
 
-    function getResultadosBusqueda($busqueda)
-    {
+    function getResultadosBusqueda($busqueda) {
         $resultados = array();
         $this->db->like('nombre', $busqueda);
         $query = $this->db->get('especialidad');
 
-        if($query->num_rows() > 0){
+        if($query->num_rows() > 0) {
             $resultados[] = 'especialidad';
+        }
+
+        $this->db->like('nombre', $busqueda);
+        $query = $this->db->get('estudio');
+
+        if($query->num_rows() > 0) {
+            $resultados[] = 'estudio';
+        }
+
+        $this->db->like('titulo', $busqueda);
+        $query = $this->db->get('noticia');
+
+        if($query->num_rows() > 0){
+            $resultados[] = 'noticias';
         }
 
         $this->db->like('nombre', $busqueda);

@@ -28,7 +28,7 @@ class Login extends CI_Controller {
                     );
                     $this->session->set_userdata($create_session);
 
-                    redirect(base_url()."admin/index");
+                    redirect(base_url()."admin/home");
                 } else {
                     $data['fail'] = true;
                     $this->load->view('admin/includes/head');
@@ -62,7 +62,7 @@ class Login extends CI_Controller {
     public function check_session() {
         $id_usuario = $this->session->userdata('id_usuario');
         if ($id_usuario) {
-            redirect(base_url()."admin/index");
+            redirect(base_url()."admin/home");
         }
     }
 }

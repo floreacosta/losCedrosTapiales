@@ -51,7 +51,7 @@ class Cobertura extends CI_Controller {
 
         $config['upload_path'] = './img/obras-sociales';
         $config['allowed_types'] = 'gif|jpg|png';
-        $config['max_size'] = 100;
+        $config['max_size'] = 10000;
         $config['max_width'] = 609;
         $config['max_height'] = 216;
 
@@ -60,6 +60,7 @@ class Cobertura extends CI_Controller {
 
         if (!$this->upload->do_upload('user_file')) {
             $data['error'] = array('error' => $this->upload->display_errors());
+            $data['coberturas'] = $this->Cobertura_model->getCoberturas();
             $this->load->view('admin/includes/head');
             $this->load->view('admin/coberturas/index', $data);
         } else {
@@ -75,7 +76,7 @@ class Cobertura extends CI_Controller {
 
         if ($_FILES['user_file']['tmp_name'] !== '') {
             $config['upload_path'] = './img/obras-sociales';
-            $config['allowed_types'] = 'gif|jpg|png';
+            $config['allowed_types'] = 'jpg|gif|png|jpeg|JPG|PNG';
             $config['max_size'] = 100;
             $config['max_width'] = 609;
             $config['max_height'] = 216;
@@ -85,6 +86,7 @@ class Cobertura extends CI_Controller {
 
             if (!$this->upload->do_upload('user_file')) {
                 $data['error'] = array('error' => $this->upload->display_errors());
+                $data['coberturas'] = $this->Cobertura_model->getCoberturas();
                 $this->load->view('admin/includes/head');
                 $this->load->view('admin/coberturas/index', $data);
             } else{

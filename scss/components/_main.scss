@@ -16,6 +16,11 @@ main {
 	}
 }
 
+b {
+  @include font-calibri-bold();
+}
+
+
 @media (min-width: $tablet) {
 	main {
 		min-height: calc(100vh - 96px - 205px - 38px);

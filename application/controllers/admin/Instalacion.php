@@ -54,16 +54,17 @@ class Instalacion extends CI_Controller {
         $categoria_post = $this->input->post('categoria');
 
         $config['upload_path'] = './img/slider';
-        $config['allowed_types'] = 'gif|jpg|png';
-        $config['max_size'] = 10000;
-        $config['max_width'] = 10000;
-        $config['max_height'] = 10000;
+        $config['allowed_types'] = 'jpg|gif|png|jpeg|JPG|PNG';
+        $config['max_size'] = 100000;
+        $config['max_width'] = 100000;
+        $config['max_height'] = 100000;
 
         $this->load->library('upload', $config);
         $this->upload->initialize($config);
 
         if (!$this->upload->do_upload('user_file')) {
             $data['error'] = array('error' => $this->upload->display_errors());
+            $data['instalaciones'] = $this->Instalacion_model->getInstalaciones();
             $this->load->view('admin/includes/head');
             $this->load->view('admin/instalaciones/index', $data);
         } else {
@@ -93,6 +94,7 @@ class Instalacion extends CI_Controller {
                 var_dump($this->upload->display_errors());
                 die;
                 $data['error'] = array('error' => $this->upload->display_errors());
+                $data['instalaciones'] = $this->Instalacion_model->getInstalaciones();
                 $this->load->view('admin/includes/head');
                 $this->load->view('admin/instalaciones/index', $data);
             } else {

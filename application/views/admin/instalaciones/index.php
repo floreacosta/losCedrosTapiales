@@ -1,4 +1,9 @@
     <body>
+      <? if(isset($error) && $error) { ?>
+        <div class="alert alert-danger text-center">
+            <? print_r($error['error']); ?>
+        </div>
+      <? } ?>
     <? if(isset($result)){
         if($result){
             if($tipo === 'crear'){

@@ -9,15 +9,13 @@ class Noticia_model extends CI_Model {
     function getNoticias() {
         $query = $this->db->get('noticia');
         $this->db->order_by("nombre", "asc");
-        if ($query->num_rows() > 0) return $query;
-        else return false;
+        return $query;
     }
 
     function getNoticia($id) {
         $this->db->where('id', $id);
         $query = $this->db->get('noticia');
-        if ($query->num_rows() > 0) return $query;
-        else return false;
+        return $query;
     }
 
     function crearNoticia($titulo, $bajada, $cuerpo, $imagen, $descripcionImagen) {

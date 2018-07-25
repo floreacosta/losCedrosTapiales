@@ -29,8 +29,8 @@
 							 if ($servicio->jefe !== 'Indefinido') {
 								 ?>
 								 <h3>
-									 <span class="service-head-title"><?= $servicio->titulo;?> de área:</span>
-									 <strong class="service-head-name"><?= $servicio->jefe; ?></strong>
+									 <span class="service-head-title">Jefe de área:</span>
+									 <strong class="service-head-name"><?= $servicio->titulo;?> <?= $servicio->jefe; ?></strong>
 								 </h3>
 								 <?
 							 }

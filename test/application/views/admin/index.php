@@ -16,7 +16,7 @@
           <a href="<?= base_url(); ?>admin/usuario" class="list-group-item">Administrar usuarios</a>
       </div>
 
-      <a href="<?= base_url(); ?>admin/index/logout" class="btn btn-info" role="button">Cerrar sesión</a>
+      <a href="<?= base_url(); ?>admin/home/logout" class="btn btn-info" role="button">Cerrar sesión</a>
     </div>
   </body>
 </html>

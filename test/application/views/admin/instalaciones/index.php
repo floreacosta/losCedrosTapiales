@@ -1,4 +1,9 @@
     <body>
+      <? if(isset($error) && $error) { ?>
+        <div class="alert alert-danger text-center">
+            <? print_r($error['error']); ?>
+        </div>
+      <? } ?>
     <? if(isset($result)){
         if($result){
             if($tipo === 'crear'){
@@ -37,7 +42,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="<?= base_url(); ?>admin/index">Admin</a>
+                    <a class="navbar-brand" href="<?= base_url(); ?>admin/home">Admin</a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->

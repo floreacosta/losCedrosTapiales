@@ -1,18 +1,23 @@
 <body>
+    <? if(isset($error) && $error) { ?>
+      <div class="alert alert-danger text-center">
+          <? print_r($error['error']); ?>
+      </div>
+    <? } ?>
     <? if(isset($result)){
         if($result){
             if($tipo === 'crear'){
     ?>
                 <div class="alert alert-success text-center">
-                    Servicio creado con exito.
+                    Noticia creada con exito.
                 </div>
     <?        }else if($tipo === 'editar'){ ?>
                 <div class="alert alert-success text-center">
-                    Servicio editado con exito.
+                    Noticia editada con exito.
                 </div>
     <?        }else{ ?>
                 <div class="alert alert-success text-center">
-                    Servicio eliminado con exito.
+                    Noticia eliminada con exito.
                 </div>
     <?        }
     ?>

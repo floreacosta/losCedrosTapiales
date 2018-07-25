@@ -78,7 +78,7 @@
                     );
 
                     $imagen = array(
-                      'name' => 'image_file',
+                      'name' => 'user_file',
                       'type' => 'file',
                       'size' => 20,
                       'class' => 'form-control-file',

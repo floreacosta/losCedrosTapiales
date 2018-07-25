@@ -62,7 +62,7 @@ class Noticia extends CI_Controller {
         $this->load->library('upload', $config);
         $this->upload->initialize($config);
 
-        if (!$this->upload->do_upload('image_file')) {
+        if (!$this->upload->do_upload('user_file')) {
             $data['error'] = array('error' => $this->upload->display_errors());
             $data['noticias'] = $this->Noticia_model->getNoticias();
             $this->load->view('admin/includes/head');
@@ -84,15 +84,15 @@ class Noticia extends CI_Controller {
 
         if ($_FILES['image_file']['tmp_name'] !== '') {
             $config['upload_path'] = './img/noticias';
-            $config['allowed_types'] = 'gif|jpg|png';
-            $config['max_size'] = 10000;
-            $config['max_width'] = 10000;
-            $config['max_height'] = 10000;
+            $config['allowed_types'] = 'jpg|gif|png|jpeg|JPG|PNG';
+            $config['max_size'] = 100000;
+            $config['max_width'] = 100000;
+            $config['max_height'] = 100000;
 
             $this->load->library('upload', $config);
             $this->upload->initialize($config);
 
-            if (!$this->upload->do_upload('image_file')) {
+            if (!$this->upload->do_upload('user_file')) {
                 var_dump($this->upload->display_errors());
                 die;
                 $data['noticias'] = $this->Noticia_model->getNoticias();

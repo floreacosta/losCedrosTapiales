@@ -36,7 +36,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="<?= base_url(); ?>admin/index">Admin</a>
+                    <a class="navbar-brand" href="<?= base_url(); ?>admin/home">Admin</a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -62,8 +62,8 @@
                         </li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="<?= base_url(); ?>admin/index">Menú principal</a></li>
-                        <li><a href="<?= base_url(); ?>admin/index/logout">Cerrar sesión</a></li>
+                        <li><a href="<?= base_url(); ?>admin/home">Menú principal</a></li>
+                        <li><a href="<?= base_url(); ?>admin/home/logout">Cerrar sesión</a></li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->

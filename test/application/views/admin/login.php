@@ -11,7 +11,7 @@ if(isset($fail)) {
 ?>
   <body>
       <div class="container">
-      <h3>Bienvenido al sistema de gestión de la Clínica Los Cedros Tapiales.</h3>
+      <h3>Bienvenido al sistema de gestión de Sanatorio Privado Madero.</h3>
       <p>Por favor, ingrese su nombre de usuario y contraseña.</p>
       <br>
       <div class="bd-example">
