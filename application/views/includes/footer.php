@@ -27,6 +27,7 @@
 				<li><a href="<?= base_url(); ?>index">Home</a></li>
 				<li><a href="<?= base_url(); ?>instalacion">Instalaciones</a></li>
 				<li><a href="<?= base_url(); ?>especialidad">Especialidades</a></li>
+				<li><a href="<?= base_url(); ?>estudio">Estudios</a></li>
 				<li><a href="<?= base_url(); ?>coberturamedica">Coberturas</a></li>
 				<li><a href="<?= base_url(); ?>servicio">Servicios</a></li>
 			</ul>

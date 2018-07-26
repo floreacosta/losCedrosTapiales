@@ -3268,10 +3268,20 @@ b {
   display: none;
 }
 
+.overlay-estudios-container .general-overlay-content {
+  max-height: none;
+  height: calc(100vh - 119px);
+}
+
 /*
  * Responsive width
  */
 @media (min-width: 1025px) {
+  .overlay-estudios-container .general-overlay-content {
+    max-height: none;
+    height: calc(60vh - 119px);
+  }
+
   .institucional-content p {
     width: 60%;
   }
@@ -3575,6 +3585,19 @@ b {
   -ms-transform: translateY(-50%);
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
+}
+
+.estudios-item-descripcion li {
+  list-style-type: initial;
+  margin-left: 20px;
+}
+.estudios-item-descripcion li li {
+  list-style-type: circle;
+  margin-left: 40px;
+}
+.estudios-item-descripcion li li li {
+  list-style-type: square;
+  margin-left: 60px;
 }
 
 @media (min-width: 1025px) {

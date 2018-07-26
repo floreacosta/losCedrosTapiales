@@ -19,7 +19,10 @@ INSERT INTO cargo (nombre) VALUES
 ("Administración"), /* 11 */
 ("Gerencia"), /* 12 */
 ("Dirección"), /* 13 */
-("Coordinación"); /* 14 */
+("Coordinación"), /* 14 */
+
+("Director"), /* 15 */
+("Directora"); /* 16 */
 
 INSERT INTO sector (nombre) VALUES
 ("General"), /* 1 */
@@ -159,8 +162,8 @@ INSERT INTO usuario (nombre, usuario, pass) VALUES
 ('admin', 'admin', '$2y$10$KQtA15QKnavtmeIFOoqyFeOFL7APjWeTZXQBTMN5Hnxu6ukUujuOe');
 
 INSERT INTO tipoXestudio (nombre, descripcion) VALUES
-('Imágenes', ''),
-('Laboratorio', '');
+('Laboratorio', ''),
+('Imágenes', '');
 
 INSERT INTO estudio (nombre, descripcion, idTipo) VALUES
 ('Sangre de rutina', 'Ayuno de 8 horas. Durante el mismo sólo se puede tomar agua. Para el pedido de colesterol total o cualquiera de sus fracciones (HDL, LDL Y VLDL, triglicéridos) y hepatograma debe seguirse estrictamente la siguiente indicación: Ayuno de 12 horas.', 1),
@@ -221,7 +224,7 @@ INSERT INTO estudio (nombre, descripcion, idTipo) VALUES
   <li>Conservar a temperatura ambiente y una vez finalizado remitir al laboratorio.</li>
 </ul>
 ', 1),
-('Sangre oculta en materia fecal', '
+('Coprocultivo', '
 <ul>
   <li>Debe utilizar un recipiente estéril, de boca ancha y seco (sin formol, comprado en farmacias).</li>
   <li>No tomar antibióticos 72 horas antes de tomar la muestra, salvo indicación médica.</li>
@@ -229,7 +232,7 @@ INSERT INTO estudio (nombre, descripcion, idTipo) VALUES
   <li>Si existieran zonas con pus y/o sangre y/o cualquier otra cosa de aspecto raro o sospechoso, tomar el material de esa zona.</li>
   <li>Cerrar el recipiente y no volver a abrirlo.</li>
 </ul>', 1),
-('Ecografías', '
+('Sangre oculta en materia fecal', '
 <ul>
   <li>De una deposición espontánea, colocar en un frasco limpio y seco una pequeña porción de materia fecal, tamaño cuchara de té. Esta muestra no debe tener contacto con la orina ni con ningún otro líquido.</li>
   <li>Guardar en heladera y remitirlo al laboratorio antes de las 24 hs de obtenida la muestra.</li>
@@ -237,8 +240,8 @@ INSERT INTO estudio (nombre, descripcion, idTipo) VALUES
   <li>Evitar el sangrado de las encías al cepillarse los dientes.</li>
   <li>En caso de ser seriado de sangre oculta (según pedido médico) recoger una pequeña porción de materia fecal durante 3 días consecutivos en distintos recipientes plásticos, limpios y secos, rotulándolos como número 1, 2 y 3. Hasta remitir las muestras al laboratorio, mantenerlas refrigeradas.</li>
 </ul>
-', 2),
-('Ecodoppler', '
+', 1),
+('Ecografías', '
 <ul>
   <li>Abdominal: 8 hs de ayuno.</li>
   <li>Hepatobiliopancreática/HBP: 8hs de ayuno.</li>
@@ -291,4 +294,20 @@ INSERT INTO estudio (nombre, descripcion, idTipo) VALUES
   <li>El día del estudio debe concurrir al mismo con 5hs de ayuno.</li>
   <li>Traer estudios anteriores.</li>
   <li>Traer resultado del tiempo de coagulación realizado dentro del mes.</li>
-</ul>', 2);
+</ul>', 2),
+('Ecodoppler', '
+<li><b>Árbol esplénico portal:</b> 8hs de ayuno</li>
+<li><b>Aorta abdominal:</b> 8hs de ayuno.</li>
+<li><b>Aorta ilíaca:</b> 8hs de ayuno.</li>
+<li><b>Hepático:</b> 8hs de ayuno.</li>
+<li><b>Renal:</b> Durante las 72hs previas al estudio tomar Factor AG comprimidos 1 cada 8 hs (3 por día).
+<br/>
+<br/>
+Régimen a realizar los 3 días previos al examen:
+<li><b>Desayuno y merienda:</b> Te con edulcorante. Galletitas de agua con queso petit suisse o ricota.</li>
+<li><b>Almuerzo y cena:</b> Caldo de verduras coladas o cubitos, sopa de sémola. Puré de zapallo y zanahoria. Zapallitos hervidos. Jamón, huevo pasado por agua. Pescado hervido o asado. Pollo hervido sin piel o asado. Carne vacuna magra a la parrilla o plancha.</li>
+<li><b>Postres:</b> manzana asada, rallada o en puré. Pera cocida sin azucar.</li>
+<li><b>Bebidas:</b> agua mineral, agua de compota.</li>
+<li><b>No ingerir:</b> café, mate ni alcohol.</li>
+<li><b>Importante:</b> concurrir con 8hs de ayuno y traer estudios anteriores.</li>
+', 2);

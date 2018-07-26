@@ -1,7 +1,7 @@
 <body>
 	<main class="instalaciones-page">
 		<nav class="box-container-breadcrum" role="navigation" aria-label="Breadcrum">
-			<span><a aria-label="Inicio" href="<?= base_url(); ?>index">Inicio</a></span>
+			<span><a aria-label="Inicio" role="button" href="<?= base_url(); ?>">Inicio</a></span>
 			<span aria-label="Instalaciones">Instalaciones</span>
 		</nav>
 

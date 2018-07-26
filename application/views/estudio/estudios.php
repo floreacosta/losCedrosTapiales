@@ -9,7 +9,7 @@
 
 		<div class="subheading-section">
 			<h1 class="section-title">Estudios</h1>
-			<p class="section-subtitle">Estudios introducción a la sección</p>
+			<!-- <p class="section-subtitle">Estudios introducción a la sección</p> -->
 		</div>
 
 		<section class="estudios-content">
@@ -51,7 +51,7 @@
 									<div class="estudios-item" id="estudio_<?= $estudio->id ?>">
 										<button class="estudios-item-nombre" id="estudio_description_<?= $estudio->id ?>_button" aria-label="Abrir descripción de <?= $estudio->nombre ?>"><?= $estudio->nombre ?></button>
 
-										<div class="general-overlay-container" id="estudio_description_<?= $estudio->id ?>">
+										<div class="general-overlay-container overlay-estudios-container" id="estudio_description_<?= $estudio->id ?>">
 										  <div class="general-overlay-content-component">
 										    <header class="general-header-overlay">
 										      <h2 class=""><?= $estudio->nombre ?></h2>

@@ -2,14 +2,14 @@
 	<main class="estudios-page" aria-label="Estudios">
 		<nav class="box-container-breadcrum" role="navigation" aria-label="Breadcrum">
 			<span>
-				<a aria-label="Inicio" role="button" href="<?= base_url(); ?>index">Inicio</a>
+				<a aria-label="Inicio" role="button" href="<?= base_url(); ?>">Inicio</a>
 			</span>
 			<span aria-label="Estudios">Estudios</span>
 		</nav>
 
 		<div class="subheading-section">
 			<h1 class="section-title">Estudios</h1>
-			<p class="section-subtitle">Estudios introducción a la sección</p>
+			<!-- <p class="section-subtitle">Estudios introducción a la sección</p> -->
 		</div>
 
 		<section class="estudios-content">

@@ -81,7 +81,20 @@
 }
 
 .estudios-item-descripcion {
+  li {
+    list-style-type: initial;
+    margin-left: 20px;
 
+    li {
+      list-style-type: circle;
+      margin-left: 40px;
+
+      li {
+        list-style-type: square;
+        margin-left: 60px;
+      }
+    }
+  }
 }
 
 @media (min-width: $mobile) {

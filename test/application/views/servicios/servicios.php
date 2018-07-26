@@ -2,13 +2,13 @@
 	<main class="servicios-page" aria-label="Servicios">
 		<nav class="box-container-breadcrum" role="navigation" aria-label="Breadcrum">
 			<span>
-				<a aria-label="Inicio" href="<?= base_url(); ?>index">Inicio</a>
+				<a aria-label="Inicio" role="button" href="<?= base_url(); ?>">Inicio</a>
 			</span>
 			<span aria-label="Servicios">Servicios</span>
 		</nav>
 
 		<div class="subheading-section">
-			<h1 class="section-title">Servicios Prestados</h1>
+			<h1 class="section-title">Prestaciones</h1>
 		</div>
 
 		<section class="servicios-content">

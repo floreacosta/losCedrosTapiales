@@ -88,7 +88,7 @@ INSERT INTO empleado (nombre, idCargo, sexo) VALUES
 ("Roxana Roatta", 2, 'F'),
 ("Matias Berger", 1, 'M'),
 ("Alejandro Hafez", 3, 'M'),
-("Vilma Di Pascua", 8, 'F'),
+("Vilma Di Pascuo", 8, 'F'),
 ("Marisa Flores", 2, 'F'),
 ("Nicolás D’Agostino", 1, 'M'),
 ("Jannet Chacon", 2, 'F'),

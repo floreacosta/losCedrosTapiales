@@ -2,7 +2,7 @@
 	<main class="institucional-page" aria-label="Institucional">
 		<nav class="box-container-breadcrum" role="navigation" aria-label="Breadcrum">
 			<span>
-        <a aria-label="Inicio" href="<?= base_url(); ?>index">Inicio</a>
+        <a aria-label="Inicio" role="button" href="<?= base_url(); ?>">Inicio</a>
       </span>
 			<span aria-label="Institucional">Institucional</span>
 		</nav>
@@ -45,9 +45,14 @@
 				<h2 class="institutional-title">Autoridades</h2>
 				<div class="jefe-sector-content">
 					<?
+						$const_general = 'General';
 						foreach($jefe_sectores->result() as $jefe_sector):
 							if ($jefe_sector->nombre !== 'Indefinido') {
-								$nombreCargo = $jefe_sector->nombreCargo . ' de ' . $jefe_sector->nombreSector;
+								if ($jefe_sector->nombreSector === $const_general) {
+									$nombreCargo = $jefe_sector->nombreCargo . ' ' . $jefe_sector->nombreSector;
+								} else {
+									$nombreCargo = $jefe_sector->nombreCargo . ' de ' . $jefe_sector->nombreSector;
+								}
 								?>
 									<div class="autoridad-item">
 										<div class="autoridad-information">

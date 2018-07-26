@@ -8,7 +8,7 @@
 		</nav>
 
 		<div class="subheading-section">
-			<h1 class="section-title">Servicios Prestados</h1>
+			<h1 class="section-title">Prestaciones</h1>
 		</div>
 
 		<section class="servicios-content">
